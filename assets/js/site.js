@@ -50,6 +50,8 @@
   countUp($("#statRes"), RES.length);
   countUp($("#statCat"), CATS.length - 1);
   countUp($("#statDemo"), window.DEMOS.length);
+  $("#specSnip").textContent = window.DEMOS.length;
+  $("#specRes").textContent = RES.length;
   $("#demoCountBadge").textContent = window.DEMOS.length;
 
   // ── Library ───────────────────────────────────────────────────
@@ -198,11 +200,15 @@
     $("#demoTabs").appendChild(b);
   });
 
+  $("#demoSearch").addEventListener("input", () => renderDemos());
   function renderDemos() {
     const grid = $("#demoGrid");
     grid.innerHTML = "";
+    queueMicrotask(() => { $("#demoCount").textContent = grid.children.length + " of " + DEMOS.length; });
     DEMOS.forEach((d, i) => {
       if (curGroup !== "All" && d.group !== curGroup) return;
+      const dq = ($("#demoSearch").value || "").trim().toLowerCase();
+      if (dq && !(d.title + " " + d.group).toLowerCase().includes(dq)) return;
       const card = document.createElement("article");
       card.className = "demo";
       card.style.animationDelay = Math.min(grid.children.length, 12) * 35 + "ms";
