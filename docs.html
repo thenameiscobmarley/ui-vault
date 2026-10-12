@@ -108,8 +108,8 @@ const DOCS = [
 ["Surfaces", "glass", "Glass & tilt", "<code>uv-glass</code> frosted panel. <code>data-uv=\"tilt\"</code> gives 3D tilt with glare.",
 `<div class="uv-bg-mesh" style="padding:30px;border-radius:20px">
   <div class="uv-glass" data-uv="tilt" style="width:240px;padding:22px;border-radius:18px">
-    <small class="uv-muted">Balance</small>
-    <div style="font:700 28px var(--uv-display)">$12,480</div>
+    <small class="uv-muted">Focus time</small>
+    <div style="font:700 28px var(--uv-display)">128 h</div>
     <span class="uv-badge uv-badge--success">+4.2%</span>
   </div>
 </div>`],
@@ -223,7 +223,7 @@ document.querySelector('#ex-otp .uv-drop').addEventListener('uv-files', e => UV.
 `<div class="uv-col" style="width:min(460px,100%)">
   <div class="uv-alert uv-alert--info">A new version is available.</div>
   <div class="uv-alert uv-alert--success">Settings saved.</div>
-  <div class="uv-alert uv-alert--warn">Your trial ends in 3 days.</div>
+  <div class="uv-alert uv-alert--warn">Your session expires in 3 days.</div>
   <div class="uv-alert uv-alert--danger">Payment failed.</div>
 </div>`],
 ["Feedback", "cmdk", "UV.cmdk()", "Command palette: <code>const p = UV.cmdk([{label, icon, shortcut, keywords, action}], {hotkey:'k'})</code>. It opens with Ctrl/⌘+K or <code>p.open()</code>, has fuzzy filtering and arrow-key navigation.",

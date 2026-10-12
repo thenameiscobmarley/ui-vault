@@ -74,7 +74,7 @@ requestAnimationFrame(() => move(tabs[0]));`,
   },
   {
     group: "Buttons", title: "Spinning gradient border",
-    html: `<button class="vb-border"><span>Upgrade to Pro</span></button>`,
+    html: `<button class="vb-border"><span>Open project</span></button>`,
     css: `@property --vb-a{syntax:"<angle>";initial-value:0deg;inherits:false}
 .vb-border{position:relative;border:0;padding:2px;border-radius:14px;cursor:pointer;background:conic-gradient(from var(--vb-a),#c9a96e,#c9a96e,#d9d6cf,#d9d6cf,#ff6a26,#c9a96e);animation:vb-spin 3s linear infinite}
 .vb-border span{display:block;padding:13px 26px;border-radius:12px;background:#0d0d14;color:#fff;font:600 15px/1 system-ui,sans-serif}
@@ -139,7 +139,7 @@ c.addEventListener("pointermove", e => { const r = c.getBoundingClientRect(); c.
   {
     group: "Cards", title: "Frosted glass",
     html: `<div class="vc-glass-wrap"><div class="vc-glass">
-  <small>Balance</small><strong>$12,480.20</strong><span>+4.2% this week</span>
+  <small>Focus time</small><strong>128.5 h</strong><span>+4.2% this week</span>
 </div></div>`,
     css: `.vc-glass-wrap{position:relative;padding:28px 34px;border-radius:20px;background:radial-gradient(circle at 20% 30%,#c9a96e,transparent 45%),radial-gradient(circle at 80% 70%,#8f8a82,transparent 45%),#1a1917}
 .vc-glass{display:grid;gap:4px;width:220px;padding:20px 22px;border-radius:16px;background:#ffffff1a;border:1px solid #ffffff33;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 32px #0004,inset 0 1px 0 #ffffff40;color:#fff;font-family:system-ui,sans-serif}

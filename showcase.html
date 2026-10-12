@@ -96,7 +96,7 @@
     <span class="uv-badge uv-badge--accent uv-badge--live">Release 2.0</span>
     <h2 class="uv-h1" style="font-size:clamp(36px,5vw,58px)">Interfaces with <em class="uv-muted">a point of view.</em></h2>
     <p class="uv-muted" style="margin:0">Two small files, no build step, no framework.</p>
-    <div class="uv-row" style="justify-content:center"><button class="uv-btn uv-btn--border uv-btn--lg" data-uv="magnetic" data-uv-confetti><span>Get started</span></button><button class="uv-btn uv-btn--ghost uv-btn--lg" data-uv="ripple">See pricing</button></div>
+    <div class="uv-row" style="justify-content:center"><button class="uv-btn uv-btn--border uv-btn--lg" data-uv="magnetic" data-uv-confetti><span>Get started</span></button><button class="uv-btn uv-btn--ghost uv-btn--lg" data-uv="ripple">View source</button></div>
   </div>
 </div><div class="cap"><h3>Aurora hero</h3><small>bg-aurora · aurora-text · btn--border · magnetic</small></div></article>
 
@@ -114,17 +114,13 @@
   </div>
 </div><div class="cap"><h3>Profile card</h3><small>tilt · count-up · confetti</small></div></article>
 
-<!-- 3 Pricing -->
-<article class="tile w2"><div class="stage" style="padding:36px 24px">
-  <div class="uv-col" style="align-items:center;width:100%">
-    <div class="uv-tabs uv-tabs--pill" id="billTabs"><button aria-selected="true">Monthly</button><button>Yearly <span class="uv-badge uv-badge--success" style="padding:1px 6px;font-size:10px">-20%</span></button></div>
-    <div class="uv-grid w-full" style="--uv-min:200px;margin-top:10px" data-uv-stagger>
-      <div class="uv-card uv-card--hover"><p class="uv-muted" style="margin:0">Hobby</p><p style="margin:6px 0 14px"><b class="price" data-m="0" data-y="0" style="font:400 44px var(--uv-serif)">$0</b><span class="uv-dim">/mo</span></p><ul class="uv-list" style="font-size:14px"><li>✓ 3 projects</li><li>✓ Community support</li><li class="uv-dim">— Custom themes</li></ul><button class="uv-btn uv-btn--ghost uv-btn--block" style="margin-top:14px">Start</button></div>
-      <div class="uv-card uv-card--grad-border uv-card--glow" style="transform:scale(1.03)"><div class="uv-row" style="justify-content:space-between"><p class="uv-muted" style="margin:0">Pro</p><span class="uv-badge uv-badge--accent">Popular</span></div><p style="margin:6px 0 14px"><b class="price" data-m="19" data-y="15" style="font:400 44px var(--uv-serif)">$19</b><span class="uv-dim">/mo</span></p><ul class="uv-list" style="font-size:14px"><li>✓ Unlimited projects</li><li>✓ Priority support</li><li>✓ Custom themes</li></ul><button class="uv-btn uv-btn--primary uv-btn--shine uv-btn--block" style="margin-top:14px" data-uv-confetti>Upgrade</button></div>
-      <div class="uv-card uv-card--hover"><p class="uv-muted" style="margin:0">Team</p><p style="margin:6px 0 14px"><b class="price" data-m="49" data-y="39" style="font:400 44px var(--uv-serif)">$49</b><span class="uv-dim">/mo</span></p><ul class="uv-list" style="font-size:14px"><li>✓ Everything in Pro</li><li>✓ 10 seats</li><li>✓ SSO & audit log</li></ul><button class="uv-btn uv-btn--ghost uv-btn--block" style="margin-top:14px">Contact sales</button></div>
-    </div>
+<!-- 3 Shortcuts -->
+<article class="tile w2"><div class="stage" style="padding:32px 24px">
+  <div class="uv-card w-full" style="max-width:640px;padding:0">
+    <div class="uv-row" style="justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--uv-line-2)"><h3 class="uv-h3">Keyboard shortcuts</h3><div class="uv-tabs uv-tabs--line" id="kbTabs"><button aria-selected="true">General</button><button>Editor</button><button>Navigation</button></div></div>
+    <ul class="uv-list" id="kbList" style="padding:4px 20px 8px"></ul>
   </div>
-</div><div class="cap"><h3>Pricing table</h3><small>tabs onChange · grad-border · stagger reveal</small></div></article>
+</div><div class="cap"><h3>Shortcuts panel</h3><small>tabs onChange · kbd · list</small></div></article>
 
 <!-- 4 Login -->
 <article class="tile"><div class="stage uv-bg-mesh">
@@ -152,7 +148,7 @@
 <!-- 6 Dashboard KPIs -->
 <article class="tile w2"><div class="stage" style="padding:24px">
   <div class="uv-grid w-full" style="--uv-min:190px" data-uv-stagger>
-    <div class="uv-card"><div class="uv-row uv-muted" style="font-size:13px"><svg class="i"><use href="#i-chart"/></svg>Revenue</div><div style="font:400 40px/1 var(--uv-serif);margin:8px 0" data-uv-count="48290" data-uv-prefix="$">$0</div><span class="uv-badge uv-badge--success">▲ 12.4%</span><svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4f00" stop-opacity=".18"/><stop offset="1" stop-color="#ff4f00" stop-opacity="0"/></linearGradient></defs><path d="M0 32 L12 28 L24 30 L36 20 L48 24 L60 14 L72 18 L84 8 L100 10 L100 40 L0 40Z" fill="url(#sg)"/><path d="M0 32 L12 28 L24 30 L36 20 L48 24 L60 14 L72 18 L84 8 L100 10" fill="none" stroke="var(--uv-accent)" stroke-width="1.5"/></svg></div>
+    <div class="uv-card"><div class="uv-row uv-muted" style="font-size:13px"><svg class="i"><use href="#i-chart"/></svg>Deploys</div><div style="font:400 40px/1 var(--uv-serif);margin:8px 0" data-uv-count="1284">0</div><span class="uv-badge uv-badge--success">▲ 12.4%</span><svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4f00" stop-opacity=".18"/><stop offset="1" stop-color="#ff4f00" stop-opacity="0"/></linearGradient></defs><path d="M0 32 L12 28 L24 30 L36 20 L48 24 L60 14 L72 18 L84 8 L100 10 L100 40 L0 40Z" fill="url(#sg)"/><path d="M0 32 L12 28 L24 30 L36 20 L48 24 L60 14 L72 18 L84 8 L100 10" fill="none" stroke="var(--uv-accent)" stroke-width="1.5"/></svg></div>
     <div class="uv-card"><div class="uv-row uv-muted" style="font-size:13px"><svg class="i"><use href="#i-globe"/></svg>Visitors</div><div style="font:400 40px/1 var(--uv-serif);margin:8px 0" data-uv-count="128400">0</div><span class="uv-badge uv-badge--success">▲ 8.1%</span><svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0 30 L14 26 L28 28 L42 16 L56 22 L70 12 L84 16 L100 6" fill="none" stroke="var(--uv-text)" stroke-width="1.5"/></svg></div>
     <div class="uv-card"><div class="uv-row uv-muted" style="font-size:13px"><svg class="i"><use href="#i-bolt"/></svg>Conversion</div><div style="font:400 40px/1 var(--uv-serif);margin:8px 0" data-uv-count="3.62" data-uv-decimals="2" data-uv-suffix="%">0</div><span class="uv-badge uv-badge--danger">▼ 0.4%</span><svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0 10 L14 14 L28 12 L42 22 L56 18 L70 26 L84 22 L100 28" fill="none" stroke="var(--uv-dim)" stroke-width="1.5"/></svg></div>
     <div class="uv-card" style="display:grid;place-items:center"><div class="uv-ring-wrap"><div class="uv-ring" data-value="72" style="--s:120px;--t:3px"></div><div><b style="font:400 34px var(--uv-serif)" data-uv-count="72" data-uv-suffix="%">0</b><div class="uv-dim" style="font-size:12px">Goal</div></div></div></div>
@@ -176,8 +172,8 @@
 
 <!-- 8 Credit card -->
 <article class="tile"><div class="stage uv-bg-grid">
-  <div class="ccard uv-grain" data-uv="tilt"><div class="uv-row" style="justify-content:space-between"><div class="chip-gold"></div><b style="font:400 24px var(--uv-serif);font-style:italic">Vault</b></div><div class="uv-mono" style="font-size:19px;letter-spacing:.12em">4829 •••• •••• 2026</div><div class="uv-row" style="justify-content:space-between;font-size:12px"><span>KHRIS VALE</span><span>09/29</span></div></div>
-</div><div class="cap"><h3>Glossy card</h3><small>tilt + glare · grain</small></div></article>
+  <div class="ccard uv-grain" data-uv="tilt"><div class="uv-row" style="justify-content:space-between"><div class="chip-gold"></div><b style="font:400 24px var(--uv-serif);font-style:italic">Vault</b></div><div class="uv-mono" style="font-size:19px;letter-spacing:.12em">MEMBER № 0042</div><div class="uv-row" style="justify-content:space-between;font-size:12px"><span>KHRIS VALE</span><span>SINCE 2026</span></div></div>
+</div><div class="cap"><h3>Member card</h3><small>tilt + glare · grain</small></div></article>
 
 <!-- 9 Chat -->
 <article class="tile"><div class="stage" style="padding:18px">
@@ -222,11 +218,11 @@
 <!-- 13 Stepper checkout -->
 <article class="tile w2"><div class="stage">
   <div class="uv-col" style="align-items:center;gap:24px;width:100%">
-    <ol class="uv-steps" id="steps" style="padding:0;margin:0"><li class="is-current">Cart</li><li>Shipping</li><li>Payment</li><li>Done</li></ol>
-    <div class="uv-card" style="width:100%;max-width:420px;text-align:center" id="stepBody"><h3 class="uv-h3">Your cart</h3><p class="uv-muted">2 items · $128.00</p></div>
+    <ol class="uv-steps" id="steps" style="padding:0;margin:0"><li class="is-current">Account</li><li>Workspace</li><li>Invite</li><li>Done</li></ol>
+    <div class="uv-card" style="width:100%;max-width:420px;text-align:center" id="stepBody"><h3 class="uv-h3">Create your account</h3><p class="uv-muted">Name, email and a password</p></div>
     <div class="uv-row"><button class="uv-btn uv-btn--ghost" id="stepBack">Back</button><button class="uv-btn uv-btn--primary" id="stepNext">Continue →</button></div>
   </div>
-</div><div class="cap"><h3>Checkout stepper</h3><small>uv-steps · panel transitions</small></div></article>
+</div><div class="cap"><h3>Onboarding stepper</h3><small>uv-steps · panel transitions</small></div></article>
 
 <!-- 14 Weather -->
 <article class="tile"><div class="stage uv-bg-dots">
@@ -270,14 +266,14 @@
 <!-- 18 Table -->
 <article class="tile w2"><div class="stage" style="padding:20px;place-items:stretch">
   <div class="uv-card" style="padding:8px 4px;overflow:auto">
-    <table class="uv-table"><thead><tr><th>Customer</th><th>Plan</th><th>Status</th><th>MRR</th><th></th></tr></thead><tbody>
-      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">AL</div>Ada Lovelace</div></td><td>Team</td><td><span class="uv-badge uv-badge--success">Active</span></td><td class="uv-mono">$490</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="ada@example.com">⧉</button></td></tr>
-      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">GH</div>Grace Hopper</div></td><td>Pro</td><td><span class="uv-badge uv-badge--warn">Past due</span></td><td class="uv-mono">$19</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="grace@example.com">⧉</button></td></tr>
-      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">LT</div>Linus T.</div></td><td>Hobby</td><td><span class="uv-badge">Trial</span></td><td class="uv-mono">$0</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="linus@example.com">⧉</button></td></tr>
-      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">MH</div>Margaret H.</div></td><td>Team</td><td><span class="uv-badge uv-badge--danger">Churned</span></td><td class="uv-mono">$0</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="margaret@example.com">⧉</button></td></tr>
+    <table class="uv-table"><thead><tr><th>Contributor</th><th>Role</th><th>Status</th><th>Commits</th><th></th></tr></thead><tbody>
+      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">AL</div>Ada Lovelace</div></td><td>Maintainer</td><td><span class="uv-badge uv-badge--success">Active</span></td><td class="uv-mono">1,204</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="ada@example.com">⧉</button></td></tr>
+      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">GH</div>Grace Hopper</div></td><td>Reviewer</td><td><span class="uv-badge uv-badge--warn">Away</span></td><td class="uv-mono">418</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="grace@example.com">⧉</button></td></tr>
+      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">LT</div>Linus T.</div></td><td>Contributor</td><td><span class="uv-badge">New</span></td><td class="uv-mono">12</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="linus@example.com">⧉</button></td></tr>
+      <tr><td><div class="uv-row" style="gap:10px;flex-wrap:nowrap"><div class="uv-avatar" style="--s:30px">MH</div>Margaret H.</div></td><td>Contributor</td><td><span class="uv-badge uv-badge--danger">Inactive</span></td><td class="uv-mono">87</td><td><button class="uv-btn uv-btn--ghost uv-btn--sm" data-tip="Copy email" data-uv-copy="margaret@example.com">⧉</button></td></tr>
     </tbody></table>
   </div>
-</div><div class="cap"><h3>Customer table</h3><small>uv-table · badges · tooltips · copy</small></div></article>
+</div><div class="cap"><h3>Contributors table</h3><small>uv-table · badges · tooltips · copy</small></div></article>
 
 <!-- 19 Dock -->
 <article class="tile"><div class="stage uv-bg-grid" style="align-items:end;padding-bottom:30px">
@@ -288,10 +284,10 @@
 <article class="tile"><div class="stage" style="padding:18px">
   <div class="uv-card" style="width:290px;padding:0">
     <div style="height:180px;display:grid;place-items:center;background:var(--uv-surface-2);transition:background .3s" id="shoeBg"><span class="shoe" id="shoe">AR—01</span></div>
-    <div style="padding:18px"><div class="uv-row" style="justify-content:space-between"><b>Aero Runner</b><b style="font:400 24px var(--uv-serif)">$129</b></div>
+    <div style="padding:18px"><div class="uv-row" style="justify-content:space-between"><b>Aero Runner</b><span class="uv-badge">Sample</span></div>
       <div class="uv-row uv-mono uv-dim" style="gap:4px;margin:4px 0 12px;font-size:12px"><span style="color:var(--uv-accent)">★★★★★</span> 212 reviews</div>
       <div class="uv-row" style="gap:8px;margin-bottom:14px" id="colors"><button class="uv-chip is-active" data-c="#ff4f00">Signal</button><button class="uv-chip" data-c="#1a1917">Ink</button><button class="uv-chip" data-c="#8f8a82">Stone</button></div>
-      <button class="uv-btn uv-btn--primary uv-btn--block" id="addCart"><svg class="i"><use href="#i-cart"/></svg>Add to cart</button></div>
+      <button class="uv-btn uv-btn--primary uv-btn--block" id="addCart"><svg class="i"><use href="#i-star"/></svg>Save to collection</button></div>
   </div>
 </div><div class="cap"><h3>Product card</h3><small>chips · loading → success</small></div></article>
 
@@ -417,8 +413,12 @@ document.querySelectorAll(".tile").forEach(t => {
   t.querySelector(".cap").appendChild(b);
 });
 
-// Pricing toggle
-UV.tabs($("#billTabs"), (_t, i) => document.querySelectorAll(".price").forEach(p => UV.countUp(p, +p.dataset[i ? "y" : "m"], { prefix: "$", duration: 500, from: +p.textContent.slice(1) })));
+// Shortcuts panel
+const KB = [[["Command palette","Ctrl K"],["Toggle theme","Ctrl ⇧ L"],["Search","/"],["Help","?"]],
+            [["Bold","Ctrl B"],["Italic","Ctrl I"],["Insert link","Ctrl K"],["Code block","Ctrl ⇧ C"]],
+            [["Next item","J"],["Previous item","K"],["Go to inbox","G I"],["Go to settings","G S"]]];
+const kbRender = i => { $("#kbList").innerHTML = KB[i].map(([a, k]) => `<li style="justify-content:space-between"><span>${a}</span><span>${k.split(" ").map(x => `<span class="uv-kbd">${x}</span>`).join(" ")}</span></li>`).join(""); $("#kbList").style.animation = "none"; $("#kbList").offsetWidth; $("#kbList").style.animation = "uv-fade-up .3s"; };
+UV.tabs($("#kbTabs"), (_t, i) => kbRender(i)); kbRender(0);
 
 // Login
 $("#loginForm").addEventListener("submit", e => {
@@ -472,13 +472,13 @@ UV.drop($("#drop"), files => files.slice(0, 4).forEach(f => {
 }));
 
 // Stepper
-const stepData = [["Your cart", "2 items · $128.00"], ["Shipping", "Standard · arrives Thu"], ["Payment", "Visa •••• 2026"], ["All done", "Order #4821 confirmed"]];
+const stepData = [["Create your account", "Name, email and a password"], ["Name your workspace", "You can change it later"], ["Invite your team", "Or skip and do it later"], ["All done", "Your workspace is ready"]];
 let step = 0;
 const renderStep = () => {
   document.querySelectorAll("#steps li").forEach((li, k) => li.className = k < step ? "is-done" : k === step ? "is-current" : "");
   const b = $("#stepBody"); b.innerHTML = `<h3 class="uv-h3"></h3><p class="uv-muted"></p>`; b.style.animation = "none"; b.offsetWidth; b.style.animation = "uv-fade-up .35s";
   b.querySelector("h3").textContent = stepData[step][0]; b.querySelector("p").textContent = stepData[step][1];
-  $("#stepNext").textContent = step === 3 ? "Start over" : step === 2 ? "Place order" : "Continue →";
+  $("#stepNext").textContent = step === 3 ? "Start over" : step === 2 ? "Finish" : "Continue →";
 };
 $("#stepNext").onclick = () => { step = step === 3 ? 0 : step + 1; if (step === 3) { UV.confetti(); UV.sound("success"); } renderStep(); };
 $("#stepBack").onclick = () => { step = Math.max(0, step - 1); renderStep(); };
@@ -504,7 +504,7 @@ document.querySelectorAll("#colors .uv-chip").forEach(c => c.onclick = () => {
   
   $("#shoe").style.color = c.dataset.c; $("#shoe").style.transform = "scale(1.08)"; setTimeout(() => $("#shoe").style.transform = "", 300);
 });
-$("#addCart").onclick = e => { const b = e.currentTarget; b.classList.add("is-loading"); setTimeout(() => { b.classList.remove("is-loading"); b.innerHTML = "✓ Added"; UV.toast("Aero Runner added to cart", { type: "success" }); UV.sound("pop"); }, 900); };
+$("#addCart").onclick = e => { const b = e.currentTarget; b.classList.add("is-loading"); setTimeout(() => { b.classList.remove("is-loading"); b.innerHTML = "✓ Saved"; UV.toast("Saved to your collection", { type: "success" }); UV.sound("pop"); }, 900); };
 
 // Countdown (rolls 3 days ahead)
 const launch = Date.now() + 3 * 864e5 + 5 * 36e5;
