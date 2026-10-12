@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>API Docs — UI Vault</title>
+<meta name="description" content="UI Vault library reference: every uv-* class and UV.* function with live examples you can copy." />
+<meta name="theme-color" content="#08080d" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 10l7 13 7-13' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<style>
+  body { margin: 0; background: var(--uv-bg); }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; padding: 12px clamp(16px, 3vw, 32px); background: color-mix(in srgb, var(--uv-bg) 82%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--uv-line); }
+  .top .brand { display: flex; align-items: center; gap: 10px; font: 700 18px var(--uv-display); color: var(--uv-text); text-decoration: none; }
+  .top nav { margin-left: auto; }
+  .layout { display: grid; grid-template-columns: 250px 1fr; max-width: 1320px; margin: 0 auto; }
+  .side { position: sticky; top: 63px; height: calc(100vh - 63px); overflow: auto; padding: 22px 16px 40px clamp(16px, 3vw, 32px); border-right: 1px solid var(--uv-line); scrollbar-width: thin; }
+  .side h4 { margin: 18px 0 6px; font: 600 11px var(--uv-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--uv-dim); }
+  .side a { display: block; padding: 5px 10px; border-radius: 8px; color: var(--uv-muted); text-decoration: none; font-size: 14px; }
+  .side a:hover, .side a.is-active { color: var(--uv-text); background: var(--uv-surface-2); }
+  .content { padding: 36px clamp(16px, 4vw, 48px) 100px; min-width: 0; }
+  .doc { padding: 34px 0; border-bottom: 1px solid var(--uv-line); scroll-margin-top: 80px; }
+  .doc h2 { margin: 0 0 6px; font: 700 24px var(--uv-display); letter-spacing: -.02em; display: flex; align-items: center; gap: 10px; }
+  .doc > p { margin: 0 0 16px; color: var(--uv-muted); max-width: 760px; }
+  .doc code, .doc > p code { font: 13px var(--uv-mono); background: var(--uv-surface-2); padding: 1px 6px; border-radius: 6px; color: var(--uv-text); }
+  .ex { border: 1px solid var(--uv-line); border-radius: 18px; overflow: hidden; background: var(--uv-surface); }
+  .ex__preview { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; padding: 32px 24px; min-height: 140px; background: var(--uv-bg); background-image: radial-gradient(var(--uv-line) 1px, transparent 1px); background-size: 16px 16px; }
+  .ex__code { position: relative; border-top: 1px solid var(--uv-line); }
+  .ex__code pre { margin: 0; padding: 16px 18px; overflow: auto; max-height: 320px; font: 12.5px/1.65 var(--uv-mono); color: #c9c9dc; background: #07070b; }
+  :root[data-theme="light"] .ex__code pre { background: #f3f3f8; color: #333; }
+  .ex__code pre { scrollbar-color: #ffffff22 transparent; scrollbar-width: thin; }
+  .ex__code .uv-btn { position: absolute; top: 10px; right: 10px; }
+  .tok-tag { color: #f472b6; } .tok-attr { color: #a78bfa; } .tok-str { color: #34d399; } .tok-com { color: #66667a; }
+  .api { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 14px; }
+  .api td, .api th { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--uv-line); vertical-align: top; }
+  .api th { font: 600 11px var(--uv-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--uv-dim); }
+  .api td:first-child { font: 13px var(--uv-mono); color: var(--uv-accent-2); white-space: nowrap; }
+  .install { display: grid; gap: 12px; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .side { display: none; } }
+</style>
+<script>try{const t=localStorage.getItem("uv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body class="uv">
+<header class="top">
+  <a class="brand" href="./"><svg viewBox="0 0 32 32" width="26" height="26"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#bg)"/><path d="M9 10l7 13 7-13" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>UI Vault <span class="uv-badge uv-badge--accent">v2 API</span></a>
+  <nav class="uv-nav" style="border:0;background:none;padding:0"><a href="./">Library</a><a class="is-active" href="docs.html">API Docs</a><a href="showcase.html">Showcase</a></nav>
+  <button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.theme('toggle')" aria-label="Toggle theme">◐</button>
+</header>
+<div class="layout">
+  <aside class="side" id="side">
+    <input class="uv-input" id="q" placeholder="Filter…  ( / )" style="height:36px;font-size:14px" />
+  </aside>
+  <main class="content" id="content">
+    <p class="uv-eyebrow">UI Vault library · v2.0 · MIT</p>
+    <h1 class="uv-h1" style="font-size:clamp(34px,5vw,56px);margin:10px 0 14px">The <span class="uv-grad-text">UV</span> API</h1>
+    <p class="uv-muted" style="max-width:720px;font-size:17px;margin:0 0 22px">Two files. <code style="font:14px var(--uv-mono)">uivault.css</code> gives you 40+ components as <code style="font:14px var(--uv-mono)">uv-*</code> classes. <code style="font:14px var(--uv-mono)">uivault.js</code> adds motion and behavior through <code style="font:14px var(--uv-mono)">data-uv</code> attributes or the <code style="font:14px var(--uv-mono)">UV</code> object. You don't need a framework or a build step.</p>
+    <div class="install" id="install"></div>
+  </main>
+</div>
+<script src="lib/uivault.js"></script>
+<script>
+const BASE = "https://thenameiscobmarley.github.io/ui-vault/lib/";
+// Each doc: [section, id, title, description, html, extraJs?]
+const DOCS = [
+["Start", "theming", "Theming", "Every color comes from CSS variables. Set <code>--uv-accent</code> and <code>--uv-accent-2</code> on any element, or use a preset class: <code>uv-theme-rose</code>, <code>-emerald</code>, <code>-ocean</code>, <code>-gold</code>, <code>-mono</code>. Add <code>data-theme=\"light\"</code> on &lt;html&gt; for light mode, or call <code>UV.theme('toggle')</code>.",
+`<div class="uv-row">
+  <button class="uv-btn uv-btn--primary">Default</button>
+  <div class="uv-theme-rose"><button class="uv-btn uv-btn--primary">Rose</button></div>
+  <div class="uv-theme-emerald"><button class="uv-btn uv-btn--primary">Emerald</button></div>
+  <div class="uv-theme-ocean"><button class="uv-btn uv-btn--primary">Ocean</button></div>
+  <div class="uv-theme-gold"><button class="uv-btn uv-btn--primary">Gold</button></div>
+  <div style="--uv-accent:#14b8a6;--uv-accent-2:#f0abfc"><button class="uv-btn uv-btn--grad">Custom vars</button></div>
+  <button class="uv-btn uv-btn--ghost" onclick="UV.theme('toggle')">Toggle theme</button>
+</div>`],
+
+["Buttons", "btn", "Button variants", "Base class <code>uv-btn</code>. Variants: <code>--primary --grad --ghost --soft --danger --glow --3d --shine --border</code>. Sizes: <code>--sm --lg --icon --block --pill</code>. Add <code>is-loading</code> for a spinner.",
+`<button class="uv-btn">Default</button>
+<button class="uv-btn uv-btn--primary">Primary</button>
+<button class="uv-btn uv-btn--grad">Gradient</button>
+<button class="uv-btn uv-btn--ghost">Ghost</button>
+<button class="uv-btn uv-btn--soft">Soft</button>
+<button class="uv-btn uv-btn--danger">Danger</button>
+<button class="uv-btn uv-btn--glow">Glow</button>
+<button class="uv-btn uv-btn--3d">3D press</button>
+<button class="uv-btn uv-btn--primary uv-btn--shine">Shine</button>
+<button class="uv-btn uv-btn--border"><span>Spinning border</span></button>
+<button class="uv-btn uv-btn--primary is-loading">Loading</button>`],
+["Buttons", "btn-sizes", "Sizes & groups", "Combine sizes with any variant. <code>uv-btn-group</code> joins buttons.",
+`<button class="uv-btn uv-btn--primary uv-btn--sm">Small</button>
+<button class="uv-btn uv-btn--primary">Medium</button>
+<button class="uv-btn uv-btn--primary uv-btn--lg uv-btn--pill">Large pill</button>
+<button class="uv-btn uv-btn--ghost uv-btn--icon">★</button>
+<div class="uv-btn-group">
+  <button class="uv-btn">Left</button><button class="uv-btn">Middle</button><button class="uv-btn">Right</button>
+</div>`],
+["Buttons", "btn-behaviors", "Magnetic, ripple & confetti", "Add behaviors with <code>data-uv=\"magnetic ripple\"</code>. <code>data-uv-confetti</code> bursts confetti on click, and <code>data-uv-sound=\"click|pop|success|error\"</code> plays a synthesized UI sound.",
+`<button class="uv-btn uv-btn--ghost uv-btn--lg" data-uv="magnetic">Magnetic</button>
+<button class="uv-btn uv-btn--primary uv-btn--lg" data-uv="ripple">Ripple</button>
+<button class="uv-btn uv-btn--grad uv-btn--lg" data-uv-confetti data-uv-sound="success">Confetti + sound</button>`],
+
+["Surfaces", "card", "Cards", "<code>uv-card</code> plus modifiers: <code>--hover</code> (lift), <code>--spot</code> (cursor spotlight, auto-wired), <code>--grad-border</code>, <code>--glow</code>. <code>uv-beam</code> adds a light beam that travels around the border.",
+`<div class="uv-card uv-card--hover" style="width:200px"><h3 class="uv-h3">Hover</h3><p class="uv-muted">Lifts up.</p></div>
+<div class="uv-card uv-card--spot" style="width:200px"><h3 class="uv-h3">Spotlight</h3><p class="uv-muted">Follows cursor.</p></div>
+<div class="uv-card uv-card--grad-border" style="width:200px"><h3 class="uv-h3">Gradient</h3><p class="uv-muted">Border.</p></div>
+<div class="uv-card uv-beam" style="width:200px"><h3 class="uv-h3">Beam</h3><p class="uv-muted">Orbiting light.</p></div>`],
+["Surfaces", "glass", "Glass & tilt", "<code>uv-glass</code> frosted panel. <code>data-uv=\"tilt\"</code> gives 3D tilt with glare.",
+`<div class="uv-bg-mesh" style="padding:30px;border-radius:20px">
+  <div class="uv-glass" data-uv="tilt" style="width:240px;padding:22px;border-radius:18px">
+    <small class="uv-muted">Balance</small>
+    <div style="font:700 28px var(--uv-display)">$12,480</div>
+    <span class="uv-badge uv-badge--success">+4.2%</span>
+  </div>
+</div>`],
+
+["Text", "text", "Text effects", "<code>uv-grad-text</code>, <code>uv-shimmer-text</code>, <code>uv-aurora-text</code>, <code>uv-glow-text</code>, <code>uv-outline-text</code>, <code>uv-highlight</code>. Headings: <code>uv-h1 uv-h2 uv-h3 uv-eyebrow</code>.",
+`<div class="uv-col" style="align-items:center">
+  <span class="uv-eyebrow">Eyebrow label</span>
+  <h2 class="uv-h2 uv-grad-text">Gradient heading</h2>
+  <h2 class="uv-h2 uv-shimmer-text">Shimmer heading</h2>
+  <h2 class="uv-h2 uv-aurora-text">Aurora heading</h2>
+  <h2 class="uv-h2 uv-glow-text">Glowing heading</h2>
+  <h2 class="uv-h2 uv-outline-text">Outline heading</h2>
+  <p>Some text with a <span class="uv-highlight">highlighted phrase</span>.</p>
+</div>`],
+["Text", "typewriter", "Typewriter, scramble & count-up", "<code>data-uv-type=\"A|B|C\"</code> cycles words. <code>data-uv-scramble</code> decodes text when visible. <code>data-uv-count=\"1234\"</code> counts up on scroll, with optional <code>data-uv-prefix</code>, <code>-suffix</code> and <code>-decimals</code>.",
+`<div class="uv-col" style="align-items:center">
+  <h2 class="uv-h2">Build <span class="uv-grad-text" data-uv-type="faster|prettier|for free"></span></h2>
+  <h3 class="uv-h3 uv-mono" data-uv-scramble>ACCESS GRANTED</h3>
+  <div class="uv-row" style="gap:30px;font:700 32px var(--uv-display)">
+    <span data-uv-count="12840">0</span>
+    <span data-uv-count="99.9" data-uv-decimals="1" data-uv-suffix="%">0</span>
+    <span data-uv-count="4200" data-uv-prefix="$">0</span>
+  </div>
+</div>`],
+
+["Forms", "inputs", "Inputs", "<code>uv-input</code>, <code>uv-select</code>, <code>uv-textarea</code>. Use <code>uv-field</code> for a floating label (the input needs <code>placeholder=\" \"</code>) and <code>uv-input-icon</code> for a leading icon. Add <code>is-invalid</code> to shake.",
+`<div class="uv-col" style="width:300px">
+  <label class="uv-field"><input class="uv-input" placeholder=" "><span>Floating label</span></label>
+  <label class="uv-input-icon"><i>⌕</i><input class="uv-input" placeholder="With icon"></label>
+  <select class="uv-select"><option>Select an option</option><option>Two</option></select>
+  <input class="uv-input is-invalid" value="Invalid state">
+</div>`],
+["Forms", "toggles", "Switch, checkbox, radio, range", "<code>uv-switch</code>, <code>uv-check</code> (checkbox or radio), and <code>uv-range</code> (gradient fill, auto-wired).",
+`<label class="uv-switch"><input type="checkbox" checked><i></i> Wi-Fi</label>
+<label class="uv-check"><input type="checkbox" checked> Checkbox</label>
+<label class="uv-check"><input type="radio" name="r" checked> Radio A</label>
+<label class="uv-check"><input type="radio" name="r"> Radio B</label>
+<input class="uv-range" type="range" value="60" style="width:200px">`],
+["Forms", "otp", "OTP & file drop", "<code>uv-otp</code> auto-advances, handles paste, and fires a <code>uv-complete</code> event. <code>uv-drop</code> is a click/drag file zone that fires <code>uv-files</code> (or use <code>UV.drop(el, cb)</code>).",
+`<div class="uv-otp"><input><input><input><input></div>
+<div class="uv-drop" style="width:260px">⇪ <b>Drop files</b><span class="uv-dim">or click</span></div>`,
+`document.querySelector('#ex-otp .uv-otp').addEventListener('uv-complete', e => UV.toast('Code: ' + e.detail, {type:'success'}));
+document.querySelector('#ex-otp .uv-drop').addEventListener('uv-files', e => UV.toast(e.detail.length + ' file(s) picked'));`],
+
+["Navigation", "tabs", "Tabs", "Any <code>uv-tabs</code> gets a sliding indicator, arrow-key navigation and ARIA. Link panels with <code>aria-controls</code>. Styles: default, <code>--line</code>, <code>--pill</code>, <code>--white</code>. For code: <code>UV.tabs(el, (tab, index) =&gt; …)</code>.",
+`<div class="uv-col" style="align-items:center;width:100%">
+  <div class="uv-tabs">
+    <button aria-controls="p1" aria-selected="true">Overview</button>
+    <button aria-controls="p2">Analytics</button>
+    <button aria-controls="p3">Reports</button>
+  </div>
+  <div id="p1" class="uv-panel uv-muted">📊 Overview panel</div>
+  <div id="p2" class="uv-panel uv-muted" hidden>📈 Analytics panel</div>
+  <div id="p3" class="uv-panel uv-muted" hidden>📄 Reports panel</div>
+  <div class="uv-tabs uv-tabs--line"><button>Profile</button><button>Security</button><button>Billing</button></div>
+  <div class="uv-tabs uv-tabs--pill uv-tabs--white"><button>Day</button><button>Week</button><button>Month</button></div>
+</div>`],
+["Navigation", "nav", "Navbar, breadcrumbs, steps, dock", "<code>uv-nav</code>, <code>uv-crumbs</code>, <code>uv-steps</code> (with <code>is-done</code> / <code>is-current</code>), and <code>uv-dock</code> (magnifies on hover, pure CSS).",
+`<div class="uv-col" style="align-items:center">
+  <nav class="uv-nav"><b>◆ Brand</b><a class="is-active">Home</a><a>Docs</a><a>Blog</a></nav>
+  <div class="uv-crumbs"><a href="#">Home</a><a href="#">Projects</a><span>UI Vault</span></div>
+  <ol class="uv-steps" style="padding:0"><li class="is-done">Cart</li><li class="is-current">Ship</li><li>Pay</li></ol>
+  <div class="uv-dock uv-glass"><a>🗂</a><a>🎵</a><a>🌄</a><a>⌨</a><a>✉</a></div>
+</div>`],
+["Navigation", "accordion", "Accordion", "<code>uv-accordion</code> around native <code>&lt;details&gt;</code>. It's accessible by default.",
+`<div class="uv-accordion" style="width:min(420px,100%)">
+  <details open><summary>What is it?</summary><div>A tiny UI library.</div></details>
+  <details><summary>Is it free?</summary><div>MIT licensed.</div></details>
+</div>`],
+
+["Data", "badges", "Badges, chips, avatars, kbd, tooltips", "<code>uv-badge</code> (<code>--accent --success --warn --danger --live</code>), <code>uv-chip</code>, <code>uv-avatar</code> (<code>--s</code> size, <code>data-status</code>, <code>--ring</code>), <code>uv-avatar-stack</code>, <code>uv-kbd</code>, and <code>data-tip=\"…\"</code> tooltips.",
+`<span class="uv-badge">Default</span>
+<span class="uv-badge uv-badge--accent">Accent</span>
+<span class="uv-badge uv-badge--success uv-badge--live">Live</span>
+<span class="uv-badge uv-badge--warn">Warn</span>
+<span class="uv-badge uv-badge--danger">Danger</span>
+<button class="uv-chip is-active">Chip</button>
+<div class="uv-avatar uv-avatar--ring" data-status="online">KV</div>
+<div class="uv-avatar-stack"><div class="uv-avatar">A</div><div class="uv-avatar">B</div><div class="uv-avatar">C</div></div>
+<span><span class="uv-kbd">Ctrl</span> <span class="uv-kbd">K</span></span>
+<button class="uv-btn uv-btn--ghost" data-tip="I'm a tooltip">Hover me</button>`],
+["Data", "progress", "Progress, rings, meters", "<code>uv-progress</code> (set <code>--v</code> or <code>data-value</code>, with <code>--stripes</code> or <code>--indeterminate</code>), <code>uv-ring</code> (<code>data-value</code> animates on scroll, or use <code>UV.ring(el, 80)</code>), and <code>uv-meter</code> (audio-style bars).",
+`<div class="uv-col" style="width:260px">
+  <div class="uv-progress" data-value="72"><i></i></div>
+  <div class="uv-progress uv-progress--stripes" data-value="45"><i></i></div>
+  <div class="uv-progress uv-progress--indeterminate"><i></i></div>
+</div>
+<div class="uv-ring-wrap"><div class="uv-ring" data-value="84"></div><b style="font:700 22px var(--uv-display)">84%</b></div>
+<div class="uv-meter" style="width:120px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>`],
+["Data", "lists", "Lists, tables, timeline", "<code>uv-list</code>, <code>uv-table</code>, <code>uv-timeline</code>.",
+`<ul class="uv-timeline" style="width:240px">
+  <li><b>Shipped v2</b><div class="uv-muted">Today</div></li>
+  <li><b>Beta</b><div class="uv-muted">Last week</div></li>
+</ul>
+<table class="uv-table" style="width:300px"><tr><th>Name</th><th>Status</th></tr>
+  <tr><td>API</td><td><span class="uv-badge uv-badge--success">Up</span></td></tr>
+  <tr><td>CDN</td><td><span class="uv-badge uv-badge--warn">Slow</span></td></tr></table>`],
+["Data", "loaders", "Loaders & skeletons", "<code>uv-spinner</code>, <code>uv-dots</code>, <code>uv-skeleton</code>.",
+`<div class="uv-spinner"></div>
+<div class="uv-dots"><i></i><i></i><i></i></div>
+<div class="uv-col" style="width:220px"><div class="uv-skeleton" style="width:70%"></div><div class="uv-skeleton"></div><div class="uv-skeleton" style="height:60px"></div></div>`],
+
+["Feedback", "toast", "UV.toast()", "<code>UV.toast(message, {type: 'info'|'success'|'error'|'warn', duration})</code> returns a close function. Click a toast to dismiss it.",
+`<button class="uv-btn uv-btn--soft" onclick="UV.toast('Saved!', {type:'success'})">Success</button>
+<button class="uv-btn uv-btn--soft" onclick="UV.toast('Failed to sync', {type:'error'})">Error</button>
+<button class="uv-btn uv-btn--soft" onclick="UV.toast('Battery low', {type:'warn'})">Warning</button>
+<button class="uv-btn uv-btn--soft" onclick="UV.toast('Heads up')">Info</button>`],
+["Feedback", "modal", "UV.modal()", "Promise-based dialog: <code>await UV.modal({title, body, actions:[{label, value, primary|danger}]})</code> resolves to the clicked action's value, or <code>null</code> if dismissed.",
+`<button class="uv-btn uv-btn--danger" onclick="UV.modal({title:'Delete file?', body:'This cannot be undone.', actions:[{label:'Cancel',value:false},{label:'Delete',value:true,danger:true}]}).then(v => UV.toast('Result: ' + v))">Open modal</button>`],
+["Feedback", "alerts", "Alerts", "<code>uv-alert</code> with <code>--info --success --warn --danger</code>.",
+`<div class="uv-col" style="width:min(460px,100%)">
+  <div class="uv-alert uv-alert--info">ℹ A new version is available.</div>
+  <div class="uv-alert uv-alert--success">✓ Settings saved.</div>
+  <div class="uv-alert uv-alert--warn">⚠ Your trial ends in 3 days.</div>
+  <div class="uv-alert uv-alert--danger">✕ Payment failed.</div>
+</div>`],
+["Feedback", "cmdk", "UV.cmdk()", "Command palette: <code>const p = UV.cmdk([{label, icon, shortcut, keywords, action}], {hotkey:'k'})</code>. It opens with Ctrl/⌘+K or <code>p.open()</code>, has fuzzy filtering and arrow-key navigation.",
+`<button class="uv-btn uv-btn--ghost" onclick="window.palette.open()">⌕ Open palette <span class="uv-kbd">Ctrl K</span></button>`,
+`window.palette = UV.cmdk([
+  {label:'Toggle theme', icon:'◐', action:() => UV.theme('toggle')},
+  {label:'Celebrate', icon:'🎉', action:() => UV.confetti()},
+  {label:'Show a toast', icon:'💬', action:() => UV.toast('Hello from the palette')},
+  {label:'Go to Showcase', icon:'✨', action:() => location.href='showcase.html'},
+]);`],
+["Feedback", "confetti", "UV.confetti() & UV.sound()", "<code>UV.confetti({x, y, count, colors})</code> uses one canvas and cleans up after itself. <code>UV.sound('click'|'pop'|'success'|'error'|'hover')</code> synthesizes the sound with Web Audio, so there are no audio files.",
+`<button class="uv-btn uv-btn--3d" onclick="UV.confetti()">Confetti</button>
+<button class="uv-btn" onclick="UV.sound('click')">click</button>
+<button class="uv-btn" onclick="UV.sound('pop')">pop</button>
+<button class="uv-btn" onclick="UV.sound('success')">success</button>
+<button class="uv-btn" onclick="UV.sound('error')">error</button>`],
+
+["Effects", "backgrounds", "Backgrounds", "<code>uv-bg-grid</code>, <code>uv-bg-dots</code>, <code>uv-bg-mesh</code>, <code>uv-bg-aurora</code>, <code>uv-grain</code>, <code>uv-fade-mask</code>.",
+`<div class="uv-bg-grid uv-fade-mask" style="width:180px;height:120px;border-radius:14px"></div>
+<div class="uv-bg-dots" style="width:180px;height:120px;border-radius:14px;border:1px solid var(--uv-line)"></div>
+<div class="uv-bg-mesh" style="width:180px;height:120px;border-radius:14px"></div>
+<div class="uv-bg-aurora" style="width:180px;height:120px;border-radius:14px;background:#0b0b14"></div>
+<div class="uv-grain" style="width:180px;height:120px;border-radius:14px;background:linear-gradient(135deg,#0f766e,#1e1b4b)"></div>`],
+["Effects", "marquee", "Marquee", "<code>uv-marquee</code> with one inner &lt;div&gt; (put the content in twice for a seamless loop). Use <code>--dur</code> and <code>--gap</code>, and <code>uv-marquee--reverse</code>.",
+`<div class="uv-marquee" style="width:100%;--dur:15s"><div class="uv-dim" style="font:700 22px var(--uv-display)"><span>◆ NOVA</span><span>● ORBIT</span><span>▲ PEAK</span><span>■ BLOCK</span><span>✦ SPARK</span><span>◆ NOVA</span><span>● ORBIT</span><span>▲ PEAK</span><span>■ BLOCK</span><span>✦ SPARK</span></div></div>`],
+["Effects", "reveal", "Scroll reveal & stagger", "<code>data-uv-reveal</code> (or <code>=\"left|right|zoom\"</code>) fades an element in when it scrolls into view. Put <code>data-uv-stagger</code> on a parent to cascade its children. <code>uv-float</code>, <code>uv-pulse</code> and <code>uv-spin</code> are ambient loops.",
+`<div class="uv-row" data-uv-stagger="zoom">
+  <div class="uv-card">One</div><div class="uv-card">Two</div><div class="uv-card">Three</div><div class="uv-card">Four</div>
+</div>
+<span class="uv-float" style="font-size:36px">🎈</span><span class="uv-pulse" style="font-size:36px">💜</span><span class="uv-spin" style="font-size:36px">✦</span>`],
+["Effects", "parallax", "Parallax", "<code>data-uv=\"parallax\"</code> on a container moves its <code>[data-depth]</code> children with the mouse. Negative depth moves the opposite way.",
+`<div data-uv="parallax" style="position:relative;width:320px;height:180px;border-radius:18px;background:#0b0b18;display:grid;place-items:center;overflow:hidden">
+  <i data-depth="1.6" style="position:absolute;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,#7c3aed99,transparent 70%)"></i>
+  <i data-depth="-1" style="position:absolute;left:20px;top:20px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,#22d3ee99,transparent 70%)"></i>
+  <b data-depth=".4" class="uv-glow-text" style="font:700 28px var(--uv-display)">DEPTH</b>
+</div>`],
+];
+
+// ── Render ──
+const content = document.getElementById("content"), side = document.getElementById("side");
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const hl = code => esc(code).replace(/(&lt;\/?)([a-z0-9-]+)|( )([a-z-]+)(?==")|("[^"\n]*")/g,
+  (m, a, b, c, d, e) => a ? a + "<span class=tok-tag>" + b + "</span>" : c ? c + "<span class=tok-attr>" + d + "</span>" : "<span class=tok-str>" + e + "</span>");
+
+document.getElementById("install").innerHTML = `
+  <div class="ex"><div class="ex__code"><pre>${hl(`<!-- 1. Add the two files (download them or link the hosted copies) -->
+<link rel="stylesheet" href="${BASE}uivault.css">
+<script src="${BASE}uivault.js" defer></` + `script>
+
+<!-- 2. Optional fonts used by the default theme -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- 3. Use it -->
+<body class="uv">
+  <button class="uv-btn uv-btn--primary" data-uv="ripple" data-uv-confetti>Hello</button>
+</body>`)}</pre><button class="uv-btn uv-btn--sm uv-btn--ghost" data-copy-install>Copy</button></div></div>
+  <div class="uv-row"><a class="uv-btn uv-btn--primary" href="lib/uivault.css" download>Download uivault.css</a><a class="uv-btn uv-btn--primary" href="lib/uivault.js" download>Download uivault.js</a><a class="uv-btn uv-btn--ghost" href="showcase.html">See 30 examples →</a></div>`;
+document.querySelector("[data-copy-install]").onclick = () => UV.copy(document.querySelector("#install pre").textContent);
+
+let lastSec = "";
+DOCS.forEach(([sec, id, title, desc, html, js]) => {
+  if (sec !== lastSec) { const h = document.createElement("h4"); h.textContent = sec; side.appendChild(h); lastSec = sec; }
+  const a = document.createElement("a"); a.href = "#" + id; a.textContent = title; a.dataset.k = (sec + " " + title + " " + desc).toLowerCase(); side.appendChild(a);
+  const s = document.createElement("section");
+  s.className = "doc"; s.id = id;
+  const code = html + (js ? `\n\n<script>\n${js}\n</` + "script>" : "");
+  s.innerHTML = `<h2>${title}<span class="uv-badge">${sec}</span></h2><p>${desc}</p>
+    <div class="ex" id="ex-${id}"><div class="ex__preview">${html}</div>
+    <div class="ex__code"><pre>${hl(code)}</pre><button class="uv-btn uv-btn--sm uv-btn--ghost">Copy</button></div></div>`;
+  s.querySelector(".ex__code .uv-btn").onclick = () => UV.copy(code);
+  content.appendChild(s);
+  if (js) try { new Function(js)(); } catch (e) { console.warn(id, e); }
+});
+
+// Function reference table
+const api = document.createElement("section");
+api.className = "doc"; api.id = "reference";
+api.innerHTML = `<h2>JavaScript reference<span class="uv-badge">UV.*</span></h2><p>Everything on <code>window.UV</code>. All functions are safe to call more than once and respect <code>prefers-reduced-motion</code>.</p>
+<table class="api"><tr><th>Function</th><th>What it does</th></tr>${[
+["UV.init(root?)", "Wires every data-uv*, uv-tabs, uv-otp, uv-range, uv-drop and reveal inside root. Runs automatically on load. Call it again after you inject new HTML."],
+["UV.toast(msg, {type, duration, icon})", "Shows a toast and returns a close() function."],
+["UV.modal({title, body, actions})", "Promise that resolves to the chosen action's value."],
+["UV.cmdk(items, {hotkey, placeholder})", "Creates a command palette and returns {open, close}."],
+["UV.confetti({x, y, count, colors})", "One-shot confetti burst."],
+["UV.sound(name, volume)", "click · pop · success · error · hover, all synthesized."],
+["UV.copy(text, toastMsg)", "Copies to the clipboard (with fallback) and shows a toast."],
+["UV.countUp(el, to, {duration, decimals, prefix, suffix, from})", "Animated number."],
+["UV.typewriter(el, words, {speed, pause, loop})", "Typing loop. Returns stop()."],
+["UV.scramble(el, text, {duration, chars})", "Decoder-style text reveal."],
+["UV.tabs(el, onChange)", "Sliding-indicator tabs with panels and keys. Returns {select(i)}."],
+["UV.ring(el, value)", "Animates a uv-ring to 0–100."],
+["UV.tilt(el, {max}) / UV.magnetic(el, {strength})", "Pointer-driven 3D tilt and magnetic pull."],
+["UV.spotlight(el) / UV.ripple(el) / UV.parallax(el)", "Pointer effects."],
+["UV.otp(el) / UV.range(el) / UV.drop(el, cb)", "Form helpers."],
+["UV.reveal(root?)", "Starts scroll reveals, count-ups, rings and progress bars."],
+["UV.theme('dark'|'light'|'toggle')", "Switches theme and remembers it."],
+].map(([f, d]) => `<tr><td>${esc(f)}</td><td>${d}</td></tr>`).join("")}</table>`;
+content.appendChild(api);
+const ra = document.createElement("a"); ra.href = "#reference"; ra.textContent = "JS reference"; ra.dataset.k = "reference api functions"; side.appendChild(ra);
+
+
+// Sidebar filter + scrollspy
+const q = document.getElementById("q");
+q.addEventListener("input", () => side.querySelectorAll("a").forEach(a => a.hidden = q.value && !a.dataset.k.includes(q.value.toLowerCase())));
+document.addEventListener("keydown", e => { if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); q.focus(); } });
+const links = [...side.querySelectorAll("a")];
+const spy = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle("is-active", a.hash === "#" + e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
+document.querySelectorAll(".doc").forEach(d => spy.observe(d));
+</script>
+</body>
+</html>
