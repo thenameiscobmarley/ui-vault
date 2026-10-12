@@ -22,5 +22,5 @@ no glows, no gradient text, no emoji, no aurora blobs, no hype copy. Light defau
 - [x] B. lib/uivault.css tokens/components (flatten grads/glows, new fonts) — drives docs+showcase
 - [x] C. showcase.html cleanup (strip emoji + hardcoded neon gradients, calmer copy)
 - [x] D. docs.html copy/fonts
-- [ ] E. app/ (Flow) restyle to match
+- [x] E. app/ (Flow) restyle to match
 - [ ] F. Playground stage frame + demo snippet colors toned to the palette
