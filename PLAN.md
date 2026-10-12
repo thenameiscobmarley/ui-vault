@@ -47,5 +47,7 @@ Themes scope with data-uv-theme="name" on ANY element (mix & match). FX are uv-f
 - [x] 3. lib/css/fx.css — 40+ effect mixins
 - [x] 4. JS modules (core registry + motion/feedback/forms/fx) 
 - [x] 5. tools/build.py → bundles, per-theme files, manifest.json, zips
-- [ ] 6. quickstart.html (steps, zip, CDN, module table, theme gallery, mix&match, fx gallery, custom builder)
-- [ ] 7. Nav/hero links, docs entries, README, push, verify
+- [x] 6. quickstart.html (steps, zip, CDN, module table, theme gallery, mix&match, fx gallery, custom builder)
+- [x] 7. Nav/hero links, docs entries, README, push, verify
+
+v5 status: ALL DONE. Remember: edit lib/css/*.css, lib/css/themes.src.css or lib/js/*.js, then run python3 tools/build.py.
