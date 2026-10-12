@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI Vault — Open-source UI that looks 10× better</title>
+  <meta name="description" content="A curated vault of open-source UI kits, icons, fonts, motion, effects and post-processing — plus live, copy-ready snippets." />
+  <meta name="theme-color" content="#08080d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 10l7 13 7-13' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script>try{const t=localStorage.getItem("uiv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="UI Vault home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#bg)"/><path d="M9 10l7 13 7-13" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>UI&nbsp;Vault</span>
+    </a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#library">Library</a>
+      <a href="#playground">Playground</a>
+      <a href="#postfx">Post-FX Lab</a>
+      <a href="#logo">Logo Forge</a>
+      <a href="app/" class="topnav__app">Flow app ↗</a>
+    </nav>
+    <div class="topbar__actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ── Hero ─────────────────────────────────────────────── -->
+    <section class="hero">
+      <a class="pill-badge" href="#playground"><i></i> <span id="demoCountBadge">28</span> live snippets · copy in one click</a>
+      <h1>Make your UI look<br /><span class="grad-text">10× better.</span></h1>
+      <p class="hero__sub">A hand-picked vault of open-source UI kits, tabs, buttons, motion, effects, post-processing, icons, logos and fonts — with live demos you can copy straight into your project.</p>
+
+      <label class="search" for="search">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search “tabs”, “bloom”, “icons”, “rust”…" autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+      <div class="hero__chips" id="quickChips"></div>
+
+      <dl class="stats">
+        <div><dt>Resources</dt><dd id="statRes">0</dd></div>
+        <div><dt>Categories</dt><dd id="statCat">0</dd></div>
+        <div><dt>Live snippets</dt><dd id="statDemo">0</dd></div>
+        <div><dt>Price</dt><dd>$0</dd></div>
+      </dl>
+    </section>
+
+    <!-- ── Library ──────────────────────────────────────────── -->
+    <section id="library" class="section">
+      <header class="section__head">
+        <p class="eyebrow">01 — Library</p>
+        <h2>The open-source UI vault</h2>
+        <p class="section__sub">Every link is free to use. Filter by category, search anything, and ★ the ones you love — favorites are saved in your browser.</p>
+      </header>
+
+      <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Categories"><span class="cat-tabs__ind" aria-hidden="true"></span></div>
+
+      <div class="toolbar">
+        <p id="resultCount" class="muted"></p>
+        <div class="toolbar__right">
+          <label class="mini-switch"><input type="checkbox" id="favOnly" /><i></i> Favorites only</label>
+          <select id="sortSel" aria-label="Sort">
+            <option value="curated">Curated order</option>
+            <option value="az">A → Z</option>
+            <option value="license">By license</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="res-grid" id="resGrid"></div>
+      <div class="empty" id="emptyState" hidden>
+        <p>Nothing matches that. Try “button”, “glsl”, “svelte”…</p>
+      </div>
+    </section>
+
+    <!-- ── Playground ───────────────────────────────────────── -->
+    <section id="playground" class="section">
+      <header class="section__head">
+        <p class="eyebrow">02 — Playground</p>
+        <h2>Live snippets, zero dependencies</h2>
+        <p class="section__sub">Plain HTML + CSS (and a few lines of JS where needed). Hover, click, play — then hit <b>Copy</b>.</p>
+      </header>
+      <div class="seg-tabs" id="demoTabs" role="tablist" aria-label="Snippet groups"></div>
+      <div class="demo-grid" id="demoGrid"></div>
+    </section>
+
+    <!-- ── Post-FX Lab ──────────────────────────────────────── -->
+    <section id="postfx" class="section">
+      <header class="section__head">
+        <p class="eyebrow">03 — Post-FX Lab</p>
+        <h2>Post-processing, explained by touching it</h2>
+        <p class="section__sub">A real WebGL post pass: bloom, chromatic aberration, vignette, film grain, scanlines and CRT curvature. Drop in your own image, dial it in, copy the shader.</p>
+      </header>
+
+      <div class="fx">
+        <div class="fx__stage">
+          <canvas id="fxCanvas" width="960" height="540"></canvas>
+          <div class="fx__overlay">
+            <button class="chip" id="fxPlay">❚❚ Pause</button>
+            <button class="chip" id="fxCompare" title="Hold to see the original">Hold: before</button>
+            <label class="chip">Your image <input type="file" id="fxFile" accept="image/*" hidden /></label>
+          </div>
+          <p class="fx__nogl" id="fxNoGL" hidden>WebGL isn't available in this browser.</p>
+        </div>
+        <aside class="fx__panel">
+          <div class="fx__presets" id="fxPresets"></div>
+          <div class="fx__sliders" id="fxSliders"></div>
+          <button class="btn btn--ghost btn--full" id="fxCopy">Copy GLSL shader</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ── Logo Forge ───────────────────────────────────────── -->
+    <section id="logo" class="section">
+      <header class="section__head">
+        <p class="eyebrow">04 — Logo Forge</p>
+        <h2>A clean logo in ten seconds</h2>
+        <p class="section__sub">Pick a mark, a name and a gradient. Exports a crisp, editable SVG you own — great for side projects, apps and README headers.</p>
+      </header>
+
+      <div class="forge">
+        <div class="forge__controls">
+          <label class="field"><span>Name</span><input id="lgName" value="Nimbus" maxlength="18" /></label>
+          <div class="field"><span>Mark</span><div class="mark-pick" id="lgMarks"></div></div>
+          <div class="field-row">
+            <label class="field"><span>From</span><input type="color" id="lgC1" value="#8b5cf6" /></label>
+            <label class="field"><span>To</span><input type="color" id="lgC2" value="#22d3ee" /></label>
+            <label class="field"><span>Shape</span>
+              <select id="lgShape"><option value="squircle">Squircle</option><option value="circle">Circle</option><option value="none">No container</option></select>
+            </label>
+          </div>
+          <div class="field-row">
+            <label class="field"><span>Font</span>
+              <select id="lgFont"><option value="Space Grotesk">Space Grotesk</option><option value="Inter">Inter</option><option value="JetBrains Mono">JetBrains Mono</option><option value="Georgia">Serif</option></select>
+            </label>
+            <label class="field"><span>Weight</span><input type="range" id="lgWeight" min="400" max="700" step="100" value="700" /></label>
+          </div>
+          <div class="field-row">
+            <button class="btn btn--primary" id="lgDownload">Download SVG</button>
+            <button class="btn btn--ghost" id="lgCopy">Copy SVG</button>
+            <button class="btn btn--ghost" id="lgRandom">🎲 Shuffle</button>
+          </div>
+        </div>
+        <div class="forge__preview">
+          <div class="forge__tile forge__tile--dark" id="lgDark"></div>
+          <div class="forge__tile forge__tile--light" id="lgLight"></div>
+          <div class="forge__icons" id="lgIcons"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── App showcase ─────────────────────────────────────── -->
+    <section class="section showcase">
+      <div class="showcase__text">
+        <p class="eyebrow">05 — Built with the vault</p>
+        <h2>Flow — a focus app</h2>
+        <p class="section__sub">A real app using the techniques on this page: sliding tabs, a glowing progress ring, tactile buttons, toasts, a mini chart and subtle sound. No frameworks, one folder.</p>
+        <a class="btn btn--primary btn--lg" href="app/">Open Flow →</a>
+      </div>
+      <a class="showcase__preview" href="app/" aria-label="Open the Flow app">
+        <div class="mock-ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="mr-track"/><circle cx="60" cy="60" r="52" class="mr-fill"/></svg><b>24:59</b><small>Deep focus</small></div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>UI Vault · MIT licensed · Every listed project belongs to its authors — check each license before shipping.</p>
+    <p class="muted">Know something great? Add a line to <code>assets/js/resources.js</code> and open a PR.</p>
+  </footer>
+
+  <!-- Code dialog -->
+  <dialog class="code-dlg" id="codeDlg">
+    <header>
+      <h3 id="codeTitle">Snippet</h3>
+      <div class="code-dlg__tabs" id="codeTabs" role="tablist"></div>
+      <button class="icon-btn" id="codeClose" aria-label="Close">✕</button>
+    </header>
+    <pre><code id="codeBody"></code></pre>
+    <footer><button class="btn btn--primary" id="codeCopy">Copy</button></footer>
+  </dialog>
+
+  <div class="toast-host" id="toastHost" aria-live="polite"></div>
+
+  <script src="assets/js/resources.js"></script>
+  <script src="assets/js/demos.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
