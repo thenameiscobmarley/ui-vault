@@ -1,0 +1,14 @@
+/*! UI Vault 3.0.0 · theme: terminal — phosphor green CRT, monospace everything. Needs core.css. MIT */
+[data-uv-theme="terminal"] {
+  --uv-bg: #050a05; --uv-surface: #081108; --uv-surface-2: #0c1a0c; --uv-surface-3: #122612;
+  --uv-line: #33ff6626; --uv-line-2: #33ff6655; --uv-text: #4dff7a; --uv-muted: #2fbf55; --uv-dim: #1d7a36;
+  --uv-accent: #4dff7a; --uv-accent-2: #b6ffca; --uv-success: #4dff7a; --uv-danger: #ff5a4d; --uv-warn: #ffd24d;
+  --uv-font: "VT323", "Geist Mono", ui-monospace, monospace; --uv-serif: var(--uv-font); --uv-mono: var(--uv-font); --uv-font-head: var(--uv-font); --uv-head-case: uppercase; --uv-head-tracking: .02em;
+  --uv-btn-font: var(--uv-font); --uv-btn-case: uppercase; --uv-btn-tracking: .08em;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0; --uv-focus: 0 0 0 1px var(--uv-accent);
+  text-shadow: 0 0 6px #33ff6666; font-size: 1.12em; color-scheme: dark;
+}
+[data-uv-theme="terminal"] .uv-btn--primary { background: var(--uv-accent); color: #031003; text-shadow: none; }
+[data-uv-theme="terminal"] .uv-btn--primary::before { content: "> "; }
+[data-uv-theme="terminal"] .uv-card { border-style: dashed; }
+[data-uv-theme="terminal"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); } [data-uv-theme="terminal"] .uv-tabs > button[aria-selected="true"] { color: #031003; text-shadow: none; }

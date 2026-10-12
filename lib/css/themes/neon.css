@@ -1,0 +1,17 @@
+/*! UI Vault 3.0.0 · theme: neon — cyber: deep night, cyan + magenta glow, mono uppercase. Needs core.css. MIT */
+[data-uv-theme="neon"] {
+  --uv-bg: #06060c; --uv-surface: #0d0d19; --uv-surface-2: #151527; --uv-surface-3: #1f1f38;
+  --uv-line: #00f0ff1f; --uv-line-2: #00f0ff40; --uv-text: #e6fbff; --uv-muted: #8fb4c4; --uv-dim: #4f6b7a;
+  --uv-accent: #00f0ff; --uv-accent-2: #ff2bd6; --uv-success: #39ff88; --uv-danger: #ff3864;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist Mono", ui-monospace, monospace; --uv-head-weight: 500; --uv-head-case: uppercase; --uv-head-tracking: .02em;
+  --uv-btn-font: "Geist Mono", ui-monospace, monospace; --uv-btn-case: uppercase; --uv-btn-tracking: .12em;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 4px; --uv-r-lg: 6px;
+  --uv-btn-shadow: 0 0 14px -2px var(--uv-accent); --uv-card-shadow: 0 0 0 1px #00f0ff30, 0 0 40px -16px var(--uv-accent); --uv-focus: 0 0 0 1px var(--uv-accent), 0 0 18px var(--uv-accent);
+  color-scheme: dark;
+}
+[data-uv-theme="neon"] .uv-btn--primary { background: var(--uv-accent); color: #001014; }
+[data-uv-theme="neon"] .uv-btn--primary:hover { background: var(--uv-accent-2); color: #fff; box-shadow: 0 0 22px var(--uv-accent-2); }
+[data-uv-theme="neon"] .uv-h1, [data-uv-theme="neon"] .uv-h2 { text-shadow: 0 0 18px #00f0ff88; }
+[data-uv-theme="neon"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); box-shadow: 0 0 16px var(--uv-accent); }
+[data-uv-theme="neon"] .uv-tabs > button[aria-selected="true"] { color: #001014; }
+[data-uv-theme="neon"] .uv-ring { background: conic-gradient(var(--uv-accent), var(--uv-accent-2) calc(var(--v) * 1%), var(--uv-surface-3) 0); }

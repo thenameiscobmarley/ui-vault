@@ -1,0 +1,15 @@
+/*! UI Vault 3.0.0 · theme: glass — frosted panels over a soft aurora. Needs core.css. MIT */
+[data-uv-theme="glass"] {
+  --uv-bg: #0f1024; --uv-surface: #ffffff14; --uv-surface-2: #ffffff1c; --uv-surface-3: #ffffff26;
+  --uv-line: #ffffff1f; --uv-line-2: #ffffff33; --uv-text: #ffffff; --uv-muted: #ffffffb3; --uv-dim: #ffffff73;
+  --uv-accent: #b9a6ff; --uv-accent-2: #7fe3ff;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-head-weight: 600; --uv-head-tracking: -.04em;
+  --uv-r-xs: 8px; --uv-r-sm: 12px; --uv-r: 16px; --uv-r-lg: 22px;
+  --uv-card-shadow: inset 0 1px 0 #ffffff30, 0 20px 50px -20px #0008; --uv-btn-shadow: inset 0 1px 0 #ffffff40;
+  background-image: radial-gradient(40% 50% at 15% 20%, #7b5cff88, transparent 70%), radial-gradient(40% 50% at 85% 30%, #00c2ff66, transparent 70%), radial-gradient(50% 50% at 50% 100%, #ff5ca866, transparent 70%);
+  color-scheme: dark;
+}
+[data-uv-theme="glass"] .uv-card, [data-uv-theme="glass"] .uv-tabs, [data-uv-theme="glass"] .uv-input { backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); }
+[data-uv-theme="glass"] .uv-btn--primary { background: #fff; color: #1a1340; }
+[data-uv-theme="glass"] .uv-btn--primary:hover { background: var(--uv-accent-2); color: #001018; }
+[data-uv-theme="glass"] .uv-tabs > .uv-tabs__ind { background: #ffffff33; } [data-uv-theme="glass"] .uv-tabs > button[aria-selected="true"] { color: #fff; }

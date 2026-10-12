@@ -1,0 +1,178 @@
+/*! UI Vault 3.0.0 · all themes. MIT */
+/*! UI Vault 3.0.0 · theme: editorial — paper, ink, one signal accent (the default). Needs core.css. MIT */
+[data-uv-theme="editorial"] {
+  --uv-bg: #f4f2ee; --uv-surface: #fbfaf8; --uv-surface-2: #ece9e3; --uv-surface-3: #e2ded6;
+  --uv-line: #1a19171a; --uv-line-2: #1a19172e; --uv-text: #1a1917; --uv-muted: #5f5b54; --uv-dim: #8f8a82;
+  --uv-accent: #ff4f00; --uv-accent-2: #c43c00; --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif;
+}
+
+/*! UI Vault 3.0.0 · theme: brutal — neo-brutalism: thick ink borders, hard offset shadows, loud fills. Needs core.css. MIT */
+[data-uv-theme="brutal"] {
+  --uv-bg: #fff4e0; --uv-surface: #ffffff; --uv-surface-2: #ffe9c2; --uv-surface-3: #ffd98a;
+  --uv-line: #000; --uv-line-2: #000; --uv-text: #000; --uv-muted: #333; --uv-dim: #555;
+  --uv-accent: #ff5ec4; --uv-accent-2: #ffd23f; --uv-success: #23a35a; --uv-danger: #ff3b30;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-head-weight: 700; --uv-head-tracking: -.04em;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0; --uv-bw: 2px;
+  --uv-btn-shadow: 4px 4px 0 #000; --uv-btn-shadow-active: 0 0 0 #000; --uv-card-shadow: 6px 6px 0 #000; --uv-focus: 4px 4px 0 #000;
+}
+[data-uv-theme="brutal"] .uv-btn { font-weight: 700; border-color: #000; }
+[data-uv-theme="brutal"] .uv-btn:active { transform: translate(4px, 4px); }
+[data-uv-theme="brutal"] .uv-btn--primary { background: var(--uv-accent-2); color: #000; }
+[data-uv-theme="brutal"] .uv-btn--primary:hover { background: var(--uv-accent); color: #000; }
+[data-uv-theme="brutal"] .uv-card, [data-uv-theme="brutal"] .uv-input, [data-uv-theme="brutal"] .uv-tabs { border: 2px solid #000; }
+[data-uv-theme="brutal"] .uv-badge { background: var(--uv-accent-2); color: #000; border: 2px solid #000; }
+[data-uv-theme="brutal"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); } [data-uv-theme="brutal"] .uv-tabs > button[aria-selected="true"] { color: #000; }
+
+/*! UI Vault 3.0.0 · theme: neon — cyber: deep night, cyan + magenta glow, mono uppercase. Needs core.css. MIT */
+[data-uv-theme="neon"] {
+  --uv-bg: #06060c; --uv-surface: #0d0d19; --uv-surface-2: #151527; --uv-surface-3: #1f1f38;
+  --uv-line: #00f0ff1f; --uv-line-2: #00f0ff40; --uv-text: #e6fbff; --uv-muted: #8fb4c4; --uv-dim: #4f6b7a;
+  --uv-accent: #00f0ff; --uv-accent-2: #ff2bd6; --uv-success: #39ff88; --uv-danger: #ff3864;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist Mono", ui-monospace, monospace; --uv-head-weight: 500; --uv-head-case: uppercase; --uv-head-tracking: .02em;
+  --uv-btn-font: "Geist Mono", ui-monospace, monospace; --uv-btn-case: uppercase; --uv-btn-tracking: .12em;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 4px; --uv-r-lg: 6px;
+  --uv-btn-shadow: 0 0 14px -2px var(--uv-accent); --uv-card-shadow: 0 0 0 1px #00f0ff30, 0 0 40px -16px var(--uv-accent); --uv-focus: 0 0 0 1px var(--uv-accent), 0 0 18px var(--uv-accent);
+  color-scheme: dark;
+}
+[data-uv-theme="neon"] .uv-btn--primary { background: var(--uv-accent); color: #001014; }
+[data-uv-theme="neon"] .uv-btn--primary:hover { background: var(--uv-accent-2); color: #fff; box-shadow: 0 0 22px var(--uv-accent-2); }
+[data-uv-theme="neon"] .uv-h1, [data-uv-theme="neon"] .uv-h2 { text-shadow: 0 0 18px #00f0ff88; }
+[data-uv-theme="neon"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); box-shadow: 0 0 16px var(--uv-accent); }
+[data-uv-theme="neon"] .uv-tabs > button[aria-selected="true"] { color: #001014; }
+[data-uv-theme="neon"] .uv-ring { background: conic-gradient(var(--uv-accent), var(--uv-accent-2) calc(var(--v) * 1%), var(--uv-surface-3) 0); }
+
+/*! UI Vault 3.0.0 · theme: glass — frosted panels over a soft aurora. Needs core.css. MIT */
+[data-uv-theme="glass"] {
+  --uv-bg: #0f1024; --uv-surface: #ffffff14; --uv-surface-2: #ffffff1c; --uv-surface-3: #ffffff26;
+  --uv-line: #ffffff1f; --uv-line-2: #ffffff33; --uv-text: #ffffff; --uv-muted: #ffffffb3; --uv-dim: #ffffff73;
+  --uv-accent: #b9a6ff; --uv-accent-2: #7fe3ff;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-head-weight: 600; --uv-head-tracking: -.04em;
+  --uv-r-xs: 8px; --uv-r-sm: 12px; --uv-r: 16px; --uv-r-lg: 22px;
+  --uv-card-shadow: inset 0 1px 0 #ffffff30, 0 20px 50px -20px #0008; --uv-btn-shadow: inset 0 1px 0 #ffffff40;
+  background-image: radial-gradient(40% 50% at 15% 20%, #7b5cff88, transparent 70%), radial-gradient(40% 50% at 85% 30%, #00c2ff66, transparent 70%), radial-gradient(50% 50% at 50% 100%, #ff5ca866, transparent 70%);
+  color-scheme: dark;
+}
+[data-uv-theme="glass"] .uv-card, [data-uv-theme="glass"] .uv-tabs, [data-uv-theme="glass"] .uv-input { backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); }
+[data-uv-theme="glass"] .uv-btn--primary { background: #fff; color: #1a1340; }
+[data-uv-theme="glass"] .uv-btn--primary:hover { background: var(--uv-accent-2); color: #001018; }
+[data-uv-theme="glass"] .uv-tabs > .uv-tabs__ind { background: #ffffff33; } [data-uv-theme="glass"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+
+/*! UI Vault 3.0.0 · theme: terminal — phosphor green CRT, monospace everything. Needs core.css. MIT */
+[data-uv-theme="terminal"] {
+  --uv-bg: #050a05; --uv-surface: #081108; --uv-surface-2: #0c1a0c; --uv-surface-3: #122612;
+  --uv-line: #33ff6626; --uv-line-2: #33ff6655; --uv-text: #4dff7a; --uv-muted: #2fbf55; --uv-dim: #1d7a36;
+  --uv-accent: #4dff7a; --uv-accent-2: #b6ffca; --uv-success: #4dff7a; --uv-danger: #ff5a4d; --uv-warn: #ffd24d;
+  --uv-font: "VT323", "Geist Mono", ui-monospace, monospace; --uv-serif: var(--uv-font); --uv-mono: var(--uv-font); --uv-font-head: var(--uv-font); --uv-head-case: uppercase; --uv-head-tracking: .02em;
+  --uv-btn-font: var(--uv-font); --uv-btn-case: uppercase; --uv-btn-tracking: .08em;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0; --uv-focus: 0 0 0 1px var(--uv-accent);
+  text-shadow: 0 0 6px #33ff6666; font-size: 1.12em; color-scheme: dark;
+}
+[data-uv-theme="terminal"] .uv-btn--primary { background: var(--uv-accent); color: #031003; text-shadow: none; }
+[data-uv-theme="terminal"] .uv-btn--primary::before { content: "> "; }
+[data-uv-theme="terminal"] .uv-card { border-style: dashed; }
+[data-uv-theme="terminal"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); } [data-uv-theme="terminal"] .uv-tabs > button[aria-selected="true"] { color: #031003; text-shadow: none; }
+
+/*! UI Vault 3.0.0 · theme: soft — pastel, pillowy radii, gentle shadows. Needs core.css. MIT */
+[data-uv-theme="soft"] {
+  --uv-bg: #f4f1ff; --uv-surface: #ffffff; --uv-surface-2: #eeeaff; --uv-surface-3: #e2dcff;
+  --uv-line: #5b4bd914; --uv-line-2: #5b4bd926; --uv-text: #2a2550; --uv-muted: #6b6690; --uv-dim: #a19cc4;
+  --uv-accent: #7c6cf2; --uv-accent-2: #ff8fb8; --uv-success: #3fbf8f;
+  --uv-font: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, sans-serif; --uv-font-head: var(--uv-font); --uv-head-weight: 800; --uv-head-tracking: -.03em;
+  --uv-r-xs: 8px; --uv-r-sm: 14px; --uv-r: 18px; --uv-r-lg: 24px; --uv-bw: 0;
+  --uv-btn-shadow: 0 6px 16px -6px #7c6cf280; --uv-card-shadow: 0 2px 4px #5b4bd90d, 0 18px 40px -18px #5b4bd94d; --uv-focus: 0 0 0 4px #7c6cf233;
+}
+[data-uv-theme="soft"] .uv-btn--primary { background: var(--uv-accent); color: #fff; }
+[data-uv-theme="soft"] .uv-btn--primary:hover { background: #6a59ea; }
+[data-uv-theme="soft"] .uv-btn--ghost { background: var(--uv-surface); }
+[data-uv-theme="soft"] .uv-input { background: var(--uv-surface-2); }
+[data-uv-theme="soft"] .uv-tabs { background: var(--uv-surface-2); border: 0; } [data-uv-theme="soft"] .uv-tabs > .uv-tabs__ind { background: #fff; box-shadow: 0 4px 12px -4px #5b4bd94d; } [data-uv-theme="soft"] .uv-tabs > button[aria-selected="true"] { color: var(--uv-text); }
+
+/*! UI Vault 3.0.0 · theme: retro — 1995 desktop: bevels, teal, system grey. Needs core.css. MIT */
+[data-uv-theme="retro"] {
+  --uv-bg: #008080; --uv-surface: #c0c0c0; --uv-surface-2: #d4d0c8; --uv-surface-3: #dfdfdf;
+  --uv-line: #808080; --uv-line-2: #808080; --uv-text: #000; --uv-muted: #222; --uv-dim: #555;
+  --uv-accent: #000080; --uv-accent-2: #1084d0;
+  --uv-font: Tahoma, "MS Sans Serif", Verdana, sans-serif; --uv-font-head: var(--uv-font); --uv-head-weight: 700; --uv-head-tracking: 0;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0; --uv-bw: 0;
+  --uv-btn-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  --uv-btn-shadow-active: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  --uv-card-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #fff;
+  --uv-focus: inset -1px -1px #fff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+[data-uv-theme="retro"] .uv-btn, [data-uv-theme="retro"] .uv-btn--primary, [data-uv-theme="retro"] .uv-btn--ghost { background: #c0c0c0; color: #000; border: 0; }
+[data-uv-theme="retro"] .uv-card { background: #c0c0c0; }
+[data-uv-theme="retro"] .uv-input { background: #fff; box-shadow: var(--uv-focus); border: 0; }
+[data-uv-theme="retro"] .uv-h1, [data-uv-theme="retro"] .uv-h2 { color: #fff; text-shadow: 2px 2px 0 #000; }
+[data-uv-theme="retro"] .uv-card .uv-h1, [data-uv-theme="retro"] .uv-card .uv-h2 { color: #000; text-shadow: none; }
+[data-uv-theme="retro"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); } [data-uv-theme="retro"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+
+/*! UI Vault 3.0.0 · theme: swiss — International Style: white, black, one red, grid discipline. Needs core.css. MIT */
+[data-uv-theme="swiss"] {
+  --uv-bg: #ffffff; --uv-surface: #ffffff; --uv-surface-2: #f2f2f2; --uv-surface-3: #e6e6e6;
+  --uv-line: #0000001f; --uv-line-2: #000; --uv-text: #000; --uv-muted: #444; --uv-dim: #888;
+  --uv-accent: #e30613; --uv-accent-2: #000;
+  --uv-font: "Helvetica Neue", Helvetica, Arial, sans-serif; --uv-font-head: var(--uv-font); --uv-head-weight: 700; --uv-head-tracking: -.05em;
+  --uv-btn-case: uppercase; --uv-btn-tracking: .04em;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0; --uv-bw: 2px;
+}
+[data-uv-theme="swiss"] .uv-btn--primary { background: var(--uv-accent); color: #fff; border-color: var(--uv-accent); }
+[data-uv-theme="swiss"] .uv-btn--primary:hover { background: #000; border-color: #000; }
+[data-uv-theme="swiss"] .uv-card { border: 0; border-top: 6px solid #000; }
+[data-uv-theme="swiss"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); } [data-uv-theme="swiss"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+
+/*! UI Vault 3.0.0 · theme: y2k — chrome, holographic gradients, bubbly pills. Needs core.css. MIT */
+[data-uv-theme="y2k"] {
+  --uv-bg: #ece6ff; --uv-surface: #ffffffcc; --uv-surface-2: #f6f2ff; --uv-surface-3: #e3dcff;
+  --uv-line: #7a5cff26; --uv-line-2: #7a5cff4d; --uv-text: #1b1240; --uv-muted: #5a4f8f; --uv-dim: #998fcf;
+  --uv-accent: #ff4fd8; --uv-accent-2: #4fd2ff;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-head-weight: 800; --uv-head-style: italic; --uv-head-tracking: -.05em;
+  --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 18px; --uv-r-lg: 26px; --uv-bw: 1.5px;
+  --uv-btn-shadow: inset 0 2px 0 #ffffffcc, inset 0 -3px 6px #0000001a, 0 6px 16px -6px #7a5cff99;
+  --uv-card-shadow: inset 0 1px 0 #fff, 0 20px 40px -20px #7a5cff80;
+  background-image: linear-gradient(135deg, #ffd6f5, #d6e8ff 45%, #e9ffd6);
+}
+[data-uv-theme="y2k"] .uv-btn--primary { background: linear-gradient(180deg, #fff, #c9c3ff 45%, #9f8cff 55%, #e0dbff); color: #1b1240; border-color: #7a5cff66; }
+[data-uv-theme="y2k"] .uv-h1, [data-uv-theme="y2k"] .uv-h2 { background: linear-gradient(180deg, #2a1f66 30%, #9f8cff 50%, #2a1f66 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-uv-theme="y2k"] .uv-tabs > .uv-tabs__ind { background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2)); } [data-uv-theme="y2k"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+
+/*! UI Vault 3.0.0 · theme: mono — strictly black and white, monospaced. Needs core.css. MIT */
+[data-uv-theme="mono"] {
+  --uv-bg: #fff; --uv-surface: #fff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e0e0e0;
+  --uv-line: #000; --uv-line-2: #000; --uv-text: #000; --uv-muted: #000; --uv-dim: #666;
+  --uv-accent: #000; --uv-accent-2: #000; --uv-success: #000; --uv-danger: #000; --uv-warn: #000;
+  --uv-font: "Geist Mono", ui-monospace, monospace; --uv-font-head: var(--uv-font); --uv-head-weight: 500; --uv-head-tracking: -.04em;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0;
+}
+[data-uv-theme="mono"] .uv-btn--primary:hover, [data-uv-theme="mono"] .uv-btn--grad:hover { background: #fff; color: #000; border-color: #000; }
+[data-uv-theme="mono"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+
+/*! UI Vault 3.0.0 · theme: sketch — hand-drawn borders on notebook paper. Needs core.css. MIT */
+[data-uv-theme="sketch"] {
+  --uv-bg: #fdfbf4; --uv-surface: #fffdf7; --uv-surface-2: #f4efe1; --uv-surface-3: #e9e2cd;
+  --uv-line: #2b2b2b33; --uv-line-2: #2b2b2b; --uv-text: #2b2b2b; --uv-muted: #555; --uv-dim: #888;
+  --uv-accent: #e8590c; --uv-accent-2: #1c7ed6;
+  --uv-font: "Patrick Hand", "Comic Neue", "Segoe Print", cursive; --uv-font-head: var(--uv-font); --uv-head-tracking: 0;
+  --uv-r-xs: 255px 15px 225px 15px / 15px 225px 15px 255px; --uv-r-sm: 255px 15px 225px 15px / 15px 225px 15px 255px; --uv-r: 15px 255px 15px 225px / 225px 15px 255px 15px; --uv-r-lg: 25px 225px 25px 255px / 255px 25px 225px 25px; --uv-bw: 2px;
+  --uv-btn-shadow: 2px 3px 0 #2b2b2b; --uv-card-shadow: 3px 4px 0 #2b2b2b22;
+  background-image: linear-gradient(#1c7ed61a 1px, transparent 1px); background-size: 100% 28px; font-size: 1.08em;
+}
+[data-uv-theme="sketch"] .uv-btn, [data-uv-theme="sketch"] .uv-card, [data-uv-theme="sketch"] .uv-input { border: 2px solid #2b2b2b; }
+[data-uv-theme="sketch"] .uv-btn--primary { background: var(--uv-accent); color: #fff; }
+[data-uv-theme="sketch"] .uv-btn:hover { transform: rotate(-1deg); }
+[data-uv-theme="sketch"] .uv-tabs > .uv-tabs__ind { background: #ffd43b; } [data-uv-theme="sketch"] .uv-tabs > button[aria-selected="true"] { color: #2b2b2b; }
+
+/*! UI Vault 3.0.0 · theme: luxe — black lacquer, gold rules, spaced capitals. Needs core.css. MIT */
+[data-uv-theme="luxe"] {
+  --uv-bg: #0c0b09; --uv-surface: #12110e; --uv-surface-2: #1a1813; --uv-surface-3: #24211a;
+  --uv-line: #c9a96e26; --uv-line-2: #c9a96e66; --uv-text: #efe6d2; --uv-muted: #b3a88f; --uv-dim: #7a705c;
+  --uv-accent: #c9a96e; --uv-accent-2: #e8d3a2;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-head-style: italic; --uv-head-tracking: -.01em;
+  --uv-btn-case: uppercase; --uv-btn-tracking: .22em;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0;
+  color-scheme: dark;
+}
+[data-uv-theme="luxe"] .uv-btn { font-size: 11px; height: 44px; padding: 0 26px; }
+[data-uv-theme="luxe"] .uv-btn--primary { background: var(--uv-accent); color: #0c0b09; }
+[data-uv-theme="luxe"] .uv-btn--primary:hover { background: var(--uv-accent-2); }
+[data-uv-theme="luxe"] .uv-card { border-color: var(--uv-line-2); }
+[data-uv-theme="luxe"] .uv-tabs > .uv-tabs__ind { background: transparent; box-shadow: inset 0 -1px 0 var(--uv-accent); } [data-uv-theme="luxe"] .uv-tabs > button[aria-selected="true"] { color: var(--uv-accent); }
