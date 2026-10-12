@@ -18,7 +18,7 @@ Status: ALL DONE (v2 shipped). Ideas for v3: more showcase pieces, npm/CDN packa
 Direction: editorial/technical. Paper bg #f4f2ee, ink #1a1917, ONE accent signal-orange #ff4f00.
 Fonts: Instrument Serif (display) + Geist (UI) + Geist Mono (labels). Radius 4–6px, hairline rules,
 no glows, no gradient text, no emoji, no aurora blobs, no hype copy. Light default, dark optional.
-- [ ] A. site.css + index.html (homepage: tokens, hero copy, brand mark, sections)
+- [x] A. site.css + index.html (homepage: tokens, hero copy, brand mark, sections)
 - [ ] B. lib/uivault.css tokens/components (flatten grads/glows, new fonts) — drives docs+showcase
 - [ ] C. showcase.html cleanup (strip emoji + hardcoded neon gradients, calmer copy)
 - [ ] D. docs.html copy/fonts

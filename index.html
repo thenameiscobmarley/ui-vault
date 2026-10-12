@@ -3,33 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UI Vault — Open-source UI that looks 10× better</title>
+  <title>UI Vault — An index of open-source interface material</title>
   <meta name="description" content="A curated vault of open-source UI kits, icons, fonts, motion, effects and post-processing — plus live, copy-ready snippets." />
-  <meta name="theme-color" content="#08080d" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 10l7 13 7-13' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#f4f2ee" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/site.css" />
   <script>try{const t=localStorage.getItem("uiv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
-  <div class="bg-aurora" aria-hidden="true"></div>
   <div class="bg-grain" aria-hidden="true"></div>
 
   <header class="topbar">
     <a class="brand" href="#top" aria-label="UI Vault home">
-      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#bg)"/><path d="M9 10l7 13 7-13" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--accent)"/></svg>
       <span>UI&nbsp;Vault</span>
     </a>
     <nav class="topnav" aria-label="Sections">
-      <a href="docs.html">API Docs</a>
+      <a href="docs.html">Docs</a>
       <a href="showcase.html">Showcase</a>
       <a href="#library">Library</a>
       <a href="#playground">Playground</a>
-      <a href="#postfx">Post-FX Lab</a>
+      <a href="#postfx">Post-FX</a>
       <a href="#logo">Logo Forge</a>
-      <a href="app/" class="topnav__app">Flow app ↗</a>
+      <a href="app/" class="topnav__app">Flow ↗</a>
     </nav>
     <div class="topbar__actions">
       <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
@@ -42,9 +41,9 @@
   <main id="top">
     <!-- ── Hero ─────────────────────────────────────────────── -->
     <section class="hero">
-      <a class="pill-badge" href="#playground"><i></i> <span id="demoCountBadge">28</span> live snippets · copy in one click</a>
-      <h1>Make your UI look<br /><span class="grad-text">10× better.</span></h1>
-      <p class="hero__sub">A hand-picked vault of open-source UI kits, tabs, buttons, motion, effects, post-processing, icons, logos and fonts — with live demos you can copy straight into your project.</p>
+      <p class="hero__kicker"><span>Vol. 02</span><span>An index of open-source interface material</span><span id="demoCountBadge">58</span><span>live snippets</span></p>
+      <h1>Better interfaces, <em>assembled from</em> open parts.</h1>
+      <p class="hero__sub">UI Vault catalogues open-source kits, icons, typefaces, motion and shader libraries. It also ships its own small component library. Every piece on this site is live, documented and free to copy.</p>
 
       <label class="search" for="search">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -53,8 +52,8 @@
       </label>
       <div class="hero__chips" id="quickChips"></div>
       <div class="hero__cta">
-        <a class="btn btn--primary btn--lg" href="showcase.html">✨ See 30 things built with it</a>
-        <a class="btn btn--ghost btn--lg" href="docs.html">Use the UV API →</a>
+        <a class="btn btn--primary btn--lg" href="showcase.html">Browse the showcase</a>
+        <a class="btn btn--ghost btn--lg" href="docs.html">Read the docs</a>
       </div>
 
       <dl class="stats">
@@ -68,14 +67,14 @@
     <!-- ── UV API promo ───────────────────────────────────────── -->
     <section class="section api-promo">
       <div>
-        <p class="eyebrow">New — UI Vault library v2</p>
-        <h2>Two files. 40+ components. <span class="grad-text">Zero build step.</span></h2>
+        <p class="eyebrow">§ 00 — The library</p>
+        <h2>Two files, <em>forty components,</em> no build step.</h2>
         <p class="section__sub">Use <code>uivault.css</code> for buttons, tabs, cards, glass, forms, rings, docks, marquees and backgrounds. Use <code>uivault.js</code> for toasts, modals, a ⌘K palette, confetti, tilt, magnetic hover, count-ups, typewriters, scroll reveals and synthesized UI sounds.</p>
         <div class="api-promo__cta">
           <a class="btn btn--primary" href="docs.html">Read the docs</a>
           <a class="btn btn--ghost" href="showcase.html">Browse the showcase</a>
-          <a class="btn btn--ghost" href="lib/uivault.css" download>⇩ CSS</a>
-          <a class="btn btn--ghost" href="lib/uivault.js" download>⇩ JS</a>
+          <a class="btn btn--ghost" href="lib/uivault.css" download>uivault.css</a>
+          <a class="btn btn--ghost" href="lib/uivault.js" download>uivault.js</a>
         </div>
       </div>
       <pre class="api-promo__code"><code><span class="c">&lt;!-- that's the whole setup --&gt;</span>
@@ -94,8 +93,8 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Library ──────────────────────────────────────────── -->
     <section id="library" class="section">
       <header class="section__head">
-        <p class="eyebrow">01 — Library</p>
-        <h2>The open-source UI vault</h2>
+        <p class="eyebrow">§ 01 — Library</p>
+        <h2>The index, <em>sorted and searchable.</em></h2>
         <p class="section__sub">Every link is free to use. Filter by category, search anything, and ★ the ones you love — favorites are saved in your browser.</p>
       </header>
 
@@ -122,8 +121,8 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Playground ───────────────────────────────────────── -->
     <section id="playground" class="section">
       <header class="section__head">
-        <p class="eyebrow">02 — Playground</p>
-        <h2>Live snippets, zero dependencies</h2>
+        <p class="eyebrow">§ 02 — Playground</p>
+        <h2>Snippets, <em>ready to paste.</em></h2>
         <p class="section__sub">Plain HTML + CSS (and a few lines of JS where needed). Hover, click, play — then hit <b>Copy</b>.</p>
       </header>
       <div class="seg-tabs" id="demoTabs" role="tablist" aria-label="Snippet groups"></div>
@@ -133,8 +132,8 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Post-FX Lab ──────────────────────────────────────── -->
     <section id="postfx" class="section">
       <header class="section__head">
-        <p class="eyebrow">03 — Post-FX Lab</p>
-        <h2>Post-processing, explained by touching it</h2>
+        <p class="eyebrow">§ 03 — Post-FX Lab</p>
+        <h2>Post-processing, <em>by hand.</em></h2>
         <p class="section__sub">A real WebGL post pass: bloom, chromatic aberration, vignette, film grain, scanlines and CRT curvature. Drop in your own image, dial it in, copy the shader.</p>
       </header>
 
@@ -159,8 +158,8 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Logo Forge ───────────────────────────────────────── -->
     <section id="logo" class="section">
       <header class="section__head">
-        <p class="eyebrow">04 — Logo Forge</p>
-        <h2>A clean logo in ten seconds</h2>
+        <p class="eyebrow">§ 04 — Logo Forge</p>
+        <h2>A mark <em>and a wordmark.</em></h2>
         <p class="section__sub">Pick a mark, a name and a gradient. Exports a crisp, editable SVG you own — great for side projects, apps and README headers.</p>
       </header>
 
@@ -169,8 +168,8 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
           <label class="field"><span>Name</span><input id="lgName" value="Nimbus" maxlength="18" /></label>
           <div class="field"><span>Mark</span><div class="mark-pick" id="lgMarks"></div></div>
           <div class="field-row">
-            <label class="field"><span>From</span><input type="color" id="lgC1" value="#8b5cf6" /></label>
-            <label class="field"><span>To</span><input type="color" id="lgC2" value="#22d3ee" /></label>
+            <label class="field"><span>From</span><input type="color" id="lgC1" value="#1a1917" /></label>
+            <label class="field"><span>To</span><input type="color" id="lgC2" value="#ff4f00" /></label>
             <label class="field"><span>Shape</span>
               <select id="lgShape"><option value="squircle">Squircle</option><option value="circle">Circle</option><option value="none">No container</option></select>
             </label>
@@ -184,7 +183,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
           <div class="field-row">
             <button class="btn btn--primary" id="lgDownload">Download SVG</button>
             <button class="btn btn--ghost" id="lgCopy">Copy SVG</button>
-            <button class="btn btn--ghost" id="lgRandom">🎲 Shuffle</button>
+            <button class="btn btn--ghost" id="lgRandom">Shuffle</button>
           </div>
         </div>
         <div class="forge__preview">
@@ -198,10 +197,10 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── App showcase ─────────────────────────────────────── -->
     <section class="section showcase">
       <div class="showcase__text">
-        <p class="eyebrow">05 — Built with the vault</p>
-        <h2>Flow — a focus app</h2>
+        <p class="eyebrow">§ 05 — Built with the vault</p>
+        <h2>Flow, <em>a focus timer.</em></h2>
         <p class="section__sub">A real app using the techniques on this page: sliding tabs, a glowing progress ring, tactile buttons, toasts, a mini chart and subtle sound. No frameworks, one folder.</p>
-        <a class="btn btn--primary btn--lg" href="app/">Open Flow →</a>
+        <a class="btn btn--primary btn--lg" href="app/">Open Flow</a>
       </div>
       <a class="showcase__preview" href="app/" aria-label="Open the Flow app">
         <div class="mock-ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="mr-track"/><circle cx="60" cy="60" r="52" class="mr-fill"/></svg><b>24:59</b><small>Deep focus</small></div>
