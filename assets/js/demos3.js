@@ -57,14 +57,14 @@ b.addEventListener("mouseleave", () => { if (b.classList.contains("on")) b.textC
 .e-tkt>div:last-child{border-radius:0 8px 8px 0;text-align:center;background:#ff6a26}
 .e-tkt small{font:500 10px ui-monospace,monospace;letter-spacing:.1em;opacity:.6}
 .e-tkt b{font-size:18px}.e-tkt span{font-size:13px;opacity:.7}` },
-  { group: "Cards", title: "Stacked notification cards", html: `<div class="e-stack"><div>Deploy finished · main</div><div>3 new comments</div><div>Invoice paid · $490</div></div>`,
+  { group: "Cards", title: "Stacked notification cards", html: `<div class="e-stack"><div>Deploy finished · main</div><div>3 new comments</div><div>Build passed · v4.0</div></div>`,
     css: `.e-stack{display:grid;width:280px;cursor:pointer}
 .e-stack div{grid-area:1/1;padding:16px 18px;border-radius:8px;background:#ecebe8;color:#1a1917;${F}font-size:14px;font-weight:500;box-shadow:0 8px 24px #0005;transition:transform .45s cubic-bezier(.3,1.3,.5,1),opacity .3s}
 .e-stack div:nth-child(1){transform:translateY(-16px) scale(.9);opacity:.5}
 .e-stack div:nth-child(2){transform:translateY(-8px) scale(.95);opacity:.8}
 .e-stack:hover div:nth-child(1){transform:translateY(-112px);opacity:1}
 .e-stack:hover div:nth-child(2){transform:translateY(-56px);opacity:1}` },
-  { group: "Cards", title: "Spec sheet card", html: `<div class="e-spec"><h4>AR—01 Runner</h4><dl><dt>Weight</dt><dd>212 g</dd><dt>Drop</dt><dd>8 mm</dd><dt>Upper</dt><dd>Recycled knit</dd><dt>Price</dt><dd>$129</dd></dl></div>`,
+  { group: "Cards", title: "Spec sheet card", html: `<div class="e-spec"><h4>AR—01 Runner</h4><dl><dt>Weight</dt><dd>212 g</dd><dt>Drop</dt><dd>8 mm</dd><dt>Upper</dt><dd>Recycled knit</dd><dt>Colour</dt><dd>Signal</dd></dl></div>`,
     css: `.e-spec{width:280px;padding:20px;border:1px solid #ffffff26;border-radius:6px;color:#ecebe8;${F}}
 .e-spec h4{margin:0 0 14px;font:400 28px Georgia,serif}
 .e-spec dl{display:grid;grid-template-columns:1fr auto;margin:0}
@@ -143,7 +143,7 @@ inp.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === ",") 
 i.addEventListener("input", () => { const v = i.value; let sc = (v.length >= 8) + /[A-Z]/.test(v) + /\\d/.test(v) + /[^\\w]/.test(v);
   if (!v) sc = -1; const L = [["Too short", "#c4321f"], ["Weak", "#c4321f"], ["Fair", "#c9a96e"], ["Good", "#ecebe8"], ["Strong", "#ff6a26"]][Math.max(0, sc)];
   b.style.width = (Math.max(0, sc) + 1) * 20 + "%"; b.style.background = L[1]; s.textContent = L[0]; });` },
-  { group: "Inputs", title: "Segmented radio (pills)", html: `<div class="e-seg"><label><input type="radio" name="e-seg" checked>Monthly</label><label><input type="radio" name="e-seg">Yearly</label><label><input type="radio" name="e-seg">Lifetime</label></div>`,
+  { group: "Inputs", title: "Segmented radio (pills)", html: `<div class="e-seg"><label><input type="radio" name="e-seg" checked>Day</label><label><input type="radio" name="e-seg">Week</label><label><input type="radio" name="e-seg">Month</label></div>`,
     css: `.e-seg{display:inline-flex;gap:4px}
 .e-seg label{padding:8px 14px;border:1px solid #ffffff30;border-radius:999px;color:#8f8a82;font:500 13px system-ui,sans-serif;cursor:pointer;transition:all .2s}
 .e-seg input{display:none}

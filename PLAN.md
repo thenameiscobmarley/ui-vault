@@ -35,3 +35,5 @@ v3 status: ALL DONE (A–F). Next ideas: hero specimen column on homepage, Post-
 - [x] E. Link everything, README, push, verify live
 
 v4 status: ALL DONE. Next ideas: more blocks (dashboards, e-commerce), Post-FX scene recolor, Pulse restyle.
+
+- [x] v4.1: removed all pricing/paid wording (pricing blocks, showcase pricing tile -> shortcuts panel, Price stat -> Licence MIT)
