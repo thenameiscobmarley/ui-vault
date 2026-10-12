@@ -29,7 +29,7 @@ v3 status: ALL DONE (A–F). Next ideas: hero specimen column on homepage, Post-
 
 # v4 — "10x more, 10x better" (resume here)
 - [x] A. blocks.html + assets/js/blocks.js + assets/css/blocks.css — 40 full-page section templates (navbars, heroes, logos, features, stats, testimonials, pricing, CTA, FAQ, team, blog, footers) with desktop/tablet/mobile preview (container queries) + Copy HTML
-- [ ] B. assets/js/demos3.js — 40 more playground snippets (→100)
-- [ ] C. Homepage: hero specimen column, playground search + paper/ink stage toggle, Blocks in nav
+- [x] B. assets/js/demos3.js — 40 more playground snippets (→100)
+- [x] C. Homepage: hero specimen column, playground search + paper/ink stage toggle, Blocks in nav
 - [ ] D. assets/js/resources2.js — 60+ more resources (→250)
 - [ ] E. Link everything, README, push, verify live
