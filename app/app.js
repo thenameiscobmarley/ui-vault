@@ -7,7 +7,7 @@
   const save = (k, v) => { try { localStorage.setItem("flow-" + k, JSON.stringify(v)); } catch {} };
   const dayKey = (d = new Date()) => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 
-  const ACCENTS = [["#a78bfa", "#22d3ee"], ["#f472b6", "#fb923c"], ["#34d399", "#a3e635"], ["#60a5fa", "#818cf8"], ["#fbbf24", "#f87171"]];
+  const ACCENTS = [["#ff4f00", "#ff4f00"], ["#1a1917", "#1a1917"], ["#2b5fb4", "#2b5fb4"], ["#2f7d4f", "#2f7d4f"], ["#d6336c", "#d6336c"]];
   const LABELS = { focus: "Deep focus", short: "Short break", long: "Long break" };
   const settings = Object.assign({ focus: 25, short: 5, long: 15, auto: false, notify: false, sound: true, accent: 0 }, load("settings", {}));
   let tasks = load("tasks", []);
@@ -24,8 +24,8 @@
   function toast(icon, msg) {
     const t = document.createElement("div");
     t.className = "toast";
-    t.innerHTML = `<i>${icon}</i><span></span>`;
-    t.lastChild.textContent = msg;
+    t.innerHTML = `<span></span>`;
+    t.firstChild.textContent = msg;
     $("#toasts").appendChild(t);
     setTimeout(() => { t.classList.add("out"); setTimeout(() => t.remove(), 300); }, 3000);
   }
@@ -195,7 +195,7 @@
     const d = new Date();
     if (!(stats[dayKey(d)] && stats[dayKey(d)].sess)) d.setDate(d.getDate() - 1);
     while (stats[dayKey(d)] && stats[dayKey(d)].sess) { streak++; d.setDate(d.getDate() - 1); }
-    $("#streak").textContent = `🔥 ${streak} day streak`;
+    $("#streak").textContent = `${streak} day streak`;
 
     const days = [];
     for (let i = 6; i >= 0; i--) { const x = new Date(); x.setDate(x.getDate() - i); days.push(x); }
