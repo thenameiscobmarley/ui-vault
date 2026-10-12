@@ -19,8 +19,8 @@ Direction: editorial/technical. Paper bg #f4f2ee, ink #1a1917, ONE accent signal
 Fonts: Instrument Serif (display) + Geist (UI) + Geist Mono (labels). Radius 4–6px, hairline rules,
 no glows, no gradient text, no emoji, no aurora blobs, no hype copy. Light default, dark optional.
 - [x] A. site.css + index.html (homepage: tokens, hero copy, brand mark, sections)
-- [ ] B. lib/uivault.css tokens/components (flatten grads/glows, new fonts) — drives docs+showcase
-- [ ] C. showcase.html cleanup (strip emoji + hardcoded neon gradients, calmer copy)
-- [ ] D. docs.html copy/fonts
+- [x] B. lib/uivault.css tokens/components (flatten grads/glows, new fonts) — drives docs+showcase
+- [x] C. showcase.html cleanup (strip emoji + hardcoded neon gradients, calmer copy)
+- [x] D. docs.html copy/fonts
 - [ ] E. app/ (Flow) restyle to match
 - [ ] F. Playground stage frame + demo snippet colors toned to the palette
