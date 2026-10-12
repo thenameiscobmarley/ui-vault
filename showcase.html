@@ -23,6 +23,7 @@
   .cap { display: flex; align-items: center; gap: 10px; padding: 12px 14px 12px 18px; border-top: 1px solid var(--uv-line); }
   .cap h3 { margin: 0; flex: 1; font: 600 14px var(--uv-font); color: var(--uv-text); }
   .cap small { color: var(--uv-dim); font: 11px var(--uv-mono); }
+  .tile:not(.w2) .cap small { display: none; }
   .i { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
   .w-full { width: 100%; }
   @media (max-width: 820px) { .tile.w2 { grid-column: auto; } .wall { grid-template-columns: 1fr; } }
@@ -167,7 +168,7 @@
       <div class="hud-bar"><i style="--v:55%;background:linear-gradient(90deg,#2563eb,#60a5fa)"></i></div>
       <div class="hud-bar" style="height:5px"><i style="--v:84%;background:linear-gradient(90deg,#ca8a04,#fde047)"></i></div>
     </div>
-    <div class="uv-row" style="gap:8px" id="slots"><button class="slot">🗡<kbd>1</kbd></button><button class="slot">🛡<kbd>2</kbd></button><button class="slot">🔥<kbd>3</kbd></button><button class="slot">✨<kbd>4</kbd></button></div>
+    <div class="uv-row" style="gap:8px" id="slots"><button class="slot">⚔<kbd>1</kbd></button><button class="slot">❄<kbd>2</kbd></button><button class="slot">🔥<kbd>3</kbd></button><button class="slot">⚡<kbd>4</kbd></button></div>
   </div>
 </div><div class="cap"><h3>Game HUD</h3><small>click abilities → conic cooldowns</small></div></article>
 
