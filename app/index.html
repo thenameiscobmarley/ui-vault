@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flow — focus timer</title>
+  <meta name="theme-color" content="#0a0a10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23a78bfa' stroke-width='4' stroke-dasharray='56 76' stroke-linecap='round' transform='rotate(-90 16 16)'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body data-mode="focus">
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="bar">
+    <a class="logo" href="../" title="Back to UI Vault">
+      <svg viewBox="0 0 32 32" width="26" height="26"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width="4"/><circle cx="16" cy="16" r="12" fill="none" style="stroke:var(--accent)" stroke-width="4" stroke-dasharray="56 76" stroke-linecap="round" transform="rotate(-90 16 16)"/></svg>
+      Flow
+    </a>
+    <p class="bar__date" id="today"></p>
+    <div class="bar__right">
+      <button class="ibtn" id="soundBtn" title="Sound (M)" aria-label="Toggle sound"></button>
+      <button class="ibtn" id="settingsBtn" title="Settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Timer -->
+    <section class="card timer">
+      <div class="tabs" role="tablist" aria-label="Mode">
+        <span class="tabs__ind"></span>
+        <button role="tab" data-mode="focus" aria-selected="true">Focus</button>
+        <button role="tab" data-mode="short">Short break</button>
+        <button role="tab" data-mode="long">Long break</button>
+      </div>
+
+      <div class="ring" id="ring">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" style="stop-color:var(--accent)" />
+              <stop offset="1" style="stop-color:var(--accent-2)" />
+            </linearGradient>
+          </defs>
+          <circle class="ring__ticks" cx="150" cy="150" r="138" />
+          <circle class="ring__track" cx="150" cy="150" r="124" />
+          <circle class="ring__fill" id="ringFill" cx="150" cy="150" r="124" />
+        </svg>
+        <div class="ring__center">
+          <p class="ring__label" id="modeLabel">Deep focus</p>
+          <p class="ring__time" id="time" aria-live="off">25:00</p>
+          <p class="ring__task" id="ringTask">No task selected</p>
+        </div>
+      </div>
+
+      <div class="dots" id="dots" aria-label="Sessions until long break"></div>
+
+      <div class="controls">
+        <button class="ibtn ibtn--lg" id="resetBtn" title="Reset (R)" aria-label="Reset">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+        </button>
+        <button class="play" id="playBtn" aria-label="Start (Space)">
+          <span class="play__glow"></span>
+          <svg class="i-play" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.5-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg>
+        </button>
+        <button class="ibtn ibtn--lg" id="skipBtn" title="Skip (S)" aria-label="Skip">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l10 7-10 7z"/><path d="M19 5v14"/></svg>
+        </button>
+      </div>
+      <p class="hint"><kbd>Space</kbd> start/pause · <kbd>R</kbd> reset · <kbd>S</kbd> skip · <kbd>N</kbd> new task</p>
+    </section>
+
+    <!-- Side -->
+    <div class="side">
+      <section class="card">
+        <header class="card__head">
+          <h2>Tasks</h2>
+          <span class="pill" id="taskCount">0 left</span>
+        </header>
+        <form class="add" id="addForm" autocomplete="off">
+          <input id="taskInput" placeholder="What are you working on?" maxlength="80" />
+          <button class="add__btn" aria-label="Add task">+</button>
+        </form>
+        <ul class="tasks" id="tasks"></ul>
+        <p class="tasks__empty" id="tasksEmpty">Nothing yet — add a task and click it to focus on it.</p>
+      </section>
+
+      <section class="card">
+        <header class="card__head"><h2>Today</h2><span class="pill pill--live" id="streak">🔥 0 day streak</span></header>
+        <div class="kpis">
+          <div><b id="kMin">0</b><span>focus min</span></div>
+          <div><b id="kSess">0</b><span>sessions</span></div>
+          <div><b id="kDone">0</b><span>tasks done</span></div>
+        </div>
+        <div class="chart" id="chart" aria-label="Focus minutes, last 7 days"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Settings -->
+  <dialog class="sheet" id="settings">
+    <form method="dialog" class="sheet__inner">
+      <header class="card__head"><h2>Settings</h2><button class="ibtn" value="close" aria-label="Close">✕</button></header>
+      <div class="grid3">
+        <label class="num"><span>Focus</span><input type="number" id="sFocus" min="1" max="120" /><em>min</em></label>
+        <label class="num"><span>Short</span><input type="number" id="sShort" min="1" max="30" /><em>min</em></label>
+        <label class="num"><span>Long</span><input type="number" id="sLong" min="1" max="60" /><em>min</em></label>
+      </div>
+      <label class="row"><span>Auto-start next session</span><input type="checkbox" id="sAuto" class="sw" /></label>
+      <label class="row"><span>Desktop notifications</span><input type="checkbox" id="sNotify" class="sw" /></label>
+      <div class="row"><span>Accent</span><div class="swatches" id="swatches"></div></div>
+      <div class="row row--danger"><span>Reset stats &amp; tasks</span><button type="button" class="btn-danger" id="wipeBtn">Clear all</button></div>
+    </form>
+  </dialog>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
