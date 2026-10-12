@@ -2,8 +2,10 @@
 
 A curated vault of open-source UI resources: component kits, copy-paste blocks, motion, effects, post-processing, 3D, icons, logos, fonts, color, charts and native/game UI. It also has live, copy-ready snippets.
 
+- **UV library (`lib/`)**: `uivault.css` + `uivault.js`, 40+ components and a `UV.*` JS API (toast, modal, ⌘K palette, confetti, tilt, magnetic, count-up, typewriter, scramble, reveal, tabs, sounds). See `docs.html`
+- **Showcase** (`showcase.html`): 30 interface pieces built only with the library (pricing, login, music player, game HUD, dashboard, chat, checkout, and more)
 - **Library**: 180+ links with search, category tabs and favorites (saved in your browser)
-- **Playground**: 28 zero-dependency HTML/CSS snippets (tabs, buttons, cards, text effects, inputs, loaders, backgrounds, toasts)
+- **Playground**: 58 zero-dependency HTML/CSS snippets (tabs, buttons, cards, text effects, inputs, loaders, backgrounds, toasts)
 - **Post-FX Lab**: a real WebGL post pass (bloom, chromatic aberration, vignette, grain, scanlines, CRT). You can load your own image and copy the GLSL
 - **Logo Forge**: build a gradient logo and download it as SVG
 - **Flow** (`/app`): a focus-timer app built with the same techniques
@@ -25,7 +27,7 @@ Append a row to `assets/js/resources.js`:
 ```js
 ["Name", "https://url", "category", "License", "One-line description.", ["tag", "tag"]],
 ```
-Snippets go in `assets/js/demos.js` as `{ group, title, html, css, js? }`.
+Snippets go in `assets/js/demos.js` or `demos2.js` as `{ group, title, html, css, js? }`.
 
 ## License
 MIT for this site's code. Each listed project keeps its own license.

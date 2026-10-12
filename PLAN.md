@@ -7,7 +7,9 @@ Each step is committed + pushed when done, so `git log` shows progress too.
 - [x] 2. `lib/uivault.js` — `UV` API: toast, confetti, tilt, magnetic, spotlight, ripple, countUp, typewriter, scramble, reveal, tabs, parallax, sound(click), copy, modal, cmdk palette, auto-init via data-uv attributes
 - [x] 3. `docs.html` — API reference with a live example + code for every component/function
 - [x] 4. `showcase.html` — 20+ composed pieces made ONLY with the library (pricing, login, dashboard, music player, game HUD, profile, chat, settings, hero sections, notifications, file upload, stats, timeline, cmd palette...)
-- [ ] 5. Add 20+ new Playground snippets to `assets/js/demos.js`
-- [~] 6. (nav+hero+promo done; README pending) Link Docs/Showcase in index.html nav + hero CTA, update README, push, verify Pages
+- [x] 5. Add 20+ new Playground snippets to `assets/js/demos.js`
+- [x] 6. Link Docs/Showcase in index.html nav + hero CTA, update README, push, verify Pages
 
 Rules: keep it static (no build), light on the GPU (UHD 600), dark+light themes.
+
+Status: ALL DONE (v2 shipped). Ideas for v3: more showcase pieces, npm/CDN package, React wrappers.
