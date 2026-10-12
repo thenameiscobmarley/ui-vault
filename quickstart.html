@@ -122,7 +122,7 @@
         <div class="mix-zone" data-zone="footer"><div class="uv-row" style="justify-content:space-between"><span class="uv-muted">© 2026 Northwind</span><label class="uv-switch"><input type="checkbox" checked><i></i> Updates</label></div></div>
       </div>
     </div>
-    <div class="code-wrap" style="margin-top:14px"><pre class="code" id="mixCode" style="max-height:260px"></pre><button class="uv-btn uv-btn--sm" data-copy="mixCode">Copy HTML</button></div>
+    <div class="code-wrap" style="margin-top:14px"><pre class="code" id="mixCode" style="max-height:260px"></pre><button class="uv-btn uv-btn--sm" data-copy="mixCode">Copy HTML</button><button class="uv-btn uv-btn--sm" id="mixRaw" style="right:110px">Raw code</button></div>
   </section>
 
   <!-- 5 FX -->
@@ -155,6 +155,7 @@
 
 <script src="lib/manifest.js"></script>
 <script src="lib/uivault.js"></script>
+<script src="assets/js/raw.js"></script>
 <script>
 const M = window.UV_MANIFEST, BASE = "https://thenameiscobmarley.github.io/ui-vault/lib/";
 const $ = s => document.querySelector(s), esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -183,14 +184,14 @@ $("#modTable tbody").innerHTML = M.files.filter(f => !f.path.startsWith("css/the
 
 // theme gallery
 $("#themeGrid").innerHTML = M.themes.map(t => `<div class="th" data-uv-theme="${t.name}" role="button" tabindex="0" title="Apply ${t.name} to the page">
-  <header><b class="uv-h3">${t.name}</b><code>data-uv-theme="${t.name}"</code></header>
+  <header><b class="uv-h3">${t.name}</b><button class="uv-btn uv-btn--ghost uv-btn--sm" data-raw-theme style="height:26px;padding:0 8px;font-size:11px">Raw code</button></header>
   <h3 class="uv-h2" style="font-size:34px;margin:0">Hello world</h3>
   <p class="uv-muted" style="margin:0;font-size:14px">${t.desc}.</p>
   <div class="uv-tabs" style="align-self:start"><button aria-selected="true">One</button><button>Two</button><button>Three</button></div>
   <input class="uv-input" placeholder="you@example.com" onclick="event.stopPropagation()">
   <div class="uv-row" style="gap:8px"><button class="uv-btn uv-btn--primary uv-btn--sm" onclick="event.stopPropagation();UV.toast('${t.name}')">Primary</button><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="event.stopPropagation()">Ghost</button><span class="uv-badge uv-badge--accent">Badge</span><label class="uv-switch" onclick="event.stopPropagation()"><input type="checkbox" checked><i></i></label></div>
   <div class="uv-progress" data-value="${40 + t.name.length * 4}"><i></i></div></div>`).join("");
-$("#themeGrid").addEventListener("click", e => { const c = e.target.closest(".th"); if (c && !e.target.closest(".uv-tabs")) { UV.skin(c.dataset.uvTheme); UV.toast("Page theme: " + c.dataset.uvTheme); } });
+$("#themeGrid").addEventListener("click", e => { if (e.target.closest("[data-raw-theme]")) { const c = e.target.closest(".th"); RawCode.open(c, { title: c.dataset.uvTheme + " theme", html: c.outerHTML.replace(/<button[^>]*data-raw-theme[^>]*>.*?<\/button>/, "") }); return; } const c = e.target.closest(".th"); if (c && !e.target.closest(".uv-tabs")) { UV.skin(c.dataset.uvTheme); UV.toast("Page theme: " + c.dataset.uvTheme); } });
 
 // mix & match
 const FXT = ["none", "uv-fx-glitch", "uv-fx-chrome", "uv-fx-holo", "uv-fx-neon", "uv-fx-3d", "uv-fx-stroke", "uv-fx-wave", "uv-fx-rgb", "uv-fx-fill-hover", "uv-fx-long-shadow", "uv-fx-blur-in", "uv-fx-gradient-text"];
@@ -208,6 +209,7 @@ function applyMix() {
   setCode("mixCode", clean.innerHTML.replace(/ class=""/g, "").replace(/\n\s*\n/g, "\n").trim());
 }
 $("#mixBar").addEventListener("change", applyMix);
+$("#mixRaw").onclick = () => RawCode.open($("#mixPage"), { title: "Mix & match page", html: $("#mixCode").dataset.raw });
 $("#mixRand").onclick = () => { $("#mixBar").querySelectorAll("select[data-z]").forEach(s => s.value = M.themes[(Math.random() * M.themes.length) | 0].name); $("#mixFx").value = FXT[1 + ((Math.random() * (FXT.length - 1)) | 0)]; applyMix(); UV.sound("pop"); };
 applyMix();
 
@@ -248,9 +250,9 @@ const FX = [
 ];
 const groups = ["All", ...new Set(FX.map(f => f[0]))];
 $("#fxFilter").innerHTML = groups.map((g, i) => `<button class="uv-chip ${i ? "" : "is-active"}" data-g="${g}">${g} <small>${g === "All" ? FX.length : FX.filter(f => f[0] === g).length}</small></button>`).join("");
-$("#fxGrid").innerHTML = FX.map(([g, use, html, dark]) => `<div class="fx" data-g="${g}"><div class="st ${dark ? "dk" : ""}">${html}</div><button class="lbl" data-use='${use.replace(/'/g, "&#39;")}'><span>${esc(use)}</span><span>copy</span></button></div>`).join("");
+$("#fxGrid").innerHTML = FX.map(([g, use, html, dark], i) => `<div class="fx" data-g="${g}"><div class="st ${dark ? "dk" : ""}">${html}</div><div style="display:flex"><button class="lbl" style="flex:1" data-use='${use.replace(/'/g, "&#39;")}'><span>${esc(use)}</span><span>copy</span></button><button class="lbl" data-raw="${i}" title="Standalone code without the library">raw</button></div></div>`).join("");
 $("#fxFilter").onclick = e => { const b = e.target.closest("button"); if (!b) return; document.querySelectorAll("#fxFilter .uv-chip").forEach(c => c.classList.toggle("is-active", c === b)); document.querySelectorAll(".fx").forEach(t => t.hidden = b.dataset.g !== "All" && t.dataset.g !== b.dataset.g); };
-$("#fxGrid").addEventListener("click", e => { const l = e.target.closest(".lbl"); if (l) UV.copy(l.dataset.use.startsWith("data-") ? l.dataset.use : `class="${l.dataset.use}"`, "Copied: " + l.dataset.use); });
+$("#fxGrid").addEventListener("click", e => { const rw = e.target.closest("[data-raw]"); if (rw) { const f = FX[+rw.dataset.raw]; RawCode.open(rw.closest(".fx").querySelector(".st"), { title: f[1], html: f[2] }); return; } const l = e.target.closest(".lbl"); if (l) UV.copy(l.dataset.use.startsWith("data-") ? l.dataset.use : `class="${l.dataset.use}"`, "Copied: " + l.dataset.use); });
 UV.init($("#fxGrid"));
 
 // builder

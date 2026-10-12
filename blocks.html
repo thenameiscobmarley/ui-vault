@@ -59,6 +59,7 @@
   </main>
 </div>
 <script src="lib/uivault.js"></script>
+<script src="assets/js/raw.js"></script>
 <script src="assets/js/blocks.js"></script>
 <script>
 const list = document.getElementById("list"), side = document.getElementById("side");
@@ -79,7 +80,7 @@ cats.forEach(cat => {
     it.innerHTML = `<div class="bar"><span class="n">${String(n).padStart(2, "0")}</span><h3>${name}</h3>
       <div class="seg" data-k="vp"><button aria-pressed="true" data-w="100%">Desktop</button><button data-w="768px">Tablet</button><button data-w="390px">Mobile</button></div>
       <div class="seg" data-k="th"><button aria-pressed="${!dark}" data-t="light">Light</button><button aria-pressed="${dark}" data-t="dark">Dark</button></div>
-      <button class="uv-btn uv-btn--primary uv-btn--sm" data-copy>Copy HTML</button></div>
+      <button class="uv-btn uv-btn--ghost uv-btn--sm" data-copy>Copy HTML</button><button class="uv-btn uv-btn--primary uv-btn--sm" data-raw>Raw code</button></div>
       <div class="stage"><div class="frame">${html}</div></div>`;
     sec.appendChild(it);
     const frame = it.querySelector(".frame");
@@ -89,6 +90,7 @@ cats.forEach(cat => {
       if (b.dataset.w) frame.style.maxWidth = b.dataset.w;
       if (b.dataset.t) frame.querySelectorAll(".blk").forEach(k => k.classList.toggle("b-dark", b.dataset.t === "dark"));
     }));
+    it.querySelector("[data-raw]").onclick = () => RawCode.open(frame, { title: name, html: frame.innerHTML });
     it.querySelector("[data-copy]").onclick = () => UV.copy(`<!-- ${name} — UI Vault Blocks. Needs uivault.css + blocks.css -->\n` + html, "HTML copied");
   });
   list.appendChild(sec);

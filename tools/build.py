@@ -116,10 +116,16 @@ MIT licensed.
 """
 
 
+def raw_src():
+    """lib/raw-src.js: CSS bundle text + JS module sources, used by the site's "Raw code" view."""
+    src = {"css": (LIB / "uivault.css").read_text(), "js": {m: (JS / f"{m}.js").read_text() for m in JS_ORDER}}
+    (LIB / "raw-src.js").write_text("window.UV_SRC = " + json.dumps(src, ensure_ascii=False) + ";\n")
+
+
 def manifest(themes):
     files = []
     for p in sorted(LIB.rglob("*")):
-        if p.is_file() and p.suffix in (".css", ".js") and p.name not in ("themes.src.css", "manifest.js"):
+        if p.is_file() and p.suffix in (".css", ".js") and p.name not in ("themes.src.css", "manifest.js", "raw-src.js"):
             rel = p.relative_to(LIB).as_posix()
             files.append({"path": rel, "bytes": p.stat().st_size, "desc": DESC.get(p.name, "")})
     m = {"version": VERSION, "css": CSS_ORDER, "js": JS_ORDER, "themes": themes, "files": files}
@@ -143,6 +149,7 @@ def make_zip(m):
 if __name__ == "__main__":
     themes = split_themes()
     bundle(themes)
+    raw_src()
     m = manifest(themes)
     make_zip(m)
     total = sum(f["bytes"] for f in m["files"])

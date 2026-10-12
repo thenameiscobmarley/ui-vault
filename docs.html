@@ -60,6 +60,7 @@
   </main>
 </div>
 <script src="lib/uivault.js"></script>
+<script src="assets/js/raw.js"></script>
 <script>
 const BASE = "https://thenameiscobmarley.github.io/ui-vault/lib/";
 // Each doc: [section, id, title, description, html, extraJs?]
@@ -307,6 +308,10 @@ DOCS.forEach(([sec, id, title, desc, html, js]) => {
     <div class="ex" id="ex-${id}"><div class="ex__preview">${html}</div>
     <div class="ex__code"><pre>${hl(code)}</pre><button class="uv-btn uv-btn--sm uv-btn--ghost">Copy</button></div></div>`;
   s.querySelector(".ex__code .uv-btn").onclick = () => UV.copy(code);
+  const rb = document.createElement("button"); rb.className = "uv-btn uv-btn--sm uv-btn--primary"; rb.textContent = "Raw code"; rb.title = "Standalone code without the library";
+  rb.style.cssText = "position:absolute;top:10px;right:76px";
+  rb.onclick = () => RawCode.open(s.querySelector(".ex__preview"), { title, html });
+  s.querySelector(".ex__code").appendChild(rb);
   content.appendChild(s);
   if (js) try { new Function(js)(); } catch (e) { console.warn(id, e); }
 });

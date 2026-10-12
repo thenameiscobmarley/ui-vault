@@ -401,6 +401,7 @@
 <footer style="max-width:1280px;margin:0 auto;padding:30px clamp(16px,4vw,40px) 60px;border-top:1px solid var(--uv-line)" class="uv-muted">UI Vault Showcase · MIT · <a href="docs.html" style="color:inherit">API docs</a> · <a href="https://github.com/thenameiscobmarley/ui-vault" style="color:inherit">GitHub</a></footer>
 
 <script src="lib/uivault.js"></script>
+<script src="assets/js/raw.js"></script>
 <script>
 // ── Glue for the showcase (everything visual comes from the library) ──
 const $ = s => document.querySelector(s);
@@ -411,6 +412,11 @@ document.querySelectorAll(".tile").forEach(t => {
   b.className = "uv-btn uv-btn--ghost uv-btn--sm"; b.textContent = "Copy HTML";
   b.onclick = () => UV.copy(t.querySelector(".stage").innerHTML.trim(), "HTML copied — needs uivault.css/js");
   t.querySelector(".cap").appendChild(b);
+  const r = document.createElement("button");
+  r.className = "uv-btn uv-btn--primary uv-btn--sm"; r.textContent = "Raw code";
+  r.title = "Standalone HTML + CSS + JS, no library";
+  r.onclick = () => { const st = t.querySelector(".stage"); RawCode.open(st, { title: t.querySelector(".cap h3").textContent, html: st.outerHTML.replace(/ class="stage( |")/, ' class="$1').replace(/ class=" ?"/, "") }); };
+  t.querySelector(".cap").appendChild(r);
 });
 
 // Shortcuts panel
