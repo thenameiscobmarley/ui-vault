@@ -23,4 +23,6 @@ no glows, no gradient text, no emoji, no aurora blobs, no hype copy. Light defau
 - [x] C. showcase.html cleanup (strip emoji + hardcoded neon gradients, calmer copy)
 - [x] D. docs.html copy/fonts
 - [x] E. app/ (Flow) restyle to match
-- [ ] F. Playground stage frame + demo snippet colors toned to the palette
+- [x] F. Playground stage frame + demo snippet colors toned to the palette
+
+v3 status: ALL DONE (A–F). Next ideas: hero specimen column on homepage, Post-FX scene recolor, Pulse (Python app) restyle to match.
