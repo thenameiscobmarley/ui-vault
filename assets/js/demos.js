@@ -16,7 +16,7 @@ window.DEMOS = [
     css: `.vt-pill{position:relative;display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#16161f;border:1px solid #ffffff14}
 .vt-pill button{position:relative;z-index:1;border:0;background:none;color:#9a9ab0;font:600 14px/1 system-ui,sans-serif;padding:10px 18px;border-radius:999px;cursor:pointer;transition:color .25s}
 .vt-pill button[aria-selected=true]{color:#fff}
-.vt-pill__ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:linear-gradient(135deg,#7c5cff,#3ab8ff);box-shadow:0 4px 18px #7c5cff66;transition:transform .45s cubic-bezier(.65,0,.25,1.3),width .45s cubic-bezier(.65,0,.25,1.3)}`,
+.vt-pill__ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:linear-gradient(135deg,#ff6a26,#d9d6cf);box-shadow:0 4px 18px #7c5cff66;transition:transform .45s cubic-bezier(.65,0,.25,1.3),width .45s cubic-bezier(.65,0,.25,1.3)}`,
     js: `const ind = root.querySelector(".vt-pill__ind");
 const tabs = [...root.querySelectorAll("[role=tab]")];
 const move = t => { ind.style.width = t.offsetWidth + "px"; ind.style.transform = "translateX(" + t.offsetLeft + "px)"; };
@@ -39,7 +39,7 @@ requestAnimationFrame(() => move(tabs[0]));`,
 .vt-line button{border:0;background:none;color:#8a8aa0;font:500 15px/1 system-ui,sans-serif;padding:14px 2px;cursor:pointer;transition:color .2s}
 .vt-line button:hover{color:#d6d6e6}
 .vt-line button[aria-selected=true]{color:#fff}
-.vt-line__bar{position:absolute;bottom:-1px;left:0;height:2px;width:0;background:#5eead4;box-shadow:0 0 12px 1px #5eead4,0 0 2px #5eead4;border-radius:2px;transition:all .35s cubic-bezier(.3,.7,.2,1)}`,
+.vt-line__bar{position:absolute;bottom:-1px;left:0;height:2px;width:0;background:#d9d6cf;box-shadow:0 0 12px 1px #d9d6cf,0 0 2px #d9d6cf;border-radius:2px;transition:all .35s cubic-bezier(.3,.7,.2,1)}`,
     js: `const bar = root.querySelector(".vt-line__bar");
 const tabs = [...root.querySelectorAll("[role=tab]")];
 const move = t => { bar.style.width = t.offsetWidth + "px"; bar.style.left = t.offsetLeft + "px"; };
@@ -67,7 +67,7 @@ requestAnimationFrame(() => move(tabs[0]));`,
   {
     group: "Buttons", title: "Shine sweep",
     html: `<button class="vb-shine">Get started →</button>`,
-    css: `.vb-shine{position:relative;overflow:hidden;border:0;border-radius:12px;padding:14px 28px;font:600 15px/1 system-ui,sans-serif;color:#fff;background:linear-gradient(180deg,#6d5dfc,#4f3fe0);box-shadow:inset 0 1px 0 #ffffff40,0 8px 24px -6px #6d5dfcaa;cursor:pointer;transition:transform .15s}
+    css: `.vb-shine{position:relative;overflow:hidden;border:0;border-radius:12px;padding:14px 28px;font:600 15px/1 system-ui,sans-serif;color:#fff;background:linear-gradient(180deg,#ff6a26,#ff6a26);box-shadow:inset 0 1px 0 #ffffff40,0 8px 24px -6px #6d5dfcaa;cursor:pointer;transition:transform .15s}
 .vb-shine::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,#ffffff70 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}
 .vb-shine:hover::after{transform:translateX(120%)}
 .vb-shine:active{transform:scale(.97)}`,
@@ -76,7 +76,7 @@ requestAnimationFrame(() => move(tabs[0]));`,
     group: "Buttons", title: "Spinning gradient border",
     html: `<button class="vb-border"><span>Upgrade to Pro</span></button>`,
     css: `@property --vb-a{syntax:"<angle>";initial-value:0deg;inherits:false}
-.vb-border{position:relative;border:0;padding:2px;border-radius:14px;cursor:pointer;background:conic-gradient(from var(--vb-a),#ff4d8d,#ffb84d,#4dffb8,#4db8ff,#b84dff,#ff4d8d);animation:vb-spin 3s linear infinite}
+.vb-border{position:relative;border:0;padding:2px;border-radius:14px;cursor:pointer;background:conic-gradient(from var(--vb-a),#c9a96e,#c9a96e,#d9d6cf,#d9d6cf,#ff6a26,#c9a96e);animation:vb-spin 3s linear infinite}
 .vb-border span{display:block;padding:13px 26px;border-radius:12px;background:#0d0d14;color:#fff;font:600 15px/1 system-ui,sans-serif}
 .vb-border:hover{filter:drop-shadow(0 0 12px #b84dff88)}
 @keyframes vb-spin{to{--vb-a:360deg}}`,
@@ -84,15 +84,15 @@ requestAnimationFrame(() => move(tabs[0]));`,
   {
     group: "Buttons", title: "Neon glow",
     html: `<button class="vb-glow">Launch</button>`,
-    css: `.vb-glow{border:1.5px solid #22d3ee;border-radius:10px;padding:13px 30px;background:#22d3ee10;color:#a5f3fc;font:600 15px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-shadow:0 0 8px #22d3ee;box-shadow:0 0 12px #22d3ee55,inset 0 0 12px #22d3ee33;transition:all .25s}
-.vb-glow:hover{background:#22d3ee;color:#04141a;text-shadow:none;box-shadow:0 0 30px #22d3ee,0 0 60px #22d3ee66}`,
+    css: `.vb-glow{border:1.5px solid #d9d6cf;border-radius:10px;padding:13px 30px;background:#22d3ee10;color:#d9d6cf;font:600 15px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-shadow:0 0 8px #d9d6cf;box-shadow:0 0 12px #22d3ee55,inset 0 0 12px #22d3ee33;transition:all .25s}
+.vb-glow:hover{background:#d9d6cf;color:#04141a;text-shadow:none;box-shadow:0 0 30px #d9d6cf,0 0 60px #22d3ee66}`,
   },
   {
     group: "Buttons", title: "Tactile 3D press",
     html: `<button class="vb-press">Press me</button>`,
-    css: `.vb-press{border:0;border-radius:14px;padding:14px 30px;background:#ff5e7e;color:#fff;font:700 15px/1 system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 0 #b8304d,0 10px 20px #0007;transform:translateY(0);transition:transform .08s,box-shadow .08s}
+    css: `.vb-press{border:0;border-radius:14px;padding:14px 30px;background:#c9a96e;color:#fff;font:700 15px/1 system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 0 #8a2b00,0 10px 20px #0007;transform:translateY(0);transition:transform .08s,box-shadow .08s}
 .vb-press:hover{filter:brightness(1.06)}
-.vb-press:active{transform:translateY(5px);box-shadow:0 1px 0 #b8304d,0 3px 8px #0007}`,
+.vb-press:active{transform:translateY(5px);box-shadow:0 1px 0 #8a2b00,0 3px 8px #0007}`,
   },
   {
     group: "Buttons", title: "Magnetic hover",
@@ -141,7 +141,7 @@ c.addEventListener("pointermove", e => { const r = c.getBoundingClientRect(); c.
     html: `<div class="vc-glass-wrap"><div class="vc-glass">
   <small>Balance</small><strong>$12,480.20</strong><span>+4.2% this week</span>
 </div></div>`,
-    css: `.vc-glass-wrap{position:relative;padding:28px 34px;border-radius:20px;background:radial-gradient(circle at 20% 30%,#ff6ad5,transparent 45%),radial-gradient(circle at 80% 70%,#5b8cff,transparent 45%),#1a1030}
+    css: `.vc-glass-wrap{position:relative;padding:28px 34px;border-radius:20px;background:radial-gradient(circle at 20% 30%,#c9a96e,transparent 45%),radial-gradient(circle at 80% 70%,#8f8a82,transparent 45%),#1a1917}
 .vc-glass{display:grid;gap:4px;width:220px;padding:20px 22px;border-radius:16px;background:#ffffff1a;border:1px solid #ffffff33;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 32px #0004,inset 0 1px 0 #ffffff40;color:#fff;font-family:system-ui,sans-serif}
 .vc-glass small{opacity:.7;font-size:12px}
 .vc-glass strong{font-size:26px;letter-spacing:-.02em}
@@ -150,7 +150,7 @@ c.addEventListener("pointermove", e => { const r = c.getBoundingClientRect(); c.
   {
     group: "Cards", title: "3D tilt + glare",
     html: `<div class="vc-tilt"><div class="vc-tilt__glare"></div><b>RARE</b><h4>Neon Drift</h4></div>`,
-    css: `.vc-tilt{position:relative;width:200px;height:260px;border-radius:18px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font-family:system-ui,sans-serif;background:linear-gradient(160deg,#ff8a00,#e52e71 50%,#4a00e0);box-shadow:0 20px 40px -10px #e52e7188;transform:perspective(700px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .15s ease-out;overflow:hidden}
+    css: `.vc-tilt{position:relative;width:200px;height:260px;border-radius:18px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font-family:system-ui,sans-serif;background:linear-gradient(160deg,#ff4f00,#c9a96e 50%,#ff6a26);box-shadow:0 20px 40px -10px #e52e7188;transform:perspective(700px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .15s ease-out;overflow:hidden}
 .vc-tilt b{position:absolute;top:16px;left:18px;font-size:11px;letter-spacing:.2em;background:#0004;padding:4px 8px;border-radius:6px}
 .vc-tilt h4{margin:0;font-size:22px}
 .vc-tilt__glare{position:absolute;inset:0;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),#ffffff55,transparent 50%);mix-blend-mode:overlay;pointer-events:none}`,
@@ -173,13 +173,13 @@ c.addEventListener("pointerleave", () => { c.style.setProperty("--rx", "0deg"); 
   {
     group: "Text", title: "Aurora gradient text",
     html: `<h3 class="vx-aurora">Aurora</h3>`,
-    css: `.vx-aurora{margin:0;font:900 56px/1 system-ui,sans-serif;letter-spacing:-.04em;background:linear-gradient(90deg,#ff4d8d,#ffb84d,#4dffb8,#4db8ff,#b84dff,#ff4d8d) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:vx-au 6s ease-in-out infinite alternate;filter:drop-shadow(0 4px 20px #b84dff55)}
+    css: `.vx-aurora{margin:0;font:900 56px/1 system-ui,sans-serif;letter-spacing:-.04em;background:linear-gradient(90deg,#c9a96e,#c9a96e,#d9d6cf,#d9d6cf,#ff6a26,#c9a96e) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:vx-au 6s ease-in-out infinite alternate;filter:drop-shadow(0 4px 20px #b84dff55)}
 @keyframes vx-au{to{background-position:100% 0}}`,
   },
   {
     group: "Text", title: "Typewriter",
     html: `<p class="vx-type">npm install delight</p>`,
-    css: `.vx-type{margin:0;font:500 20px/1.2 ui-monospace,monospace;color:#a7f3d0;width:19ch;white-space:nowrap;overflow:hidden;border-right:2px solid #a7f3d0;animation:vx-ty 2.4s steps(19) infinite alternate,vx-caret .7s step-end infinite}
+    css: `.vx-type{margin:0;font:500 20px/1.2 ui-monospace,monospace;color:#d9d6cf;width:19ch;white-space:nowrap;overflow:hidden;border-right:2px solid #d9d6cf;animation:vx-ty 2.4s steps(19) infinite alternate,vx-caret .7s step-end infinite}
 @keyframes vx-ty{from{width:0}}
 @keyframes vx-caret{50%{border-color:transparent}}`,
   },
@@ -188,8 +188,8 @@ c.addEventListener("pointerleave", () => { c.style.setProperty("--rx", "0deg"); 
     html: `<h3 class="vx-glitch" data-text="SYSTEM ERROR">SYSTEM ERROR</h3>`,
     css: `.vx-glitch{position:relative;margin:0;font:900 36px/1 system-ui,sans-serif;color:#fff;letter-spacing:.04em}
 .vx-glitch::before,.vx-glitch::after{content:attr(data-text);position:absolute;inset:0}
-.vx-glitch::before{color:#0ff;animation:vx-g1 2s infinite steps(2);clip-path:inset(0 0 60% 0)}
-.vx-glitch::after{color:#f0f;animation:vx-g2 1.7s infinite steps(2);clip-path:inset(55% 0 0 0)}
+.vx-glitch::before{color:#ff6a26;animation:vx-g1 2s infinite steps(2);clip-path:inset(0 0 60% 0)}
+.vx-glitch::after{color:#d9d6cf;animation:vx-g2 1.7s infinite steps(2);clip-path:inset(55% 0 0 0)}
 @keyframes vx-g1{0%,90%{transform:none}92%{transform:translate(-4px,-2px)}96%{transform:translate(3px,1px)}}
 @keyframes vx-g2{0%,88%{transform:none}91%{transform:translate(4px,2px)}95%{transform:translate(-3px,-1px)}}`,
   },
@@ -200,9 +200,9 @@ c.addEventListener("pointerleave", () => { c.style.setProperty("--rx", "0deg"); 
     html: `<label class="vi-float"><input placeholder=" " /><span>Email address</span></label>`,
     css: `.vi-float{position:relative;display:block;width:280px}
 .vi-float input{width:100%;box-sizing:border-box;padding:22px 14px 8px;border-radius:12px;border:1px solid #ffffff26;background:#ffffff08;color:#fff;font:15px system-ui,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
-.vi-float input:focus{border-color:#818cf8;box-shadow:0 0 0 4px #818cf833}
+.vi-float input:focus{border-color:#ff6a26;box-shadow:0 0 0 4px #818cf833}
 .vi-float span{position:absolute;left:14px;top:15px;color:#8b8ba3;font:15px system-ui,sans-serif;pointer-events:none;transform-origin:left;transition:transform .2s,color .2s}
-.vi-float input:focus+span,.vi-float input:not(:placeholder-shown)+span{transform:translateY(-9px) scale(.75);color:#a5b4fc}`,
+.vi-float input:focus+span,.vi-float input:not(:placeholder-shown)+span{transform:translateY(-9px) scale(.75);color:#ff6a26}`,
   },
   {
     group: "Inputs", title: "Smooth switch",
@@ -218,7 +218,7 @@ c.addEventListener("pointerleave", () => { c.style.setProperty("--rx", "0deg"); 
   {
     group: "Inputs", title: "Gradient range slider",
     html: `<input class="vi-range" type="range" min="0" max="100" value="62">`,
-    css: `.vi-range{--v:62%;-webkit-appearance:none;appearance:none;width:260px;height:8px;border-radius:999px;background:linear-gradient(90deg,#f472b6,#a78bfa var(--v),#2a2a38 var(--v));outline:none;cursor:pointer}
+    css: `.vi-range{--v:62%;-webkit-appearance:none;appearance:none;width:260px;height:8px;border-radius:999px;background:linear-gradient(90deg,#c9a96e,#ff6a26 var(--v),#2a2a38 var(--v));outline:none;cursor:pointer}
 .vi-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 5px #a78bfa44,0 2px 8px #0006}
 .vi-range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 5px #a78bfa44,0 2px 8px #0006}`,
     js: `const r = root.querySelector(".vi-range");
@@ -230,9 +230,9 @@ r.addEventListener("input", () => r.style.setProperty("--v", r.value + "%"));`,
     group: "Loaders", title: "Orbit",
     html: `<div class="vl-orbit"><i></i><i></i><i></i></div>`,
     css: `.vl-orbit{position:relative;width:56px;height:56px;animation:vl-o 1.4s linear infinite}
-.vl-orbit i{position:absolute;width:14px;height:14px;border-radius:50%;background:#60a5fa;box-shadow:0 0 12px #60a5fa}
+.vl-orbit i{position:absolute;width:14px;height:14px;border-radius:50%;background:#d9d6cf;box-shadow:0 0 12px #d9d6cf}
 .vl-orbit i:nth-child(1){top:0;left:21px}
-.vl-orbit i:nth-child(2){bottom:2px;left:3px;background:#f472b6;box-shadow:0 0 12px #f472b6}
+.vl-orbit i:nth-child(2){bottom:2px;left:3px;background:#c9a96e;box-shadow:0 0 12px #c9a96e}
 .vl-orbit i:nth-child(3){bottom:2px;right:3px;background:#34d399;box-shadow:0 0 12px #34d399}
 @keyframes vl-o{to{transform:rotate(360deg)}}`,
   },
@@ -260,7 +260,7 @@ r.addEventListener("input", () => r.style.setProperty("--v", r.value + "%"));`,
   {
     group: "Backgrounds", title: "Mesh gradient",
     html: `<div class="vg-mesh"></div>`,
-    css: `.vg-mesh{width:100%;height:150px;border-radius:14px;background:radial-gradient(at 10% 20%,#ff6ad5 0,transparent 50%),radial-gradient(at 80% 0%,#c774e8 0,transparent 50%),radial-gradient(at 0% 100%,#8795e8 0,transparent 50%),radial-gradient(at 90% 90%,#94d0ff 0,transparent 50%),#1b1033}`,
+    css: `.vg-mesh{width:100%;height:150px;border-radius:14px;background:radial-gradient(at 10% 20%,#c9a96e 0,transparent 50%),radial-gradient(at 80% 0%,#ff6a26 0,transparent 50%),radial-gradient(at 0% 100%,#ff6a26 0,transparent 50%),radial-gradient(at 90% 90%,#d9d6cf 0,transparent 50%),#1a1917}`,
   },
   {
     group: "Backgrounds", title: "Dot grid with fade",
@@ -270,7 +270,7 @@ r.addEventListener("input", () => r.style.setProperty("--v", r.value + "%"));`,
   {
     group: "Backgrounds", title: "Film grain overlay",
     html: `<div class="vg-grain">Grain adds texture + kills banding</div>`,
-    css: `.vg-grain{position:relative;display:grid;place-items:center;width:100%;height:150px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0f766e,#1e1b4b);color:#fff;font:600 16px system-ui,sans-serif}
+    css: `.vg-grain{position:relative;display:grid;place-items:center;width:100%;height:150px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#3a352e,#1a1917);color:#fff;font:600 16px system-ui,sans-serif}
 .vg-grain::after{content:"";position:absolute;inset:0;opacity:.35;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}`,
   },
   {
