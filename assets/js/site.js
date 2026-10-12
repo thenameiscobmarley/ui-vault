@@ -29,7 +29,7 @@
   // ── Theme ─────────────────────────────────────────────────────
   $("#themeBtn").addEventListener("click", () => {
     const root = document.documentElement;
-    const next = root.dataset.theme === "light" ? "dark" : "light";
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = next;
     try { localStorage.setItem("uiv-theme", next); } catch {}
     moveCatInd();
