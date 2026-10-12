@@ -3,9 +3,10 @@
 A curated vault of open-source UI resources: component kits, copy-paste blocks, motion, effects, post-processing, 3D, icons, logos, fonts, color, charts and native/game UI. It also has live, copy-ready snippets.
 
 - **UV library (`lib/`)**: `uivault.css` + `uivault.js`, 40+ components and a `UV.*` JS API (toast, modal, ⌘K palette, confetti, tilt, magnetic, count-up, typewriter, scramble, reveal, tabs, sounds). See `docs.html`
+- **Blocks** (`blocks.html`): 41 responsive page sections (navbars, heroes, features, pricing, testimonials, footers, app screens) with desktop/tablet/mobile and light/dark preview
 - **Showcase** (`showcase.html`): 30 interface pieces built only with the library (pricing, login, music player, game HUD, dashboard, chat, checkout, and more)
-- **Library**: 180+ links with search, category tabs and favorites (saved in your browser)
-- **Playground**: 58 zero-dependency HTML/CSS snippets (tabs, buttons, cards, text effects, inputs, loaders, backgrounds, toasts)
+- **Library**: 270+ links with search, category tabs and favorites (saved in your browser)
+- **Playground**: 100 zero-dependency HTML/CSS snippets (tabs, buttons, cards, text effects, inputs, loaders, backgrounds, toasts)
 - **Post-FX Lab**: a real WebGL post pass (bloom, chromatic aberration, vignette, grain, scanlines, CRT). You can load your own image and copy the GLSL
 - **Logo Forge**: build a gradient logo and download it as SVG
 - **Flow** (`/app`): a focus-timer app built with the same techniques
