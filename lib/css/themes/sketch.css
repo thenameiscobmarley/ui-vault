@@ -1,0 +1,14 @@
+/*! UI Vault 3.0.0 · theme: sketch — hand-drawn borders on notebook paper. Needs core.css. MIT */
+[data-uv-theme="sketch"] {
+  --uv-bg: #fdfbf4; --uv-surface: #fffdf7; --uv-surface-2: #f4efe1; --uv-surface-3: #e9e2cd;
+  --uv-line: #2b2b2b33; --uv-line-2: #2b2b2b; --uv-text: #2b2b2b; --uv-muted: #555; --uv-dim: #888;
+  --uv-accent: #e8590c; --uv-accent-2: #1c7ed6;
+  --uv-font: "Patrick Hand", "Comic Neue", "Segoe Print", cursive; --uv-font-head: var(--uv-font); --uv-head-tracking: 0;
+  --uv-r-xs: 255px 15px 225px 15px / 15px 225px 15px 255px; --uv-r-sm: 255px 15px 225px 15px / 15px 225px 15px 255px; --uv-r: 15px 255px 15px 225px / 225px 15px 255px 15px; --uv-r-lg: 25px 225px 25px 255px / 255px 25px 225px 25px; --uv-bw: 2px;
+  --uv-btn-shadow: 2px 3px 0 #2b2b2b; --uv-card-shadow: 3px 4px 0 #2b2b2b22;
+  background-image: linear-gradient(#1c7ed61a 1px, transparent 1px); background-size: 100% 28px; font-size: 1.08em;
+}
+[data-uv-theme="sketch"] .uv-btn, [data-uv-theme="sketch"] .uv-card, [data-uv-theme="sketch"] .uv-input { border: 2px solid #2b2b2b; }
+[data-uv-theme="sketch"] .uv-btn--primary { background: var(--uv-accent); color: #fff; }
+[data-uv-theme="sketch"] .uv-btn:hover { transform: rotate(-1deg); }
+[data-uv-theme="sketch"] .uv-tabs > .uv-tabs__ind { background: #ffd43b; } [data-uv-theme="sketch"] .uv-tabs > button[aria-selected="true"] { color: #2b2b2b; }

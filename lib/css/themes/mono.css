@@ -1,0 +1,10 @@
+/*! UI Vault 3.0.0 · theme: mono — strictly black and white, monospaced. Needs core.css. MIT */
+[data-uv-theme="mono"] {
+  --uv-bg: #fff; --uv-surface: #fff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e0e0e0;
+  --uv-line: #000; --uv-line-2: #000; --uv-text: #000; --uv-muted: #000; --uv-dim: #666;
+  --uv-accent: #000; --uv-accent-2: #000; --uv-success: #000; --uv-danger: #000; --uv-warn: #000;
+  --uv-font: "Geist Mono", ui-monospace, monospace; --uv-font-head: var(--uv-font); --uv-head-weight: 500; --uv-head-tracking: -.04em;
+  --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0;
+}
+[data-uv-theme="mono"] .uv-btn--primary:hover, [data-uv-theme="mono"] .uv-btn--grad:hover { background: #fff; color: #000; border-color: #000; }
+[data-uv-theme="mono"] .uv-tabs > button[aria-selected="true"] { color: #fff; }

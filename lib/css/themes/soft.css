@@ -1,0 +1,14 @@
+/*! UI Vault 3.0.0 · theme: soft — pastel, pillowy radii, gentle shadows. Needs core.css. MIT */
+[data-uv-theme="soft"] {
+  --uv-bg: #f4f1ff; --uv-surface: #ffffff; --uv-surface-2: #eeeaff; --uv-surface-3: #e2dcff;
+  --uv-line: #5b4bd914; --uv-line-2: #5b4bd926; --uv-text: #2a2550; --uv-muted: #6b6690; --uv-dim: #a19cc4;
+  --uv-accent: #7c6cf2; --uv-accent-2: #ff8fb8; --uv-success: #3fbf8f;
+  --uv-font: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, sans-serif; --uv-font-head: var(--uv-font); --uv-head-weight: 800; --uv-head-tracking: -.03em;
+  --uv-r-xs: 8px; --uv-r-sm: 14px; --uv-r: 18px; --uv-r-lg: 24px; --uv-bw: 0;
+  --uv-btn-shadow: 0 6px 16px -6px #7c6cf280; --uv-card-shadow: 0 2px 4px #5b4bd90d, 0 18px 40px -18px #5b4bd94d; --uv-focus: 0 0 0 4px #7c6cf233;
+}
+[data-uv-theme="soft"] .uv-btn--primary { background: var(--uv-accent); color: #fff; }
+[data-uv-theme="soft"] .uv-btn--primary:hover { background: #6a59ea; }
+[data-uv-theme="soft"] .uv-btn--ghost { background: var(--uv-surface); }
+[data-uv-theme="soft"] .uv-input { background: var(--uv-surface-2); }
+[data-uv-theme="soft"] .uv-tabs { background: var(--uv-surface-2); border: 0; } [data-uv-theme="soft"] .uv-tabs > .uv-tabs__ind { background: #fff; box-shadow: 0 4px 12px -4px #5b4bd94d; } [data-uv-theme="soft"] .uv-tabs > button[aria-selected="true"] { color: var(--uv-text); }

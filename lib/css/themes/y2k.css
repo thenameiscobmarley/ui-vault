@@ -1,0 +1,14 @@
+/*! UI Vault 3.0.0 · theme: y2k — chrome, holographic gradients, bubbly pills. Needs core.css. MIT */
+[data-uv-theme="y2k"] {
+  --uv-bg: #ece6ff; --uv-surface: #ffffffcc; --uv-surface-2: #f6f2ff; --uv-surface-3: #e3dcff;
+  --uv-line: #7a5cff26; --uv-line-2: #7a5cff4d; --uv-text: #1b1240; --uv-muted: #5a4f8f; --uv-dim: #998fcf;
+  --uv-accent: #ff4fd8; --uv-accent-2: #4fd2ff;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-head-weight: 800; --uv-head-style: italic; --uv-head-tracking: -.05em;
+  --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 18px; --uv-r-lg: 26px; --uv-bw: 1.5px;
+  --uv-btn-shadow: inset 0 2px 0 #ffffffcc, inset 0 -3px 6px #0000001a, 0 6px 16px -6px #7a5cff99;
+  --uv-card-shadow: inset 0 1px 0 #fff, 0 20px 40px -20px #7a5cff80;
+  background-image: linear-gradient(135deg, #ffd6f5, #d6e8ff 45%, #e9ffd6);
+}
+[data-uv-theme="y2k"] .uv-btn--primary { background: linear-gradient(180deg, #fff, #c9c3ff 45%, #9f8cff 55%, #e0dbff); color: #1b1240; border-color: #7a5cff66; }
+[data-uv-theme="y2k"] .uv-h1, [data-uv-theme="y2k"] .uv-h2 { background: linear-gradient(180deg, #2a1f66 30%, #9f8cff 50%, #2a1f66 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-uv-theme="y2k"] .uv-tabs > .uv-tabs__ind { background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2)); } [data-uv-theme="y2k"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
