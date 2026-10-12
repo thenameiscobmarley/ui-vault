@@ -28,7 +28,14 @@
   function collect(rules, nodes, out, tokens) {
     for (const r of rules) {
       if (r instanceof CSSStyleRule) {
-        if (isToken(r.selectorText)) { tokens.push(r); continue; }
+        if (isToken(r.selectorText)) {
+          tokens.push(r);
+          // token rules can also carry real properties (e.g. [data-uv-theme] { background-color… })
+          const real = [...r.style].filter(p => !p.startsWith("--"));
+          if (real.length && matchesAny(nodes, r.selectorText.replace(/:root\s*,?/g, "").trim() || ":root"))
+            out.push(`${r.selectorText.replace(/:root\s*,\s*/g, "")} { ${real.map(p => `${p}: ${r.style.getPropertyValue(p)};`).join(" ")} }`);
+          continue;
+        }
         if (matchesAny(nodes, r.selectorText)) out.push(r.cssText);
       } else if (r.cssRules && !(r instanceof CSSKeyframesRule)) {
         const inner = []; collect(r.cssRules, nodes, inner, tokens);
@@ -40,14 +47,27 @@
   async function extract(live, html) {
     const src = await loadSrc();
     if (!sheet) { sheet = new CSSStyleSheet(); sheet.replaceSync(src.css.replace(/@import[^;]+;/g, "")); }
-    // the piece's nodes + any themed ancestor (themes are attribute-scoped)
-    const nodes = [live, ...live.querySelectorAll("*")];
+    // Work on a clone, plus the elements the JS creates at runtime, so their CSS is included too.
     const themed = live.closest("[data-uv-theme]");
+    const work = live.cloneNode(true);
+    const add = (parent, html) => parent.insertAdjacentHTML("beforeend", html);
+    work.querySelectorAll(".uv-tabs").forEach(t => { if (!t.querySelector(".uv-tabs__ind")) add(t, '<span class="uv-tabs__ind"></span>'); });
+    [work, ...work.querySelectorAll("[data-uv]")].forEach(el => {
+      const b = (el.dataset && el.dataset.uv) || "";
+      if (/ripple/.test(b)) add(el, '<span class="uv-ripple"></span>');
+      if (/tilt/.test(b)) { el.classList.add("uv-tilt"); add(el, '<i class="uv-glare"></i>'); }
+    });
+    work.querySelectorAll("[data-uv-type]").forEach(el => el.classList.add("uv-caret"));
+    if (/UV\.(toast|copy)|data-uv-(copy|toast)/.test(html + work.innerHTML)) add(work, '<div class="uv-toasts uv"><div class="uv-toast uv-toast--success uv-toast--error uv-toast--warn"><span class="uv-toast__icon"></span></div></div>');
+    if (/UV\.modal/.test(html + work.innerHTML)) add(work, '<dialog class="uv-modal uv"><div><h3 class="uv-h3"></h3><div class="uv-muted"></div><div class="uv-row"><button class="uv-btn uv-btn--primary"></button><button class="uv-btn uv-btn--danger"></button><button class="uv-btn uv-btn--ghost"></button></div></div></dialog>');
+    if (/UV\.cmdk/.test(html + work.innerHTML)) add(work, '<dialog class="uv-cmdk uv"><input><ul><li class="is-active"><span class="uv-kbd"></span></li></ul><div class="uv-cmdk__empty"></div></dialog>');
+    let scope = work;
+    if (themed && themed !== live) { scope = document.createElement("div"); scope.dataset.uvTheme = themed.dataset.uvTheme; scope.appendChild(work); }
+    const nodes = [scope, ...scope.querySelectorAll("*")];
     const out = [], tokens = [];
     collect(sheet.cssRules, nodes, out, tokens);
 
     // theme rules for an ancestor scope
-    if (themed && !nodes.includes(themed)) for (const r of sheet.cssRules) if (r instanceof CSSStyleRule && r.selectorText.trim() === `[data-uv-theme="${themed.dataset.uvTheme}"]`) out.unshift(r.cssText);
 
     let body = out.join("\n");
     // keyframes + @property referenced by animations
@@ -77,7 +97,7 @@
     if (has(/data-uv-fx|uv-fx-(glitch|wave|bounce-in|spotlight|holo-card)|UV\.fx/)) mods.push("fx");
     const js = mods.length > 1 ? `// Standalone JS for this piece: ${mods.join(" + ")} (${mods.length} of 5 modules). Paste once per page.\n` + mods.map(m => src.js[m]).join("\n") : "";
 
-    return { html: html.trim(), css, js, wrap: themed && !nodes.includes(themed) ? themed.dataset.uvTheme : null };
+    return { html: html.trim(), css, js, wrap: themed && themed !== live && !/data-uv-theme=/.test(html) ? themed.dataset.uvTheme : null };
   }
 
   const FONTS = '<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;700&family=VT323&family=Patrick+Hand&display=swap" rel="stylesheet">';
