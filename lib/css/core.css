@@ -1,0 +1,59 @@
+/*! UI Vault 3 · core.css — tokens, base helpers. Load first. MIT */
+/* ── Tokens ─────────────────────────────────────────────────── */
+:root {
+  --uv-bg: #f4f2ee; --uv-surface: #fbfaf8; --uv-surface-2: #ece9e3; --uv-surface-3: #e2ded6;
+  --uv-line: #1a19171a; --uv-line-2: #1a19172e;
+  --uv-text: #1a1917; --uv-muted: #5f5b54; --uv-dim: #8f8a82;
+  --uv-accent: #ff4f00; --uv-accent-2: #c43c00;
+  --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f; --uv-info: #2b5fb4;
+  --uv-grad: linear-gradient(90deg, var(--uv-accent), var(--uv-accent));
+  --uv-radius: 6px; --uv-radius-lg: 8px; --uv-radius-full: 999px;
+  --uv-shadow: none;
+  --uv-shadow-lg: 0 24px 60px -24px #1a191740;
+  --uv-ease: cubic-bezier(.2, .8, .2, 1); --uv-spring: cubic-bezier(.3, 1.3, .5, 1);
+  --uv-font: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --uv-serif: "Instrument Serif", Georgia, serif;
+  --uv-display: var(--uv-font);
+  --uv-mono: "Geist Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --uv-bg: #121211; --uv-surface: #181817; --uv-surface-2: #222220; --uv-surface-3: #2b2b29;
+  --uv-line: #ffffff14; --uv-line-2: #ffffff26;
+  --uv-text: #ecebe8; --uv-muted: #a19d95; --uv-dim: #6f6b64;
+  --uv-accent: #ff6a26; --uv-accent-2: #ff8f5a;
+  --uv-shadow-lg: 0 24px 60px -24px #000c;
+  color-scheme: dark;
+}
+.uv-theme-ink { --uv-accent: #1a1917; --uv-accent-2: #5f5b54; }
+.uv-theme-rose { --uv-accent: #d6336c; --uv-accent-2: #a61e4d; }
+.uv-theme-emerald { --uv-accent: #2f7d4f; --uv-accent-2: #1f5c38; }
+.uv-theme-ocean { --uv-accent: #2b5fb4; --uv-accent-2: #1d4280; }
+.uv-theme-gold { --uv-accent: #b7791f; --uv-accent-2: #8a5a12; }
+.uv-theme-mono { --uv-accent: #5f5b54; --uv-accent-2: #1a1917; }
+
+/* ── Base helpers ───────────────────────────────────────────── */
+.uv { font-family: var(--uv-font); color: var(--uv-text); -webkit-font-smoothing: antialiased; }
+.uv *, .uv *::before, .uv *::after { box-sizing: border-box; }
+.uv-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.uv-col { display: flex; flex-direction: column; gap: 12px; }
+.uv-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(var(--uv-min, 240px), 1fr)); }
+.uv-muted { color: var(--uv-muted); } .uv-dim { color: var(--uv-dim); }
+.uv-mono { font-family: var(--uv-mono); }
+.uv-h1 { font: 700 clamp(40px, 7vw, 76px)/1 var(--uv-display); letter-spacing: -.045em; margin: 0; }
+.uv-h2 { font: 700 clamp(26px, 4vw, 40px)/1.1 var(--uv-display); letter-spacing: -.035em; margin: 0; }
+.uv-h3 { font: 600 18px/1.25 var(--uv-display); letter-spacing: -.015em; margin: 0; }
+.uv-eyebrow { font: 600 12px var(--uv-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--uv-accent-2); }
+.uv-divider { height: 1px; background: var(--uv-line); border: 0; margin: 8px 0; }
+.uv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* Derived + shape/type tokens. Re-declared on every [data-uv-theme] so themes can be scoped to any element. */
+:root, [data-uv-theme] {
+  --uv-grad: linear-gradient(90deg, var(--uv-accent), var(--uv-accent));
+  --uv-r-xs: 3px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-r-xl: 14px;
+  --uv-bw: 1px;
+  --uv-font-head: var(--uv-serif); --uv-head-weight: 400; --uv-head-style: normal; --uv-head-case: none; --uv-head-tracking: -.02em;
+  --uv-btn-font: var(--uv-font); --uv-btn-case: none; --uv-btn-tracking: normal; --uv-btn-shadow: none; --uv-btn-shadow-active: none;
+  --uv-card-shadow: none; --uv-focus: 0 0 0 3px var(--uv-line);
+}
+[data-uv-theme] { background-color: var(--uv-bg); color: var(--uv-text); font-family: var(--uv-font); }

@@ -1,0 +1,113 @@
+/*! UI Vault 3 · fx.css — effect mixins. Add any uv-fx-* class to any element; stack as many as you like. MIT
+   Text FX use the element's own text; some read data-text="…" (set automatically by UV.fx when missing). */
+
+/* ── Text ───────────────────────────────────────────────────── */
+.uv-fx-glitch { position: relative; display: inline-block; }
+.uv-fx-glitch::before, .uv-fx-glitch::after { content: attr(data-text); position: absolute; inset: 0; pointer-events: none; }
+.uv-fx-glitch::before { color: #00f0ff; clip-path: inset(0 0 55% 0); animation: uv-g1 2.4s infinite steps(1); mix-blend-mode: screen; }
+.uv-fx-glitch::after { color: #ff2bd6; clip-path: inset(50% 0 0 0); animation: uv-g2 2s infinite steps(1); mix-blend-mode: screen; }
+@keyframes uv-g1 { 0%, 86% { transform: none; } 88% { transform: translate(-4px, -1px); } 92% { transform: translate(3px, 1px); } 96% { transform: translate(-2px, 0); } }
+@keyframes uv-g2 { 0%, 82% { transform: none; } 85% { transform: translate(4px, 1px); } 90% { transform: translate(-3px, -1px); } }
+.uv-fx-rgb { transition: text-shadow .2s; } .uv-fx-rgb:hover { text-shadow: -3px 0 #ff2bd6, 3px 0 #00f0ff; }
+.uv-fx-chrome { background: linear-gradient(180deg, #fff 0%, #c7c7c7 40%, #3d3d3d 50%, #e5e5e5 60%, #fff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 2px 0 #0004); }
+.uv-fx-holo { background: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6) 0 0 / 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uv-holo 6s linear infinite; }
+@keyframes uv-holo { to { background-position: 300% 0; } }
+.uv-fx-neon { color: #fff; text-shadow: 0 0 4px #fff, 0 0 12px var(--uv-fx-c, #00f0ff), 0 0 28px var(--uv-fx-c, #00f0ff), 0 0 56px var(--uv-fx-c, #00f0ff); animation: uv-flick 5s infinite; }
+@keyframes uv-flick { 0%, 92%, 96%, 100% { opacity: 1; } 94% { opacity: .55; } 95% { opacity: .9; } }
+.uv-fx-3d { text-shadow: 1px 1px 0 var(--uv-accent), 2px 2px 0 var(--uv-accent), 3px 3px 0 var(--uv-accent), 4px 4px 0 var(--uv-accent), 5px 5px 0 var(--uv-accent), 6px 6px 0 var(--uv-accent); transition: transform .2s, text-shadow .2s; }
+.uv-fx-3d:hover { transform: translate(-3px, -3px); }
+.uv-fx-long-shadow { text-shadow: 1px 1px var(--uv-line-2), 2px 2px var(--uv-line-2), 3px 3px var(--uv-line-2), 4px 4px var(--uv-line-2), 5px 5px var(--uv-line-2), 6px 6px var(--uv-line-2), 7px 7px var(--uv-line-2), 8px 8px var(--uv-line-2), 9px 9px var(--uv-line-2), 10px 10px var(--uv-line-2); }
+.uv-fx-stroke { color: transparent; -webkit-text-stroke: 1.5px currentColor; -webkit-text-stroke-color: var(--uv-text); }
+.uv-fx-fill-hover { background: linear-gradient(var(--uv-accent), var(--uv-accent)) 0 0 / 0 100% no-repeat; -webkit-background-clip: text; background-clip: text; -webkit-text-stroke: 1px var(--uv-text); color: transparent; transition: background-size .6s cubic-bezier(.7, 0, .2, 1); }
+.uv-fx-fill-hover:hover { background-size: 100% 100%; }
+.uv-fx-squiggle { text-decoration: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' fill='none' stroke='%23ff4f00' stroke-width='1.6'/%3E%3C/svg%3E") 0 100% / 20px 6px repeat-x; padding-bottom: 6px; }
+.uv-fx-squiggle:hover { animation: uv-squig .4s linear infinite; } @keyframes uv-squig { to { background-position: 20px 100%; } }
+.uv-fx-highlight { background: linear-gradient(transparent 55%, color-mix(in srgb, var(--uv-accent) 40%, transparent) 55%) 0 0 / 0 100% no-repeat; transition: background-size .6s cubic-bezier(.7, 0, .2, 1); }
+.uv-fx-highlight:hover, .uv-fx-highlight.is-in { background-size: 100% 100%; }
+.uv-fx-redacted { background: var(--uv-text); color: transparent; border-radius: 2px; transition: background .3s, color .3s; cursor: help; }
+.uv-fx-redacted:hover { background: transparent; color: inherit; }
+.uv-fx-blur-in { animation: uv-blur-in 1s cubic-bezier(.2, .8, .2, 1) both; } @keyframes uv-blur-in { from { filter: blur(12px); opacity: 0; letter-spacing: .3em; } }
+.uv-fx-wave > span { display: inline-block; animation: uv-wave 1.6s ease-in-out infinite; animation-delay: calc(var(--i) * 60ms); }
+@keyframes uv-wave { 0%, 60%, 100% { transform: none; } 30% { transform: translateY(-.25em); color: var(--uv-accent); } }
+.uv-fx-bounce-in > span { display: inline-block; animation: uv-bin .7s cubic-bezier(.3, 1.6, .5, 1) both; animation-delay: calc(var(--i) * 40ms); }
+@keyframes uv-bin { from { transform: translateY(.8em) scale(.4); opacity: 0; } }
+.uv-fx-mirror { -webkit-box-reflect: below 0 linear-gradient(transparent 40%, #0005); }
+.uv-fx-gradient-text { background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ── Surfaces & borders ─────────────────────────────────────── */
+.uv-fx-sticker { display: inline-block; padding: 6px 14px; border-radius: 10px; background: var(--uv-accent-2, #ffd23f); color: #000; font-weight: 700; box-shadow: 0 0 0 4px #fff, 0 8px 18px -4px #0006; transform: rotate(-4deg); transition: transform .25s cubic-bezier(.3, 1.6, .5, 1); }
+.uv-fx-sticker:hover { transform: rotate(2deg) scale(1.06); }
+.uv-fx-stamp { display: inline-block; padding: 6px 14px; border: 3px double currentColor; color: var(--uv-danger, #c4321f); font: 800 18px var(--uv-mono); text-transform: uppercase; letter-spacing: .1em; transform: rotate(-8deg); opacity: .85; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 1.6'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 1.6'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.uv-fx-tape { position: relative; }
+.uv-fx-tape::before { content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 24px; margin-left: -45px; background: #ffffff8c; border: 1px solid #0000000d; transform: rotate(-3deg); box-shadow: 0 1px 2px #0002; z-index: 1; }
+.uv-fx-holo-card { position: relative; overflow: hidden; isolation: isolate; }
+.uv-fx-holo-card::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; mix-blend-mode: color-dodge; opacity: .55; background: linear-gradient(115deg, transparent 20%, #ff9ae6 35%, #9ad3ff 45%, #b8ff9a 55%, transparent 70%) var(--gx, 50%) 0 / 250% 100%; transition: background-position .1s; }
+.uv-fx-rainbow-border { position: relative; border-color: transparent !important; background: linear-gradient(var(--uv-surface), var(--uv-surface)) padding-box, conic-gradient(from var(--uv-a, 0deg), #ff4f00, #ffd23f, #39ff88, #00f0ff, #b46bff, #ff2bd6, #ff4f00) border-box; border: 2px solid transparent; animation: uv-spin-a 4s linear infinite; }
+.uv-fx-dashed-march { border: 0 !important; background: linear-gradient(90deg, var(--uv-text) 50%, transparent 0) 0 0 / 12px 1.5px repeat-x, linear-gradient(90deg, var(--uv-text) 50%, transparent 0) 0 100% / 12px 1.5px repeat-x, linear-gradient(0deg, var(--uv-text) 50%, transparent 0) 0 0 / 1.5px 12px repeat-y, linear-gradient(0deg, var(--uv-text) 50%, transparent 0) 100% 0 / 1.5px 12px repeat-y; animation: uv-march .6s linear infinite; }
+@keyframes uv-march { to { background-position: 12px 0, -12px 100%, 0 -12px, 100% 12px; } }
+.uv-fx-glow { box-shadow: 0 0 0 1px color-mix(in srgb, var(--uv-accent) 50%, transparent), 0 0 30px -6px var(--uv-accent); }
+.uv-fx-hard-shadow { box-shadow: 6px 6px 0 var(--uv-text); transition: transform .15s, box-shadow .15s; }
+.uv-fx-hard-shadow:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--uv-text); }
+.uv-fx-hard-shadow:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--uv-text); }
+.uv-fx-bevel { box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; }
+.uv-fx-inset { box-shadow: inset 0 2px 6px #0003, inset 0 0 0 1px var(--uv-line-2); }
+.uv-fx-neumorph { background: var(--uv-surface-2); box-shadow: 8px 8px 16px color-mix(in srgb, var(--uv-text) 14%, transparent), -8px -8px 16px #ffffffcc; border: 0 !important; }
+.uv-fx-frost { background: color-mix(in srgb, var(--uv-surface) 40%, transparent); backdrop-filter: blur(14px) saturate(1.5); -webkit-backdrop-filter: blur(14px) saturate(1.5); }
+.uv-fx-paper { background-color: #fdfbf4; background-image: linear-gradient(#1c7ed61a 1px, transparent 1px); background-size: 100% 28px; color: #2b2b2b; }
+.uv-fx-torn { -webkit-mask: radial-gradient(8px at 50% 100%, transparent 98%, #000) 50% / 16px 100%; mask: radial-gradient(8px at 50% 100%, transparent 98%, #000) 50% / 16px 100%; padding-bottom: 14px; }
+.uv-fx-corners { position: relative; }
+.uv-fx-corners::before, .uv-fx-corners::after { content: ""; position: absolute; width: 12px; height: 12px; border: 2px solid var(--uv-accent); transition: all .3s cubic-bezier(.3, 1.4, .5, 1); pointer-events: none; }
+.uv-fx-corners::before { left: -6px; top: -6px; border-right: 0; border-bottom: 0; } .uv-fx-corners::after { right: -6px; bottom: -6px; border-left: 0; border-top: 0; }
+.uv-fx-corners:hover::before, .uv-fx-corners:hover::after { width: calc(100% + 12px); height: calc(100% + 12px); }
+
+/* ── Retro / screen ─────────────────────────────────────────── */
+.uv-fx-scanlines { position: relative; }
+.uv-fx-scanlines::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; background: repeating-linear-gradient(0deg, #0000 0 2px, #0003 2px 3px); }
+.uv-fx-crt { position: relative; overflow: hidden; border-radius: 18px / 26px; box-shadow: inset 0 0 60px #000a; animation: uv-crt 6s infinite; }
+.uv-fx-crt::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, #0000 0 2px, #00000038 2px 3px), radial-gradient(ellipse at center, transparent 55%, #0008); }
+@keyframes uv-crt { 0%, 97%, 100% { filter: none; } 98% { filter: brightness(1.4) contrast(1.2); transform: skewX(1deg); } }
+.uv-fx-vhs { animation: uv-vhs 3s infinite steps(1); } @keyframes uv-vhs { 0%, 90% { transform: none; filter: none; } 91% { transform: translateX(3px); filter: hue-rotate(40deg); } 93% { transform: translateX(-4px); } 95% { transform: none; filter: saturate(2); } }
+.uv-fx-pixel { image-rendering: pixelated; font-family: "VT323", "Press Start 2P", ui-monospace, monospace; letter-spacing: .04em; }
+.uv-fx-dither { background-image: radial-gradient(var(--uv-text) 1px, transparent 1.2px); background-size: 4px 4px; }
+.uv-fx-halftone { background-image: radial-gradient(var(--uv-accent) 1.4px, transparent 1.6px); background-size: 9px 9px; -webkit-mask: linear-gradient(135deg, #000, transparent 80%); mask: linear-gradient(135deg, #000, transparent 80%); }
+
+/* ── Motion ─────────────────────────────────────────────────── */
+.uv-fx-float { animation: uv-float 5s ease-in-out infinite; }
+.uv-fx-wobble:hover { animation: uv-wob .6s; } @keyframes uv-wob { 20% { transform: rotate(-6deg); } 40% { transform: rotate(5deg); } 60% { transform: rotate(-3deg); } 80% { transform: rotate(2deg); } }
+.uv-fx-jelly:hover { animation: uv-jelly .7s; } @keyframes uv-jelly { 30% { transform: scale(1.18, .82); } 45% { transform: scale(.88, 1.12); } 60% { transform: scale(1.06, .94); } 75% { transform: scale(.98, 1.02); } }
+.uv-fx-shake:hover { animation: uv-shake-k .4s; } @keyframes uv-shake-k { 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+.uv-fx-pop:active { animation: uv-popk .3s; } @keyframes uv-popk { 50% { transform: scale(.9); } }
+.uv-fx-spin-hover:hover { animation: uv-rot .8s cubic-bezier(.6, 0, .3, 1); }
+.uv-fx-breathe { animation: uv-breathe 4s ease-in-out infinite; } @keyframes uv-breathe { 50% { transform: scale(1.04); opacity: .85; } }
+.uv-fx-pulse-ring { position: relative; }
+.uv-fx-pulse-ring::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 0 var(--uv-accent); animation: uv-pring 2s infinite; pointer-events: none; }
+@keyframes uv-pring { 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+.uv-fx-swing { transform-origin: top center; animation: uv-swing 3s ease-in-out infinite; } @keyframes uv-swing { 25% { transform: rotate(5deg); } 75% { transform: rotate(-5deg); } }
+.uv-fx-lift { transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s; } .uv-fx-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -16px #0006; }
+.uv-fx-shine { position: relative; overflow: hidden; }
+.uv-fx-shine::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff66 50%, transparent 65%); transform: translateX(-120%); transition: transform .8s; }
+.uv-fx-shine:hover::after { transform: translateX(120%); }
+.uv-fx-flip { perspective: 800px; } .uv-fx-flip > * { transition: transform .7s cubic-bezier(.4, 1.4, .5, 1); transform-style: preserve-3d; } .uv-fx-flip:hover > * { transform: rotateY(180deg); }
+
+/* ── Backgrounds ────────────────────────────────────────────── */
+.uv-fx-mesh-anim { background: radial-gradient(at 20% 20%, var(--uv-accent) 0, transparent 50%), radial-gradient(at 80% 30%, var(--uv-accent-2) 0, transparent 50%), radial-gradient(at 50% 90%, #b46bff 0, transparent 50%), var(--uv-bg); background-size: 200% 200%; animation: uv-mesh 12s ease-in-out infinite alternate; }
+@keyframes uv-mesh { to { background-position: 100% 100%; } }
+.uv-fx-grid-floor { background: linear-gradient(var(--uv-accent) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, var(--uv-accent) 1px, transparent 1px) 0 0 / 40px 40px; transform: perspective(300px) rotateX(60deg); transform-origin: bottom; -webkit-mask: linear-gradient(transparent, #000); mask: linear-gradient(transparent, #000); animation: uv-floor 1s linear infinite; }
+@keyframes uv-floor { to { background-position: 0 40px, 0 40px; } }
+.uv-fx-stripes { background: repeating-linear-gradient(-45deg, var(--uv-surface-2) 0 10px, var(--uv-surface) 10px 20px); }
+.uv-fx-checker { background: conic-gradient(var(--uv-surface-2) 25%, var(--uv-surface) 0 50%, var(--uv-surface-2) 0 75%, var(--uv-surface) 0) 0 0 / 24px 24px; }
+.uv-fx-noise { position: relative; }
+.uv-fx-noise::before { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; opacity: .18; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation: uv-noise .4s steps(3) infinite; }
+@keyframes uv-noise { 33% { background-position: 40px 20px; } 66% { background-position: -30px 50px; } }
+.uv-fx-spotlight { --x: 50%; --y: 50%; background: radial-gradient(300px circle at var(--x) var(--y), color-mix(in srgb, var(--uv-accent) 22%, transparent), transparent 70%), var(--uv-bg); }
+.uv-fx-blob { position: relative; isolation: isolate; }
+.uv-fx-blob::before { content: ""; position: absolute; z-index: -1; inset: 10%; background: var(--uv-accent); border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; filter: blur(2px); animation: uv-blob 8s ease-in-out infinite; opacity: .9; }
+@keyframes uv-blob { 33% { border-radius: 70% 30% 46% 54% / 30% 39% 61% 70%; transform: rotate(60deg); } 66% { border-radius: 30% 70% 70% 30% / 53% 30% 70% 47%; transform: rotate(-40deg) scale(1.05); } }
+
+@media (prefers-reduced-motion: reduce) { [class*="uv-fx-"], [class*="uv-fx-"]::before, [class*="uv-fx-"]::after { animation: none !important; } }
+
+/* shared keyframes so fx.css also works without components.css */
+@property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes uv-spin-a { to { --uv-a: 360deg; } }
+@keyframes uv-rot { to { transform: rotate(360deg); } }
+@keyframes uv-float { 50% { transform: translateY(-10px); } }
