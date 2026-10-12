@@ -23,6 +23,8 @@
       <span>UI&nbsp;Vault</span>
     </a>
     <nav class="topnav" aria-label="Sections">
+      <a href="docs.html">API Docs</a>
+      <a href="showcase.html">Showcase</a>
       <a href="#library">Library</a>
       <a href="#playground">Playground</a>
       <a href="#postfx">Post-FX Lab</a>
@@ -50,6 +52,10 @@
         <kbd>/</kbd>
       </label>
       <div class="hero__chips" id="quickChips"></div>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--lg" href="showcase.html">✨ See 30 things built with it</a>
+        <a class="btn btn--ghost btn--lg" href="docs.html">Use the UV API →</a>
+      </div>
 
       <dl class="stats">
         <div><dt>Resources</dt><dd id="statRes">0</dd></div>
@@ -57,6 +63,32 @@
         <div><dt>Live snippets</dt><dd id="statDemo">0</dd></div>
         <div><dt>Price</dt><dd>$0</dd></div>
       </dl>
+    </section>
+
+    <!-- ── UV API promo ───────────────────────────────────────── -->
+    <section class="section api-promo">
+      <div>
+        <p class="eyebrow">New — UI Vault library v2</p>
+        <h2>Two files. 40+ components. <span class="grad-text">Zero build step.</span></h2>
+        <p class="section__sub">Use <code>uivault.css</code> for buttons, tabs, cards, glass, forms, rings, docks, marquees and backgrounds. Use <code>uivault.js</code> for toasts, modals, a ⌘K palette, confetti, tilt, magnetic hover, count-ups, typewriters, scroll reveals and synthesized UI sounds.</p>
+        <div class="api-promo__cta">
+          <a class="btn btn--primary" href="docs.html">Read the docs</a>
+          <a class="btn btn--ghost" href="showcase.html">Browse the showcase</a>
+          <a class="btn btn--ghost" href="lib/uivault.css" download>⇩ CSS</a>
+          <a class="btn btn--ghost" href="lib/uivault.js" download>⇩ JS</a>
+        </div>
+      </div>
+      <pre class="api-promo__code"><code><span class="c">&lt;!-- that's the whole setup --&gt;</span>
+&lt;link rel="stylesheet" href="lib/uivault.css"&gt;
+&lt;script src="lib/uivault.js" defer&gt;&lt;/script&gt;
+
+&lt;button class="uv-btn uv-btn--grad"
+        data-uv="magnetic ripple"
+        data-uv-confetti&gt;Ship it&lt;/button&gt;
+
+<span class="c">// or from JS</span>
+UV.toast("Saved!", { type: "success" });
+UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     </section>
 
     <!-- ── Library ──────────────────────────────────────────── -->
