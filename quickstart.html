@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quick start — UI Vault API</title>
+<meta name="description" content="Get the UI Vault API in two minutes: download the zip, pick modules, mix 12 themes and 70+ effects on any element." />
+<meta name="theme-color" content="#f4f2ee" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;700&family=VT323&family=Patrick+Hand&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<style>
+  body { margin: 0; }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; padding: 0 clamp(16px, 3vw, 32px); height: 60px; background: var(--uv-bg); border-bottom: 1px solid var(--uv-line-2); }
+  .top .brand { display: flex; align-items: center; gap: 10px; font: 600 16px var(--uv-font); color: var(--uv-text); text-decoration: none; }
+  .top nav { margin-left: auto; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+  .sec { padding: 88px 0 8px; scroll-margin-top: 70px; }
+  .sec-head { display: grid; grid-template-columns: 200px 1fr; gap: 8px 32px; margin-bottom: 32px; padding-top: 16px; border-top: 1px solid var(--uv-text); }
+  .sec-head .uv-eyebrow { grid-row: span 2; }
+  .sec-head p { margin: 10px 0 0; max-width: 640px; color: var(--uv-muted); }
+  pre.code { position: relative; margin: 0; padding: 18px 20px; border-radius: 6px; background: #1a1917; color: #d9d6cf; font: 13px/1.7 var(--uv-mono); overflow: auto; white-space: pre; }
+  pre.code .c { color: #8f8a82; } pre.code .k { color: #ff8f5a; } pre.code .s { color: #9fc5a8; }
+  .code-wrap { position: relative; } .code-wrap .uv-btn { position: absolute; top: 10px; right: 10px; background: #2b2b29; color: #ecebe8; border-color: #ffffff26; }
+  .steps { display: grid; gap: 28px; }
+  .step { display: grid; grid-template-columns: 56px 1fr 1fr; gap: 24px; align-items: start; }
+  .step > * { min-width: 0; }
+  .step > b { font: 400 48px/1 var(--uv-serif); color: var(--uv-accent); }
+  .step h3 { margin: 4px 0 8px; font: 600 17px var(--uv-font); }
+  .result { border: 1px solid var(--uv-line-2); border-radius: 6px; padding: 24px; min-height: 120px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--uv-surface); }
+  .mods { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .mods th { text-align: left; font: 500 11px var(--uv-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--uv-dim); padding: 8px 10px; border-bottom: 1px solid var(--uv-text); }
+  .mods td { padding: 12px 10px; border-bottom: 1px solid var(--uv-line-2); vertical-align: top; }
+  .mods td:first-child { font: 500 13px var(--uv-mono); white-space: nowrap; }
+  .mods td:nth-child(3) { font: 12px var(--uv-mono); color: var(--uv-dim); white-space: nowrap; text-align: right; }
+  .themes { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
+  .th { display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 10px; border: 1px solid var(--uv-line-2); min-height: 300px; position: relative; overflow: hidden; }
+  .th header { display: flex; justify-content: space-between; align-items: baseline; }
+  .th header code { font: 500 11px var(--uv-mono); opacity: .7; }
+  .mix { border: 1px solid var(--uv-text); border-radius: 8px; overflow: hidden; }
+  .mix-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--uv-text); background: var(--uv-surface); }
+  .mix-bar label { display: flex; align-items: center; gap: 6px; font: 500 12px var(--uv-mono); text-transform: uppercase; }
+  .mix-bar select { height: 32px; padding: 0 8px; border: 1px solid var(--uv-line-2); border-radius: 4px; background: var(--uv-bg); color: var(--uv-text); font: 13px var(--uv-font); }
+  .mix-zone { padding: 22px 26px; transition: background .3s, color .3s; }
+  .fxgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+  .fx { display: flex; flex-direction: column; border: 1px solid var(--uv-line-2); border-radius: 6px; overflow: hidden; background: var(--uv-surface); }
+  .fx .st { flex: 1; display: grid; place-items: center; min-height: 140px; padding: 18px; position: relative; overflow: hidden; text-align: center; }
+  .fx button.lbl { display: flex; justify-content: space-between; gap: 8px; padding: 8px 10px; border: 0; border-top: 1px solid var(--uv-line-2); background: none; color: var(--uv-text); font: 500 11px var(--uv-mono); cursor: pointer; text-align: left; }
+  .fx button.lbl:hover { background: var(--uv-text); color: var(--uv-bg); }
+  .fx .dk { background: #141413; color: #ecebe8; --uv-text: #ecebe8; --uv-surface: #1f1f1d; --uv-surface-2: #2b2b29; --uv-line-2: #ffffff30; }
+  .builder { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .opts { display: grid; gap: 18px; }
+  .opts fieldset { border: 1px solid var(--uv-line-2); border-radius: 6px; padding: 12px 14px; margin: 0; }
+  .opts legend { padding: 0 6px; font: 500 11px var(--uv-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--uv-muted); }
+  .opts .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px 12px; }
+  .opts label { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+  .opts small { color: var(--uv-dim); font: 11px var(--uv-mono); }
+  .size { font: 400 44px/1 var(--uv-serif); }
+  .api-tbl td:first-child { font: 13px var(--uv-mono); white-space: nowrap; color: var(--uv-text); }
+  @media (max-width: 900px) { .sec-head, .builder { grid-template-columns: 1fr; } .step { grid-template-columns: 40px 1fr; } .step .result { grid-column: 2; } .top nav { display: none; } }
+</style>
+<script>try{const t=localStorage.getItem("uv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body class="uv">
+<header class="top">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--uv-bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--uv-accent)"/></svg>UI Vault <span class="uv-badge uv-badge--accent">API 3.0</span></a>
+  <nav class="uv-nav" style="border:0;background:none;padding:0"><a class="is-active" href="quickstart.html">Quick start</a><a href="docs.html">Docs</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a><a href="./">Library</a></nav>
+  <a class="uv-btn uv-btn--primary uv-btn--sm" href="downloads/uivault-latest.zip" download>Download .zip</a>
+</header>
+
+<main class="wrap">
+  <!-- Hero -->
+  <section style="padding:72px 0 24px">
+    <p class="uv-eyebrow">UI Vault API · v<span class="ver">3.0.0</span> · MIT</p>
+    <h1 class="uv-h1" style="font-size:clamp(52px,8vw,108px);margin:14px 0 22px;max-width:14ch">Twelve themes, <em class="uv-muted">seventy effects,</em> one API.</h1>
+    <p class="uv-muted" style="max-width:640px;font-size:18px;margin:0 0 30px">A modular CSS + JS kit with no build step. Load the whole bundle or only the modules you need. Then mix themes and effects on any element: one page can have a brutalist header, a neon card and a terminal footer.</p>
+    <div class="uv-row">
+      <a class="uv-btn uv-btn--primary uv-btn--lg" href="downloads/uivault-latest.zip" download>Download uivault-<span class="ver">3.0.0</span>.zip</a>
+      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#start">Quick start</a>
+      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#mix">Mix &amp; match</a>
+      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#builder">Build a custom bundle</a>
+    </div>
+    <dl class="uv-row" style="gap:0;margin:48px 0 0;border-top:1px solid var(--uv-text)" id="facts"></dl>
+  </section>
+
+  <!-- 1 Quick start -->
+  <section class="sec" id="start">
+    <div class="sec-head"><p class="uv-eyebrow">§ 01 — Quick start</p><h2 class="uv-h2">Running in <em class="uv-muted">three steps.</em></h2><p>Link the hosted files, or unzip the download next to your HTML and use relative paths.</p></div>
+    <div class="steps">
+      <div class="step"><b>1</b><div><h3>Add the two files</h3><p class="uv-muted" style="margin:0">Put the CSS in &lt;head&gt; and the script anywhere with <code>defer</code>.</p></div>
+        <div class="code-wrap"><pre class="code" id="s1"></pre><button class="uv-btn uv-btn--sm" data-copy="s1">Copy</button></div></div>
+      <div class="step"><b>2</b><div><h3>Write HTML with uv-* classes</h3><p class="uv-muted" style="margin:0">Components are classes. Behaviours are <code>data-uv</code> attributes. Themes are <code>data-uv-theme</code>.</p></div>
+        <div style="display:grid;gap:12px"><div class="code-wrap"><pre class="code" id="s2"></pre><button class="uv-btn uv-btn--sm" data-copy="s2">Copy</button></div><div class="result" id="r2"></div></div></div>
+      <div class="step"><b>3</b><div><h3>Call the JS API when you need it</h3><p class="uv-muted" style="margin:0">Everything lives on <code>window.UV</code>, and every function works on its own.</p></div>
+        <div style="display:grid;gap:12px"><div class="code-wrap"><pre class="code" id="s3"></pre><button class="uv-btn uv-btn--sm" data-copy="s3">Copy</button></div><div class="result"><button class="uv-btn uv-btn--primary" id="run3">Run this code ▶</button></div></div></div>
+    </div>
+  </section>
+
+  <!-- 2 Modules -->
+  <section class="sec" id="modules">
+    <div class="sec-head"><p class="uv-eyebrow">§ 02 — Modules</p><h2 class="uv-h2">Take <em class="uv-muted">only what you use.</em></h2><p>Load <code>core</code> first, then any combination. The two bundles contain everything.</p></div>
+    <table class="mods" id="modTable"><thead><tr><th>File</th><th>What it gives you</th><th>Size</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <!-- 3 Themes -->
+  <section class="sec" id="themes">
+    <div class="sec-head"><p class="uv-eyebrow">§ 03 — Themes</p><h2 class="uv-h2">Twelve skins, <em class="uv-muted">same markup.</em></h2><p>Each card below uses identical HTML; only <code>data-uv-theme</code> changes. Put it on <code>&lt;html&gt;</code> for the whole page or on any element for one section. Click a card to apply it to this page.</p></div>
+    <div class="themes" id="themeGrid"></div>
+    <div class="uv-row" style="margin-top:16px"><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.skin(null);UV.toast('Back to the default theme')">Reset page theme</button><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.theme('toggle')">Toggle light / dark</button></div>
+  </section>
+
+  <!-- 4 Mix & match -->
+  <section class="sec" id="mix">
+    <div class="sec-head"><p class="uv-eyebrow">§ 04 — Mix &amp; match</p><h2 class="uv-h2">Every region, <em class="uv-muted">its own style.</em></h2><p>Pick a theme for each region and stack effects on the headline. The HTML below updates as you go; copy it when you like the result.</p></div>
+    <div class="mix">
+      <div class="mix-bar" id="mixBar"></div>
+      <div id="mixPage">
+        <div class="mix-zone" data-zone="nav"><nav class="uv-row" style="justify-content:space-between"><b class="uv-h3">◆ Northwind</b><div class="uv-row" style="gap:6px"><a class="uv-btn uv-btn--ghost uv-btn--sm">Docs</a><a class="uv-btn uv-btn--primary uv-btn--sm">Get started</a></div></nav></div>
+        <div class="mix-zone" data-zone="hero" style="padding:56px 26px"><p class="uv-eyebrow">Release 4.0</p><h2 class="uv-h1" id="mixTitle" style="margin:10px 0 14px;font-size:clamp(40px,6vw,72px)">Ship calmer software</h2><p class="uv-muted" style="max-width:520px;margin:0 0 20px">Issues, docs and releases in one quiet workspace.</p><div class="uv-row"><button class="uv-btn uv-btn--primary" data-uv="ripple">Start now</button><button class="uv-btn uv-btn--ghost" data-uv="magnetic">Read docs</button></div></div>
+        <div class="mix-zone" data-zone="cards"><div class="uv-grid" style="--uv-min:200px"><div class="uv-card"><h3 class="uv-h3">Fast</h3><p class="uv-muted" style="margin:6px 0 0">Search in milliseconds.</p></div><div class="uv-card"><h3 class="uv-h3">Quiet</h3><p class="uv-muted" style="margin:6px 0 0">Digests, not pings.</p></div><div class="uv-card"><h3 class="uv-h3">Open</h3><p class="uv-muted" style="margin:6px 0 0">MIT, on GitHub.</p></div></div></div>
+        <div class="mix-zone" data-zone="footer"><div class="uv-row" style="justify-content:space-between"><span class="uv-muted">© 2026 Northwind</span><label class="uv-switch"><input type="checkbox" checked><i></i> Updates</label></div></div>
+      </div>
+    </div>
+    <div class="code-wrap" style="margin-top:14px"><pre class="code" id="mixCode" style="max-height:260px"></pre><button class="uv-btn uv-btn--sm" data-copy="mixCode">Copy HTML</button></div>
+  </section>
+
+  <!-- 5 FX -->
+  <section class="sec" id="fx">
+    <div class="sec-head"><p class="uv-eyebrow">§ 05 — Effects</p><h2 class="uv-h2">Stack them. <em class="uv-muted">Break things.</em></h2><p>CSS effects are <code>uv-fx-*</code> classes; JavaScript effects are <code>data-uv-fx="…"</code>. Hover, click and move your mouse over the tiles. Click a label to copy its usage.</p></div>
+    <div class="uv-row" style="margin-bottom:14px" id="fxFilter"></div>
+    <div class="fxgrid" id="fxGrid"></div>
+  </section>
+
+  <!-- 6 Builder -->
+  <section class="sec" id="builder">
+    <div class="sec-head"><p class="uv-eyebrow">§ 06 — Custom bundle</p><h2 class="uv-h2">Build <em class="uv-muted">your own kit.</em></h2><p>Tick what you need. You get the matching &lt;link&gt;/&lt;script&gt; tags, or a zip made in your browser with just those files.</p></div>
+    <div class="builder">
+      <form class="opts" id="opts"></form>
+      <div style="display:grid;gap:14px;align-content:start">
+        <div class="uv-card"><p class="uv-eyebrow" style="margin:0 0 6px">Selected size (uncompressed)</p><div class="size" id="bsize">0 KB</div><p class="uv-muted" style="margin:6px 0 0" id="bcount"></p></div>
+        <div class="code-wrap"><pre class="code" id="btags" style="max-height:300px"></pre><button class="uv-btn uv-btn--sm" data-copy="btags">Copy tags</button></div>
+        <div class="uv-row"><button class="uv-btn uv-btn--primary" id="bzip">Download custom .zip</button><a class="uv-btn uv-btn--ghost" href="downloads/uivault-latest.zip" download>Full .zip</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 API cheatsheet -->
+  <section class="sec" id="api" style="padding-bottom:100px">
+    <div class="sec-head"><p class="uv-eyebrow">§ 07 — Cheat sheet</p><h2 class="uv-h2">The whole API <em class="uv-muted">on one page.</em></h2><p>Full examples for every component are in the <a href="docs.html" style="color:var(--uv-accent)">docs</a>.</p></div>
+    <table class="mods api-tbl"><thead><tr><th>Call</th><th>What it does</th><th>Module</th></tr></thead><tbody id="apiRows"></tbody></table>
+  </section>
+</main>
+<footer class="wrap" style="padding:24px clamp(16px,4vw,40px) 48px;border-top:1px solid var(--uv-text);color:var(--uv-muted);font-size:13px">UI Vault <span class="ver">3.0.0</span> · MIT · <a href="https://github.com/thenameiscobmarley/ui-vault" style="color:inherit">GitHub</a> · <a href="docs.html" style="color:inherit">Docs</a></footer>
+
+<script src="lib/manifest.js"></script>
+<script src="lib/uivault.js"></script>
+<script>
+const M = window.UV_MANIFEST, BASE = "https://thenameiscobmarley.github.io/ui-vault/lib/";
+const $ = s => document.querySelector(s), esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const hl = code => esc(code).replace(/(&lt;!--.*?--&gt;)|(^\s*\/\/.*$)|("[^"\n]*")/gm, (m, c1, c2, st) => st ? `<span class="s">${st}</span>` : `<span class="c">${m}</span>`);
+const setCode = (id, code) => { const el = document.getElementById(id); el.dataset.raw = code; el.innerHTML = hl(code); };
+document.querySelectorAll(".ver").forEach(v => v.textContent = M.version);
+document.addEventListener("click", e => { const b = e.target.closest("[data-copy]"); if (b) UV.copy(document.getElementById(b.dataset.copy).dataset.raw); });
+
+// facts
+const kb = n => (n / 1024).toFixed(1) + " KB";
+const fbytes = p => (M.files.find(f => f.path === p) || {}).bytes || 0;
+$("#facts").innerHTML = [["Themes", M.themes.length], ["CSS modules", M.css.length], ["JS modules", M.js.length], ["Full CSS", kb(fbytes("uivault.css"))], ["Full JS", kb(fbytes("uivault.js"))]]
+  .map(([k, v]) => `<div style="flex:1;min-width:140px;padding:14px 16px 0 0"><dt class="uv-eyebrow" style="margin:0">${k}</dt><dd style="margin:6px 0 0;font:400 44px/1 var(--uv-serif)">${v}</dd></div>`).join("");
+
+// steps
+setCode("s1", `<!-- in <head> -->\n<link rel="stylesheet" href="${BASE}uivault.css">\n<!-- before </body> -->\n<script src="${BASE}uivault.js" defer></` + `script>`);
+const s2 = `<button class="uv-btn uv-btn--primary" data-uv="ripple" data-uv-confetti>\n  Click me\n</button>\n<span class="uv-fx-sticker">New!</span>\n<div data-uv-theme="neon" style="padding:12px">\n  <button class="uv-btn uv-btn--primary">Neon button</button>\n</div>`;
+setCode("s2", s2); $("#r2").innerHTML = s2;
+const s3 = `UV.toast("Saved!", { type: "success" });\nUV.confetti();\nUV.sound("coin");\nconst ok = await UV.modal({ title: "Delete?", actions: [\n  { label: "Cancel", value: false }, { label: "Delete", value: true, danger: true }] });`;
+setCode("s3", s3);
+$("#run3").onclick = async () => { UV.toast("Saved!", { type: "success" }); UV.confetti(); UV.sound("coin"); const ok = await UV.modal({ title: "Delete?", body: "Just a demo — nothing is deleted.", actions: [{ label: "Cancel", value: false }, { label: "Delete", value: true, danger: true }] }); UV.toast("modal() resolved to " + ok); };
+
+// modules table
+$("#modTable tbody").innerHTML = M.files.filter(f => !f.path.startsWith("css/themes/")).map(f => `<tr><td>${f.path}</td><td>${f.desc || (f.path.startsWith("uivault") ? "Full bundle — everything in one file." : "")}</td><td>${kb(f.bytes)}</td></tr>`).join("")
+  + `<tr><td>css/themes/*.css</td><td>One file per theme: ${M.themes.map(t => t.name).join(", ")}.</td><td>~${kb(M.files.filter(f => f.path.startsWith("css/themes/")).reduce((a, f) => a + f.bytes, 0) / M.themes.length)} each</td></tr>`;
+
+// theme gallery
+$("#themeGrid").innerHTML = M.themes.map(t => `<div class="th" data-uv-theme="${t.name}" role="button" tabindex="0" title="Apply ${t.name} to the page">
+  <header><b class="uv-h3">${t.name}</b><code>data-uv-theme="${t.name}"</code></header>
+  <h3 class="uv-h2" style="font-size:34px;margin:0">Hello world</h3>
+  <p class="uv-muted" style="margin:0;font-size:14px">${t.desc}.</p>
+  <div class="uv-tabs" style="align-self:start"><button aria-selected="true">One</button><button>Two</button><button>Three</button></div>
+  <input class="uv-input" placeholder="you@example.com" onclick="event.stopPropagation()">
+  <div class="uv-row" style="gap:8px"><button class="uv-btn uv-btn--primary uv-btn--sm" onclick="event.stopPropagation();UV.toast('${t.name}')">Primary</button><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="event.stopPropagation()">Ghost</button><span class="uv-badge uv-badge--accent">Badge</span><label class="uv-switch" onclick="event.stopPropagation()"><input type="checkbox" checked><i></i></label></div>
+  <div class="uv-progress" data-value="${40 + t.name.length * 4}"><i></i></div></div>`).join("");
+$("#themeGrid").addEventListener("click", e => { const c = e.target.closest(".th"); if (c && !e.target.closest(".uv-tabs")) { UV.skin(c.dataset.uvTheme); UV.toast("Page theme: " + c.dataset.uvTheme); } });
+
+// mix & match
+const FXT = ["none", "uv-fx-glitch", "uv-fx-chrome", "uv-fx-holo", "uv-fx-neon", "uv-fx-3d", "uv-fx-stroke", "uv-fx-wave", "uv-fx-rgb", "uv-fx-fill-hover", "uv-fx-long-shadow", "uv-fx-blur-in", "uv-fx-gradient-text"];
+const ZONES = [["nav", "brutal"], ["hero", "neon"], ["cards", "soft"], ["footer", "terminal"]];
+$("#mixBar").innerHTML = ZONES.map(([z, d]) => `<label>${z}<select data-z="${z}">${["(inherit)", ...M.themes.map(t => t.name)].map(n => `<option ${n === d ? "selected" : ""}>${n}</option>`).join("")}</select></label>`).join("")
+  + `<label>headline fx<select id="mixFx">${FXT.map(f => `<option>${f}</option>`).join("")}</select></label><button class="uv-btn uv-btn--sm uv-btn--ghost" id="mixRand" type="button">Randomize</button>`;
+const title = $("#mixTitle"), titleText = title.textContent;
+function applyMix() {
+  $("#mixBar").querySelectorAll("select[data-z]").forEach(s => { const z = document.querySelector(`[data-zone="${s.dataset.z}"]`); s.value === "(inherit)" ? z.removeAttribute("data-uv-theme") : z.setAttribute("data-uv-theme", s.value); });
+  const f = $("#mixFx").value; title._uvSplit = null; title.textContent = titleText; title.className = "uv-h1" + (f === "none" ? "" : " " + f); title.removeAttribute("data-text");
+  UV.init($("#mixPage"));
+  const clean = $("#mixPage").cloneNode(true);
+  clean.querySelectorAll("*").forEach(n => { n.removeAttribute("data-zone"); n.removeAttribute("aria-label"); n.removeAttribute("role"); n.removeAttribute("tabindex"); n.removeAttribute("aria-selected"); n.removeAttribute("aria-hidden"); n.removeAttribute("style"); if (n.classList.contains("mix-zone")) { n.classList.remove("mix-zone"); n.setAttribute("style", "padding:24px"); } });
+  clean.querySelectorAll(".uv-fx-wave span, .uv-ripple").forEach(s => s.replaceWith(document.createTextNode(s.textContent)));
+  setCode("mixCode", clean.innerHTML.replace(/ class=""/g, "").replace(/\n\s*\n/g, "\n").trim());
+}
+$("#mixBar").addEventListener("change", applyMix);
+$("#mixRand").onclick = () => { $("#mixBar").querySelectorAll("select[data-z]").forEach(s => s.value = M.themes[(Math.random() * M.themes.length) | 0].name); $("#mixFx").value = FXT[1 + ((Math.random() * (FXT.length - 1)) | 0)]; applyMix(); UV.sound("pop"); };
+applyMix();
+
+// FX gallery: [group, usage, html, darkStage?]
+const T = (cls, txt = "Vault", st = "") => `<span class="${cls}" style="font:700 40px/1 var(--uv-font);${st}">${txt}</span>`;
+const BOX = (cls, txt = "Hover me", st = "") => `<div class="${cls}" style="padding:18px 22px;border:1px solid var(--uv-line-2);border-radius:6px;background:var(--uv-surface);${st}">${txt}</div>`;
+const FX = [
+  ["Text", "uv-fx-glitch", T("uv-fx-glitch", "GLITCH"), 1], ["Text", "uv-fx-rgb", T("uv-fx-rgb", "Hover"), 1], ["Text", "uv-fx-chrome", T("uv-fx-chrome", "CHROME", "font-style:italic;font-weight:800"), 1],
+  ["Text", "uv-fx-holo", T("uv-fx-holo", "Holo")], ["Text", "uv-fx-neon", T("uv-fx-neon", "Neon", "font-family:var(--uv-serif);font-weight:400;font-size:52px"), 1], ["Text", "uv-fx-3d", T("uv-fx-3d", "Pop")],
+  ["Text", "uv-fx-long-shadow", T("uv-fx-long-shadow", "Long")], ["Text", "uv-fx-stroke", T("uv-fx-stroke", "Outline")], ["Text", "uv-fx-fill-hover", T("uv-fx-fill-hover", "Fill me")],
+  ["Text", "uv-fx-squiggle", `<a class="uv-fx-squiggle" style="font-size:22px;color:inherit">Squiggle link</a>`], ["Text", "uv-fx-highlight", `<span class="uv-fx-highlight" style="font:400 28px var(--uv-serif)">Highlight me</span>`],
+  ["Text", "uv-fx-redacted", `<p style="margin:0">Code: <span class="uv-fx-redacted">ALPHA-7</span></p>`], ["Text", "uv-fx-wave", T("uv-fx-wave", "Wavy")], ["Text", "uv-fx-bounce-in", T("uv-fx-bounce-in", "Bounce")],
+  ["Text", "uv-fx-blur-in", T("uv-fx-blur-in", "Focus")], ["Text", "uv-fx-gradient-text", T("uv-fx-gradient-text", "Gradient")], ["Text", "uv-fx-mirror", T("uv-fx-mirror", "Mirror")],
+  ["Surface", "uv-fx-sticker", `<span class="uv-fx-sticker">New!</span>`], ["Surface", "uv-fx-stamp", `<span class="uv-fx-stamp">Approved</span>`], ["Surface", "uv-fx-tape", BOX("uv-fx-tape", "Taped note")],
+  ["Surface", "uv-fx-holo-card", `<div class="uv-fx-holo-card" style="width:150px;height:90px;border-radius:8px;background:#d9d6cf;display:grid;place-items:center;font:700 14px var(--uv-mono)">RARE</div>`],
+  ["Surface", "uv-fx-rainbow-border", BOX("uv-fx-rainbow-border", "Rainbow")], ["Surface", "uv-fx-dashed-march", BOX("uv-fx-dashed-march", "Marching ants")], ["Surface", "uv-fx-glow", BOX("uv-fx-glow", "Glow")],
+  ["Surface", "uv-fx-hard-shadow", BOX("uv-fx-hard-shadow", "Press me", "cursor:pointer")], ["Surface", "uv-fx-bevel", BOX("uv-fx-bevel", "Bevel", "background:#c0c0c0;color:#000;border:0;border-radius:0")], ["Surface", "uv-fx-inset", BOX("uv-fx-inset", "Inset")],
+  ["Surface", "uv-fx-neumorph", BOX("uv-fx-neumorph", "Neumorph", "border-radius:16px")], ["Surface", "uv-fx-frost", `<div style="background:conic-gradient(#ff4f00,#1a1917,#d9d6cf,#ff4f00);padding:16px;border-radius:8px">${BOX("uv-fx-frost", "Frost")}</div>`],
+  ["Surface", "uv-fx-paper", BOX("uv-fx-paper", "Lined paper")], ["Surface", "uv-fx-torn", BOX("uv-fx-torn", "Torn edge")], ["Surface", "uv-fx-corners", BOX("uv-fx-corners", "Corners")],
+  ["Screen", "uv-fx-scanlines", BOX("uv-fx-scanlines", "Scanlines", "background:#1f3a2a;color:#9fe3b0")], ["Screen", "uv-fx-crt", `<div class="uv-fx-crt" style="background:#0c1a0c;color:#4dff7a;padding:24px 28px;font:24px VT323,monospace">READY_</div>`],
+  ["Screen", "uv-fx-vhs", T("uv-fx-vhs", "PLAY ▶", "font-family:var(--uv-mono)"), 1], ["Screen", "uv-fx-pixel", T("uv-fx-pixel", "PIXEL", "font-size:44px;font-weight:400")], ["Screen", "uv-fx-dither", `<div class="uv-fx-dither" style="width:150px;height:80px"></div>`],
+  ["Screen", "uv-fx-halftone", `<div class="uv-fx-halftone" style="width:170px;height:90px"></div>`],
+  ["Motion", "uv-fx-float", BOX("uv-fx-float", "Floating")], ["Motion", "uv-fx-wobble", BOX("uv-fx-wobble")], ["Motion", "uv-fx-jelly", BOX("uv-fx-jelly")], ["Motion", "uv-fx-shake", BOX("uv-fx-shake")],
+  ["Motion", "uv-fx-pop", BOX("uv-fx-pop", "Click me", "cursor:pointer")], ["Motion", "uv-fx-spin-hover", BOX("uv-fx-spin-hover", "Spin")], ["Motion", "uv-fx-breathe", BOX("uv-fx-breathe", "Breathe")],
+  ["Motion", "uv-fx-pulse-ring", `<button class="uv-btn uv-btn--primary uv-fx-pulse-ring" style="border-radius:999px">Live</button>`], ["Motion", "uv-fx-swing", `<div class="uv-fx-swing" style="padding:14px 20px;background:var(--uv-accent);color:#fff;font-weight:600">Swing</div>`],
+  ["Motion", "uv-fx-lift", BOX("uv-fx-lift", "Lift")], ["Motion", "uv-fx-shine", `<button class="uv-btn uv-btn--primary uv-fx-shine">Shine</button>`],
+  ["Motion", "uv-fx-flip", `<div class="uv-fx-flip"><div style="padding:18px 22px;background:var(--uv-text);color:var(--uv-bg);border-radius:6px">Flip</div></div>`],
+  ["Background", "uv-fx-mesh-anim", `<div class="uv-fx-mesh-anim" style="position:absolute;inset:0"></div>`], ["Background", "uv-fx-grid-floor", `<div class="uv-fx-grid-floor" style="position:absolute;left:-30%;right:-30%;bottom:0;height:110%"></div>`, 1],
+  ["Background", "uv-fx-stripes", `<div class="uv-fx-stripes" style="position:absolute;inset:0"></div>`], ["Background", "uv-fx-checker", `<div class="uv-fx-checker" style="position:absolute;inset:0"></div>`],
+  ["Background", "uv-fx-noise", `<div class="uv-fx-noise" style="position:absolute;inset:0;background:var(--uv-accent)"></div>`], ["Background", "uv-fx-spotlight", `<div class="uv-fx-spotlight" style="position:absolute;inset:0;display:grid;place-items:center">Move here</div>`],
+  ["Background", "uv-fx-blob", `<div class="uv-fx-blob" style="width:130px;height:110px;display:grid;place-items:center;color:#fff;font-weight:700">Blob</div>`],
+  ["JS", 'data-uv-fx="matrix"', `<div data-uv-fx="matrix" style="position:absolute;inset:0"></div>`, 1], ["JS", 'data-uv-fx="starfield"', `<div data-uv-fx="starfield" style="position:absolute;inset:0"></div>`, 1],
+  ["JS", 'data-uv-fx="particles"', `<div data-uv-fx="particles" style="position:absolute;inset:0"></div>`], ["JS", 'data-uv-fx="snow"', `<div data-uv-fx="snow" style="position:absolute;inset:0"></div>`, 1],
+  ["JS", 'data-uv-fx="sparkles"', `<div data-uv-fx="sparkles" style="position:absolute;inset:0;display:grid;place-items:center">Move here</div>`], ["JS", 'data-uv-fx="cursor-trail"', `<div data-uv-fx="cursor-trail" style="position:absolute;inset:0;display:grid;place-items:center">Move here</div>`],
+  ["JS", 'data-uv-fx="cursor-blob"', `<div data-uv-fx="cursor-blob" style="position:absolute;inset:0;display:grid;place-items:center;font:700 26px var(--uv-font)">INVERT</div>`],
+  ["JS", 'data-uv-fx="magnet"', `<span data-uv-fx="magnet" style="font:700 34px var(--uv-font)">Magnetic</span>`], ["JS", 'data-uv-fx="scramble-hover"', `<span data-uv-fx="scramble-hover" style="font:500 22px var(--uv-mono)">HOVER_DECODE</span>`],
+  ["JS", 'data-uv-fx="gravity"', `<span data-uv-fx="gravity" style="font:700 34px var(--uv-font);cursor:pointer">Click me</span>`], ["JS", 'data-uv-fx="fireworks"', `<div data-uv-fx="fireworks" style="position:absolute;inset:0;display:grid;place-items:center;cursor:crosshair">Click anywhere</div>`],
+];
+const groups = ["All", ...new Set(FX.map(f => f[0]))];
+$("#fxFilter").innerHTML = groups.map((g, i) => `<button class="uv-chip ${i ? "" : "is-active"}" data-g="${g}">${g} <small>${g === "All" ? FX.length : FX.filter(f => f[0] === g).length}</small></button>`).join("");
+$("#fxGrid").innerHTML = FX.map(([g, use, html, dark]) => `<div class="fx" data-g="${g}"><div class="st ${dark ? "dk" : ""}">${html}</div><button class="lbl" data-use='${use.replace(/'/g, "&#39;")}'><span>${esc(use)}</span><span>copy</span></button></div>`).join("");
+$("#fxFilter").onclick = e => { const b = e.target.closest("button"); if (!b) return; document.querySelectorAll("#fxFilter .uv-chip").forEach(c => c.classList.toggle("is-active", c === b)); document.querySelectorAll(".fx").forEach(t => t.hidden = b.dataset.g !== "All" && t.dataset.g !== b.dataset.g); };
+$("#fxGrid").addEventListener("click", e => { const l = e.target.closest(".lbl"); if (l) UV.copy(l.dataset.use.startsWith("data-") ? l.dataset.use : `class="${l.dataset.use}"`, "Copied: " + l.dataset.use); });
+UV.init($("#fxGrid"));
+
+// builder
+const css = M.files.filter(f => f.path.startsWith("css/") && !f.path.startsWith("css/themes") && f.path !== "css/themes.css");
+const js = M.files.filter(f => f.path.startsWith("js/"));
+const box = (name, val, checked, note, req) => `<label><input type="checkbox" name="${name}" value="${val}" ${checked ? "checked" : ""} ${req ? "disabled" : ""}> ${val.replace(/^(css|js)\/(themes\/)?/, "")} <small>${note}</small></label>`;
+$("#opts").innerHTML = `<fieldset><legend>CSS modules</legend><div class="grid">${css.map(f => box("css", f.path, f.path !== "css/blocks.css", kb(f.bytes), f.path === "css/core.css")).join("")}</div></fieldset>
+  <fieldset><legend>Themes</legend><div class="grid">${M.themes.map(t => box("theme", t.file, ["editorial", "neon", "brutal"].includes(t.name), "", false)).join("")}</div></fieldset>
+  <fieldset><legend>JS modules</legend><div class="grid">${js.map(f => box("js", f.path, true, kb(f.bytes), f.path === "js/core.js")).join("")}</div></fieldset>`;
+const picked = () => { const f = new FormData($("#opts")); return ["css/core.css", ...f.getAll("css"), ...f.getAll("theme"), "js/core.js", ...f.getAll("js")].filter((v, i, a) => a.indexOf(v) === i); };
+function updB() {
+  const p = picked(), bytes = p.reduce((a, x) => a + fbytes(x), 0);
+  $("#bsize").textContent = kb(bytes); $("#bcount").textContent = p.length + " files";
+  setCode("btags", p.map(x => x.endsWith(".css") ? `<link rel="stylesheet" href="${BASE}${x}">` : `<script src="${BASE}${x}" defer></` + `script>`).join("\n"));
+}
+$("#opts").addEventListener("change", updB); updB();
+
+// minimal ZIP writer (store method) for the custom bundle
+const crcT = new Uint32Array(256).map((_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; return c; });
+const crc32 = b => { let c = ~0; for (let i = 0; i < b.length; i++) c = crcT[(c ^ b[i]) & 255] ^ (c >>> 8); return ~c >>> 0; };
+function zip(files) {
+  const enc = new TextEncoder(), parts = [], cent = []; let off = 0;
+  const u16 = v => [v & 255, v >> 8 & 255], u32 = v => [v & 255, v >> 8 & 255, v >> 16 & 255, v >>> 24 & 255];
+  for (const [name, data] of files) {
+    const n = enc.encode(name), d = typeof data === "string" ? enc.encode(data) : data, c = crc32(d);
+    const head = [...u32(0x04034b50), ...u16(20), ...u16(0), ...u16(0), ...u16(0), ...u16(0x21), ...u32(c), ...u32(d.length), ...u32(d.length), ...u16(n.length), ...u16(0)];
+    parts.push(new Uint8Array(head), n, d);
+    cent.push(new Uint8Array([...u32(0x02014b50), ...u16(20), ...u16(20), ...u16(0), ...u16(0), ...u16(0), ...u16(0x21), ...u32(c), ...u32(d.length), ...u32(d.length), ...u16(n.length), ...u16(0), ...u16(0), ...u16(0), ...u16(0), ...u32(0), ...u32(off)]), n);
+    off += head.length + n.length + d.length;
+  }
+  const cs = cent.reduce((a, b) => a + b.length, 0);
+  return new Blob([...parts, ...cent, new Uint8Array([...u32(0x06054b50), ...u16(0), ...u16(0), ...u16(files.length), ...u16(files.length), ...u32(cs), ...u32(off), ...u16(0)])], { type: "application/zip" });
+}
+$("#bzip").onclick = async () => {
+  const b = $("#bzip"); b.classList.add("is-loading");
+  try {
+    const p = picked(), files = await Promise.all(p.map(async x => ["uivault/" + x, new Uint8Array(await (await fetch("lib/" + x)).arrayBuffer())]));
+    files.push(["uivault/README.txt", "UI Vault " + M.version + " custom bundle\n\nAdd to your page:\n" + $("#btags").dataset.raw.replaceAll(BASE, "") + "\n\nDocs: https://thenameiscobmarley.github.io/ui-vault/quickstart.html\n"]);
+    const a = document.createElement("a"); a.href = URL.createObjectURL(zip(files)); a.download = "uivault-custom.zip"; a.click();
+    UV.toast("Custom bundle downloaded", { type: "success" });
+  } catch (e) { UV.toast("Couldn't fetch files (open this page over http)", { type: "error" }); }
+  b.classList.remove("is-loading");
+};
+
+// cheat sheet
+$("#apiRows").innerHTML = [
+  ["UV.init(root)", "Wire up everything inside root (runs automatically on load).", "core"], ["UV.skin(name, el?)", "Apply one of the 12 themes to the page or to any element.", "core"], ["UV.theme('toggle')", "Light/dark for the default theme.", "core"], ["UV.use(name, fn)", "Register your own module; fn(root) runs on every init.", "core"],
+  ["UV.toast(msg, {type})", "Toast notification.", "feedback"], ["UV.modal({title, body, actions})", "Promise-based dialog.", "feedback"], ["UV.cmdk(items)", "⌘K command palette.", "feedback"], ["UV.confetti({x, y})", "Confetti burst.", "feedback"],
+  ["UV.sound(name)", "click · pop · success · error · hover · whoosh · coin · laser.", "feedback"], ["UV.copy(text)", "Clipboard plus toast.", "feedback"],
+  ["UV.countUp(el, n)", "Animated number.", "motion"], ["UV.typewriter(el, words)", "Typing loop.", "motion"], ["UV.scramble(el, text)", "Decoder text.", "motion"], ["UV.tilt / magnetic / ripple / spotlight / parallax (el)", "Pointer behaviours, also available as data-uv=\"…\".", "motion"],
+  ["UV.tabs(el, cb)", "Sliding-indicator tabs.", "forms"], ["UV.otp / range / drop (el)", "Form helpers.", "forms"],
+  ["UV.fx.matrix / starfield / particles / snow (el)", "Canvas backgrounds. Each returns stop().", "fx"], ["UV.fx['cursor-trail'] / ['cursor-blob'] / sparkles (el)", "Cursor effects.", "fx"], ["UV.fx.magnet / gravity / fireworks / ['scramble-hover'] (el)", "Playful text and click effects.", "fx"], ["UV.fx.split(el)", "Split text into per-letter spans with --i.", "fx"],
+].map(([a, b, c]) => `<tr><td>${a}</td><td>${b}</td><td class="uv-mono uv-dim">${c}.js</td></tr>`).join("");
+</script>
+</body>
+</html>
