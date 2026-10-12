@@ -139,6 +139,13 @@ kbd {
 .stats dt { color: var(--dim); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 .stats dd { margin: 4px 0 0; font: 700 28px var(--display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 
+.hero__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 26px; }
+.api-promo { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; }
+.api-promo__cta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.api-promo__code { margin: 0; padding: 22px; border-radius: 18px; border: 1px solid var(--line); background: #07070b; color: #c9c9dc; font: 13px/1.7 var(--mono); overflow: auto; box-shadow: var(--shadow), 0 0 60px -20px #7c3aed66; }
+.api-promo__code .c { color: #66667a; }
+@media (max-width: 960px) { .api-promo { grid-template-columns: 1fr; } }
+
 /* ── Sections ── */
 .section { max-width: 1200px; margin: 0 auto; padding: 80px clamp(16px, 4vw, 40px) 20px; }
 .section__head { max-width: 720px; margin-bottom: 30px; }
