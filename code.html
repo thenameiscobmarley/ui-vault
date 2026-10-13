@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en" data-uv-theme="editorial">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Code APIs — UI Vault for Python &amp; C++</title>
+<meta name="description" content="The 12 UI Vault themes for Python (Qt, Tkinter, Textual, GTK4, Dear PyGui, matplotlib, Rich) and C++ (Dear ImGui, JUCE, raygui, Qt) — one source of truth." />
+<meta name="theme-color" content="#141413" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<style>
+  /* This page is an IDE: warm ink, mono chrome, one signal accent */
+  :root { --ink: #141413; --ink-2: #1c1c1a; --ink-3: #262624; --rule: #ffffff14; --rule-2: #ffffff26; --fg: #ecebe8; --fg-2: #a19d95; --fg-3: #6f6b64; --sig: #ff6a26; --str: #9fc5a8; --kw: #ff8f5a; --fn: #c9b98f; --num: #b4a7f5; }
+  body { margin: 0; background: var(--ink); color: var(--fg); font-family: "Geist", system-ui, sans-serif; }
+  a { color: inherit; }
+  .bar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 18px; height: 52px; padding: 0 clamp(14px, 3vw, 28px); background: var(--ink); border-bottom: 1px solid var(--rule-2); font: 500 13px "Geist Mono", monospace; }
+  .bar .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); font: 600 15px "Geist", sans-serif; }
+  .bar nav { margin-left: auto; display: flex; gap: 2px; }
+  .bar nav a { padding: 6px 10px; border-radius: 3px; color: var(--fg-2); text-decoration: none; }
+  .bar nav a:hover, .bar nav a.on { color: var(--fg); background: var(--ink-3); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--sig); box-shadow: 0 0 0 3px #ff6a2626; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(14px, 3vw, 28px); }
+  .hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; padding: 72px 0 40px; }
+  .kicker { font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-2); }
+  .kicker b { color: var(--sig); font-weight: 500; }
+  h1 { margin: 16px 0 18px; font: 400 clamp(52px, 7.4vw, 104px)/.92 "Instrument Serif", serif; letter-spacing: -.025em; }
+  h1 em { color: var(--fg-2); }
+  .lead { max-width: 520px; margin: 0 0 28px; color: var(--fg-2); font-size: 18px; line-height: 1.55; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 4px; border: 1px solid var(--rule-2); color: var(--fg); text-decoration: none; font: 500 14px "Geist", sans-serif; cursor: pointer; background: transparent; transition: background .15s, border-color .15s, transform .1s; }
+  .btn:hover { border-color: var(--fg); } .btn:active { transform: translateY(1px); }
+  .btn.p { background: var(--fg); color: var(--ink); border-color: var(--fg); } .btn.p:hover { background: var(--sig); border-color: var(--sig); color: #fff; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  /* terminal */
+  .term { border: 1px solid var(--rule-2); border-radius: 8px; background: #0e0e0d; overflow: hidden; box-shadow: 0 40px 80px -40px #000; }
+  .term-top { display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-bottom: 1px solid var(--rule); font: 500 11px "Geist Mono", monospace; color: var(--fg-3); }
+  .term-top i { width: 10px; height: 10px; border-radius: 50%; background: var(--ink-3); } .term-top span { margin-left: auto; }
+  .term pre { margin: 0; padding: 16px 18px; height: 330px; overflow: hidden; font: 13px/1.6 "Geist Mono", monospace; color: var(--fg); white-space: pre-wrap; }
+  .term .pr { color: var(--sig); } .term .mu { color: var(--fg-3); } .term .cur { display: inline-block; width: 8px; height: 15px; background: var(--fg); vertical-align: -2px; animation: blink 1s step-end infinite; } @keyframes blink { 50% { opacity: 0; } }
+  /* sections */
+  .sec { padding: 80px 0 10px; scroll-margin-top: 60px; }
+  .sec-h { display: grid; grid-template-columns: 220px 1fr; gap: 6px 32px; padding-top: 14px; border-top: 1px solid var(--rule-2); margin-bottom: 28px; }
+  .sec-h .kicker { grid-row: span 2; }
+  .sec-h h2 { margin: 0; font: 400 clamp(36px, 4.6vw, 58px)/1 "Instrument Serif", serif; letter-spacing: -.02em; } .sec-h h2 em { color: var(--fg-2); }
+  .sec-h p { margin: 10px 0 0; color: var(--fg-2); max-width: 640px; }
+  /* editor */
+  .ide { display: grid; grid-template-columns: 200px 1fr; border: 1px solid var(--rule-2); border-radius: 8px; overflow: hidden; background: var(--ink-2); min-height: 460px; }
+  .tree { border-right: 1px solid var(--rule); padding: 10px 0; font: 13px "Geist Mono", monospace; }
+  .tree h4 { margin: 10px 14px 6px; font: 500 10px "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--fg-3); }
+  .tree button { display: flex; width: 100%; gap: 8px; align-items: center; padding: 6px 14px; border: 0; background: none; color: var(--fg-2); font: inherit; text-align: left; cursor: pointer; }
+  .tree button:hover { color: var(--fg); background: var(--ink-3); }
+  .tree button[aria-selected="true"] { color: var(--fg); background: var(--ink-3); box-shadow: inset 2px 0 0 var(--sig); }
+  .tree button i { font-style: normal; color: var(--fg-3); width: 14px; }
+  .pane { display: flex; flex-direction: column; min-width: 0; }
+  .tabs { display: flex; border-bottom: 1px solid var(--rule); font: 12px "Geist Mono", monospace; }
+  .tabs span { padding: 10px 16px; border-right: 1px solid var(--rule); color: var(--fg); background: var(--ink); box-shadow: inset 0 2px 0 var(--sig); }
+  .tabs button { margin-left: auto; border: 0; border-left: 1px solid var(--rule); background: none; color: var(--fg-2); font: inherit; padding: 0 14px; cursor: pointer; } .tabs button:hover { color: var(--fg); background: var(--ink-3); }
+  .code { display: grid; grid-template-columns: auto 1fr; flex: 1; overflow: auto; font: 13px/1.7 "Geist Mono", monospace; background: var(--ink); }
+  .code .ln { padding: 14px 10px 14px 16px; text-align: right; color: var(--fg-3); user-select: none; border-right: 1px solid var(--rule); white-space: pre; }
+  .code pre { margin: 0; padding: 14px 18px; white-space: pre; color: var(--fg); }
+  .k { color: var(--kw); } .s { color: var(--str); } .c { color: var(--fg-3); font-style: italic; } .f { color: var(--fn); } .n { color: var(--num); }
+  .note { padding: 12px 18px; border-top: 1px solid var(--rule); color: var(--fg-2); font-size: 14px; }
+  .note b { color: var(--fg); }
+  .shot { margin: 0; padding: 18px; border-top: 1px solid var(--rule); background: var(--ink-2); display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .shot img { width: 100%; border-radius: 6px; display: block; }
+  .shot figcaption { font: 11px "Geist Mono", monospace; color: var(--fg-3); margin-top: 4px; }
+  /* install strip */
+  .install { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule-2); border-radius: 8px; overflow: hidden; }
+  .install > div { padding: 20px; border-right: 1px solid var(--rule); display: grid; gap: 10px; align-content: start; }
+  .install > div:last-child { border-right: 0; }
+  .install h3 { margin: 0; font: 400 26px "Instrument Serif", serif; }
+  .install code { display: block; padding: 10px 12px; border-radius: 4px; background: var(--ink); border: 1px solid var(--rule); font: 12px/1.6 "Geist Mono", monospace; color: var(--str); white-space: pre-wrap; word-break: break-all; cursor: copy; }
+  .install code:hover { border-color: var(--sig); }
+  /* token explorer */
+  .tok { display: grid; grid-template-columns: 260px 1fr; gap: 0; border: 1px solid var(--rule-2); border-radius: 8px; overflow: hidden; }
+  .tok-list { border-right: 1px solid var(--rule); max-height: 560px; overflow: auto; }
+  .tok-list button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 14px; border: 0; border-bottom: 1px solid var(--rule); background: none; color: var(--fg-2); cursor: pointer; text-align: left; font: 14px "Geist", sans-serif; }
+  .tok-list button[aria-selected="true"] { color: var(--fg); background: var(--ink-3); }
+  .tok-list .sw { display: flex; } .tok-list .sw i { width: 12px; height: 22px; } .tok-list .sw i:first-child { border-radius: 3px 0 0 3px; } .tok-list .sw i:last-child { border-radius: 0 3px 3px 0; }
+  .tok-main { min-width: 0; }
+  .tok-prev { padding: 22px; border-bottom: 1px solid var(--rule); }
+  .tok-table { width: 100%; border-collapse: collapse; font: 12px "Geist Mono", monospace; }
+  .tok-table th { text-align: left; padding: 8px 14px; color: var(--fg-3); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-size: 10px; border-bottom: 1px solid var(--rule); }
+  .tok-table td { padding: 7px 14px; border-bottom: 1px solid var(--rule); color: var(--fg-2); white-space: nowrap; }
+  .tok-table td:first-child i { display: inline-block; width: 22px; height: 14px; border-radius: 3px; vertical-align: -2px; margin-right: 8px; border: 1px solid var(--rule-2); }
+  .tok-table tr:hover td { color: var(--fg); background: var(--ink-2); cursor: copy; }
+  .fmt { display: flex; gap: 4px; } .fmt button { padding: 4px 9px; border: 1px solid var(--rule-2); border-radius: 3px; background: none; color: var(--fg-2); font: 11px "Geist Mono", monospace; cursor: pointer; } .fmt button[aria-pressed="true"] { background: var(--fg); color: var(--ink); }
+  footer { padding: 28px 0 60px; margin-top: 80px; border-top: 1px solid var(--rule-2); color: var(--fg-3); font: 12px "Geist Mono", monospace; }
+  /* reveal */
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2, .8, .2, 1), transform .8s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--d, 0ms); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (max-width: 900px) { .hero, .ide, .tok, .install, .sec-h { grid-template-columns: 1fr; } .tree { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--rule); } .tree h4 { display: none; } .tree button { width: auto; white-space: nowrap; } .install > div { border-right: 0; border-bottom: 1px solid var(--rule); } .bar nav { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="#ecebe8"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="#141413" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="#ff6a26"/></svg>UI Vault</a>
+  <span class="kicker">/ code</span>
+  <nav><a href="quickstart.html">Quick start</a><a href="docs.html">Web docs</a><a class="on" href="code.html">Code APIs</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a><a href="./">Library</a></nav>
+  <span class="dot" title="v3.0.0"></span>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="rv">
+      <p class="kicker"><b>●</b> Python · C++ · Web — one source of truth</p>
+      <h1>Same themes. <em>Any language.</em></h1>
+      <p class="lead">The 12 UI Vault themes aren't only for websites. They ship as a Python package for Qt, Tkinter, Textual, GTK4, Dear PyGui, matplotlib and Rich, and as a single C++ header for Dear ImGui, JUCE, raygui and Qt. All are generated from the same tokens, so your app, your plugin and your site can match.</p>
+      <div class="row"><a class="btn p" href="#python">Python API</a><a class="btn" href="#cpp">C++ API</a><a class="btn" href="#tokens">Token explorer</a></div>
+    </div>
+    <div class="term rv" style="--d:120ms"><div class="term-top"><i></i><i></i><i></i><span>~/my-app — zsh</span></div><pre id="term"></pre></div>
+  </section>
+
+  <section class="sec" id="install">
+    <div class="sec-h rv"><p class="kicker">§ 01 — Install</p><h2>Pick your <em>runtime.</em></h2><p>Click any command to copy it. Each package is standalone, so you don't need the web library.</p></div>
+    <div class="install rv">
+      <div><h3>Python</h3><code>pip install "git+https://github.com/thenameiscobmarley/ui-vault#subdirectory=python"</code><code>python -m uivault demo neon</code><div class="row"><a class="btn" href="downloads/uivault-python-latest.zip" download>Download .zip</a></div></div>
+      <div><h3>C++</h3><code>curl -O https://thenameiscobmarley.github.io/ui-vault/cpp/uivault.hpp</code><code>#include "uivault.hpp"   // C++17, header-only</code><div class="row"><a class="btn" href="cpp/uivault.hpp" download>uivault.hpp</a><a class="btn" href="downloads/uivault-cpp-latest.zip" download>.zip + examples</a></div></div>
+      <div><h3>Web</h3><code>&lt;link rel="stylesheet" href="https://thenameiscobmarley.github.io/ui-vault/lib/uivault.css"&gt;</code><code>&lt;html data-uv-theme="neon"&gt;</code><div class="row"><a class="btn" href="quickstart.html">Web quick start</a></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="python">
+    <div class="sec-h rv"><p class="kicker">§ 02 — Python</p><h2>import <em>uivault</em></h2><p>No dependencies. Each toolkit is imported only when you call its function. Pick a toolkit on the left.</p></div>
+    <div class="ide rv" data-ide="py"></div>
+  </section>
+
+  <section class="sec" id="cpp">
+    <div class="sec-h rv"><p class="kicker">§ 03 — C++</p><h2>#include <em>"uivault.hpp"</em></h2><p>One header, C++17, <code>constexpr</code> themes. The adapters switch on when you include the toolkit first. Compile-checked against JUCE 8, Dear ImGui 1.92 and raygui 4.</p></div>
+    <div class="ide rv" data-ide="cpp"></div>
+  </section>
+
+  <section class="sec" id="tokens">
+    <div class="sec-h rv"><p class="kicker">§ 04 — Tokens</p><h2>One palette, <em>three spellings.</em></h2><p>Every theme token as it appears in each API. Pick a theme and a language, then click a row to copy it.</p></div>
+    <div class="tok rv"><div class="tok-list" id="tokList"></div><div class="tok-main"><div class="tok-prev" id="tokPrev"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--rule)"><span class="kicker" id="tokName"></span><div class="fmt" id="fmt"><button aria-pressed="true" data-f="py">Python</button><button data-f="cpp">C++</button><button data-f="css">CSS</button></div></div>
+      <table class="tok-table"><thead><tr><th>Token</th><th>Value</th><th>Solid</th><th>Use it</th></tr></thead><tbody id="tokRows"></tbody></table></div></div>
+  </section>
+</main>
+<footer class="wrap">UI Vault 3.0.0 · MIT · Python package, C++ header and web library are generated from <code>lib/css/themes.src.css</code> by <code>tools/build.py</code> · <a href="https://github.com/thenameiscobmarley/ui-vault">GitHub</a></footer>
+
+<script src="lib/tokens.js"></script>
+<script src="lib/uivault.js"></script>
+<script>
+const T = window.UV_TOKENS.themes, NAMES = Object.keys(T);
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+// ── tiny highlighter (python + c++) ──
+const KW = /\b(import|from|as|def|class|return|if|else|for|in|with|while|const|auto|int|float|bool|void|struct|namespace|include|inline|override|public|private|new|nullptr|true|false|True|False|None|lambda|self|this|using)\b/g;
+function hl(code, lang) {
+  return code.split("\n").map(line => {
+    const ci = lang === "py" ? line.indexOf("#") : line.indexOf("//");
+    const isInclude = lang === "cpp" && /^\s*#/.test(line);
+    let body = ci >= 0 && !isInclude && !/["'][^"']*$/.test(line.slice(0, ci)) ? line.slice(0, ci) : line, com = body === line ? "" : line.slice(ci);
+    body = esc(body).replace(/("[^"]*"|'[^']*'|&lt;[\w./]+&gt;)/g, "\u0001$1\u0002")
+      .replace(/(\u0001[^\u0002]*\u0002)|\b(\d+(?:\.\d+)?f?)\b|([A-Za-z_]\w*)(?=\()|(\b(?:import|from|as|def|class|return|if|else|for|in|with|while|const|auto|int|float|bool|void|struct|namespace|inline|override|public|private|new|nullptr|true|false|True|False|None|lambda|self|this|using)\b|#include|#define)/g,
+        (m, str, num, fn, kw) => str ? `<span class="s">${str.slice(1, -1)}</span>` : num ? `<span class="n">${num}</span>` : fn ? `<span class="f">${fn}</span>` : `<span class="k">${kw}</span>`);
+    return body + (com ? `<span class="c">${esc(com)}</span>` : "");
+  }).join("\n");
+}
+
+// ── terminal intro animation ──
+const SCRIPT = [
+  ["$ ", "pip install \"git+https://github.com/thenameiscobmarley/ui-vault#subdirectory=python\""],
+  ["", "Successfully installed uivault-3.0.0", "mu"],
+  ["$ ", "python -m uivault list"],
+  ...NAMES.map(n => ["", `<span style="color:${T[n].solid.accent}">●</span> ${n.padEnd(10)} <span class="mu">${T[n].desc}</span>`, "html"]),
+  ["$ ", "g++ -std=c++17 swatches.cpp && ./a.out"],
+  ...NAMES.slice(0, 6).map(n => ["", `${n.padEnd(10)} ` + ["bg", "surface", "line-2", "text", "muted", "accent", "accent-2"].map(k => `<span style="background:${T[n].solid[k]}">   </span>`).join(""), "html"]),
+];
+(async function term() {
+  const pre = $("#term"), sleep = ms => new Promise(r => setTimeout(r, ms));
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  for (;;) {
+    pre.innerHTML = "";
+    for (const [pr, text, kind] of SCRIPT) {
+      const line = document.createElement("div"); pre.appendChild(line);
+      if (pr) {
+        line.innerHTML = `<span class="pr">${pr}</span><span></span><span class="cur"></span>`;
+        const t = line.children[1];
+        for (let i = 1; i <= text.length; i++) { t.textContent = text.slice(0, i); if (!reduce) await sleep(18 + Math.random() * 30); }
+        line.lastChild.remove(); await sleep(reduce ? 0 : 380);
+      } else { line.innerHTML = kind === "html" ? text : `<span class="${kind || ""}">${esc(text)}</span>`; await sleep(reduce ? 0 : 70); }
+      pre.scrollTop = pre.scrollHeight;
+    }
+    pre.insertAdjacentHTML("beforeend", `<span class="pr">$ </span><span class="cur"></span>`);
+    await sleep(6000);
+  }
+})();
+
+// ── IDE panes ──
+const PY = [
+  ["Getting started", "theme.py", `import uivault
+
+uivault.themes()            # ['editorial', 'brutal', 'neon', ...]
+t = uivault.theme("neon")
+t.accent                    # '#00f0ff'
+t.surface_2                 # '#151527'
+t.solid("line_2")           # alpha pre-blended → '#044149'
+t.rgba("accent")            # (0.0, 0.94, 1.0, 1.0)
+t.font, t.font_head         # ('Geist', 'Geist Mono')
+t.radius, t.dark            # (4.0, True)
+
+uivault.css("neon")         # CSS custom properties for any web view`, "Every token is an attribute. <b>.solid()</b> gives an opaque colour for toolkits without alpha."],
+  ["Qt · PySide6", "qt_app.py", `from PySide6.QtWidgets import QApplication, QPushButton, QWidget, QVBoxLayout, QLineEdit
+import uivault
+
+app = QApplication([])
+uivault.apply_qt(app, "neon")           # whole-app stylesheet
+
+w = QWidget(); lay = QVBoxLayout(w)
+ok = QPushButton("Save"); ok.setProperty("primary", True)   # accent button
+lay.addWidget(QLineEdit(placeholderText="you@example.com"))
+lay.addWidget(ok)
+w.show(); app.exec()`, "Works with <b>PySide6, PyQt6 and PyQt5</b>. Styles buttons, inputs, tabs, sliders, progress bars, menus, tables and tooltips."],
+  ["Tkinter · ttk", "tk_app.py", `import tkinter as tk
+from tkinter import ttk
+import uivault
+
+root = tk.Tk()
+uivault.apply_tk(root, "brutal")        # returns the ttk.Style
+
+ttk.Label(root, text="Hello", style="Heading.TLabel").pack()
+ttk.Button(root, text="Save", style="Accent.TButton").pack()
+ttk.Progressbar(root, value=60).pack(fill="x")
+root.mainloop()
+
+# or try it:  python -m uivault demo brutal`, "Real screenshots of <b>python -m uivault demo</b> below, using the same code in four themes.", true],
+  ["Textual (TUI)", "tui.py", `from textual.app import App
+from textual.widgets import Header, Footer, Button, Input
+import uivault
+
+class MyApp(App):
+    CSS = uivault.tcss("terminal")      # Textual CSS
+
+    def compose(self):
+        yield Header()
+        yield Input(placeholder="Search…")
+        yield Button("Run", variant="primary")
+        yield Footer()
+
+MyApp().run()
+
+# Textual ≥ 0.86 also: app.register_theme(uivault.textual_theme("neon"))`, "Terminal apps get the same palette. <b>Rich</b> works too: <code>Console(theme=uivault.rich_theme(\"y2k\"))</code>."],
+  ["GTK4 · libadwaita", "gtk_app.py", `import gi
+gi.require_version("Adw", "1")
+from gi.repository import Adw
+import uivault
+
+def on_activate(app):
+    uivault.apply_gtk("luxe")           # named colours + shapes
+    win = Adw.ApplicationWindow(application=app, title="Luxe")
+    win.present()
+
+app = Adw.Application(application_id="dev.example.Luxe")
+app.connect("activate", on_activate)
+app.run()`, "Overrides libadwaita's named colours (<b>accent_bg_color</b>, <b>window_bg_color</b> and others), so every stock widget follows the theme."],
+  ["Dear PyGui", "dpg_app.py", `import dearpygui.dearpygui as dpg
+import uivault
+
+dpg.create_context()
+dpg.bind_theme(uivault.dearpygui_theme("soft"))
+
+with dpg.window(label="Mixer", width=360):
+    dpg.add_slider_float(label="Gain", default_value=0.6)
+    dpg.add_checkbox(label="Enabled", default_value=True)
+    dpg.add_button(label="Apply")
+
+dpg.create_viewport(title="UI Vault", width=420, height=260)
+dpg.setup_dearpygui(); dpg.show_viewport(); dpg.start_dearpygui()`, "Sets 27 colours plus rounding, border and padding."],
+  ["matplotlib", "chart.py", `import matplotlib.pyplot as plt
+import uivault
+
+uivault.apply_matplotlib("swiss")       # rcParams: colours, grid, cycle, font
+
+plt.plot([3, 5, 4, 7, 6, 9], label="2026")
+plt.plot([2, 3, 3, 4, 5, 5], label="2025")
+plt.legend(); plt.title("Releases per month")
+plt.savefig("chart.png")`, "Charts that match your app: background, axes, grid and a colour cycle drawn from the theme."],
+  ["CLI", "terminal", `$ python -m uivault list                 # all themes, coloured
+$ python -m uivault show luxe            # true-colour swatches
+$ python -m uivault export qss neon  > neon.qss
+$ python -m uivault export tcss terminal > app.tcss
+$ python -m uivault export gtk luxe  > gtk.css
+$ python -m uivault export css glass > theme.css
+$ python -m uivault demo retro           # Tkinter demo window`, "Export any theme to a file for tools that read stylesheets."],
+];
+const CPP = [
+  ["Getting started", "main.cpp", `#include "uivault.hpp"
+
+constexpr const uivault::Theme& t = uivault::neon;   // compile-time
+
+t.color.accent.hex();          // "#00f0ff"
+t.solid.line2.argb();          // 0xff044149  (alpha pre-blended)
+t.color.accent.abgr();         // ImGui IM_COL32 order
+t.radius;                      // 4.0f
+t.dark;                        // true
+
+for (const uivault::Theme* th : uivault::themes) puts(th->name);
+const uivault::Theme* b = uivault::find("brutal");`, "Plain <b>constexpr</b> data with no allocations. <b>Color</b> converts to rgba/argb/abgr, hex and css."],
+  ["Dear ImGui", "imgui_example.cpp", null, "Sets every <b>ImGuiCol_*</b>, rounding, borders and padding. Handles the 1.90.9 tab and 1.91.4 nav-cursor renames."],
+  ["JUCE", "juce_example.cpp", null, "A <b>LookAndFeel_V4</b> with the theme's colour scheme, rounded and bordered buttons, and a thin-track slider. Call <b>setTheme()</b> to switch live."],
+  ["raylib · raygui", "raygui_example.cpp", null, "Writes the theme into raygui's <b>DEFAULT</b> style, so every control inherits it."],
+  ["Qt (C++)", "qt_main.cpp", `#include <QApplication>
+#include <QPushButton>
+#include "uivault.hpp"
+
+int main(int argc, char** argv) {
+    QApplication app(argc, argv);
+    app.setStyleSheet(QString::fromStdString(uivault::qss(uivault::swiss)));
+
+    QPushButton ok("Save");
+    ok.setProperty("primary", true);   // accent button
+    ok.show();
+    return app.exec();
+}`, "<b>qss()</b> is pure std::string, so it needs no Qt include and works with Qt 5 and 6."],
+  ["Swatches demo", "swatches.cpp", null, "Prints every theme as true-colour swatches: <b>g++ -std=c++17 swatches.cpp && ./a.out</b>"],
+];
+const files = { "imgui_example.cpp": "cpp/examples/imgui_example.cpp", "juce_example.cpp": "cpp/examples/juce_example.cpp", "raygui_example.cpp": "cpp/examples/raygui_example.cpp", "swatches.cpp": "cpp/examples/swatches.cpp" };
+
+function buildIDE(el, items, lang) {
+  el.innerHTML = `<div class="tree" role="tablist"><h4>${lang === "py" ? "uivault · python" : "uivault · c++"}</h4>${items.map(([n, f], i) => `<button role="tab" aria-selected="${!i}" data-i="${i}"><i>${lang === "py" ? "py" : "{}"}</i>${n}</button>`).join("")}</div><div class="pane"><div class="tabs"><span></span><button data-copy>copy</button></div><div class="code"><div class="ln"></div><pre></pre></div><div class="note"></div></div>`;
+  const tabs = el.querySelectorAll(".tree button");
+  let current = "";
+  const show = async i => {
+    tabs.forEach(b => b.setAttribute("aria-selected", b.dataset.i == i));
+    const [n, file, code, note, shots] = items[i];
+    let src = code;
+    if (src == null) { try { src = await (await fetch(files[file])).text(); } catch { src = "// see " + files[file]; } }
+    current = src;
+    el.querySelector(".tabs span").textContent = file;
+    el.querySelector(".ln").textContent = src.split("\n").map((_, k) => k + 1).join("\n");
+    const pre = el.querySelector("pre"); pre.innerHTML = hl(src, lang);
+    pre.animate([{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "none" }], { duration: 260, easing: "ease-out" });
+    el.querySelector(".note").innerHTML = note;
+    el.querySelector(".shot")?.remove();
+    if (shots) el.querySelector(".pane").insertAdjacentHTML("beforeend", `<figure class="shot">${["neon", "brutal", "luxe", "swiss"].map(t => `<div><img src="assets/img/tk-${t}.png" alt="Tkinter demo in the ${t} theme" loading="lazy"><figcaption>python -m uivault demo ${t}</figcaption></div>`).join("")}</figure>`);
+  };
+  el.querySelector(".tree").onclick = e => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); };
+  el.querySelector("[data-copy]").onclick = () => UV.copy(current);
+  show(0);
+}
+buildIDE(document.querySelector('[data-ide="py"]'), PY, "py");
+buildIDE(document.querySelector('[data-ide="cpp"]'), CPP, "cpp");
+
+// ── install: click to copy ──
+document.querySelectorAll(".install code").forEach(c => c.onclick = () => UV.copy(c.textContent));
+
+// ── token explorer ──
+const CK = ["bg", "surface", "surface-2", "surface-3", "line", "line-2", "text", "muted", "dim", "accent", "accent-2", "success", "warn", "danger", "info"];
+const cppName = k => k.replace(/-(\d)/, "$1").replace(/-(\w)/g, (_, c) => c.toUpperCase());
+let cur = "neon", fmt = "py";
+$("#tokList").innerHTML = NAMES.map(n => `<button data-n="${n}"><span class="sw">${["bg", "surface", "text", "accent", "accent-2"].map(k => `<i style="background:${T[n].solid[k]}"></i>`).join("")}</span>${n}</button>`).join("");
+function renderTok() {
+  const t = T[cur];
+  $("#tokList").querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", b.dataset.n === cur));
+  $("#tokName").textContent = `${cur} · ${t.dark ? "dark" : "light"} · r ${t.shape.r}px · ${t.fonts["font-family"]}`;
+  $("#tokPrev").innerHTML = `<div data-uv-theme="${cur}" style="padding:22px;border-radius:6px;display:grid;gap:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center"><h3 class="uv-h2" style="font-size:34px;margin:0">${cur}</h3><span class="uv-badge uv-badge--accent">${t.dark ? "dark" : "light"}</span></div>
+    <p class="uv-muted" style="margin:0">${t.desc}</p>
+    <div class="uv-row"><button class="uv-btn uv-btn--primary uv-btn--sm">Primary</button><button class="uv-btn uv-btn--ghost uv-btn--sm">Ghost</button><input class="uv-input" placeholder="Input" style="height:34px;max-width:180px"><label class="uv-switch"><input type="checkbox" checked><i></i></label></div></div>`;
+  const use = k => fmt === "py" ? `t.${k.replace(/-/g, "_")}` : fmt === "cpp" ? `t.color.${cppName(k)}` : `var(--uv-${k})`;
+  $("#tokRows").innerHTML = CK.filter(k => t.colors[k]).map(k => `<tr data-c="${use(k)}"><td><i style="background:${t.colors[k]}"></i>${k}</td><td>${t.colors[k].endsWith("ff") ? t.colors[k].slice(0, 7) : t.colors[k]}</td><td>${t.solid[k]}</td><td style="color:var(--fg)">${use(k)}</td></tr>`).join("");
+}
+$("#tokList").onclick = e => { const b = e.target.closest("button"); if (b) { cur = b.dataset.n; renderTok(); } };
+$("#fmt").onclick = e => { const b = e.target.closest("button"); if (!b) return; fmt = b.dataset.f; $("#fmt").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); renderTok(); };
+$("#tokRows").onclick = e => { const r = e.target.closest("tr"); if (r) UV.copy(r.dataset.c, "Copied " + r.dataset.c); };
+renderTok();
+
+// ── scroll reveal ──
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
