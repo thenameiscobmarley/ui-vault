@@ -248,5 +248,7 @@
     }
     return ["page", document.documentElement];
   }
-  UV.layers = { defs: DEFS, kinds: KIND, types: TYPE, apply, css, get: () => current, pathOf, typeOf, option: opt };
+  /** CSS for one selector (previews, exports): UV.layers.cssFor('[data-x="1"]', "btn", { glow: { o: "neon" } }) */
+  const cssFor = (sel, type, kinds) => block(sel, type, kinds);
+  UV.layers = { defs: DEFS, kinds: KIND, types: TYPE, apply, css, cssFor, keyframes: DEFS.keyframes, get: () => current, pathOf, typeOf, option: opt };
 })(window.UV);

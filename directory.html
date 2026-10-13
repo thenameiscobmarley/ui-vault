@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Index — UI Vault</title>
+<meta name="description" content="Search everything in UI Vault: pages, themes, element designs, kits, effects, animations, components, blocks, JavaScript, Python and C++ APIs, and 280 open-source resources." />
+<meta name="theme-color" content="#101012" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="lib/css/fonts.css" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<style>
+  :root { --pg-bg: #101012; --pg-bg2: #151517; --pg-bg3: #1c1c1f; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", serif; }
+  html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
+  html[data-uv-theme] { --pg-bg: var(--uv-bg); --pg-bg2: var(--uv-surface); --pg-bg3: var(--uv-surface-2); --pg-fg: var(--uv-text); --pg-mu: var(--uv-muted); --pg-di: var(--uv-dim); --pg-ln: var(--uv-line); --pg-ln2: var(--uv-line-2); --pg-ac: var(--uv-accent); --pg-font: var(--uv-font); --pg-head: var(--uv-font-head); }
+  body { margin: 0; background: var(--pg-bg); color: var(--pg-fg); font-family: var(--pg-font); }
+  html[data-uv-bg] body { background: transparent; }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; height: 58px; padding: 0 clamp(16px, 3vw, 32px); background: color-mix(in srgb, var(--pg-bg) 94%, transparent); border-bottom: 1px solid var(--pg-ln); }
+  .top .brand { display: flex; align-items: center; gap: 10px; color: var(--pg-fg); text-decoration: none; font-weight: 600; }
+  .top .brand svg rect { fill: var(--pg-fg); } .top .brand svg path { stroke: var(--pg-bg); } .top .brand svg circle { fill: var(--pg-ac); }
+  .top nav { margin-left: auto; display: flex; gap: 2px; } .top nav a { padding: 6px 10px; border-radius: 4px; color: var(--pg-mu); text-decoration: none; font-size: 14px; } .top nav a:hover, .top nav a[aria-current] { color: var(--pg-fg); background: var(--pg-ln); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); }
+  .k { font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--pg-di); }
+  .hero { padding: 56px 0 18px; }
+  .hero h1 { margin: 8px 0 0; font: 400 clamp(56px, 9vw, 120px)/.9 var(--pg-head); letter-spacing: -.03em; } .hero h1 em { color: var(--pg-ac); }
+  .sbox { position: sticky; top: 58px; z-index: 40; padding: 14px 0 10px; background: var(--pg-bg); }
+  .sbox label { position: relative; display: block; }
+  .sbox input { width: 100%; box-sizing: border-box; height: 64px; padding: 0 120px 0 56px; border-radius: 12px; border: 1px solid var(--pg-ln2); background: var(--pg-bg2); color: var(--pg-fg); font: 22px var(--pg-font); outline: none; transition: border-color .2s, box-shadow .2s; }
+  .sbox input:focus { border-color: var(--pg-ac); box-shadow: 0 0 0 4px color-mix(in srgb, var(--pg-ac) 18%, transparent); }
+  .sbox svg { position: absolute; left: 20px; top: 50%; translate: 0 -50%; color: var(--pg-di); }
+  .sbox kbd { position: absolute; right: 16px; top: 50%; translate: 0 -50%; font: 12px "Geist Mono", monospace; color: var(--pg-di); border: 1px solid var(--pg-ln2); border-radius: 4px; padding: 3px 7px; }
+  .chips { display: flex; gap: 6px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; }
+  .chips button { flex: none; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-mu); font: 500 13px var(--pg-font); cursor: pointer; } .chips button small { opacity: .6; margin-left: 4px; font-family: "Geist Mono", monospace; }
+  .chips button.on { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); }
+  .res { list-style: none; margin: 8px 0 0; padding: 0; }
+  .res li a { display: grid; grid-template-columns: 110px 1fr auto; gap: 14px; align-items: center; padding: 11px 12px; border-radius: 8px; color: inherit; text-decoration: none; border-bottom: 1px solid var(--pg-ln); }
+  .res li a:hover, .res li.sel a { background: var(--pg-bg2); }
+  .res li.sel a { box-shadow: inset 3px 0 0 var(--pg-ac); }
+  .res .kind { font: 500 11px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .05em; color: var(--pg-di); }
+  .res .kind i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 7px; background: var(--c, var(--pg-ac)); }
+  .res b { font-weight: 600; } .res mark { background: color-mix(in srgb, var(--pg-ac) 30%, transparent); color: inherit; border-radius: 2px; }
+  .res small { display: block; color: var(--pg-mu); font-size: 13px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .res .go { font: 12px "Geist Mono", monospace; color: var(--pg-di); white-space: nowrap; }
+  .more { display: block; margin: 14px auto 0; padding: 8px 16px; border-radius: 6px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-fg); font: 500 13px var(--pg-font); cursor: pointer; }
+  .empty { padding: 40px 0; color: var(--pg-mu); text-align: center; }
+  .dir { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; padding: 18px 0 40px; }
+  .grp { border: 1px solid var(--pg-ln); border-radius: 12px; padding: 18px; background: var(--pg-bg2); }
+  .grp h2 { margin: 0 0 12px; font: 400 32px/1 var(--pg-head); }
+  .grp > a { display: block; padding: 10px 0; border-top: 1px solid var(--pg-ln); color: inherit; text-decoration: none; }
+  .grp > a b { font-weight: 600; } .grp > a:hover b { color: var(--pg-ac); } .grp > a small { display: block; color: var(--pg-mu); font-size: 13px; margin-top: 2px; }
+  .grp .subs { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 6px; } .grp .subs a { font-size: 12px; color: var(--pg-di); text-decoration: none; } .grp .subs a:hover { color: var(--pg-fg); }
+  .lib { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding: 22px 24px; margin: 18px 0 6px; border-radius: 14px; border: 1px solid var(--pg-ln2); background: linear-gradient(120deg, color-mix(in srgb, var(--pg-ac) 16%, var(--pg-bg2)), var(--pg-bg2) 60%); }
+  .lib h2 { margin: 0; font: 400 40px/1 var(--pg-head); } .lib p { margin: 6px 0 0; color: var(--pg-mu); max-width: 560px; }
+  .lib a { padding: 12px 18px; border-radius: 8px; background: var(--pg-fg); color: var(--pg-bg); text-decoration: none; font-weight: 600; white-space: nowrap; }
+  .counts { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 10px; color: var(--pg-mu); font-size: 14px; } .counts b { color: var(--pg-fg); font-size: 20px; margin-right: 4px; }
+  @media (max-width: 640px) { .res li a { grid-template-columns: 1fr; gap: 2px; } .res .go { display: none; } .sbox input { font-size: 18px; height: 56px; } .sbox kbd { display: none; } }
+</style>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI Vault</a>
+  <nav><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html" aria-current="page">Index</a></nav>
+</header>
+<main class="wrap">
+  <section class="hero"><p class="k">Everything in UI Vault</p><h1>The <em>index.</em></h1><div class="counts" id="counts"></div></section>
+  <div class="sbox">
+    <label><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search pages, themes, buttons, effects, functions…" autocomplete="off" autofocus aria-label="Search everything"><kbd>/ to focus</kbd></label>
+    <div class="chips" id="chips"></div>
+  </div>
+  <ul class="res" id="res"></ul>
+  <div id="dir">
+    <div class="lib"><div><p class="k">New</p><h2>The Library</h2><p>See every element, loader, animation, background and effect live. Tick what you want and get a zip with only those, plus the code to use them in web, Python and C++.</p></div><a href="library.html">Open the Library →</a></div>
+    <div class="dir" id="groups"></div>
+  </div>
+</main>
+<script src="lib/uivault.js"></script>
+<script src="lib/catalog.js"></script>
+<script src="lib/manifest.js"></script>
+<script src="lib/parts.js"></script>
+<script src="assets/js/blocks.js"></script>
+<script src="assets/js/resources.js"></script>
+<script src="assets/js/resources2.js"></script>
+<script src="assets/js/picker.js"></script>
+<script src="assets/js/directory.js"></script>
+</body>
+</html>

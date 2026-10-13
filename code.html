@@ -105,7 +105,7 @@
 <header class="bar">
   <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="#ecebe8"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="#141413" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="#ff6a26"/></svg>UI Vault</a>
   <span class="kicker">/ code</span>
-  <nav><a href="quickstart.html">Quick start</a><a href="docs.html">Web docs</a><a href="themes.html">Themes</a><a href="elements.html">Elements</a><a href="lab.html">Test page</a><a class="on" href="code.html">Code APIs</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a><a href="./">Library</a></nav>
+  <nav><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
   <span class="dot" title="v3.0.0"></span>
 </header>
 
@@ -137,6 +137,48 @@
   <section class="sec" id="cpp">
     <div class="sec-h rv"><p class="kicker">§ 03 — C++</p><h2>#include <em>"uivault.hpp"</em></h2><p>One header, C++17, <code>constexpr</code> themes. The adapters switch on when you include the toolkit first. Compile-checked against JUCE 8, Dear ImGui 1.92 and raygui 4.</p></div>
     <div class="ide rv" data-ide="cpp"></div>
+  </section>
+
+  <section class="sec" id="uivault3">
+    <div class="sec-h rv"><p class="kicker">§ 04 — UiVault3 (native)</p><h2>Real designs, <em>not approximations.</em></h2><p>uivault3 paints every website design with QPainter: the real gradients, glows, bevels, chrome, pearl and holo foils, and animations. It comes for PySide6 and for Qt 6 C++, with the same class names and the same 273 designs, 87 themes, 18 kits and effect layers.</p></div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-bottom:22px">
+      <figure style="margin:0"><img src="assets/img/uivault3-deep-metal.png" alt="UiVault3 PySide6 gallery with the Deep Blue Metal kit" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--rule-2)"><figcaption class="kicker" style="margin-top:6px">PySide6 · kit deep-metal</figcaption></figure>
+      <figure style="margin:0"><img src="assets/img/uivault3-pearl.png" alt="UiVault3 PySide6 gallery with the Pearlescent kit" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--rule-2)"><figcaption class="kicker" style="margin-top:6px">PySide6 · kit pearl</figcaption></figure>
+      <figure style="margin:0"><img src="assets/img/uivault3-cyber-neon-cpp.png" alt="UiVault3 Qt C++ gallery with the Cyber Neon kit" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--rule-2)"><figcaption class="kicker" style="margin-top:6px">Qt 6 C++ · kit cyber-neon</figcaption></figure>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px">
+<pre style="margin:0;padding:18px;border-radius:8px;background:#0d0d0f;color:#d9d6cf;font:13px/1.65 'Geist Mono',monospace;overflow:auto"># pip install "git+https://github.com/thenameiscobmarley/ui-vault#subdirectory=uivault3"
+from PySide6.QtWidgets import QApplication, QVBoxLayout
+import uivault3 as uv
+
+app = QApplication([])
+uv.apply(app, kit="deep-metal")          # or theme=, parts={"btn": "pearl"}, layers={...}
+win = uv.Surface(); lay = QVBoxLayout(win)
+lay.addWidget(uv.Heading("Hello", 44))
+lay.addWidget(uv.Button("Save", primary=True))
+lay.addWidget(uv.Switch("Notifications", True))
+uv.load("my-style.json")                 # a style you built on this site
+win.show(); app.exec()
+
+# python -m uivault3 --kit pearl          (gallery)</pre>
+<pre style="margin:0;padding:18px;border-radius:8px;background:#0d0d0f;color:#d9d6cf;font:13px/1.65 'Geist Mono',monospace;overflow:auto">// cpp/uivault3: uivault3.h + uivault3.cpp + uivault3_data.cpp
+// (Qt 6 Widgets, CMake AUTOMOC)
+#include "uivault3.h"
+
+int main(int argc, char** argv) {
+    QApplication app(argc, argv);
+    uv3::apply(&amp;app, uv3::Look{}.kit("deep-metal")
+                         .part("btn", "pearl")
+                         .layer("btn", "glow", "neon"));
+    auto* win = new uv3::Surface;
+    auto* lay = new QVBoxLayout(win);
+    lay-&gt;addWidget(new uv3::Button("Save", true));
+    lay-&gt;addWidget(new uv3::Switch("Notifications", true));
+    win-&gt;show();
+    return app.exec();
+}</pre>
+    </div>
+    <p class="rv" style="color:var(--fg-2);margin-top:16px">Widgets: Button, Card, LineEdit, Switch, CheckBox, RadioButton, Slider, TabBar, ProgressBar, Spinner, Badge, Alert, Heading, NavBar, Surface, Dialog. Web-only for now: backdrop blur behind a widget, page canvas/cursor effects and the uv-fx CSS effects. Get the files from <a href="downloads/uivault-uivault3-latest.zip" style="color:var(--sig)">the zip</a> or pick widgets in the <a href="library.html?cat=native" style="color:var(--sig)">Library</a>.</p>
   </section>
 
   <section class="sec" id="tokens">

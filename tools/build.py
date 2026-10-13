@@ -303,6 +303,7 @@ def build_parts():
     (LIB / "parts.js").write_text("window.UV_PARTS = " + json.dumps(meta, ensure_ascii=False) + ";\n")
     # per-design CSS source for the site's "Code" view (works on file:// too, unlike fetch)
     src = {f["key"]: (out_dir / f"{f['key']}.css").read_text().replace(kf, "") for f in parts_specs.FAMILIES}
+    src["_keyframes"] = kf
     (LIB / "parts-src.js").write_text("window.UV_PARTS_SRC = " + json.dumps(src, ensure_ascii=False) + ";\n")
     py = ROOT / "python" / "uivault"
     if py.exists(): (py / "parts.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False))
@@ -333,6 +334,76 @@ def build_native(layers_meta):
     return native
 
 
+PAGES = [  # page, title, what it is, group
+    ("./", "Home", "The UI Vault homepage: playground, post-FX, logo forge and the resource library", "Start"),
+    ("quickstart.html", "Quick start", "Install in two minutes, the custom bundle zipper and the API cheat sheet", "Start"),
+    ("library.html", "Library", "Every element, effect, animation, background and theme. Pick what you want and zip only that", "Start"),
+    ("directory.html", "Index", "Search everything on the site", "Start"),
+    ("themes.html", "Themes", "87 complete design styles with a theme builder", "Design"),
+    ("elements.html", "Elements", "273 element designs to mix and match, plus kits", "Design"),
+    ("lab.html", "Test page", "Try any theme, kit and design on a dashboard, landing page, settings form and shop", "Design"),
+    ("showcase.html", "Showcase", "30 finished pieces built with the library", "Design"),
+    ("blocks.html", "Blocks", "41 page sections: heroes, pricing tables, footers…", "Design"),
+    ("docs.html", "Web docs", "Every web component and function with live examples", "Code"),
+    ("code.html", "Python & C++", "The uivault Python package, uivault.hpp and UiVault3 native widgets", "Code"),
+]
+
+
+def build_catalog():
+    """lib/catalog.js — the search index (Index page) and the item list behind the Library page."""
+    items = []   # [kind, id, name, desc, url, group]
+    for url, title, desc, group in PAGES:
+        items.append(["Page", "page/" + title.lower(), title, desc, url, group])
+        f = ROOT / (url if url != "./" else "index.html")
+        if not f.exists(): continue
+        html = f.read_text()
+        for m in re.finditer(r'<section[^>]*\bid="([\w-]+)"[^>]*>(.*?)(?=<section|\Z)', html, re.S):
+            h = re.search(r"<h[23][^>]*>(.*?)</h[23]>", m.group(2), re.S)
+            if not h: continue
+            text = re.sub(r"<[^>]+>|&[a-z]+;", " ", h.group(1)); text = re.sub(r"\s+", " ", text).strip()
+            if text: items.append(["Section", f"sec/{title.lower()}/{m.group(1)}", text, f"{title} → section", f"{url if url != './' else ''}#{m.group(1)}", title])
+    # docs entries ([section, id, title, description, …] rows in docs.html)
+    for sec, id_, title, desc in re.findall(r'^\["([A-Z][^"]*)", "([\w-]+)", "([^"]+)", "((?:[^"\\]|\\.)*)"', (ROOT / "docs.html").read_text(), re.M):
+        items.append(["Docs", "doc/" + id_, title, re.sub(r"<[^>]+>", "", desc)[:140], "docs.html#" + id_, sec])
+    # uv-fx effects with their group
+    group = "Text"
+    for line in (CSS / "fx.css").read_text().splitlines():
+        g = re.match(r"/\* ── (.+?) ─", line)
+        if g: group = g.group(1).split("(")[0].strip()
+        for c in re.findall(r"^\.(uv-fx-[a-z0-9-]+)", line):
+            if not any(i[1] == "fx/" + c for i in items): items.append(["Effect", "fx/" + c, c, f"{group} effect: add class=\"{c}\" to any element", f"library.html?item=fx/{c}", group])
+    # base components
+    group = ""
+    for line in (CSS / "components.css").read_text().splitlines():
+        g = re.match(r"/\* ── (.+?) ─", line)
+        if g:
+            group = g.group(1).split("(")[0].strip()
+            if group.startswith("v3 editorial"): break
+        for c in re.findall(r"^\.(uv-[a-z0-9]+(?:-[a-z0-9]+)*)(?![\w-]*--)", line):
+            if "__" in c or any(i[1] == "comp/" + c for i in items): continue
+            items.append(["Component", "comp/" + c, c, f"{group}: class=\"{c}\"", f"library.html?item=comp/{c}", group])
+    # JS API
+    for m_ in JS_ORDER:
+        src = (JS / f"{m_}.js").read_text()
+        for n in re.findall(r"\bUV\.([a-zA-Z]+) = ", src):
+            if not any(i[1] == "js/UV." + n for i in items): items.append(["JavaScript", "js/UV." + n, "UV." + n + "()", f"{m_}.js", f"library.html?item=js/UV.{n}", m_])
+        for n in re.findall(r'\bfx(?:\.([a-zA-Z]+)|\["([a-z-]+)"\]) = ', src):
+            n = n[0] or n[1]
+            if n not in ("list", "split"): items.append(["JavaScript", "js/UV.fx." + n, f"UV.fx.{n}(el)" if "-" not in n else f'UV.fx["{n}"](el)', f"{m_}.js canvas/pointer effect", f"library.html?item=js/UV.fx.{n}", m_])
+    # Python & C++
+    py = (ROOT / "python" / "uivault" / "__init__.py").read_text()
+    for n in re.findall(r"^def ([a-z][a-z_]*)\(", py, re.M):
+        items.append(["Python", "py/uivault." + n, f"uivault.{n}()", "uivault package (themes for Qt, Tk, GTK, Textual, Dear PyGui, matplotlib, Rich)", "code.html#python", "uivault"])
+    for n in ["Button", "Card", "LineEdit", "Switch", "CheckBox", "RadioButton", "Slider", "TabBar", "ProgressBar", "Spinner", "Badge", "Alert", "Heading", "NavBar", "Surface", "Dialog", "apply", "load"]:
+        items.append(["Python", "py/uivault3." + n, f"uivault3.{n}", "UiVault3 (PySide6): real custom-painted widget, no approximations", "code.html#uivault3", "uivault3"])
+        items.append(["C++", "cpp/uv3::" + n, f"uv3::{n}", "UiVault3 for Qt 6 C++ (uivault3.h)", "code.html#uivault3", "uivault3"])
+    for n, d in [("uivault::qss", "Qt stylesheet for any theme or kit"), ("uivault::imgui::apply", "Dear ImGui theme"), ("uivault::juce_lf::LookAndFeel", "JUCE LookAndFeel"),
+                 ("uivault::raygui::apply", "raygui style"), ("uivault::findKit", "kits as constexpr data"), ("uivault::fillColors", "colours for a design's fill")]:
+        items.append(["C++", "cpp/" + n, n, d + " (uivault.hpp)", "code.html#cpp", "uivault.hpp"])
+    (LIB / "catalog.js").write_text("window.UV_CATALOG = " + json.dumps(items, ensure_ascii=False) + ";\n")
+    return items
+
+
 def raw_src():
     """lib/raw-src.js: CSS bundle text + JS module sources, used by the site's "Raw code" view."""
     src = {"css": (LIB / "uivault.css").read_text(), "js": {m: (JS / f"{m}.js").read_text() for m in JS_ORDER}}
@@ -342,7 +413,7 @@ def raw_src():
 def manifest(themes):
     files = []
     for p in sorted(LIB.rglob("*")):
-        if p.is_file() and p.suffix in (".css", ".js", ".json") and p.name not in ("themes.src.css", "themes.gen.css", "manifest.js", "manifest.json", "raw-src.js", "tokens.js", "parts.js", "parts-src.js"):
+        if p.is_file() and p.suffix in (".css", ".js", ".json") and p.name not in ("themes.src.css", "themes.gen.css", "manifest.js", "manifest.json", "raw-src.js", "tokens.js", "parts.js", "parts-src.js", "catalog.js", "native.json"):
             rel = p.relative_to(LIB).as_posix()
             files.append({"path": rel, "bytes": p.stat().st_size, "desc": DESC.get(p.name, "")})
     m = {"version": VERSION, "css": CSS_ORDER, "js": JS_ORDER, "themes": themes, "files": files}
@@ -383,6 +454,7 @@ if __name__ == "__main__":
     tokens = export_tokens(themes)
     export_cpp(tokens, parts)
     native = build_native(layers)
+    catalog = build_catalog()
     raw_src()
     m = manifest(themes)
     make_zip(m)
