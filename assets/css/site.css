@@ -314,3 +314,9 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border-radius: 
 .res__logo { transition: transform .35s cubic-bezier(.3, 1.4, .5, 1), background .2s; }
 .res:hover .res__logo { transform: rotate(-6deg) scale(1.08); background: var(--accent) !important; color: #fff !important; }
 .spec { transition: translate .1s linear; }
+
+/* ── Waterfall background (lib/js/waterfall.js) ── */
+body.has-wf { background: transparent; }
+body.has-wf .uv-waterfall-veil { background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 30%, transparent) 0, color-mix(in srgb, var(--bg) 62%, transparent) 50vh, color-mix(in srgb, var(--bg) 80%, transparent) 100%); }
+body.has-wf .topbar { background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(10px); }
+body.has-wf .res-grid, body.has-wf .stats { background: color-mix(in srgb, var(--bg) 55%, transparent); }

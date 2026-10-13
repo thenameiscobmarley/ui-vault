@@ -27,8 +27,8 @@
       <a href="docs.html">Docs</a>
       <a href="showcase.html">Showcase</a>
       <a href="blocks.html">Blocks</a>
-      <a href="#library">Library</a>
       <a href="#playground">Playground</a>
+      <a href="#library">Library</a>
       <a href="#postfx">Post-FX</a>
       <a href="#logo">Logo Forge</a>
       <a href="app/" class="topnav__app">Flow ↗</a>
@@ -44,7 +44,7 @@
   <main id="top">
     <!-- ── Hero ─────────────────────────────────────────────── -->
     <section class="hero">
-      <p class="hero__kicker"><span>Vol. 02</span><span>Open-source interface material + the UV API for Web, Python &amp; C++</span><span id="demoCountBadge">58</span><span>live snippets</span></p>
+      <p class="hero__kicker"><span>Vol. 02</span><span>Open-source UI + the UV API</span><span id="demoCountBadge">58</span><span>live snippets</span></p>
       <aside class="spec" aria-label="Type and colour specimen">
         <div class="spec__head"><span>Fig. 1</span><span>Specimen</span></div>
         <div class="spec__type"><b>Aa</b><div><p>Instrument Serif</p><p>Geist · Geist Mono</p></div></div>
@@ -121,38 +121,10 @@ UV.toast("Saved!", { type: "success" });
 UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     </section>
 
-    <!-- ── Library ──────────────────────────────────────────── -->
-    <section id="library" class="section">
-      <header class="section__head">
-        <p class="eyebrow">§ 01 — Library</p>
-        <h2>The index, <em>sorted and searchable.</em></h2>
-        <p class="section__sub">Every link is free to use. Filter by category, search anything, and ★ the ones you love — favorites are saved in your browser.</p>
-      </header>
-
-      <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Categories"><span class="cat-tabs__ind" aria-hidden="true"></span></div>
-
-      <div class="toolbar">
-        <p id="resultCount" class="muted"></p>
-        <div class="toolbar__right">
-          <label class="mini-switch"><input type="checkbox" id="favOnly" /><i></i> Favorites only</label>
-          <select id="sortSel" aria-label="Sort">
-            <option value="curated">Curated order</option>
-            <option value="az">A → Z</option>
-            <option value="license">By license</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="res-grid" id="resGrid"></div>
-      <div class="empty" id="emptyState" hidden>
-        <p>Nothing matches that. Try “button”, “glsl”, “svelte”…</p>
-      </div>
-    </section>
-
     <!-- ── Playground ───────────────────────────────────────── -->
     <section id="playground" class="section">
       <header class="section__head">
-        <p class="eyebrow">§ 02 — Playground</p>
+        <p class="eyebrow">§ 01 — Playground</p>
         <h2>Snippets, <em>ready to paste.</em></h2>
         <p class="section__sub">Plain HTML + CSS (and a few lines of JS where needed). Hover, click, play — then hit <b>Copy</b>.</p>
       </header>
@@ -164,7 +136,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Post-FX Lab ──────────────────────────────────────── -->
     <section id="postfx" class="section">
       <header class="section__head">
-        <p class="eyebrow">§ 03 — Post-FX Lab</p>
+        <p class="eyebrow">§ 02 — Post-FX Lab</p>
         <h2>Post-processing, <em>by hand.</em></h2>
         <p class="section__sub">A real WebGL post pass: bloom, chromatic aberration, vignette, film grain, scanlines and CRT curvature. Drop in your own image, dial it in, copy the shader.</p>
       </header>
@@ -190,7 +162,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Logo Forge ───────────────────────────────────────── -->
     <section id="logo" class="section">
       <header class="section__head">
-        <p class="eyebrow">§ 04 — Logo Forge</p>
+        <p class="eyebrow">§ 03 — Logo Forge</p>
         <h2>A mark <em>and a wordmark.</em></h2>
         <p class="section__sub">Pick a mark, a name and a gradient. Exports a crisp, editable SVG you own — great for side projects, apps and README headers.</p>
       </header>
@@ -229,7 +201,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── App showcase ─────────────────────────────────────── -->
     <section class="section showcase">
       <div class="showcase__text">
-        <p class="eyebrow">§ 05 — Built with the vault</p>
+        <p class="eyebrow">§ 04 — Built with the vault</p>
         <h2>Flow, <em>a focus timer.</em></h2>
         <p class="section__sub">A real app using the techniques on this page: sliding tabs, a glowing progress ring, tactile buttons, toasts, a mini chart and subtle sound. No frameworks, one folder.</p>
         <a class="btn btn--primary btn--lg" href="app/">Open Flow</a>
@@ -238,6 +210,34 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
         <div class="mock-ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="mr-track"/><circle cx="60" cy="60" r="52" class="mr-fill"/></svg><b>24:59</b><small>Deep focus</small></div>
       </a>
     </section>
+    <!-- ── Library ──────────────────────────────────────────── -->
+    <section id="library" class="section">
+      <header class="section__head">
+        <p class="eyebrow">§ 05 — Library</p>
+        <h2>The index, <em>sorted and searchable.</em></h2>
+        <p class="section__sub">Every link is free to use. Filter by category, search anything, and ★ the ones you love — favorites are saved in your browser.</p>
+      </header>
+
+      <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Categories"><span class="cat-tabs__ind" aria-hidden="true"></span></div>
+
+      <div class="toolbar">
+        <p id="resultCount" class="muted"></p>
+        <div class="toolbar__right">
+          <label class="mini-switch"><input type="checkbox" id="favOnly" /><i></i> Favorites only</label>
+          <select id="sortSel" aria-label="Sort">
+            <option value="curated">Curated order</option>
+            <option value="az">A → Z</option>
+            <option value="license">By license</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="res-grid" id="resGrid"></div>
+      <div class="empty" id="emptyState" hidden>
+        <p>Nothing matches that. Try “button”, “glsl”, “svelte”…</p>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -266,5 +266,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/anim.js"></script>
 <script src="assets/js/picker.js" defer></script>
+<script src="lib/js/waterfall.js"></script>
+<script>document.body.classList.add("has-wf"); UVWaterfall.mount();</script>
 </body>
 </html>

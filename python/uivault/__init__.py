@@ -17,8 +17,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-__version__ = "3.0.0"
-__all__ = ["theme", "themes", "Theme", "css", "qss", "apply_qt", "apply_tk", "tcss", "textual_theme", "gtk_css",
+__version__ = "3.1.0"
+__all__ = ["theme", "themes", "categories", "custom", "Theme", "css", "qss", "apply_qt", "apply_tk", "tcss", "textual_theme", "gtk_css",
            "apply_gtk", "dearpygui_theme", "matplotlib_rc", "apply_matplotlib", "rich_theme"]
 
 _DATA = json.loads((Path(__file__).with_name("tokens.json")).read_text())
@@ -37,6 +37,8 @@ class Theme:
         self._solid: dict = data["solid"]
         self.fonts: dict = data["fonts"]
         self.shape: dict = data["shape"]
+        self.category: str = data.get("category", "Custom")
+        self.style: dict = data.get("style", {})   # recipes: background, heading, button, hover, card
 
     def __getattr__(self, key):
         k = key.replace("_", "-")
@@ -75,9 +77,44 @@ class Theme:
     def __repr__(self): return f"<uivault.Theme {self.name!r}: {self.description}>"
 
 
-def themes() -> list[str]:
-    """Names of all themes."""
-    return list(_DATA["themes"])
+def themes(category: str | None = None) -> list[str]:
+    """Names of all themes, optionally only one category (see categories())."""
+    return [n for n, t in _DATA["themes"].items() if category is None or t.get("category") == category]
+
+
+def categories() -> list[str]:
+    return sorted({t.get("category", "Custom") for t in _DATA["themes"].values()})
+
+
+def _mix(a, b, t):
+    a, b = a.lstrip("#"), b.lstrip("#")
+    return "#" + "".join("%02x" % round(int(a[i:i + 2], 16) + (int(b[i:i + 2], 16) - int(a[i:i + 2], 16)) * t) for i in (0, 2, 4))
+
+
+def custom(name: str, bg: str, fg: str, accent: str, accent2: str | None = None, font: str = "Geist", font_head: str | None = None,
+           radius: float = 6, border: float = 1, register: bool = True) -> Theme:
+    """Make your own theme from four colours (the theme builder on the site exports this call).
+    Surfaces, lines and muted text are derived the same way the web themes are."""
+    lum = lambda h: (0.2126 * int(h[1:3], 16) + 0.7152 * int(h[3:5], 16) + 0.0722 * int(h[5:7], 16)) / 255
+    dark = lum(bg) < .5
+    a2 = accent2 or accent
+    c = {"bg": bg, "text": fg, "accent": accent, "accent-2": a2,
+         "surface": _mix(bg, fg, .05) if dark else _mix(bg, "#ffffff", .55), "surface-2": _mix(bg, fg, .09 if dark else .06),
+         "surface-3": _mix(bg, fg, .15 if dark else .11), "line": fg + ("24" if dark else "1a"), "line-2": fg + ("42" if dark else "2e"),
+         "muted": _mix(fg, bg, .32), "dim": _mix(fg, bg, .52)}
+    c.update(dict(zip(("success", "warn", "danger", "info"), ("#4ade80", "#fbbf24", "#f87171", "#60a5fa") if dark else ("#2f7d4f", "#b7791f", "#c4321f", "#2b5fb4"))))
+    colors = {k: (v + "ff" if len(v) == 7 else v) for k, v in c.items()}
+    solid = {}
+    for k, v in colors.items():
+        f = int(v[7:9], 16) / 255
+        solid[k] = _mix(bg, v[:7], f)
+    data = {"name": name, "desc": "custom theme", "dark": dark, "category": "Custom", "colors": colors, "solid": solid,
+            "fonts": {"font": f'"{font}", sans-serif', "font-family": font, "font-head": f'"{font_head or font}", serif', "font-head-family": font_head or font,
+                      "mono": '"Geist Mono", monospace', "mono-family": "Geist Mono"},
+            "shape": {"r-xs": radius / 2, "r-sm": radius * .66, "r": radius, "r-lg": radius * 1.33, "bw": border}, "style": {}}
+    if register:
+        _DATA["themes"][name] = data
+    return Theme(data)
 
 
 def theme(name: str | Theme = "editorial") -> Theme:
@@ -116,6 +153,7 @@ QPushButton:pressed {{ background: {c('surface-3')}; }}
 QPushButton:disabled {{ color: {t.dim}; }}
 QPushButton[primary="true"] {{ background: {t.text if not t.dark else t.accent}; color: {t.bg}; border-color: transparent; }}
 QPushButton[primary="true"]:hover {{ background: {t.accent}; color: {'#ffffff' if not t.dark else t.bg}; }}
+{_qss_primary(t)}
 QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QDoubleSpinBox, QComboBox {{ background: {c('surface')}; border: {bw}px solid {c('line-2')}; border-radius: {rs}px; padding: 6px 8px; }}
 QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus, QSpinBox:focus, QComboBox:focus {{ border-color: {t.accent}; }}
 QComboBox QAbstractItemView, QMenu {{ background: {t.solid('surface')}; border: 1px solid {c('line-2')}; }}
@@ -140,6 +178,27 @@ QListView, QTreeView, QTableView {{ background: {c('surface')}; border: {bw}px s
 QHeaderView::section {{ background: {c('surface-2')}; color: {t.muted}; border: none; padding: 6px; }}
 QToolTip {{ background: {t.text}; color: {t.bg}; border: none; padding: 5px 8px; }}
 """.strip()
+
+
+def _qss_primary(t: Theme) -> str:
+    """Translate the theme's button recipe into Qt gradients where Qt can express it."""
+    b, a, a2 = t.style.get("button"), t.solid("accent"), t.solid("accent_2")
+    lin = lambda stops: "qlineargradient(x1:0, y1:0, x2:0, y2:1, " + ", ".join(f"stop:{p} {c}" for p, c in stops) + ")"
+    if b == "metal":
+        g = lin([(0, _mix(a, "#ffffff", .55)), (.45, _mix(a, "#ffffff", .15)), (.55, _mix(a, "#000000", .25)), (1, _mix(a, "#ffffff", .1))])
+        return f'QPushButton[primary="true"] {{ background: {g}; color: #ffffff; border: 1px solid {_mix(a, "#000000", .4)}; }}'
+    if b == "chrome":
+        return f'QPushButton[primary="true"] {{ background: {lin([(0, "#ffffff"), (.45, "#d7dbe2"), (.52, "#8b929c"), (1, "#e9ecf1")])}; color: #1b1f26; border: 1px solid #8b929c; }}'
+    if b == "pearl":
+        g = "qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffffff, stop:.3 #f2e6ff, stop:.55 #e2f5ff, stop:.8 #fff5e1, stop:1 #ffffff)"
+        return f'QPushButton[primary="true"] {{ background: {g}; color: #3a2f5a; border: 1px solid #d9cfee; }}'
+    if b == "gradient":
+        return f'QPushButton[primary="true"] {{ background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 {a}, stop:1 {a2}); color: #ffffff; border: none; }}'
+    if b in ("hard", "3d"):
+        return f'QPushButton[primary="true"] {{ background: {a}; border: 2px solid {t.solid("text")}; border-bottom-width: 5px; }}'
+    if b in ("outline", "neon", "stamp"):
+        return f'QPushButton[primary="true"] {{ background: transparent; color: {a}; border: 2px solid {a}; }}'
+    return ""
 
 
 def apply_qt(app, t="editorial", font_size=14):

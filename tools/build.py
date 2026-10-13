@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 LIB, CSS, JS, DL = ROOT / "lib", ROOT / "lib" / "css", ROOT / "lib" / "js", ROOT / "downloads"
 VERSION = "3.1.0"
 CSS_ORDER = ["core", "components", "fx", "blocks"]
-JS_ORDER = ["core", "motion", "feedback", "forms", "fx"]
+JS_ORDER = ["core", "motion", "feedback", "forms", "fx", "waterfall"]
 DESC = {
     "core.css": "Tokens, light/dark, base helpers. Required.",
     "components.css": "Buttons, cards, forms, tabs, badges, overlays, nav, data, loaders, backgrounds.",
@@ -24,6 +24,7 @@ DESC = {
     "motion.js": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring.",
     "feedback.js": "toast, modal, ⌘K palette, confetti, synthesized sounds, copy.",
     "forms.js": "Tabs with sliding indicator, OTP, range, file drop.",
+    "waterfall.js": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen).",
     "fx.js": "Canvas + pointer effects: matrix, starfield, particles, snow, cursor trail/blob, sparkles, magnet, gravity, fireworks.",
 }
 
