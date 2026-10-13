@@ -20,6 +20,10 @@
   .uvp-btn { position: fixed; left: 16px; bottom: 16px; z-index: 9990; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 10px; border-radius: 999px; border: 1px solid #ffffff33; background: #151517f2; color: #fff; font: 500 13px "Geist", system-ui, sans-serif; cursor: pointer; box-shadow: 0 10px 30px -10px #000a; transition: transform .2s; }
   .uvp-btn:hover { transform: translateY(-2px); }
   .uvp-insp { left: 162px !important; }
+  .uvp-btn { transition: transform .2s, opacity .25s, left .25s, width .25s, padding .25s; }
+  html.uvp-c .uvp-btn { opacity: .72; } html.uvp-c .uvp-btn:hover, html.uvp-c .uvp-btn:focus-visible { opacity: 1; }
+  html.uvp-c .uvp-btn:not(.uvp-mode) { width: 40px; padding: 0; justify-content: center; gap: 0; font-size: 0; }
+  html.uvp-c .uvp-mode:not(.uvp-insp) { left: 62px; } html.uvp-c .uvp-insp { left: 108px !important; }
   .uvp-mode { left: 116px; width: 40px; padding: 0; justify-content: center; font-size: 17px; } .uvp-btn i { width: 20px; height: 20px; border-radius: 50%; background: conic-gradient(#ff4f00, #ffd23f, #39ff88, #00f0ff, #b46bff, #ff2bd6, #ff4f00); }
   .uvp { position: fixed; left: 16px; bottom: 64px; z-index: 9991; width: min(330px, calc(100vw - 32px)); max-height: min(520px, calc(100vh - 90px)); display: none; flex-direction: column; border-radius: 12px; border: 1px solid #ffffff26; background: #151517f5; color: #ecebe8; font: 14px "Geist", system-ui, sans-serif; box-shadow: 0 30px 60px -20px #000c; overflow: hidden; }
   .uvp.open { display: flex; animation: uvp-in .25s cubic-bezier(.2, 1.1, .4, 1); } @keyframes uvp-in { from { opacity: 0; transform: translateY(8px) scale(.98); } }
@@ -34,6 +38,7 @@
   .uvp .parts { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; padding: 10px 12px; overflow: auto; flex: 1; } .uvp .parts label { color: #a19d95; font-size: 12px; } .uvp .parts select { height: 30px; min-width: 0; }
   .uvp .kits { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px 0; } .uvp .kits button { padding: 5px 9px; border-radius: 999px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvp .kits button:hover, .uvp .kits button.on { background: #ff6a26; border-color: #ff6a26; color: #111; }
   .uvp footer { display: flex; gap: 6px; padding: 10px; border-top: 1px solid #ffffff1a; } .uvp footer a, .uvp footer button { flex: 1; height: 32px; display: grid; place-items: center; border-radius: 6px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; text-decoration: none; cursor: pointer; }
+  :where(body *) { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, currentColor 26%, transparent) transparent; }
   @media print { .uvp-btn, .uvp { display: none !important; } }`;
   document.head.appendChild(map);
 
@@ -188,6 +193,9 @@
     const ib = Object.assign(document.createElement("button"), { className: "uvp-btn uvp-mode uvp-insp", type: "button", innerHTML: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>', title: "Inspect: click any element to change its design and effects" });
     ib.setAttribute("aria-label", "Inspect an element"); ib.onclick = e => { e.stopPropagation(); inspect(); };
     document.body.append(ib);
+    // shrink to icons once the page is scrolled, so they don't sit on top of content
+    let ct = 0; const comp = () => { ct = 0; html.classList.toggle("uvp-c", scrollY > 240); };
+    addEventListener("scroll", () => { if (!ct) ct = requestAnimationFrame(comp); }, { passive: true }); comp();
     btn = Object.assign(document.createElement("button"), { className: "uvp-btn", type: "button", innerHTML: "<i></i>Theme", title: "Try any style on this page" });
     panel = Object.assign(document.createElement("div"), { className: "uvp" });
     btn.onclick = open;

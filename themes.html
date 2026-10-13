@@ -73,7 +73,7 @@
   .bctl .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .bout { display: grid; grid-template-rows: 1fr auto; min-width: 0; }
   .bout .dside { border-left: 0; border-top: 1px solid var(--pg-ln); max-height: 360px; }
-  @media (max-width: 960px) { .detail[open], .builder { grid-template-columns: 1fr; } .dside { border-left: 0; border-top: 1px solid var(--pg-ln); max-height: 50vh; } .hero { grid-template-columns: 1fr; } .top nav { display: none; } }
+  @media (max-width: 960px) { .detail[open], .builder { grid-template-columns: 1fr; } .dside { border-left: 0; border-top: 1px solid var(--pg-ln); max-height: 50vh; } .hero { grid-template-columns: 1fr; } .top nav a { padding: 6px 7px; font-size: 13px; } }
 </style>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 </head>
@@ -86,7 +86,7 @@
 <main class="wrap">
   <section class="hero">
     <div><p class="k">Design styles · web + Python + C++</p><h1><span id="total">87</span> styles, <em>every detail.</em></h1></div>
-    <p style="max-width:430px;color:var(--pg-mu);margin:0">Each style covers more than colour: buttons, headings, cards, inputs, hover motion and backgrounds. Click any one for the full component set and its web, Python and C++ code, or <a href="#builder" style="color:var(--pg-ac)">build your own</a>.</p>
+    <p style="max-width:430px;color:var(--pg-mu);margin:0">Each style covers more than colour: buttons, headings, cards, inputs, hover motion and backgrounds. Click any one for the full component set and its web, Python and <span style="white-space:nowrap">C++</span> code, or <a href="#builder" style="color:var(--pg-ac)">build your own</a>.</p>
   </section>
   <div class="tools"><input id="q" type="search" placeholder="Search styles…  ( / )" /><div class="chips" id="cats"></div><span class="count" id="count"></span></div>
   <div class="gal" id="gal"></div>
