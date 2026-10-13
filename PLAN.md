@@ -65,7 +65,7 @@ v5.1 status: DONE. raw.js clones the piece + adds JS-generated nodes (tabs ind, 
 Single source of truth: lib/css/themes.src.css → build.py → lib/tokens.json → python/uivault/tokens.json + cpp/uivault.hpp
 - [x] 1. build.py: export tokens.json (resolved colors + alpha-composited "solid" colors, radii, fonts)
 - [x] 2. python/ package `uivault` (pyproject, exporters: qss, tk/ttk, textual tcss, gtk4 css, dearpygui, matplotlib; CLI `python -m uivault`; tk demo) — test
-- [ ] 3. cpp/uivault.hpp single header (themes constexpr, imgui::apply, juce::LookAndFeel, qss(), raylib) + examples — compile test
+- [x] 3. cpp/uivault.hpp single header (themes constexpr, imgui::apply, juce::LookAndFeel, qss(), raylib) + examples — compile test
 - [ ] 4. code.html page (Python + C++ docs, theme tokens, downloads) + zips
 - [ ] 5. motion.js scroll API (data-uv-scrub → --p, data-uv-speed parallax, UV.scrollbar) ; quickstart scroll story ; site-wide animations
 - [ ] 6. links, README, push, verify
