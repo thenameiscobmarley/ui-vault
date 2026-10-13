@@ -106,6 +106,21 @@
 
 @media (prefers-reduced-motion: reduce) { [class*="uv-fx-"], [class*="uv-fx-"]::before, [class*="uv-fx-"]::after { animation: none !important; } }
 
+/* ── Scroll-linked (driven by motion.js: --p is 0→1 while the element crosses the viewport) ── */
+.uv-scrollbar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 9999; background: var(--uv-accent); transform-origin: left; transform: scaleX(var(--uv-page, 0)); pointer-events: none; }
+.uv-scrub-fade { opacity: var(--p, 1); }
+.uv-scrub-rise { opacity: var(--p, 1); transform: translateY(calc((1 - var(--p, 1)) * 60px)); }
+.uv-scrub-zoom { transform: scale(calc(.85 + var(--p, 1) * .15)); }
+.uv-scrub-grow { transform: scaleX(var(--p, 1)); transform-origin: left; }
+.uv-scrub-rotate { transform: rotate(calc(var(--p, 0) * 360deg)); }
+.uv-scrub-tilt { transform: perspective(900px) rotateX(calc((1 - var(--p, 1)) * 28deg)); transform-origin: bottom; }
+.uv-scrub-blur { filter: blur(calc((1 - var(--p, 1)) * 12px)); opacity: calc(.2 + var(--p, 1) * .8); }
+.uv-scrub-reveal { clip-path: inset(0 calc(100% - var(--p, 1) * 100%) 0 0); }
+.uv-scrub-x { transform: translateX(calc((var(--p, .5) - .5) * -60%)); }
+.uv-scrub-x-rev { transform: translateX(calc((var(--p, .5) - .5) * 60%)); }
+.uv-scrub-color { color: color-mix(in srgb, var(--uv-accent) calc(var(--p, 0) * 100%), var(--uv-dim)); }
+[data-uv-steps] [data-step] { opacity: .3; transition: opacity .4s; } [data-uv-steps] [data-step].is-active { opacity: 1; }
+
 /* shared keyframes so fx.css also works without components.css */
 @property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes uv-spin-a { to { --uv-a: 360deg; } }

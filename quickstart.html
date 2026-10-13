@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;700&family=VT323&family=Patrick+Hand&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="lib/uivault.css" />
 <style>
-  body { margin: 0; }
+  body { margin: 0; background: var(--uv-bg); }
   .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; padding: 0 clamp(16px, 3vw, 32px); height: 60px; background: var(--uv-bg); border-bottom: 1px solid var(--uv-line-2); }
   .top .brand { display: flex; align-items: center; gap: 10px; font: 600 16px var(--uv-font); color: var(--uv-text); text-decoration: none; }
   .top nav { margin-left: auto; }
@@ -58,6 +58,26 @@
   .opts small { color: var(--uv-dim); font: 11px var(--uv-mono); }
   .size { font: 400 44px/1 var(--uv-serif); }
   .api-tbl td:first-child { font: 13px var(--uv-mono); white-space: nowrap; color: var(--uv-text); }
+  /* scroll story */
+  .story { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; padding: 40px 0 0; }
+  .story__stage { position: sticky; top: 84px; height: calc(100vh - 120px); display: grid; place-items: center; }
+  .story__card { width: 100%; max-width: 520px; padding: 30px; border-radius: 14px; display: grid; gap: 16px; border: 1px solid var(--uv-line-2); box-shadow: 0 40px 80px -40px #0006; transition: background-color .5s, color .5s, border-color .5s; }
+  .story__meter { position: absolute; left: 0; bottom: 6px; display: flex; align-items: baseline; gap: 6px; font: 500 12px var(--uv-mono); color: var(--uv-dim); }
+  .story__meter b { font: 400 56px/1 var(--uv-serif); color: var(--uv-text); }
+  .story__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--uv-line-2); }
+  .story__bar i { display: block; height: 100%; width: calc(var(--sp, 0) * 100%); background: var(--uv-accent); transition: width .4s; }
+  .story__steps > div { min-height: 64vh; display: flex; flex-direction: column; justify-content: center; gap: 10px; border-top: 1px solid var(--uv-line-2); }
+  .story__steps span { font: 500 12px var(--uv-mono); color: var(--uv-accent); }
+  .story__steps h3 { margin: 0; font: 400 clamp(40px, 5vw, 64px)/1 var(--uv-serif); letter-spacing: -.02em; }
+  .story__steps p { margin: 0; color: var(--uv-muted); max-width: 380px; }
+  .story__steps code { align-self: start; font: 12px var(--uv-mono); padding: 3px 8px; border: 1px solid var(--uv-line-2); border-radius: 3px; }
+  .band { overflow: hidden; padding: 40px 0; border-block: 1px solid var(--uv-line-2); margin: 80px 0 0; white-space: nowrap; }
+  .band > div { font: 400 clamp(48px, 8vw, 110px)/1.05 var(--uv-serif); letter-spacing: -.02em; will-change: transform; }
+  .band > div:nth-child(2) { color: transparent; -webkit-text-stroke: 1px var(--uv-text); }
+  .band em { color: var(--uv-accent); }
+  .hero-sticky { transform-origin: left top; }
+  .hero-sticky > * { transition: none; }
+  @media (max-width: 900px) { .story { grid-template-columns: 1fr; } .story__stage { top: 60px; height: auto; padding: 16px 0; z-index: 2; background: var(--uv-bg); } .story__steps > div { min-height: 50vh; } }
   @media (max-width: 900px) { .sec-head, .builder { grid-template-columns: 1fr; } .step { grid-template-columns: 40px 1fr; } .step .result { grid-column: 2; } .top nav { display: none; } }
 </style>
 <script>try{const t=localStorage.getItem("uv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -65,7 +85,7 @@
 <body class="uv">
 <header class="top">
   <a class="brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--uv-bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--uv-accent)"/></svg>UI Vault <span class="uv-badge uv-badge--accent">API 3.0</span></a>
-  <nav class="uv-nav" style="border:0;background:none;padding:0"><a class="is-active" href="quickstart.html">Quick start</a><a href="docs.html">Docs</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a><a href="./">Library</a></nav>
+  <nav class="uv-nav" style="border:0;background:none;padding:0"><a class="is-active" href="quickstart.html">Quick start</a><a href="docs.html">Docs</a><a href="code.html">Python &amp; C++</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a><a href="./">Library</a></nav>
   <a class="uv-btn uv-btn--primary uv-btn--sm" href="downloads/uivault-latest.zip" download>Download .zip</a>
 </header>
 
@@ -73,7 +93,7 @@
   <!-- Hero -->
   <section style="padding:72px 0 24px">
     <p class="uv-eyebrow">UI Vault API · v<span class="ver">3.0.0</span> · MIT</p>
-    <h1 class="uv-h1" style="font-size:clamp(52px,8vw,108px);margin:14px 0 22px;max-width:14ch">Twelve themes, <em class="uv-muted">seventy effects,</em> one API.</h1>
+    <h1 class="uv-h1 uv-fx-blur-in" style="font-size:clamp(52px,8vw,108px);margin:14px 0 22px;max-width:14ch">Twelve themes, <em class="uv-muted">seventy effects,</em> one API.</h1>
     <p class="uv-muted" style="max-width:640px;font-size:18px;margin:0 0 30px">A modular CSS + JS kit with no build step. Load the whole bundle or only the modules you need. Then mix themes and effects on any element: one page can have a brutalist header, a neon card and a terminal footer.</p>
     <div class="uv-row">
       <a class="uv-btn uv-btn--primary uv-btn--lg" href="downloads/uivault-latest.zip" download>Download uivault-<span class="ver">3.0.0</span>.zip</a>
@@ -84,36 +104,59 @@
     <dl class="uv-row" style="gap:0;margin:48px 0 0;border-top:1px solid var(--uv-text)" id="facts"></dl>
   </section>
 
+  <!-- Scroll story -->
+  <section class="story" id="story">
+    <div class="story__stage">
+      <div class="story__card" id="storyCard" data-uv-theme="editorial">
+        <div class="uv-row" style="justify-content:space-between"><span class="uv-eyebrow" style="margin:0">data-uv-theme</span><span class="uv-badge uv-badge--accent" id="storyBadge">editorial</span></div>
+        <h3 class="uv-h1" style="font-size:clamp(44px,5vw,64px);margin:0">Same markup.</h3>
+        <p class="uv-muted" style="margin:0" id="storyDesc"></p>
+        <div class="uv-tabs"><button aria-selected="true">Overview</button><button>Activity</button><button>Settings</button></div>
+        <div class="uv-row"><button class="uv-btn uv-btn--primary">Primary</button><button class="uv-btn uv-btn--ghost">Ghost</button><label class="uv-switch"><input type="checkbox" checked><i></i> Live</label></div>
+        <input class="uv-input" placeholder="you@example.com">
+        <div class="uv-progress" style="--v:68%"><i style="--v:68%"></i></div>
+      </div>
+      <div class="story__meter"><b id="storyNum">01</b>/ 12 themes — keep scrolling</div>
+      <div class="story__bar"><i></i></div>
+    </div>
+    <div class="story__steps" id="storySteps"></div>
+  </section>
+
+  <div class="band" data-uv-scrub>
+    <div class="uv-scrub-x">Buttons <em>·</em> Cards <em>·</em> Tabs <em>·</em> Toasts <em>·</em> Modals <em>·</em> Rings <em>·</em> Docks <em>·</em> Forms</div>
+    <div class="uv-scrub-x-rev">Glitch · Chrome · Holo · Neon · Stamp · Sticker · Matrix · Sparkles · Gravity</div>
+  </div>
+
   <!-- 1 Quick start -->
   <section class="sec" id="start">
-    <div class="sec-head"><p class="uv-eyebrow">§ 01 — Quick start</p><h2 class="uv-h2">Running in <em class="uv-muted">three steps.</em></h2><p>Link the hosted files, or unzip the download next to your HTML and use relative paths.</p></div>
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 01 — Quick start</p><h2 class="uv-h2">Running in <em class="uv-muted">three steps.</em></h2><p>Link the hosted files, or unzip the download next to your HTML and use relative paths.</p></div>
     <div class="steps">
-      <div class="step"><b>1</b><div><h3>Add the two files</h3><p class="uv-muted" style="margin:0">Put the CSS in &lt;head&gt; and the script anywhere with <code>defer</code>.</p></div>
+      <div class="step" data-uv-reveal="left"><b>1</b><div><h3>Add the two files</h3><p class="uv-muted" style="margin:0">Put the CSS in &lt;head&gt; and the script anywhere with <code>defer</code>.</p></div>
         <div class="code-wrap"><pre class="code" id="s1"></pre><button class="uv-btn uv-btn--sm" data-copy="s1">Copy</button></div></div>
-      <div class="step"><b>2</b><div><h3>Write HTML with uv-* classes</h3><p class="uv-muted" style="margin:0">Components are classes. Behaviours are <code>data-uv</code> attributes. Themes are <code>data-uv-theme</code>.</p></div>
+      <div class="step" data-uv-reveal="left"><b>2</b><div><h3>Write HTML with uv-* classes</h3><p class="uv-muted" style="margin:0">Components are classes. Behaviours are <code>data-uv</code> attributes. Themes are <code>data-uv-theme</code>.</p></div>
         <div style="display:grid;gap:12px"><div class="code-wrap"><pre class="code" id="s2"></pre><button class="uv-btn uv-btn--sm" data-copy="s2">Copy</button></div><div class="result" id="r2"></div></div></div>
-      <div class="step"><b>3</b><div><h3>Call the JS API when you need it</h3><p class="uv-muted" style="margin:0">Everything lives on <code>window.UV</code>, and every function works on its own.</p></div>
+      <div class="step" data-uv-reveal="left"><b>3</b><div><h3>Call the JS API when you need it</h3><p class="uv-muted" style="margin:0">Everything lives on <code>window.UV</code>, and every function works on its own.</p></div>
         <div style="display:grid;gap:12px"><div class="code-wrap"><pre class="code" id="s3"></pre><button class="uv-btn uv-btn--sm" data-copy="s3">Copy</button></div><div class="result"><button class="uv-btn uv-btn--primary" id="run3">Run this code ▶</button></div></div></div>
     </div>
   </section>
 
   <!-- 2 Modules -->
   <section class="sec" id="modules">
-    <div class="sec-head"><p class="uv-eyebrow">§ 02 — Modules</p><h2 class="uv-h2">Take <em class="uv-muted">only what you use.</em></h2><p>Load <code>core</code> first, then any combination. The two bundles contain everything.</p></div>
-    <table class="mods" id="modTable"><thead><tr><th>File</th><th>What it gives you</th><th>Size</th></tr></thead><tbody></tbody></table>
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 02 — Modules</p><h2 class="uv-h2">Take <em class="uv-muted">only what you use.</em></h2><p>Load <code>core</code> first, then any combination. The two bundles contain everything.</p></div>
+    <table class="mods" id="modTable" data-uv-reveal><thead><tr><th>File</th><th>What it gives you</th><th>Size</th></tr></thead><tbody></tbody></table>
   </section>
 
   <!-- 3 Themes -->
   <section class="sec" id="themes">
-    <div class="sec-head"><p class="uv-eyebrow">§ 03 — Themes</p><h2 class="uv-h2">Twelve skins, <em class="uv-muted">same markup.</em></h2><p>Each card below uses identical HTML; only <code>data-uv-theme</code> changes. Put it on <code>&lt;html&gt;</code> for the whole page or on any element for one section. Click a card to apply it to this page.</p></div>
-    <div class="themes" id="themeGrid"></div>
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 03 — Themes</p><h2 class="uv-h2">Twelve skins, <em class="uv-muted">same markup.</em></h2><p>Each card below uses identical HTML; only <code>data-uv-theme</code> changes. Put it on <code>&lt;html&gt;</code> for the whole page or on any element for one section. Click a card to apply it to this page.</p></div>
+    <div class="themes" id="themeGrid" data-uv-stagger="zoom"></div>
     <div class="uv-row" style="margin-top:16px"><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.skin(null);UV.toast('Back to the default theme')">Reset page theme</button><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.theme('toggle')">Toggle light / dark</button></div>
   </section>
 
   <!-- 4 Mix & match -->
   <section class="sec" id="mix">
-    <div class="sec-head"><p class="uv-eyebrow">§ 04 — Mix &amp; match</p><h2 class="uv-h2">Every region, <em class="uv-muted">its own style.</em></h2><p>Pick a theme for each region and stack effects on the headline. The HTML below updates as you go; copy it when you like the result.</p></div>
-    <div class="mix">
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 04 — Mix &amp; match</p><h2 class="uv-h2">Every region, <em class="uv-muted">its own style.</em></h2><p>Pick a theme for each region and stack effects on the headline. The HTML below updates as you go; copy it when you like the result.</p></div>
+    <div class="mix uv-scrub-tilt" data-uv-scrub="center">
       <div class="mix-bar" id="mixBar"></div>
       <div id="mixPage">
         <div class="mix-zone" data-zone="nav"><nav class="uv-row" style="justify-content:space-between"><b class="uv-h3">◆ Northwind</b><div class="uv-row" style="gap:6px"><a class="uv-btn uv-btn--ghost uv-btn--sm">Docs</a><a class="uv-btn uv-btn--primary uv-btn--sm">Get started</a></div></nav></div>
@@ -127,15 +170,15 @@
 
   <!-- 5 FX -->
   <section class="sec" id="fx">
-    <div class="sec-head"><p class="uv-eyebrow">§ 05 — Effects</p><h2 class="uv-h2">Stack them. <em class="uv-muted">Break things.</em></h2><p>CSS effects are <code>uv-fx-*</code> classes; JavaScript effects are <code>data-uv-fx="…"</code>. Hover, click and move your mouse over the tiles. Click a label to copy its usage.</p></div>
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 05 — Effects</p><h2 class="uv-h2">Stack them. <em class="uv-muted">Break things.</em></h2><p>CSS effects are <code>uv-fx-*</code> classes; JavaScript effects are <code>data-uv-fx="…"</code>. Hover, click and move your mouse over the tiles. Click a label to copy its usage.</p></div>
     <div class="uv-row" style="margin-bottom:14px" id="fxFilter"></div>
-    <div class="fxgrid" id="fxGrid"></div>
+    <div class="fxgrid" id="fxGrid" data-uv-stagger></div>
   </section>
 
   <!-- 6 Builder -->
   <section class="sec" id="builder">
-    <div class="sec-head"><p class="uv-eyebrow">§ 06 — Custom bundle</p><h2 class="uv-h2">Build <em class="uv-muted">your own kit.</em></h2><p>Tick what you need. You get the matching &lt;link&gt;/&lt;script&gt; tags, or a zip made in your browser with just those files.</p></div>
-    <div class="builder">
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 06 — Custom bundle</p><h2 class="uv-h2">Build <em class="uv-muted">your own kit.</em></h2><p>Tick what you need. You get the matching &lt;link&gt;/&lt;script&gt; tags, or a zip made in your browser with just those files.</p></div>
+    <div class="builder" data-uv-reveal="zoom">
       <form class="opts" id="opts"></form>
       <div style="display:grid;gap:14px;align-content:start">
         <div class="uv-card"><p class="uv-eyebrow" style="margin:0 0 6px">Selected size (uncompressed)</p><div class="size" id="bsize">0 KB</div><p class="uv-muted" style="margin:6px 0 0" id="bcount"></p></div>
@@ -147,7 +190,7 @@
 
   <!-- 7 API cheatsheet -->
   <section class="sec" id="api" style="padding-bottom:100px">
-    <div class="sec-head"><p class="uv-eyebrow">§ 07 — Cheat sheet</p><h2 class="uv-h2">The whole API <em class="uv-muted">on one page.</em></h2><p>Full examples for every component are in the <a href="docs.html" style="color:var(--uv-accent)">docs</a>.</p></div>
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 07 — Cheat sheet</p><h2 class="uv-h2">The whole API <em class="uv-muted">on one page.</em></h2><p>Full examples for every component are in the <a href="docs.html" style="color:var(--uv-accent)">docs</a>.</p></div>
     <table class="mods api-tbl"><thead><tr><th>Call</th><th>What it does</th><th>Module</th></tr></thead><tbody id="apiRows"></tbody></table>
   </section>
 </main>
@@ -163,6 +206,21 @@ const hl = code => esc(code).replace(/(&lt;!--.*?--&gt;)|(^\s*\/\/.*$)|("[^"\n]*
 const setCode = (id, code) => { const el = document.getElementById(id); el.dataset.raw = code; el.innerHTML = hl(code); };
 document.querySelectorAll(".ver").forEach(v => v.textContent = M.version);
 document.addEventListener("click", e => { const b = e.target.closest("[data-copy]"); if (b) UV.copy(document.getElementById(b.dataset.copy).dataset.raw); });
+
+// scroll story: the pinned card switches theme as each step crosses the centre
+$("#storySteps").innerHTML = M.themes.map((t, i) => `<div data-step="${t.name}"><span>${String(i + 1).padStart(2, "0")} / ${M.themes.length}</span><h3>${t.name}</h3><p>${t.desc}.</p><code>data-uv-theme="${t.name}"</code></div>`).join("");
+const storyCard = $("#storyCard");
+UV.steps($("#story"), (step, i) => {
+  if (storyCard.dataset.uvTheme === step.dataset.step) return;
+  storyCard.dataset.uvTheme = step.dataset.step;
+  $("#storyBadge").textContent = step.dataset.step;
+  $("#storyDesc").textContent = M.themes[i].desc + ".";
+  $("#storyNum").textContent = String(i + 1).padStart(2, "0");
+  $(".story__bar").style.setProperty("--sp", (i + 1) / M.themes.length);
+  if (!UV.reduce) storyCard.animate([{ transform: "translateY(10px) scale(.97)", opacity: .6 }, { transform: "none", opacity: 1 }], { duration: 420, easing: "cubic-bezier(.2,.8,.2,1)" });
+});
+$("#storyDesc").textContent = M.themes[0].desc + ".";
+UV.scrollbar();
 
 // facts
 const kb = n => (n / 1024).toFixed(1) + " KB";

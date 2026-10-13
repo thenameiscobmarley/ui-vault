@@ -93,7 +93,7 @@
   },
   {
    "path": "css/fx.css",
-   "bytes": 16918,
+   "bytes": 18256,
    "desc": "60+ uv-fx-* effect mixins: glitch, chrome, holo, neon, CRT, sticker, stamp, jelly…"
   },
   {
@@ -183,17 +183,17 @@
   },
   {
    "path": "js/motion.js",
-   "bytes": 6421,
+   "bytes": 9437,
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
   },
   {
    "path": "uivault.css",
-   "bytes": 87085,
+   "bytes": 88423,
    "desc": ""
   },
   {
    "path": "uivault.js",
-   "bytes": 33824,
+   "bytes": 36840,
    "desc": ""
   }
  ]
