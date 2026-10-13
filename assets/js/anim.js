@@ -45,7 +45,8 @@
     ticking = false;
     const max = root.scrollHeight - innerHeight;
     bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
-    par.forEach(el => { const r = el.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) el.style.translate = `0 ${((r.top + r.height / 2 - innerHeight / 2) * -0.08).toFixed(1)}px`; });
+    const rects = par.map(el => el.getBoundingClientRect());   // read all, then write
+    par.forEach((el, i) => { const r = rects[i]; if (r.bottom > 0 && r.top < innerHeight) el.style.translate = `0 ${((r.top + r.height / 2 - innerHeight / 2) * -0.08).toFixed(1)}px`; });
   };
   addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
   frame();
@@ -53,7 +54,8 @@
   // inertial smooth wheel scrolling (same as UV.smoothScroll in lib/js/motion.js)
   let target = scrollY, current = scrollY, running = false;
   const inner = (el, dy) => { for (; el && el !== document.body && el !== root; el = el.parentElement) if (el.scrollHeight > el.clientHeight + 1 && /(auto|scroll)/.test(getComputedStyle(el).overflowY) && (dy > 0 ? el.scrollTop + el.clientHeight < el.scrollHeight - 1 : el.scrollTop > 0)) return true; return false; };
-  const step = () => { current += (target - current) * .11; if (Math.abs(target - current) < .5) { current = target; running = false; } scrollTo({ top: current, behavior: "instant" }); if (running) requestAnimationFrame(step); };
+  let last = 0;
+  const step = now => { const dt = Math.min(64, now - (last || now - 16.7)); last = now; current += (target - current) * (1 - Math.pow(.89, dt / 16.7)); if (Math.abs(target - current) < .5) { current = target; running = false; last = 0; } scrollTo({ top: current, behavior: "instant" }); if (running) requestAnimationFrame(step); };
   addEventListener("wheel", e => {
     if (e.ctrlKey || e.defaultPrevented || Math.abs(e.deltaX) > Math.abs(e.deltaY) || document.querySelector("dialog[open]") || inner(e.target, e.deltaY)) return;
     e.preventDefault();

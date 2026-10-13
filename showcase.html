@@ -18,7 +18,7 @@
   .top nav { margin-left: auto; display: flex; gap: 4px; }
   .head { max-width: 1280px; margin: 0 auto; padding: 64px clamp(16px, 4vw, 40px) 24px; }
   .wall { max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 80px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); grid-auto-flow: dense; }
-  .tile { display: flex; flex-direction: column; border-radius: 8px; border: 1px solid var(--uv-line-2); background: var(--uv-surface); overflow: hidden; }
+  .tile { content-visibility: auto; contain-intrinsic-size: auto 360px; display: flex; flex-direction: column; border-radius: 8px; border: 1px solid var(--uv-line-2); background: var(--uv-surface); overflow: hidden; }
   .tile.w2 { grid-column: span 2; } .tile.h2 .stage { min-height: 520px; }
   .stage { flex: 1; display: grid; place-items: center; padding: 28px; min-height: 300px; background: var(--uv-bg); position: relative; overflow: hidden; }
   .cap { display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 16px; border-top: 1px solid var(--uv-line-2); counter-increment: tile; }

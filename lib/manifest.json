@@ -1026,12 +1026,12 @@
   },
   {
    "path": "js/motion.js",
-   "bytes": 11390,
+   "bytes": 11957,
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
   },
   {
    "path": "js/waterfall.js",
-   "bytes": 10160,
+   "bytes": 10802,
    "desc": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen)."
   },
   {
@@ -1041,7 +1041,7 @@
   },
   {
    "path": "uivault.js",
-   "bytes": 48965,
+   "bytes": 50174,
    "desc": ""
   }
  ]

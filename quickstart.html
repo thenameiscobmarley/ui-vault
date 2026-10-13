@@ -57,7 +57,7 @@
   .mix-bar select { height: 32px; padding: 0 8px; border: 1px solid var(--uv-line-2); border-radius: 4px; background: var(--uv-bg); color: var(--uv-text); font: 13px var(--uv-font); }
   .mix-zone { padding: 22px 26px; transition: background .3s, color .3s; }
   .fxgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
-  .fx { display: flex; flex-direction: column; border: 1px solid var(--uv-line-2); border-radius: 6px; overflow: hidden; background: var(--uv-surface); }
+  .fx { content-visibility: auto; contain-intrinsic-size: auto 180px; display: flex; flex-direction: column; border: 1px solid var(--uv-line-2); border-radius: 6px; overflow: hidden; background: var(--uv-surface); }
   .fx .st { flex: 1; display: grid; place-items: center; min-height: 140px; padding: 18px; position: relative; overflow: hidden; text-align: center; }
   .fx button.lbl { display: flex; justify-content: space-between; gap: 8px; padding: 8px 10px; border: 0; border-top: 1px solid var(--uv-line-2); background: none; color: var(--uv-text); font: 500 11px var(--uv-mono); cursor: pointer; text-align: left; }
   .fx button.lbl:hover { background: var(--uv-text); color: var(--uv-bg); }
