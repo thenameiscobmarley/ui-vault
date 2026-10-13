@@ -1115,7 +1115,7 @@ void Heading::paintEvent(QPaintEvent*) {
 NavBar::NavBar(const QStringList& it, int cur, bool vert, QWidget* parent) : QWidget(parent), items(it), current(cur), vertical(vert) { setMouseTracking(true); setCursor(Qt::PointingHandCursor); boxInit(this, "nav", 6); }
 std::vector<QRectF> NavBar::rects() const {
     const Style& st = UiStyle::get().style("nav", "item", {"current"});
-    std::vector<QRectF> out; QFontMetricsF fm(st.font(baseFont(14), 14)); double x = bleed + 8, y = bleed + 8;
+    std::vector<QRectF> out; QFontMetricsF fm(st.font(baseFont(14), 14)); double x = bleed + 8, y = vertical ? bleed + 8 : std::max(bleed + 4.0, (height() - 34) / 2.0);
     for (auto& t : items) { double w = fm.horizontalAdvance(st.upper ? t.toUpper() : t) + 24; if (vertical) { out.push_back(QRectF(x, y, width() - 2 * x, 34)); y += 36; } else { out.push_back(QRectF(x, y, w, 34)); x += w + 4; } }
     return out;
 }

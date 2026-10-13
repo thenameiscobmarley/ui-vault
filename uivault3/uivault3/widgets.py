@@ -673,7 +673,7 @@ class NavBar(_UV, QWidget):
 
     def _rects(self):
         st = STYLE.style("nav", "item", frozenset({"current"})); fm = QFontMetricsF(st.font(_base_font(14), 14)); out = []
-        x, y = self.BLEED + 8, self.BLEED + 8
+        x = self.BLEED + 8; y = self.BLEED + 8 if self.vertical else max(self.BLEED + 4, (self.height() - 34) / 2)
         for t in self.items:
             w = fm.horizontalAdvance(t.upper() if st.upper else t) + 24
             if self.vertical: out.append(QRectF(x, y, self.width() - 2 * x, 34)); y += 36
