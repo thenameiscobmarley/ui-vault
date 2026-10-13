@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quick start — UI Vault API</title>
-<meta name="description" content="Get the UI Vault API in two minutes: download the zip, pick modules, mix 12 themes and 70+ effects on any element." />
+<meta name="description" content="Get the UI Vault API in two minutes: download the zip, pick modules, mix 87 themes, 273 element designs, 224 effect layers and 485 collection pieces." />
 <meta name="theme-color" content="#f4f2ee" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -98,7 +98,8 @@
   .hero-sticky { transform-origin: left top; }
   .hero-sticky > * { transition: none; }
   @media (max-width: 900px) { .story { grid-template-columns: 1fr; } .story__stage { top: 60px; height: auto; padding: 16px 0; z-index: 2; background: var(--uv-bg); } .story__steps > div { min-height: 50vh; } }
-  @media (max-width: 900px) { .sec-head, .builder { grid-template-columns: 1fr; } .step { grid-template-columns: 40px 1fr; } .step .result { grid-column: 2; } .top nav { display: none; } }
+  @media (max-width: 900px) { .sec-head, .builder { grid-template-columns: 1fr; } .step { grid-template-columns: 40px 1fr; } .step .result { grid-column: 2; } .top nav a { padding: 6px 7px; font-size: 13px; } }
+  @media (max-width: 600px) { .top > .uv-btn, .top .brand + span, .top .brand ~ .uv-badge { display: none; } .top .brand span { display: none; } }
 </style>
 <script>try{const t=localStorage.getItem("uv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
@@ -115,13 +116,12 @@
   <section class="qs-hero">
     <div class="qs-hero__text">
     <p class="uv-eyebrow">UI Vault API · v<span class="ver">3.0.0</span> · MIT</p>
-    <h1 class="uv-h1 uv-fx-blur-in" style="font-size:clamp(48px,6.2vw,96px);margin:14px 0 22px;max-width:12ch">87 styles, <em class="uv-muted">seventy effects,</em> one API.</h1>
+    <h1 class="uv-h1 uv-fx-blur-in" style="font-size:clamp(48px,6.2vw,96px);margin:14px 0 22px;max-width:12ch">87 styles, <em class="uv-muted">1,200 pieces,</em> one API.</h1>
     <p class="uv-muted" style="max-width:640px;font-size:18px;margin:0 0 30px">A modular CSS + JS kit with no build step. Load the whole bundle or only the modules you need. Then mix themes and effects on any element: one page can have a brutalist header, a neon card and a terminal footer.</p>
     <div class="uv-row">
       <a class="uv-btn uv-btn--primary uv-btn--lg" href="downloads/uivault-latest.zip" download><span>Download uivault-<span class="ver">3.1.0</span>.zip</span></a>
-      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#start">Quick start</a>
-      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#mix">Mix &amp; match</a>
-      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#builder">Build a custom bundle</a>
+      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="library.html">Open the Library</a>
+      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#builder">The zipper</a>
     </div>
     </div>
     <div class="qs-term" aria-label="Animated install walkthrough"><div class="qs-term__top"><i></i><i></i><i></i><span>~/my-site — zsh</span></div><pre id="qsTerm"></pre></div>

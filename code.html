@@ -96,7 +96,7 @@
   /* reveal */
   .rv { opacity: 0; transform: translateY(24px); transition: opacity .45s cubic-bezier(.2, .8, .2, 1), transform .5s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--d, 0ms); }
   .rv.in { opacity: 1; transform: none; }
-  @media (max-width: 900px) { .hero, .ide, .tok, .install, .sec-h { grid-template-columns: 1fr; } .tree { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--rule); } .tree h4 { display: none; } .tree button { width: auto; white-space: nowrap; } .install > div { border-right: 0; border-bottom: 1px solid var(--rule); } .bar nav { display: none; } }
+  @media (max-width: 900px) { .hero, .ide, .tok, .install, .sec-h { grid-template-columns: 1fr; } .tree { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--rule); } .tree h4 { display: none; } .tree button { width: auto; white-space: nowrap; } .install > div { border-right: 0; border-bottom: 1px solid var(--rule); } .bar nav a { padding: 6px 7px; font-size: 13px; } .bar .kicker { display: none; } }
   @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
 </style>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
@@ -106,7 +106,7 @@
   <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="#ecebe8"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="#141413" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="#ff6a26"/></svg>UI Vault</a>
   <span class="kicker">/ code</span>
   <nav><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
-  <span class="dot" title="v3.0.0"></span>
+  <span class="dot" title="v3.1.0"></span>
 </header>
 
 <main class="wrap">

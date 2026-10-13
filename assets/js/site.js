@@ -27,7 +27,7 @@
   }
 
   // ── Theme ─────────────────────────────────────────────────────
-  $("#themeBtn").addEventListener("click", () => {
+  $("#themeBtn")?.addEventListener("click", () => {
     const root = document.documentElement;
     const next = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = next;

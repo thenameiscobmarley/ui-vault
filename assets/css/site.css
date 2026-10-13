@@ -283,7 +283,7 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border-radius: 
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
-  .topnav a:not(.topnav__app) { display: none; }
+  .topnav a { padding: 6px 7px; }
   .fx, .forge, .showcase, .api-promo { grid-template-columns: 1fr; }
   .section__head { grid-template-columns: 1fr; }
 }

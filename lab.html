@@ -26,6 +26,7 @@
   /* control panel: fixed neutral chrome so it stays readable whatever you apply */
   .ctl { position: sticky; top: 56px; height: calc(100vh - 56px); overflow: auto; border-left: 1px solid var(--uv-line); background: #141416; color: #ecebe8; font: 14px "Geist", system-ui, sans-serif; display: flex; flex-direction: column; }
   html[data-theme="light"] .ctl { background: #fbfaf8; color: #1a1917; }
+  html[data-theme="light"] .ctl .fam label, html[data-theme="light"] .ctl h3, html[data-theme="light"] .ctl p { color: #5f5b54; }
   .ctl section { padding: 14px 16px; border-bottom: 1px solid #8f8a8233; display: grid; gap: 10px; }
   .ctl h3 { margin: 0; font: 500 11px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: #8f8a82; display: flex; justify-content: space-between; align-items: center; }
   .ctl select { width: 100%; height: 32px; padding: 0 8px; border-radius: 6px; border: 1px solid #8f8a8255; background: transparent; color: inherit; font: 13px "Geist", sans-serif; }
@@ -110,7 +111,7 @@
     .ctl { position: fixed; z-index: 60; inset: auto 0 0 0; top: auto; height: min(70vh, 640px); border-left: 0; border-top: 1px solid #8f8a8255; transform: translateY(100%); transition: transform .3s var(--uv-ease); box-shadow: 0 -20px 50px #0007; }
     .ctl.open { transform: none; }
     .ctl-toggle { display: inline-flex; }
-    .top .links { display: none; }
+    .top { flex-wrap: wrap; height: auto; row-gap: 8px; padding-top: 8px; padding-bottom: 8px; } .views { order: 3; width: 100%; margin: 0; } .top .links { margin-left: auto; } .top .links a { padding: 6px 7px; font-size: 13px; }
     .dash, .set, .shop { grid-template-columns: 1fr; } .dash > .uv-sidenav, .set > .uv-sidenav { position: static; flex-direction: row; overflow-x: auto; } .dash > .uv-sidenav .logo, .side-foot { display: none; } .filters { position: static; }
   }
   @media (max-width: 600px) { .form .grid2 { grid-template-columns: 1fr; } .dhead .uv-row { flex-wrap: wrap; } .dhead .uv-input { width: 100%; } .lhero form { flex-direction: column; } }
