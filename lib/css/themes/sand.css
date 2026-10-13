@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: sand — dune beige, umber ink, sun-bleached calm. Needs core.css. MIT */
+[data-uv-theme="sand"] {
+  --uv-bg: #efe4d2; --uv-text: #3e3227; --uv-accent: #b0743c; --uv-accent-2: #b0743c; --uv-surface: #f8f3eb; --uv-surface-2: #e4d9c8; --uv-surface-3: #dcd0bf; --uv-line: #3e32271a; --uv-line-2: #3e32272e; --uv-muted: #776b5e; --uv-dim: #9a8f80; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: none;
+  
+}
+[data-uv-theme="sand"] .uv-btn--primary, [data-uv-theme="sand"] .uv-btn--grad { background: #3e3227; color: #efe4d2; border-color: #3e3227; }
+[data-uv-theme="sand"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="sand"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #3e32270f, 0 14px 34px -14px #3e322759; }
+[data-uv-theme="sand"] .uv-tabs > .uv-tabs__ind { background: #b0743c; } [data-uv-theme="sand"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="sand"] .uv-switch input:checked + i, [data-uv-theme="sand"] .uv-check input:checked { background: #b0743c; border-color: #b0743c; }
+[data-uv-theme="sand"] .uv-progress > i { background: #b0743c; } [data-uv-theme="sand"] .uv-ring { background: conic-gradient(#b0743c calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="sand"] .uv-input:focus, [data-uv-theme="sand"] .uv-select:focus, [data-uv-theme="sand"] .uv-textarea:focus { border-color: #b0743c; box-shadow: 0 0 0 3px #b0743c38; }
+[data-uv-theme="sand"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="sand"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="sand"] .uv-btn:active { translate: 0 1px; }
+[data-uv-theme="sand"] .uv-card--hover:hover { translate: 0 -4px; }

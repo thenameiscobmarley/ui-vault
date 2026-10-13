@@ -1,0 +1,21 @@
+/*! UI Vault 3.1.0 · theme: gold-leaf — black lacquer with hammered gold leaf. Needs core.css. MIT */
+[data-uv-theme="gold-leaf"] {
+  --uv-bg: #0b0906; --uv-text: #f6ead0; --uv-accent: #d4a63a; --uv-accent-2: #f7e08a; --uv-surface: #171410; --uv-surface-2: #201d18; --uv-surface-3: #2e2b24; --uv-line: #f6ead024; --uv-line-2: #f6ead042; --uv-muted: #aba28f; --uv-dim: #7c7567; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Cormorant Garamond", Georgia, serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Cormorant Garamond", Georgia, serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: uppercase; --uv-head-tracking: .06em;
+  color-scheme: dark;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-uv-theme="gold-leaf"] .uv-h1, [data-uv-theme="gold-leaf"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #6a4a10 28%, #fff2c2 50%, #9e854e 54%, #6a4a10 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="gold-leaf"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="gold-leaf"] .uv-btn--primary, [data-uv-theme="gold-leaf"] .uv-btn--grad { background: linear-gradient(180deg, #ecd7a6 0%, #dab358 45%, #9f7c2c 55%, #d8af4e 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #7f6423; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #7f642399; }
+[data-uv-theme="gold-leaf"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="gold-leaf"] .uv-card { border: 3px double #f6ead099; }
+[data-uv-theme="gold-leaf"] .uv-tabs > .uv-tabs__ind { background: #d4a63a; } [data-uv-theme="gold-leaf"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="gold-leaf"] .uv-switch input:checked + i, [data-uv-theme="gold-leaf"] .uv-check input:checked { background: #d4a63a; border-color: #d4a63a; }
+[data-uv-theme="gold-leaf"] .uv-progress > i { background: #d4a63a; } [data-uv-theme="gold-leaf"] .uv-ring { background: conic-gradient(#d4a63a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="gold-leaf"] .uv-input:focus, [data-uv-theme="gold-leaf"] .uv-select:focus, [data-uv-theme="gold-leaf"] .uv-textarea:focus { border-color: #d4a63a; box-shadow: 0 0 0 3px #d4a63a38; }
+[data-uv-theme="gold-leaf"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="gold-leaf"] .uv-btn::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff80 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } [data-uv-theme="gold-leaf"] .uv-btn:hover::after { translate: 120% 0; }
+[data-uv-theme="gold-leaf"] .uv-card--hover:hover { translate: 0 -4px; }

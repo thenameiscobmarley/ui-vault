@@ -1,4 +1,4 @@
-/*! UI Vault 3.0.0 · theme: mono — strictly black and white, monospaced. Needs core.css. MIT */
+/*! UI Vault 3.1.0 · theme: mono — strictly black and white, monospaced. Needs core.css. MIT */
 [data-uv-theme="mono"] {
   --uv-bg: #fff; --uv-surface: #fff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e0e0e0;
   --uv-line: #000; --uv-line-2: #000; --uv-text: #000; --uv-muted: #000; --uv-dim: #666;

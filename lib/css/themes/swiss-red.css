@@ -1,0 +1,17 @@
+/*! UI Vault 3.1.0 · theme: swiss-red — international style: grid, black, a single red. Needs core.css. MIT */
+[data-uv-theme="swiss-red"] {
+  --uv-bg: #ffffff; --uv-text: #0a0a0a; --uv-accent: #e1251b; --uv-accent-2: #e1251b; --uv-surface: #ffffff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e4e4e4; --uv-line: #0a0a0a1a; --uv-line-2: #0a0a0a2e; --uv-muted: #585858; --uv-dim: #898989; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.05em;
+  background-image: linear-gradient(#0a0a0a12 1px, transparent 1px), linear-gradient(90deg, #0a0a0a12 1px, transparent 1px); background-size: 32px 32px;
+}
+[data-uv-theme="swiss-red"] .uv-btn--primary, [data-uv-theme="swiss-red"] .uv-btn--grad { background: #e1251b; color: #ffffff; border-color: #e1251b; }
+[data-uv-theme="swiss-red"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="swiss-red"] .uv-card { border: 2px solid #0a0a0a; box-shadow: none; }
+[data-uv-theme="swiss-red"] .uv-tabs > .uv-tabs__ind { background: #e1251b; } [data-uv-theme="swiss-red"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="swiss-red"] .uv-switch input:checked + i, [data-uv-theme="swiss-red"] .uv-check input:checked { background: #e1251b; border-color: #e1251b; }
+[data-uv-theme="swiss-red"] .uv-progress > i { background: #e1251b; } [data-uv-theme="swiss-red"] .uv-ring { background: conic-gradient(#e1251b calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="swiss-red"] .uv-input:focus, [data-uv-theme="swiss-red"] .uv-select:focus, [data-uv-theme="swiss-red"] .uv-textarea:focus { border-color: #e1251b; box-shadow: 0 0 0 3px #e1251b38; }
+[data-uv-theme="swiss-red"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="swiss-red"] .uv-btn:hover { background: #0a0a0a; color: #ffffff; border-color: #0a0a0a; }

@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: midnight — deep navy night with a moonlit blue. Needs core.css. MIT */
+[data-uv-theme="midnight"] {
+  --uv-bg: #0b1020; --uv-text: #dfe6f5; --uv-accent: #6ea8ff; --uv-accent-2: #a78bfa; --uv-surface: #161b2b; --uv-surface-2: #1e2333; --uv-surface-3: #2b3040; --uv-line: #dfe6f524; --uv-line-2: #dfe6f542; --uv-muted: #9ba2b1; --uv-dim: #717786; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: radial-gradient(ellipse at 50% 35%, transparent 40%, #0608108c);
+}
+[data-uv-theme="midnight"] .uv-btn--primary, [data-uv-theme="midnight"] .uv-btn--grad { background: #6ea8ff; color: #111111; border-color: #6ea8ff; box-shadow: 0 0 18px -2px #6ea8ff, inset 0 1px 0 #ffffff59; }
+[data-uv-theme="midnight"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="midnight"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #dfe6f50f, 0 14px 34px -14px #04060d59; }
+[data-uv-theme="midnight"] .uv-tabs > .uv-tabs__ind { background: #6ea8ff; } [data-uv-theme="midnight"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="midnight"] .uv-switch input:checked + i, [data-uv-theme="midnight"] .uv-check input:checked { background: #6ea8ff; border-color: #6ea8ff; }
+[data-uv-theme="midnight"] .uv-progress > i { background: #6ea8ff; } [data-uv-theme="midnight"] .uv-ring { background: conic-gradient(#6ea8ff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="midnight"] .uv-input:focus, [data-uv-theme="midnight"] .uv-select:focus, [data-uv-theme="midnight"] .uv-textarea:focus { border-color: #6ea8ff; box-shadow: 0 0 0 3px #6ea8ff38; }
+[data-uv-theme="midnight"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="midnight"] .uv-btn:hover { box-shadow: 0 0 0 3px #6ea8ff40, 0 0 26px -2px #6ea8ffb2; }
+[data-uv-theme="midnight"] .uv-card--hover:hover { box-shadow: 0 0 0 1px #6ea8ff80, 0 0 30px -8px #6ea8ff; }

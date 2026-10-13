@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: espresso — dark roast brown with crema highlights. Needs core.css. MIT */
+[data-uv-theme="espresso"] {
+  --uv-bg: #1b1310; --uv-text: #f2e6da; --uv-accent: #d9a066; --uv-accent-2: #d9a066; --uv-surface: #261e1a; --uv-surface-2: #2e2622; --uv-surface-3: #3b332e; --uv-line: #f2e6da24; --uv-line-2: #f2e6da42; --uv-muted: #ada299; --uv-dim: #827871; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: none;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="espresso"] .uv-btn--primary, [data-uv-theme="espresso"] .uv-btn--grad { background: #d9a066; color: #111111; border-color: #d9a066; }
+[data-uv-theme="espresso"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="espresso"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #f2e6da0f, 0 14px 34px -14px #0b080659; }
+[data-uv-theme="espresso"] .uv-tabs > .uv-tabs__ind { background: #d9a066; } [data-uv-theme="espresso"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="espresso"] .uv-switch input:checked + i, [data-uv-theme="espresso"] .uv-check input:checked { background: #d9a066; border-color: #d9a066; }
+[data-uv-theme="espresso"] .uv-progress > i { background: #d9a066; } [data-uv-theme="espresso"] .uv-ring { background: conic-gradient(#d9a066 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="espresso"] .uv-input:focus, [data-uv-theme="espresso"] .uv-select:focus, [data-uv-theme="espresso"] .uv-textarea:focus { border-color: #d9a066; box-shadow: 0 0 0 3px #d9a06638; }
+[data-uv-theme="espresso"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="espresso"] .uv-btn:hover { filter: brightness(1.08); } [data-uv-theme="espresso"] .uv-btn:active { scale: .94; }
+[data-uv-theme="espresso"] .uv-card--hover:hover { translate: 0 -4px; }

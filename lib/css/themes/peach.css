@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: peach — peach fuzz, apricot buttons, warm and soft. Needs core.css. MIT */
+[data-uv-theme="peach"] {
+  --uv-bg: #fff1e8; --uv-text: #4a2c22; --uv-accent: #ff8a5c; --uv-accent-2: #ffc46b; --uv-surface: #fff9f5; --uv-surface-2: #f4e5dc; --uv-surface-3: #ebdbd2; --uv-line: #4a2c221a; --uv-line-2: #4a2c222e; --uv-muted: #846b61; --uv-dim: #a89289; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  
+}
+[data-uv-theme="peach"] .uv-btn--primary, [data-uv-theme="peach"] .uv-btn--grad { background: #ff8a5c; color: #111111; border-color: #ff8a5c; }
+[data-uv-theme="peach"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="peach"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #4a2c220f, 0 14px 34px -14px #4a2c2259; }
+[data-uv-theme="peach"] .uv-tabs > .uv-tabs__ind { background: #ff8a5c; } [data-uv-theme="peach"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="peach"] .uv-switch input:checked + i, [data-uv-theme="peach"] .uv-check input:checked { background: #ff8a5c; border-color: #ff8a5c; }
+[data-uv-theme="peach"] .uv-progress > i { background: #ff8a5c; } [data-uv-theme="peach"] .uv-ring { background: conic-gradient(#ff8a5c calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="peach"] .uv-input:focus, [data-uv-theme="peach"] .uv-select:focus, [data-uv-theme="peach"] .uv-textarea:focus { border-color: #ff8a5c; box-shadow: 0 0 0 3px #ff8a5c38; }
+[data-uv-theme="peach"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="peach"] .uv-btn:hover { scale: 1.06; } [data-uv-theme="peach"] .uv-btn:active { scale: .96; }
+[data-uv-theme="peach"] .uv-card--hover:hover { scale: 1.02; }

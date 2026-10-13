@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: desert — sandstone, cactus green and sunset clay. Needs core.css. MIT */
+[data-uv-theme="desert"] {
+  --uv-bg: #f4e3c8; --uv-text: #3d2618; --uv-accent: #c8553d; --uv-accent-2: #5b8c5a; --uv-surface: #faf2e6; --uv-surface-2: #e9d8bd; --uv-surface-3: #e0ceb5; --uv-line: #3d26181a; --uv-line-2: #3d26182e; --uv-muted: #786250; --uv-dim: #9c8874; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: uppercase;
+  background-image: linear-gradient(180deg, #ffb36b8c, #f4e3c859 45%, #f4e3c800 85%);
+}
+[data-uv-theme="desert"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="desert"] .uv-btn--primary, [data-uv-theme="desert"] .uv-btn--grad { background: #c8553d; color: #ffffff; border-color: #c8553d; }
+[data-uv-theme="desert"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="desert"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #3d26180f, 0 14px 34px -14px #3d261859; }
+[data-uv-theme="desert"] .uv-tabs > .uv-tabs__ind { background: #c8553d; } [data-uv-theme="desert"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="desert"] .uv-switch input:checked + i, [data-uv-theme="desert"] .uv-check input:checked { background: #c8553d; border-color: #c8553d; }
+[data-uv-theme="desert"] .uv-progress > i { background: #c8553d; } [data-uv-theme="desert"] .uv-ring { background: conic-gradient(#c8553d calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="desert"] .uv-input:focus, [data-uv-theme="desert"] .uv-select:focus, [data-uv-theme="desert"] .uv-textarea:focus { border-color: #c8553d; box-shadow: 0 0 0 3px #c8553d38; }
+[data-uv-theme="desert"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="desert"] .uv-btn:hover { filter: brightness(1.08); } [data-uv-theme="desert"] .uv-btn:active { scale: .94; }
+[data-uv-theme="desert"] .uv-card--hover:hover { translate: 0 -4px; }

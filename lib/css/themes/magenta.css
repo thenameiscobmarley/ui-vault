@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: magenta — hot magenta with cyan clash. Needs core.css. MIT */
+[data-uv-theme="magenta"] {
+  --uv-bg: #ff2d95; --uv-text: #14001a; --uv-accent: #14001a; --uv-accent-2: #21e3ff; --uv-surface: #f32b8f; --uv-surface-2: #ea298a; --uv-surface-3: #dc2683; --uv-line: #14001a24; --uv-line-2: #14001a42; --uv-muted: #5f0e41; --uv-dim: #8e175a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="magenta"] .uv-btn--primary, [data-uv-theme="magenta"] .uv-btn--grad { background: #14001a; color: #ff2d95; border-color: #14001a; }
+[data-uv-theme="magenta"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="magenta"] .uv-card { border: 2px solid #14001a; box-shadow: 6px 6px 0 #14001a; }
+[data-uv-theme="magenta"] .uv-tabs > .uv-tabs__ind { background: #14001a; } [data-uv-theme="magenta"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="magenta"] .uv-switch input:checked + i, [data-uv-theme="magenta"] .uv-check input:checked { background: #14001a; border-color: #14001a; }
+[data-uv-theme="magenta"] .uv-progress > i { background: #14001a; } [data-uv-theme="magenta"] .uv-ring { background: conic-gradient(#14001a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="magenta"] .uv-input:focus, [data-uv-theme="magenta"] .uv-select:focus, [data-uv-theme="magenta"] .uv-textarea:focus { border-color: #14001a; box-shadow: 0 0 0 3px #14001a38; }
+[data-uv-theme="magenta"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="magenta"] .uv-btn:hover { rotate: -2deg; scale: 1.03; }
+[data-uv-theme="magenta"] .uv-card--hover:hover { rotate: -1deg; }

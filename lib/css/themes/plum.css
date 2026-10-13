@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: plum — velvet plum with rose-gold trim. Needs core.css. MIT */
+[data-uv-theme="plum"] {
+  --uv-bg: #1d1020; --uv-text: #f4e6f0; --uv-accent: #e7a4c0; --uv-accent-2: #c9a96e; --uv-surface: #281b2a; --uv-surface-2: #302333; --uv-surface-3: #3d303f; --uv-line: #f4e6f024; --uv-line-2: #f4e6f042; --uv-muted: #afa2ad; --uv-dim: #847784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="plum"] .uv-btn--primary, [data-uv-theme="plum"] .uv-btn--grad { background: #e7a4c029; color: #eebfd3; border-color: transparent; }
+[data-uv-theme="plum"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="plum"] .uv-card { border: 1.5px solid transparent; background: linear-gradient(#281b2a, #281b2a) padding-box, linear-gradient(135deg, #e7a4c0, #c9a96e) border-box; }
+[data-uv-theme="plum"] .uv-tabs > .uv-tabs__ind { background: #e7a4c0; } [data-uv-theme="plum"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="plum"] .uv-switch input:checked + i, [data-uv-theme="plum"] .uv-check input:checked { background: #e7a4c0; border-color: #e7a4c0; }
+[data-uv-theme="plum"] .uv-progress > i { background: #e7a4c0; } [data-uv-theme="plum"] .uv-ring { background: conic-gradient(#e7a4c0 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="plum"] .uv-input:focus, [data-uv-theme="plum"] .uv-select:focus, [data-uv-theme="plum"] .uv-textarea:focus { border-color: #e7a4c0; box-shadow: 0 0 0 3px #e7a4c038; }
+[data-uv-theme="plum"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="plum"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="plum"] .uv-btn:active { translate: 0 1px; }
+[data-uv-theme="plum"] .uv-card--hover:hover { translate: 0 -4px; }

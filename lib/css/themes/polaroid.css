@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: polaroid — faded instant-film creams and teal shadows. Needs core.css. MIT */
+[data-uv-theme="polaroid"] {
+  --uv-bg: #f1ebe1; --uv-text: #2a3a3d; --uv-accent: #d96c4f; --uv-accent-2: #4f8a8b; --uv-surface: #f9f6f2; --uv-surface-2: #e5e0d7; --uv-surface-3: #dbd8cf; --uv-line: #2a3a3d1a; --uv-line-2: #2a3a3d2e; --uv-muted: #6a7371; --uv-dim: #919692; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Patrick Hand", "Comic Neue", cursive; --uv-font-head: "Patrick Hand", "Comic Neue", cursive; --uv-serif: "Patrick Hand", "Comic Neue", cursive; --uv-btn-font: "Patrick Hand", "Comic Neue", cursive;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-uv-theme="polaroid"] .uv-btn--primary, [data-uv-theme="polaroid"] .uv-btn--grad { background: #d96c4f; color: #ffffff; border-color: #d96c4f; }
+[data-uv-theme="polaroid"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="polaroid"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #2a3a3d0f, 0 14px 34px -14px #2a3a3d59; }
+[data-uv-theme="polaroid"] .uv-tabs > .uv-tabs__ind { background: #d96c4f; } [data-uv-theme="polaroid"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="polaroid"] .uv-switch input:checked + i, [data-uv-theme="polaroid"] .uv-check input:checked { background: #d96c4f; border-color: #d96c4f; }
+[data-uv-theme="polaroid"] .uv-progress > i { background: #d96c4f; } [data-uv-theme="polaroid"] .uv-ring { background: conic-gradient(#d96c4f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="polaroid"] .uv-input:focus, [data-uv-theme="polaroid"] .uv-select:focus, [data-uv-theme="polaroid"] .uv-textarea:focus { border-color: #d96c4f; box-shadow: 0 0 0 3px #d96c4f38; }
+[data-uv-theme="polaroid"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="polaroid"] .uv-btn:hover { rotate: -2deg; scale: 1.03; }
+[data-uv-theme="polaroid"] .uv-card--hover:hover { rotate: -1deg; }

@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: bubblegum — bubblegum pink, candy blue, bouncy. Needs core.css. MIT */
+[data-uv-theme="bubblegum"] {
+  --uv-bg: #ffeaf6; --uv-text: #3d1236; --uv-accent: #ff4fb3; --uv-accent-2: #4fc3ff; --uv-surface: #fff6fb; --uv-surface-2: #f3ddea; --uv-surface-3: #ead2e1; --uv-line: #3d12361a; --uv-line-2: #3d12362e; --uv-muted: #7b5773; --uv-dim: #a2829a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 0px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  
+}
+[data-uv-theme="bubblegum"] .uv-btn--primary, [data-uv-theme="bubblegum"] .uv-btn--grad { background: #ff4fb3; color: #ffffff; border-color: #ff4fb3; box-shadow: 0 5px 0 #a63374; }
+[data-uv-theme="bubblegum"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="bubblegum"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #3d12360f, 0 14px 34px -14px #3d123659; }
+[data-uv-theme="bubblegum"] .uv-tabs > .uv-tabs__ind { background: #ff4fb3; } [data-uv-theme="bubblegum"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="bubblegum"] .uv-switch input:checked + i, [data-uv-theme="bubblegum"] .uv-check input:checked { background: #ff4fb3; border-color: #ff4fb3; }
+[data-uv-theme="bubblegum"] .uv-progress > i { background: #ff4fb3; } [data-uv-theme="bubblegum"] .uv-ring { background: conic-gradient(#ff4fb3 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="bubblegum"] .uv-input:focus, [data-uv-theme="bubblegum"] .uv-select:focus, [data-uv-theme="bubblegum"] .uv-textarea:focus { border-color: #ff4fb3; box-shadow: 0 0 0 3px #ff4fb338; }
+[data-uv-theme="bubblegum"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="bubblegum"] .uv-btn:hover { animation: uvt-jelly .55s; }
+[data-uv-theme="bubblegum"] .uv-card--hover:hover { translate: 0 -4px; }

@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: rose-gold — blush rose gold with soft champagne light. Needs core.css. MIT */
+[data-uv-theme="rose-gold"] {
+  --uv-bg: #fff4f1; --uv-text: #4a2a2a; --uv-accent: #d4877a; --uv-accent-2: #e8c39e; --uv-surface: #fffaf9; --uv-surface-2: #f4e8e5; --uv-surface-3: #ebdedb; --uv-line: #4a2a2a1a; --uv-line-2: #4a2a2a2e; --uv-muted: #846b6a; --uv-dim: #a89391; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  background-image: radial-gradient(45% 55% at 12% 10%, #ffd6cc73, transparent 70%), radial-gradient(40% 50% at 88% 22%, #ffe9d661, transparent 70%), radial-gradient(55% 50% at 55% 100%, #f7c8c059, transparent 70%);
+}
+[data-uv-theme="rose-gold"] .uv-h1, [data-uv-theme="rose-gold"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #8a4a42 28%, #ffe2d6 50%, #b37f76 54%, #8a4a42 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="rose-gold"] .uv-btn--primary, [data-uv-theme="rose-gold"] .uv-btn--grad { background: linear-gradient(180deg, #ecc9c3 0%, #da998e 45%, #9f655c 55%, #d89387 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #7f5149; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #7f514999; }
+[data-uv-theme="rose-gold"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="rose-gold"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #4a2a2a0f, 0 14px 34px -14px #4a2a2a59; }
+[data-uv-theme="rose-gold"] .uv-tabs > .uv-tabs__ind { background: #d4877a; } [data-uv-theme="rose-gold"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="rose-gold"] .uv-switch input:checked + i, [data-uv-theme="rose-gold"] .uv-check input:checked { background: #d4877a; border-color: #d4877a; }
+[data-uv-theme="rose-gold"] .uv-progress > i { background: #d4877a; } [data-uv-theme="rose-gold"] .uv-ring { background: conic-gradient(#d4877a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="rose-gold"] .uv-input:focus, [data-uv-theme="rose-gold"] .uv-select:focus, [data-uv-theme="rose-gold"] .uv-textarea:focus { border-color: #d4877a; box-shadow: 0 0 0 3px #d4877a38; }
+[data-uv-theme="rose-gold"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="rose-gold"] .uv-btn::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff80 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } [data-uv-theme="rose-gold"] .uv-btn:hover::after { translate: 120% 0; }
+[data-uv-theme="rose-gold"] .uv-card--hover:hover { translate: 0 -4px; }

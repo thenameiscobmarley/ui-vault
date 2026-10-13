@@ -4,12 +4,14 @@
 Run from the repo root after editing anything in lib/css or lib/js:
     python3 tools/build.py
 """
-import json, re, zipfile
+import json, re, sys, zipfile
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
+import theme_specs
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LIB, CSS, JS, DL = ROOT / "lib", ROOT / "lib" / "css", ROOT / "lib" / "js", ROOT / "downloads"
-VERSION = "3.0.0"
+VERSION = "3.1.0"
 CSS_ORDER = ["core", "components", "fx", "blocks"]
 JS_ORDER = ["core", "motion", "feedback", "forms", "fx"]
 DESC = {
@@ -26,21 +28,31 @@ DESC = {
 }
 
 
+def theme_sources():
+    """Hand-written themes (themes.src.css) + generated ones (theme_specs.py → themes.gen.css)."""
+    gen_css, meta, fonts_url = theme_specs.generate()
+    (CSS / "themes.gen.css").write_text(gen_css)
+    (CSS / "fonts.css").write_text(f"/*! UI Vault {VERSION} · fonts used by the themes (loads only the files a page actually uses). */\n@import url(\"{fonts_url}\");\n")
+    return (CSS / "themes.src.css").read_text() + "\n" + gen_css, meta
+
+
 def split_themes():
-    src = (CSS / "themes.src.css").read_text()
+    src, meta = theme_sources()
     parts = re.split(r"/\* @theme (\w[\w-]*) — (.*?) \*/\n", src)
     themes, out_dir = [], CSS / "themes"
     out_dir.mkdir(exist_ok=True)
     for i in range(1, len(parts), 3):
         name, desc, body = parts[i], parts[i + 1], parts[i + 2].strip() + "\n"
         (out_dir / f"{name}.css").write_text(f"/*! UI Vault {VERSION} · theme: {name} — {desc}. Needs core.css. MIT */\n{body}")
-        themes.append({"name": name, "desc": desc, "file": f"css/themes/{name}.css"})
+        cat = meta[name]["category"] if name in meta else theme_specs.CORE_META[name][0]
+        themes.append({"name": name, "desc": desc, "file": f"css/themes/{name}.css", "category": cat})
     (CSS / "themes.css").write_text(f"/*! UI Vault {VERSION} · all themes. MIT */\n" + "\n".join((out_dir / f"{t['name']}.css").read_text() for t in themes))
     return themes
 
 
 def bundle(themes):
     css = "\n".join((CSS / f"{m}.css").read_text() for m in CSS_ORDER) + "\n" + (CSS / "themes.css").read_text()
+    css = (CSS / "fonts.css").read_text().split("\n", 1)[1] + css
     banner = f"/*! UI Vault {VERSION} — full bundle (core + components + fx + blocks + {len(themes)} themes). MIT. https://thenameiscobmarley.github.io/ui-vault/ */\n"
     (LIB / "uivault.css").write_text(banner + css)
     js = "\n".join((JS / f"{m}.js").read_text() for m in JS_ORDER)
@@ -133,7 +145,7 @@ def export_tokens(themes):
     core = (CSS / "core.css").read_text()
     base = decl(core[core.index(":root {"):core.index("}", core.index(":root {"))])
     base.update(decl(core[core.index(":root, [data-uv-theme] {"):]))
-    src = (CSS / "themes.src.css").read_text()
+    src, meta = theme_sources()
     out = {}
     for t in themes:
         m = re.search(r'\[data-uv-theme="%s"\] \{(.*?)\n\}' % t["name"], src, re.S)
@@ -157,6 +169,11 @@ def export_tokens(themes):
                 tok["shape"][k] = float(num.group()) if num else 0.0
         lum = (0.2126 * bg[0] + 0.7152 * bg[1] + 0.0722 * bg[2]) / 255
         tok["dark"] = lum < 0.5
+        tok["category"] = t["category"]
+        if t["name"] in meta: tok["style"] = meta[t["name"]]["style"]
+        else:
+            cm = theme_specs.CORE_META[t["name"]]
+            tok["style"] = {"background": cm[1], "heading": cm[2], "button": cm[3], "hover": cm[4], "card": cm[5]}
         out[t["name"]] = tok
     data = {"version": VERSION, "themes": out}
     (LIB / "tokens.json").write_text(json.dumps(data, indent=1))
@@ -203,7 +220,7 @@ def raw_src():
 def manifest(themes):
     files = []
     for p in sorted(LIB.rglob("*")):
-        if p.is_file() and p.suffix in (".css", ".js") and p.name not in ("themes.src.css", "manifest.js", "raw-src.js", "tokens.js"):
+        if p.is_file() and p.suffix in (".css", ".js") and p.name not in ("themes.src.css", "themes.gen.css", "manifest.js", "raw-src.js", "tokens.js"):
             rel = p.relative_to(LIB).as_posix()
             files.append({"path": rel, "bytes": p.stat().st_size, "desc": DESC.get(p.name, "")})
     m = {"version": VERSION, "css": CSS_ORDER, "js": JS_ORDER, "themes": themes, "files": files}

@@ -1,4 +1,4 @@
-/*! UI Vault 3.0.0 · theme: luxe — black lacquer, gold rules, spaced capitals. Needs core.css. MIT */
+/*! UI Vault 3.1.0 · theme: luxe — black lacquer, gold rules, spaced capitals. Needs core.css. MIT */
 [data-uv-theme="luxe"] {
   --uv-bg: #0c0b09; --uv-surface: #12110e; --uv-surface-2: #1a1813; --uv-surface-3: #24211a;
   --uv-line: #c9a96e26; --uv-line-2: #c9a96e66; --uv-text: #efe6d2; --uv-muted: #b3a88f; --uv-dim: #7a705c;
@@ -13,3 +13,5 @@
 [data-uv-theme="luxe"] .uv-btn--primary:hover { background: var(--uv-accent-2); }
 [data-uv-theme="luxe"] .uv-card { border-color: var(--uv-line-2); }
 [data-uv-theme="luxe"] .uv-tabs > .uv-tabs__ind { background: transparent; box-shadow: inset 0 -1px 0 var(--uv-accent); } [data-uv-theme="luxe"] .uv-tabs > button[aria-selected="true"] { color: var(--uv-accent); }
+
+/* UI Vault — generated themes (tools/theme_specs.py). Do not edit by hand. */

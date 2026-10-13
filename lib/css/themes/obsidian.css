@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: obsidian — volcanic black glass with violet edges. Needs core.css. MIT */
+[data-uv-theme="obsidian"] {
+  --uv-bg: #0a0a0d; --uv-text: #e9e7f2; --uv-accent: #9d7bff; --uv-accent-2: #ff6ad5; --uv-surface: #151518; --uv-surface-2: #1e1e22; --uv-surface-3: #2b2b2f; --uv-line: #e9e7f224; --uv-line-2: #e9e7f242; --uv-muted: #a2a0a9; --uv-dim: #75747b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="obsidian"] .uv-btn--primary, [data-uv-theme="obsidian"] .uv-btn--grad { background: linear-gradient(135deg, #9d7bff, #ff6ad5); color: #111111; border-color: transparent; }
+[data-uv-theme="obsidian"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="obsidian"] .uv-card { border: 1.5px solid transparent; background: linear-gradient(#151518, #151518) padding-box, linear-gradient(135deg, #9d7bff, #ff6ad5) border-box; }
+[data-uv-theme="obsidian"] .uv-tabs > .uv-tabs__ind { background: #9d7bff; } [data-uv-theme="obsidian"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="obsidian"] .uv-switch input:checked + i, [data-uv-theme="obsidian"] .uv-check input:checked { background: #9d7bff; border-color: #9d7bff; }
+[data-uv-theme="obsidian"] .uv-progress > i { background: #9d7bff; } [data-uv-theme="obsidian"] .uv-ring { background: conic-gradient(#9d7bff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="obsidian"] .uv-input:focus, [data-uv-theme="obsidian"] .uv-select:focus, [data-uv-theme="obsidian"] .uv-textarea:focus { border-color: #9d7bff; box-shadow: 0 0 0 3px #9d7bff38; }
+[data-uv-theme="obsidian"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="obsidian"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="obsidian"] .uv-btn:active { translate: 0 1px; }
+[data-uv-theme="obsidian"] .uv-card--hover:hover { translate: 0 -4px; }

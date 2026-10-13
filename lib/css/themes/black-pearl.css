@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: black-pearl — black pearlescent with an oil-slick sheen. Needs core.css. MIT */
+[data-uv-theme="black-pearl"] {
+  --uv-bg: #0c0b12; --uv-text: #efeaff; --uv-accent: #b59cff; --uv-accent-2: #5ee7d0; --uv-surface: #17161e; --uv-surface-2: #201f27; --uv-surface-3: #2e2c36; --uv-line: #efeaff24; --uv-line-2: #efeaff42; --uv-muted: #a6a3b3; --uv-dim: #797684; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: radial-gradient(45% 55% at 12% 10%, #3b2a6b73, transparent 70%), radial-gradient(40% 50% at 88% 22%, #0d4a5261, transparent 70%), radial-gradient(55% 50% at 55% 100%, #5a1f4a59, transparent 70%);
+}
+[data-uv-theme="black-pearl"] .uv-h1, [data-uv-theme="black-pearl"] .uv-h2 { background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 8s linear infinite; }
+[data-uv-theme="black-pearl"] .uv-btn--primary, [data-uv-theme="black-pearl"] .uv-btn--grad { background: linear-gradient(135deg, #b59cff, #5ee7d0); color: #111111; border-color: transparent; }
+[data-uv-theme="black-pearl"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="black-pearl"] .uv-card { background: #ffffff14; border: 1px solid #ffffff38; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 #ffffff4c, 0 18px 40px -20px #00000073; }
+[data-uv-theme="black-pearl"] .uv-tabs > .uv-tabs__ind { background: #b59cff; } [data-uv-theme="black-pearl"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="black-pearl"] .uv-switch input:checked + i, [data-uv-theme="black-pearl"] .uv-check input:checked { background: #b59cff; border-color: #b59cff; }
+[data-uv-theme="black-pearl"] .uv-progress > i { background: #b59cff; } [data-uv-theme="black-pearl"] .uv-ring { background: conic-gradient(#b59cff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="black-pearl"] .uv-input:focus, [data-uv-theme="black-pearl"] .uv-select:focus, [data-uv-theme="black-pearl"] .uv-textarea:focus { border-color: #b59cff; box-shadow: 0 0 0 3px #b59cff38; }
+[data-uv-theme="black-pearl"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="black-pearl"] .uv-btn::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff80 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } [data-uv-theme="black-pearl"] .uv-btn:hover::after { translate: 120% 0; }
+[data-uv-theme="black-pearl"] .uv-card--hover:hover { translate: 0 -4px; }

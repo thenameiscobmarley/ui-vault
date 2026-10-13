@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: mint — fresh mint with a deep green ink. Needs core.css. MIT */
+[data-uv-theme="mint"] {
+  --uv-bg: #ecfbf3; --uv-text: #173b2c; --uv-accent: #2fb37a; --uv-accent-2: #7ac7ff; --uv-surface: #f6fdfa; --uv-surface-2: #dfefe7; --uv-surface-3: #d5e6dd; --uv-line: #173b2c1a; --uv-line-2: #173b2c2e; --uv-muted: #5b786c; --uv-dim: #869f93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  
+}
+[data-uv-theme="mint"] .uv-btn--primary, [data-uv-theme="mint"] .uv-btn--grad { background: #2fb37a; color: #111111; border-color: #2fb37a; }
+[data-uv-theme="mint"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="mint"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #173b2c0f, 0 14px 34px -14px #173b2c59; }
+[data-uv-theme="mint"] .uv-tabs > .uv-tabs__ind { background: #2fb37a; } [data-uv-theme="mint"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="mint"] .uv-switch input:checked + i, [data-uv-theme="mint"] .uv-check input:checked { background: #2fb37a; border-color: #2fb37a; }
+[data-uv-theme="mint"] .uv-progress > i { background: #2fb37a; } [data-uv-theme="mint"] .uv-ring { background: conic-gradient(#2fb37a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="mint"] .uv-input:focus, [data-uv-theme="mint"] .uv-select:focus, [data-uv-theme="mint"] .uv-textarea:focus { border-color: #2fb37a; box-shadow: 0 0 0 3px #2fb37a38; }
+[data-uv-theme="mint"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="mint"] .uv-btn:hover { animation: uvt-bounce .5s; }
+[data-uv-theme="mint"] .uv-card--hover:hover { translate: 0 -4px; }

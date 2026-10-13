@@ -1,0 +1,16 @@
+/*! UI Vault 3.1.0 · theme: concrete — raw grey concrete, bold black type. Needs core.css. MIT */
+[data-uv-theme="concrete"] {
+  --uv-bg: #d9d9d6; --uv-text: #151515; --uv-accent: #ff5a1f; --uv-accent-2: #ff5a1f; --uv-surface: #eeeeed; --uv-surface-2: #cdcdca; --uv-surface-3: #c3c3c1; --uv-line: #1515151a; --uv-line-2: #1515152e; --uv-muted: #545453; --uv-dim: #7b7b79; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none; --uv-head-tracking: -.04em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-uv-theme="concrete"] .uv-btn--primary, [data-uv-theme="concrete"] .uv-btn--grad { background: #151515; color: #d9d9d6; border-color: #151515; }
+[data-uv-theme="concrete"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="concrete"] .uv-tabs > .uv-tabs__ind { background: #ff5a1f; } [data-uv-theme="concrete"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="concrete"] .uv-switch input:checked + i, [data-uv-theme="concrete"] .uv-check input:checked { background: #ff5a1f; border-color: #ff5a1f; }
+[data-uv-theme="concrete"] .uv-progress > i { background: #ff5a1f; } [data-uv-theme="concrete"] .uv-ring { background: conic-gradient(#ff5a1f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="concrete"] .uv-input:focus, [data-uv-theme="concrete"] .uv-select:focus, [data-uv-theme="concrete"] .uv-textarea:focus { border-color: #ff5a1f; box-shadow: 0 0 0 3px #ff5a1f38; }
+[data-uv-theme="concrete"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="concrete"] .uv-btn:hover { background: #151515; color: #d9d9d6; border-color: #151515; }

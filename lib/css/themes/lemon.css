@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: lemon — lemon sorbet with a charcoal outline. Needs core.css. MIT */
+[data-uv-theme="lemon"] {
+  --uv-bg: #fffbe0; --uv-text: #2b2a1f; --uv-accent: #f5c400; --uv-accent-2: #ff7eb6; --uv-surface: #fffdf1; --uv-surface-2: #f2eed4; --uv-surface-3: #e8e4cb; --uv-line: #2b2a1f1a; --uv-line-2: #2b2a1f2e; --uv-muted: #6f6d5d; --uv-dim: #999783; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 2px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  
+}
+[data-uv-theme="lemon"] .uv-btn--primary, [data-uv-theme="lemon"] .uv-btn--grad { background: #f5c400; color: #111111; border: 2px solid #2b2a1f; box-shadow: 4px 4px 0 #2b2a1f; }
+[data-uv-theme="lemon"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="lemon"] .uv-card { border: 2px solid #2b2a1f; box-shadow: none; }
+[data-uv-theme="lemon"] .uv-tabs > .uv-tabs__ind { background: #f5c400; } [data-uv-theme="lemon"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="lemon"] .uv-switch input:checked + i, [data-uv-theme="lemon"] .uv-check input:checked { background: #f5c400; border-color: #f5c400; }
+[data-uv-theme="lemon"] .uv-progress > i { background: #f5c400; } [data-uv-theme="lemon"] .uv-ring { background: conic-gradient(#f5c400 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="lemon"] .uv-input:focus, [data-uv-theme="lemon"] .uv-select:focus, [data-uv-theme="lemon"] .uv-textarea:focus { border-color: #f5c400; box-shadow: 0 0 0 3px #f5c40038; }
+[data-uv-theme="lemon"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="lemon"] .uv-btn:hover { translate: 2px 2px; box-shadow: 1px 1px 0 #2b2a1f; } [data-uv-theme="lemon"] .uv-btn:active { translate: 4px 4px; box-shadow: none; }
+[data-uv-theme="lemon"] .uv-card--hover:hover { translate: 3px 3px; }

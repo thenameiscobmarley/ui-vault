@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: vampire — gothic purple-black with blood-red accents. Needs core.css. MIT */
+[data-uv-theme="vampire"] {
+  --uv-bg: #16101c; --uv-text: #f0e6f5; --uv-accent: #ff4566; --uv-accent-2: #bd93f9; --uv-surface: #211b27; --uv-surface-2: #2a2330; --uv-surface-3: #37303d; --uv-line: #f0e6f524; --uv-line-2: #f0e6f542; --uv-muted: #aaa2b0; --uv-dim: #7f7784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="vampire"] .uv-h1, [data-uv-theme="vampire"] .uv-h2 { color: #ffabba; text-shadow: 0 0 6px #ff4566e6, 0 0 22px #ff456699, 0 0 48px #ff456659; }
+[data-uv-theme="vampire"] .uv-btn--primary, [data-uv-theme="vampire"] .uv-btn--grad { background: #ff4566; color: #ffffff; border-color: #ff4566; }
+[data-uv-theme="vampire"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="vampire"] .uv-tabs > .uv-tabs__ind { background: #ff4566; } [data-uv-theme="vampire"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="vampire"] .uv-switch input:checked + i, [data-uv-theme="vampire"] .uv-check input:checked { background: #ff4566; border-color: #ff4566; }
+[data-uv-theme="vampire"] .uv-progress > i { background: #ff4566; } [data-uv-theme="vampire"] .uv-ring { background: conic-gradient(#ff4566 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="vampire"] .uv-input:focus, [data-uv-theme="vampire"] .uv-select:focus, [data-uv-theme="vampire"] .uv-textarea:focus { border-color: #ff4566; box-shadow: 0 0 0 3px #ff456638; }
+[data-uv-theme="vampire"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="vampire"] .uv-btn:hover { box-shadow: 0 0 0 3px #ff456640, 0 0 26px -2px #ff4566b2; }
+[data-uv-theme="vampire"] .uv-card--hover:hover { box-shadow: 0 0 0 1px #ff456680, 0 0 30px -8px #ff4566; }

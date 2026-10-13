@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: emerald — emerald gem green with a gamma glow. Needs core.css. MIT */
+[data-uv-theme="emerald"] {
+  --uv-bg: #03150d; --uv-text: #dcffee; --uv-accent: #19e38a; --uv-accent-2: #7affd1; --uv-surface: #0e2118; --uv-surface-2: #172a21; --uv-surface-3: #24382f; --uv-line: #dcffee24; --uv-line-2: #dcffee42; --uv-muted: #97b4a6; --uv-dim: #6b8579; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 60%, #fff, transparent), radial-gradient(1.5px 1.5px at 40% 80%, #ffffffcc, transparent), radial-gradient(1px 1px at 85% 15%, #fff, transparent), radial-gradient(60% 50% at 30% 30%, #19e38a73, transparent 70%), radial-gradient(50% 60% at 80% 70%, #7affd173, transparent 70%); background-size: 220px 220px, 260px 260px, 300px 300px, 180px 180px, 100% 100%, 100% 100%;
+}
+[data-uv-theme="emerald"] .uv-h1, [data-uv-theme="emerald"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #06402a 28%, #b7ffe0 50%, #44836a 54%, #06402a 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="emerald"] .uv-btn--primary, [data-uv-theme="emerald"] .uv-btn--grad { background: linear-gradient(180deg, #98f2ca 0%, #3ce79c 45%, #13aa68 55%, #30e696 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #0f8853; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #0f885399; }
+[data-uv-theme="emerald"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="emerald"] .uv-card { background: #ffffff14; border: 1px solid #ffffff38; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 #ffffff4c, 0 18px 40px -20px #00000073; }
+[data-uv-theme="emerald"] .uv-tabs > .uv-tabs__ind { background: #19e38a; } [data-uv-theme="emerald"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="emerald"] .uv-switch input:checked + i, [data-uv-theme="emerald"] .uv-check input:checked { background: #19e38a; border-color: #19e38a; }
+[data-uv-theme="emerald"] .uv-progress > i { background: #19e38a; } [data-uv-theme="emerald"] .uv-ring { background: conic-gradient(#19e38a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="emerald"] .uv-input:focus, [data-uv-theme="emerald"] .uv-select:focus, [data-uv-theme="emerald"] .uv-textarea:focus { border-color: #19e38a; box-shadow: 0 0 0 3px #19e38a38; }
+[data-uv-theme="emerald"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="emerald"] .uv-btn:hover { box-shadow: 0 0 0 3px #19e38a40, 0 0 26px -2px #19e38ab2; }
+[data-uv-theme="emerald"] .uv-card--hover:hover { box-shadow: 0 0 0 1px #19e38a80, 0 0 30px -8px #19e38a; }

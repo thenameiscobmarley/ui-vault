@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: win-classic — beige desktop era with bevelled grey chrome. Needs core.css. MIT */
+[data-uv-theme="win-classic"] {
+  --uv-bg: #c3c7cb; --uv-text: #000000; --uv-accent: #000080; --uv-accent-2: #008080; --uv-surface: #e4e6e8; --uv-surface-2: #b7bbbf; --uv-surface-3: #aeb1b5; --uv-line: #0000001a; --uv-line-2: #0000002e; --uv-muted: #3e4041; --uv-dim: #65676a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 0px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  
+}
+[data-uv-theme="win-classic"] .uv-btn--primary, [data-uv-theme="win-classic"] .uv-btn--grad { background: #b7bbbf; color: #000000; border: 0; box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #777a7c, inset 2px 2px #dbdddf; }
+[data-uv-theme="win-classic"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="win-classic"] .uv-card { border: 0; box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #f4f5f6, inset -2px -2px #a0a1a2, inset 2px 2px #fff; }
+[data-uv-theme="win-classic"] .uv-tabs > .uv-tabs__ind { background: #000080; } [data-uv-theme="win-classic"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="win-classic"] .uv-switch input:checked + i, [data-uv-theme="win-classic"] .uv-check input:checked { background: #000080; border-color: #000080; }
+[data-uv-theme="win-classic"] .uv-progress > i { background: #000080; } [data-uv-theme="win-classic"] .uv-ring { background: conic-gradient(#000080 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="win-classic"] .uv-input:focus, [data-uv-theme="win-classic"] .uv-select:focus, [data-uv-theme="win-classic"] .uv-textarea:focus { border-color: #000080; box-shadow: 0 0 0 3px #00008038; }
+[data-uv-theme="win-classic"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="win-classic"] .uv-btn:hover { filter: brightness(1.08); } [data-uv-theme="win-classic"] .uv-btn:active { scale: .94; }
+[data-uv-theme="win-classic"] .uv-card--hover:hover { translate: 0 -4px; }
