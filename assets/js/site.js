@@ -31,7 +31,7 @@
     const root = document.documentElement;
     const next = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = next;
-    try { localStorage.setItem("uiv-theme", next); } catch {}
+    try { localStorage.setItem("uv-theme", next); } catch {}
     moveCatInd();
   });
 

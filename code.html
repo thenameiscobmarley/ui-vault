@@ -14,6 +14,11 @@
 <style>
   /* This page is an IDE: warm ink, mono chrome, one signal accent */
   :root { --ink: #141413; --ink-2: #1c1c1a; --ink-3: #262624; --rule: #ffffff14; --rule-2: #ffffff26; --fg: #ecebe8; --fg-2: #a19d95; --fg-3: #6f6b64; --sig: #ff6a26; --str: #9fc5a8; --kw: #ff8f5a; --fn: #c9b98f; --num: #b4a7f5; }
+  html[data-theme="light"] { --ink: #f4f2ee; --ink-2: #fbfaf8; --ink-3: #ece9e3; --rule: #1a19171a; --rule-2: #1a19172e; --fg: #1a1917; --fg-2: #5f5b54; --fg-3: #8f8a82; --sig: #ff4f00; }
+  html[data-theme="light"] .code, html[data-theme="light"] .term, html[data-theme="light"] .tabs, html[data-theme="light"] .install code, html[data-theme="light"] .tok-prev { --ink: #141413; --ink-2: #1c1c1a; --ink-3: #262624; --rule: #ffffff14; --rule-2: #ffffff26; --fg: #ecebe8; --fg-2: #a19d95; --fg-3: #6f6b64; color: var(--fg); }
+  html[data-theme="light"] .tabs { background: #1c1c1a; }
+  html[data-theme="light"] .bar .brand svg rect { fill: #1a1917; } html[data-theme="light"] .bar .brand svg path { stroke: #f4f2ee; }
+  html[data-theme="light"] .btn.p { background: #1a1917; color: #f4f2ee; border-color: #1a1917; }
   body { margin: 0; background: var(--ink); color: var(--fg); font-family: "Geist", system-ui, sans-serif; }
   a { color: inherit; }
   .bar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 18px; height: 52px; padding: 0 clamp(14px, 3vw, 28px); background: var(--ink); border-bottom: 1px solid var(--rule-2); font: 500 13px "Geist Mono", monospace; }
@@ -94,6 +99,7 @@
   @media (max-width: 900px) { .hero, .ide, .tok, .install, .sec-h { grid-template-columns: 1fr; } .tree { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--rule); } .tree h4 { display: none; } .tree button { width: auto; white-space: nowrap; } .install > div { border-right: 0; border-bottom: 1px solid var(--rule); } .bar nav { display: none; } }
   @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
 </style>
+<script>try{const t=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 <header class="bar">
