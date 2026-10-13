@@ -1,4 +1,4 @@
-"""Command line: python -m uivault [list | show THEME | export FORMAT THEME | demo [THEME]]"""
+"""Command line: python -m uivault [list [--CATEGORY] | show THEME | export FORMAT THEME | demo [THEME]]"""
 import sys
 
 import uivault
@@ -14,7 +14,9 @@ def swatch(hexcol, label):
 def main(argv):
     cmd = argv[0] if argv else "list"
     if cmd == "list":
-        for n in uivault.themes():
+        flt = next((a.lstrip("-") for a in argv[1:]), None)
+        cat = next((c for c in uivault.categories() if flt and c.lower() == flt.lower()), None)
+        for n in uivault.themes(cat):
             t = uivault.theme(n)
             r, g, b = (int(t.solid("accent")[i:i + 2], 16) for i in (1, 3, 5))
             print(f"\x1b[38;2;{r};{g};{b}m●\x1b[0m {n:<10} {t.description}")

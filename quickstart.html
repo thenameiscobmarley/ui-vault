@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-uv-smooth>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +15,16 @@
   body { margin: 0; background: var(--uv-bg); }
   body.has-wf { background: transparent; }
   body.has-wf .uv-waterfall-veil { background: linear-gradient(180deg, color-mix(in srgb, var(--uv-bg) 28%, transparent) 0, color-mix(in srgb, var(--uv-bg) 60%, transparent) 45vh, color-mix(in srgb, var(--uv-bg) 82%, transparent) 100%); }
-  body.has-wf .top { background: color-mix(in srgb, var(--uv-bg) 80%, transparent); backdrop-filter: blur(10px); }
+  body.has-wf .top { background: color-mix(in srgb, var(--uv-bg) 94%, transparent); }
+  .qs-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 48px; align-items: center; padding: 64px 0 24px; }
+  .qs-hero > dl { grid-column: 1 / -1; }
+  .qs-term { border: 1px solid #ffffff26; border-radius: 10px; background: #0e0e0d; color: #ecebe8; overflow: hidden; box-shadow: 0 40px 80px -36px #000c; }
+  .qs-term__top { display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-bottom: 1px solid #ffffff14; font: 500 11px var(--uv-mono); color: #6f6b64; }
+  .qs-term__top i { width: 10px; height: 10px; border-radius: 50%; background: #262624; } .qs-term__top span { margin-left: auto; }
+  .qs-term pre { margin: 0; padding: 16px 18px; height: 360px; overflow: hidden; font: 12.5px/1.6 var(--uv-mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+  .qs-term .pr { color: #ff6a26; } .qs-term .mu { color: #6f6b64; } .qs-term .s { color: #9fc5a8; } .qs-term .k { color: #ff8f5a; } .qs-term .ok { color: #4ade80; }
+  .qs-term .cur { display: inline-block; width: 8px; height: 15px; background: #ecebe8; vertical-align: -2px; animation: qsblink 1s step-end infinite; } @keyframes qsblink { 50% { opacity: 0; } }
+  @media (max-width: 960px) { .qs-hero { grid-template-columns: 1fr; } .qs-term pre { height: 300px; } }
   .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; padding: 0 clamp(16px, 3vw, 32px); height: 60px; background: var(--uv-bg); border-bottom: 1px solid var(--uv-line-2); }
   .top .brand { display: flex; align-items: center; gap: 10px; font: 600 16px var(--uv-font); color: var(--uv-text); text-decoration: none; }
   .top nav { margin-left: auto; }
@@ -89,23 +98,26 @@
 </head>
 <body class="uv">
 <header class="top">
-  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--uv-bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--uv-accent)"/></svg>UI Vault <span class="uv-badge uv-badge--accent">API 3.0</span></a>
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--uv-bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--uv-accent)"/></svg>UI Vault <span class="uv-badge uv-badge--accent">API 3.1</span></a>
   <nav class="uv-nav" style="border:0;background:none;padding:0"><a class="is-active" href="quickstart.html">Quick start</a><a href="docs.html">Docs</a><a href="themes.html">Themes</a><a href="code.html">Python &amp; C++</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a><a href="./">Library</a></nav>
   <a class="uv-btn uv-btn--primary uv-btn--sm" href="downloads/uivault-latest.zip" download>Download .zip</a>
 </header>
 
 <main class="wrap">
   <!-- Hero -->
-  <section style="padding:72px 0 24px">
+  <section class="qs-hero">
+    <div class="qs-hero__text">
     <p class="uv-eyebrow">UI Vault API · v<span class="ver">3.0.0</span> · MIT</p>
-    <h1 class="uv-h1 uv-fx-blur-in" style="font-size:clamp(52px,8vw,108px);margin:14px 0 22px;max-width:14ch">87 styles, <em class="uv-muted">seventy effects,</em> one API.</h1>
+    <h1 class="uv-h1 uv-fx-blur-in" style="font-size:clamp(48px,6.2vw,96px);margin:14px 0 22px;max-width:12ch">87 styles, <em class="uv-muted">seventy effects,</em> one API.</h1>
     <p class="uv-muted" style="max-width:640px;font-size:18px;margin:0 0 30px">A modular CSS + JS kit with no build step. Load the whole bundle or only the modules you need. Then mix themes and effects on any element: one page can have a brutalist header, a neon card and a terminal footer.</p>
     <div class="uv-row">
-      <a class="uv-btn uv-btn--primary uv-btn--lg" href="downloads/uivault-latest.zip" download>Download uivault-<span class="ver">3.0.0</span>.zip</a>
+      <a class="uv-btn uv-btn--primary uv-btn--lg" href="downloads/uivault-latest.zip" download><span>Download uivault-<span class="ver">3.1.0</span>.zip</span></a>
       <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#start">Quick start</a>
       <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#mix">Mix &amp; match</a>
       <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#builder">Build a custom bundle</a>
     </div>
+    </div>
+    <div class="qs-term" aria-label="Animated install walkthrough"><div class="qs-term__top"><i></i><i></i><i></i><span>~/my-site — zsh</span></div><pre id="qsTerm"></pre></div>
     <dl class="uv-row" style="gap:0;margin:48px 0 0;border-top:1px solid var(--uv-text)" id="facts"></dl>
   </section>
 
@@ -202,6 +214,7 @@
 <footer class="wrap" style="padding:24px clamp(16px,4vw,40px) 48px;border-top:1px solid var(--uv-text);color:var(--uv-muted);font-size:13px">UI Vault <span class="ver">3.0.0</span> · MIT · <a href="https://github.com/thenameiscobmarley/ui-vault" style="color:inherit">GitHub</a> · <a href="docs.html" style="color:inherit">Docs</a></footer>
 
 <script src="lib/manifest.js"></script>
+<script src="lib/tokens.js"></script>
 <script src="lib/uivault.js"></script>
 <script src="assets/js/raw.js"></script>
 <script src="assets/js/picker.js" defer></script>
@@ -213,6 +226,42 @@ const hl = code => esc(code).replace(/(&lt;!--.*?--&gt;)|(^\s*\/\/.*$)|("[^"\n]*
 const setCode = (id, code) => { const el = document.getElementById(id); el.dataset.raw = code; el.innerHTML = hl(code); };
 document.querySelectorAll(".ver").forEach(v => v.textContent = M.version);
 document.addEventListener("click", e => { const b = e.target.closest("[data-copy]"); if (b) UV.copy(document.getElementById(b.dataset.copy).dataset.raw); });
+
+// hero terminal: types the whole setup, then shows a few styles in colour (loops)
+(async function qsTerm() {
+  const pre = $("#qsTerm"); if (!pre) return;
+  const sleep = ms => new Promise(r => setTimeout(r, ms)), reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const TOK = window.UV_TOKENS && window.UV_TOKENS.themes;
+  const sw = n => TOK && TOK[n] ? ["bg", "surface", "text", "accent", "accent-2"].map(k => `<span style="background:${TOK[n].solid[k]}">  </span>`).join("") : "";
+  const L = [
+    ["$ ", "curl -LO https://thenameiscobmarley.github.io/ui-vault/downloads/uivault-latest.zip"],
+    ["", '<span class="mu">  % Total    Received   Time\n100  214k   100  214k   0:00:01</span>'],
+    ["$ ", "unzip -q uivault-latest.zip && ls uivault"],
+    ["", '<span class="mu">uivault.css  uivault.js  css/  js/  examples/  README.md</span>'],
+    ["$ ", "cat index.html"],
+    ["", '<span class="k">&lt;link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"uivault/uivault.css"</span>&gt;\n<span class="k">&lt;html</span> data-uv-theme=<span class="s">"pearl"</span>&gt;\n<span class="k">&lt;button</span> class=<span class="s">"uv-btn uv-btn--primary"</span> data-uv=<span class="s">"ripple"</span>&gt;Ship it&lt;/button&gt;\n<span class="k">&lt;script</span> src=<span class="s">"uivault/uivault.js"</span> defer&gt;&lt;/script&gt;'],
+    ["$ ", "python -m http.server 8000"],
+    ["", '<span class="ok">Serving HTTP on 0.0.0.0 port 8000 …</span>'],
+    ["$ ", 'pip install "git+https://github.com/thenameiscobmarley/ui-vault#subdirectory=python"'],
+    ["", '<span class="ok">✓ uivault 3.1 — 87 styles for Qt, Tk, Textual, GTK4, Dear PyGui</span>'],
+    ["$ ", "python -m uivault list --signature"],
+    ...["pearl", "sapphire-metal", "fade", "doppler", "case-hardened", "gold-leaf"].map(n => ["", `${sw(n)} ${n}`]),
+  ];
+  for (;;) {
+    pre.innerHTML = "";
+    for (const [pr, text] of L) {
+      const line = document.createElement("div"); pre.appendChild(line);
+      if (pr) {
+        line.innerHTML = `<span class="pr">${pr}</span><span></span><span class="cur"></span>`;
+        for (let i = 1; i <= text.length; i++) { line.children[1].textContent = text.slice(0, i); if (!reduce) await sleep(14 + Math.random() * 26); }
+        line.lastChild.remove(); await sleep(reduce ? 0 : 320);
+      } else { line.innerHTML = text; await sleep(reduce ? 0 : 90); }
+      pre.scrollTop = pre.scrollHeight;
+    }
+    pre.insertAdjacentHTML("beforeend", '<span class="pr">$ </span><span class="cur"></span>');
+    await sleep(6500);
+  }
+})();
 
 // scroll story: the pinned card switches theme as each step crosses the centre
 const FEAT = ["editorial", "pearl", "sapphire-metal", "neon", "brutal", "fade", "glass", "terminal", "doppler", "retro", "gold-leaf", "y2k"].map(n => M.themes.find(t => t.name === n)).filter(Boolean);
