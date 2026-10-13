@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-uv-theme="obsidian">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MASTERY — Gold to Obsidian · UI Vault example</title>
+<meta name="description" content="Scroll a 3D blade through the mastery grind, Gold to Platinum to Damascus to animated Obsidian, built with UI Vault's skins3d.js and scroll API." />
+<meta name="theme-color" content="#060608" />
+<link rel="stylesheet" href="../lib/css/fonts.css" />
+<link rel="stylesheet" href="../lib/uivault.css" />
+<style>
+  html, body { background: #060608; }
+  body { margin: 0; color: #e9e7f2; font-family: "Geist", system-ui, sans-serif; overflow-x: clip; }
+  .ex-back { position: fixed; top: 14px; left: 14px; z-index: 100; padding: 8px 14px; border-radius: 4px; background: #111116cc; border: 1px solid #ffffff22; color: #fff; font: 500 13px "Geist", sans-serif; text-decoration: none; transition: border-color .2s; }
+  .ex-back:hover { border-color: #b68cff; }
+  .mono { font: 500 12px "Geist Mono", monospace; letter-spacing: .18em; text-transform: uppercase; color: #a99fc4; }
+  .disp { font: 400 1em/.86 "Bebas Neue", sans-serif; letter-spacing: .02em; }
+
+  .hero { position: relative; min-height: 100vh; display: grid; place-items: center; text-align: center; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 45% at 50% 55%, #2a1f45, transparent 70%); }
+  .hero .coin { position: absolute; width: min(80vmin, 640px); height: min(80vmin, 640px); left: 50%; top: 52%; translate: -50% -50%; opacity: .9; }
+  .hero h1 { position: relative; margin: 0; font-size: clamp(110px, 22vw, 330px); color: #fff; text-shadow: 0 10px 60px #000; z-index: 2; pointer-events: none; }
+  .hero p { position: relative; z-index: 2; margin: 6px 0 0; pointer-events: none; }
+  .hero .cue { position: absolute; bottom: 24px; left: 50%; translate: -50% 0; z-index: 2; }
+
+  /* the grind: four synced copies of the same blade, stacked; each new skin wipes in over the last */
+  .grind { --len: 560vh; }
+  .grind .uv-pin__stage { display: grid; grid-template-columns: 300px 1fr 300px; align-items: center; gap: 2vw; padding: 0 4vw; box-sizing: border-box;
+    background: radial-gradient(55% 60% at 50% 55%, #1b1726, #060608 75%); }
+  .stack { position: relative; height: min(76vh, 720px); }
+  .stack .layer { position: absolute; inset: 0; }
+  .stack .layer > div { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
+  .stack .layer { clip-path: inset(0 100% 0 0); } .stack .floor + .layer { clip-path: none; }
+  .scan { position: absolute; top: 6%; bottom: 6%; width: 2px; left: 0; z-index: 5; opacity: 0; background: linear-gradient(transparent, #fff, transparent); box-shadow: 0 0 18px 4px var(--c, #fff); pointer-events: none; }
+  .floor { position: absolute; left: 20%; right: 20%; bottom: 8%; height: 8%; border-radius: 50%; background: radial-gradient(closest-side, #000c, transparent); }
+  .hud { display: grid; gap: 16px; }
+  .hud .name { font-size: clamp(54px, 6vw, 92px); color: #fff; }
+  .hud .name small { display: block; font: 500 12px "Geist Mono", monospace; letter-spacing: .18em; color: var(--c, #a99fc4); margin-bottom: 8px; }
+  .hud .req { color: #b7b2c8; font-size: 15px; line-height: 1.5; min-height: 3em; }
+  .bar { height: 6px; border-radius: 3px; background: #ffffff14; overflow: hidden; } .bar i { display: block; height: 100%; width: 100%; transform-origin: left; transform: scaleX(var(--f, 0)); background: var(--c, #fff); box-shadow: 0 0 12px var(--c, #fff); }
+  .count { font: 500 22px "Geist Mono", monospace; font-variant-numeric: tabular-nums; }
+  .rungs { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .rungs li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 8px; border: 1px solid #ffffff14; background: #ffffff06; color: #8d88a0; transition: color .3s, border-color .3s, background-color .3s; }
+  .rungs li i { width: 18px; height: 18px; border-radius: 50%; border: 2px solid currentColor; display: grid; place-items: center; font-style: normal; font-size: 11px; }
+  .rungs li b { font: 400 26px/1 "Bebas Neue", sans-serif; letter-spacing: .04em; }
+  .rungs li.on { color: #fff; border-color: var(--c); background: color-mix(in srgb, var(--c) 10%, transparent); }
+  .rungs li.done { color: #d6d2e4; } .rungs li.done i { background: currentColor; } .rungs li.done i::after { content: "✓"; color: #060608; }
+  .banner { position: absolute; left: 50%; top: 10vh; translate: -50% 0; z-index: 6; padding: 10px 22px; border: 1px solid #b68cff; background: #120c1fcc; color: #fff; font: 400 34px "Bebas Neue", sans-serif; letter-spacing: .12em; opacity: 0; transform: translateY(-14px); transition: opacity .5s, transform .5s; pointer-events: none; white-space: nowrap; }
+  .banner.show { opacity: 1; transform: none; }
+
+  .after { padding: 18vh 6vw; text-align: center; }
+  .after h2 { font-size: clamp(64px, 10vw, 150px); margin: 0 0 12px; color: #fff; }
+  .row4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1100px; margin: 40px auto 30px; }
+  .row4 > div { height: 250px; border-radius: 14px; border: 1px solid #ffffff14; background: radial-gradient(70% 60% at 50% 40%, #1d1a26, #08080b 75%); }
+  .row4 > div > div { width: 100%; height: 100%; aspect-ratio: auto; }
+  .after .uv-btn { margin: 6px; }
+  footer { padding: 26px 6vw; border-top: 1px solid #ffffff14; color: #6f6a80; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; } footer a { color: inherit; }
+  @media (max-width: 900px) { .grind .uv-pin__stage { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; padding: 70px 18px 18px; } .rungs { grid-template-columns: repeat(4, 1fr); } .rungs li { padding: 8px; justify-content: center; } .rungs li b { font-size: 18px; } .stack { height: 46vh; } .hud .req { display: none; } .row4 { grid-template-columns: 1fr 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .uv-pin { height: auto; } .uv-pin__stage { position: relative; height: 100vh; } }
+</style>
+</head>
+<body>
+<a class="ex-back" href="../examples.html">← All examples</a>
+
+<header class="hero">
+  <div class="coin" data-uv-3d="gold" data-shape="coin" data-spin=".5" data-tilt=".15" data-res=".85"></div>
+  <div><p class="mono">Camo challenges · 4 tiers</p><h1 class="disp">Mastery</h1><p class="mono" style="color:#cfc8e6">Gold → Platinum → Damascus → Obsidian</p></div>
+  <p class="mono cue">Scroll to grind ↓</p>
+</header>
+
+<section class="uv-pin grind" id="grind" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <div class="hud">
+      <div class="name disp" id="name"><small id="tier">Tier 1 of 4</small><span id="label">Gold</span></div>
+      <p class="req" id="req">100 headshots on every weapon in the class.</p>
+      <div class="bar"><i id="bar"></i></div>
+      <div class="count" id="count">0 / 100</div>
+    </div>
+    <div class="stack" id="stack">
+      <div class="floor"></div>
+      <div class="layer"><div data-uv-3d="gold" data-shape="blade" data-sync data-spin=".3" data-tilt=".22"></div></div>
+      <div class="layer"><div data-uv-3d="platinum" data-shape="blade" data-sync data-spin=".3" data-tilt=".22"></div></div>
+      <div class="layer"><div data-uv-3d="damascus" data-shape="blade" data-sync data-spin=".3" data-tilt=".22"></div></div>
+      <div class="layer"><div data-uv-3d="obsidian" data-shape="blade" data-sync data-spin=".3" data-tilt=".22"></div></div>
+      <i class="scan" id="scan"></i>
+      <div class="banner" id="banner">Mastery complete</div>
+    </div>
+    <ol class="rungs" id="rungs">
+      <li style="--c:#ffcf5a"><i></i><b>Gold</b></li>
+      <li style="--c:#dfe4ef"><i></i><b>Platinum</b></li>
+      <li style="--c:#9aa7c0"><i></i><b>Damascus</b></li>
+      <li style="--c:#b68cff"><i></i><b>Obsidian</b></li>
+    </ol>
+  </div>
+</section>
+
+<section class="after">
+  <p class="mono" data-uv-reveal>Unlocked everywhere</p>
+  <h2 class="disp" data-uv-reveal="zoom">Obsidian, on everything.</h2>
+  <div class="row4" data-uv-stagger="up">
+    <div><div data-uv-3d="obsidian" data-shape="gem" data-fps="15" data-hover-fps data-drag></div></div>
+    <div><div data-uv-3d="obsidian-molten" data-shape="coin" data-fps="15" data-hover-fps data-drag></div></div>
+    <div><div data-uv-3d="obsidian" data-shape="knot" data-fps="15" data-hover-fps data-drag></div></div>
+    <div><div data-uv-3d="obsidian" data-shape="tag" data-fps="15" data-hover-fps data-drag></div></div>
+  </div>
+  <a class="uv-btn uv-btn--primary uv-btn--lg" href="../skins.html">See all 26 skins</a>
+  <a class="uv-btn uv-btn--lg" href="../library.html?cat=skins3d">Zip the ones you want</a>
+</section>
+<footer><span>An example built with <a href="../index.html">UI Vault</a>. Skins are original shader recreations of classic mastery-camo styles; not affiliated with any game.</span><span>Uses: skins3d.js · data-sync · uv-pin · UV.scrub · clip-path wipes</span></footer>
+
+<script src="../lib/uivault.js"></script>
+<script src="../lib/js/skins3d.js"></script>
+<script>
+  // tiers: [name, requirement, target count, colour]
+  const T = [["Gold", "100 headshots on every weapon in the class.", 100, "#ffcf5a"], ["Platinum", "Gold on every weapon in the class.", 12, "#dfe4ef"],
+             ["Damascus", "Platinum on every class.", 6, "#9aa7c0"], ["Obsidian", "Damascus, then 50 kills without dying. Ever.", 50, "#b68cff"]];
+  const layers = [...document.querySelectorAll("#stack .layer")], objs = layers.map(l => UV.skins3d.mount(l.firstElementChild));
+  const $ = id => document.getElementById(id), rungs = [...document.querySelectorAll("#rungs li")];
+  const stage = document.querySelector(".grind .uv-pin__stage");
+  let tier = -1;
+  UV.scrub($("grind"), p => {
+    const seg = Math.min(3.999, p * 4), k = Math.floor(seg), f = seg - k;                  // tier k, f = how far through it
+    // the wipe to the next skin happens over the last 30% of each tier
+    const wipe = k < 3 ? Math.max(0, (f - .7) / .3) : 0;
+    // layer i shows the band between its own wipe (right edge) and the next skin's wipe (left edge)
+    const w = i => i === 0 ? 1 : i <= k ? 1 : i === k + 1 ? wipe : 0;
+    layers.forEach((l, i) => { const r = 100 - w(i) * 100, lft = i < 3 ? w(i + 1) * 100 : 0; l.style.clipPath = `inset(0 ${r.toFixed(2)}% 0 ${lft.toFixed(2)}%)`; });
+    // only draw what can be seen: the current skin and, mid-wipe, the next one
+    objs.forEach((o, i) => o.set({ hold: !(i === k || (i === k + 1 && wipe > 0)) }));
+    const sc = $("scan"); sc.style.left = (wipe * 100).toFixed(2) + "%"; sc.style.opacity = wipe > 0 && wipe < 1 ? 1 : 0; sc.style.setProperty("--c", T[Math.min(3, k + 1)][3]);
+    // HUD
+    const shown = wipe > .5 ? Math.min(3, k + 1) : k;
+    if (shown !== tier) {
+      tier = shown; const [n, req, , c] = T[tier];
+      $("label").textContent = n; $("tier").textContent = `Tier ${tier + 1} of 4`; $("req").textContent = req; stage.style.setProperty("--c", c);
+      rungs.forEach((r, i) => { r.classList.toggle("on", i === tier); r.classList.toggle("done", i < tier); });
+    }
+    const prog = tier === k ? Math.min(1, f / .7) : 1, target = T[tier][2];
+    $("bar").style.setProperty("--f", (tier < k ? 1 : prog).toFixed(3));
+    $("count").textContent = `${Math.round((tier < k ? 1 : prog) * target)} / ${target}`;
+    const done = p > .97; $("banner").classList.toggle("show", done); if (done) rungs[3].classList.add("done");
+  }, "pin");
+</script>
+</body>
+</html>

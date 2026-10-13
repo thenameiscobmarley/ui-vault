@@ -14,6 +14,7 @@ LIB, CSS, JS, DL = ROOT / "lib", ROOT / "lib" / "css", ROOT / "lib" / "js", ROOT
 VERSION = "3.1.0"
 CSS_ORDER = ["core", "components", "fx", "blocks"]
 JS_ORDER = ["core", "motion", "feedback", "forms", "fx", "waterfall", "layers"]
+JS_EXTRA = ["skins3d"]   # separate modules, not in the uivault.js bundle (load them yourself)
 DESC = {
     "core.css": "Tokens, light/dark, base helpers. Required.",
     "components.css": "Buttons, cards, forms, tabs, badges, overlays, nav, data, loaders, backgrounds.",
@@ -27,6 +28,7 @@ DESC = {
     "waterfall.js": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen).",
     "parts.css": "All element designs (buttons, cards, inputs, switches, tabs, nav, badges, alerts, modals, spinners, progress, headings, backgrounds) in one file.",
     "parts.json": "Every element design and kit as data (names, descriptions, Python/C++ approximations).",
+    "skins3d.js": "Real-time 3D objects (blade, gem, coin, knot…) in 25 animated mastery-camo materials: obsidian, dark matter, damascus, gold… WebGL, no libraries. Load after core.js.",
     "layers.js": "Effect layers: stack glow, shadow, border, backdrop, fill, shape, text, hover, press, entrance, idle and uv-fx effects on any element type or one element (UV.layers.apply).",
     "fx.js": "Canvas + pointer effects: matrix, starfield, particles, snow, cursor trail/blob, sparkles, magnet, gravity, fireworks.",
 }
@@ -342,6 +344,7 @@ PAGES = [  # page, title, what it is, group
     ("themes.html", "Themes", "87 complete design styles with a theme builder", "Design"),
     ("elements.html", "Elements", "273 element designs to mix and match, plus kits", "Design"),
     ("lab.html", "Test page", "Try any theme, kit and design on a dashboard, landing page, settings form and shop", "Design"),
+    ("skins.html", "3D skins", "Real-time 3D objects in 25 animated mastery camos: obsidian, dark matter, damascus, gold, diamond…", "Design"),
     ("examples.html", "See examples", "Six complete scroll-animated websites built only with the library", "Design"),
     ("showcase.html", "Showcase", "30 finished pieces built with the library", "Design"),
     ("blocks.html", "Blocks", "41 page sections: heroes, pricing tables, footers…", "Design"),
@@ -350,6 +353,7 @@ PAGES = [  # page, title, what it is, group
     ("examples/signal.html", "SIGNAL/01 · example", "Cyberpunk product: velocity marquees, 3D exploded view, theme-swapping colourways", "Examples"),
     ("examples/folio.html", "FOLIO · example", "Magazine long-read: shrinking headline, word-by-word quote, scrollytelling chart, lighthouse beam", "Examples"),
     ("examples/brew.html", "BREW · example", "Coffee brand: a cup that fills as you scroll, self-drawing path, stacking menu cards", "Examples"),
+    ("examples/mastery.html", "MASTERY · example", "Scroll a blade from Gold to Platinum, Damascus and animated Obsidian", "Examples"),
     ("examples/prism.html", "PRISM · example", "SaaS landing: a dashboard that assembles itself, then wears five themes", "Examples"),
     ("docs.html", "Web docs", "Every web component and function with live examples", "Code"),
     ("code.html", "Python & C++", "The uivault Python package, uivault.hpp and UiVault3 native widgets", "Code"),
@@ -416,6 +420,9 @@ def build_catalog():
         for n in re.findall(r'\bfx(?:\.([a-zA-Z]+)|\["([a-z-]+)"\]) = ', src):
             n = n[0] or n[1]
             if n not in ("list", "split"): items.append(["JavaScript", "js/UV.fx." + n, f"UV.fx.{n}(el)" if "-" not in n else f'UV.fx["{n}"](el)', f"{m_}.js canvas/pointer effect", f"library.html?item=js/UV.fx.{n}", m_])
+    # 3D skins (lib/js/skins3d.js)
+    for key, label, grp, desc in re.findall(r'^    "?([a-z-]+)"?: \["([^"]+)", "([^"]+)", "([^"]+)"', (JS / "skins3d.js").read_text(), re.M):
+        items.append(["3D skin", "skin3d/" + key, label, f"{grp} 3D skin: {desc}", f"library.html?item=skin3d/{key}", grp])
     # Python & C++
     py = (ROOT / "python" / "uivault" / "__init__.py").read_text()
     for n in re.findall(r"^def ([a-z][a-z_]*)\(", py, re.M):
@@ -432,7 +439,7 @@ def build_catalog():
 
 def raw_src():
     """lib/raw-src.js: CSS bundle text + JS module sources, used by the site's "Raw code" view."""
-    src = {"css": (LIB / "uivault.css").read_text(), "js": {m: (JS / f"{m}.js").read_text() for m in JS_ORDER}}
+    src = {"css": (LIB / "uivault.css").read_text(), "js": {m: (JS / f"{m}.js").read_text() for m in JS_ORDER + JS_EXTRA}}
     (LIB / "raw-src.js").write_text("window.UV_SRC = " + json.dumps(src, ensure_ascii=False) + ";\n")
 
 

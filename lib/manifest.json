@@ -1176,6 +1176,11 @@
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
   },
   {
+   "path": "js/skins3d.js",
+   "bytes": 33903,
+   "desc": "Real-time 3D objects (blade, gem, coin, knot…) in 25 animated mastery-camo materials: obsidian, dark matter, damascus, gold… WebGL, no libraries. Load after core.js."
+  },
+  {
    "path": "js/waterfall.js",
    "bytes": 10802,
    "desc": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen)."
