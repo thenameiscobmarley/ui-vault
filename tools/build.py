@@ -37,13 +37,45 @@ def theme_sources():
     return (CSS / "themes.src.css").read_text() + "\n" + gen_css, meta
 
 
+def scope_nearest(css):
+    """Make each theme rule stop at nested themes, so the CLOSEST data-uv-theme always wins:
+    [data-uv-theme="x"] .btn  →  [data-uv-theme="x"] .btn:not([data-uv-theme="x"] [data-uv-theme]:not([data-uv-theme="x"]) *)"""
+    out, i = [], 0
+    while True:
+        o = css.find("{", i)
+        if o < 0: out.append(css[i:]); break
+        close = css.find("}", o)
+        head, body = css[i:o], css[o:close + 1]
+        lead = head[:len(head) - len(head.lstrip())]
+        # keep comments that precede the selector
+        cm = head.rfind("*/")
+        pre, sel = (head[:cm + 2], head[cm + 2:]) if cm >= 0 else ("", head)
+        sel_s = sel.strip()
+        if sel_s and not sel_s.startswith("@"):
+            parts = []
+            for part in sel_s.split(","):
+                part = part.strip()
+                m = re.match(r'(\[data-uv-theme="([\w-]+)"\])\s+(.+)$', part)
+                if m:
+                    root, name, rest = m.groups()
+                    guard = f':not([data-uv-theme="{name}"] [data-uv-theme]:not([data-uv-theme="{name}"]) *)'
+                    pe = re.search(r"::[\w-]+$", rest)
+                    rest = rest[:pe.start()] + guard + pe.group() if pe else rest + guard
+                    part = f"{root} {rest}"
+                parts.append(part)
+            sel = (sel[:len(sel) - len(sel.lstrip())]) + ", ".join(parts) + " "
+        out.append(pre + sel + body)
+        i = close + 1
+    return "".join(out)
+
+
 def split_themes():
     src, meta = theme_sources()
     parts = re.split(r"/\* @theme (\w[\w-]*) — (.*?) \*/\n", src)
     themes, out_dir = [], CSS / "themes"
     out_dir.mkdir(exist_ok=True)
     for i in range(1, len(parts), 3):
-        name, desc, body = parts[i], parts[i + 1], parts[i + 2].strip() + "\n"
+        name, desc, body = parts[i], parts[i + 1], scope_nearest(parts[i + 2].strip()) + "\n"
         (out_dir / f"{name}.css").write_text(f"/*! UI Vault {VERSION} · theme: {name} — {desc}. Needs core.css. MIT */\n{body}")
         cat = meta[name]["category"] if name in meta else theme_specs.CORE_META[name][0]
         themes.append({"name": name, "desc": desc, "file": f"css/themes/{name}.css", "category": cat})

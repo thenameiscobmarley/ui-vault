@@ -6,13 +6,13 @@
   --uv-head-weight: 800; --uv-head-case: none;
   background-image: radial-gradient(45% 55% at 12% 10%, #bfe0ff73, transparent 70%), radial-gradient(40% 50% at 88% 22%, #e3f6ff61, transparent 70%), radial-gradient(55% 50% at 55% 100%, #d9e8ff59, transparent 70%);
 }
-[data-uv-theme="sky"] .uv-btn--primary, [data-uv-theme="sky"] .uv-btn--grad { background: #4a9bff; color: #111111; border-color: #4a9bff; }
-[data-uv-theme="sky"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="sky"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #1b2f4a0f, 0 14px 34px -14px #1b2f4a59; }
-[data-uv-theme="sky"] .uv-tabs > .uv-tabs__ind { background: #4a9bff; } [data-uv-theme="sky"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="sky"] .uv-switch input:checked + i, [data-uv-theme="sky"] .uv-check input:checked { background: #4a9bff; border-color: #4a9bff; }
-[data-uv-theme="sky"] .uv-progress > i { background: #4a9bff; } [data-uv-theme="sky"] .uv-ring { background: conic-gradient(#4a9bff calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="sky"] .uv-input:focus, [data-uv-theme="sky"] .uv-select:focus, [data-uv-theme="sky"] .uv-textarea:focus { border-color: #4a9bff; box-shadow: 0 0 0 3px #4a9bff38; }
-[data-uv-theme="sky"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="sky"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="sky"] .uv-btn:active { translate: 0 1px; }
-[data-uv-theme="sky"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="sky"] .uv-btn--primary:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *), [data-uv-theme="sky"] .uv-btn--grad:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { background: #4a9bff; color: #111111; border-color: #4a9bff; }
+[data-uv-theme="sky"] .uv-btn--primary:hover:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { filter: brightness(1.06); }
+[data-uv-theme="sky"] .uv-card:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { border-color: transparent; box-shadow: 0 1px 2px #1b2f4a0f, 0 14px 34px -14px #1b2f4a59; }
+[data-uv-theme="sky"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { background: #4a9bff; } [data-uv-theme="sky"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { color: #111111; }
+[data-uv-theme="sky"] .uv-switch input:checked + i:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *), [data-uv-theme="sky"] .uv-check input:checked:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { background: #4a9bff; border-color: #4a9bff; }
+[data-uv-theme="sky"] .uv-progress > i:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { background: #4a9bff; } [data-uv-theme="sky"] .uv-ring:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { background: conic-gradient(#4a9bff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="sky"] .uv-input:focus:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *), [data-uv-theme="sky"] .uv-select:focus:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *), [data-uv-theme="sky"] .uv-textarea:focus:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { border-color: #4a9bff; box-shadow: 0 0 0 3px #4a9bff38; }
+[data-uv-theme="sky"] .uv-btn:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="sky"] .uv-btn:hover:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="sky"] .uv-btn:active:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { translate: 0 1px; }
+[data-uv-theme="sky"] .uv-card--hover:hover:not([data-uv-theme="sky"] [data-uv-theme]:not([data-uv-theme="sky"]) *) { translate: 0 -4px; }

@@ -9,6 +9,6 @@
   --uv-card-shadow: inset 0 1px 0 #fff, 0 20px 40px -20px #7a5cff80;
   background-image: linear-gradient(135deg, #ffd6f5, #d6e8ff 45%, #e9ffd6);
 }
-[data-uv-theme="y2k"] .uv-btn--primary { background: linear-gradient(180deg, #fff, #c9c3ff 45%, #9f8cff 55%, #e0dbff); color: #1b1240; border-color: #7a5cff66; }
-[data-uv-theme="y2k"] .uv-h1, [data-uv-theme="y2k"] .uv-h2 { background: linear-gradient(180deg, #2a1f66 30%, #9f8cff 50%, #2a1f66 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-[data-uv-theme="y2k"] .uv-tabs > .uv-tabs__ind { background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2)); } [data-uv-theme="y2k"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+[data-uv-theme="y2k"] .uv-btn--primary:not([data-uv-theme="y2k"] [data-uv-theme]:not([data-uv-theme="y2k"]) *) { background: linear-gradient(180deg, #fff, #c9c3ff 45%, #9f8cff 55%, #e0dbff); color: #1b1240; border-color: #7a5cff66; }
+[data-uv-theme="y2k"] .uv-h1:not([data-uv-theme="y2k"] [data-uv-theme]:not([data-uv-theme="y2k"]) *), [data-uv-theme="y2k"] .uv-h2:not([data-uv-theme="y2k"] [data-uv-theme]:not([data-uv-theme="y2k"]) *) { background: linear-gradient(180deg, #2a1f66 30%, #9f8cff 50%, #2a1f66 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-uv-theme="y2k"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="y2k"] [data-uv-theme]:not([data-uv-theme="y2k"]) *) { background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2)); } [data-uv-theme="y2k"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="y2k"] [data-uv-theme]:not([data-uv-theme="y2k"]) *) { color: #fff; }

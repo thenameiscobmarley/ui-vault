@@ -6,13 +6,13 @@
   --uv-head-weight: 700; --uv-head-case: uppercase; --uv-head-tracking: .01em;
   
 }
-[data-uv-theme="tangerine"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
-[data-uv-theme="tangerine"] .uv-btn--primary, [data-uv-theme="tangerine"] .uv-btn--grad { background: #1a0f06; color: #ff7a1a; border-color: #1a0f06; }
-[data-uv-theme="tangerine"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="tangerine"] .uv-card { border: 2px solid #1a0f06; box-shadow: none; }
-[data-uv-theme="tangerine"] .uv-tabs > .uv-tabs__ind { background: #1a0f06; } [data-uv-theme="tangerine"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="tangerine"] .uv-switch input:checked + i, [data-uv-theme="tangerine"] .uv-check input:checked { background: #1a0f06; border-color: #1a0f06; }
-[data-uv-theme="tangerine"] .uv-progress > i { background: #1a0f06; } [data-uv-theme="tangerine"] .uv-ring { background: conic-gradient(#1a0f06 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="tangerine"] .uv-input:focus, [data-uv-theme="tangerine"] .uv-select:focus, [data-uv-theme="tangerine"] .uv-textarea:focus { border-color: #1a0f06; box-shadow: 0 0 0 3px #1a0f0638; }
-[data-uv-theme="tangerine"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="tangerine"] .uv-btn:hover { background: #1a0f06; color: #ff7a1a; border-color: #1a0f06; }
+[data-uv-theme="tangerine"] .uv-btn:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="tangerine"] .uv-btn--primary:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *), [data-uv-theme="tangerine"] .uv-btn--grad:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { background: #1a0f06; color: #ff7a1a; border-color: #1a0f06; }
+[data-uv-theme="tangerine"] .uv-btn--primary:hover:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { filter: brightness(1.06); }
+[data-uv-theme="tangerine"] .uv-card:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { border: 2px solid #1a0f06; box-shadow: none; }
+[data-uv-theme="tangerine"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { background: #1a0f06; } [data-uv-theme="tangerine"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { color: #ffffff; }
+[data-uv-theme="tangerine"] .uv-switch input:checked + i:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *), [data-uv-theme="tangerine"] .uv-check input:checked:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { background: #1a0f06; border-color: #1a0f06; }
+[data-uv-theme="tangerine"] .uv-progress > i:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { background: #1a0f06; } [data-uv-theme="tangerine"] .uv-ring:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { background: conic-gradient(#1a0f06 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="tangerine"] .uv-input:focus:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *), [data-uv-theme="tangerine"] .uv-select:focus:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *), [data-uv-theme="tangerine"] .uv-textarea:focus:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { border-color: #1a0f06; box-shadow: 0 0 0 3px #1a0f0638; }
+[data-uv-theme="tangerine"] .uv-btn:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="tangerine"] .uv-btn:hover:not([data-uv-theme="tangerine"] [data-uv-theme]:not([data-uv-theme="tangerine"]) *) { background: #1a0f06; color: #ff7a1a; border-color: #1a0f06; }

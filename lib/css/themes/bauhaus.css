@@ -6,13 +6,13 @@
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.05em;
   
 }
-[data-uv-theme="bauhaus"] .uv-btn--primary, [data-uv-theme="bauhaus"] .uv-btn--grad { background: #d6281b; color: #ffffff; border-color: #d6281b; }
-[data-uv-theme="bauhaus"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="bauhaus"] .uv-card { border: 2px solid #141414; box-shadow: none; }
-[data-uv-theme="bauhaus"] .uv-tabs > .uv-tabs__ind { background: #d6281b; } [data-uv-theme="bauhaus"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="bauhaus"] .uv-switch input:checked + i, [data-uv-theme="bauhaus"] .uv-check input:checked { background: #d6281b; border-color: #d6281b; }
-[data-uv-theme="bauhaus"] .uv-progress > i { background: #d6281b; } [data-uv-theme="bauhaus"] .uv-ring { background: conic-gradient(#d6281b calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="bauhaus"] .uv-input:focus, [data-uv-theme="bauhaus"] .uv-select:focus, [data-uv-theme="bauhaus"] .uv-textarea:focus { border-color: #d6281b; box-shadow: 0 0 0 3px #d6281b38; }
-[data-uv-theme="bauhaus"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="bauhaus"] .uv-btn:hover { rotate: -2deg; scale: 1.03; }
-[data-uv-theme="bauhaus"] .uv-card--hover:hover { rotate: -1deg; }
+[data-uv-theme="bauhaus"] .uv-btn--primary:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *), [data-uv-theme="bauhaus"] .uv-btn--grad:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { background: #d6281b; color: #ffffff; border-color: #d6281b; }
+[data-uv-theme="bauhaus"] .uv-btn--primary:hover:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { filter: brightness(1.06); }
+[data-uv-theme="bauhaus"] .uv-card:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { border: 2px solid #141414; box-shadow: none; }
+[data-uv-theme="bauhaus"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { background: #d6281b; } [data-uv-theme="bauhaus"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { color: #ffffff; }
+[data-uv-theme="bauhaus"] .uv-switch input:checked + i:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *), [data-uv-theme="bauhaus"] .uv-check input:checked:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { background: #d6281b; border-color: #d6281b; }
+[data-uv-theme="bauhaus"] .uv-progress > i:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { background: #d6281b; } [data-uv-theme="bauhaus"] .uv-ring:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { background: conic-gradient(#d6281b calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="bauhaus"] .uv-input:focus:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *), [data-uv-theme="bauhaus"] .uv-select:focus:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *), [data-uv-theme="bauhaus"] .uv-textarea:focus:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { border-color: #d6281b; box-shadow: 0 0 0 3px #d6281b38; }
+[data-uv-theme="bauhaus"] .uv-btn:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="bauhaus"] .uv-btn:hover:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { rotate: -2deg; scale: 1.03; }
+[data-uv-theme="bauhaus"] .uv-card--hover:hover:not([data-uv-theme="bauhaus"] [data-uv-theme]:not([data-uv-theme="bauhaus"]) *) { rotate: -1deg; }

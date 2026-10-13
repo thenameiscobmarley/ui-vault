@@ -7,8 +7,8 @@
   --uv-r-xs: 8px; --uv-r-sm: 14px; --uv-r: 18px; --uv-r-lg: 24px; --uv-bw: 0;
   --uv-btn-shadow: 0 6px 16px -6px #7c6cf280; --uv-card-shadow: 0 2px 4px #5b4bd90d, 0 18px 40px -18px #5b4bd94d; --uv-focus: 0 0 0 4px #7c6cf233;
 }
-[data-uv-theme="soft"] .uv-btn--primary { background: var(--uv-accent); color: #fff; }
-[data-uv-theme="soft"] .uv-btn--primary:hover { background: #6a59ea; }
-[data-uv-theme="soft"] .uv-btn--ghost { background: var(--uv-surface); }
-[data-uv-theme="soft"] .uv-input { background: var(--uv-surface-2); }
-[data-uv-theme="soft"] .uv-tabs { background: var(--uv-surface-2); border: 0; } [data-uv-theme="soft"] .uv-tabs > .uv-tabs__ind { background: #fff; box-shadow: 0 4px 12px -4px #5b4bd94d; } [data-uv-theme="soft"] .uv-tabs > button[aria-selected="true"] { color: var(--uv-text); }
+[data-uv-theme="soft"] .uv-btn--primary:not([data-uv-theme="soft"] [data-uv-theme]:not([data-uv-theme="soft"]) *) { background: var(--uv-accent); color: #fff; }
+[data-uv-theme="soft"] .uv-btn--primary:hover:not([data-uv-theme="soft"] [data-uv-theme]:not([data-uv-theme="soft"]) *) { background: #6a59ea; }
+[data-uv-theme="soft"] .uv-btn--ghost:not([data-uv-theme="soft"] [data-uv-theme]:not([data-uv-theme="soft"]) *) { background: var(--uv-surface); }
+[data-uv-theme="soft"] .uv-input:not([data-uv-theme="soft"] [data-uv-theme]:not([data-uv-theme="soft"]) *) { background: var(--uv-surface-2); }
+[data-uv-theme="soft"] .uv-tabs:not([data-uv-theme="soft"] [data-uv-theme]:not([data-uv-theme="soft"]) *) { background: var(--uv-surface-2); border: 0; } [data-uv-theme="soft"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="soft"] [data-uv-theme]:not([data-uv-theme="soft"]) *) { background: #fff; box-shadow: 0 4px 12px -4px #5b4bd94d; } [data-uv-theme="soft"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="soft"] [data-uv-theme]:not([data-uv-theme="soft"]) *) { color: var(--uv-text); }

@@ -6,13 +6,13 @@
   --uv-head-weight: 700; --uv-head-case: none;
   
 }
-[data-uv-theme="gameboy"] .uv-btn--primary, [data-uv-theme="gameboy"] .uv-btn--grad { background: #306230; color: #ffffff; border: 2px solid #0f380f; box-shadow: 4px 4px 0 #0f380f; }
-[data-uv-theme="gameboy"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="gameboy"] .uv-card { border: 2px solid #0f380f; box-shadow: none; }
-[data-uv-theme="gameboy"] .uv-tabs > .uv-tabs__ind { background: #306230; } [data-uv-theme="gameboy"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="gameboy"] .uv-switch input:checked + i, [data-uv-theme="gameboy"] .uv-check input:checked { background: #306230; border-color: #306230; }
-[data-uv-theme="gameboy"] .uv-progress > i { background: #306230; } [data-uv-theme="gameboy"] .uv-ring { background: conic-gradient(#306230 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="gameboy"] .uv-input:focus, [data-uv-theme="gameboy"] .uv-select:focus, [data-uv-theme="gameboy"] .uv-textarea:focus { border-color: #306230; box-shadow: 0 0 0 3px #30623038; }
-[data-uv-theme="gameboy"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="gameboy"] .uv-btn:hover { translate: 2px 2px; box-shadow: 1px 1px 0 #0f380f; } [data-uv-theme="gameboy"] .uv-btn:active { translate: 4px 4px; box-shadow: none; }
-[data-uv-theme="gameboy"] .uv-card--hover:hover { translate: 3px 3px; }
+[data-uv-theme="gameboy"] .uv-btn--primary:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *), [data-uv-theme="gameboy"] .uv-btn--grad:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { background: #306230; color: #ffffff; border: 2px solid #0f380f; box-shadow: 4px 4px 0 #0f380f; }
+[data-uv-theme="gameboy"] .uv-btn--primary:hover:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { filter: brightness(1.06); }
+[data-uv-theme="gameboy"] .uv-card:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { border: 2px solid #0f380f; box-shadow: none; }
+[data-uv-theme="gameboy"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { background: #306230; } [data-uv-theme="gameboy"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { color: #ffffff; }
+[data-uv-theme="gameboy"] .uv-switch input:checked + i:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *), [data-uv-theme="gameboy"] .uv-check input:checked:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { background: #306230; border-color: #306230; }
+[data-uv-theme="gameboy"] .uv-progress > i:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { background: #306230; } [data-uv-theme="gameboy"] .uv-ring:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { background: conic-gradient(#306230 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="gameboy"] .uv-input:focus:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *), [data-uv-theme="gameboy"] .uv-select:focus:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *), [data-uv-theme="gameboy"] .uv-textarea:focus:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { border-color: #306230; box-shadow: 0 0 0 3px #30623038; }
+[data-uv-theme="gameboy"] .uv-btn:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="gameboy"] .uv-btn:hover:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { translate: 2px 2px; box-shadow: 1px 1px 0 #0f380f; } [data-uv-theme="gameboy"] .uv-btn:active:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { translate: 4px 4px; box-shadow: none; }
+[data-uv-theme="gameboy"] .uv-card--hover:hover:not([data-uv-theme="gameboy"] [data-uv-theme]:not([data-uv-theme="gameboy"]) *) { translate: 3px 3px; }

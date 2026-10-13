@@ -6,13 +6,13 @@
   --uv-head-weight: 800; --uv-head-case: none;
   
 }
-[data-uv-theme="bubblegum"] .uv-btn--primary, [data-uv-theme="bubblegum"] .uv-btn--grad { background: #ff4fb3; color: #ffffff; border-color: #ff4fb3; box-shadow: 0 5px 0 #a63374; }
-[data-uv-theme="bubblegum"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="bubblegum"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #3d12360f, 0 14px 34px -14px #3d123659; }
-[data-uv-theme="bubblegum"] .uv-tabs > .uv-tabs__ind { background: #ff4fb3; } [data-uv-theme="bubblegum"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="bubblegum"] .uv-switch input:checked + i, [data-uv-theme="bubblegum"] .uv-check input:checked { background: #ff4fb3; border-color: #ff4fb3; }
-[data-uv-theme="bubblegum"] .uv-progress > i { background: #ff4fb3; } [data-uv-theme="bubblegum"] .uv-ring { background: conic-gradient(#ff4fb3 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="bubblegum"] .uv-input:focus, [data-uv-theme="bubblegum"] .uv-select:focus, [data-uv-theme="bubblegum"] .uv-textarea:focus { border-color: #ff4fb3; box-shadow: 0 0 0 3px #ff4fb338; }
-[data-uv-theme="bubblegum"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="bubblegum"] .uv-btn:hover { animation: uvt-jelly .55s; }
-[data-uv-theme="bubblegum"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="bubblegum"] .uv-btn--primary:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *), [data-uv-theme="bubblegum"] .uv-btn--grad:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { background: #ff4fb3; color: #ffffff; border-color: #ff4fb3; box-shadow: 0 5px 0 #a63374; }
+[data-uv-theme="bubblegum"] .uv-btn--primary:hover:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { filter: brightness(1.06); }
+[data-uv-theme="bubblegum"] .uv-card:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { border-color: transparent; box-shadow: 0 1px 2px #3d12360f, 0 14px 34px -14px #3d123659; }
+[data-uv-theme="bubblegum"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { background: #ff4fb3; } [data-uv-theme="bubblegum"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { color: #ffffff; }
+[data-uv-theme="bubblegum"] .uv-switch input:checked + i:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *), [data-uv-theme="bubblegum"] .uv-check input:checked:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { background: #ff4fb3; border-color: #ff4fb3; }
+[data-uv-theme="bubblegum"] .uv-progress > i:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { background: #ff4fb3; } [data-uv-theme="bubblegum"] .uv-ring:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { background: conic-gradient(#ff4fb3 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="bubblegum"] .uv-input:focus:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *), [data-uv-theme="bubblegum"] .uv-select:focus:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *), [data-uv-theme="bubblegum"] .uv-textarea:focus:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { border-color: #ff4fb3; box-shadow: 0 0 0 3px #ff4fb338; }
+[data-uv-theme="bubblegum"] .uv-btn:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="bubblegum"] .uv-btn:hover:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { animation: uvt-jelly .55s; }
+[data-uv-theme="bubblegum"] .uv-card--hover:hover:not([data-uv-theme="bubblegum"] [data-uv-theme]:not([data-uv-theme="bubblegum"]) *) { translate: 0 -4px; }

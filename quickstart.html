@@ -95,7 +95,7 @@
   @media (max-width: 900px) { .sec-head, .builder { grid-template-columns: 1fr; } .step { grid-template-columns: 40px 1fr; } .step .result { grid-column: 2; } .top nav { display: none; } }
 </style>
 <script>try{const t=localStorage.getItem("uv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
-<script>try{const t=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 </head>
 <body class="uv">
 <header class="top">

@@ -6,13 +6,13 @@
   --uv-head-weight: 700; --uv-head-case: none;
   
 }
-[data-uv-theme="peach"] .uv-btn--primary, [data-uv-theme="peach"] .uv-btn--grad { background: #ff8a5c; color: #111111; border-color: #ff8a5c; }
-[data-uv-theme="peach"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="peach"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #4a2c220f, 0 14px 34px -14px #4a2c2259; }
-[data-uv-theme="peach"] .uv-tabs > .uv-tabs__ind { background: #ff8a5c; } [data-uv-theme="peach"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="peach"] .uv-switch input:checked + i, [data-uv-theme="peach"] .uv-check input:checked { background: #ff8a5c; border-color: #ff8a5c; }
-[data-uv-theme="peach"] .uv-progress > i { background: #ff8a5c; } [data-uv-theme="peach"] .uv-ring { background: conic-gradient(#ff8a5c calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="peach"] .uv-input:focus, [data-uv-theme="peach"] .uv-select:focus, [data-uv-theme="peach"] .uv-textarea:focus { border-color: #ff8a5c; box-shadow: 0 0 0 3px #ff8a5c38; }
-[data-uv-theme="peach"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="peach"] .uv-btn:hover { scale: 1.06; } [data-uv-theme="peach"] .uv-btn:active { scale: .96; }
-[data-uv-theme="peach"] .uv-card--hover:hover { scale: 1.02; }
+[data-uv-theme="peach"] .uv-btn--primary:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *), [data-uv-theme="peach"] .uv-btn--grad:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { background: #ff8a5c; color: #111111; border-color: #ff8a5c; }
+[data-uv-theme="peach"] .uv-btn--primary:hover:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { filter: brightness(1.06); }
+[data-uv-theme="peach"] .uv-card:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { border-color: transparent; box-shadow: 0 1px 2px #4a2c220f, 0 14px 34px -14px #4a2c2259; }
+[data-uv-theme="peach"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { background: #ff8a5c; } [data-uv-theme="peach"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { color: #111111; }
+[data-uv-theme="peach"] .uv-switch input:checked + i:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *), [data-uv-theme="peach"] .uv-check input:checked:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { background: #ff8a5c; border-color: #ff8a5c; }
+[data-uv-theme="peach"] .uv-progress > i:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { background: #ff8a5c; } [data-uv-theme="peach"] .uv-ring:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { background: conic-gradient(#ff8a5c calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="peach"] .uv-input:focus:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *), [data-uv-theme="peach"] .uv-select:focus:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *), [data-uv-theme="peach"] .uv-textarea:focus:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { border-color: #ff8a5c; box-shadow: 0 0 0 3px #ff8a5c38; }
+[data-uv-theme="peach"] .uv-btn:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="peach"] .uv-btn:hover:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { scale: 1.06; } [data-uv-theme="peach"] .uv-btn:active:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { scale: .96; }
+[data-uv-theme="peach"] .uv-card--hover:hover:not([data-uv-theme="peach"] [data-uv-theme]:not([data-uv-theme="peach"]) *) { scale: 1.02; }

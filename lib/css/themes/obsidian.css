@@ -7,13 +7,13 @@
   color-scheme: dark;
   
 }
-[data-uv-theme="obsidian"] .uv-btn--primary, [data-uv-theme="obsidian"] .uv-btn--grad { background: linear-gradient(135deg, #9d7bff, #ff6ad5); color: #111111; border-color: transparent; }
-[data-uv-theme="obsidian"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="obsidian"] .uv-card { border: 1.5px solid transparent; background: linear-gradient(#151518, #151518) padding-box, linear-gradient(135deg, #9d7bff, #ff6ad5) border-box; }
-[data-uv-theme="obsidian"] .uv-tabs > .uv-tabs__ind { background: #9d7bff; } [data-uv-theme="obsidian"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="obsidian"] .uv-switch input:checked + i, [data-uv-theme="obsidian"] .uv-check input:checked { background: #9d7bff; border-color: #9d7bff; }
-[data-uv-theme="obsidian"] .uv-progress > i { background: #9d7bff; } [data-uv-theme="obsidian"] .uv-ring { background: conic-gradient(#9d7bff calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="obsidian"] .uv-input:focus, [data-uv-theme="obsidian"] .uv-select:focus, [data-uv-theme="obsidian"] .uv-textarea:focus { border-color: #9d7bff; box-shadow: 0 0 0 3px #9d7bff38; }
-[data-uv-theme="obsidian"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="obsidian"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="obsidian"] .uv-btn:active { translate: 0 1px; }
-[data-uv-theme="obsidian"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="obsidian"] .uv-btn--primary:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *), [data-uv-theme="obsidian"] .uv-btn--grad:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { background: linear-gradient(135deg, #9d7bff, #ff6ad5); color: #111111; border-color: transparent; }
+[data-uv-theme="obsidian"] .uv-btn--primary:hover:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { filter: brightness(1.06); }
+[data-uv-theme="obsidian"] .uv-card:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { border: 1.5px solid transparent; background: linear-gradient(#151518, #151518) padding-box, linear-gradient(135deg, #9d7bff, #ff6ad5) border-box; }
+[data-uv-theme="obsidian"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { background: #9d7bff; } [data-uv-theme="obsidian"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { color: #ffffff; }
+[data-uv-theme="obsidian"] .uv-switch input:checked + i:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *), [data-uv-theme="obsidian"] .uv-check input:checked:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { background: #9d7bff; border-color: #9d7bff; }
+[data-uv-theme="obsidian"] .uv-progress > i:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { background: #9d7bff; } [data-uv-theme="obsidian"] .uv-ring:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { background: conic-gradient(#9d7bff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="obsidian"] .uv-input:focus:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *), [data-uv-theme="obsidian"] .uv-select:focus:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *), [data-uv-theme="obsidian"] .uv-textarea:focus:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { border-color: #9d7bff; box-shadow: 0 0 0 3px #9d7bff38; }
+[data-uv-theme="obsidian"] .uv-btn:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="obsidian"] .uv-btn:hover:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="obsidian"] .uv-btn:active:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { translate: 0 1px; }
+[data-uv-theme="obsidian"] .uv-card--hover:hover:not([data-uv-theme="obsidian"] [data-uv-theme]:not([data-uv-theme="obsidian"]) *) { translate: 0 -4px; }

@@ -566,117 +566,117 @@
   },
   {
    "path": "css/themes/amber-crt.css",
-   "bytes": 2704,
+   "bytes": 4384,
    "desc": ""
   },
   {
    "path": "css/themes/anodized.css",
-   "bytes": 3287,
+   "bytes": 4845,
    "desc": ""
   },
   {
    "path": "css/themes/arcade.css",
-   "bytes": 2402,
+   "bytes": 3728,
    "desc": ""
   },
   {
    "path": "css/themes/aurora-borealis.css",
-   "bytes": 3062,
+   "bytes": 4790,
    "desc": ""
   },
   {
    "path": "css/themes/autumn.css",
-   "bytes": 2230,
+   "bytes": 3556,
    "desc": ""
   },
   {
    "path": "css/themes/bauhaus.css",
-   "bytes": 2144,
+   "bytes": 3424,
    "desc": ""
   },
   {
    "path": "css/themes/black-pearl.css",
-   "bytes": 3209,
+   "bytes": 4881,
    "desc": ""
   },
   {
    "path": "css/themes/blueprint.css",
-   "bytes": 2710,
+   "bytes": 4222,
    "desc": ""
   },
   {
    "path": "css/themes/brutal-lime.css",
-   "bytes": 2384,
+   "bytes": 3880,
    "desc": ""
   },
   {
    "path": "css/themes/brutal.css",
-   "bytes": 1540,
+   "bytes": 2320,
    "desc": ""
   },
   {
    "path": "css/themes/bubblegum.css",
-   "bytes": 2235,
+   "bytes": 3579,
    "desc": ""
   },
   {
    "path": "css/themes/candy-apple.css",
-   "bytes": 3438,
+   "bytes": 5110,
    "desc": ""
   },
   {
    "path": "css/themes/carbon-fiber.css",
-   "bytes": 3364,
+   "bytes": 5074,
    "desc": ""
   },
   {
    "path": "css/themes/case-hardened.css",
-   "bytes": 3539,
+   "bytes": 5379,
    "desc": ""
   },
   {
    "path": "css/themes/chameleon.css",
-   "bytes": 3108,
+   "bytes": 4788,
    "desc": ""
   },
   {
    "path": "css/themes/charcoal.css",
-   "bytes": 2259,
+   "bytes": 3653,
    "desc": ""
   },
   {
    "path": "css/themes/cobalt.css",
-   "bytes": 2186,
+   "bytes": 3512,
    "desc": ""
   },
   {
    "path": "css/themes/concrete.css",
-   "bytes": 2449,
+   "bytes": 3597,
    "desc": ""
   },
   {
    "path": "css/themes/crimson-web.css",
-   "bytes": 2902,
+   "bytes": 4574,
    "desc": ""
   },
   {
    "path": "css/themes/damascus.css",
-   "bytes": 3131,
+   "bytes": 4689,
    "desc": ""
   },
   {
    "path": "css/themes/deep-sea.css",
-   "bytes": 2664,
+   "bytes": 3976,
    "desc": ""
   },
   {
    "path": "css/themes/desert.css",
-   "bytes": 2376,
+   "bytes": 3780,
    "desc": ""
   },
   {
    "path": "css/themes/doppler.css",
-   "bytes": 3140,
+   "bytes": 4580,
    "desc": ""
   },
   {
@@ -686,322 +686,322 @@
   },
   {
    "path": "css/themes/emerald.css",
-   "bytes": 3418,
+   "bytes": 4858,
    "desc": ""
   },
   {
    "path": "css/themes/espresso.css",
-   "bytes": 2264,
+   "bytes": 3658,
    "desc": ""
   },
   {
    "path": "css/themes/fade.css",
-   "bytes": 2988,
+   "bytes": 4542,
    "desc": ""
   },
   {
    "path": "css/themes/fog.css",
-   "bytes": 2147,
+   "bytes": 3371,
    "desc": ""
   },
   {
    "path": "css/themes/forest-night.css",
-   "bytes": 2351,
+   "bytes": 3881,
    "desc": ""
   },
   {
    "path": "css/themes/gameboy.css",
-   "bytes": 2291,
+   "bytes": 3651,
    "desc": ""
   },
   {
    "path": "css/themes/glacier.css",
-   "bytes": 2681,
+   "bytes": 4041,
    "desc": ""
   },
   {
    "path": "css/themes/glass.css",
-   "bytes": 1479,
+   "bytes": 2011,
    "desc": ""
   },
   {
    "path": "css/themes/gold-leaf.css",
-   "bytes": 3511,
+   "bytes": 5191,
    "desc": ""
   },
   {
    "path": "css/themes/graphite.css",
-   "bytes": 2126,
+   "bytes": 3438,
    "desc": ""
   },
   {
    "path": "css/themes/gunmetal.css",
-   "bytes": 3215,
+   "bytes": 4855,
    "desc": ""
   },
   {
    "path": "css/themes/holo-foil.css",
-   "bytes": 3345,
+   "bytes": 5109,
    "desc": ""
   },
   {
    "path": "css/themes/ink.css",
-   "bytes": 1960,
+   "bytes": 2968,
    "desc": ""
   },
   {
    "path": "css/themes/lava-lamp.css",
-   "bytes": 2812,
+   "bytes": 4324,
    "desc": ""
   },
   {
    "path": "css/themes/lavender.css",
-   "bytes": 2214,
+   "bytes": 3608,
    "desc": ""
   },
   {
    "path": "css/themes/lemon.css",
-   "bytes": 2250,
+   "bytes": 3542,
    "desc": ""
   },
   {
    "path": "css/themes/linen.css",
-   "bytes": 2582,
+   "bytes": 3874,
    "desc": ""
   },
   {
    "path": "css/themes/liquid-chrome.css",
-   "bytes": 3323,
+   "bytes": 5255,
    "desc": ""
   },
   {
    "path": "css/themes/luxe.css",
-   "bytes": 1281,
+   "bytes": 1725,
    "desc": ""
   },
   {
    "path": "css/themes/magenta.css",
-   "bytes": 2148,
+   "bytes": 3428,
    "desc": ""
   },
   {
    "path": "css/themes/marble-fade.css",
-   "bytes": 2905,
+   "bytes": 4665,
    "desc": ""
   },
   {
    "path": "css/themes/memphis.css",
-   "bytes": 2278,
+   "bytes": 3558,
    "desc": ""
   },
   {
    "path": "css/themes/midnight.css",
-   "bytes": 2404,
+   "bytes": 3716,
    "desc": ""
   },
   {
    "path": "css/themes/mint.css",
-   "bytes": 2103,
+   "bytes": 3287,
    "desc": ""
   },
   {
    "path": "css/themes/mono.css",
-   "bytes": 815,
+   "bytes": 1037,
    "desc": ""
   },
   {
    "path": "css/themes/moss.css",
-   "bytes": 2557,
+   "bytes": 3815,
    "desc": ""
   },
   {
    "path": "css/themes/nebula.css",
-   "bytes": 3182,
+   "bytes": 4586,
    "desc": ""
   },
   {
    "path": "css/themes/neon.css",
-   "bytes": 1671,
+   "bytes": 2189,
    "desc": ""
   },
   {
    "path": "css/themes/newsprint.css",
-   "bytes": 2509,
+   "bytes": 3769,
    "desc": ""
   },
   {
    "path": "css/themes/nord-night.css",
-   "bytes": 2181,
+   "bytes": 3557,
    "desc": ""
   },
   {
    "path": "css/themes/obsidian.css",
-   "bytes": 2374,
+   "bytes": 3768,
    "desc": ""
   },
   {
    "path": "css/themes/ocean.css",
-   "bytes": 2422,
+   "bytes": 3714,
    "desc": ""
   },
   {
    "path": "css/themes/paper.css",
-   "bytes": 2092,
+   "bytes": 3308,
    "desc": ""
   },
   {
    "path": "css/themes/peach.css",
-   "bytes": 2158,
+   "bytes": 3450,
    "desc": ""
   },
   {
    "path": "css/themes/pearl.css",
-   "bytes": 3610,
+   "bytes": 5206,
    "desc": ""
   },
   {
    "path": "css/themes/plum.css",
-   "bytes": 2271,
+   "bytes": 3529,
    "desc": ""
   },
   {
    "path": "css/themes/polaroid.css",
-   "bytes": 2590,
+   "bytes": 3902,
    "desc": ""
   },
   {
    "path": "css/themes/pop-art.css",
-   "bytes": 2672,
+   "bytes": 4272,
    "desc": ""
   },
   {
    "path": "css/themes/porcelain.css",
-   "bytes": 2286,
+   "bytes": 3714,
    "desc": ""
   },
   {
    "path": "css/themes/retro.css",
-   "bytes": 1729,
+   "bytes": 2565,
    "desc": ""
   },
   {
    "path": "css/themes/risograph.css",
-   "bytes": 2410,
+   "bytes": 3922,
    "desc": ""
   },
   {
    "path": "css/themes/rose-gold.css",
-   "bytes": 3247,
+   "bytes": 4843,
    "desc": ""
   },
   {
    "path": "css/themes/ruby.css",
-   "bytes": 3354,
+   "bytes": 4686,
    "desc": ""
   },
   {
    "path": "css/themes/sakura.css",
-   "bytes": 2238,
+   "bytes": 3564,
    "desc": ""
   },
   {
    "path": "css/themes/sand.css",
-   "bytes": 2193,
+   "bytes": 3451,
    "desc": ""
   },
   {
    "path": "css/themes/sapphire-metal.css",
-   "bytes": 3504,
+   "bytes": 5290,
    "desc": ""
   },
   {
    "path": "css/themes/seafoam.css",
-   "bytes": 2227,
+   "bytes": 3587,
    "desc": ""
   },
   {
    "path": "css/themes/sketch.css",
-   "bytes": 1384,
+   "bytes": 1930,
    "desc": ""
   },
   {
    "path": "css/themes/sky.css",
-   "bytes": 2378,
+   "bytes": 3602,
    "desc": ""
   },
   {
    "path": "css/themes/soft.css",
-   "bytes": 1363,
+   "bytes": 1881,
    "desc": ""
   },
   {
    "path": "css/themes/swiss-red.css",
-   "bytes": 2295,
+   "bytes": 3555,
    "desc": ""
   },
   {
    "path": "css/themes/swiss.css",
-   "bytes": 1099,
+   "bytes": 1479,
    "desc": ""
   },
   {
    "path": "css/themes/synthwave.css",
-   "bytes": 2761,
+   "bytes": 4273,
    "desc": ""
   },
   {
    "path": "css/themes/tangerine.css",
-   "bytes": 2250,
+   "bytes": 3594,
    "desc": ""
   },
   {
    "path": "css/themes/teletext.css",
-   "bytes": 2225,
+   "bytes": 3537,
    "desc": ""
   },
   {
    "path": "css/themes/terminal.css",
-   "bytes": 1345,
+   "bytes": 1755,
    "desc": ""
   },
   {
    "path": "css/themes/tiger-tooth.css",
-   "bytes": 3296,
+   "bytes": 5056,
    "desc": ""
   },
   {
    "path": "css/themes/titanium.css",
-   "bytes": 2947,
+   "bytes": 4505,
    "desc": ""
   },
   {
    "path": "css/themes/vampire.css",
-   "bytes": 2296,
+   "bytes": 3656,
    "desc": ""
   },
   {
    "path": "css/themes/vaporwave.css",
-   "bytes": 2876,
+   "bytes": 4388,
    "desc": ""
   },
   {
    "path": "css/themes/volcano.css",
-   "bytes": 2624,
+   "bytes": 4064,
    "desc": ""
   },
   {
    "path": "css/themes/win-classic.css",
-   "bytes": 2414,
+   "bytes": 3910,
    "desc": ""
   },
   {
    "path": "css/themes/y2k.css",
-   "bytes": 1459,
+   "bytes": 1819,
    "desc": ""
   },
   {
    "path": "css/themes.css",
-   "bytes": 214457,
+   "bytes": 328219,
    "desc": "All 12 themes in one file."
   },
   {
@@ -1031,17 +1031,17 @@
   },
   {
    "path": "js/waterfall.js",
-   "bytes": 6092,
+   "bytes": 10160,
    "desc": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen)."
   },
   {
    "path": "uivault.css",
-   "bytes": 288589,
+   "bytes": 402351,
    "desc": ""
   },
   {
    "path": "uivault.js",
-   "bytes": 44897,
+   "bytes": 48965,
    "desc": ""
   }
  ]

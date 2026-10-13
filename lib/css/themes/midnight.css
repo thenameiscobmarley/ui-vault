@@ -7,13 +7,13 @@
   color-scheme: dark;
   background-image: radial-gradient(ellipse at 50% 35%, transparent 40%, #0608108c);
 }
-[data-uv-theme="midnight"] .uv-btn--primary, [data-uv-theme="midnight"] .uv-btn--grad { background: #6ea8ff; color: #111111; border-color: #6ea8ff; box-shadow: 0 0 18px -2px #6ea8ff, inset 0 1px 0 #ffffff59; }
-[data-uv-theme="midnight"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="midnight"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #dfe6f50f, 0 14px 34px -14px #04060d59; }
-[data-uv-theme="midnight"] .uv-tabs > .uv-tabs__ind { background: #6ea8ff; } [data-uv-theme="midnight"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="midnight"] .uv-switch input:checked + i, [data-uv-theme="midnight"] .uv-check input:checked { background: #6ea8ff; border-color: #6ea8ff; }
-[data-uv-theme="midnight"] .uv-progress > i { background: #6ea8ff; } [data-uv-theme="midnight"] .uv-ring { background: conic-gradient(#6ea8ff calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="midnight"] .uv-input:focus, [data-uv-theme="midnight"] .uv-select:focus, [data-uv-theme="midnight"] .uv-textarea:focus { border-color: #6ea8ff; box-shadow: 0 0 0 3px #6ea8ff38; }
-[data-uv-theme="midnight"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="midnight"] .uv-btn:hover { box-shadow: 0 0 0 3px #6ea8ff40, 0 0 26px -2px #6ea8ffb2; }
-[data-uv-theme="midnight"] .uv-card--hover:hover { box-shadow: 0 0 0 1px #6ea8ff80, 0 0 30px -8px #6ea8ff; }
+[data-uv-theme="midnight"] .uv-btn--primary:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *), [data-uv-theme="midnight"] .uv-btn--grad:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { background: #6ea8ff; color: #111111; border-color: #6ea8ff; box-shadow: 0 0 18px -2px #6ea8ff, inset 0 1px 0 #ffffff59; }
+[data-uv-theme="midnight"] .uv-btn--primary:hover:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { filter: brightness(1.06); }
+[data-uv-theme="midnight"] .uv-card:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { border-color: transparent; box-shadow: 0 1px 2px #dfe6f50f, 0 14px 34px -14px #04060d59; }
+[data-uv-theme="midnight"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { background: #6ea8ff; } [data-uv-theme="midnight"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { color: #111111; }
+[data-uv-theme="midnight"] .uv-switch input:checked + i:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *), [data-uv-theme="midnight"] .uv-check input:checked:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { background: #6ea8ff; border-color: #6ea8ff; }
+[data-uv-theme="midnight"] .uv-progress > i:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { background: #6ea8ff; } [data-uv-theme="midnight"] .uv-ring:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { background: conic-gradient(#6ea8ff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="midnight"] .uv-input:focus:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *), [data-uv-theme="midnight"] .uv-select:focus:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *), [data-uv-theme="midnight"] .uv-textarea:focus:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { border-color: #6ea8ff; box-shadow: 0 0 0 3px #6ea8ff38; }
+[data-uv-theme="midnight"] .uv-btn:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="midnight"] .uv-btn:hover:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { box-shadow: 0 0 0 3px #6ea8ff40, 0 0 26px -2px #6ea8ffb2; }
+[data-uv-theme="midnight"] .uv-card--hover:hover:not([data-uv-theme="midnight"] [data-uv-theme]:not([data-uv-theme="midnight"]) *) { box-shadow: 0 0 0 1px #6ea8ff80, 0 0 30px -8px #6ea8ff; }
