@@ -63,6 +63,12 @@
   .fx button.lbl:hover { background: var(--uv-text); color: var(--uv-bg); }
   .fx .dk { background: #141413; color: #ecebe8; --uv-text: #ecebe8; --uv-surface: #1f1f1d; --uv-surface-2: #2b2b29; --uv-line-2: #ffffff30; }
   .builder { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .pack { margin-bottom: 28px; padding: 22px; display: grid; gap: 16px; }
+  .pack h3 { margin: 0; font-size: 20px; } .pack .picks { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pack .picks span { display: inline-flex; align-items: center; gap: 6px; padding: 4px 4px 4px 10px; border-radius: 999px; border: 1px solid var(--uv-line-2); font: 12px var(--uv-mono); color: var(--uv-muted); }
+  .pack .picks button { width: 18px; height: 18px; border: 0; border-radius: 50%; background: var(--uv-line-2); color: var(--uv-text); cursor: pointer; font-size: 11px; }
+  .pack .opts2 { display: flex; flex-wrap: wrap; gap: 10px 22px; } .pack .opts2 label { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; } .pack .opts2 small { color: var(--uv-dim); }
+  .pack .ptabs { display: flex; gap: 4px; } .pack pre { margin: 0; max-height: 280px; overflow: auto; padding: 14px; border-radius: 8px; background: #0d0d0f; color: #d9d6cf; font: 12px/1.6 var(--uv-mono); }
   .opts { display: grid; gap: 18px; }
   .opts fieldset { border: 1px solid var(--uv-line-2); border-radius: 6px; padding: 12px 14px; margin: 0; }
   .opts legend { padding: 0 6px; font: 500 11px var(--uv-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--uv-muted); }
@@ -100,7 +106,7 @@
 <body class="uv">
 <header class="top">
   <a class="brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--uv-bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--uv-accent)"/></svg>UI Vault <span class="uv-badge uv-badge--accent">API 3.1</span></a>
-  <nav class="uv-nav" style="border:0;background:none;padding:0"><a class="is-active" href="quickstart.html">Quick start</a><a href="docs.html">Docs</a><a href="themes.html">Themes</a><a href="elements.html">Elements</a><a href="lab.html">Test page</a><a href="code.html">Python &amp; C++</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a><a href="./">Library</a></nav>
+  <nav class="uv-nav" style="border:0;background:none;padding:0"><a href="./">Home</a><a href="quickstart.html" class="is-active">Quick start</a><a href="directory.html">Index</a></nav>
   <a class="uv-btn uv-btn--primary uv-btn--sm" href="downloads/uivault-latest.zip" download>Download .zip</a>
 </header>
 
@@ -195,7 +201,8 @@
 
   <!-- 6 Builder -->
   <section class="sec" id="builder">
-    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 06 — Custom bundle</p><h2 class="uv-h2">Build <em class="uv-muted">your own kit.</em></h2><p>Tick what you need. You get the matching &lt;link&gt;/&lt;script&gt; tags, or a zip made in your browser with just those files.</p></div>
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 06 — The zipper</p><h2 class="uv-h2">Zip <em class="uv-muted">only what you picked.</em></h2><p>Pick items in the <a href="library.html" style="color:var(--uv-accent)">Library</a> and they show up here. You get trimmed CSS/JS, an example page, the UiVault3 Python and C++ packages, and your own site customizations. Or tick whole modules below.</p></div>
+    <div class="uv-card pack" id="pack" data-uv-reveal></div>
     <div class="builder" data-uv-reveal="zoom">
       <form class="opts" id="opts"></form>
       <div style="display:grid;gap:14px;align-content:start">
@@ -422,6 +429,49 @@ $("#apiRows").innerHTML = [
   ["UV.tabs(el, cb)", "Sliding-indicator tabs.", "forms"], ["UV.otp / range / drop (el)", "Form helpers.", "forms"],
   ["UV.fx.matrix / starfield / particles / snow (el)", "Canvas backgrounds. Each returns stop().", "fx"], ["UV.fx['cursor-trail'] / ['cursor-blob'] / sparkles (el)", "Cursor effects.", "fx"], ["UV.fx.magnet / gravity / fireworks / ['scramble-hover'] (el)", "Playful text and click effects.", "fx"], ["UV.fx.split(el)", "Split text into per-letter spans with --i.", "fx"],
 ].map(([a, b, c]) => `<tr><td>${a}</td><td>${b}</td><td class="uv-mono uv-dim">${c}.js</td></tr>`).join("");
+</script>
+<script src="lib/parts.js"></script>
+<script src="assets/js/packer.js"></script>
+<script>
+// the zipper: Library picks → a trimmed package
+(() => {
+  const box = document.getElementById("pack");
+  let tab = "html";
+  const OPTS = [["web", "Web CSS/JS (only your picks)", true], ["example", "Example page + README", true], ["python", "UiVault3 for Python (PySide6)", false], ["cpp", "UiVault3 for C++ (Qt 6)", false], ["mine", "My site customizations (theme, designs, effect layers)", true]];
+  let opt = Object.fromEntries(OPTS.map(([k, , d]) => [k, d]));
+  function render() {
+    const ids = UVPack.get();
+    if (UVPack.get().some(i => i.startsWith("native/"))) { opt.python = opt.python || !box.dataset.touched; opt.cpp = opt.cpp || !box.dataset.touched; }
+    if (!ids.length) {
+      box.innerHTML = `<h3>Your package is empty</h3><p class="uv-muted" style="margin:0">Open the Library, click <b>Add</b> on any element, loader, animation, background, effect, theme or block, then come back here to zip just those. You can also download whole modules below.</p><div class="uv-row"><a class="uv-btn uv-btn--primary" href="library.html">Open the Library →</a><a class="uv-btn uv-btn--ghost" href="downloads/uivault-latest.zip" download>Full .zip</a></div>`;
+      return;
+    }
+    const c = UVPack.code(ids);
+    box.innerHTML = `<div class="uv-row" style="justify-content:space-between"><h3>Your Library picks · ${ids.length}</h3><a class="uv-btn uv-btn--ghost uv-btn--sm" href="library.html">Add more in the Library →</a></div>
+      <div class="picks">${ids.map(i => `<span>${i}<button type="button" data-rm="${i}" aria-label="Remove">×</button></span>`).join("")}</div>
+      <div class="opts2">${OPTS.map(([k, l]) => `<label class="uv-check"><input type="checkbox" data-o="${k}" ${opt[k] ? "checked" : ""}> ${l}</label>`).join("")}</div>
+      <div class="ptabs"><button class="uv-btn uv-btn--sm ${tab === "html" ? "uv-btn--primary" : "uv-btn--ghost"}" data-t="html" type="button">Web</button><button class="uv-btn uv-btn--sm ${tab === "py" ? "uv-btn--primary" : "uv-btn--ghost"}" data-t="py" type="button">Python</button><button class="uv-btn uv-btn--sm ${tab === "cpp" ? "uv-btn--primary" : "uv-btn--ghost"}" data-t="cpp" type="button">C++</button></div>
+      <pre></pre>
+      <div class="uv-row"><button class="uv-btn uv-btn--primary uv-btn--lg" type="button" id="packZip">Download my package (.zip)</button><button class="uv-btn uv-btn--ghost" type="button" id="packCopy">Copy code</button><button class="uv-btn uv-btn--ghost" type="button" id="packClear">Clear picks</button></div>`;
+    box.querySelector("pre").textContent = c[tab];
+  }
+  box.addEventListener("click", async e => {
+    const b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.rm) UVPack.set(UVPack.get().filter(x => x !== b.dataset.rm));
+    if (b.dataset.t) { tab = b.dataset.t; render(); }
+    if (b.id === "packCopy") UV.copy(box.querySelector("pre").textContent, "Code copied");
+    if (b.id === "packClear") UVPack.set([]);
+    if (b.id === "packZip") {
+      b.classList.add("is-loading");
+      try { const f = await UVPack.download(UVPack.get(), opt); UV.toast(`Downloaded ${f.length} files`, { type: "success" }); }
+      catch (err) { UV.toast("Couldn't fetch some files: open this page on the live site, not from disk", { type: "error" }); }
+      b.classList.remove("is-loading");
+    }
+  });
+  box.addEventListener("change", e => { const i = e.target.closest("[data-o]"); if (i) { box.dataset.touched = 1; opt[i.dataset.o] = i.checked; } });
+  document.addEventListener("uv:pack", render);
+  UVPack.ensure().then(render); render();
+})();
 </script>
 </body>
 </html>

@@ -1107,7 +1107,7 @@
   },
   {
    "path": "js/layers.js",
-   "bytes": 38114,
+   "bytes": 38329,
    "desc": "Effect layers: stack glow, shadow, border, backdrop, fill, shape, text, hover, press, entrance, idle and uv-fx effects on any element type or one element (UV.layers.apply)."
   },
   {
@@ -1123,11 +1123,6 @@
   {
    "path": "layers.json",
    "bytes": 26512,
-   "desc": ""
-  },
-  {
-   "path": "native.json",
-   "bytes": 141239,
    "desc": ""
   },
   {
@@ -1147,7 +1142,7 @@
   },
   {
    "path": "uivault.js",
-   "bytes": 88297,
+   "bytes": 88512,
    "desc": ""
   }
  ]

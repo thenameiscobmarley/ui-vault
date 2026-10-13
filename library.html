@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Library — UI Vault</title>
+<meta name="description" content="Every UI Vault element, loader, animation, background, effect, theme, component and block, live. Pick what you want and download a zip with only those, plus web, Python and C++ code." />
+<meta name="theme-color" content="#101012" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="lib/css/fonts.css" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<link rel="stylesheet" href="lib/css/parts.css" />
+<style>
+  :root { --pg-bg: #101012; --pg-bg2: #151517; --pg-bg3: #1c1c1f; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", serif; }
+  html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
+  html[data-uv-theme] { --pg-bg: var(--uv-bg); --pg-bg2: var(--uv-surface); --pg-bg3: var(--uv-surface-2); --pg-fg: var(--uv-text); --pg-mu: var(--uv-muted); --pg-di: var(--uv-dim); --pg-ln: var(--uv-line); --pg-ln2: var(--uv-line-2); --pg-ac: var(--uv-accent); --pg-font: var(--uv-font); --pg-head: var(--uv-font-head); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--pg-bg); color: var(--pg-fg); font-family: var(--pg-font); }
+  html[data-uv-bg] body { background: transparent; }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; height: 58px; padding: 0 clamp(16px, 3vw, 28px); background: color-mix(in srgb, var(--pg-bg) 94%, transparent); border-bottom: 1px solid var(--pg-ln); }
+  .top .brand { display: flex; align-items: center; gap: 10px; color: var(--pg-fg); text-decoration: none; font-weight: 600; }
+  .top .brand svg rect { fill: var(--pg-fg); } .top .brand svg path { stroke: var(--pg-bg); } .top .brand svg circle { fill: var(--pg-ac); }
+  .top nav { margin-left: auto; display: flex; gap: 2px; } .top nav a { padding: 6px 10px; border-radius: 4px; color: var(--pg-mu); text-decoration: none; font-size: 14px; } .top nav a:hover { color: var(--pg-fg); background: var(--pg-ln); }
+  .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); min-height: calc(100vh - 58px); }
+  .side { position: sticky; top: 58px; height: calc(100vh - 58px); overflow: auto; padding: 18px 14px 120px; border-right: 1px solid var(--pg-ln); scrollbar-width: thin; scrollbar-color: var(--pg-ln2) transparent; }
+  .side input { width: 100%; height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--pg-ln2); background: var(--pg-bg2); color: var(--pg-fg); font: 14px var(--pg-font); outline: none; margin-bottom: 12px; } .side input:focus { border-color: var(--pg-ac); }
+  .side h4 { margin: 16px 8px 6px; font: 500 10px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .1em; color: var(--pg-di); }
+  .side button { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 10px; border: 0; border-radius: 6px; background: none; color: var(--pg-mu); font: 500 14px var(--pg-font); text-align: left; cursor: pointer; }
+  .side button:hover { color: var(--pg-fg); background: var(--pg-ln); } .side button.on { color: var(--pg-fg); background: var(--pg-bg3); box-shadow: inset 2px 0 0 var(--pg-ac); }
+  .side button small { font: 11px "Geist Mono", monospace; color: var(--pg-di); } .side button b { font-weight: 500; }
+  .side button .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pg-ac); margin-left: auto; margin-right: 4px; }
+  main { min-width: 0; padding: 26px clamp(16px, 3vw, 32px) 140px; }
+  .head { display: flex; align-items: end; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 18px; }
+  .head h1 { margin: 0; font: 400 clamp(44px, 6vw, 80px)/.92 var(--pg-head); letter-spacing: -.02em; } .head h1 em { color: var(--pg-ac); }
+  .head p { margin: 8px 0 0; color: var(--pg-mu); max-width: 620px; line-height: 1.5; }
+  .head .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+  .sbtn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-fg); font: 500 13px var(--pg-font); cursor: pointer; text-decoration: none; white-space: nowrap; }
+  .sbtn:hover { border-color: var(--pg-fg); } .sbtn.p { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); } .sbtn.p:hover { background: var(--pg-ac); border-color: var(--pg-ac); }
+  .sbtn.on { background: var(--pg-ac); border-color: var(--pg-ac); color: #111; }
+  .catdesc { margin: -6px 0 16px; color: var(--pg-mu); font-size: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .grid.wide { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .tile { display: flex; flex-direction: column; border-radius: 10px; border: 1px solid var(--pg-ln); overflow: hidden; content-visibility: auto; contain-intrinsic-size: auto 240px; background: var(--pg-bg2); }
+  .tile.in { border-color: var(--pg-ac); box-shadow: 0 0 0 1px var(--pg-ac); }
+  .tile.flash { animation: flash 1.6s ease; } @keyframes flash { 0%, 40% { box-shadow: 0 0 0 4px var(--pg-ac); } }
+  .tile .stage { position: relative; flex: 1; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; align-content: center; min-height: 160px; padding: 20px 16px; background: var(--uv-bg); color: var(--uv-text); overflow: hidden; }
+  .tile .stage > .uv-card, .tile .stage > .uv-input, .tile .stage > .uv-alert, .tile .stage > .uv-progress, .tile .stage > .col { width: 100%; }
+  .tile .stage .col { display: grid; gap: 10px; }
+  .tile .stage .uv-card { padding: 16px; } .tile .stage .uv-card p { margin: 6px 0 0; font-size: 13px; }
+  .tile .stage .uv-h2 { margin: 0; font-size: 38px; line-height: 1; text-align: center; }
+  .tile .stage dialog.uv-modal { position: static; display: block; margin: 0; width: 100%; max-width: none; } .tile .stage dialog.uv-modal > div { padding: 16px; }
+  .tile .stage .uv-toast { animation: none; min-width: 0; width: 100%; }
+  .tile .stage .uv-spinner { --s: 40px; }
+  .tile .stage .hint { position: absolute; left: 8px; bottom: 6px; font: 10px "Geist Mono", monospace; color: var(--uv-dim); }
+  .tile .stage.block { padding: 0; align-items: start; align-content: start; justify-content: start; min-height: 190px; max-height: 190px; }
+  .tile .stage.block > div { flex: none; width: 1280px; transform: scale(.27); transform-origin: 0 0; pointer-events: none; }
+  .tile footer { display: flex; align-items: center; gap: 6px; padding: 9px 10px; border-top: 1px solid var(--pg-ln); }
+  .tile footer div { flex: 1; min-width: 0; } .tile footer b { display: block; font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .tile footer small { display: block; color: var(--pg-di); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tile footer .sbtn { height: 28px; padding: 0 9px; font-size: 12px; }
+  .tile footer select { height: 28px; max-width: 92px; border-radius: 6px; border: 1px solid var(--pg-ln2); background: var(--pg-bg3); color: var(--pg-fg); font: 12px var(--pg-font); }
+  .subhead { grid-column: 1 / -1; margin: 18px 0 2px; font: 500 11px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .1em; color: var(--pg-di); }
+  /* tray */
+  .tray { position: fixed; right: 16px; bottom: 16px; z-index: 60; width: min(460px, calc(100vw - 32px)); border-radius: 14px; border: 1px solid var(--pg-ln2); background: var(--pg-bg2); box-shadow: 0 24px 60px -20px #000c; display: flex; flex-direction: column; max-height: calc(100vh - 100px); }
+  .tray > header { display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; }
+  .tray > header b { flex: 1; font-size: 15px; } .tray > header .n { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 7px; border-radius: 999px; background: var(--pg-ac); color: #111; font: 700 12px var(--pg-font); }
+  .tray .body { display: none; flex-direction: column; min-height: 0; border-top: 1px solid var(--pg-ln); }
+  .tray.open .body { display: flex; }
+  .tray ul { list-style: none; margin: 0; padding: 8px 10px; max-height: 180px; overflow: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tray li { display: inline-flex; align-items: center; gap: 6px; padding: 3px 4px 3px 10px; border-radius: 999px; border: 1px solid var(--pg-ln2); font: 12px "Geist Mono", monospace; color: var(--pg-mu); }
+  .tray li button { width: 18px; height: 18px; border-radius: 50%; border: 0; background: var(--pg-ln); color: var(--pg-fg); cursor: pointer; font-size: 11px; }
+  .tray .ctabs { display: flex; border-top: 1px solid var(--pg-ln); border-bottom: 1px solid var(--pg-ln); } .tray .ctabs button { flex: 1; padding: 9px; border: 0; background: none; color: var(--pg-di); font: 500 12px "Geist Mono", monospace; cursor: pointer; } .tray .ctabs button.on { color: var(--pg-fg); box-shadow: inset 0 -2px 0 var(--pg-ac); }
+  .tray pre { margin: 0; padding: 12px 14px; max-height: 260px; overflow: auto; background: #0d0d0f; color: #d9d6cf; font: 11.5px/1.6 "Geist Mono", monospace; white-space: pre; }
+  .tray .acts { display: flex; gap: 6px; padding: 10px; flex-wrap: wrap; } .tray .acts .sbtn { flex: 1; }
+  .tray .empty { padding: 14px; color: var(--pg-mu); font-size: 13px; }
+  .codedlg { width: min(860px, calc(100vw - 20px)); max-height: 86vh; padding: 0; border: 1px solid var(--pg-ln2); border-radius: 12px; background: var(--pg-bg2); color: var(--pg-fg); }
+  .codedlg[open] { display: flex; flex-direction: column; } .codedlg::backdrop { background: #000a; }
+  .codedlg header { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--pg-ln); } .codedlg header h3 { margin: 0; flex: 1; font: 400 28px/1 var(--pg-head); }
+  .codedlg .ctabs { display: flex; border-bottom: 1px solid var(--pg-ln); } .codedlg .ctabs button { flex: 1; padding: 10px; border: 0; background: none; color: var(--pg-di); font: 500 12px "Geist Mono", monospace; cursor: pointer; } .codedlg .ctabs button.on { color: var(--pg-fg); box-shadow: inset 0 -2px 0 var(--pg-ac); }
+  .codedlg pre { margin: 0; flex: 1; overflow: auto; padding: 16px; background: #0d0d0f; color: #d9d6cf; font: 12px/1.6 "Geist Mono", monospace; white-space: pre; min-height: 240px; }
+  @media (max-width: 860px) { .shell { grid-template-columns: 1fr; } .side { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--pg-ln); padding-bottom: 14px; display: flex; flex-wrap: wrap; gap: 4px; } .side h4 { width: 100%; margin: 8px 4px 2px; } .side button { width: auto; } .side input { margin: 0 0 6px; } .top nav { display: none; } }
+</style>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI Vault · Library</a>
+  <nav><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
+</header>
+<div class="shell">
+  <aside class="side" id="side"><input id="q" type="search" placeholder="Filter this list…  ( / )" aria-label="Filter"></aside>
+  <main>
+    <div class="head"><div><p style="margin:0;font:500 12px 'Geist Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--pg-di)" id="kicker">Library</p><h1 id="title">Everything, <em>live.</em></h1><p id="lead">Every element, loader, animation, background and effect, live. Click <b>Add</b> to put something in your package. The tray gives you the code to use it, and the zipper packs only what you picked.</p></div>
+      <div class="acts"><a class="sbtn" href="directory.html">Search all →</a><a class="sbtn p" href="quickstart.html#builder">Open the zipper →</a></div></div>
+    <p class="catdesc" id="catdesc"></p>
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<aside class="tray" id="tray">
+  <header id="trayHead"><b>Your package</b><span class="n" id="trayN">0</span><span id="trayArrow">▴</span></header>
+  <div class="body">
+    <ul id="trayList"></ul>
+    <div class="ctabs" id="trayTabs"><button type="button" class="on" data-t="html">Web</button><button type="button" data-t="py">Python</button><button type="button" data-t="cpp">C++</button></div>
+    <pre id="trayCode"></pre>
+    <div class="acts"><button class="sbtn" type="button" id="trayCopy">Copy code</button><button class="sbtn" type="button" id="trayClear">Clear</button><button class="sbtn" type="button" id="trayZip">Download .zip</button><a class="sbtn p" href="quickstart.html#builder">Go to zipper →</a></div>
+  </div>
+</aside>
+
+<dialog class="codedlg" id="codedlg"><header><h3 id="cdTitle"></h3><button class="sbtn" type="button" id="cdAdd">Add to package</button><button class="sbtn" type="button" onclick="this.closest('dialog').close()">Close</button></header>
+  <div class="ctabs" id="cdTabs"><button type="button" class="on" data-t="html">Web</button><button type="button" data-t="css">CSS</button><button type="button" data-t="py">Python</button><button type="button" data-t="cpp">C++</button></div><pre id="cdPre"></pre></dialog>
+
+<script src="lib/uivault.js"></script>
+<script src="lib/parts.js"></script>
+<script src="lib/manifest.js"></script>
+<script src="lib/catalog.js"></script>
+<script src="assets/js/blocks.js"></script>
+<script src="assets/js/picker.js"></script>
+<script src="assets/js/packer.js"></script>
+<script src="assets/js/library.js"></script>
+</body>
+</html>
