@@ -546,7 +546,7 @@
   },
   {
    "path": "css/components.css",
-   "bytes": 43067,
+   "bytes": 43068,
    "desc": "Buttons, cards, forms, tabs, badges, overlays, nav, data, loaders, backgrounds."
   },
   {
@@ -1026,7 +1026,7 @@
   },
   {
    "path": "js/motion.js",
-   "bytes": 9437,
+   "bytes": 11390,
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
   },
   {
@@ -1036,12 +1036,12 @@
   },
   {
    "path": "uivault.css",
-   "bytes": 288588,
+   "bytes": 288589,
    "desc": ""
   },
   {
    "path": "uivault.js",
-   "bytes": 42944,
+   "bytes": 44897,
    "desc": ""
   }
  ]

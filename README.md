@@ -1,5 +1,8 @@
 # UI Vault
 
+**→ [Quick start](https://thenameiscobmarley.github.io/ui-vault/quickstart.html)** · [Themes (87)](https://thenameiscobmarley.github.io/ui-vault/themes.html) · [Python & C++](https://thenameiscobmarley.github.io/ui-vault/code.html) · [Docs](https://thenameiscobmarley.github.io/ui-vault/docs.html) · [Download .zip](https://thenameiscobmarley.github.io/ui-vault/downloads/uivault-latest.zip)
+
+
 A curated vault of open-source UI resources: component kits, copy-paste blocks, motion, effects, post-processing, 3D, icons, logos, fonts, color, charts and native/game UI. It also has live, copy-ready snippets.
 
 - **Themes** (`themes.html`): 87 complete design styles (12 core + 50 regular + 25 signature, e.g. pearl, sapphire-metal, fade, doppler, case-hardened) covering buttons, headings, cards, hover motion and backgrounds; gallery with categories, full component preview, web/Python/C++ code, and a theme builder. A floating theme picker on every page tries any style live. Themes are generated from `tools/theme_specs.py` (keep `assets/js/theme-engine.js` in sync).

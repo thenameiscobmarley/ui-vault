@@ -333,7 +333,7 @@
 .uv-spin { animation: uv-rot 2s linear infinite; }
 
 /* ── Scroll reveal (driven by UV.reveal) ────────────────────── */
-[data-uv-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--uv-ease), transform .7s var(--uv-ease); transition-delay: var(--d, 0ms); }
+[data-uv-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .45s var(--uv-ease), transform .5s var(--uv-ease); transition-delay: var(--d, 0ms); }
 [data-uv-reveal="left"] { transform: translateX(-24px); } [data-uv-reveal="right"] { transform: translateX(24px); } [data-uv-reveal="zoom"] { transform: scale(.92); }
 [data-uv-reveal].is-in { opacity: 1; transform: none; }
 

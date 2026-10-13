@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-uv-theme="editorial">
+<html lang="en" data-uv-smooth>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -89,7 +89,7 @@
   .fmt { display: flex; gap: 4px; } .fmt button { padding: 4px 9px; border: 1px solid var(--rule-2); border-radius: 3px; background: none; color: var(--fg-2); font: 11px "Geist Mono", monospace; cursor: pointer; } .fmt button[aria-pressed="true"] { background: var(--fg); color: var(--ink); }
   footer { padding: 28px 0 60px; margin-top: 80px; border-top: 1px solid var(--rule-2); color: var(--fg-3); font: 12px "Geist Mono", monospace; }
   /* reveal */
-  .rv { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2, .8, .2, 1), transform .8s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--d, 0ms); }
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .45s cubic-bezier(.2, .8, .2, 1), transform .5s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--d, 0ms); }
   .rv.in { opacity: 1; transform: none; }
   @media (max-width: 900px) { .hero, .ide, .tok, .install, .sec-h { grid-template-columns: 1fr; } .tree { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--rule); } .tree h4 { display: none; } .tree button { width: auto; white-space: nowrap; } .install > div { border-right: 0; border-bottom: 1px solid var(--rule); } .bar nav { display: none; } }
   @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
@@ -374,7 +374,7 @@ renderTok();
 
 UV.scrollbar();
 // ── scroll reveal ──
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0, rootMargin: "0px 0px 18% 0px" });
 document.querySelectorAll(".rv").forEach(el => io.observe(el));
 </script>
 </body>
