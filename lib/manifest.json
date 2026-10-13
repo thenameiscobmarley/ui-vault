@@ -546,6 +546,61 @@
    "desc": "Section layouts (b-*) used by the 38 page blocks. Container-query responsive."
   },
   {
+   "path": "css/collections/charts.css",
+   "bytes": 7466,
+   "desc": "Collection: 12 css charts."
+  },
+  {
+   "path": "css/collections/dividers.css",
+   "bytes": 8032,
+   "desc": "Collection: 24 dividers."
+  },
+  {
+   "path": "css/collections/gradients.css",
+   "bytes": 19154,
+   "desc": "Collection: 123 gradients."
+  },
+  {
+   "path": "css/collections/hovers.css",
+   "bytes": 9799,
+   "desc": "Collection: 24 image hovers."
+  },
+  {
+   "path": "css/collections/icons.css",
+   "bytes": 4016,
+   "desc": "Collection: 113 icons."
+  },
+  {
+   "path": "css/collections/loaders.css",
+   "bytes": 15396,
+   "desc": "Collection: 41 css loaders."
+  },
+  {
+   "path": "css/collections/patterns.css",
+   "bytes": 21691,
+   "desc": "Collection: 60 patterns."
+  },
+  {
+   "path": "css/collections/shadows.css",
+   "bytes": 8594,
+   "desc": "Collection: 40 shadows."
+  },
+  {
+   "path": "css/collections/text.css",
+   "bytes": 10625,
+   "desc": "Collection: 36 text effects."
+  },
+  {
+   "path": "css/collections/tooltips.css",
+   "bytes": 6327,
+   "desc": "Collection: 12 tooltip styles."
+  },
+  {
+   "path": "css/collections.css",
+   "bytes": 75326,
+   "desc": "Every collection: gradients, patterns, CSS loaders, text effects, shadows, image hovers, dividers, tooltip styles, CSS charts."
+  },
+  {
    "path": "css/components.css",
    "bytes": 45607,
    "desc": "Buttons, cards, forms, tabs, badges, overlays, nav, data, loaders, backgrounds."
@@ -1086,6 +1141,11 @@
    "desc": "All 12 themes in one file."
   },
   {
+   "path": "icons.svg",
+   "bytes": 24399,
+   "desc": ""
+  },
+  {
    "path": "js/core.js",
    "bytes": 2917,
    "desc": "UV namespace, module registry, UV.init, UV.theme, UV.skin. Required."
@@ -1107,7 +1167,7 @@
   },
   {
    "path": "js/layers.js",
-   "bytes": 38329,
+   "bytes": 43848,
    "desc": "Effect layers: stack glow, shadow, border, backdrop, fill, shape, text, hover, press, entrance, idle and uv-fx effects on any element type or one element (UV.layers.apply)."
   },
   {
@@ -1122,7 +1182,7 @@
   },
   {
    "path": "layers.json",
-   "bytes": 26512,
+   "bytes": 35145,
    "desc": ""
   },
   {
@@ -1142,7 +1202,7 @@
   },
   {
    "path": "uivault.js",
-   "bytes": 88512,
+   "bytes": 94031,
    "desc": ""
   }
  ]

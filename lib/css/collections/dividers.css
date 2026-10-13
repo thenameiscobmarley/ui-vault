@@ -1,0 +1,57 @@
+/*! UI Vault 3.1.0 · collections: dividers (24). MIT */
+@keyframes uv-c-rot { to { transform: rotate(360deg); } }
+@keyframes uv-c-flow { 50% { background-position: 100% 50%; } }
+@keyframes uv-c-ping { 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@keyframes uv-c-breathe { 50% { transform: scale(.55); opacity: .5; } }
+@keyframes uv-c-ripple { from { transform: scale(.1); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+@keyframes uv-c-dots { 0% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 40%; } 33% { background-size: 33.3% 100%, 33.3% 40%, 33.3% 40%; } 66% { background-size: 33.3% 40%, 33.3% 100%, 33.3% 40%; } 100% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 100%; } }
+@keyframes uv-c-bars { 0%, 100% { background-size: 20% 100%, 20% 40%, 20% 70%; } 33% { background-size: 20% 40%, 20% 100%, 20% 40%; } 66% { background-size: 20% 70%, 20% 40%, 20% 100%; } }
+@keyframes uv-c-slide { 0% { background-position: -30% 0; } 100% { background-position: 130% 0; } }
+@keyframes uv-c-roll { to { background-position: 22.6px 0; } }
+@keyframes uv-c-fill { 0% { background-size: 0 100%; } 80%, 100% { background-size: 100% 100%; } }
+@keyframes uv-c-flip { 0% { transform: perspective(80px) rotateX(0) rotateY(0); } 50% { transform: perspective(80px) rotateX(-180deg) rotateY(0); } 100% { transform: perspective(80px) rotateX(-180deg) rotateY(-180deg); } }
+@keyframes uv-c-sqspin { 25% { transform: rotate(90deg); } 50% { transform: rotate(180deg) scale(.6); } 75% { transform: rotate(270deg); } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-hg { 50% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uv-c-heart { 0%, 100% { transform: rotate(45deg) scale(1); } 30% { transform: rotate(45deg) scale(1.2); } }
+@keyframes uv-c-bounce { from { transform: translateY(0) scale(1.1, .9); } to { transform: translateY(-26px); } }
+@keyframes uv-c-typing { 0%, 100% { background-position: 10px 50%, 25px 50%, 40px 50%; } 20% { background-position: 10px 30%, 25px 50%, 40px 50%; } 40% { background-position: 10px 50%, 25px 30%, 40px 50%; } 60% { background-position: 10px 50%, 25px 50%, 40px 30%; } }
+@property --uv-c-p { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@keyframes uv-c-pie { to { --uv-c-p: 100%; } }
+@keyframes uv-c-blink { 50% { opacity: .3; } }
+@keyframes uv-c-wave { to { background-position: 20% 50%; } }
+@keyframes uv-c-shimmer { to { background-position: -200% 0; } }
+@keyframes uv-c-bounce-t { to { transform: translateY(-6px); letter-spacing: .3em; } }
+@keyframes uv-c-cube { 25% { transform: rotate(90deg) scale(.7); border-radius: 50%; } 50% { transform: rotate(180deg); border-radius: 0; } 75% { transform: rotate(270deg) scale(.7); border-radius: 50%; } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-dna { to { background-position: 14px 0, 21px 100%; } }
+@keyframes uv-c-glitch { 0% { transform: translate(0); clip-path: inset(0 0 0 0); } 50% { transform: translate(-3px, 1px); clip-path: inset(0 30% 0 0); } 100% { transform: translate(2px, -1px); clip-path: inset(0 0 0 40%); } }
+@keyframes uv-c-pan { to { background-position: 200% 0; } }
+@keyframes uv-c-sheen { 0%, 60% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+@keyframes uv-c-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .45; } }
+@keyframes uv-c-tglitch { 0%, 92%, 100% { text-shadow: 2px 0 #ff2bd6, -2px 0 #00f0ff; transform: none; } 94% { text-shadow: -3px 0 #ff2bd6, 3px 0 #00f0ff; transform: translateX(2px); } 97% { transform: translateX(-2px); } }
+@keyframes uv-c-waveText { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+@keyframes uv-c-blurin { from { filter: blur(8px); opacity: .2; letter-spacing: .3em; } }
+.uv-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.uv-dv-hairline { border: 0; margin: 12px 0; height: 1px; background: var(--uv-line-2); }
+.uv-dv-thick { border: 0; margin: 12px 0; height: 4px; background: var(--uv-text); }
+.uv-dv-accent { border: 0; margin: 12px 0; height: 3px; background: var(--uv-accent); }
+.uv-dv-fade { border: 0; margin: 12px 0; height: 1px; background: linear-gradient(90deg, transparent, var(--uv-text), transparent); }
+.uv-dv-gradient { border: 0; margin: 12px 0; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2)); }
+.uv-dv-dashed { border: 0; margin: 12px 0; height: 0; border-top: 2px dashed var(--uv-line-2); }
+.uv-dv-dotted { border: 0; margin: 12px 0; height: 6px; background: radial-gradient(circle, var(--uv-muted) 1.5px, transparent 2px) 0 0 / 12px 6px repeat-x; }
+.uv-dv-double { border: 0; margin: 12px 0; height: 6px; border-top: 1px solid var(--uv-text); border-bottom: 1px solid var(--uv-text); }
+.uv-dv-zigzag { border: 0; margin: 12px 0; height: 10px; background: linear-gradient(135deg, var(--uv-accent) 25%, transparent 25%) -5px 0 / 10px 10px, linear-gradient(225deg, var(--uv-accent) 25%, transparent 25%) -5px 0 / 10px 10px; }
+.uv-dv-wave { border: 0; margin: 12px 0; height: 10px; background: radial-gradient(circle at 50% 0, transparent 6px, var(--uv-accent) 7px 8px, transparent 9px) 0 0 / 16px 10px repeat-x; }
+.uv-dv-stitch { border: 0; margin: 12px 0; height: 2px; background: repeating-linear-gradient(90deg, var(--uv-muted) 0 8px, transparent 8px 14px); }
+.uv-dv-glow { border: 0; margin: 12px 0; height: 2px; background: var(--uv-accent); box-shadow: 0 0 10px var(--uv-accent), 0 0 20px var(--uv-accent); }
+.uv-dv-diamond { border: 0; margin: 12px 0; height: 12px; background: linear-gradient(var(--uv-line-2) 0 0) 0 50% / 100% 1px no-repeat, linear-gradient(45deg, transparent 40%, var(--uv-accent) 40% 60%, transparent 60%) 50% 50% / 12px 12px no-repeat, linear-gradient(-45deg, transparent 40%, var(--uv-accent) 40% 60%, transparent 60%) 50% 50% / 12px 12px no-repeat; }
+.uv-dv-dot-center { border: 0; margin: 12px 0; height: 8px; background: radial-gradient(circle, var(--uv-accent) 3px, transparent 3.5px) 50% 50% / 24px 8px no-repeat, radial-gradient(circle, var(--uv-muted) 2px, transparent 2.5px) calc(50% - 20px) 50% / 8px 8px no-repeat, radial-gradient(circle, var(--uv-muted) 2px, transparent 2.5px) calc(50% + 20px) 50% / 8px 8px no-repeat; }
+.uv-dv-rainbow { border: 0; margin: 12px 0; height: 4px; background: linear-gradient(90deg, #ff4d8d, #ffb84d, #4dffb8, #4db8ff, #b84dff); }
+.uv-dv-pearl { border: 0; margin: 12px 0; height: 6px; border-radius: 6px; background: linear-gradient(90deg, #ffd9f3, #c6b2ff, #9fd8ff, #e7ffdc); }
+.uv-dv-chrome { border: 0; margin: 12px 0; height: 6px; background: linear-gradient(180deg, #fff, #8a919c 50%, #f4f6f9); }
+.uv-dv-deep-metal { border: 0; margin: 12px 0; height: 6px; background: linear-gradient(180deg, #a9cbff, #0a2560 50%, #86b4ff); }
+.uv-dv-ticket { border: 0; margin: 12px 0; height: 10px; background: radial-gradient(circle, var(--uv-bg) 4px, transparent 4.5px) 0 50% / 14px 10px repeat-x, var(--uv-line-2); }
+.uv-dv-scissors { border: 0; margin: 12px 0; height: 2px; background: repeating-linear-gradient(90deg, var(--uv-muted) 0 6px, transparent 6px 10px); position: relative; overflow: visible; }
+.uv-dv-brush { border: 0; margin: 12px 0; height: 8px; border-radius: 50% 40% 60% 30%; background: var(--uv-accent); opacity: .8; }
+.uv-dv-short { border: 0; margin: 12px 0; width: 48px !important; height: 4px; background: var(--uv-accent); border-radius: 4px; }
+.uv-dv-arrow { border: 0; margin: 12px 0; height: 12px; background: linear-gradient(var(--uv-line-2) 0 0) 0 50% / calc(100% - 10px) 2px no-repeat, linear-gradient(45deg, transparent 50%, var(--uv-line-2) 50%) right 0 top 50% / 10px 10px no-repeat; }
+.uv-dv-blur { border: 0; margin: 12px 0; height: 12px; background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--uv-accent) 60%, transparent), transparent); }

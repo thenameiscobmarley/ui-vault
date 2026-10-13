@@ -1,0 +1,69 @@
+/*! UI Vault 3.1.0 · collections: text effects (36). MIT */
+@keyframes uv-c-rot { to { transform: rotate(360deg); } }
+@keyframes uv-c-flow { 50% { background-position: 100% 50%; } }
+@keyframes uv-c-ping { 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@keyframes uv-c-breathe { 50% { transform: scale(.55); opacity: .5; } }
+@keyframes uv-c-ripple { from { transform: scale(.1); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+@keyframes uv-c-dots { 0% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 40%; } 33% { background-size: 33.3% 100%, 33.3% 40%, 33.3% 40%; } 66% { background-size: 33.3% 40%, 33.3% 100%, 33.3% 40%; } 100% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 100%; } }
+@keyframes uv-c-bars { 0%, 100% { background-size: 20% 100%, 20% 40%, 20% 70%; } 33% { background-size: 20% 40%, 20% 100%, 20% 40%; } 66% { background-size: 20% 70%, 20% 40%, 20% 100%; } }
+@keyframes uv-c-slide { 0% { background-position: -30% 0; } 100% { background-position: 130% 0; } }
+@keyframes uv-c-roll { to { background-position: 22.6px 0; } }
+@keyframes uv-c-fill { 0% { background-size: 0 100%; } 80%, 100% { background-size: 100% 100%; } }
+@keyframes uv-c-flip { 0% { transform: perspective(80px) rotateX(0) rotateY(0); } 50% { transform: perspective(80px) rotateX(-180deg) rotateY(0); } 100% { transform: perspective(80px) rotateX(-180deg) rotateY(-180deg); } }
+@keyframes uv-c-sqspin { 25% { transform: rotate(90deg); } 50% { transform: rotate(180deg) scale(.6); } 75% { transform: rotate(270deg); } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-hg { 50% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uv-c-heart { 0%, 100% { transform: rotate(45deg) scale(1); } 30% { transform: rotate(45deg) scale(1.2); } }
+@keyframes uv-c-bounce { from { transform: translateY(0) scale(1.1, .9); } to { transform: translateY(-26px); } }
+@keyframes uv-c-typing { 0%, 100% { background-position: 10px 50%, 25px 50%, 40px 50%; } 20% { background-position: 10px 30%, 25px 50%, 40px 50%; } 40% { background-position: 10px 50%, 25px 30%, 40px 50%; } 60% { background-position: 10px 50%, 25px 50%, 40px 30%; } }
+@property --uv-c-p { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@keyframes uv-c-pie { to { --uv-c-p: 100%; } }
+@keyframes uv-c-blink { 50% { opacity: .3; } }
+@keyframes uv-c-wave { to { background-position: 20% 50%; } }
+@keyframes uv-c-shimmer { to { background-position: -200% 0; } }
+@keyframes uv-c-bounce-t { to { transform: translateY(-6px); letter-spacing: .3em; } }
+@keyframes uv-c-cube { 25% { transform: rotate(90deg) scale(.7); border-radius: 50%; } 50% { transform: rotate(180deg); border-radius: 0; } 75% { transform: rotate(270deg) scale(.7); border-radius: 50%; } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-dna { to { background-position: 14px 0, 21px 100%; } }
+@keyframes uv-c-glitch { 0% { transform: translate(0); clip-path: inset(0 0 0 0); } 50% { transform: translate(-3px, 1px); clip-path: inset(0 30% 0 0); } 100% { transform: translate(2px, -1px); clip-path: inset(0 0 0 40%); } }
+@keyframes uv-c-pan { to { background-position: 200% 0; } }
+@keyframes uv-c-sheen { 0%, 60% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+@keyframes uv-c-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .45; } }
+@keyframes uv-c-tglitch { 0%, 92%, 100% { text-shadow: 2px 0 #ff2bd6, -2px 0 #00f0ff; transform: none; } 94% { text-shadow: -3px 0 #ff2bd6, 3px 0 #00f0ff; transform: translateX(2px); } 97% { transform: translateX(-2px); } }
+@keyframes uv-c-waveText { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+@keyframes uv-c-blurin { from { filter: blur(8px); opacity: .2; letter-spacing: .3em; } }
+.uv-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.uv-t-gradient { background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uv-t-sunset { background: linear-gradient(90deg, #ff512f, #f09819, #ffd86f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uv-t-rainbow { background: linear-gradient(90deg, #ff4d8d, #ffb84d, #4dffb8, #4db8ff, #b84dff) 0 0 / 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uv-c-pan 4s linear infinite; }
+.uv-t-chrome { background: linear-gradient(180deg, #fff 0%, #c9ced6 38%, #3b4048 50%, #dfe3ea 62%, #fff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 1px 0 #0006); }
+.uv-t-gold { background: linear-gradient(180deg, #fff3c4 0%, #e6c25a 38%, #8a5f0c 52%, #d8b04a 64%, #fff0b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uv-t-deep-metal { background: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%) 150% 0 / 250% 100%, linear-gradient(180deg, #3f74dc 22%, #d6e6ff 48%, #5b8ce8 54%, #23489a 76%); -webkit-background-clip: text; background-clip: text; color: transparent; animation: uv-c-sheen 6s ease-in-out infinite; }
+.uv-t-holo { background: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6) 0 0 / 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uv-c-pan 6s linear infinite; }
+.uv-t-pearl { background: linear-gradient(115deg, #cdb8ff, #ffd9f3, #b8ecff, #fff2c6, #cdb8ff) 0 0 / 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uv-c-pan 9s linear infinite; }
+.uv-t-fire { background: linear-gradient(0deg, #ff3d00, #ffb300 55%, #fff3c4); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 10px #ff6a0066); }
+.uv-t-ice { background: linear-gradient(180deg, #fff, #bfe6ff 40%, #3a9be0 55%, #dff4ff 70%, #fff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uv-t-neon { color: color-mix(in srgb, var(--uv-accent), #fff 55%); text-shadow: 0 0 6px var(--uv-accent), 0 0 20px var(--uv-accent), 0 0 44px color-mix(in srgb, var(--uv-accent) 50%, transparent); }
+.uv-t-neon-flicker { color: color-mix(in srgb, var(--uv-accent-2), #fff 55%); text-shadow: 0 0 6px var(--uv-accent-2), 0 0 20px var(--uv-accent-2); animation: uv-c-flicker 2.4s linear infinite; }
+.uv-t-outline { color: transparent; -webkit-text-stroke: 1.5px var(--uv-text); }
+.uv-t-outline-fill { color: transparent; -webkit-text-stroke: 1.5px var(--uv-text); background: linear-gradient(var(--uv-text) 0 0) 0 0 / 0 100% no-repeat; -webkit-background-clip: text; background-clip: text; color: transparent; transition: background-size .5s; } .uv-t-outline-fill:hover { background-size: 100% 100%; }
+.uv-t-3d { color: var(--uv-text); text-shadow: 1px 1px 0 var(--uv-accent), 2px 2px 0 var(--uv-accent), 3px 3px 0 var(--uv-accent), 4px 4px 0 var(--uv-accent), 5px 5px 0 var(--uv-accent), 6px 6px 0 var(--uv-accent); }
+.uv-t-long { color: var(--uv-text); text-shadow: 1px 1px 0 color-mix(in srgb, var(--uv-accent) 56%, transparent), 2px 2px 0 color-mix(in srgb, var(--uv-accent) 52%, transparent), 3px 3px 0 color-mix(in srgb, var(--uv-accent) 48%, transparent), 4px 4px 0 color-mix(in srgb, var(--uv-accent) 44%, transparent), 5px 5px 0 color-mix(in srgb, var(--uv-accent) 40%, transparent), 6px 6px 0 color-mix(in srgb, var(--uv-accent) 36%, transparent), 7px 7px 0 color-mix(in srgb, var(--uv-accent) 32%, transparent), 8px 8px 0 color-mix(in srgb, var(--uv-accent) 28%, transparent), 9px 9px 0 color-mix(in srgb, var(--uv-accent) 24%, transparent), 10px 10px 0 color-mix(in srgb, var(--uv-accent) 20%, transparent), 11px 11px 0 color-mix(in srgb, var(--uv-accent) 16%, transparent), 12px 12px 0 color-mix(in srgb, var(--uv-accent) 12%, transparent), 13px 13px 0 color-mix(in srgb, var(--uv-accent) 8%, transparent), 14px 14px 0 color-mix(in srgb, var(--uv-accent) 5%, transparent); }
+.uv-t-retro { color: #ffe66d; text-shadow: 3px 3px 0 #ff6ec7, 6px 6px 0 #7b2ff7; font-style: italic; }
+.uv-t-glitch { text-shadow: 2px 0 #ff2bd6, -2px 0 #00f0ff; animation: uv-c-tglitch 2.4s steps(1) infinite; }
+.uv-t-emboss { color: color-mix(in srgb, var(--uv-text) 55%, var(--uv-bg)); text-shadow: 0 1px 0 #ffffff50, 0 -1px 0 #00000060; }
+.uv-t-letterpress { color: color-mix(in srgb, var(--uv-bg), #000 35%); text-shadow: 0 1px 1px #ffffff30; }
+.uv-t-marker { background: linear-gradient(100deg, transparent .2em, color-mix(in srgb, var(--uv-accent) 40%, transparent) .2em calc(100% - .2em), transparent 0) 0 85% / 100% 42% no-repeat; }
+.uv-t-underline-draw { background: linear-gradient(var(--uv-accent) 0 0) 0 100% / 0 3px no-repeat; transition: background-size .4s; } .uv-t-underline-draw:hover { background-size: 100% 3px; }
+.uv-t-sticker { color: var(--uv-accent); -webkit-text-stroke: 6px #fff; paint-order: stroke fill; filter: drop-shadow(0 3px 4px #0006); }
+.uv-t-shimmer { background: linear-gradient(100deg, var(--uv-muted) 40%, var(--uv-text) 50%, var(--uv-muted) 60%) 0 0 / 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uv-c-pan 2.6s linear infinite reverse; }
+.uv-t-wave { display: inline-block; animation: uv-c-waveText 1.6s ease-in-out infinite; }
+.uv-t-blur-in { animation: uv-c-blurin 1.4s ease both infinite alternate; }
+.uv-t-spaced { letter-spacing: .35em; text-transform: uppercase; font-weight: 300; }
+.uv-t-condensed { letter-spacing: -.06em; font-weight: 900; }
+.uv-t-mirror { -webkit-box-reflect: below -8px linear-gradient(transparent 40%, #0005); }
+.uv-t-stroke-gradient { color: var(--uv-bg); -webkit-text-stroke: 2px var(--uv-accent); text-shadow: 3px 3px 0 var(--uv-accent-2); }
+.uv-t-pop-shadow { color: #fff; text-shadow: 0 4px 0 var(--uv-accent), 0 8px 0 var(--uv-text); }
+.uv-t-vapor { background: linear-gradient(180deg, #ffe66d 0%, #ff6ec7 45%, #7b2ff7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; filter: drop-shadow(0 0 12px #ff3cac66); }
+.uv-t-matrix { color: #3cff6a; font-family: var(--uv-mono); text-shadow: 0 0 8px #3cff6a; }
+.uv-t-glass { color: #ffffff26; -webkit-text-stroke: 1px #ffffffaa; text-shadow: 0 8px 20px #0008; }
+.uv-t-shadow-soft { text-shadow: 0 6px 20px rgb(0 0 0 / .45); }
+.uv-t-cut { background: linear-gradient(var(--uv-text) 50%, var(--uv-accent) 50%); -webkit-background-clip: text; background-clip: text; color: transparent; }

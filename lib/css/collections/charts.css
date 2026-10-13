@@ -1,0 +1,45 @@
+/*! UI Vault 3.1.0 · collections: css charts (12). MIT */
+@keyframes uv-c-rot { to { transform: rotate(360deg); } }
+@keyframes uv-c-flow { 50% { background-position: 100% 50%; } }
+@keyframes uv-c-ping { 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@keyframes uv-c-breathe { 50% { transform: scale(.55); opacity: .5; } }
+@keyframes uv-c-ripple { from { transform: scale(.1); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+@keyframes uv-c-dots { 0% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 40%; } 33% { background-size: 33.3% 100%, 33.3% 40%, 33.3% 40%; } 66% { background-size: 33.3% 40%, 33.3% 100%, 33.3% 40%; } 100% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 100%; } }
+@keyframes uv-c-bars { 0%, 100% { background-size: 20% 100%, 20% 40%, 20% 70%; } 33% { background-size: 20% 40%, 20% 100%, 20% 40%; } 66% { background-size: 20% 70%, 20% 40%, 20% 100%; } }
+@keyframes uv-c-slide { 0% { background-position: -30% 0; } 100% { background-position: 130% 0; } }
+@keyframes uv-c-roll { to { background-position: 22.6px 0; } }
+@keyframes uv-c-fill { 0% { background-size: 0 100%; } 80%, 100% { background-size: 100% 100%; } }
+@keyframes uv-c-flip { 0% { transform: perspective(80px) rotateX(0) rotateY(0); } 50% { transform: perspective(80px) rotateX(-180deg) rotateY(0); } 100% { transform: perspective(80px) rotateX(-180deg) rotateY(-180deg); } }
+@keyframes uv-c-sqspin { 25% { transform: rotate(90deg); } 50% { transform: rotate(180deg) scale(.6); } 75% { transform: rotate(270deg); } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-hg { 50% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uv-c-heart { 0%, 100% { transform: rotate(45deg) scale(1); } 30% { transform: rotate(45deg) scale(1.2); } }
+@keyframes uv-c-bounce { from { transform: translateY(0) scale(1.1, .9); } to { transform: translateY(-26px); } }
+@keyframes uv-c-typing { 0%, 100% { background-position: 10px 50%, 25px 50%, 40px 50%; } 20% { background-position: 10px 30%, 25px 50%, 40px 50%; } 40% { background-position: 10px 50%, 25px 30%, 40px 50%; } 60% { background-position: 10px 50%, 25px 50%, 40px 30%; } }
+@property --uv-c-p { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@keyframes uv-c-pie { to { --uv-c-p: 100%; } }
+@keyframes uv-c-blink { 50% { opacity: .3; } }
+@keyframes uv-c-wave { to { background-position: 20% 50%; } }
+@keyframes uv-c-shimmer { to { background-position: -200% 0; } }
+@keyframes uv-c-bounce-t { to { transform: translateY(-6px); letter-spacing: .3em; } }
+@keyframes uv-c-cube { 25% { transform: rotate(90deg) scale(.7); border-radius: 50%; } 50% { transform: rotate(180deg); border-radius: 0; } 75% { transform: rotate(270deg) scale(.7); border-radius: 50%; } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-dna { to { background-position: 14px 0, 21px 100%; } }
+@keyframes uv-c-glitch { 0% { transform: translate(0); clip-path: inset(0 0 0 0); } 50% { transform: translate(-3px, 1px); clip-path: inset(0 30% 0 0); } 100% { transform: translate(2px, -1px); clip-path: inset(0 0 0 40%); } }
+@keyframes uv-c-pan { to { background-position: 200% 0; } }
+@keyframes uv-c-sheen { 0%, 60% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+@keyframes uv-c-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .45; } }
+@keyframes uv-c-tglitch { 0%, 92%, 100% { text-shadow: 2px 0 #ff2bd6, -2px 0 #00f0ff; transform: none; } 94% { text-shadow: -3px 0 #ff2bd6, 3px 0 #00f0ff; transform: translateX(2px); } 97% { transform: translateX(-2px); } }
+@keyframes uv-c-waveText { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+@keyframes uv-c-blurin { from { filter: blur(8px); opacity: .2; letter-spacing: .3em; } }
+.uv-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.uv-ch-bars { display: flex; align-items: end; gap: 6px; height: 100px; width: 100%; } .uv-ch-bars > i { flex: 1; height: var(--v); border-radius: 4px 4px 0 0; background: linear-gradient(var(--uv-accent), color-mix(in srgb, var(--uv-accent) 40%, transparent)); }
+.uv-ch-hbars { display: grid; gap: 8px; width: 100%; } .uv-ch-hbars > i { height: 12px; width: var(--v); border-radius: 6px; background: var(--uv-accent); }
+.uv-ch-donut { width: 100px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(var(--uv-accent) 0 var(--a), var(--uv-accent-2) 0 var(--b), var(--uv-line-2) 0); -webkit-mask: radial-gradient(farthest-side, transparent 58%, #000 59%); mask: radial-gradient(farthest-side, transparent 58%, #000 59%); }
+.uv-ch-pie { width: 100px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(var(--uv-accent) 0 35%, var(--uv-accent-2) 0 60%, var(--uv-muted) 0 82%, var(--uv-line-2) 0); }
+.uv-ch-gauge { width: 120px; aspect-ratio: 2; border-radius: 120px 120px 0 0; background: conic-gradient(from -90deg at 50% 100%, var(--uv-accent) 0 calc(var(--v) * 1.8deg), var(--uv-line-2) 0 180deg, transparent 0); -webkit-mask: radial-gradient(circle at 50% 100%, transparent 55%, #000 56%); mask: radial-gradient(circle at 50% 100%, transparent 55%, #000 56%); }
+.uv-ch-spark { width: 100%; height: 50px; } .uv-ch-spark polyline { fill: none; stroke: var(--uv-accent); stroke-width: 2.5; stroke-linejoin: round; } .uv-ch-spark polygon { fill: color-mix(in srgb, var(--uv-accent) 18%, transparent); }
+.uv-ch-stacked { display: flex; width: 100%; height: 16px; border-radius: 8px; overflow: hidden; } .uv-ch-stacked > i { width: var(--v); } .uv-ch-stacked > i:nth-child(1) { background: var(--uv-accent); } .uv-ch-stacked > i:nth-child(2) { background: var(--uv-accent-2); } .uv-ch-stacked > i:nth-child(3) { background: var(--uv-muted); }
+.uv-ch-heatmap { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; width: 100%; } .uv-ch-heatmap > i { aspect-ratio: 1; border-radius: 2px; background: color-mix(in srgb, var(--uv-accent) var(--v), var(--uv-surface-2)); }
+.uv-ch-ring { width: 90px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--uv-accent) calc(var(--v) * 1%), var(--uv-line-2) 0); -webkit-mask: radial-gradient(farthest-side, transparent 78%, #000 79%); mask: radial-gradient(farthest-side, transparent 78%, #000 79%); }
+.uv-ch-kpi { display: grid; gap: 2px; padding: 14px 16px; border-radius: 10px; background: var(--uv-surface); border: 1px solid var(--uv-line); } .uv-ch-kpi small { color: var(--uv-muted); font: 500 11px var(--uv-mono); text-transform: uppercase; } .uv-ch-kpi b { font: 700 28px var(--uv-font); } .uv-ch-kpi em { font-style: normal; font-size: 12px; color: var(--uv-success); }
+.uv-ch-columns { display: flex; align-items: end; gap: 12px; height: 100px; } .uv-ch-columns > span { display: flex; align-items: end; gap: 3px; height: 100%; } .uv-ch-columns i { width: 10px; height: var(--v); border-radius: 3px 3px 0 0; background: var(--uv-accent); } .uv-ch-columns i + i { background: var(--uv-accent-2); }
+.uv-ch-meter { display: flex; gap: 3px; width: 100%; } .uv-ch-meter > i { flex: 1; height: 18px; border-radius: 2px; background: var(--uv-line-2); } .uv-ch-meter > i.on { background: var(--uv-success); } .uv-ch-meter > i.on.w { background: var(--uv-warn); } .uv-ch-meter > i.on.d { background: var(--uv-danger); }

@@ -6,7 +6,7 @@ Run from the repo root after editing anything in lib/css or lib/js:
 """
 import json, re, sys, zipfile
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
-import theme_specs, parts_specs, layers_specs
+import theme_specs, parts_specs, layers_specs, collections_specs
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -349,6 +349,25 @@ PAGES = [  # page, title, what it is, group
 ]
 
 
+def build_collections():
+    """lib/css/collections/<key>.css, lib/css/collections.css, lib/icons.svg, lib/collections.js."""
+    C = collections_specs
+    cols = C.collections()
+    d = CSS / "collections"; d.mkdir(exist_ok=True)
+    head = f"/*! UI Vault {VERSION} · collections"
+    allcss = [f"{head} — gradients, patterns, loaders, text effects, shadows, image hovers, dividers, tooltips, charts, icons. MIT */", C.KEYFRAMES, C.ICON_BASE]
+    for c in cols:
+        body = "\n".join(i["css"] for i in c["items"] if i["css"])
+        (d / f"{c['key']}.css").write_text(f"{head}: {c['label'].lower()} ({len(c['items'])}). MIT */\n" + C.KEYFRAMES + C.ICON_BASE + "\n" + body + "\n")
+        DESC[f"{c['key']}.css"] = f"Collection: {len(c['items'])} {c['label'].lower()}."
+        allcss.append(f"/* ── {c['label']} ── */\n" + body)
+    (CSS / "collections.css").write_text("\n".join(allcss) + "\n")
+    DESC["collections.css"] = "Every collection: gradients, patterns, CSS loaders, text effects, shadows, image hovers, dividers, tooltip styles, CSS charts."
+    (LIB / "icons.svg").write_text(C.sprite())
+    (LIB / "collections.js").write_text("window.UV_COLLECTIONS = " + json.dumps({"keyframes": C.KEYFRAMES, "iconBase": C.ICON_BASE, "collections": cols}, ensure_ascii=False) + ";\n")
+    return cols
+
+
 def build_catalog():
     """lib/catalog.js — the search index (Index page) and the item list behind the Library page."""
     items = []   # [kind, id, name, desc, url, group]
@@ -413,7 +432,7 @@ def raw_src():
 def manifest(themes):
     files = []
     for p in sorted(LIB.rglob("*")):
-        if p.is_file() and p.suffix in (".css", ".js", ".json") and p.name not in ("themes.src.css", "themes.gen.css", "manifest.js", "manifest.json", "raw-src.js", "tokens.js", "parts.js", "parts-src.js", "catalog.js", "native.json"):
+        if p.is_file() and p.suffix in (".css", ".js", ".json", ".svg") and p.name not in ("themes.src.css", "themes.gen.css", "manifest.js", "manifest.json", "raw-src.js", "tokens.js", "parts.js", "parts-src.js", "catalog.js", "native.json", "collections.js"):
             rel = p.relative_to(LIB).as_posix()
             files.append({"path": rel, "bytes": p.stat().st_size, "desc": DESC.get(p.name, "")})
     m = {"version": VERSION, "css": CSS_ORDER, "js": JS_ORDER, "themes": themes, "files": files}
@@ -454,6 +473,7 @@ if __name__ == "__main__":
     tokens = export_tokens(themes)
     export_cpp(tokens, parts)
     native = build_native(layers)
+    cols = build_collections()
     catalog = build_catalog()
     raw_src()
     m = manifest(themes)

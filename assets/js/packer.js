@@ -13,6 +13,7 @@
     if (!window.UV_PARTS_SRC) need.push(load("lib/parts-src.js"));
     if (!window.UV_PARTS) need.push(load("lib/parts.js"));
     if (!window.BLOCKS) need.push(load("assets/js/blocks.js"));
+    if (!window.UV_COLLECTIONS) need.push(load("lib/collections.js"));
     if (!(window.UV && UV.layers)) need.push(load("lib/uivault.js"));
     await Promise.all(need);
   }
@@ -77,7 +78,8 @@
 
   // ── resolve picks → package parts ────────────────────────────────────────
   function resolve(ids) {
-    const P = window.UV_PARTS, pk = { themes: new Set(), parts: {}, partList: [], classes: new Set(), js: new Set(["core"]), layers: {}, blocks: [], native: new Set(), fx: new Set(), samples: [] };
+    const P = window.UV_PARTS, pk = { themes: new Set(), parts: {}, partList: [], classes: new Set(), js: new Set(["core"]), layers: {}, blocks: [], native: new Set(), fx: new Set(), samples: [], cols: [], icons: [] };
+    const COLS = Object.fromEntries(((window.UV_COLLECTIONS || {}).collections || []).map(c => [c.key, c]));
     for (const id of ids) {
       const [kind, a, b] = id.split("/");
       if (kind === "theme") pk.themes.add(a);
@@ -98,6 +100,7 @@
       else if (kind === "js") { const n = a.replace(/^UV\./, ""); if (n.startsWith("fx.")) pk.js.add(n === "fx.waterfall" ? "waterfall" : "fx"); else pk.js.add(JS_OF[n] || "motion"); }
       else if (kind === "block") pk.blocks.push(+a);
       else if (kind === "native") pk.native.add(a);
+      else if (kind === "col") { const it = COLS[a] && COLS[a].items.find(x => x.name === b); if (it) (a === "icons" ? pk.icons : pk.cols).push(it); }
     }
     for (const f of Object.keys(pk.parts)) FAMILY_CLASSES[f].forEach(c => pk.classes.add(c));
     for (const t of Object.keys(pk.layers)) { const fam = FAMILY_CLASSES[t]; fam && fam.forEach(c => pk.classes.add(c)); }
@@ -127,6 +130,11 @@
       }
     }
     if (Object.keys(pk.layers).length) out.push("/* effect layers */\n" + UV.layers.css(pk.layers));
+    if (pk.cols.length || pk.icons.length) {
+      const C = window.UV_COLLECTIONS, body = pk.cols.map(i => i.css).join("\n");
+      const kfs = (C.keyframes.match(/@(keyframes|property)[^{]+\{(?:[^{}]|\{[^{}]*\})*\}/g) || []).filter(k => { const n = k.split(/\s+/)[1]; return body.includes(n); });
+      out.push("/* collections: " + [...pk.cols, ...pk.icons].map(i => i.cls === "uv-icon" ? "icon " + i.name : i.cls).join(", ") + " */\n" + kfs.join("\n") + "\n" + (pk.icons.length ? C.iconBase + "\n" : "") + body);
+    }
     return out.join("\n\n") + "\n";
   }
 
@@ -160,7 +168,8 @@
       ...[...fams].map(f => SAMPLE[f]).filter(Boolean),
       ...[...pk.fx].map(c => `<h2 class="${c}" data-text="Effect">Effect</h2>`),
       ...[...pk.classes].filter(c => !pk.fx.has(c) && !Object.values(FAMILY_CLASSES).flat().includes(c)).map(c => `<div class="${c}"><!-- see docs.html for the markup --></div>`),
-      ...pk.blocks.map(i => `<!-- block: ${((window.BLOCKS || [])[i] || [])[1]} (full markup in index.html) -->`)];
+      ...pk.blocks.map(i => `<!-- block: ${((window.BLOCKS || [])[i] || [])[1]} (full markup in index.html) -->`),
+      ...pk.cols.map(i => i.html), ...(pk.icons.length ? ["<!-- icons: paste the SVG, or use the sprite in css/icons.svg -->", pk.icons.map(i => i.html).join(" ")] : [])];
     const js = [];
     if (Object.keys(pk.layers).length) js.push(`UV.layers.apply(${JSON.stringify(pk.layers)});`);
     ids.filter(i => i.startsWith("js/")).forEach(i => js.push(`${i.slice(3)}(/* see docs.html */);`));
@@ -191,6 +200,7 @@
       out.push(["uivault/css/uivault.picked.css", `/*! UI Vault — your picks: ${ids.join(", ")} · MIT */\n` + cssFor(pk)]);
       const fonts = window.UV_SRC.css.match(/@import url\([^)]*\);/); if (fonts) out.push(["uivault/css/fonts.css", fonts[0] + "\n"]);
       for (const m of pk.js) if (window.UV_SRC.js[m]) out.push([`uivault/js/${m}.js`, window.UV_SRC.js[m]]);
+      if (pk.icons.length) out.push(["uivault/css/icons.svg", '<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n' + pk.icons.map(i => i.html.replace(/^<svg class="uv-icon" viewBox="0 0 24 24" aria-hidden="true">/, `<symbol id="${i.name}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">`).replace(/<\/svg>$/, "</symbol>")).join("\n") + "\n</svg>\n"]);
     }
     if (opt.example) {
       const theme = [...pk.themes][0] || "";

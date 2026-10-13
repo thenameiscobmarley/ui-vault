@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="lib/css/fonts.css" />
 <link rel="stylesheet" href="lib/uivault.css" />
 <link rel="stylesheet" href="lib/css/parts.css" />
+<link rel="stylesheet" href="lib/css/collections.css" />
 <style>
   :root { --pg-bg: #101012; --pg-bg2: #151517; --pg-bg3: #1c1c1f; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", serif; }
   html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
@@ -40,6 +41,9 @@
   .catdesc { margin: -6px 0 16px; color: var(--pg-mu); font-size: 14px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
   .grid.wide { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .grid.small { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .grid.small .tile .stage { min-height: 96px; font-size: 26px; }
+  .grid.small .tile footer .sbtn[data-code] { display: none; }
   .tile { display: flex; flex-direction: column; border-radius: 10px; border: 1px solid var(--pg-ln); overflow: hidden; content-visibility: auto; contain-intrinsic-size: auto 240px; background: var(--pg-bg2); }
   .tile.in { border-color: var(--pg-ac); box-shadow: 0 0 0 1px var(--pg-ac); }
   .tile.flash { animation: flash 1.6s ease; } @keyframes flash { 0%, 40% { box-shadow: 0 0 0 4px var(--pg-ac); } }
@@ -113,6 +117,7 @@
 <script src="lib/parts.js"></script>
 <script src="lib/manifest.js"></script>
 <script src="lib/catalog.js"></script>
+<script src="lib/collections.js"></script>
 <script src="assets/js/blocks.js"></script>
 <script src="assets/js/picker.js"></script>
 <script src="assets/js/packer.js"></script>

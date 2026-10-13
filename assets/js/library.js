@@ -71,7 +71,7 @@
 
   // ── categories ───────────────────────────────────────────────────────────
   const cats = [];
-  const C = (group, key, label, desc, items, wide) => cats.push({ group, key, label, desc, items, wide });
+  const C = (group, key, label, desc, items, wide, small) => cats.push({ group, key, label, desc, items, wide, small });
   const themes = (window.UV_MANIFEST || {}).themes || [];
   C("Style", "themes", "Themes", "Complete looks: colours, type, buttons, cards, hover motion and backgrounds. Add one to set your package's theme.",
     themes.map(t => ({ id: `theme/${t.name}`, name: t.name, desc: `${t.category} · ${t.desc}`, html: `<div class="col" data-uv-theme="${t.name}" style="padding:14px;border-radius:8px;width:100%"><h2 class="uv-h2" style="font-size:30px;text-align:left">${t.name}</h2><div class="uv-row"><button class="uv-btn uv-btn--primary uv-btn--sm" type="button">Primary</button><button class="uv-btn uv-btn--sm" type="button">Second</button><span class="uv-badge uv-badge--accent">New</span></div></div>` })));
@@ -84,6 +84,8 @@
   C("Effects & motion", "animations", "Animations", "Hover, press, entrance and idle motion layers. Hover a preview to see it.", opts(["hover", "press", "enter", "idle"]));
   C("Effects & motion", "fx", "uv-fx effects", "Classic one-class effects: add class=\"uv-fx-…\" to any element.", L.kinds.find(k => k.key === "fx").options.map(o => ({ id: `fx/${o.fx}`, name: o.label, desc: o.fx, html: `<h2 class="uv-h2 ${o.fx}" data-text="${esc(o.label)}" style="font-size:34px">${esc(o.label)}</h2>` })));
   C("Effects & motion", "js", "JavaScript", "The UV.* functions. Hover or click a preview to run it.", CAT.filter(i => i[0] === "JavaScript").map(i => ({ id: i[1], name: i[2], desc: i[3], js: i[1].slice(3) })));
+  for (const col of (window.UV_COLLECTIONS || {}).collections || [])
+    C("Collections", "col-" + col.key, col.label, col.desc, col.items.map(i => ({ id: `col/${col.key}/${i.name}`, name: i.label, desc: i.cls === "uv-icon" ? i.name : i.cls, html: i.html })), col.wide, col.small);
   C("More", "backgrounds", "Page backgrounds", "Animated canvases, cursor effects and scrolling for the whole page (hover a preview to play it).", L.pageKinds.flatMap(k => [{ sub: k.label }, ...k.options.map(o => ({ id: `layer/${k.key}/${o.name}`, name: o.label, desc: `${k.label}`, kind: k.key, opt: o, page: true }))]));
   C("More", "components", "Components", "The building blocks: every uv-* component class.", CAT.filter(i => i[0] === "Component").map(i => ({ id: `comp/${i[2]}`, name: i[2], desc: i[3], html: COMP[i[2]] || `<div class="${i[2]}" style="padding:14px">${i[2]}</div>` })));
   C("More", "blocks", "Blocks", "Full page sections (heroes, features, pricing, footers…). They need blocks.css, which the zipper includes.", (window.BLOCKS || []).map(([cat, name, html], i) => ({ id: `block/${i}`, name, desc: cat, block: html })), true);
@@ -126,7 +128,7 @@
     previewCss.length = 0;
     const q = $("#q").value.trim().toLowerCase();
     const items = q ? c.items.filter(i => i.sub || (i.name + " " + i.desc).toLowerCase().includes(q)) : c.items;
-    $("#grid").className = "grid" + (c.wide ? " wide" : "");
+    $("#grid").className = "grid" + (c.wide ? " wide" : "") + (c.small ? " small" : "");
     $("#grid").innerHTML = items.map(i => tile(i, c.key)).join("");
     styleEl.textContent = previewCss.join("\n");
     UV.init($("#grid"));
