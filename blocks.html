@@ -40,6 +40,7 @@
   @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .side { display: none; } }
 </style>
 <script>try{const t=localStorage.getItem("uv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{const t=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body class="uv">
 <header class="top">

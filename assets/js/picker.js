@@ -17,7 +17,8 @@
     --ink: var(--uv-bg); --ink-2: var(--uv-surface); --ink-3: var(--uv-surface-2); --rule: var(--uv-line); --rule-2: var(--uv-line-2); --fg: var(--uv-text); --fg-2: var(--uv-muted); --fg-3: var(--uv-dim); --sig: var(--uv-accent); }
   html[data-uv-theme] body { background-color: transparent !important; color: var(--uv-text); }
   .uvp-btn { position: fixed; left: 16px; bottom: 16px; z-index: 9990; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 10px; border-radius: 999px; border: 1px solid #ffffff33; background: #151517e6; color: #fff; font: 500 13px "Geist", system-ui, sans-serif; cursor: pointer; backdrop-filter: blur(8px); box-shadow: 0 10px 30px -10px #000a; transition: transform .2s; }
-  .uvp-btn:hover { transform: translateY(-2px); } .uvp-btn i { width: 20px; height: 20px; border-radius: 50%; background: conic-gradient(#ff4f00, #ffd23f, #39ff88, #00f0ff, #b46bff, #ff2bd6, #ff4f00); }
+  .uvp-btn:hover { transform: translateY(-2px); }
+  .uvp-mode { left: 116px; width: 40px; padding: 0; justify-content: center; font-size: 17px; } .uvp-btn i { width: 20px; height: 20px; border-radius: 50%; background: conic-gradient(#ff4f00, #ffd23f, #39ff88, #00f0ff, #b46bff, #ff2bd6, #ff4f00); }
   .uvp { position: fixed; left: 16px; bottom: 64px; z-index: 9991; width: min(330px, calc(100vw - 32px)); max-height: min(520px, calc(100vh - 90px)); display: none; flex-direction: column; border-radius: 12px; border: 1px solid #ffffff26; background: #151517f5; color: #ecebe8; font: 14px "Geist", system-ui, sans-serif; box-shadow: 0 30px 60px -20px #000c; backdrop-filter: blur(12px); overflow: hidden; }
   .uvp.open { display: flex; animation: uvp-in .25s cubic-bezier(.2, 1.1, .4, 1); } @keyframes uvp-in { from { opacity: 0; transform: translateY(8px) scale(.98); } }
   .uvp header { display: grid; gap: 8px; padding: 12px; border-bottom: 1px solid #ffffff1a; }
@@ -77,7 +78,27 @@
   }
   function mark() { panel && panel.querySelectorAll("li").forEach(li => li.classList.toggle("on", li.dataset.n === (html.dataset.uvTheme || ""))); }
 
+  // light / dark mode — shared by every page (localStorage "uv-theme"; pages have an early script that applies it)
+  const isDark = () => {
+    if (html.dataset.theme) return html.dataset.theme === "dark";
+    const m = getComputedStyle(document.body).backgroundColor.match(/\d+/g) || [255, 255, 255];
+    return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255 < .5;
+  };
+  let modeBtn;
+  const syncMode = () => { if (modeBtn) { const d = isDark(); modeBtn.textContent = d ? "☀" : "☾"; modeBtn.title = d ? "Switch to light mode" : "Switch to dark mode"; } };
+  function toggleMode() {
+    const next = isDark() ? "light" : "dark";
+    html.dataset.theme = next;
+    try { localStorage.setItem("uv-theme", next); } catch {}
+    syncMode();
+  }
+  new MutationObserver(syncMode).observe(html, { attributes: true, attributeFilter: ["data-theme"] });
+
   const mount = () => {
+    modeBtn = Object.assign(document.createElement("button"), { className: "uvp-btn uvp-mode", type: "button" });
+    modeBtn.setAttribute("aria-label", "Toggle light or dark mode");
+    modeBtn.onclick = toggleMode;
+    document.body.append(modeBtn); syncMode();
     btn = Object.assign(document.createElement("button"), { className: "uvp-btn", type: "button", innerHTML: "<i></i>Theme", title: "Try any style on this page" });
     panel = Object.assign(document.createElement("div"), { className: "uvp" });
     btn.onclick = open;
@@ -86,5 +107,5 @@
     document.addEventListener("click", e => { if (panel.classList.contains("open") && !panel.contains(e.target) && !btn.contains(e.target)) panel.classList.remove("open"); });
   };
   document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", mount) : mount();
-  window.UVPicker = { apply, refresh: () => { render(); const s = html.dataset.uvTheme; if (s && store.get("uv-custom-styles", {})[s]) apply(s); } };
+  window.UVPicker = { toggleMode, apply, refresh: () => { render(); const s = html.dataset.uvTheme; if (s && store.get("uv-custom-styles", {})[s]) apply(s); } };
 })();
