@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: anodized — anodised aluminium in electric blue and violet. Needs core.css. MIT */
 [data-uv-theme="anodized"] {
-  --uv-bg: #0d1022; --uv-text: #e8ecff; --uv-accent: #4f6bff; --uv-accent-2: #c04bff; --uv-surface: #181b2d; --uv-surface-2: #212436; --uv-surface-3: #2e3143; --uv-line: #e8ecff24; --uv-line-2: #e8ecff42; --uv-muted: #a2a6b8; --uv-dim: #767a8c; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0d1022; --uv-text: #e8ecff; --uv-accent: #4f6bff; --uv-accent-2: #c04bff; --uv-on-accent: #ffffff; --uv-surface: #181b2d; --uv-surface-2: #212436; --uv-surface-3: #2e3143; --uv-line: #e8ecff24; --uv-line-2: #e8ecff42; --uv-muted: #a2a6b8; --uv-dim: #767a8c; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

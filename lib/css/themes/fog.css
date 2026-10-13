@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: fog — cool grey haze, soft shadows, nothing loud. Needs core.css. MIT */
 [data-uv-theme="fog"] {
-  --uv-bg: #eef0f2; --uv-text: #2b3036; --uv-accent: #5b6b7c; --uv-accent-2: #5b6b7c; --uv-surface: #f7f8f9; --uv-surface-2: #e2e4e7; --uv-surface-3: #d9dbdd; --uv-line: #2b30361a; --uv-line-2: #2b30362e; --uv-muted: #696d72; --uv-dim: #909498; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eef0f2; --uv-text: #2b3036; --uv-accent: #5b6b7c; --uv-accent-2: #5b6b7c; --uv-on-accent: #ffffff; --uv-surface: #f7f8f9; --uv-surface-2: #e2e4e7; --uv-surface-3: #d9dbdd; --uv-line: #2b30361a; --uv-line-2: #2b30362e; --uv-muted: #696d72; --uv-dim: #909498; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: bubblegum — bubblegum pink, candy blue, bouncy. Needs core.css. MIT */
 [data-uv-theme="bubblegum"] {
-  --uv-bg: #ffeaf6; --uv-text: #3d1236; --uv-accent: #ff4fb3; --uv-accent-2: #4fc3ff; --uv-surface: #fff6fb; --uv-surface-2: #f3ddea; --uv-surface-3: #ead2e1; --uv-line: #3d12361a; --uv-line-2: #3d12362e; --uv-muted: #7b5773; --uv-dim: #a2829a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ffeaf6; --uv-text: #3d1236; --uv-accent: #ff4fb3; --uv-accent-2: #4fc3ff; --uv-on-accent: #ffffff; --uv-surface: #fff6fb; --uv-surface-2: #f3ddea; --uv-surface-3: #ead2e1; --uv-line: #3d12361a; --uv-line-2: #3d12362e; --uv-muted: #7b5773; --uv-dim: #a2829a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;

@@ -4,7 +4,7 @@
   --uv-bg: #f4f2ee; --uv-surface: #fbfaf8; --uv-surface-2: #ece9e3; --uv-surface-3: #e2ded6;
   --uv-line: #1a19171a; --uv-line-2: #1a19172e;
   --uv-text: #1a1917; --uv-muted: #5f5b54; --uv-dim: #8f8a82;
-  --uv-accent: #ff4f00; --uv-accent-2: #c43c00;
+  --uv-accent: #ff4f00; --uv-accent-2: #c43c00; --uv-on-accent: #fff;
   --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f; --uv-info: #2b5fb4;
   --uv-grad: linear-gradient(90deg, var(--uv-accent), var(--uv-accent));
   --uv-radius: 6px; --uv-radius-lg: 8px; --uv-radius-full: 999px;
@@ -17,7 +17,7 @@
   --uv-mono: "Geist Mono", ui-monospace, monospace;
   color-scheme: light;
 }
-:root[data-theme="dark"] {
+:root[data-theme="dark"]:not([data-uv-theme]) {
   --uv-bg: #121211; --uv-surface: #181817; --uv-surface-2: #222220; --uv-surface-3: #2b2b29;
   --uv-line: #ffffff14; --uv-line-2: #ffffff26;
   --uv-text: #ecebe8; --uv-muted: #a19d95; --uv-dim: #6f6b64;

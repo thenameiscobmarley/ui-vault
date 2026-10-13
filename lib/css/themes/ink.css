@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: ink — pure ink black, paper-white type, one red. Needs core.css. MIT */
 [data-uv-theme="ink"] {
-  --uv-bg: #0e0e0e; --uv-text: #f2f0eb; --uv-accent: #ff3b2f; --uv-accent-2: #ff3b2f; --uv-surface: #191919; --uv-surface-2: #232222; --uv-surface-3: #30302f; --uv-line: #f2f0eb24; --uv-line-2: #f2f0eb42; --uv-muted: #a9a8a4; --uv-dim: #7b7a78; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0e0e0e; --uv-text: #f2f0eb; --uv-accent: #ff3b2f; --uv-accent-2: #ff3b2f; --uv-on-accent: #ffffff; --uv-surface: #191919; --uv-surface-2: #232222; --uv-surface-3: #30302f; --uv-line: #f2f0eb24; --uv-line-2: #f2f0eb42; --uv-muted: #a9a8a4; --uv-dim: #7b7a78; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-serif: "Instrument Serif", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;

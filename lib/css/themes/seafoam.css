@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: seafoam — seafoam green with coral pops. Needs core.css. MIT */
 [data-uv-theme="seafoam"] {
-  --uv-bg: #e9faf6; --uv-text: #163a36; --uv-accent: #ff7f6a; --uv-accent-2: #38c2a5; --uv-surface: #f5fdfb; --uv-surface-2: #dceeea; --uv-surface-3: #d2e5e1; --uv-line: #163a361a; --uv-line-2: #163a362e; --uv-muted: #5a7773; --uv-dim: #849e9a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #e9faf6; --uv-text: #163a36; --uv-accent: #ff7f6a; --uv-accent-2: #38c2a5; --uv-on-accent: #111111; --uv-surface: #f5fdfb; --uv-surface-2: #dceeea; --uv-surface-3: #d2e5e1; --uv-line: #163a361a; --uv-line-2: #163a362e; --uv-muted: #5a7773; --uv-dim: #849e9a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 700; --uv-head-case: none;

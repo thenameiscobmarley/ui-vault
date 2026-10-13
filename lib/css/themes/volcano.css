@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: volcano — basalt black, flowing lava, ember glow. Needs core.css. MIT */
 [data-uv-theme="volcano"] {
-  --uv-bg: #140b08; --uv-text: #f6e6dc; --uv-accent: #ff4d1a; --uv-accent-2: #ffb000; --uv-surface: #1f1613; --uv-surface-2: #281f1b; --uv-surface-3: #362c28; --uv-line: #f6e6dc24; --uv-line-2: #f6e6dc42; --uv-muted: #aea098; --uv-dim: #80746e; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #140b08; --uv-text: #f6e6dc; --uv-accent: #ff4d1a; --uv-accent-2: #ffb000; --uv-on-accent: #ffffff; --uv-surface: #1f1613; --uv-surface-2: #281f1b; --uv-surface-3: #362c28; --uv-line: #f6e6dc24; --uv-line-2: #f6e6dc42; --uv-muted: #aea098; --uv-dim: #80746e; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

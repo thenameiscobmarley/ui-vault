@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: candy-apple — deep candy-apple red car paint with a clearcoat. Needs core.css. MIT */
 [data-uv-theme="candy-apple"] {
-  --uv-bg: #1a0306; --uv-text: #ffe9ec; --uv-accent: #e0102a; --uv-accent-2: #ff6b81; --uv-surface: #250e12; --uv-surface-2: #2f181b; --uv-surface-3: #3c2628; --uv-line: #ffe9ec24; --uv-line-2: #ffe9ec42; --uv-muted: #b69fa2; --uv-dim: #887174; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1a0306; --uv-text: #ffe9ec; --uv-accent: #e0102a; --uv-accent-2: #ff6b81; --uv-on-accent: #ffffff; --uv-surface: #250e12; --uv-surface-2: #2f181b; --uv-surface-3: #3c2628; --uv-line: #ffe9ec24; --uv-line-2: #ffe9ec42; --uv-muted: #b69fa2; --uv-dim: #887174; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

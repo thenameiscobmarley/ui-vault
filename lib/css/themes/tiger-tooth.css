@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: tiger-tooth — molten gold with tiger stripes. Needs core.css. MIT */
 [data-uv-theme="tiger-tooth"] {
-  --uv-bg: #ffb000; --uv-text: #1f1200; --uv-accent: #1f1200; --uv-accent-2: #ff7a00; --uv-surface: #ffdb8c; --uv-surface-2: #f2a700; --uv-surface-3: #e69f00; --uv-line: #1f12001a; --uv-line-2: #1f12002e; --uv-muted: #674500; --uv-dim: #936400; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ffb000; --uv-text: #1f1200; --uv-accent: #1f1200; --uv-accent-2: #ff7a00; --uv-on-accent: #ffffff; --uv-surface: #ffdb8c; --uv-surface-2: #f2a700; --uv-surface-3: #e69f00; --uv-line: #1f12001a; --uv-line-2: #1f12002e; --uv-muted: #674500; --uv-dim: #936400; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;

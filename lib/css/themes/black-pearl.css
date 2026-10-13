@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: black-pearl — black pearlescent with an oil-slick sheen. Needs core.css. MIT */
 [data-uv-theme="black-pearl"] {
-  --uv-bg: #0c0b12; --uv-text: #efeaff; --uv-accent: #b59cff; --uv-accent-2: #5ee7d0; --uv-surface: #17161e; --uv-surface-2: #201f27; --uv-surface-3: #2e2c36; --uv-line: #efeaff24; --uv-line-2: #efeaff42; --uv-muted: #a6a3b3; --uv-dim: #797684; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0c0b12; --uv-text: #efeaff; --uv-accent: #b59cff; --uv-accent-2: #5ee7d0; --uv-on-accent: #111111; --uv-surface: #17161e; --uv-surface-2: #201f27; --uv-surface-3: #2e2c36; --uv-line: #efeaff24; --uv-line-2: #efeaff42; --uv-muted: #a6a3b3; --uv-dim: #797684; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

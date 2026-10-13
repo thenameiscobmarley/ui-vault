@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: sky — cloud white and clear-sky blue. Needs core.css. MIT */
 [data-uv-theme="sky"] {
-  --uv-bg: #eef6ff; --uv-text: #1b2f4a; --uv-accent: #4a9bff; --uv-accent-2: #9be7ff; --uv-surface: #f7fbff; --uv-surface-2: #e1eaf4; --uv-surface-3: #d7e0eb; --uv-line: #1b2f4a1a; --uv-line-2: #1b2f4a2e; --uv-muted: #5f6f84; --uv-dim: #8996a8; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eef6ff; --uv-text: #1b2f4a; --uv-accent: #4a9bff; --uv-accent-2: #9be7ff; --uv-on-accent: #111111; --uv-surface: #f7fbff; --uv-surface-2: #e1eaf4; --uv-surface-3: #d7e0eb; --uv-line: #1b2f4a1a; --uv-line-2: #1b2f4a2e; --uv-muted: #5f6f84; --uv-dim: #8996a8; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;

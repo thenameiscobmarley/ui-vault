@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: arcade — coin-op cabinet: black, neon red and yellow. Needs core.css. MIT */
 [data-uv-theme="arcade"] {
-  --uv-bg: #0b0b14; --uv-text: #f4f4ff; --uv-accent: #ff2e4d; --uv-accent-2: #ffd23f; --uv-surface: #171720; --uv-surface-2: #202029; --uv-surface-3: #2e2e37; --uv-line: #f4f4ff24; --uv-line-2: #f4f4ff42; --uv-muted: #a9a9b4; --uv-dim: #7b7b85; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0b0b14; --uv-text: #f4f4ff; --uv-accent: #ff2e4d; --uv-accent-2: #ffd23f; --uv-on-accent: #ffffff; --uv-surface: #171720; --uv-surface-2: #202029; --uv-surface-3: #2e2e37; --uv-line: #f4f4ff24; --uv-line-2: #f4f4ff42; --uv-muted: #a9a9b4; --uv-dim: #7b7b85; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Press Start 2P", ui-monospace, monospace; --uv-font-head: "Press Start 2P", ui-monospace, monospace; --uv-serif: "Press Start 2P", ui-monospace, monospace; --uv-btn-font: "Press Start 2P", ui-monospace, monospace;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: none;

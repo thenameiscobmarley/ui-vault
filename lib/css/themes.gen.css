@@ -1,7 +1,7 @@
 /* UI Vault — generated themes (tools/theme_specs.py). Do not edit by hand. */
 /* @theme paper — warm paper, graphite text, a quiet blue link */
 [data-uv-theme="paper"] {
-  --uv-bg: #f7f5f0; --uv-text: #2a2a28; --uv-accent: #2f5bd3; --uv-accent-2: #2f5bd3; --uv-surface: #fbfaf8; --uv-surface-2: #ebe9e4; --uv-surface-3: #e0dfda; --uv-line: #2a2a281a; --uv-line-2: #2a2a282e; --uv-muted: #6c6b68; --uv-dim: #959490; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f7f5f0; --uv-text: #2a2a28; --uv-accent: #2f5bd3; --uv-accent-2: #2f5bd3; --uv-on-accent: #ffffff; --uv-surface: #fbfaf8; --uv-surface-2: #ebe9e4; --uv-surface-3: #e0dfda; --uv-line: #2a2a281a; --uv-line-2: #2a2a282e; --uv-muted: #6c6b68; --uv-dim: #959490; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-serif: "Instrument Serif", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;
@@ -19,7 +19,7 @@
 
 /* @theme linen — off-white linen with a terracotta accent */
 [data-uv-theme="linen"] {
-  --uv-bg: #f3eee6; --uv-text: #3b3530; --uv-accent: #c4623a; --uv-accent-2: #8a6d55; --uv-surface: #faf7f4; --uv-surface-2: #e8e3db; --uv-surface-3: #dfdad2; --uv-line: #3b35301a; --uv-line-2: #3b35302e; --uv-muted: #76706a; --uv-dim: #9b958f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f3eee6; --uv-text: #3b3530; --uv-accent: #c4623a; --uv-accent-2: #8a6d55; --uv-on-accent: #ffffff; --uv-surface: #faf7f4; --uv-surface-2: #e8e3db; --uv-surface-3: #dfdad2; --uv-line: #3b35301a; --uv-line-2: #3b35302e; --uv-muted: #76706a; --uv-dim: #9b958f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -38,7 +38,7 @@
 
 /* @theme fog — cool grey haze, soft shadows, nothing loud */
 [data-uv-theme="fog"] {
-  --uv-bg: #eef0f2; --uv-text: #2b3036; --uv-accent: #5b6b7c; --uv-accent-2: #5b6b7c; --uv-surface: #f7f8f9; --uv-surface-2: #e2e4e7; --uv-surface-3: #d9dbdd; --uv-line: #2b30361a; --uv-line-2: #2b30362e; --uv-muted: #696d72; --uv-dim: #909498; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eef0f2; --uv-text: #2b3036; --uv-accent: #5b6b7c; --uv-accent-2: #5b6b7c; --uv-on-accent: #ffffff; --uv-surface: #f7f8f9; --uv-surface-2: #e2e4e7; --uv-surface-3: #d9dbdd; --uv-line: #2b30361a; --uv-line-2: #2b30362e; --uv-muted: #696d72; --uv-dim: #909498; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -57,7 +57,7 @@
 
 /* @theme porcelain — white porcelain with a celadon glaze */
 [data-uv-theme="porcelain"] {
-  --uv-bg: #fbfbf9; --uv-text: #23302c; --uv-accent: #5f9e8f; --uv-accent-2: #5f9e8f; --uv-surface: #fdfdfc; --uv-surface-2: #eeefed; --uv-surface-3: #e3e5e2; --uv-line: #23302c1a; --uv-line-2: #23302c2e; --uv-muted: #68716e; --uv-dim: #939a97; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fbfbf9; --uv-text: #23302c; --uv-accent: #5f9e8f; --uv-accent-2: #5f9e8f; --uv-on-accent: #111111; --uv-surface: #fdfdfc; --uv-surface-2: #eeefed; --uv-surface-3: #e3e5e2; --uv-line: #23302c1a; --uv-line-2: #23302c2e; --uv-muted: #68716e; --uv-dim: #939a97; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;
@@ -76,7 +76,7 @@
 
 /* @theme newsprint — newspaper grey, black columns, red headlines */
 [data-uv-theme="newsprint"] {
-  --uv-bg: #ece8df; --uv-text: #141414; --uv-accent: #b3261e; --uv-accent-2: #b3261e; --uv-surface: #f6f5f1; --uv-surface-2: #dfdbd3; --uv-surface-3: #d4d1c9; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #595855; --uv-dim: #84827e; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ece8df; --uv-text: #141414; --uv-accent: #b3261e; --uv-accent-2: #b3261e; --uv-on-accent: #ffffff; --uv-surface: #f6f5f1; --uv-surface-2: #dfdbd3; --uv-surface-3: #d4d1c9; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #595855; --uv-dim: #84827e; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -94,7 +94,7 @@
 
 /* @theme blueprint — architect's blue sheet with a white grid */
 [data-uv-theme="blueprint"] {
-  --uv-bg: #13427a; --uv-text: #e9f2ff; --uv-accent: #ffd45c; --uv-accent-2: #ffd45c; --uv-surface: #1e4b81; --uv-surface-2: #265286; --uv-surface-3: #335c8e; --uv-line: #e9f2ff24; --uv-line-2: #e9f2ff42; --uv-muted: #a5bad4; --uv-dim: #7a96ba; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #13427a; --uv-text: #e9f2ff; --uv-accent: #ffd45c; --uv-accent-2: #ffd45c; --uv-on-accent: #111111; --uv-surface: #1e4b81; --uv-surface-2: #265286; --uv-surface-3: #335c8e; --uv-line: #e9f2ff24; --uv-line-2: #e9f2ff42; --uv-muted: #a5bad4; --uv-dim: #7a96ba; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist Mono", ui-monospace, monospace; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Geist Mono", ui-monospace, monospace;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -115,7 +115,7 @@
 
 /* @theme sand — dune beige, umber ink, sun-bleached calm */
 [data-uv-theme="sand"] {
-  --uv-bg: #efe4d2; --uv-text: #3e3227; --uv-accent: #b0743c; --uv-accent-2: #b0743c; --uv-surface: #f8f3eb; --uv-surface-2: #e4d9c8; --uv-surface-3: #dcd0bf; --uv-line: #3e32271a; --uv-line-2: #3e32272e; --uv-muted: #776b5e; --uv-dim: #9a8f80; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #efe4d2; --uv-text: #3e3227; --uv-accent: #b0743c; --uv-accent-2: #b0743c; --uv-on-accent: #ffffff; --uv-surface: #f8f3eb; --uv-surface-2: #e4d9c8; --uv-surface-3: #dcd0bf; --uv-line: #3e32271a; --uv-line-2: #3e32272e; --uv-muted: #776b5e; --uv-dim: #9a8f80; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;
@@ -134,7 +134,7 @@
 
 /* @theme concrete — raw grey concrete, bold black type */
 [data-uv-theme="concrete"] {
-  --uv-bg: #d9d9d6; --uv-text: #151515; --uv-accent: #ff5a1f; --uv-accent-2: #ff5a1f; --uv-surface: #eeeeed; --uv-surface-2: #cdcdca; --uv-surface-3: #c3c3c1; --uv-line: #1515151a; --uv-line-2: #1515152e; --uv-muted: #545453; --uv-dim: #7b7b79; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #d9d9d6; --uv-text: #151515; --uv-accent: #ff5a1f; --uv-accent-2: #ff5a1f; --uv-on-accent: #ffffff; --uv-surface: #eeeeed; --uv-surface-2: #cdcdca; --uv-surface-3: #c3c3c1; --uv-line: #1515151a; --uv-line-2: #1515152e; --uv-muted: #545453; --uv-dim: #7b7b79; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none; --uv-head-tracking: -.04em;
@@ -151,7 +151,7 @@
 
 /* @theme graphite — pencil-lead greys with a mint highlight */
 [data-uv-theme="graphite"] {
-  --uv-bg: #2b2d30; --uv-text: #e6e7e8; --uv-accent: #7de2b8; --uv-accent-2: #7de2b8; --uv-surface: #343639; --uv-surface-2: #3c3e41; --uv-surface-3: #47494c; --uv-line: #e6e7e824; --uv-line-2: #e6e7e842; --uv-muted: #aaabad; --uv-dim: #858688; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2b2d30; --uv-text: #e6e7e8; --uv-accent: #7de2b8; --uv-accent-2: #7de2b8; --uv-on-accent: #111111; --uv-surface: #343639; --uv-surface-2: #3c3e41; --uv-surface-3: #47494c; --uv-line: #e6e7e824; --uv-line-2: #e6e7e842; --uv-muted: #aaabad; --uv-dim: #858688; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -170,7 +170,7 @@
 
 /* @theme swiss-red — international style: grid, black, a single red */
 [data-uv-theme="swiss-red"] {
-  --uv-bg: #ffffff; --uv-text: #0a0a0a; --uv-accent: #e1251b; --uv-accent-2: #e1251b; --uv-surface: #ffffff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e4e4e4; --uv-line: #0a0a0a1a; --uv-line-2: #0a0a0a2e; --uv-muted: #585858; --uv-dim: #898989; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ffffff; --uv-text: #0a0a0a; --uv-accent: #e1251b; --uv-accent-2: #e1251b; --uv-on-accent: #ffffff; --uv-surface: #ffffff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e4e4e4; --uv-line: #0a0a0a1a; --uv-line-2: #0a0a0a2e; --uv-muted: #585858; --uv-dim: #898989; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.05em;
@@ -188,7 +188,7 @@
 
 /* @theme midnight — deep navy night with a moonlit blue */
 [data-uv-theme="midnight"] {
-  --uv-bg: #0b1020; --uv-text: #dfe6f5; --uv-accent: #6ea8ff; --uv-accent-2: #a78bfa; --uv-surface: #161b2b; --uv-surface-2: #1e2333; --uv-surface-3: #2b3040; --uv-line: #dfe6f524; --uv-line-2: #dfe6f542; --uv-muted: #9ba2b1; --uv-dim: #717786; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0b1020; --uv-text: #dfe6f5; --uv-accent: #6ea8ff; --uv-accent-2: #a78bfa; --uv-on-accent: #111111; --uv-surface: #161b2b; --uv-surface-2: #1e2333; --uv-surface-3: #2b3040; --uv-line: #dfe6f524; --uv-line-2: #dfe6f542; --uv-muted: #9ba2b1; --uv-dim: #717786; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -208,7 +208,7 @@
 
 /* @theme obsidian — volcanic black glass with violet edges */
 [data-uv-theme="obsidian"] {
-  --uv-bg: #0a0a0d; --uv-text: #e9e7f2; --uv-accent: #9d7bff; --uv-accent-2: #ff6ad5; --uv-surface: #151518; --uv-surface-2: #1e1e22; --uv-surface-3: #2b2b2f; --uv-line: #e9e7f224; --uv-line-2: #e9e7f242; --uv-muted: #a2a0a9; --uv-dim: #75747b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0a0a0d; --uv-text: #e9e7f2; --uv-accent: #9d7bff; --uv-accent-2: #ff6ad5; --uv-on-accent: #ffffff; --uv-surface: #151518; --uv-surface-2: #1e1e22; --uv-surface-3: #2b2b2f; --uv-line: #e9e7f224; --uv-line-2: #e9e7f242; --uv-muted: #a2a0a9; --uv-dim: #75747b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -228,7 +228,7 @@
 
 /* @theme ink — pure ink black, paper-white type, one red */
 [data-uv-theme="ink"] {
-  --uv-bg: #0e0e0e; --uv-text: #f2f0eb; --uv-accent: #ff3b2f; --uv-accent-2: #ff3b2f; --uv-surface: #191919; --uv-surface-2: #232222; --uv-surface-3: #30302f; --uv-line: #f2f0eb24; --uv-line-2: #f2f0eb42; --uv-muted: #a9a8a4; --uv-dim: #7b7a78; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0e0e0e; --uv-text: #f2f0eb; --uv-accent: #ff3b2f; --uv-accent-2: #ff3b2f; --uv-on-accent: #ffffff; --uv-surface: #191919; --uv-surface-2: #232222; --uv-surface-3: #30302f; --uv-line: #f2f0eb24; --uv-line-2: #f2f0eb42; --uv-muted: #a9a8a4; --uv-dim: #7b7a78; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-serif: "Instrument Serif", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;
@@ -246,7 +246,7 @@
 
 /* @theme deep-sea — abyssal teal with bioluminescent cyan */
 [data-uv-theme="deep-sea"] {
-  --uv-bg: #041b22; --uv-text: #d6f4f7; --uv-accent: #2de2e6; --uv-accent-2: #3d7cff; --uv-surface: #0e262d; --uv-surface-2: #172f35; --uv-surface-3: #243c42; --uv-line: #d6f4f724; --uv-line-2: #d6f4f742; --uv-muted: #93afb3; --uv-dim: #698388; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #041b22; --uv-text: #d6f4f7; --uv-accent: #2de2e6; --uv-accent-2: #3d7cff; --uv-on-accent: #111111; --uv-surface: #0e262d; --uv-surface-2: #172f35; --uv-surface-3: #243c42; --uv-line: #d6f4f724; --uv-line-2: #d6f4f742; --uv-muted: #93afb3; --uv-dim: #698388; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -266,7 +266,7 @@
 
 /* @theme forest-night — pine shadows, moss green, firefly gold */
 [data-uv-theme="forest-night"] {
-  --uv-bg: #0d1611; --uv-text: #e2eadf; --uv-accent: #7cc36e; --uv-accent-2: #f2c14e; --uv-surface: #18211b; --uv-surface-2: #202924; --uv-surface-3: #2d3630; --uv-line: #e2eadf24; --uv-line-2: #e2eadf42; --uv-muted: #9ea69d; --uv-dim: #737c74; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0d1611; --uv-text: #e2eadf; --uv-accent: #7cc36e; --uv-accent-2: #f2c14e; --uv-on-accent: #111111; --uv-surface: #18211b; --uv-surface-2: #202924; --uv-surface-3: #2d3630; --uv-line: #e2eadf24; --uv-line-2: #e2eadf42; --uv-muted: #9ea69d; --uv-dim: #737c74; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -286,7 +286,7 @@
 
 /* @theme espresso — dark roast brown with crema highlights */
 [data-uv-theme="espresso"] {
-  --uv-bg: #1b1310; --uv-text: #f2e6da; --uv-accent: #d9a066; --uv-accent-2: #d9a066; --uv-surface: #261e1a; --uv-surface-2: #2e2622; --uv-surface-3: #3b332e; --uv-line: #f2e6da24; --uv-line-2: #f2e6da42; --uv-muted: #ada299; --uv-dim: #827871; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1b1310; --uv-text: #f2e6da; --uv-accent: #d9a066; --uv-accent-2: #d9a066; --uv-on-accent: #111111; --uv-surface: #261e1a; --uv-surface-2: #2e2622; --uv-surface-3: #3b332e; --uv-line: #f2e6da24; --uv-line-2: #f2e6da42; --uv-muted: #ada299; --uv-dim: #827871; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;
@@ -306,7 +306,7 @@
 
 /* @theme plum — velvet plum with rose-gold trim */
 [data-uv-theme="plum"] {
-  --uv-bg: #1d1020; --uv-text: #f4e6f0; --uv-accent: #e7a4c0; --uv-accent-2: #c9a96e; --uv-surface: #281b2a; --uv-surface-2: #302333; --uv-surface-3: #3d303f; --uv-line: #f4e6f024; --uv-line-2: #f4e6f042; --uv-muted: #afa2ad; --uv-dim: #847784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1d1020; --uv-text: #f4e6f0; --uv-accent: #e7a4c0; --uv-accent-2: #c9a96e; --uv-on-accent: #111111; --uv-surface: #281b2a; --uv-surface-2: #302333; --uv-surface-3: #3d303f; --uv-line: #f4e6f024; --uv-line-2: #f4e6f042; --uv-muted: #afa2ad; --uv-dim: #847784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -326,7 +326,7 @@
 
 /* @theme vampire — gothic purple-black with blood-red accents */
 [data-uv-theme="vampire"] {
-  --uv-bg: #16101c; --uv-text: #f0e6f5; --uv-accent: #ff4566; --uv-accent-2: #bd93f9; --uv-surface: #211b27; --uv-surface-2: #2a2330; --uv-surface-3: #37303d; --uv-line: #f0e6f524; --uv-line-2: #f0e6f542; --uv-muted: #aaa2b0; --uv-dim: #7f7784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #16101c; --uv-text: #f0e6f5; --uv-accent: #ff4566; --uv-accent-2: #bd93f9; --uv-on-accent: #ffffff; --uv-surface: #211b27; --uv-surface-2: #2a2330; --uv-surface-3: #37303d; --uv-line: #f0e6f524; --uv-line-2: #f0e6f542; --uv-muted: #aaa2b0; --uv-dim: #7f7784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -346,7 +346,7 @@
 
 /* @theme nord-night — arctic slate with frost blues */
 [data-uv-theme="nord-night"] {
-  --uv-bg: #2e3440; --uv-text: #eceff4; --uv-accent: #88c0d0; --uv-accent-2: #b48ead; --uv-surface: #383d49; --uv-surface-2: #3f4550; --uv-surface-3: #4a505b; --uv-line: #eceff424; --uv-line-2: #eceff442; --uv-muted: #afb3ba; --uv-dim: #898e96; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2e3440; --uv-text: #eceff4; --uv-accent: #88c0d0; --uv-accent-2: #b48ead; --uv-on-accent: #111111; --uv-surface: #383d49; --uv-surface-2: #3f4550; --uv-surface-3: #4a505b; --uv-line: #eceff424; --uv-line-2: #eceff442; --uv-muted: #afb3ba; --uv-dim: #898e96; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -365,7 +365,7 @@
 
 /* @theme charcoal — matte charcoal, amber indicators, studio calm */
 [data-uv-theme="charcoal"] {
-  --uv-bg: #1e1f22; --uv-text: #e8e6e3; --uv-accent: #ffb547; --uv-accent-2: #ffb547; --uv-surface: #28292c; --uv-surface-2: #303133; --uv-surface-3: #3c3d3f; --uv-line: #e8e6e324; --uv-line-2: #e8e6e342; --uv-muted: #a7a6a5; --uv-dim: #7f7f7f; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1e1f22; --uv-text: #e8e6e3; --uv-accent: #ffb547; --uv-accent-2: #ffb547; --uv-on-accent: #111111; --uv-surface: #28292c; --uv-surface-2: #303133; --uv-surface-3: #3c3d3f; --uv-line: #e8e6e324; --uv-line-2: #e8e6e342; --uv-muted: #a7a6a5; --uv-dim: #7f7f7f; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 600; --uv-head-case: none;
@@ -385,7 +385,7 @@
 
 /* @theme lavender — lilac fields, soft violet buttons */
 [data-uv-theme="lavender"] {
-  --uv-bg: #f3efff; --uv-text: #2e2550; --uv-accent: #8b6cf0; --uv-accent-2: #f49ac1; --uv-surface: #faf8ff; --uv-surface-2: #e7e3f4; --uv-surface-3: #ddd9ec; --uv-line: #2e25501a; --uv-line-2: #2e25502e; --uv-muted: #6d6688; --uv-dim: #948eab; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f3efff; --uv-text: #2e2550; --uv-accent: #8b6cf0; --uv-accent-2: #f49ac1; --uv-on-accent: #ffffff; --uv-surface: #faf8ff; --uv-surface-2: #e7e3f4; --uv-surface-3: #ddd9ec; --uv-line: #2e25501a; --uv-line-2: #2e25502e; --uv-muted: #6d6688; --uv-dim: #948eab; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -404,7 +404,7 @@
 
 /* @theme mint — fresh mint with a deep green ink */
 [data-uv-theme="mint"] {
-  --uv-bg: #ecfbf3; --uv-text: #173b2c; --uv-accent: #2fb37a; --uv-accent-2: #7ac7ff; --uv-surface: #f6fdfa; --uv-surface-2: #dfefe7; --uv-surface-3: #d5e6dd; --uv-line: #173b2c1a; --uv-line-2: #173b2c2e; --uv-muted: #5b786c; --uv-dim: #869f93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ecfbf3; --uv-text: #173b2c; --uv-accent: #2fb37a; --uv-accent-2: #7ac7ff; --uv-on-accent: #111111; --uv-surface: #f6fdfa; --uv-surface-2: #dfefe7; --uv-surface-3: #d5e6dd; --uv-line: #173b2c1a; --uv-line-2: #173b2c2e; --uv-muted: #5b786c; --uv-dim: #869f93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -423,7 +423,7 @@
 
 /* @theme peach — peach fuzz, apricot buttons, warm and soft */
 [data-uv-theme="peach"] {
-  --uv-bg: #fff1e8; --uv-text: #4a2c22; --uv-accent: #ff8a5c; --uv-accent-2: #ffc46b; --uv-surface: #fff9f5; --uv-surface-2: #f4e5dc; --uv-surface-3: #ebdbd2; --uv-line: #4a2c221a; --uv-line-2: #4a2c222e; --uv-muted: #846b61; --uv-dim: #a89289; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff1e8; --uv-text: #4a2c22; --uv-accent: #ff8a5c; --uv-accent-2: #ffc46b; --uv-on-accent: #111111; --uv-surface: #fff9f5; --uv-surface-2: #f4e5dc; --uv-surface-3: #ebdbd2; --uv-line: #4a2c221a; --uv-line-2: #4a2c222e; --uv-muted: #846b61; --uv-dim: #a89289; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -442,7 +442,7 @@
 
 /* @theme sakura — cherry-blossom pink with sumi ink */
 [data-uv-theme="sakura"] {
-  --uv-bg: #fff2f5; --uv-text: #3a2430; --uv-accent: #e8668f; --uv-accent-2: #9ad0c2; --uv-surface: #fff9fa; --uv-surface-2: #f3e6e9; --uv-surface-3: #e9dbdf; --uv-line: #3a24301a; --uv-line-2: #3a24302e; --uv-muted: #79666f; --uv-dim: #a08f96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff2f5; --uv-text: #3a2430; --uv-accent: #e8668f; --uv-accent-2: #9ad0c2; --uv-on-accent: #ffffff; --uv-surface: #fff9fa; --uv-surface-2: #f3e6e9; --uv-surface-3: #e9dbdf; --uv-line: #3a24301a; --uv-line-2: #3a24302e; --uv-muted: #79666f; --uv-dim: #a08f96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 400; --uv-head-case: none;
@@ -461,7 +461,7 @@
 
 /* @theme sky — cloud white and clear-sky blue */
 [data-uv-theme="sky"] {
-  --uv-bg: #eef6ff; --uv-text: #1b2f4a; --uv-accent: #4a9bff; --uv-accent-2: #9be7ff; --uv-surface: #f7fbff; --uv-surface-2: #e1eaf4; --uv-surface-3: #d7e0eb; --uv-line: #1b2f4a1a; --uv-line-2: #1b2f4a2e; --uv-muted: #5f6f84; --uv-dim: #8996a8; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eef6ff; --uv-text: #1b2f4a; --uv-accent: #4a9bff; --uv-accent-2: #9be7ff; --uv-on-accent: #111111; --uv-surface: #f7fbff; --uv-surface-2: #e1eaf4; --uv-surface-3: #d7e0eb; --uv-line: #1b2f4a1a; --uv-line-2: #1b2f4a2e; --uv-muted: #5f6f84; --uv-dim: #8996a8; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -480,7 +480,7 @@
 
 /* @theme lemon — lemon sorbet with a charcoal outline */
 [data-uv-theme="lemon"] {
-  --uv-bg: #fffbe0; --uv-text: #2b2a1f; --uv-accent: #f5c400; --uv-accent-2: #ff7eb6; --uv-surface: #fffdf1; --uv-surface-2: #f2eed4; --uv-surface-3: #e8e4cb; --uv-line: #2b2a1f1a; --uv-line-2: #2b2a1f2e; --uv-muted: #6f6d5d; --uv-dim: #999783; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fffbe0; --uv-text: #2b2a1f; --uv-accent: #f5c400; --uv-accent-2: #ff7eb6; --uv-on-accent: #111111; --uv-surface: #fffdf1; --uv-surface-2: #f2eed4; --uv-surface-3: #e8e4cb; --uv-line: #2b2a1f1a; --uv-line-2: #2b2a1f2e; --uv-muted: #6f6d5d; --uv-dim: #999783; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -499,7 +499,7 @@
 
 /* @theme bubblegum — bubblegum pink, candy blue, bouncy */
 [data-uv-theme="bubblegum"] {
-  --uv-bg: #ffeaf6; --uv-text: #3d1236; --uv-accent: #ff4fb3; --uv-accent-2: #4fc3ff; --uv-surface: #fff6fb; --uv-surface-2: #f3ddea; --uv-surface-3: #ead2e1; --uv-line: #3d12361a; --uv-line-2: #3d12362e; --uv-muted: #7b5773; --uv-dim: #a2829a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ffeaf6; --uv-text: #3d1236; --uv-accent: #ff4fb3; --uv-accent-2: #4fc3ff; --uv-on-accent: #ffffff; --uv-surface: #fff6fb; --uv-surface-2: #f3ddea; --uv-surface-3: #ead2e1; --uv-line: #3d12361a; --uv-line-2: #3d12362e; --uv-muted: #7b5773; --uv-dim: #a2829a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -518,7 +518,7 @@
 
 /* @theme seafoam — seafoam green with coral pops */
 [data-uv-theme="seafoam"] {
-  --uv-bg: #e9faf6; --uv-text: #163a36; --uv-accent: #ff7f6a; --uv-accent-2: #38c2a5; --uv-surface: #f5fdfb; --uv-surface-2: #dceeea; --uv-surface-3: #d2e5e1; --uv-line: #163a361a; --uv-line-2: #163a362e; --uv-muted: #5a7773; --uv-dim: #849e9a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #e9faf6; --uv-text: #163a36; --uv-accent: #ff7f6a; --uv-accent-2: #38c2a5; --uv-on-accent: #111111; --uv-surface: #f5fdfb; --uv-surface-2: #dceeea; --uv-surface-3: #d2e5e1; --uv-line: #163a361a; --uv-line-2: #163a362e; --uv-muted: #5a7773; --uv-dim: #849e9a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -537,7 +537,7 @@
 
 /* @theme tangerine — loud orange, black type, no apologies */
 [data-uv-theme="tangerine"] {
-  --uv-bg: #ff7a1a; --uv-text: #1a0f06; --uv-accent: #1a0f06; --uv-accent-2: #fff3e0; --uv-surface: #ffc398; --uv-surface-2: #f17419; --uv-surface-3: #e66e18; --uv-line: #1a0f061a; --uv-line-2: #1a0f062e; --uv-muted: #63310c; --uv-dim: #914710; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ff7a1a; --uv-text: #1a0f06; --uv-accent: #1a0f06; --uv-accent-2: #fff3e0; --uv-on-accent: #ffffff; --uv-surface: #ffc398; --uv-surface-2: #f17419; --uv-surface-3: #e66e18; --uv-line: #1a0f061a; --uv-line-2: #1a0f062e; --uv-muted: #63310c; --uv-dim: #914710; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: uppercase; --uv-head-tracking: .01em;
@@ -556,7 +556,7 @@
 
 /* @theme cobalt — electric cobalt field, white type, lemon accent */
 [data-uv-theme="cobalt"] {
-  --uv-bg: #1d3fd8; --uv-text: #ffffff; --uv-accent: #ffe14d; --uv-accent-2: #ffe14d; --uv-surface: #2849da; --uv-surface-2: #3150dc; --uv-surface-3: #3f5cde; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #b7c2f3; --uv-dim: #899beb; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1d3fd8; --uv-text: #ffffff; --uv-accent: #ffe14d; --uv-accent-2: #ffe14d; --uv-on-accent: #111111; --uv-surface: #2849da; --uv-surface-2: #3150dc; --uv-surface-3: #3f5cde; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #b7c2f3; --uv-dim: #899beb; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -576,7 +576,7 @@
 
 /* @theme magenta — hot magenta with cyan clash */
 [data-uv-theme="magenta"] {
-  --uv-bg: #ff2d95; --uv-text: #14001a; --uv-accent: #14001a; --uv-accent-2: #21e3ff; --uv-surface: #f32b8f; --uv-surface-2: #ea298a; --uv-surface-3: #dc2683; --uv-line: #14001a24; --uv-line-2: #14001a42; --uv-muted: #5f0e41; --uv-dim: #8e175a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #ff2d95; --uv-text: #14001a; --uv-accent: #14001a; --uv-accent-2: #21e3ff; --uv-on-accent: #ffffff; --uv-surface: #f32b8f; --uv-surface-2: #ea298a; --uv-surface-3: #dc2683; --uv-line: #14001a24; --uv-line-2: #14001a42; --uv-muted: #5f0e41; --uv-dim: #8e175a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -596,7 +596,7 @@
 
 /* @theme risograph — two-ink riso print: fluoro pink + blue on paper */
 [data-uv-theme="risograph"] {
-  --uv-bg: #f6f1e7; --uv-text: #2340c9; --uv-accent: #ff4f9a; --uv-accent-2: #2340c9; --uv-surface: #fbf9f4; --uv-surface-2: #e9e6e5; --uv-surface-3: #dfdee4; --uv-line: #2340c91a; --uv-line-2: #2340c92e; --uv-muted: #6779d3; --uv-dim: #919cd9; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f6f1e7; --uv-text: #2340c9; --uv-accent: #ff4f9a; --uv-accent-2: #2340c9; --uv-on-accent: #ffffff; --uv-surface: #fbf9f4; --uv-surface-2: #e9e6e5; --uv-surface-3: #dfdee4; --uv-line: #2340c91a; --uv-line-2: #2340c92e; --uv-muted: #6779d3; --uv-dim: #919cd9; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -616,7 +616,7 @@
 
 /* @theme pop-art — comic-book halftones, primary colours, ink outlines */
 [data-uv-theme="pop-art"] {
-  --uv-bg: #fff35c; --uv-text: #111111; --uv-accent: #ff2b2b; --uv-accent-2: #2b6bff; --uv-surface: #fffab6; --uv-surface-2: #f1e558; --uv-surface-3: #e5da54; --uv-line: #1111111a; --uv-line-2: #1111112e; --uv-muted: #5d5929; --uv-dim: #8d8738; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff35c; --uv-text: #111111; --uv-accent: #ff2b2b; --uv-accent-2: #2b6bff; --uv-on-accent: #ffffff; --uv-surface: #fffab6; --uv-surface-2: #f1e558; --uv-surface-3: #e5da54; --uv-line: #1111111a; --uv-line-2: #1111112e; --uv-muted: #5d5929; --uv-dim: #8d8738; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 3px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -637,7 +637,7 @@
 
 /* @theme bauhaus — primary geometry: red, yellow, blue on cream */
 [data-uv-theme="bauhaus"] {
-  --uv-bg: #f2ead8; --uv-text: #141414; --uv-accent: #d6281b; --uv-accent-2: #1f4fb5; --uv-surface: #f9f6ed; --uv-surface-2: #e5ddcc; --uv-surface-3: #dad2c2; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #5b5853; --uv-dim: #87837a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f2ead8; --uv-text: #141414; --uv-accent: #d6281b; --uv-accent-2: #1f4fb5; --uv-on-accent: #ffffff; --uv-surface: #f9f6ed; --uv-surface-2: #e5ddcc; --uv-surface-3: #dad2c2; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #5b5853; --uv-dim: #87837a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.05em;
@@ -656,7 +656,7 @@
 
 /* @theme memphis — 80s memphis squiggles, teal and pink */
 [data-uv-theme="memphis"] {
-  --uv-bg: #fff8ef; --uv-text: #1b1b2f; --uv-accent: #ff5ca8; --uv-accent-2: #21c4c4; --uv-surface: #fffcf8; --uv-surface-2: #f1ebe3; --uv-surface-3: #e6e0da; --uv-line: #1b1b2f1a; --uv-line-2: #1b1b2f2e; --uv-muted: #64626c; --uv-dim: #928e93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff8ef; --uv-text: #1b1b2f; --uv-accent: #ff5ca8; --uv-accent-2: #21c4c4; --uv-on-accent: #ffffff; --uv-surface: #fffcf8; --uv-surface-2: #f1ebe3; --uv-surface-3: #e6e0da; --uv-line: #1b1b2f1a; --uv-line-2: #1b1b2f2e; --uv-muted: #64626c; --uv-dim: #928e93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 2px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -675,7 +675,7 @@
 
 /* @theme brutal-lime — acid lime neo-brutalism, thick black outlines */
 [data-uv-theme="brutal-lime"] {
-  --uv-bg: #e8ff5a; --uv-text: #000000; --uv-accent: #000000; --uv-accent-2: #ff5ec4; --uv-surface: #f5ffb5; --uv-surface-2: #daf055; --uv-surface-3: #cee350; --uv-line: #0000001a; --uv-line-2: #0000002e; --uv-muted: #4a521d; --uv-dim: #79852f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #e8ff5a; --uv-text: #000000; --uv-accent: #000000; --uv-accent-2: #ff5ec4; --uv-on-accent: #ffffff; --uv-surface: #f5ffb5; --uv-surface-2: #daf055; --uv-surface-3: #cee350; --uv-line: #0000001a; --uv-line-2: #0000002e; --uv-muted: #4a521d; --uv-dim: #79852f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 3px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -694,7 +694,7 @@
 
 /* @theme amber-crt — amber phosphor terminal from 1983 */
 [data-uv-theme="amber-crt"] {
-  --uv-bg: #130c02; --uv-text: #ffb627; --uv-accent: #ffb627; --uv-accent-2: #ffd98a; --uv-surface: #1f1404; --uv-surface-2: #281b05; --uv-surface-3: #362608; --uv-line: #ffb62724; --uv-line-2: #ffb62742; --uv-muted: #b3801b; --uv-dim: #845e14; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #130c02; --uv-text: #ffb627; --uv-accent: #ffb627; --uv-accent-2: #ffd98a; --uv-on-accent: #111111; --uv-surface: #1f1404; --uv-surface-2: #281b05; --uv-surface-3: #362608; --uv-line: #ffb62724; --uv-line-2: #ffb62742; --uv-muted: #b3801b; --uv-dim: #845e14; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "VT323", ui-monospace, monospace; --uv-font-head: "VT323", ui-monospace, monospace; --uv-serif: "VT323", ui-monospace, monospace; --uv-btn-font: "VT323", ui-monospace, monospace;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -716,7 +716,7 @@
 
 /* @theme gameboy — four shades of handheld green */
 [data-uv-theme="gameboy"] {
-  --uv-bg: #9bbc0f; --uv-text: #0f380f; --uv-accent: #306230; --uv-accent-2: #8bac0f; --uv-surface: #8bac0f; --uv-surface-2: #93b40f; --uv-surface-3: #8cad0f; --uv-line: #0f380f1a; --uv-line-2: #0f380f2e; --uv-muted: #3c620f; --uv-dim: #587d0f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #9bbc0f; --uv-text: #0f380f; --uv-accent: #306230; --uv-accent-2: #8bac0f; --uv-on-accent: #ffffff; --uv-surface: #8bac0f; --uv-surface-2: #93b40f; --uv-surface-3: #8cad0f; --uv-line: #0f380f1a; --uv-line-2: #0f380f2e; --uv-muted: #3c620f; --uv-dim: #587d0f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Press Start 2P", ui-monospace, monospace; --uv-font-head: "Press Start 2P", ui-monospace, monospace; --uv-serif: "Press Start 2P", ui-monospace, monospace; --uv-btn-font: "Press Start 2P", ui-monospace, monospace;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 3px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -735,7 +735,7 @@
 
 /* @theme vaporwave — pastel grid sunsets, marble busts and chrome */
 [data-uv-theme="vaporwave"] {
-  --uv-bg: #2b1055; --uv-text: #fdf2ff; --uv-accent: #ff71ce; --uv-accent-2: #01cdfe; --uv-surface: #361b5e; --uv-surface-2: #3e2464; --uv-surface-3: #4a326e; --uv-line: #fdf2ff24; --uv-line-2: #fdf2ff42; --uv-muted: #baaac9; --uv-dim: #907ca7; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2b1055; --uv-text: #fdf2ff; --uv-accent: #ff71ce; --uv-accent-2: #01cdfe; --uv-on-accent: #111111; --uv-surface: #361b5e; --uv-surface-2: #3e2464; --uv-surface-3: #4a326e; --uv-line: #fdf2ff24; --uv-line-2: #fdf2ff42; --uv-muted: #baaac9; --uv-dim: #907ca7; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Major Mono Display", ui-monospace, monospace; --uv-serif: "Major Mono Display", ui-monospace, monospace; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -756,7 +756,7 @@
 
 /* @theme synthwave — outrun sunset, neon grid, chrome type */
 [data-uv-theme="synthwave"] {
-  --uv-bg: #1a0933; --uv-text: #ffe9ff; --uv-accent: #ff2fd6; --uv-accent-2: #ffb000; --uv-surface: #25143d; --uv-surface-2: #2f1d45; --uv-surface-3: #3c2b52; --uv-line: #ffe9ff24; --uv-line-2: #ffe9ff42; --uv-muted: #b6a1be; --uv-dim: #887595; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1a0933; --uv-text: #ffe9ff; --uv-accent: #ff2fd6; --uv-accent-2: #ffb000; --uv-on-accent: #ffffff; --uv-surface: #25143d; --uv-surface-2: #2f1d45; --uv-surface-3: #3c2b52; --uv-line: #ffe9ff24; --uv-line-2: #ffe9ff42; --uv-muted: #b6a1be; --uv-dim: #887595; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Audiowide", system-ui, sans-serif; --uv-serif: "Audiowide", system-ui, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -777,7 +777,7 @@
 
 /* @theme arcade — coin-op cabinet: black, neon red and yellow */
 [data-uv-theme="arcade"] {
-  --uv-bg: #0b0b14; --uv-text: #f4f4ff; --uv-accent: #ff2e4d; --uv-accent-2: #ffd23f; --uv-surface: #171720; --uv-surface-2: #202029; --uv-surface-3: #2e2e37; --uv-line: #f4f4ff24; --uv-line-2: #f4f4ff42; --uv-muted: #a9a9b4; --uv-dim: #7b7b85; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0b0b14; --uv-text: #f4f4ff; --uv-accent: #ff2e4d; --uv-accent-2: #ffd23f; --uv-on-accent: #ffffff; --uv-surface: #171720; --uv-surface-2: #202029; --uv-surface-3: #2e2e37; --uv-line: #f4f4ff24; --uv-line-2: #f4f4ff42; --uv-muted: #a9a9b4; --uv-dim: #7b7b85; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Press Start 2P", ui-monospace, monospace; --uv-font-head: "Press Start 2P", ui-monospace, monospace; --uv-serif: "Press Start 2P", ui-monospace, monospace; --uv-btn-font: "Press Start 2P", ui-monospace, monospace;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -797,7 +797,7 @@
 
 /* @theme teletext — broadcast teletext: black field, primary blocks */
 [data-uv-theme="teletext"] {
-  --uv-bg: #000000; --uv-text: #ffffff; --uv-accent: #ffff00; --uv-accent-2: #00ffff; --uv-surface: #0d0d0d; --uv-surface-2: #171717; --uv-surface-3: #262626; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #adadad; --uv-dim: #7a7a7a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #000000; --uv-text: #ffffff; --uv-accent: #ffff00; --uv-accent-2: #00ffff; --uv-on-accent: #111111; --uv-surface: #0d0d0d; --uv-surface-2: #171717; --uv-surface-3: #262626; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #adadad; --uv-dim: #7a7a7a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "VT323", ui-monospace, monospace; --uv-font-head: "VT323", ui-monospace, monospace; --uv-serif: "VT323", ui-monospace, monospace; --uv-btn-font: "VT323", ui-monospace, monospace;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -817,7 +817,7 @@
 
 /* @theme polaroid — faded instant-film creams and teal shadows */
 [data-uv-theme="polaroid"] {
-  --uv-bg: #f1ebe1; --uv-text: #2a3a3d; --uv-accent: #d96c4f; --uv-accent-2: #4f8a8b; --uv-surface: #f9f6f2; --uv-surface-2: #e5e0d7; --uv-surface-3: #dbd8cf; --uv-line: #2a3a3d1a; --uv-line-2: #2a3a3d2e; --uv-muted: #6a7371; --uv-dim: #919692; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f1ebe1; --uv-text: #2a3a3d; --uv-accent: #d96c4f; --uv-accent-2: #4f8a8b; --uv-on-accent: #ffffff; --uv-surface: #f9f6f2; --uv-surface-2: #e5e0d7; --uv-surface-3: #dbd8cf; --uv-line: #2a3a3d1a; --uv-line-2: #2a3a3d2e; --uv-muted: #6a7371; --uv-dim: #919692; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Patrick Hand", "Comic Neue", cursive; --uv-font-head: "Patrick Hand", "Comic Neue", cursive; --uv-serif: "Patrick Hand", "Comic Neue", cursive; --uv-btn-font: "Patrick Hand", "Comic Neue", cursive;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -836,7 +836,7 @@
 
 /* @theme win-classic — beige desktop era with bevelled grey chrome */
 [data-uv-theme="win-classic"] {
-  --uv-bg: #c3c7cb; --uv-text: #000000; --uv-accent: #000080; --uv-accent-2: #008080; --uv-surface: #e4e6e8; --uv-surface-2: #b7bbbf; --uv-surface-3: #aeb1b5; --uv-line: #0000001a; --uv-line-2: #0000002e; --uv-muted: #3e4041; --uv-dim: #65676a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #c3c7cb; --uv-text: #000000; --uv-accent: #000080; --uv-accent-2: #008080; --uv-on-accent: #ffffff; --uv-surface: #e4e6e8; --uv-surface-2: #b7bbbf; --uv-surface-3: #aeb1b5; --uv-line: #0000001a; --uv-line-2: #0000002e; --uv-muted: #3e4041; --uv-dim: #65676a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 0px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -855,7 +855,7 @@
 
 /* @theme moss — damp forest floor and moss green */
 [data-uv-theme="moss"] {
-  --uv-bg: #eef1e6; --uv-text: #24301c; --uv-accent: #5a7d2f; --uv-accent-2: #b08a3e; --uv-surface: #f7f9f4; --uv-surface-2: #e2e5da; --uv-surface-3: #d8dcd0; --uv-line: #24301c1a; --uv-line-2: #24301c2e; --uv-muted: #656e5d; --uv-dim: #8d9485; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eef1e6; --uv-text: #24301c; --uv-accent: #5a7d2f; --uv-accent-2: #b08a3e; --uv-on-accent: #ffffff; --uv-surface: #f7f9f4; --uv-surface-2: #e2e5da; --uv-surface-3: #d8dcd0; --uv-line: #24301c1a; --uv-line-2: #24301c2e; --uv-muted: #656e5d; --uv-dim: #8d9485; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -874,7 +874,7 @@
 
 /* @theme ocean — open ocean blues with whitecap foam */
 [data-uv-theme="ocean"] {
-  --uv-bg: #e7f3fa; --uv-text: #0c2a40; --uv-accent: #0a7bbf; --uv-accent-2: #3fd0c9; --uv-surface: #f4fafd; --uv-surface-2: #dae7ef; --uv-surface-3: #cfdde6; --uv-line: #0c2a401a; --uv-line-2: #0c2a402e; --uv-muted: #526a7c; --uv-dim: #7e93a1; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #e7f3fa; --uv-text: #0c2a40; --uv-accent: #0a7bbf; --uv-accent-2: #3fd0c9; --uv-on-accent: #ffffff; --uv-surface: #f4fafd; --uv-surface-2: #dae7ef; --uv-surface-3: #cfdde6; --uv-line: #0c2a401a; --uv-line-2: #0c2a402e; --uv-muted: #526a7c; --uv-dim: #7e93a1; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;
@@ -893,7 +893,7 @@
 
 /* @theme desert — sandstone, cactus green and sunset clay */
 [data-uv-theme="desert"] {
-  --uv-bg: #f4e3c8; --uv-text: #3d2618; --uv-accent: #c8553d; --uv-accent-2: #5b8c5a; --uv-surface: #faf2e6; --uv-surface-2: #e9d8bd; --uv-surface-3: #e0ceb5; --uv-line: #3d26181a; --uv-line-2: #3d26182e; --uv-muted: #786250; --uv-dim: #9c8874; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f4e3c8; --uv-text: #3d2618; --uv-accent: #c8553d; --uv-accent-2: #5b8c5a; --uv-on-accent: #ffffff; --uv-surface: #faf2e6; --uv-surface-2: #e9d8bd; --uv-surface-3: #e0ceb5; --uv-line: #3d26181a; --uv-line-2: #3d26182e; --uv-muted: #786250; --uv-dim: #9c8874; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -913,7 +913,7 @@
 
 /* @theme glacier — glacial ice, cold blue light */
 [data-uv-theme="glacier"] {
-  --uv-bg: #eaf6fb; --uv-text: #16324a; --uv-accent: #3a9bd9; --uv-accent-2: #a6e3ff; --uv-surface: #f6fbfd; --uv-surface-2: #ddeaf0; --uv-surface-3: #d3e0e8; --uv-line: #16324a1a; --uv-line-2: #16324a2e; --uv-muted: #5a7183; --uv-dim: #8498a6; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eaf6fb; --uv-text: #16324a; --uv-accent: #3a9bd9; --uv-accent-2: #a6e3ff; --uv-on-accent: #ffffff; --uv-surface: #f6fbfd; --uv-surface-2: #ddeaf0; --uv-surface-3: #d3e0e8; --uv-line: #16324a1a; --uv-line-2: #16324a2e; --uv-muted: #5a7183; --uv-dim: #8498a6; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -932,7 +932,7 @@
 
 /* @theme autumn — maple orange, oak brown, harvest gold */
 [data-uv-theme="autumn"] {
-  --uv-bg: #fbf1e4; --uv-text: #3a2416; --uv-accent: #d2601a; --uv-accent-2: #c99a2e; --uv-surface: #fdf9f3; --uv-surface-2: #efe5d8; --uv-surface-3: #e6dacd; --uv-line: #3a24161a; --uv-line-2: #3a24162e; --uv-muted: #786658; --uv-dim: #9e8f81; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fbf1e4; --uv-text: #3a2416; --uv-accent: #d2601a; --uv-accent-2: #c99a2e; --uv-on-accent: #ffffff; --uv-surface: #fdf9f3; --uv-surface-2: #efe5d8; --uv-surface-3: #e6dacd; --uv-line: #3a24161a; --uv-line-2: #3a24162e; --uv-muted: #786658; --uv-dim: #9e8f81; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -951,7 +951,7 @@
 
 /* @theme volcano — basalt black, flowing lava, ember glow */
 [data-uv-theme="volcano"] {
-  --uv-bg: #140b08; --uv-text: #f6e6dc; --uv-accent: #ff4d1a; --uv-accent-2: #ffb000; --uv-surface: #1f1613; --uv-surface-2: #281f1b; --uv-surface-3: #362c28; --uv-line: #f6e6dc24; --uv-line-2: #f6e6dc42; --uv-muted: #aea098; --uv-dim: #80746e; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #140b08; --uv-text: #f6e6dc; --uv-accent: #ff4d1a; --uv-accent-2: #ffb000; --uv-on-accent: #ffffff; --uv-surface: #1f1613; --uv-surface-2: #281f1b; --uv-surface-3: #362c28; --uv-line: #f6e6dc24; --uv-line-2: #f6e6dc42; --uv-muted: #aea098; --uv-dim: #80746e; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -972,7 +972,7 @@
 
 /* @theme pearl — white pearlescent with iridescent pink, mint and blue, like a CS2 Printstream finish */
 [data-uv-theme="pearl"] {
-  --uv-bg: #fbfaff; --uv-text: #2a2342; --uv-accent: #8f7fd6; --uv-accent-2: #7fc8e3; --uv-surface: #fdfdff; --uv-surface-2: #eeedf4; --uv-surface-3: #e4e2ea; --uv-line: #2a23421a; --uv-line-2: #2a23422e; --uv-muted: #6d687e; --uv-dim: #9793a4; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fbfaff; --uv-text: #2a2342; --uv-accent: #8f7fd6; --uv-accent-2: #7fc8e3; --uv-on-accent: #ffffff; --uv-surface: #fdfdff; --uv-surface-2: #eeedf4; --uv-surface-3: #e4e2ea; --uv-line: #2a23421a; --uv-line-2: #2a23422e; --uv-muted: #6d687e; --uv-dim: #9793a4; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;
@@ -994,7 +994,7 @@
 
 /* @theme black-pearl — black pearlescent with an oil-slick sheen */
 [data-uv-theme="black-pearl"] {
-  --uv-bg: #0c0b12; --uv-text: #efeaff; --uv-accent: #b59cff; --uv-accent-2: #5ee7d0; --uv-surface: #17161e; --uv-surface-2: #201f27; --uv-surface-3: #2e2c36; --uv-line: #efeaff24; --uv-line-2: #efeaff42; --uv-muted: #a6a3b3; --uv-dim: #797684; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0c0b12; --uv-text: #efeaff; --uv-accent: #b59cff; --uv-accent-2: #5ee7d0; --uv-on-accent: #111111; --uv-surface: #17161e; --uv-surface-2: #201f27; --uv-surface-3: #2e2c36; --uv-line: #efeaff24; --uv-line-2: #efeaff42; --uv-muted: #a6a3b3; --uv-dim: #797684; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1015,7 +1015,7 @@
 
 /* @theme sapphire-metal — deep sapphire with a polished metal band through the type */
 [data-uv-theme="sapphire-metal"] {
-  --uv-bg: #060b24; --uv-text: #e3ecff; --uv-accent: #3d6bff; --uv-accent-2: #9fc0ff; --uv-surface: #11162f; --uv-surface-2: #1a1f38; --uv-surface-3: #272d45; --uv-line: #e3ecff24; --uv-line-2: #e3ecff42; --uv-muted: #9ca4b9; --uv-dim: #70778d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #060b24; --uv-text: #e3ecff; --uv-accent: #3d6bff; --uv-accent-2: #9fc0ff; --uv-on-accent: #ffffff; --uv-surface: #11162f; --uv-surface-2: #1a1f38; --uv-surface-3: #272d45; --uv-line: #e3ecff24; --uv-line-2: #e3ecff42; --uv-muted: #9ca4b9; --uv-dim: #70778d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;
@@ -1036,7 +1036,7 @@
 
 /* @theme fade — pink to violet to gold candy fade, inspired by the Fade knife finish */
 [data-uv-theme="fade"] {
-  --uv-bg: #fff4fb; --uv-text: #3a1238; --uv-accent: #ff4fa3; --uv-accent-2: #ffc93c; --uv-surface: #fffafd; --uv-surface-2: #f3e6ef; --uv-surface-3: #e9dbe6; --uv-line: #3a12381a; --uv-line-2: #3a12382e; --uv-muted: #795a76; --uv-dim: #a0889d; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff4fb; --uv-text: #3a1238; --uv-accent: #ff4fa3; --uv-accent-2: #ffc93c; --uv-on-accent: #ffffff; --uv-surface: #fffafd; --uv-surface-2: #f3e6ef; --uv-surface-3: #e9dbe6; --uv-line: #3a12381a; --uv-line-2: #3a12382e; --uv-muted: #795a76; --uv-dim: #a0889d; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1057,7 +1057,7 @@
 
 /* @theme doppler — deep space purple-blue with sparkling dust, inspired by Doppler blades */
 [data-uv-theme="doppler"] {
-  --uv-bg: #0a0420; --uv-text: #ece6ff; --uv-accent: #8a5cff; --uv-accent-2: #29c6ff; --uv-surface: #150f2b; --uv-surface-2: #1e1834; --uv-surface-3: #2c2641; --uv-line: #ece6ff24; --uv-line-2: #ece6ff42; --uv-muted: #a49eb8; --uv-dim: #76708b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0a0420; --uv-text: #ece6ff; --uv-accent: #8a5cff; --uv-accent-2: #29c6ff; --uv-on-accent: #ffffff; --uv-surface: #150f2b; --uv-surface-2: #1e1834; --uv-surface-3: #2c2641; --uv-line: #ece6ff24; --uv-line-2: #ece6ff42; --uv-muted: #a49eb8; --uv-dim: #76708b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1078,7 +1078,7 @@
 
 /* @theme emerald — emerald gem green with a gamma glow */
 [data-uv-theme="emerald"] {
-  --uv-bg: #03150d; --uv-text: #dcffee; --uv-accent: #19e38a; --uv-accent-2: #7affd1; --uv-surface: #0e2118; --uv-surface-2: #172a21; --uv-surface-3: #24382f; --uv-line: #dcffee24; --uv-line-2: #dcffee42; --uv-muted: #97b4a6; --uv-dim: #6b8579; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #03150d; --uv-text: #dcffee; --uv-accent: #19e38a; --uv-accent-2: #7affd1; --uv-on-accent: #111111; --uv-surface: #0e2118; --uv-surface-2: #172a21; --uv-surface-3: #24382f; --uv-line: #dcffee24; --uv-line-2: #dcffee42; --uv-muted: #97b4a6; --uv-dim: #6b8579; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -1099,7 +1099,7 @@
 
 /* @theme ruby — cut ruby red with internal fire */
 [data-uv-theme="ruby"] {
-  --uv-bg: #16020a; --uv-text: #ffe3ea; --uv-accent: #ff1f4f; --uv-accent-2: #ff8aa3; --uv-surface: #220d15; --uv-surface-2: #2b161e; --uv-surface-3: #39242c; --uv-line: #ffe3ea24; --uv-line-2: #ffe3ea42; --uv-muted: #b49ba2; --uv-dim: #866e76; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #16020a; --uv-text: #ffe3ea; --uv-accent: #ff1f4f; --uv-accent-2: #ff8aa3; --uv-on-accent: #ffffff; --uv-surface: #220d15; --uv-surface-2: #2b161e; --uv-surface-3: #39242c; --uv-line: #ffe3ea24; --uv-line-2: #ffe3ea42; --uv-muted: #b49ba2; --uv-dim: #866e76; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -1120,7 +1120,7 @@
 
 /* @theme marble-fade — swirled red, yellow and blue marble, like a Marble Fade */
 [data-uv-theme="marble-fade"] {
-  --uv-bg: #fff8ee; --uv-text: #2a1a1a; --uv-accent: #e8322f; --uv-accent-2: #2f6be8; --uv-surface: #fffcf7; --uv-surface-2: #f2ebe1; --uv-surface-3: #e8e0d7; --uv-line: #2a1a1a1a; --uv-line-2: #2a1a1a2e; --uv-muted: #6e615e; --uv-dim: #998d88; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff8ee; --uv-text: #2a1a1a; --uv-accent: #e8322f; --uv-accent-2: #2f6be8; --uv-on-accent: #ffffff; --uv-surface: #fffcf7; --uv-surface-2: #f2ebe1; --uv-surface-3: #e8e0d7; --uv-line: #2a1a1a1a; --uv-line-2: #2a1a1a2e; --uv-muted: #6e615e; --uv-dim: #998d88; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1141,7 +1141,7 @@
 
 /* @theme case-hardened — heat-treated steel: blue, gold and bronze patina */
 [data-uv-theme="case-hardened"] {
-  --uv-bg: #1a1f2b; --uv-text: #eef1f7; --uv-accent: #3f7bd9; --uv-accent-2: #d6a84a; --uv-surface: #252a35; --uv-surface-2: #2d323d; --uv-surface-3: #3a3e4a; --uv-line: #eef1f724; --uv-line-2: #eef1f742; --uv-muted: #aaaeb6; --uv-dim: #80848d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1a1f2b; --uv-text: #eef1f7; --uv-accent: #3f7bd9; --uv-accent-2: #d6a84a; --uv-on-accent: #ffffff; --uv-surface: #252a35; --uv-surface-2: #2d323d; --uv-surface-3: #3a3e4a; --uv-line: #eef1f724; --uv-line-2: #eef1f742; --uv-muted: #aaaeb6; --uv-dim: #80848d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Rajdhani", system-ui, sans-serif; --uv-serif: "Rajdhani", system-ui, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -1163,7 +1163,7 @@
 
 /* @theme tiger-tooth — molten gold with tiger stripes */
 [data-uv-theme="tiger-tooth"] {
-  --uv-bg: #ffb000; --uv-text: #1f1200; --uv-accent: #1f1200; --uv-accent-2: #ff7a00; --uv-surface: #ffdb8c; --uv-surface-2: #f2a700; --uv-surface-3: #e69f00; --uv-line: #1f12001a; --uv-line-2: #1f12002e; --uv-muted: #674500; --uv-dim: #936400; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ffb000; --uv-text: #1f1200; --uv-accent: #1f1200; --uv-accent-2: #ff7a00; --uv-on-accent: #ffffff; --uv-surface: #ffdb8c; --uv-surface-2: #f2a700; --uv-surface-3: #e69f00; --uv-line: #1f12001a; --uv-line-2: #1f12002e; --uv-muted: #674500; --uv-dim: #936400; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -1184,7 +1184,7 @@
 
 /* @theme damascus — folded steel with flowing grain */
 [data-uv-theme="damascus"] {
-  --uv-bg: #202326; --uv-text: #e9ecef; --uv-accent: #9aa6b2; --uv-accent-2: #d0d7de; --uv-surface: #2a2d30; --uv-surface-2: #323538; --uv-surface-3: #3e4144; --uv-line: #e9ecef24; --uv-line-2: #e9ecef42; --uv-muted: #a9acaf; --uv-dim: #808386; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #202326; --uv-text: #e9ecef; --uv-accent: #9aa6b2; --uv-accent-2: #d0d7de; --uv-on-accent: #111111; --uv-surface: #2a2d30; --uv-surface-2: #323538; --uv-surface-3: #3e4144; --uv-line: #e9ecef24; --uv-line-2: #e9ecef42; --uv-muted: #a9acaf; --uv-dim: #808386; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -1205,7 +1205,7 @@
 
 /* @theme crimson-web — deep crimson with a black web pattern */
 [data-uv-theme="crimson-web"] {
-  --uv-bg: #3a0306; --uv-text: #ffe6e6; --uv-accent: #ff2a35; --uv-accent-2: #000000; --uv-surface: #440e11; --uv-surface-2: #4c171a; --uv-surface-3: #582528; --uv-line: #ffe6e624; --uv-line-2: #ffe6e642; --uv-muted: #c09d9e; --uv-dim: #997072; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #3a0306; --uv-text: #ffe6e6; --uv-accent: #ff2a35; --uv-accent-2: #000000; --uv-on-accent: #ffffff; --uv-surface: #440e11; --uv-surface-2: #4c171a; --uv-surface-3: #582528; --uv-line: #ffe6e624; --uv-line-2: #ffe6e642; --uv-muted: #c09d9e; --uv-dim: #997072; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -1227,7 +1227,7 @@
 
 /* @theme chameleon — colour-shift paint flipping teal to purple */
 [data-uv-theme="chameleon"] {
-  --uv-bg: #0e0a1a; --uv-text: #efe9ff; --uv-accent: #1fd1c1; --uv-accent-2: #a24bff; --uv-surface: #191525; --uv-surface-2: #221e2f; --uv-surface-3: #302b3c; --uv-line: #efe9ff24; --uv-line-2: #efe9ff42; --uv-muted: #a7a2b6; --uv-dim: #7a7588; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0e0a1a; --uv-text: #efe9ff; --uv-accent: #1fd1c1; --uv-accent-2: #a24bff; --uv-on-accent: #111111; --uv-surface: #191525; --uv-surface-2: #221e2f; --uv-surface-3: #302b3c; --uv-line: #efe9ff24; --uv-line-2: #efe9ff42; --uv-muted: #a7a2b6; --uv-dim: #7a7588; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1250,7 +1250,7 @@
 
 /* @theme candy-apple — deep candy-apple red car paint with a clearcoat */
 [data-uv-theme="candy-apple"] {
-  --uv-bg: #1a0306; --uv-text: #ffe9ec; --uv-accent: #e0102a; --uv-accent-2: #ff6b81; --uv-surface: #250e12; --uv-surface-2: #2f181b; --uv-surface-3: #3c2628; --uv-line: #ffe9ec24; --uv-line-2: #ffe9ec42; --uv-muted: #b69fa2; --uv-dim: #887174; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1a0306; --uv-text: #ffe9ec; --uv-accent: #e0102a; --uv-accent-2: #ff6b81; --uv-on-accent: #ffffff; --uv-surface: #250e12; --uv-surface-2: #2f181b; --uv-surface-3: #3c2628; --uv-line: #ffe9ec24; --uv-line-2: #ffe9ec42; --uv-muted: #b69fa2; --uv-dim: #887174; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1271,7 +1271,7 @@
 
 /* @theme anodized — anodised aluminium in electric blue and violet */
 [data-uv-theme="anodized"] {
-  --uv-bg: #0d1022; --uv-text: #e8ecff; --uv-accent: #4f6bff; --uv-accent-2: #c04bff; --uv-surface: #181b2d; --uv-surface-2: #212436; --uv-surface-3: #2e3143; --uv-line: #e8ecff24; --uv-line-2: #e8ecff42; --uv-muted: #a2a6b8; --uv-dim: #767a8c; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0d1022; --uv-text: #e8ecff; --uv-accent: #4f6bff; --uv-accent-2: #c04bff; --uv-on-accent: #ffffff; --uv-surface: #181b2d; --uv-surface-2: #212436; --uv-surface-3: #2e3143; --uv-line: #e8ecff24; --uv-line-2: #e8ecff42; --uv-muted: #a2a6b8; --uv-dim: #767a8c; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -1292,7 +1292,7 @@
 
 /* @theme titanium — brushed titanium greys, precision engineered */
 [data-uv-theme="titanium"] {
-  --uv-bg: #2c2f33; --uv-text: #f1f3f5; --uv-accent: #c3cbd4; --uv-accent-2: #7d8a96; --uv-surface: #36393d; --uv-surface-2: #3e4144; --uv-surface-3: #4a4c50; --uv-line: #f1f3f524; --uv-line-2: #f1f3f542; --uv-muted: #b2b4b7; --uv-dim: #8b8d90; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2c2f33; --uv-text: #f1f3f5; --uv-accent: #c3cbd4; --uv-accent-2: #7d8a96; --uv-on-accent: #111111; --uv-surface: #36393d; --uv-surface-2: #3e4144; --uv-surface-3: #4a4c50; --uv-line: #f1f3f524; --uv-line-2: #f1f3f542; --uv-muted: #b2b4b7; --uv-dim: #8b8d90; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none; --uv-head-tracking: -.03em;
@@ -1313,7 +1313,7 @@
 
 /* @theme gunmetal — dark gunmetal with machined edges */
 [data-uv-theme="gunmetal"] {
-  --uv-bg: #1b1e22; --uv-text: #e3e7ec; --uv-accent: #8fa3b8; --uv-accent-2: #c5d2df; --uv-surface: #25282c; --uv-surface-2: #2d3034; --uv-surface-3: #393c40; --uv-line: #e3e7ec24; --uv-line-2: #e3e7ec42; --uv-muted: #a3a7ab; --uv-dim: #7b7e83; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1b1e22; --uv-text: #e3e7ec; --uv-accent: #8fa3b8; --uv-accent-2: #c5d2df; --uv-on-accent: #111111; --uv-surface: #25282c; --uv-surface-2: #2d3034; --uv-surface-3: #393c40; --uv-line: #e3e7ec24; --uv-line-2: #e3e7ec42; --uv-muted: #a3a7ab; --uv-dim: #7b7e83; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Orbitron", system-ui, sans-serif; --uv-serif: "Orbitron", system-ui, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -1335,7 +1335,7 @@
 
 /* @theme rose-gold — blush rose gold with soft champagne light */
 [data-uv-theme="rose-gold"] {
-  --uv-bg: #fff4f1; --uv-text: #4a2a2a; --uv-accent: #d4877a; --uv-accent-2: #e8c39e; --uv-surface: #fffaf9; --uv-surface-2: #f4e8e5; --uv-surface-3: #ebdedb; --uv-line: #4a2a2a1a; --uv-line-2: #4a2a2a2e; --uv-muted: #846b6a; --uv-dim: #a89391; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff4f1; --uv-text: #4a2a2a; --uv-accent: #d4877a; --uv-accent-2: #e8c39e; --uv-on-accent: #111111; --uv-surface: #fffaf9; --uv-surface-2: #f4e8e5; --uv-surface-3: #ebdedb; --uv-line: #4a2a2a1a; --uv-line-2: #4a2a2a2e; --uv-muted: #846b6a; --uv-dim: #a89391; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -1355,7 +1355,7 @@
 
 /* @theme gold-leaf — black lacquer with hammered gold leaf */
 [data-uv-theme="gold-leaf"] {
-  --uv-bg: #0b0906; --uv-text: #f6ead0; --uv-accent: #d4a63a; --uv-accent-2: #f7e08a; --uv-surface: #171410; --uv-surface-2: #201d18; --uv-surface-3: #2e2b24; --uv-line: #f6ead024; --uv-line-2: #f6ead042; --uv-muted: #aba28f; --uv-dim: #7c7567; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0b0906; --uv-text: #f6ead0; --uv-accent: #d4a63a; --uv-accent-2: #f7e08a; --uv-on-accent: #111111; --uv-surface: #171410; --uv-surface-2: #201d18; --uv-surface-3: #2e2b24; --uv-line: #f6ead024; --uv-line-2: #f6ead042; --uv-muted: #aba28f; --uv-dim: #7c7567; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Cormorant Garamond", Georgia, serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Cormorant Garamond", Georgia, serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: uppercase; --uv-head-tracking: .06em;
@@ -1377,7 +1377,7 @@
 
 /* @theme holo-foil — trading-card holographic foil */
 [data-uv-theme="holo-foil"] {
-  --uv-bg: #f4f4f8; --uv-text: #1d1d2b; --uv-accent: #7a5cff; --uv-accent-2: #ff5cc8; --uv-surface: #fafafc; --uv-surface-2: #e7e7ec; --uv-surface-3: #dcdce1; --uv-line: #1d1d2b1a; --uv-line-2: #1d1d2b2e; --uv-muted: #62626d; --uv-dim: #8d8d96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f4f4f8; --uv-text: #1d1d2b; --uv-accent: #7a5cff; --uv-accent-2: #ff5cc8; --uv-on-accent: #ffffff; --uv-surface: #fafafc; --uv-surface-2: #e7e7ec; --uv-surface-3: #dcdce1; --uv-line: #1d1d2b1a; --uv-line-2: #1d1d2b2e; --uv-muted: #62626d; --uv-dim: #8d8d96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1399,7 +1399,7 @@
 
 /* @theme carbon-fiber — woven carbon fibre with a racing red accent */
 [data-uv-theme="carbon-fiber"] {
-  --uv-bg: #121314; --uv-text: #eeeeee; --uv-accent: #ff2b2b; --uv-accent-2: #ffffff; --uv-surface: #1d1e1f; --uv-surface-2: #262728; --uv-surface-3: #333435; --uv-line: #eeeeee24; --uv-line-2: #eeeeee42; --uv-muted: #a8a8a8; --uv-dim: #7c7c7d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #121314; --uv-text: #eeeeee; --uv-accent: #ff2b2b; --uv-accent-2: #ffffff; --uv-on-accent: #ffffff; --uv-surface: #1d1e1f; --uv-surface-2: #262728; --uv-surface-3: #333435; --uv-line: #eeeeee24; --uv-line-2: #eeeeee42; --uv-muted: #a8a8a8; --uv-dim: #7c7c7d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Orbitron", system-ui, sans-serif; --uv-serif: "Orbitron", system-ui, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
@@ -1421,7 +1421,7 @@
 
 /* @theme aurora-borealis — northern lights rippling over a polar night */
 [data-uv-theme="aurora-borealis"] {
-  --uv-bg: #050d1a; --uv-text: #e6fbff; --uv-accent: #3dffb4; --uv-accent-2: #7a5cff; --uv-surface: #101925; --uv-surface-2: #19222f; --uv-surface-3: #27313c; --uv-line: #e6fbff24; --uv-line-2: #e6fbff42; --uv-muted: #9eafb6; --uv-dim: #717f88; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #050d1a; --uv-text: #e6fbff; --uv-accent: #3dffb4; --uv-accent-2: #7a5cff; --uv-on-accent: #111111; --uv-surface: #101925; --uv-surface-2: #19222f; --uv-surface-3: #27313c; --uv-line: #e6fbff24; --uv-line-2: #e6fbff42; --uv-muted: #9eafb6; --uv-dim: #717f88; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
@@ -1442,7 +1442,7 @@
 
 /* @theme nebula — cosmic dust clouds in magenta and cyan */
 [data-uv-theme="nebula"] {
-  --uv-bg: #07031a; --uv-text: #f1e9ff; --uv-accent: #ff4fd8; --uv-accent-2: #4fd2ff; --uv-surface: #130e25; --uv-surface-2: #1c182f; --uv-surface-3: #2a263c; --uv-line: #f1e9ff24; --uv-line-2: #f1e9ff42; --uv-muted: #a69fb6; --uv-dim: #777188; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #07031a; --uv-text: #f1e9ff; --uv-accent: #ff4fd8; --uv-accent-2: #4fd2ff; --uv-on-accent: #ffffff; --uv-surface: #130e25; --uv-surface-2: #1c182f; --uv-surface-3: #2a263c; --uv-line: #f1e9ff24; --uv-line-2: #f1e9ff42; --uv-muted: #a69fb6; --uv-dim: #777188; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1463,7 +1463,7 @@
 
 /* @theme liquid-chrome — mirror chrome over a cool blue studio */
 [data-uv-theme="liquid-chrome"] {
-  --uv-bg: #dfe5ec; --uv-text: #151a22; --uv-accent: #5a6b80; --uv-accent-2: #9fb2c8; --uv-surface: #f1f3f6; --uv-surface-2: #d3d9e0; --uv-surface-3: #c9cfd6; --uv-line: #151a221a; --uv-line-2: #151a222e; --uv-muted: #565b63; --uv-dim: #7e848b; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #dfe5ec; --uv-text: #151a22; --uv-accent: #5a6b80; --uv-accent-2: #9fb2c8; --uv-on-accent: #ffffff; --uv-surface: #f1f3f6; --uv-surface-2: #d3d9e0; --uv-surface-3: #c9cfd6; --uv-line: #151a221a; --uv-line-2: #151a222e; --uv-muted: #565b63; --uv-dim: #7e848b; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;
@@ -1484,7 +1484,7 @@
 
 /* @theme lava-lamp — groovy molten blobs in orange and magenta */
 [data-uv-theme="lava-lamp"] {
-  --uv-bg: #2a0a1f; --uv-text: #ffe8f3; --uv-accent: #ff7a1a; --uv-accent-2: #ff2d95; --uv-surface: #35152a; --uv-surface-2: #3d1e32; --uv-surface-3: #4a2b3f; --uv-line: #ffe8f324; --uv-line-2: #ffe8f342; --uv-muted: #bba1af; --uv-dim: #907585; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2a0a1f; --uv-text: #ffe8f3; --uv-accent: #ff7a1a; --uv-accent-2: #ff2d95; --uv-on-accent: #111111; --uv-surface: #35152a; --uv-surface-2: #3d1e32; --uv-surface-3: #4a2b3f; --uv-line: #ffe8f324; --uv-line-2: #ffe8f342; --uv-muted: #bba1af; --uv-dim: #907585; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

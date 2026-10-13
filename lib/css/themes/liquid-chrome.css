@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: liquid-chrome — mirror chrome over a cool blue studio. Needs core.css. MIT */
 [data-uv-theme="liquid-chrome"] {
-  --uv-bg: #dfe5ec; --uv-text: #151a22; --uv-accent: #5a6b80; --uv-accent-2: #9fb2c8; --uv-surface: #f1f3f6; --uv-surface-2: #d3d9e0; --uv-surface-3: #c9cfd6; --uv-line: #151a221a; --uv-line-2: #151a222e; --uv-muted: #565b63; --uv-dim: #7e848b; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #dfe5ec; --uv-text: #151a22; --uv-accent: #5a6b80; --uv-accent-2: #9fb2c8; --uv-on-accent: #ffffff; --uv-surface: #f1f3f6; --uv-surface-2: #d3d9e0; --uv-surface-3: #c9cfd6; --uv-line: #151a221a; --uv-line-2: #151a222e; --uv-muted: #565b63; --uv-dim: #7e848b; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

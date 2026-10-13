@@ -1,5 +1,6 @@
-// UI Vault floating theme picker — try any of the styles (or your saved custom ones) on any page.
-// Remembers the choice in localStorage("uv-skin"); loads only the CSS it needs.
+// UI Vault floating theme picker — try any of the styles (or your saved custom ones) on any page,
+// plus element designs (buttons, cards, inputs…) mixed and matched per family, and ready-made kits.
+// Remembers the choices in localStorage("uv-skin", "uv-parts"); loads only the CSS it needs.
 (() => {
   "use strict";
   const BASE = (document.currentScript?.src || "").replace(/assets\/js\/picker\.js.*$/, "");
@@ -28,6 +29,9 @@
   .uvp li:hover, .uvp li.on { background: #ffffff12; } .uvp li.on::after { content: "✓"; margin-left: auto; color: #ff6a26; }
   .uvp .sw { display: flex; flex: none; } .uvp .sw b { width: 10px; height: 20px; } .uvp .sw b:first-child { border-radius: 4px 0 0 4px; } .uvp .sw b:last-child { border-radius: 0 4px 4px 0; }
   .uvp small { color: #8f8a82; font: 10px "Geist Mono", monospace; text-transform: uppercase; }
+  .uvp nav { display: flex; gap: 4px; padding: 8px 12px 0; } .uvp nav button { flex: 1; height: 30px; border: 1px solid #ffffff1f; border-radius: 6px; background: none; color: #a19d95; font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvp nav button.on { background: #ffffff14; color: #fff; border-color: #ffffff40; }
+  .uvp .parts { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; padding: 10px 12px; overflow: auto; flex: 1; } .uvp .parts label { color: #a19d95; font-size: 12px; } .uvp .parts select { height: 30px; min-width: 0; }
+  .uvp .kits { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px 0; } .uvp .kits button { padding: 5px 9px; border-radius: 999px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvp .kits button:hover, .uvp .kits button.on { background: #ff6a26; border-color: #ff6a26; color: #111; }
   .uvp footer { display: flex; gap: 6px; padding: 10px; border-top: 1px solid #ffffff1a; } .uvp footer a, .uvp footer button { flex: 1; height: 32px; display: grid; place-items: center; border-radius: 6px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; text-decoration: none; cursor: pointer; }
   @media print { .uvp-btn, .uvp { display: none !important; } }`;
   document.head.appendChild(map);
@@ -35,8 +39,11 @@
   async function ensureBase() {
     if (!hasBundle) await Promise.all([css(BASE + "lib/css/core.css"), css(BASE + "lib/css/fonts.css")]);
   }
+  let themeSeq = 0;
   async function apply(name) {
+    const seq = ++themeSeq;
     if (!name) { html.removeAttribute("data-uv-theme"); store.set("uv-skin", ""); mark(); return; }
+    store.set("uv-skin", name);
     await ensureBase();
     const custom = store.get("uv-custom-styles", {})[name];
     if (custom) {
@@ -44,28 +51,76 @@
       let st = document.getElementById("uvp-custom"); if (!st) { st = document.createElement("style"); st.id = "uvp-custom"; document.head.appendChild(st); }
       st.textContent = Object.values(store.get("uv-custom-styles", {})).map(s => ThemeEngine.css(s)).join("\n");
     } else if (!hasBundle) await css(BASE + "lib/css/themes/" + name + ".css");
-    html.dataset.uvTheme = name; store.set("uv-skin", name); mark();
+    if (seq !== themeSeq) return;
+    html.dataset.uvTheme = name; mark();
   }
 
-  // re-apply the saved choice on every page
+  // element designs: data-uv-<family>="name" on <html>, one CSS file per family in use
+  const FAMS = ["btn", "card", "input", "switch", "check", "range", "tabs", "nav", "badge", "alert", "modal", "spinner", "progress", "head", "bg"];
+  let partsData;
+  const loadParts = async () => { if (!partsData) { await js(BASE + "lib/parts.js"); partsData = window.UV_PARTS; } return partsData; };
+  async function setParts(mix, { replace = false, kit } = {}) {
+    const cur = replace ? {} : store.get("uv-parts", {});
+    Object.assign(cur, mix);
+    for (const k of Object.keys(cur)) if (!cur[k]) delete cur[k];
+    store.set("uv-parts", cur); store.set("uv-kit", kit || "");
+    await applyParts(cur);
+  }
+  let partsSeq = 0;
+  async function applyParts(cur = store.get("uv-parts", {})) {
+    const seq = ++partsSeq, used = FAMS.filter(k => cur[k]);
+    if (used.length) await ensureBase();
+    await Promise.all(used.map(k => css(BASE + "lib/css/parts/" + k + ".css")));
+    if (seq !== partsSeq) return;   // a newer pick arrived while this one was loading
+    for (const k of FAMS) cur[k] ? html.setAttribute("data-uv-" + k, cur[k]) : html.removeAttribute("data-uv-" + k);
+    renderParts();
+    document.dispatchEvent(new CustomEvent("uv:parts", { detail: cur }));
+  }
+  async function applyKit(name) {
+    const d = await loadParts(), kit = d.kits.find(k => k.name === name);
+    if (!kit) return;
+    await setParts(kit.parts, { replace: true, kit: name });
+    if (kit.theme) await apply(kit.theme);
+  }
+
+  // re-apply the saved choices on every page
   const saved = store.get("uv-skin", "");
   if (saved) apply(saved);
+  if (Object.keys(store.get("uv-parts", {})).length) applyParts();
+  // keep other open tabs in sync
+  addEventListener("storage", e => {
+    if (e.key === "uv-parts") applyParts();
+    if (e.key === "uv-skin") { const v = store.get("uv-skin", ""); v ? apply(v) : apply(""); }
+  });
 
   let btn, panel, data;
   async function open() {
-    if (!data) { await js(BASE + "lib/tokens.js"); data = window.UV_TOKENS.themes; build(); }
+    if (!data) { await Promise.all([js(BASE + "lib/tokens.js"), loadParts()]); data = window.UV_TOKENS.themes; build(); }
     panel.classList.toggle("open"); if (panel.classList.contains("open")) panel.querySelector("input").focus();
   }
   function build() {
     const cats = ["All", "My styles", ...new Set(Object.values(data).map(t => t.category))];
-    panel.innerHTML = `<header><input type="search" placeholder="Search ${Object.keys(data).length} styles…"><select>${cats.map(c => `<option>${c}</option>`).join("")}</select></header><ul></ul>
-      <footer><button data-reset>Default</button><button data-rand>Random</button><a href="${BASE}themes.html">All styles →</a></footer>`;
+    const pd = partsData;
+    panel.innerHTML = `<nav><button type="button" data-tab="s" class="on">Styles</button><button type="button" data-tab="e">Elements</button></nav>
+      <section data-pane="s" style="display:contents"><header><input type="search" placeholder="Search ${Object.keys(data).length} styles…"><select>${cats.map(c => `<option>${c}</option>`).join("")}</select></header><ul></ul>
+      <footer><button data-reset>Default</button><button data-rand>Random</button><a href="${BASE}themes.html">All styles →</a></footer></section>
+      <section data-pane="e" style="display:none">
+        <div class="kits">${pd.kits.map(k => `<button type="button" data-kit="${k.name}" title="${k.desc}">${k.label}</button>`).join("")}</div>
+        <div class="parts">${pd.families.map(f => `<label for="uvp-${f.key}">${f.label}</label><select id="uvp-${f.key}" data-fam="${f.key}"><option value="">Theme default</option>${f.parts.map(p => `<option value="${p.name}">${p.label}</option>`).join("")}</select>`).join("")}</div>
+        <footer><button data-preset>Reset</button><button data-prand>Random</button><a href="${BASE}elements.html">Browse →</a><a href="${BASE}lab.html">Test page →</a></footer></section>`;
+    const tabs = panel.querySelectorAll("nav button");
+    tabs.forEach(b => b.onclick = () => { tabs.forEach(x => x.classList.toggle("on", x === b)); panel.querySelectorAll("[data-pane]").forEach(p => p.style.display = p.dataset.pane === b.dataset.tab ? (p.dataset.pane === "s" ? "contents" : "flex") : "none"); });
+    const pe = panel.querySelector('[data-pane="e"]'); pe.style.flexDirection = "column"; pe.style.minHeight = "0";
+    pe.querySelector(".kits").onclick = e => { const b = e.target.closest("[data-kit]"); if (b) applyKit(b.dataset.kit); };
+    pe.querySelectorAll("select").forEach(sel => sel.onchange = () => setParts({ [sel.dataset.fam]: sel.value }));
+    pe.querySelector("[data-preset]").onclick = () => setParts({}, { replace: true });
+    pe.querySelector("[data-prand]").onclick = () => setParts(Object.fromEntries(pd.families.map(f => [f.key, f.parts[(Math.random() * f.parts.length) | 0].name])), { replace: true });
     const q = panel.querySelector("input"), c = panel.querySelector("select");
     q.oninput = c.onchange = render;
     panel.querySelector("[data-reset]").onclick = () => apply("");
     panel.querySelector("[data-rand]").onclick = () => { const k = Object.keys(data); apply(k[(Math.random() * k.length) | 0]); };
     panel.querySelector("ul").onclick = e => { const li = e.target.closest("li"); if (li) apply(li.dataset.n); };
-    render();
+    render(); renderParts();
   }
   function render() {
     if (!panel || !data) return;
@@ -75,6 +130,12 @@
       .filter(([n, t]) => (c === "All" || t.category === c) && (!q || (n + " " + t.category + " " + (t.desc || "")).toLowerCase().includes(q)));
     panel.querySelector("ul").innerHTML = rows.map(([n, t]) => `<li data-n="${n}"><span class="sw">${["bg", "surface", "text", "accent", "accent-2"].map(k => `<b style="background:${t.solid[k]}"></b>`).join("")}</span><span>${n.replace(/-/g, " ")}<br><small>${t.category}</small></span></li>`).join("") || `<li style="cursor:default;color:#8f8a82">No styles match</li>`;
     mark();
+  }
+  function renderParts() {
+    if (!panel) return;
+    const cur = store.get("uv-parts", {}), kit = store.get("uv-kit", "");
+    panel.querySelectorAll("select[data-fam]").forEach(sel => sel.value = cur[sel.dataset.fam] || "");
+    panel.querySelectorAll("[data-kit]").forEach(b => b.classList.toggle("on", b.dataset.kit === kit));
   }
   function mark() { panel && panel.querySelectorAll("li").forEach(li => li.classList.toggle("on", li.dataset.n === (html.dataset.uvTheme || ""))); }
 
@@ -107,5 +168,5 @@
     document.addEventListener("click", e => { if (panel.classList.contains("open") && !panel.contains(e.target) && !btn.contains(e.target)) panel.classList.remove("open"); });
   };
   document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", mount) : mount();
-  window.UVPicker = { toggleMode, apply, refresh: () => { render(); const s = html.dataset.uvTheme; if (s && store.get("uv-custom-styles", {})[s]) apply(s); } };
+  window.UVPicker = { toggleMode, apply, setParts, applyKit, loadParts, getParts: () => store.get("uv-parts", {}), getKit: () => store.get("uv-kit", ""), refresh: () => { render(); const s = html.dataset.uvTheme; if (s && store.get("uv-custom-styles", {})[s]) apply(s); } };
 })();

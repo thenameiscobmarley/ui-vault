@@ -2,7 +2,7 @@
 [data-uv-theme="brutal"] {
   --uv-bg: #fff4e0; --uv-surface: #ffffff; --uv-surface-2: #ffe9c2; --uv-surface-3: #ffd98a;
   --uv-line: #000; --uv-line-2: #000; --uv-text: #000; --uv-muted: #333; --uv-dim: #555;
-  --uv-accent: #ff5ec4; --uv-accent-2: #ffd23f; --uv-success: #23a35a; --uv-danger: #ff3b30;
+  --uv-accent: #ff5ec4; --uv-on-accent: #ffffff; --uv-accent-2: #ffd23f; --uv-success: #23a35a; --uv-danger: #ff3b30;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-head-weight: 700; --uv-head-tracking: -.04em;
   --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0; --uv-bw: 2px;
   --uv-btn-shadow: 4px 4px 0 #000; --uv-btn-shadow-active: 0 0 0 #000; --uv-card-shadow: 6px 6px 0 #000; --uv-focus: 4px 4px 0 #000;

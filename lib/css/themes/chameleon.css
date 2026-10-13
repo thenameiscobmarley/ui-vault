@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: chameleon — colour-shift paint flipping teal to purple. Needs core.css. MIT */
 [data-uv-theme="chameleon"] {
-  --uv-bg: #0e0a1a; --uv-text: #efe9ff; --uv-accent: #1fd1c1; --uv-accent-2: #a24bff; --uv-surface: #191525; --uv-surface-2: #221e2f; --uv-surface-3: #302b3c; --uv-line: #efe9ff24; --uv-line-2: #efe9ff42; --uv-muted: #a7a2b6; --uv-dim: #7a7588; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0e0a1a; --uv-text: #efe9ff; --uv-accent: #1fd1c1; --uv-accent-2: #a24bff; --uv-on-accent: #111111; --uv-surface: #191525; --uv-surface-2: #221e2f; --uv-surface-3: #302b3c; --uv-line: #efe9ff24; --uv-line-2: #efe9ff42; --uv-muted: #a7a2b6; --uv-dim: #7a7588; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

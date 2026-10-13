@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: sand — dune beige, umber ink, sun-bleached calm. Needs core.css. MIT */
 [data-uv-theme="sand"] {
-  --uv-bg: #efe4d2; --uv-text: #3e3227; --uv-accent: #b0743c; --uv-accent-2: #b0743c; --uv-surface: #f8f3eb; --uv-surface-2: #e4d9c8; --uv-surface-3: #dcd0bf; --uv-line: #3e32271a; --uv-line-2: #3e32272e; --uv-muted: #776b5e; --uv-dim: #9a8f80; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #efe4d2; --uv-text: #3e3227; --uv-accent: #b0743c; --uv-accent-2: #b0743c; --uv-on-accent: #ffffff; --uv-surface: #f8f3eb; --uv-surface-2: #e4d9c8; --uv-surface-3: #dcd0bf; --uv-line: #3e32271a; --uv-line-2: #3e32272e; --uv-muted: #776b5e; --uv-dim: #9a8f80; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;

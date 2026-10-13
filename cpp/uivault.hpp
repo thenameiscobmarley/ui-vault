@@ -1,5 +1,5 @@
 // uivault.hpp — UI Vault 3.1.0 for C++ · single header · MIT
-// The 12 UI Vault design themes as constexpr data, plus one-call adapters for popular C++ UI toolkits.
+// The UI Vault design themes and element kits as constexpr data, plus one-call adapters for popular C++ UI toolkits.
 // Adapters switch on automatically when the toolkit header is included BEFORE this one:
 //
 //   Dear ImGui   #include <imgui.h>            → uivault::imgui::apply(uivault::neon);
@@ -667,6 +667,385 @@ inline const Theme* find(const char* name) {
     return nullptr;
 }
 
+// ── Parts & kits: element designs (button, card, input, …) ──────────────────
+// The web library has 280+ element designs. Native toolkits can't draw glows or animated foils, so each design
+// carries an approximation: corner radius, border width, a Fill style, weight and case. Kits bundle a theme + one
+// design per family:   auto* kit = uivault::findKit("deep-metal");   uivault::imgui::apply(*uivault::findKitTheme(*kit), *kit);
+enum class Fill { Solid, Outline, Ghost, Soft, Grad, Metal, DeepMetal, Chrome, Pearl, Holo, Gold, Glass, Bevel, Hard, Neon, Inverse, Flat, Sunken, Underline, Printstream, Clay };
+/// One element design. radius 999 = pill. The web version has the full effect; this is the closest a native toolkit can draw.
+struct Part { const char* family; const char* name; const char* label; float radius; float border; Fill fill; int weight; bool upper; };
+inline constexpr const char* families[] = { "btn", "card", "input", "switch", "check", "range", "tabs", "nav", "badge", "alert", "modal", "spinner", "progress", "head", "bg" };
+inline constexpr int familyCount = 15;
+inline constexpr Part parts[] = {
+    { "btn", "solid", "Solid", 10.0f, 1.0f, Fill::Solid, 600, false },
+    { "btn", "pill", "Pill", 999.0f, 1.0f, Fill::Solid, 600, false },
+    { "btn", "outline", "Outline", 8.0f, 2.0f, Fill::Outline, 600, false },
+    { "btn", "soft", "Soft", 10.0f, 0.0f, Fill::Soft, 600, false },
+    { "btn", "ghost", "Ghost", 8.0f, 0.0f, Fill::Ghost, 600, false },
+    { "btn", "gradient", "Gradient", 10.0f, 0.0f, Fill::Grad, 600, false },
+    { "btn", "glow", "Glow", 10.0f, 1.0f, Fill::Neon, 600, false },
+    { "btn", "neon-tube", "Neon tube", 999.0f, 2.0f, Fill::Neon, 500, true },
+    { "btn", "3d", "3D press", 10.0f, 1.0f, Fill::Hard, 600, false },
+    { "btn", "brutal", "Brutal", 0.0f, 2.0f, Fill::Hard, 700, false },
+    { "btn", "brutal-pop", "Brutal pop", 12.0f, 3.0f, Fill::Hard, 800, false },
+    { "btn", "metal", "Anodised metal", 8.0f, 1.0f, Fill::Metal, 600, false },
+    { "btn", "deep-metal", "Deep blue metal", 8.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "btn", "chrome", "Chrome", 999.0f, 1.0f, Fill::Chrome, 600, false },
+    { "btn", "pearl", "Pearlescent", 999.0f, 1.0f, Fill::Pearl, 600, false },
+    { "btn", "holo", "Holo foil", 12.0f, 1.0f, Fill::Holo, 600, false },
+    { "btn", "printstream", "Printstream", 4.0f, 2.0f, Fill::Printstream, 700, true },
+    { "btn", "glass", "Frosted glass", 12.0f, 1.0f, Fill::Glass, 600, false },
+    { "btn", "aqua", "Aqua gel", 999.0f, 1.0f, Fill::Grad, 600, false },
+    { "btn", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 400, false },
+    { "btn", "pixel", "Pixel", 0.0f, 0.0f, Fill::Hard, 600, true },
+    { "btn", "terminal", "Terminal", 0.0f, 1.0f, Fill::Outline, 500, false },
+    { "btn", "clay", "Clay", 18.0f, 0.0f, Fill::Clay, 600, false },
+    { "btn", "neumorph", "Neumorphic", 14.0f, 0.0f, Fill::Flat, 600, false },
+    { "btn", "gold", "Gold foil", 2.0f, 1.0f, Fill::Gold, 700, true },
+    { "btn", "liquid", "Liquid", 999.0f, 1.0f, Fill::Grad, 600, false },
+    { "btn", "slide-fill", "Slide fill", 6.0f, 2.0f, Fill::Outline, 600, false },
+    { "btn", "underline", "Underline", 0.0f, 0.0f, Fill::Underline, 600, false },
+    { "btn", "bracket", "Brackets", 0.0f, 0.0f, Fill::Ghost, 600, true },
+    { "btn", "arrow", "Arrow link", 0.0f, 1.0f, Fill::Underline, 500, false },
+    { "btn", "split", "Split", 8.0f, 1.0f, Fill::Solid, 600, false },
+    { "btn", "sticker", "Sticker", 14.0f, 3.0f, Fill::Solid, 800, false },
+    { "btn", "stamp", "Stamp", 4.0f, 3.0f, Fill::Outline, 800, true },
+    { "btn", "candy", "Candy stripe", 999.0f, 2.0f, Fill::Grad, 800, false },
+    { "btn", "jelly", "Jelly", 14.0f, 1.0f, Fill::Solid, 600, false },
+    { "btn", "shine", "Shine sweep", 8.0f, 1.0f, Fill::Solid, 600, false },
+    { "btn", "border-spin", "Spinning border", 10.0f, 2.0f, Fill::Outline, 600, false },
+    { "btn", "cyber", "Cyber", 0.0f, 0.0f, Fill::Solid, 600, true },
+    { "btn", "synth", "Synthwave", 6.0f, 2.0f, Fill::Grad, 800, true },
+    { "btn", "ink", "Ink", 3.0f, 1.0f, Fill::Inverse, 500, false },
+    { "btn", "paper", "Paper cut", 2.0f, 1.0f, Fill::Flat, 500, false },
+    { "btn", "arcade", "Arcade", 16.0f, 3.0f, Fill::Hard, 900, true },
+    { "btn", "halo", "Halo ring", 999.0f, 1.0f, Fill::Solid, 600, false },
+    { "btn", "duo-shadow", "Duo shadow", 6.0f, 2.0f, Fill::Hard, 700, false },
+    { "btn", "lava", "Lava gloss", 12.0f, 1.0f, Fill::Grad, 700, false },
+    { "btn", "ice", "Ice", 10.0f, 1.0f, Fill::Pearl, 700, false },
+    { "btn", "minimal", "Minimal", 4.0f, 1.0f, Fill::Outline, 500, false },
+    { "btn", "emboss", "Letterpress", 8.0f, 0.0f, Fill::Sunken, 600, false },
+    { "btn", "tag", "Price tag", 4.0f, 0.0f, Fill::Solid, 600, false },
+    { "card", "flat", "Flat", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "card", "outline", "Outline", 6.0f, 2.0f, Fill::Outline, 600, false },
+    { "card", "elevated", "Elevated", 14.0f, 0.0f, Fill::Flat, 600, false },
+    { "card", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "card", "glass", "Frosted glass", 16.0f, 1.0f, Fill::Glass, 600, false },
+    { "card", "pearl", "Pearlescent", 18.0f, 1.0f, Fill::Pearl, 600, false },
+    { "card", "holo-border", "Holo border", 16.0f, 2.0f, Fill::Holo, 600, false },
+    { "card", "metal", "Brushed metal", 6.0f, 1.0f, Fill::Metal, 600, false },
+    { "card", "deep-metal", "Deep blue metal", 10.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "card", "gradient-border", "Gradient border", 14.0f, 2.0f, Fill::Grad, 600, false },
+    { "card", "glow", "Glow", 12.0f, 1.0f, Fill::Neon, 600, false },
+    { "card", "neon", "Neon", 10.0f, 2.0f, Fill::Neon, 600, false },
+    { "card", "bevel", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 600, false },
+    { "card", "cyber", "Cyber notch", 0.0f, 1.0f, Fill::Outline, 600, false },
+    { "card", "paper", "Lined paper", 2.0f, 1.0f, Fill::Flat, 600, false },
+    { "card", "sticky", "Sticky note", 2.0f, 0.0f, Fill::Solid, 600, false },
+    { "card", "clay", "Clay", 26.0f, 0.0f, Fill::Clay, 600, false },
+    { "card", "neumorph", "Neumorphic", 20.0f, 0.0f, Fill::Flat, 600, false },
+    { "card", "inset", "Inset", 12.0f, 0.0f, Fill::Sunken, 600, false },
+    { "card", "double", "Double rule", 4.0f, 4.0f, Fill::Outline, 600, false },
+    { "card", "blueprint", "Blueprint", 0.0f, 2.0f, Fill::Outline, 600, false },
+    { "card", "accent-bar", "Accent bar", 4.0f, 1.0f, Fill::Flat, 600, false },
+    { "card", "ticket", "Ticket", 10.0f, 0.0f, Fill::Flat, 600, false },
+    { "card", "polaroid", "Polaroid", 2.0f, 0.0f, Fill::Flat, 600, false },
+    { "card", "window", "App window", 10.0f, 1.0f, Fill::Flat, 600, false },
+    { "card", "terminal", "Terminal", 4.0f, 1.0f, Fill::Flat, 600, false },
+    { "input", "boxed", "Boxed", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "input", "underline", "Underline", 0.0f, 1.0f, Fill::Underline, 600, false },
+    { "input", "filled", "Filled", 4.0f, 2.0f, Fill::Soft, 600, false },
+    { "input", "pill", "Pill", 999.0f, 1.0f, Fill::Soft, 600, false },
+    { "input", "brutal", "Brutal", 0.0f, 2.0f, Fill::Hard, 600, false },
+    { "input", "glass", "Glass", 12.0f, 1.0f, Fill::Glass, 600, false },
+    { "input", "neon", "Neon", 6.0f, 1.0f, Fill::Neon, 600, false },
+    { "input", "inset", "Inset", 12.0f, 0.0f, Fill::Sunken, 600, false },
+    { "input", "terminal", "Terminal", 0.0f, 1.0f, Fill::Flat, 500, false },
+    { "input", "pearl", "Pearl", 999.0f, 1.0f, Fill::Pearl, 600, false },
+    { "input", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 600, false },
+    { "input", "minimal", "Minimal", 4.0f, 1.0f, Fill::Ghost, 600, false },
+    { "input", "gradient", "Gradient focus", 10.0f, 2.0f, Fill::Grad, 600, false },
+    { "input", "paper", "Paper", 0.0f, 1.0f, Fill::Underline, 400, false },
+    { "input", "cyber", "Cyber", 0.0f, 0.0f, Fill::Solid, 500, false },
+    { "input", "clay", "Clay", 16.0f, 0.0f, Fill::Clay, 600, false },
+    { "input", "deep-metal", "Deep metal", 8.0f, 2.0f, Fill::DeepMetal, 600, false },
+    { "input", "chrome", "Chrome bezel", 999.0f, 2.0f, Fill::Chrome, 600, false },
+    { "input", "thick", "Thick outline", 6.0f, 2.0f, Fill::Outline, 600, false },
+    { "input", "ghost-label", "Floating", 10.0f, 1.0f, Fill::Soft, 600, false },
+    { "switch", "classic", "Classic", 999.0f, 1.0f, Fill::Solid, 600, false },
+    { "switch", "ios", "iOS", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "switch", "material", "Material", 999.0f, 0.0f, Fill::Soft, 600, false },
+    { "switch", "square", "Square", 3.0f, 1.0f, Fill::Solid, 600, false },
+    { "switch", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "switch", "neon", "Neon", 999.0f, 2.0f, Fill::Neon, 600, false },
+    { "switch", "pearl", "Pearl", 999.0f, 1.0f, Fill::Pearl, 600, false },
+    { "switch", "metal", "Metal", 999.0f, 1.0f, Fill::Metal, 600, false },
+    { "switch", "labels", "On / Off", 999.0f, 1.0f, Fill::Solid, 600, false },
+    { "switch", "day-night", "Day / night", 999.0f, 0.0f, Fill::Grad, 600, false },
+    { "switch", "glass", "Glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "switch", "line", "Line", 999.0f, 0.0f, Fill::Underline, 600, false },
+    { "switch", "3d", "3D rocker", 8.0f, 1.0f, Fill::Hard, 600, false },
+    { "switch", "aqua", "Aqua gel", 999.0f, 1.0f, Fill::Grad, 600, false },
+    { "switch", "pixel", "Pixel", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "switch", "deep-metal", "Deep metal", 999.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "check", "classic", "Classic", 5.0f, 2.0f, Fill::Solid, 600, false },
+    { "check", "round", "Round", 999.0f, 2.0f, Fill::Solid, 600, false },
+    { "check", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "check", "neon", "Neon", 4.0f, 2.0f, Fill::Neon, 600, false },
+    { "check", "pearl", "Pearl", 999.0f, 1.0f, Fill::Pearl, 600, false },
+    { "check", "cross", "Cross", 2.0f, 2.0f, Fill::Outline, 600, false },
+    { "check", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 600, false },
+    { "check", "dot", "Dot", 999.0f, 2.0f, Fill::Outline, 600, false },
+    { "check", "pop", "Pop", 6.0f, 2.0f, Fill::Solid, 600, false },
+    { "check", "metal", "Metal", 4.0f, 0.0f, Fill::Metal, 600, false },
+    { "check", "square-fill", "Square fill", 0.0f, 2.0f, Fill::Outline, 600, false },
+    { "check", "glass", "Glass", 7.0f, 1.0f, Fill::Glass, 600, false },
+    { "range", "classic", "Classic", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "range", "thick", "Thick", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "range", "gradient", "Gradient", 999.0f, 0.0f, Fill::Grad, 600, false },
+    { "range", "neon", "Neon", 999.0f, 0.0f, Fill::Neon, 600, false },
+    { "range", "pearl", "Pearl", 999.0f, 1.0f, Fill::Pearl, 600, false },
+    { "range", "metal", "Metal fader", 3.0f, 1.0f, Fill::Metal, 600, false },
+    { "range", "square", "Square", 0.0f, 2.0f, Fill::Outline, 600, false },
+    { "range", "line", "Hairline", 999.0f, 0.0f, Fill::Flat, 600, false },
+    { "range", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "range", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 600, false },
+    { "range", "glass", "Glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "range", "deep-metal", "Deep metal", 999.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "tabs", "slide", "Sliding pill", 12.0f, 1.0f, Fill::Solid, 600, false },
+    { "tabs", "underline", "Underline", 0.0f, 1.0f, Fill::Underline, 600, false },
+    { "tabs", "segmented", "Segmented", 10.0f, 0.0f, Fill::Soft, 600, false },
+    { "tabs", "folder", "Folder tabs", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "tabs", "brutal", "Brutal", 0.0f, 2.0f, Fill::Hard, 600, false },
+    { "tabs", "neon", "Neon", 10.0f, 1.0f, Fill::Neon, 500, true },
+    { "tabs", "pearl", "Pearl", 999.0f, 1.0f, Fill::Pearl, 600, false },
+    { "tabs", "glass", "Glass", 14.0f, 1.0f, Fill::Glass, 600, false },
+    { "tabs", "terminal", "Terminal", 0.0f, 1.0f, Fill::Outline, 500, false },
+    { "tabs", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 400, false },
+    { "tabs", "bubble", "Bubbles", 999.0f, 0.0f, Fill::Soft, 600, false },
+    { "tabs", "ink", "Ink", 4.0f, 1.0f, Fill::Inverse, 600, false },
+    { "tabs", "gradient", "Gradient", 999.0f, 1.0f, Fill::Grad, 600, false },
+    { "tabs", "cyber", "Cyber", 0.0f, 0.0f, Fill::Solid, 600, true },
+    { "tabs", "metal", "Metal", 8.0f, 1.0f, Fill::Chrome, 600, false },
+    { "tabs", "minimal", "Minimal", 0.0f, 0.0f, Fill::Ghost, 500, false },
+    { "nav", "pills", "Pills", 14.0f, 1.0f, Fill::Solid, 600, false },
+    { "nav", "underline", "Underline", 0.0f, 1.0f, Fill::Underline, 600, false },
+    { "nav", "boxed", "Boxed", 6.0f, 1.0f, Fill::Outline, 600, false },
+    { "nav", "glass", "Floating glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "nav", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 700, false },
+    { "nav", "neon", "Neon", 10.0f, 1.0f, Fill::Neon, 500, true },
+    { "nav", "terminal", "Terminal", 0.0f, 1.0f, Fill::Flat, 500, false },
+    { "nav", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 400, false },
+    { "nav", "pearl", "Pearl", 999.0f, 1.0f, Fill::Pearl, 600, false },
+    { "nav", "rail", "Side rail", 0.0f, 0.0f, Fill::Ghost, 600, false },
+    { "nav", "ink", "Ink", 3.0f, 1.0f, Fill::Inverse, 600, false },
+    { "nav", "gradient", "Gradient", 10.0f, 1.0f, Fill::Grad, 600, false },
+    { "nav", "dots", "Dots", 0.0f, 0.0f, Fill::Ghost, 500, false },
+    { "nav", "metal", "Metal", 8.0f, 1.0f, Fill::Chrome, 600, false },
+    { "nav", "deep-metal", "Deep metal", 10.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "nav", "cyber", "Cyber", 0.0f, 0.0f, Fill::Solid, 600, true },
+    { "badge", "soft", "Soft pill", 999.0f, 0.0f, Fill::Soft, 600, false },
+    { "badge", "solid", "Solid", 6.0f, 0.0f, Fill::Solid, 700, false },
+    { "badge", "outline", "Outline", 3.0f, 1.0f, Fill::Outline, 500, true },
+    { "badge", "dot", "Status dot", 999.0f, 1.0f, Fill::Flat, 500, false },
+    { "badge", "neon", "Neon", 4.0f, 1.0f, Fill::Neon, 600, true },
+    { "badge", "pearl", "Pearl", 999.0f, 1.0f, Fill::Pearl, 700, false },
+    { "badge", "brutal", "Brutal", 0.0f, 2.0f, Fill::Hard, 800, true },
+    { "badge", "gradient", "Gradient", 999.0f, 0.0f, Fill::Grad, 700, false },
+    { "badge", "glass", "Glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "badge", "metal", "Metal", 3.0f, 1.0f, Fill::Chrome, 700, true },
+    { "badge", "ribbon", "Ribbon", 0.0f, 0.0f, Fill::Solid, 700, false },
+    { "badge", "stamp", "Stamp", 3.0f, 2.0f, Fill::Outline, 800, true },
+    { "badge", "holo", "Holo", 6.0f, 1.0f, Fill::Holo, 800, false },
+    { "badge", "terminal", "Terminal", 0.0f, 0.0f, Fill::Ghost, 500, true },
+    { "badge", "sticker", "Sticker", 999.0f, 2.0f, Fill::Solid, 800, false },
+    { "badge", "square", "Square", 0.0f, 0.0f, Fill::Soft, 600, true },
+    { "alert", "bar", "Side bar", 4.0f, 4.0f, Fill::Flat, 600, false },
+    { "alert", "soft", "Soft", 10.0f, 1.0f, Fill::Soft, 600, false },
+    { "alert", "filled", "Filled", 8.0f, 0.0f, Fill::Solid, 600, false },
+    { "alert", "outline", "Outline", 6.0f, 2.0f, Fill::Outline, 600, false },
+    { "alert", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "alert", "neon", "Neon", 6.0f, 1.0f, Fill::Neon, 500, false },
+    { "alert", "glass", "Glass", 12.0f, 1.0f, Fill::Glass, 600, false },
+    { "alert", "pearl", "Pearl", 14.0f, 1.0f, Fill::Pearl, 600, false },
+    { "alert", "terminal", "Terminal", 0.0f, 0.0f, Fill::Flat, 500, false },
+    { "alert", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 400, false },
+    { "alert", "banner", "Banner", 0.0f, 3.0f, Fill::Soft, 600, false },
+    { "alert", "minimal", "Minimal", 0.0f, 0.0f, Fill::Ghost, 600, false },
+    { "alert", "metal", "Metal", 4.0f, 1.0f, Fill::Metal, 600, false },
+    { "alert", "sticky", "Sticky", 2.0f, 0.0f, Fill::Solid, 600, false },
+    { "modal", "classic", "Classic", 16.0f, 1.0f, Fill::Flat, 600, false },
+    { "modal", "sheet", "Sheet", 22.0f, 0.0f, Fill::Flat, 600, false },
+    { "modal", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "modal", "glass", "Glass", 22.0f, 1.0f, Fill::Glass, 600, false },
+    { "modal", "pearl", "Pearl", 24.0f, 1.0f, Fill::Pearl, 600, false },
+    { "modal", "neon", "Neon", 12.0f, 2.0f, Fill::Neon, 600, false },
+    { "modal", "terminal", "Terminal", 4.0f, 1.0f, Fill::Flat, 600, false },
+    { "modal", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 600, false },
+    { "modal", "metal", "Metal", 10.0f, 1.0f, Fill::Metal, 600, false },
+    { "modal", "deep-metal", "Deep metal", 14.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "modal", "paper", "Paper", 2.0f, 0.0f, Fill::Flat, 600, false },
+    { "modal", "cyber", "Cyber", 0.0f, 1.0f, Fill::Outline, 600, false },
+    { "spinner", "ring", "Ring", 999.0f, 3.0f, Fill::Solid, 600, false },
+    { "spinner", "dual", "Dual ring", 999.0f, 3.0f, Fill::Solid, 600, false },
+    { "spinner", "gradient", "Gradient arc", 999.0f, 0.0f, Fill::Grad, 600, false },
+    { "spinner", "pulse", "Pulse", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "ripple", "Ripple", 999.0f, 2.0f, Fill::Outline, 600, false },
+    { "spinner", "flip", "Flip", 3.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "dots", "Dots", 0.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "orbit", "Orbit", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "bars", "Bars", 0.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "square", "Square trace", 2.0f, 3.0f, Fill::Outline, 600, false },
+    { "spinner", "neon", "Neon ring", 999.0f, 3.0f, Fill::Neon, 600, false },
+    { "spinner", "pearl", "Pearl", 999.0f, 0.0f, Fill::Pearl, 600, false },
+    { "spinner", "half", "Half moon", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "pixel", "Pixel", 0.0f, 0.0f, Fill::Solid, 600, false },
+    { "progress", "thin", "Thin", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "progress", "thick", "Thick", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "progress", "striped", "Striped", 6.0f, 0.0f, Fill::Grad, 600, false },
+    { "progress", "gradient", "Gradient", 999.0f, 0.0f, Fill::Grad, 600, false },
+    { "progress", "segments", "Segments", 0.0f, 0.0f, Fill::Solid, 600, false },
+    { "progress", "neon", "Neon", 999.0f, 0.0f, Fill::Neon, 600, false },
+    { "progress", "pearl", "Pearl", 999.0f, 0.0f, Fill::Pearl, 600, false },
+    { "progress", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "progress", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 600, false },
+    { "progress", "metal", "Metal", 999.0f, 0.0f, Fill::Chrome, 600, false },
+    { "progress", "deep-metal", "Deep metal", 999.0f, 0.0f, Fill::DeepMetal, 600, false },
+    { "progress", "pixel", "Pixel", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "head", "plain", "Plain", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "head", "deep-metal", "Deep blue metal", 8.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "head", "metal", "Accent metal", 8.0f, 1.0f, Fill::Metal, 600, false },
+    { "head", "chrome", "Chrome", 8.0f, 1.0f, Fill::Chrome, 600, false },
+    { "head", "gold", "Gold leaf", 8.0f, 1.0f, Fill::Gold, 600, false },
+    { "head", "pearl", "Pearl", 8.0f, 1.0f, Fill::Pearl, 600, false },
+    { "head", "holo", "Holo", 8.0f, 1.0f, Fill::Holo, 600, false },
+    { "head", "printstream", "Printstream", 8.0f, 1.0f, Fill::Printstream, 600, false },
+    { "head", "gradient", "Gradient", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "head", "outline", "Outline", 8.0f, 1.0f, Fill::Outline, 600, false },
+    { "head", "neon", "Neon", 8.0f, 1.0f, Fill::Neon, 600, false },
+    { "head", "shadow3d", "3D block", 8.0f, 1.0f, Fill::Hard, 600, false },
+    { "head", "long-shadow", "Long shadow", 8.0f, 1.0f, Fill::Hard, 600, false },
+    { "head", "duotone", "Duotone", 8.0f, 1.0f, Fill::Solid, 600, false },
+    { "head", "fire", "Fire", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "head", "ice", "Ice", 8.0f, 1.0f, Fill::Pearl, 600, false },
+    { "head", "glitch", "Glitch", 8.0f, 1.0f, Fill::Neon, 600, false },
+    { "head", "letterpress", "Letterpress", 8.0f, 1.0f, Fill::Sunken, 600, false },
+    { "head", "marker", "Marker", 8.0f, 1.0f, Fill::Soft, 600, false },
+    { "head", "synth", "Synthwave", 8.0f, 1.0f, Fill::Grad, 600, true },
+    { "head", "sticker", "Sticker", 8.0f, 1.0f, Fill::Solid, 600, false },
+    { "bg", "plain", "Plain", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "aurora", "Aurora", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "bg", "pearl", "Pearl", 8.0f, 1.0f, Fill::Pearl, 600, false },
+    { "bg", "mesh", "Mesh", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "bg", "grid", "Grid", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "blueprint", "Blueprint", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "dots", "Dots", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "lines", "Ruled", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "carbon", "Carbon", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "brushed", "Brushed metal", 8.0f, 1.0f, Fill::Metal, 600, false },
+    { "bg", "deep-metal", "Deep metal", 8.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "bg", "galaxy", "Galaxy", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "bg", "halftone", "Halftone", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "checker", "Checker", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "stripes", "Stripes", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "sunset", "Sunset", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "bg", "scan", "Scanlines", 8.0f, 1.0f, Fill::Flat, 600, false },
+};
+/// A kit: a theme plus one design per family (same order as families[]).
+struct Kit { const char* name; const char* label; const char* theme; const char* parts[15]; };
+inline constexpr Kit kits[] = {
+    { "pearl", "Pearlescent Y2K", "y2k", { "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl", "pearl" } },
+    { "printstream", "Printstream", "y2k", { "printstream", "pearl", "chrome", "pearl", "pearl", "pearl", "ink", "ink", "metal", "pearl", "pearl", "pearl", "pearl", "printstream", "pearl" } },
+    { "deep-metal", "Deep Blue Metal", "midnight", { "deep-metal", "deep-metal", "deep-metal", "deep-metal", "metal", "deep-metal", "metal", "deep-metal", "metal", "metal", "deep-metal", "neon", "deep-metal", "deep-metal", "deep-metal" } },
+    { "brutal", "Neo-Brutal", "brutal", { "brutal", "brutal", "brutal", "brutal", "brutal", "brutal", "brutal", "brutal", "brutal", "brutal", "brutal", "square", "brutal", "shadow3d", "dots" } },
+    { "cyber-neon", "Cyber Neon", "neon", { "neon-tube", "neon", "neon", "neon", "neon", "neon", "neon", "neon", "neon", "neon", "neon", "neon", "neon", "neon", "grid" } },
+    { "glass", "Frosted Glass", "glass", { "glass", "glass", "glass", "glass", "glass", "glass", "glass", "glass", "glass", "glass", "glass", "gradient", "gradient", "gradient", "aurora" } },
+    { "terminal", "Terminal", "terminal", { "terminal", "terminal", "terminal", "square", "square-fill", "square", "terminal", "terminal", "terminal", "terminal", "terminal", "pixel", "pixel", "plain", "scan" } },
+    { "win98", "Windows 98", "retro", { "win98", "bevel", "win98", "3d", "win98", "win98", "win98", "win98", "square", "win98", "win98", "pixel", "win98", "plain", "plain" } },
+    { "aqua", "Aqua 2001", "soft", { "aqua", "elevated", "pill", "aqua", "round", "thick", "segmented", "glass", "soft", "soft", "sheet", "dual", "striped", "chrome", "lines" } },
+    { "clay", "Claymorphism", "soft", { "clay", "clay", "clay", "ios", "pop", "thick", "bubble", "pills", "soft", "soft", "sheet", "dots", "thick", "plain", "plain" } },
+    { "neumorph", "Neumorphic", "fog", { "neumorph", "neumorph", "inset", "classic", "round", "classic", "segmented", "pills", "soft", "soft", "classic", "ring", "thick", "letterpress", "plain" } },
+    { "luxe", "Luxe Gold", "luxe", { "gold", "double", "underline", "metal", "metal", "metal", "underline", "underline", "metal", "metal", "metal", "ring", "metal", "gold", "brushed" } },
+    { "swiss", "Swiss Minimal", "swiss", { "ink", "accent-bar", "underline", "square", "square-fill", "line", "minimal", "underline", "outline", "bar", "paper", "ring", "thin", "plain", "grid" } },
+    { "paper", "Paper & Ink", "sketch", { "paper", "paper", "paper", "line", "cross", "line", "folder", "dots", "stamp", "sticky", "paper", "ring", "segments", "marker", "lines" } },
+    { "cyberpunk", "Cyberpunk", "neon", { "cyber", "cyber", "cyber", "square", "square-fill", "square", "cyber", "cyber", "ribbon", "banner", "cyber", "bars", "segments", "glitch", "carbon" } },
+    { "synthwave", "Synthwave", "neon", { "synth", "glow", "neon", "day-night", "neon", "gradient", "gradient", "gradient", "gradient", "neon", "neon", "orbit", "gradient", "synth", "sunset" } },
+    { "arcade", "Arcade", "brutal", { "arcade", "brutal", "thick", "pixel", "pop", "brutal", "bubble", "brutal", "sticker", "brutal", "brutal", "pixel", "pixel", "sticker", "checker" } },
+    { "holo", "Holo Foil", "y2k", { "holo", "holo-border", "gradient", "pearl", "pearl", "gradient", "gradient", "gradient", "holo", "glass", "glass", "pearl", "pearl", "holo", "mesh" } },
+};
+
+inline const Part* findPart(const char* family, const char* name) {
+    for (const Part& p : parts) if (std::strcmp(p.family, family) == 0 && std::strcmp(p.name, name) == 0) return &p;
+    return nullptr;
+}
+inline const Kit* findKit(const char* name) {
+    for (const Kit& k : kits) if (std::strcmp(k.name, name) == 0) return &k;
+    return nullptr;
+}
+/// The design a kit uses for a family ("btn", "card", "input", "switch", "check", "range", "tabs", "nav", "badge", "alert", "modal", "spinner", "progress", "head", "bg").
+inline const Part* kitPart(const Kit& k, const char* family) {
+    for (int i = 0; i < familyCount; ++i) if (std::strcmp(families[i], family) == 0) return findPart(family, k.parts[i]);
+    return nullptr;
+}
+inline const Theme* findKitTheme(const Kit& k) { return find(k.theme); }
+
+/// Colours for a Fill style on a theme: base/top and bottom gradient stops, text and border.
+struct FillColors { Color top, bottom, text, border; };
+inline Color mixc(Color a, Color b, float t) {
+    return { std::uint8_t(a.r + (b.r - a.r) * t), std::uint8_t(a.g + (b.g - a.g) * t), std::uint8_t(a.b + (b.b - a.b) * t), 255 };
+}
+inline FillColors fillColors(const Theme& t, Fill f) {
+    const Palette& p = t.solid; const Color white{255, 255, 255, 255}, black{0, 0, 0, 255};
+    switch (f) {
+        case Fill::Solid: case Fill::Hard: return { p.accent, p.accent, (0.2126f * p.accent.r + 0.7152f * p.accent.g + 0.0722f * p.accent.b) / 255 > 0.55f ? Color{17, 17, 17, 255} : white, f == Fill::Hard ? p.text : p.accent };
+        case Fill::Grad: return { p.accent, p.accent2, white, p.accent };
+        case Fill::Metal: return { mixc(p.accent, white, 0.45f), mixc(p.accent, black, 0.3f), white, mixc(p.accent, black, 0.45f) };
+        case Fill::DeepMetal: return { Color{63, 116, 220, 255}, Color{10, 37, 96, 255}, Color{242, 247, 255, 255}, Color{7, 26, 69, 255} };
+        case Fill::Chrome: return { Color{244, 246, 249, 255}, Color{138, 145, 156, 255}, Color{27, 31, 38, 255}, Color{125, 132, 143, 255} };
+        case Fill::Pearl: return { Color{243, 232, 255, 255}, Color{224, 244, 255, 255}, Color{58, 47, 90, 255}, Color{217, 207, 238, 255} };
+        case Fill::Holo: return { Color{255, 154, 230, 255}, Color{154, 211, 255, 255}, Color{42, 31, 61, 255}, white };
+        case Fill::Gold: return { Color{255, 243, 196, 255}, Color{154, 111, 18, 255}, Color{42, 26, 0, 255}, Color{138, 95, 12, 255} };
+        case Fill::Printstream: return { Color{251, 250, 255, 255}, Color{233, 225, 247, 255}, Color{16, 16, 20, 255}, Color{13, 13, 16, 255} };
+        case Fill::Glass: return { mixc(p.surface, white, 0.25f), mixc(p.surface, white, 0.1f), p.text, mixc(p.line2, white, 0.4f) };
+        case Fill::Bevel: return { Color{195, 195, 195, 255}, Color{195, 195, 195, 255}, black, Color{10, 10, 10, 255} };
+        case Fill::Neon: return { p.bg, p.bg, mixc(p.accent, white, 0.35f), p.accent };
+        case Fill::Inverse: return { p.text, p.text, p.bg, p.text };
+        case Fill::Soft: return { mixc(p.bg, p.accent, 0.18f), mixc(p.bg, p.accent, 0.18f), t.dark ? mixc(p.accent, white, 0.3f) : mixc(p.accent, black, 0.25f), mixc(p.bg, p.accent, 0.18f) };
+        case Fill::Clay: return { mixc(p.surface2, white, 0.15f), p.surface2, p.text, p.surface2 };
+        case Fill::Sunken: return { mixc(p.surface2, black, 0.06f), p.surface2, p.text, p.surface2 };
+        case Fill::Outline: case Fill::Ghost: case Fill::Underline: return { p.bg, p.bg, p.accent, f == Fill::Outline ? p.accent : p.bg };
+        case Fill::Flat: default: return { p.surface, p.surface, p.text, p.line2 };
+    }
+}
+
+/// Qt stylesheet rules for a kit's parts — append to qss(theme). Mark primary buttons with setProperty("primary", true).
+inline std::string qssParts(const Theme& t, const Kit& k) {
+    auto num = [](float v) { char s[16]; std::snprintf(s, sizeof s, "%g", v); return std::string(s); };
+    auto bg = [&](const FillColors& c) { return c.top.rgba() == c.bottom.rgba() ? c.top.hex() : "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 " + c.top.hex() + ", stop:1 " + c.bottom.hex() + ")"; };
+    auto rule = [&](const char* fam, const std::string& sel, bool fill) {
+        const Part* p = kitPart(k, fam); if (!p) return std::string();
+        const FillColors c = fillColors(t, p->fill);
+        const std::string r = num(p->radius > 20 ? 14 : p->radius), bw = num(p->border);
+        std::string q = sel + " { border-radius: " + r + "px; border: " + bw + "px solid " + c.border.hex() + "; font-weight: " + std::to_string(p->weight) + "; ";
+        if (fill) q += "background: " + bg(c) + "; color: " + c.text.hex() + "; ";
+        if (p->fill == Fill::Hard) q += "border-bottom-width: " + num(p->border + 3) + "px; ";
+        if (p->fill == Fill::Underline) q += "border-width: 0 0 " + num(p->border > 0 ? p->border : 1) + "px 0; ";
+        return q + "}\n";
+    };
+    std::string q;
+    q += rule("btn", "QPushButton[primary=\"true\"]", true);
+    if (const Part* b = kitPart(k, "btn")) q += "QPushButton { border-radius: " + num(b->radius > 20 ? 14 : b->radius) + "px; }\n";
+    q += rule("input", "QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QComboBox", false);
+    q += rule("card", "QGroupBox, QFrame[card=\"true\"]", false);
+    q += rule("modal", "QDialog, QMessageBox", false);
+    q += rule("badge", "QLabel[badge=\"true\"]", true);
+    q += rule("alert", "QLabel[alert=\"true\"]", true);
+    if (const Part* p = kitPart(k, "progress")) { const FillColors c = fillColors(t, p->fill); q += "QProgressBar::chunk { background: " + bg(c) + "; border-radius: " + num(p->radius > 20 ? 4 : p->radius) + "px; }\n"; }
+    if (const Part* p = kitPart(k, "tabs")) { const FillColors c = fillColors(t, p->fill); q += "QTabBar::tab:selected { background: " + bg(c) + "; color: " + c.text.hex() + "; border-radius: " + num(p->radius > 20 ? 10 : p->radius) + "px; }\n"; }
+    if (const Part* p = kitPart(k, "check")) q += "QCheckBox::indicator { border-radius: " + num(p->radius > 20 ? 8 : p->radius) + "px; }\n";
+    return q;
+}
+
 // ── Qt stylesheet (QSS) — no Qt include needed ───────────────────────────────
 inline std::string qss(const Theme& t, int fontSize = 14) {
     const Palette& c = t.color; const Palette& s = t.solid;
@@ -697,6 +1076,8 @@ inline std::string qss(const Theme& t, int fontSize = 14) {
     q += "QToolTip { background: " + c.text.hex() + "; color: " + c.bg.hex() + "; border: none; padding: 5px 8px; }\n";
     return q;
 }
+/// Theme + kit parts in one stylesheet.
+inline std::string qss(const Theme& t, const Kit& k, int fontSize = 14) { return qss(t, fontSize) + qssParts(t, k); }
 
 // ── Dear ImGui ───────────────────────────────────────────────────────────────
 #if defined(IMGUI_VERSION)
@@ -741,6 +1122,28 @@ inline void apply(const Theme& t, ImGuiStyle* dst = nullptr) {
     st.FrameBorderSize = t.border > 0 ? 1.0f : 0.0f; st.WindowBorderSize = 1.0f;
     st.FramePadding = ImVec2(10, 6); st.ItemSpacing = ImVec2(10, 8); st.WindowPadding = ImVec2(14, 14);
 }
+/// Theme + a kit's element shapes: button/input rounding and borders, window and tab shapes, button fill colours.
+inline void apply(const Theme& t, const Kit& k, ImGuiStyle* dst = nullptr) {
+    apply(t, dst);
+    ImGuiStyle& st = dst ? *dst : ImGui::GetStyle();
+    auto rr = [](float r, float cap) { return r > cap ? cap : r; };
+    if (const Part* b = kitPart(k, "btn")) {
+        const FillColors c = fillColors(t, b->fill);
+        st.FrameRounding = rr(b->radius, 12); st.FrameBorderSize = b->border > 0 ? 1.0f : 0.0f;
+        st.Colors[ImGuiCol_Button] = v4(mixc(c.top, c.bottom, 0.5f));
+        st.Colors[ImGuiCol_ButtonHovered] = v4(c.top);
+        st.Colors[ImGuiCol_ButtonActive] = v4(c.bottom);
+        st.Colors[ImGuiCol_Border] = v4(c.border);
+    }
+    if (const Part* c = kitPart(k, "card")) { st.WindowRounding = rr(c->radius, 14); st.ChildRounding = rr(c->radius, 14); st.WindowBorderSize = c->border > 0 ? 1.0f : 0.0f; }
+    if (const Part* m = kitPart(k, "modal")) st.PopupRounding = rr(m->radius, 12);
+    if (const Part* tb = kitPart(k, "tabs")) st.TabRounding = rr(tb->radius, 10);
+    if (const Part* r = kitPart(k, "range")) st.GrabRounding = rr(r->radius, 10);
+    if (const Part* in = kitPart(k, "input")) {
+        const FillColors c = fillColors(t, in->fill);
+        if (in->fill != Fill::Outline && in->fill != Fill::Underline && in->fill != Fill::Ghost) st.Colors[ImGuiCol_FrameBg] = v4(mixc(c.top, c.bottom, 0.5f));
+    }
+}
 } // namespace imgui
 #endif
 
@@ -754,6 +1157,10 @@ inline juce::Colour col(Color c) { return juce::Colour(c.argb()); }
 class LookAndFeel : public juce::LookAndFeel_V4 {
 public:
     explicit LookAndFeel(const Theme& t = editorial) { setTheme(t); }
+    LookAndFeel(const Theme& t, const Kit& k) { setTheme(t); setKit(k); }
+
+    /// Use a kit's button design (radius, border, fill gradient) for TextButtons.
+    void setKit(const Kit& k) { button = kitPart(k, "btn"); }
 
     void setTheme(const Theme& t) {
         theme = &t;
@@ -801,6 +1208,17 @@ public:
     void drawButtonBackground(juce::Graphics& g, juce::Button& b, const juce::Colour& bg,
                               bool highlighted, bool down) override {
         auto bounds = b.getLocalBounds().toFloat().reduced(0.5f);
+        if (button) {
+            const FillColors c = fillColors(*theme, button->fill);
+            const float r = juce::jmin(button->radius, bounds.getHeight() / 2);
+            juce::ColourGradient grad(col(c.top), 0, bounds.getY(), col(c.bottom), 0, bounds.getBottom(), false);
+            if (down) grad.multiplyOpacity(0.85f);
+            g.setGradientFill(grad);
+            g.fillRoundedRectangle(bounds, r);
+            g.setColour(highlighted ? col(theme->solid.text) : col(c.border));
+            if (button->border > 0) g.drawRoundedRectangle(bounds, r, button->border);
+            return;
+        }
         const float radius = juce::jmin(theme->radiusSm, bounds.getHeight() / 2);
         auto fill = down ? bg.darker(0.15f) : highlighted ? bg.brighter(0.06f) : bg;
         g.setColour(fill);
@@ -824,6 +1242,7 @@ public:
 
 private:
     const Theme* theme = &editorial;
+    const Part* button = nullptr;
 };
 } // namespace juce_lf
 #endif
@@ -850,6 +1269,20 @@ inline void apply(const Theme& t) {
     GuiSetStyle(DEFAULT, BASE_COLOR_DISABLED, ColorToInt(rc(p.surface)));
     GuiSetStyle(DEFAULT, TEXT_COLOR_DISABLED, ColorToInt(rc(p.dim)));
     GuiSetStyle(DEFAULT, BORDER_WIDTH, t.border > 0 ? int(t.border) : 1);
+}
+/// Theme + a kit's button design (fill colours, border width).
+inline void apply(const Theme& t, const Kit& k) {
+    apply(t);
+    if (const Part* b = kitPart(k, "btn")) {
+        const FillColors c = fillColors(t, b->fill);
+        GuiSetStyle(BUTTON, BASE_COLOR_NORMAL, ColorToInt(rc(mixc(c.top, c.bottom, 0.5f))));
+        GuiSetStyle(BUTTON, BASE_COLOR_FOCUSED, ColorToInt(rc(c.top)));
+        GuiSetStyle(BUTTON, BASE_COLOR_PRESSED, ColorToInt(rc(c.bottom)));
+        GuiSetStyle(BUTTON, TEXT_COLOR_NORMAL, ColorToInt(rc(c.text)));
+        GuiSetStyle(BUTTON, TEXT_COLOR_FOCUSED, ColorToInt(rc(c.text)));
+        GuiSetStyle(BUTTON, BORDER_COLOR_NORMAL, ColorToInt(rc(c.border)));
+        GuiSetStyle(BUTTON, BORDER_WIDTH, b->border > 0 ? int(b->border + 0.5f) : 0);
+    }
 }
 } // namespace raygui
 #endif

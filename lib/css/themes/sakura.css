@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: sakura — cherry-blossom pink with sumi ink. Needs core.css. MIT */
 [data-uv-theme="sakura"] {
-  --uv-bg: #fff2f5; --uv-text: #3a2430; --uv-accent: #e8668f; --uv-accent-2: #9ad0c2; --uv-surface: #fff9fa; --uv-surface-2: #f3e6e9; --uv-surface-3: #e9dbdf; --uv-line: #3a24301a; --uv-line-2: #3a24302e; --uv-muted: #79666f; --uv-dim: #a08f96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff2f5; --uv-text: #3a2430; --uv-accent: #e8668f; --uv-accent-2: #9ad0c2; --uv-on-accent: #ffffff; --uv-surface: #fff9fa; --uv-surface-2: #f3e6e9; --uv-surface-3: #e9dbdf; --uv-line: #3a24301a; --uv-line-2: #3a24302e; --uv-muted: #79666f; --uv-dim: #a08f96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 400; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: vampire — gothic purple-black with blood-red accents. Needs core.css. MIT */
 [data-uv-theme="vampire"] {
-  --uv-bg: #16101c; --uv-text: #f0e6f5; --uv-accent: #ff4566; --uv-accent-2: #bd93f9; --uv-surface: #211b27; --uv-surface-2: #2a2330; --uv-surface-3: #37303d; --uv-line: #f0e6f524; --uv-line-2: #f0e6f542; --uv-muted: #aaa2b0; --uv-dim: #7f7784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #16101c; --uv-text: #f0e6f5; --uv-accent: #ff4566; --uv-accent-2: #bd93f9; --uv-on-accent: #ffffff; --uv-surface: #211b27; --uv-surface-2: #2a2330; --uv-surface-3: #37303d; --uv-line: #f0e6f524; --uv-line-2: #f0e6f542; --uv-muted: #aaa2b0; --uv-dim: #7f7784; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

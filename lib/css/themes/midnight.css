@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: midnight — deep navy night with a moonlit blue. Needs core.css. MIT */
 [data-uv-theme="midnight"] {
-  --uv-bg: #0b1020; --uv-text: #dfe6f5; --uv-accent: #6ea8ff; --uv-accent-2: #a78bfa; --uv-surface: #161b2b; --uv-surface-2: #1e2333; --uv-surface-3: #2b3040; --uv-line: #dfe6f524; --uv-line-2: #dfe6f542; --uv-muted: #9ba2b1; --uv-dim: #717786; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0b1020; --uv-text: #dfe6f5; --uv-accent: #6ea8ff; --uv-accent-2: #a78bfa; --uv-on-accent: #111111; --uv-surface: #161b2b; --uv-surface-2: #1e2333; --uv-surface-3: #2b3040; --uv-line: #dfe6f524; --uv-line-2: #dfe6f542; --uv-muted: #9ba2b1; --uv-dim: #717786; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

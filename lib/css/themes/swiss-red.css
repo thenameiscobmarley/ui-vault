@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: swiss-red — international style: grid, black, a single red. Needs core.css. MIT */
 [data-uv-theme="swiss-red"] {
-  --uv-bg: #ffffff; --uv-text: #0a0a0a; --uv-accent: #e1251b; --uv-accent-2: #e1251b; --uv-surface: #ffffff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e4e4e4; --uv-line: #0a0a0a1a; --uv-line-2: #0a0a0a2e; --uv-muted: #585858; --uv-dim: #898989; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ffffff; --uv-text: #0a0a0a; --uv-accent: #e1251b; --uv-accent-2: #e1251b; --uv-on-accent: #ffffff; --uv-surface: #ffffff; --uv-surface-2: #f0f0f0; --uv-surface-3: #e4e4e4; --uv-line: #0a0a0a1a; --uv-line-2: #0a0a0a2e; --uv-muted: #585858; --uv-dim: #898989; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.05em;

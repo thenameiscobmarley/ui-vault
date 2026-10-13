@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: holo-foil — trading-card holographic foil. Needs core.css. MIT */
 [data-uv-theme="holo-foil"] {
-  --uv-bg: #f4f4f8; --uv-text: #1d1d2b; --uv-accent: #7a5cff; --uv-accent-2: #ff5cc8; --uv-surface: #fafafc; --uv-surface-2: #e7e7ec; --uv-surface-3: #dcdce1; --uv-line: #1d1d2b1a; --uv-line-2: #1d1d2b2e; --uv-muted: #62626d; --uv-dim: #8d8d96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f4f4f8; --uv-text: #1d1d2b; --uv-accent: #7a5cff; --uv-accent-2: #ff5cc8; --uv-on-accent: #ffffff; --uv-surface: #fafafc; --uv-surface-2: #e7e7ec; --uv-surface-3: #dcdce1; --uv-line: #1d1d2b1a; --uv-line-2: #1d1d2b2e; --uv-muted: #62626d; --uv-dim: #8d8d96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

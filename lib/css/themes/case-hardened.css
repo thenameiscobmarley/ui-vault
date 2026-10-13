@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: case-hardened — heat-treated steel: blue, gold and bronze patina. Needs core.css. MIT */
 [data-uv-theme="case-hardened"] {
-  --uv-bg: #1a1f2b; --uv-text: #eef1f7; --uv-accent: #3f7bd9; --uv-accent-2: #d6a84a; --uv-surface: #252a35; --uv-surface-2: #2d323d; --uv-surface-3: #3a3e4a; --uv-line: #eef1f724; --uv-line-2: #eef1f742; --uv-muted: #aaaeb6; --uv-dim: #80848d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1a1f2b; --uv-text: #eef1f7; --uv-accent: #3f7bd9; --uv-accent-2: #d6a84a; --uv-on-accent: #ffffff; --uv-surface: #252a35; --uv-surface-2: #2d323d; --uv-surface-3: #3a3e4a; --uv-line: #eef1f724; --uv-line-2: #eef1f742; --uv-muted: #aaaeb6; --uv-dim: #80848d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Rajdhani", system-ui, sans-serif; --uv-serif: "Rajdhani", system-ui, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;

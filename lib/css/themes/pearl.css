@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: pearl — white pearlescent with iridescent pink, mint and blue, like a CS2 Printstream finish. Needs core.css. MIT */
 [data-uv-theme="pearl"] {
-  --uv-bg: #fbfaff; --uv-text: #2a2342; --uv-accent: #8f7fd6; --uv-accent-2: #7fc8e3; --uv-surface: #fdfdff; --uv-surface-2: #eeedf4; --uv-surface-3: #e4e2ea; --uv-line: #2a23421a; --uv-line-2: #2a23422e; --uv-muted: #6d687e; --uv-dim: #9793a4; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fbfaff; --uv-text: #2a2342; --uv-accent: #8f7fd6; --uv-accent-2: #7fc8e3; --uv-on-accent: #ffffff; --uv-surface: #fdfdff; --uv-surface-2: #eeedf4; --uv-surface-3: #e4e2ea; --uv-line: #2a23421a; --uv-line-2: #2a23422e; --uv-muted: #6d687e; --uv-dim: #9793a4; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;

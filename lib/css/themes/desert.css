@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: desert — sandstone, cactus green and sunset clay. Needs core.css. MIT */
 [data-uv-theme="desert"] {
-  --uv-bg: #f4e3c8; --uv-text: #3d2618; --uv-accent: #c8553d; --uv-accent-2: #5b8c5a; --uv-surface: #faf2e6; --uv-surface-2: #e9d8bd; --uv-surface-3: #e0ceb5; --uv-line: #3d26181a; --uv-line-2: #3d26182e; --uv-muted: #786250; --uv-dim: #9c8874; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f4e3c8; --uv-text: #3d2618; --uv-accent: #c8553d; --uv-accent-2: #5b8c5a; --uv-on-accent: #ffffff; --uv-surface: #faf2e6; --uv-surface-2: #e9d8bd; --uv-surface-3: #e0ceb5; --uv-line: #3d26181a; --uv-line-2: #3d26182e; --uv-muted: #786250; --uv-dim: #9c8874; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;

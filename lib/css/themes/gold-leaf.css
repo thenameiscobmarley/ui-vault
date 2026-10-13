@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: gold-leaf — black lacquer with hammered gold leaf. Needs core.css. MIT */
 [data-uv-theme="gold-leaf"] {
-  --uv-bg: #0b0906; --uv-text: #f6ead0; --uv-accent: #d4a63a; --uv-accent-2: #f7e08a; --uv-surface: #171410; --uv-surface-2: #201d18; --uv-surface-3: #2e2b24; --uv-line: #f6ead024; --uv-line-2: #f6ead042; --uv-muted: #aba28f; --uv-dim: #7c7567; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0b0906; --uv-text: #f6ead0; --uv-accent: #d4a63a; --uv-accent-2: #f7e08a; --uv-on-accent: #111111; --uv-surface: #171410; --uv-surface-2: #201d18; --uv-surface-3: #2e2b24; --uv-line: #f6ead024; --uv-line-2: #f6ead042; --uv-muted: #aba28f; --uv-dim: #7c7567; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Cormorant Garamond", Georgia, serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Cormorant Garamond", Georgia, serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: uppercase; --uv-head-tracking: .06em;

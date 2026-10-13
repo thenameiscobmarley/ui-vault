@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: titanium — brushed titanium greys, precision engineered. Needs core.css. MIT */
 [data-uv-theme="titanium"] {
-  --uv-bg: #2c2f33; --uv-text: #f1f3f5; --uv-accent: #c3cbd4; --uv-accent-2: #7d8a96; --uv-surface: #36393d; --uv-surface-2: #3e4144; --uv-surface-3: #4a4c50; --uv-line: #f1f3f524; --uv-line-2: #f1f3f542; --uv-muted: #b2b4b7; --uv-dim: #8b8d90; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2c2f33; --uv-text: #f1f3f5; --uv-accent: #c3cbd4; --uv-accent-2: #7d8a96; --uv-on-accent: #111111; --uv-surface: #36393d; --uv-surface-2: #3e4144; --uv-surface-3: #4a4c50; --uv-line: #f1f3f524; --uv-line-2: #f1f3f542; --uv-muted: #b2b4b7; --uv-dim: #8b8d90; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none; --uv-head-tracking: -.03em;

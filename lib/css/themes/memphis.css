@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: memphis — 80s memphis squiggles, teal and pink. Needs core.css. MIT */
 [data-uv-theme="memphis"] {
-  --uv-bg: #fff8ef; --uv-text: #1b1b2f; --uv-accent: #ff5ca8; --uv-accent-2: #21c4c4; --uv-surface: #fffcf8; --uv-surface-2: #f1ebe3; --uv-surface-3: #e6e0da; --uv-line: #1b1b2f1a; --uv-line-2: #1b1b2f2e; --uv-muted: #64626c; --uv-dim: #928e93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff8ef; --uv-text: #1b1b2f; --uv-accent: #ff5ca8; --uv-accent-2: #21c4c4; --uv-on-accent: #ffffff; --uv-surface: #fffcf8; --uv-surface-2: #f1ebe3; --uv-surface-3: #e6e0da; --uv-line: #1b1b2f1a; --uv-line-2: #1b1b2f2e; --uv-muted: #64626c; --uv-dim: #928e93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 2px;
   --uv-head-weight: 800; --uv-head-case: none;

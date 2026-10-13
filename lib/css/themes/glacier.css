@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: glacier — glacial ice, cold blue light. Needs core.css. MIT */
 [data-uv-theme="glacier"] {
-  --uv-bg: #eaf6fb; --uv-text: #16324a; --uv-accent: #3a9bd9; --uv-accent-2: #a6e3ff; --uv-surface: #f6fbfd; --uv-surface-2: #ddeaf0; --uv-surface-3: #d3e0e8; --uv-line: #16324a1a; --uv-line-2: #16324a2e; --uv-muted: #5a7183; --uv-dim: #8498a6; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eaf6fb; --uv-text: #16324a; --uv-accent: #3a9bd9; --uv-accent-2: #a6e3ff; --uv-on-accent: #ffffff; --uv-surface: #f6fbfd; --uv-surface-2: #ddeaf0; --uv-surface-3: #d3e0e8; --uv-line: #16324a1a; --uv-line-2: #16324a2e; --uv-muted: #5a7183; --uv-dim: #8498a6; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

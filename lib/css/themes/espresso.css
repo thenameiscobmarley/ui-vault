@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: espresso — dark roast brown with crema highlights. Needs core.css. MIT */
 [data-uv-theme="espresso"] {
-  --uv-bg: #1b1310; --uv-text: #f2e6da; --uv-accent: #d9a066; --uv-accent-2: #d9a066; --uv-surface: #261e1a; --uv-surface-2: #2e2622; --uv-surface-3: #3b332e; --uv-line: #f2e6da24; --uv-line-2: #f2e6da42; --uv-muted: #ada299; --uv-dim: #827871; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1b1310; --uv-text: #f2e6da; --uv-accent: #d9a066; --uv-accent-2: #d9a066; --uv-on-accent: #111111; --uv-surface: #261e1a; --uv-surface-2: #2e2622; --uv-surface-3: #3b332e; --uv-line: #f2e6da24; --uv-line-2: #f2e6da42; --uv-muted: #ada299; --uv-dim: #827871; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;

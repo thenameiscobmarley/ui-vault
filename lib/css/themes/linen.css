@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: linen — off-white linen with a terracotta accent. Needs core.css. MIT */
 [data-uv-theme="linen"] {
-  --uv-bg: #f3eee6; --uv-text: #3b3530; --uv-accent: #c4623a; --uv-accent-2: #8a6d55; --uv-surface: #faf7f4; --uv-surface-2: #e8e3db; --uv-surface-3: #dfdad2; --uv-line: #3b35301a; --uv-line-2: #3b35302e; --uv-muted: #76706a; --uv-dim: #9b958f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f3eee6; --uv-text: #3b3530; --uv-accent: #c4623a; --uv-accent-2: #8a6d55; --uv-on-accent: #ffffff; --uv-surface: #faf7f4; --uv-surface-2: #e8e3db; --uv-surface-3: #dfdad2; --uv-line: #3b35301a; --uv-line-2: #3b35302e; --uv-muted: #76706a; --uv-dim: #9b958f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;
