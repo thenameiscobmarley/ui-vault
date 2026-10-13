@@ -165,6 +165,35 @@ def export_tokens(themes):
     return data
 
 
+CPP_KEYS = [("bg", "bg"), ("surface", "surface"), ("surface-2", "surface2"), ("surface-3", "surface3"), ("line", "line"),
+            ("line-2", "line2"), ("text", "text"), ("muted", "muted"), ("dim", "dim"), ("accent", "accent"), ("accent-2", "accent2"),
+            ("success", "success"), ("warn", "warn"), ("danger", "danger"), ("info", "info")]
+
+
+def export_cpp(tokens):
+    """cpp/uivault.hpp — single-header C++ API generated from tools/uivault.hpp.in + tokens."""
+    def col(h):
+        h = h.lstrip("#"); h = h + "ff" if len(h) == 6 else h
+        return "Color{%d, %d, %d, %d}" % tuple(int(h[i:i + 2], 16) for i in (0, 2, 4, 6))
+    q = lambda v: '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    out = []
+    for name, t in tokens["themes"].items():
+        pal = lambda src: "Palette{" + ", ".join(col(src.get(k, t["colors"]["text"])) for k, _ in CPP_KEYS) + "}"
+        sh = t["shape"]
+        out.append(f"/// {t['desc']}\ninline constexpr Theme {name}{{ {q(name)}, {q(t['desc'])}, {'true' if t['dark'] else 'false'},\n"
+                   f"    {pal(t['colors'])},\n    {pal(t['solid'])},\n"
+                   f"    {q(t['fonts'].get('font', ''))}, {q(t['fonts'].get('font-head', ''))}, {q(t['fonts'].get('mono', ''))},\n"
+                   f"    {float(sh.get('r-xs', 0))!r}f, {float(sh.get('r-sm', 0))!r}f, {float(sh.get('r', 0))!r}f, {float(sh.get('r-lg', 0))!r}f, {float(sh.get('bw', 1))!r}f }};")
+    names = list(tokens["themes"])
+    out.append("inline constexpr const Theme* themes[] = { " + ", ".join("&" + n for n in names) + " };")
+    out.append(f"inline constexpr int themeCount = {len(names)};")
+    out.append("/// Find a theme by name; returns nullptr if unknown.\ninline const Theme* find(const char* name) {\n"
+               "    for (const Theme* t : themes) if (std::strcmp(t->name, name) == 0) return t;\n    return nullptr;\n}")
+    tpl = (ROOT / "tools" / "uivault.hpp.in").read_text()
+    (ROOT / "cpp").mkdir(exist_ok=True)
+    (ROOT / "cpp" / "uivault.hpp").write_text(tpl.replace("@VERSION@", VERSION).replace("@THEMES@", "\n\n".join(out)))
+
+
 def raw_src():
     """lib/raw-src.js: CSS bundle text + JS module sources, used by the site's "Raw code" view."""
     src = {"css": (LIB / "uivault.css").read_text(), "js": {m: (JS / f"{m}.js").read_text() for m in JS_ORDER}}
@@ -199,6 +228,7 @@ if __name__ == "__main__":
     themes = split_themes()
     bundle(themes)
     tokens = export_tokens(themes)
+    export_cpp(tokens)
     raw_src()
     m = manifest(themes)
     make_zip(m)
