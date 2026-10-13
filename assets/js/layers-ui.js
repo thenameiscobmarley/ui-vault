@@ -7,16 +7,16 @@
   const TRANGE = { enter: [.2, 2, .1], idle: [1, 8, .5] };
   const CNAMES = { accent: "Accent", "accent-2": "Accent 2", text: "Text", white: "White", black: "Black", success: "Green", warn: "Amber", danger: "Red", info: "Blue" };
   const css = document.createElement("style");
-  css.textContent = `.uvle { display: grid; gap: 8px; font: 13px "Geist", system-ui, sans-serif; color: #ecebe8; }
+  css.textContent = `.uvle { display: grid; gap: 8px; font: 13px "Geist", system-ui, sans-serif; color: var(--uvp-fg); }
   .uvle .row { display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: center; }
-  .uvle .row > span { color: #a19d95; font-size: 12px; }
-  .uvle select, .uvle input[type=color] { height: 30px; min-width: 0; width: 100%; padding: 0 6px; border-radius: 6px; border: 1px solid #ffffff26; background: #1f1f22; color: #fff; font: 12px "Geist", sans-serif; }
+  .uvle .row > span { color: var(--uvp-mu); font-size: 12px; }
+  .uvle select, .uvle input[type=color] { height: 30px; min-width: 0; width: 100%; padding: 0 6px; border-radius: 6px; border: 1px solid var(--uvp-ln2); background: var(--uvp-field); color: var(--uvp-fg); font: 12px "Geist", sans-serif; }
   .uvle input[type=color] { padding: 2px; width: 36px; }
   .uvle .params { grid-column: 2; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: -2px; }
   .uvle .params select { width: auto; flex: 1; } .uvle .params input[type=range] { flex: 1.4; accent-color: #ff6a26; min-width: 70px; }
-  .uvle .params small { color: #8f8a82; font: 10px "Geist Mono", monospace; }
-  .uvle h4 { margin: 6px 0 0; font: 500 10px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: #8f8a82; }
-  .uvle .acts { display: flex; gap: 6px; margin-top: 4px; } .uvle .acts button { flex: 1; height: 30px; border-radius: 6px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvle .acts button:hover { border-color: #fff; }`;
+  .uvle .params small { color: var(--uvp-di); font: 10px "Geist Mono", monospace; }
+  .uvle h4 { margin: 6px 0 0; font: 500 10px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: var(--uvp-di); }
+  .uvle .acts { display: flex; gap: 6px; margin-top: 4px; } .uvle .acts button { flex: 1; height: 30px; border-radius: 6px; border: 1px solid var(--uvp-ln2); background: none; color: var(--uvp-fg); font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvle .acts button:hover { border-color: var(--uvp-fg); }`;
   document.head.appendChild(css);
 
   const getStack = () => store.get("uv-layers", {});

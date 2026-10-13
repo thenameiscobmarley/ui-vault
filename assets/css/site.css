@@ -198,7 +198,7 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
 .btn--primary { color: var(--bg); background: var(--text); }
 .btn--primary:hover { background: var(--accent); color: #fff; }
 .btn--ghost { color: var(--text); background: transparent; border-color: var(--line-2); }
-.btn--ghost:hover { border-color: var(--text); }
+.btn--ghost:hover { border-color: var(--text); background: color-mix(in srgb, var(--text) 6%, transparent); }
 .btn--sm { height: 30px; padding: 0 10px; font-size: 13px; }
 .btn--lg { height: 48px; padding: 0 22px; font-size: 15px; }
 .btn--full { width: 100%; }
@@ -318,9 +318,20 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border-radius: 
 /* ── Waterfall background (lib/js/waterfall.js) ── */
 body.has-wf { background: transparent; }
 body.has-wf .uv-waterfall-veil { background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 30%, transparent) 0, color-mix(in srgb, var(--bg) 62%, transparent) 50vh, color-mix(in srgb, var(--bg) 80%, transparent) 100%); }
-body.has-wf .topbar { background: color-mix(in srgb, var(--bg) 94%, transparent); }  /* no backdrop blur over the animated canvas: keeps scrolling smooth */
+html[data-theme="light"]:not([data-uv-theme]) body.has-wf .uv-waterfall-veil { background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 50%, transparent) 0, color-mix(in srgb, var(--bg) 80%, transparent) 50vh, color-mix(in srgb, var(--bg) 90%, transparent) 100%); }
+body.has-wf .topbar { background: var(--bg); }  /* no backdrop blur over the animated canvas: keeps scrolling smooth */
 body.has-wf .res-grid, body.has-wf .stats { background: color-mix(in srgb, var(--bg) 55%, transparent); }
 
 /* performance: don't render/animate off-screen repeated items */
 .res, .demo { content-visibility: auto; contain-intrinsic-size: auto 190px; }
 .demo { contain-intrinsic-size: auto 280px; }
+
+/* ── See examples band (home) ─────────────────────────────── */
+.ex-band__card { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: center; padding: 30px; border-radius: 16px; border: 1px solid var(--line-2); background: var(--surface); color: inherit; text-decoration: none; transition: border-color .25s, box-shadow .25s; }
+.ex-band__card:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: 0 30px 60px -40px var(--accent); }
+.ex-band__card h2 em { color: var(--accent); }
+.ex-band__card .btn { margin-top: 18px; }
+.ex-band__tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.ex-band__tiles i { display: grid; place-items: end start; aspect-ratio: 4 / 3; padding: 10px; border-radius: 10px; background: var(--b); color: #fff; font: 600 13px/1 var(--mono, monospace); font-style: normal; letter-spacing: .1em; transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.ex-band__card:hover .ex-band__tiles i { transform: translateY(-4px); } .ex-band__card:hover .ex-band__tiles i:nth-child(even) { transform: translateY(4px); }
+@media (max-width: 800px) { .ex-band__card { grid-template-columns: 1fr; } }

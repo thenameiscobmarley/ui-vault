@@ -6,15 +6,15 @@
   const st = document.createElement("style");
   st.textContent = `.uvi-hl { position: fixed; z-index: 9995; pointer-events: none; border: 2px solid #ff6a26; border-radius: 6px; background: #ff6a2614; transition: all .08s; }
   .uvi-hl b { position: absolute; left: -2px; top: -22px; padding: 2px 7px; border-radius: 4px 4px 4px 0; background: #ff6a26; color: #111; font: 600 11px "Geist", sans-serif; white-space: nowrap; }
-  .uvi-bar { position: fixed; z-index: 9996; left: 50%; top: 14px; translate: -50% 0; padding: 8px 14px; border-radius: 999px; background: #151517f2; color: #fff; border: 1px solid #ffffff33; font: 500 13px "Geist", sans-serif; box-shadow: 0 10px 30px -10px #000a; }
-  .uvi { position: fixed; z-index: 9997; right: 16px; top: 16px; bottom: 16px; width: min(360px, calc(100vw - 32px)); display: flex; flex-direction: column; border-radius: 12px; border: 1px solid #ffffff26; background: #151517f8; color: #ecebe8; font: 14px "Geist", system-ui, sans-serif; box-shadow: 0 30px 60px -20px #000c; animation: uvi-in .25s cubic-bezier(.2, 1.1, .4, 1); }
+  .uvi-bar { position: fixed; z-index: 9996; left: 50%; top: 14px; translate: -50% 0; padding: 8px 14px; border-radius: 999px; background: var(--uvp-bg); color: var(--uvp-fg); border: 1px solid var(--uvp-ln2); font: 500 13px "Geist", sans-serif; box-shadow: 0 10px 30px -10px var(--uvp-sh); }
+  .uvi { position: fixed; z-index: 9997; right: 16px; top: 16px; bottom: 16px; width: min(360px, calc(100vw - 32px)); display: flex; flex-direction: column; border-radius: 12px; border: 1px solid var(--uvp-ln2); background: var(--uvp-bg); color: var(--uvp-fg); font: 14px "Geist", system-ui, sans-serif; box-shadow: 0 30px 60px -20px var(--uvp-sh); animation: uvi-in .25s cubic-bezier(.2, 1.1, .4, 1); }
   @keyframes uvi-in { from { opacity: 0; translate: 16px 0; } }
-  .uvi header { display: grid; gap: 8px; padding: 14px; border-bottom: 1px solid #ffffff1a; }
+  .uvi header { display: grid; gap: 8px; padding: 14px; border-bottom: 1px solid var(--uvp-ln); }
   .uvi header div { display: flex; align-items: center; gap: 8px; } .uvi header b { flex: 1; font-size: 16px; }
-  .uvi header button { height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; cursor: pointer; }
-  .uvi header label { display: flex; align-items: center; gap: 8px; color: #a19d95; font-size: 12px; cursor: pointer; } .uvi header input { accent-color: #ff6a26; }
+  .uvi header button { height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid var(--uvp-ln2); background: none; color: var(--uvp-fg); font: 500 12px "Geist", sans-serif; cursor: pointer; }
+  .uvi header label { display: flex; align-items: center; gap: 8px; color: var(--uvp-mu); font-size: 12px; cursor: pointer; } .uvi header input { accent-color: #ff6a26; }
   .uvi .body { overflow: auto; padding: 12px 14px 16px; flex: 1; }
-  .uvi small.k { color: #8f8a82; font: 11px "Geist Mono", monospace; }`;
+  .uvi small.k { color: var(--uvp-di); font: 11px "Geist Mono", monospace; }`;
   document.head.appendChild(st);
 
   let on = false, hl, bar, panel, picked = null;

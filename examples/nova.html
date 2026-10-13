@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" data-uv-theme="midnight" data-uv-btn="glow">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NOVA — Orbital launch · UI Vault example</title>
+<meta name="description" content="A scroll-driven space-launch page built with the UI Vault library: pinned scenes, a scrubbed countdown, a horizontal mission strip and a starfield." />
+<meta name="theme-color" content="#05060d" />
+<link rel="stylesheet" href="../lib/css/fonts.css" />
+<link rel="stylesheet" href="../lib/uivault.css" />
+<link rel="stylesheet" href="../lib/css/parts.css" />
+<link rel="stylesheet" href="../lib/css/collections.css" />
+<style>
+  /* Everything that moves is driven by --p (0…1), which UI Vault writes from the scroll position.
+     Only transform and opacity change, so it stays smooth on integrated graphics. */
+  :root { --ink: #05060d; --hot: #ff7a3d; --ice: #8fd8ff; }
+  html { background: var(--ink); }
+  body { margin: 0; background: var(--ink); color: #e9ecf8; font-family: "Geist", system-ui, sans-serif; overflow-x: clip; }
+  .ex-back { position: fixed; top: 14px; left: 14px; z-index: 100; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #0b0d1ccc; border: 1px solid #ffffff22; color: #fff; font: 500 13px "Geist", sans-serif; text-decoration: none; transition: background-color .2s, border-color .2s; }
+  .ex-back:hover { background: #1a1d36; border-color: #ffffff55; }
+  .mono { font: 500 12px "Geist Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--ice); }
+
+  /* 1 ── hero: the letters drift apart while a planet rises */
+  .hero { --len: 220vh; }
+  .hero .uv-pin__stage { display: grid; place-items: center; }
+  .hero .sky { position: absolute; inset: 0; }
+  .word { position: relative; display: flex; gap: .02em; font: 400 min(30vw, 46vh)/.8 "Bebas Neue", sans-serif; letter-spacing: .02em; color: #fff; z-index: 2; }
+  .word span { display: block; transform: translateX(calc((var(--i) - 1.5) * var(--p, 0) * 34vw)) translateY(calc(var(--p, 0) * var(--y) * 1vh)); opacity: calc(1 - var(--p, 0) * 1.4); }
+  .planet { position: absolute; left: 50%; top: 100%; width: 120vmax; aspect-ratio: 1; border-radius: 50%; translate: -50% calc(-18% - var(--p, 0) * 52%);
+    background: radial-gradient(circle at 50% 8%, #ffd2a8 0, #ff7a3d 6%, #6a2bd9 22%, #1b1150 40%, transparent 41%), radial-gradient(circle at 50% 50%, #0b0f2e 0 60%, transparent 60.5%);
+    box-shadow: 0 -2vmax 8vmax -4vmax #ff7a3d66; z-index: 1; opacity: calc(1.6 - var(--p, 0) * 1.2); }
+  .hero .tag { position: absolute; bottom: 9vh; left: 0; right: 0; text-align: center; z-index: 3; opacity: calc(var(--p, 0) * 2 - .6); transform: translateY(calc((1 - var(--p, 0)) * 30px)); }
+  .hero .tag p { margin: 10px auto 0; max-width: 520px; color: #c9cde4; font-size: 18px; }
+  .hint { position: absolute; bottom: 26px; left: 50%; translate: -50% 0; z-index: 3; opacity: calc(1 - var(--p, 0) * 6); }
+  .hint i { display: block; width: 1px; height: 46px; margin: 8px auto 0; background: linear-gradient(#fff, transparent); animation: drip 1.6s ease-in-out infinite; transform-origin: top; }
+  @keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+  /* 2 ── countdown + liftoff */
+  .launch { --len: 420vh; }
+  .launch .uv-pin__stage { background: linear-gradient(180deg, #05060d 0%, #0d1240 calc(70% - var(--p, 0) * 70%), #3a1f5e calc(100% - var(--p, 0) * 60%), #ff7a3d calc(140% - var(--p, 0) * 60%)); }
+  .ground { position: absolute; left: -10%; right: -10%; bottom: 0; height: 22vh; background: #04040a; border-top: 1px solid #ffffff18; transform: translateY(calc(max(0, var(--p, 0) - .55) * 220vh)); }
+  .ground::before { content: ""; position: absolute; inset: -40px 0 auto; height: 40px; background: radial-gradient(60% 100% at 50% 100%, #ff7a3d44, transparent); }
+  .tower { position: absolute; bottom: 22vh; left: calc(50% + 70px); width: 26px; height: 46vh; background: repeating-linear-gradient(45deg, transparent 0 10px, #ffffff26 10px 12px), repeating-linear-gradient(-45deg, transparent 0 10px, #ffffff26 10px 12px); border-inline: 2px solid #ffffff33; transform: translateY(calc(max(0, var(--p, 0) - .55) * 220vh)); }
+  .rocket { position: absolute; left: 50%; bottom: 22vh; width: 84px; translate: -50% 0; transform: translateY(calc(max(0, var(--p, 0) - .5) * -260vh)) rotate(calc(max(0, var(--p, 0) - .75) * 18deg)); transform-origin: 50% 100%; }
+  .rocket svg { display: block; width: 100%; height: auto; }
+  .flame { position: absolute; left: 50%; top: 100%; width: 40px; height: 120px; translate: -50% -6px; border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%; background: radial-gradient(50% 60% at 50% 20%, #fff 0, #ffd36b 30%, #ff7a3d 60%, transparent 70%); transform-origin: top; transform: scaleY(calc(min(1, max(0, var(--p, 0) - .42) * 6) * 1.4)); opacity: min(1, calc(max(0, var(--p, 0) - .42) * 8)); animation: flick .09s steps(2) infinite alternate; }
+  @keyframes flick { to { translate: -50% -2px; filter: brightness(1.25); } }
+  .smoke { position: absolute; left: 50%; bottom: 20vh; width: 70vw; height: 30vh; translate: -50% 0; background: radial-gradient(closest-side, #d8d4e8 0, #8a86a055 55%, transparent 70%); transform: scale(calc(min(1, max(0, var(--p, 0) - .45) * 4))) translateY(calc(max(0, var(--p, 0) - .55) * 120vh)); opacity: calc(min(.9, max(0, var(--p, 0) - .45) * 5)); }
+  .count { position: absolute; top: 14vh; left: 0; right: 0; text-align: center; }
+  .count b { display: block; font: 400 min(26vw, 30vh)/.85 "Bebas Neue", sans-serif; color: #fff; }
+  .count b.go { color: var(--hot); }
+  .hud { position: absolute; inset: auto 0 4vh; display: flex; justify-content: center; gap: clamp(18px, 6vw, 80px); }
+  .hud div { text-align: center; } .hud strong { display: block; font: 500 clamp(22px, 3vw, 34px) "Geist Mono", monospace; color: #fff; font-variant-numeric: tabular-nums; }
+
+  /* 3 ── the missions, scrolled sideways */
+  .missions { --len: 360vh; }
+  .missions .uv-pin__stage { display: flex; flex-direction: column; justify-content: center; gap: 28px; background: radial-gradient(70% 60% at 80% 20%, #1d1458, transparent), var(--ink); }
+  .missions h2 { margin: 0 0 0 6vw; font: 400 clamp(48px, 8vw, 110px)/.9 "Bebas Neue", sans-serif; }
+  .track { gap: 22px; padding: 0 6vw; }
+  .mcard { flex: none; width: min(78vw, 400px); height: min(56vh, 460px); display: flex; flex-direction: column; justify-content: flex-end; padding: 26px; border-radius: 18px; position: relative; overflow: hidden; border: 1px solid #ffffff1f; }
+  .mcard::before { content: ""; position: absolute; inset: 0; z-index: -1; transition: transform .6s var(--uv-ease, ease); }
+  .mcard:nth-child(1)::before { background: radial-gradient(80% 60% at 70% 20%, #3d7cff, #0b1033); }
+  .mcard:nth-child(2)::before { background: radial-gradient(80% 60% at 70% 20%, #6b6f85, #121320); }
+  .mcard:nth-child(3)::before { background: radial-gradient(80% 60% at 70% 20%, #d9531e, #2a0d07); }
+  .mcard:nth-child(4)::before { background: radial-gradient(80% 60% at 70% 20%, #b9805a, #22150d); }
+  .mcard:nth-child(5)::before { background: radial-gradient(80% 60% at 70% 20%, #c9a24a, #201808); }
+  .mcard:nth-child(6)::before { background: radial-gradient(80% 60% at 70% 20%, #2a8fbf, #061a26); }
+  .mcard:hover::before { transform: scale(1.06); }
+  .mcard h3 { margin: 6px 0 4px; font: 400 44px/.95 "Bebas Neue", sans-serif; } .mcard p { margin: 0; color: #d4d7ea; }
+  .mcard .orb { position: absolute; top: 28px; right: 28px; width: 110px; aspect-ratio: 1; border-radius: 50%; box-shadow: inset -18px -14px 30px #0008; }
+  .bar { height: 2px; margin: 0 6vw; background: #ffffff1a; } .bar i { display: block; height: 100%; background: var(--hot); transform-origin: left; transform: scaleX(var(--p, 0)); }
+
+  /* 4 ── numbers */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; max-width: 1100px; margin: 0 auto; padding: 18vh 6vw; }
+  .stats div { padding: 30px 8px; border-top: 1px solid #ffffff22; } .stats b { display: block; font: 400 clamp(56px, 8vw, 96px)/.9 "Bebas Neue", sans-serif; color: #fff; }
+
+  /* 5 ── orbits: rings counter-rotate as they pass through the screen */
+  .orbits { position: relative; height: 130vh; display: grid; place-items: center; overflow: hidden; }
+  .ring { position: absolute; border-radius: 50%; border: 1px dashed #8fd8ff40; }
+  .ring i { position: absolute; top: -9px; left: 50%; width: 18px; height: 18px; border-radius: 50%; translate: -50% 0; }
+  .r1 { width: 34vmin; aspect-ratio: 1; transform: rotate(calc(var(--p, 0) * 400deg)); } .r1 i { background: var(--ice); box-shadow: 0 0 20px var(--ice); }
+  .r2 { width: 62vmin; aspect-ratio: 1; transform: rotate(calc(var(--p, 0) * -260deg)); } .r2 i { background: var(--hot); box-shadow: 0 0 20px var(--hot); width: 26px; height: 26px; top: -13px; }
+  .r3 { width: 92vmin; aspect-ratio: 1; transform: rotate(calc(var(--p, 0) * 160deg)); } .r3 i { background: #c7a3ff; box-shadow: 0 0 20px #c7a3ff; }
+  .sun { width: 14vmin; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #fff, #ffd36b 40%, #ff7a3d 70%); box-shadow: 0 0 60px #ff7a3d99, 0 0 160px #ff7a3d44; }
+  .orbits .copy { position: absolute; left: 6vw; bottom: 12vh; max-width: 420px; }
+  .orbits h2 { margin: 8px 0; font: 400 clamp(48px, 7vw, 92px)/.9 "Bebas Neue", sans-serif; }
+
+  .cta { padding: 20vh 6vw 14vh; text-align: center; }
+  .cta h2 { margin: 0 0 18px; font: 400 clamp(64px, 12vw, 180px)/.85 "Bebas Neue", sans-serif; }
+  .cta .uv-btn { font-size: 17px; padding: 16px 30px; }
+  footer { padding: 30px 6vw; border-top: 1px solid #ffffff14; color: #8d92b0; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  footer a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) { .uv-pin { height: auto; } .uv-pin__stage { position: relative; height: auto; min-height: 100vh; } .track { flex-wrap: wrap; width: auto; transform: none; } }
+</style>
+</head>
+<body>
+<a class="ex-back" href="../examples.html">← All examples</a>
+
+<section class="uv-pin hero" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <div class="sky" data-uv-fx="starfield" aria-hidden="true"></div>
+    <div class="planet" aria-hidden="true"></div>
+    <h1 class="word" aria-label="Nova"><span style="--i:0;--y:-8">N</span><span style="--i:1;--y:6">O</span><span style="--i:2;--y:-4">V</span><span style="--i:3;--y:9">A</span></h1>
+    <div class="tag"><p class="mono">Orbital programme · window opens 04.11</p><p>Eight seats. One planet you have never seen at sunrise.</p></div>
+    <div class="hint mono">Scroll to launch<i></i></div>
+  </div>
+</section>
+
+<section class="uv-pin launch" id="launch" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <div class="count"><p class="mono" id="phase">Final checks</p><b id="tminus">T−10</b></div>
+    <div class="smoke" aria-hidden="true"></div>
+    <div class="tower" aria-hidden="true"></div>
+    <div class="rocket" aria-hidden="true">
+      <svg viewBox="0 0 84 220"><defs><linearGradient id="hull" x1="0" x2="1"><stop offset="0" stop-color="#9aa3c7"/><stop offset=".45" stop-color="#fff"/><stop offset="1" stop-color="#7a83a8"/></linearGradient></defs>
+        <path d="M42 0C62 30 66 70 66 110v80H18v-80C18 70 22 30 42 0z" fill="url(#hull)"/><circle cx="42" cy="78" r="11" fill="#1b2350" stroke="#8fd8ff" stroke-width="3"/>
+        <path d="M18 140 0 196h18zM66 140l18 56H66z" fill="#ff7a3d"/><rect x="24" y="190" width="36" height="16" rx="3" fill="#2a2f4d"/><path d="M18 120h48" stroke="#00000022" stroke-width="2"/></svg>
+      <i class="flame"></i>
+    </div>
+    <div class="ground" aria-hidden="true"></div>
+    <div class="hud"><div><span class="mono">Altitude</span><strong id="alt">0 m</strong></div><div><span class="mono">Velocity</span><strong id="vel">0 km/h</strong></div><div><span class="mono">G-force</span><strong id="g">1.0 g</strong></div></div>
+  </div>
+</section>
+
+<section class="uv-pin missions" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <h2>Six stops. One ticket.</h2>
+    <div class="uv-scrub-track track">
+      <article class="mcard"><i class="orb" style="background:radial-gradient(circle at 30% 30%,#cfe8ff,#3d7cff 60%,#0b1a4a)"></i><span class="mono">Day 1</span><h3>Low orbit</h3><p>Sixteen sunrises before lunch.</p></article>
+      <article class="mcard"><i class="orb" style="background:radial-gradient(circle at 30% 30%,#fff,#bfc3cf 55%,#4a4e5c)"></i><span class="mono">Day 3</span><h3>The Moon</h3><p>Walk the rim of Shackleton crater.</p></article>
+      <article class="mcard"><i class="orb" style="background:radial-gradient(circle at 30% 30%,#ffd2a8,#ff7a3d 55%,#6b1e0b)"></i><span class="mono">Day 140</span><h3>Mars</h3><p>Dust storms, seen from above.</p></article>
+      <article class="mcard"><i class="orb" style="background:repeating-linear-gradient(170deg,#e9c79b 0 12px,#b9805a 12px 22px,#f3e1c4 22px 30px);"></i><span class="mono">Day 600</span><h3>Jupiter</h3><p>The Great Red Spot at arm's length.</p></article>
+      <article class="mcard"><i class="orb" style="background:radial-gradient(circle at 30% 30%,#fff7d6,#e3c47a 55%,#6b5320)"></i><span class="mono">Day 900</span><h3>Saturn</h3><p>Thread the gap in the rings.</p></article>
+      <article class="mcard"><i class="orb" style="background:radial-gradient(circle at 30% 30%,#e8fbff,#8fd8ff 55%,#1b4f6b)"></i><span class="mono">Day 1,400</span><h3>Home</h3><p>It looks smaller. It isn't.</p></article>
+    </div>
+    <div class="bar"><i></i></div>
+  </div>
+</section>
+
+<section class="stats" data-uv-stagger="up">
+  <div><b data-uv-count="1412">0</b><span class="mono">Days in flight</span></div>
+  <div><b data-uv-count="8">0</b><span class="mono">Crew seats</span></div>
+  <div><b data-uv-count="2.4" data-uv-decimals="1" data-uv-suffix="B">0</b><span class="mono">Kilometres</span></div>
+  <div><b data-uv-count="99.7" data-uv-decimals="1" data-uv-suffix="%">0</b><span class="mono">Return rate</span></div>
+</section>
+
+<section class="orbits" data-uv-scrub>
+  <div class="ring r3"><i></i></div><div class="ring r2"><i></i></div><div class="ring r1"><i></i></div><div class="sun"></div>
+  <div class="copy" data-uv-reveal="left"><span class="mono">Trajectory</span><h2>Gravity does the driving.</h2><p style="color:#c9cde4">Three slingshots, zero detours. The rings above turn with your scroll, the way the flight plan turns with the planets.</p></div>
+</section>
+
+<section class="cta">
+  <p class="mono" data-uv-reveal>Seats remaining: <span data-uv-count="3">0</span></p>
+  <h2 data-uv-reveal="zoom">Go further.</h2>
+  <button class="uv-btn uv-btn--primary uv-btn--pill" data-uv="magnetic" data-uv-confetti>Reserve a seat</button>
+</section>
+<footer><span>NOVA is a made-up company. This page is an example built with the <a href="../index.html">UI Vault</a> library.</span><span>Uses: uv-pin · data-uv-scrub · UV.scrub · data-uv-fx="starfield" · data-uv-count · data-uv-reveal</span></footer>
+
+<script src="../lib/uivault.js"></script>
+<script>
+  // Numbers can't come from CSS, so the countdown and the HUD read the same 0…1 progress through UV.scrub.
+  const $ = id => document.getElementById(id);
+  const phases = [[0, "Final checks", "T−10"], [.12, "Fuelling complete", "T−3"], [.22, "Ignition sequence", "T−2"], [.32, "Main engines", "T−1"], [.44, "We have", "LIFTOFF"], [.7, "Max-Q", "MAX-Q"], [.9, "Orbit insertion", "ORBIT"]];
+  let last = "";
+  UV.scrub($("launch"), p => {
+    const ph = phases.filter(x => p >= x[0]).pop();
+    if (ph[2] !== last) { last = ph[2]; $("phase").textContent = ph[1]; $("tminus").textContent = ph[2]; $("tminus").classList.toggle("go", p >= .44); }
+    const fly = Math.max(0, p - .44) / .56;
+    $("alt").textContent = Math.round(fly * fly * 410000).toLocaleString() + " m";
+    $("vel").textContent = Math.round(fly * 27600).toLocaleString() + " km/h";
+    $("g").textContent = (1 + Math.sin(Math.min(1, fly) * Math.PI) * 2.6).toFixed(1) + " g";
+  }, "pin");
+</script>
+</body>
+</html>

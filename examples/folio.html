@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-uv-theme="editorial">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Last Keepers — FOLIO · UI Vault example</title>
+<meta name="description" content="An editorial long-read built with UI Vault: a shrinking headline, a word-by-word pull quote, scrollytelling charts and a lighthouse beam that turns with the scroll." />
+<meta name="theme-color" content="#f4f2ee" />
+<link rel="stylesheet" href="../lib/css/fonts.css" />
+<link rel="stylesheet" href="../lib/uivault.css" />
+<link rel="stylesheet" href="../lib/css/collections.css" />
+<style>
+  body { margin: 0; font: 19px/1.7 "Geist", system-ui, sans-serif; overflow-x: clip; }
+  .ex-back { position: fixed; top: 14px; left: 14px; z-index: 100; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--uv-bg) 88%, transparent); border: 1px solid var(--uv-line-2); color: var(--uv-text); font: 500 13px "Geist", sans-serif; text-decoration: none; transition: background-color .2s; }
+  .ex-back:hover { background: var(--uv-surface-2); }
+  .kicker { font: 500 12px "Geist Mono", monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--uv-accent); }
+  .serif { font-family: "Instrument Serif", serif; font-weight: 400; }
+  .uv-scrollbar { height: 4px; }
+
+  /* 1 opener: the headline shrinks out of the way while the photograph opens up */
+  .open { --len: 230vh; }
+  .open .uv-pin__stage { display: grid; place-items: center; }
+  .photo { position: absolute; inset: 0; clip-path: inset(calc((1 - var(--p, 0)) * 26%) calc((1 - var(--p, 0)) * 34%) round calc((1 - var(--p, 0)) * 24px));
+    background: radial-gradient(4% 6% at 72% 38%, #fff7c2, transparent), linear-gradient(180deg, #11203a 0%, #33507a 45%, #e3a46b 70%, #2a3644 71%, #1a2230 100%); }
+  .photo::before { content: ""; position: absolute; left: 70%; bottom: 29%; width: 3.2%; height: 26%; background: linear-gradient(90deg, #d9d2c3, #fff, #c9c1b0); clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%); }
+  .photo::after { content: ""; position: absolute; left: 69.6%; bottom: 54.5%; width: 4%; height: 4%; background: #241c14; border-radius: 40% 40% 0 0; box-shadow: 0 -4px 40px 10px #ffe9a588; }
+  .photo .sea { position: absolute; inset: 71% 0 0; background: repeating-linear-gradient(178deg, #ffffff10 0 2px, transparent 2px 9px); }
+  .title { position: relative; z-index: 2; text-align: center; color: color-mix(in srgb, #fff calc(min(1, var(--p, 0) * 2.2) * 100%), var(--uv-text)); transform: scale(calc(1 - var(--p, 0) * .55)) translateY(calc(var(--p, 0) * -64vh)); }
+  .title h1 { margin: 0; font: 400 clamp(76px, 15vw, 230px)/.82 "Instrument Serif", serif; letter-spacing: -.035em; }
+  .title h1 em { color: color-mix(in srgb, #ffd9a8 calc(min(1, var(--p, 0) * 2.2) * 100%), var(--uv-accent)); }
+  .title p { margin: 18px 0 0; opacity: calc(1 - var(--p, 0) * 3); }
+  .open .credit { position: absolute; right: 2vw; bottom: 2vh; z-index: 2; color: #fff; font: 12px "Geist Mono", monospace; opacity: calc(var(--p, 0) * 2 - 1); }
+
+  article { max-width: 680px; margin: 0 auto; padding: 14vh 24px 4vh; }
+  .byline { display: flex; gap: 12px; align-items: center; margin-bottom: 40px; color: var(--uv-muted); font-size: 15px; } .byline .uv-avatar { width: 40px; height: 40px; }
+  .lede::first-letter { float: left; font: 400 5.4em/.78 "Instrument Serif", serif; margin: .06em .1em 0 0; color: var(--uv-accent); }
+  article p { margin: 0 0 1.2em; }
+
+  /* 2 pull quote: words light up one by one (each word gets --i; the block's --p comes from data-uv-scrub="center") */
+  .quote { max-width: 1000px; margin: 12vh auto; padding: 0 24px; font: 400 clamp(36px, 5.4vw, 72px)/1.08 "Instrument Serif", serif; letter-spacing: -.01em; }
+  .quote span { opacity: clamp(.14, calc(var(--p, 1) * var(--n) * 1.15 - var(--i)), 1); }
+  .quote cite { display: block; margin-top: 20px; font: 500 13px "Geist Mono", monospace; font-style: normal; text-transform: uppercase; letter-spacing: .14em; color: var(--uv-muted); }
+
+  /* 3 scrollytelling: steps on the left, one sticky chart on the right (UV.steps) */
+  .story { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .story .steps > div { min-height: 80vh; display: grid; align-content: center; opacity: .3; transition: opacity .4s; }
+  .story .steps > div.is-active { opacity: 1; }
+  .story .steps h3 { margin: 0 0 8px; font: 400 44px/1 "Instrument Serif", serif; }
+  .chart { position: sticky; top: 15vh; height: 70vh; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; padding: 26px; border: 1px solid var(--uv-line-2); border-radius: 6px; background: var(--uv-surface); }
+  .bars { display: flex; align-items: flex-end; gap: 10px; height: 100%; border-bottom: 1px solid var(--uv-line-2); }
+  .bars i { flex: 1; height: var(--h); background: var(--uv-text); border-radius: 3px 3px 0 0; transition: height .8s cubic-bezier(.2, .8, .2, 1), background-color .4s; position: relative; }
+  .bars i.hot { background: var(--uv-accent); }
+  .bars i::after { content: attr(data-y); position: absolute; left: 50%; top: 100%; translate: -50% 6px; font: 11px "Geist Mono", monospace; color: var(--uv-muted); }
+  .chart .big { font: 400 64px/1 "Instrument Serif", serif; }
+
+  /* 4 the beam: a night scene whose light turns with the scroll */
+  .night { --len: 260vh; }
+  .night .uv-pin__stage { background: linear-gradient(#060b16, #0d1830 60%, #13243f); color: #f2eee6; }
+  .beam { position: absolute; left: 50%; top: 42%; width: 140vmax; height: 26vmax; translate: 0 -50%; transform-origin: 0 50%; transform: rotate(calc(var(--p, 0) * 540deg - 30deg));
+    background: linear-gradient(90deg, #fff4c8cc, #fff4c833 40%, transparent 75%); clip-path: polygon(0 48%, 100% 0, 100% 100%, 0 52%); }
+  .tower { position: absolute; left: calc(50% - 22px); top: 42%; width: 44px; height: 60vh; background: linear-gradient(90deg, #8d8577, #d8d0c0 40%, #7a7266); clip-path: polygon(22% 0, 78% 0, 100% 100%, 0 100%); }
+  .tower::before { content: ""; position: absolute; inset: 22% 0 auto; height: 8%; background: #b03a2e; }
+  .lamp { position: absolute; left: 50%; top: 42%; width: 26px; height: 26px; translate: -50% -50%; border-radius: 50%; background: #fff7d1; box-shadow: 0 0 40px 16px #ffe9a5aa; }
+  .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 22vh; background: repeating-linear-gradient(176deg, #ffffff0c 0 2px, transparent 2px 12px), #0a1426; }
+  .night .cap { position: absolute; left: 6vw; bottom: 26vh; max-width: 380px; z-index: 2; }
+  .night .cap p { font: 400 36px/1.1 "Instrument Serif", serif; margin: 6px 0 0; }
+  .night .sweeps { position: absolute; right: 6vw; top: 12vh; text-align: right; font: 500 13px "Geist Mono", monospace; color: #b8c2d8; }
+  .night .sweeps b { display: block; font: 400 72px/1 "Instrument Serif", serif; color: #fff4c8; }
+
+  .end { max-width: 680px; margin: 0 auto; padding: 14vh 24px; }
+  .end hr { margin: 0 0 30px; }
+  .reading { display: grid; gap: 12px; margin-top: 26px; }
+  .reading a { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-top: 1px solid var(--uv-line-2); color: inherit; text-decoration: none; transition: color .2s, padding .25s; }
+  .reading a:hover { color: var(--uv-accent); padding-left: 8px; }
+  footer { padding: 26px 24px; text-align: center; color: var(--uv-dim); font-size: 13px; border-top: 1px solid var(--uv-line); } footer a { color: inherit; }
+  @media (max-width: 820px) { .story { grid-template-columns: 1fr; } .chart { top: 8vh; height: 46vh; z-index: 2; } .story .steps > div { min-height: 70vh; } }
+  @media (prefers-reduced-motion: reduce) { .uv-pin { height: auto; } .uv-pin__stage { position: relative; height: 100vh; } }
+</style>
+</head>
+<body>
+<div class="uv-scrollbar"></div>
+<a class="ex-back" href="../examples.html">← All examples</a>
+
+<section class="uv-pin open" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <div class="photo" aria-hidden="true"><i class="sea"></i></div>
+    <div class="title"><p class="kicker">FOLIO · Issue 12 · Coasts</p><h1>The last <em>keepers</em></h1><p>On the rock at Skerryvore, the light still needs someone.</p></div>
+    <span class="credit">Skerryvore at dusk · illustration</span>
+  </div>
+</section>
+
+<article>
+  <div class="byline"><span class="uv-avatar">IM</span><span><b style="color:var(--uv-text)">Isla MacRae</b> · 14 min read · Photographs by the author</span></div>
+  <p class="lede">Twelve miles off the coast of Tiree, the sea does not so much break against Skerryvore as lean on it. The tower is 48 metres of granite, built in 1844 by Alan Stevenson, and for a hundred and fifty years three men lived inside it at a time, keeping a flame alive through every night of the year.</p>
+  <p>The last keepers left in 1994, when the light went automatic. But automatic is not the same as unattended. Somebody still has to come out on the relief boat, climb the 151 steps, and listen to the machine the way the old keepers listened to the weather.</p>
+  <p>That somebody, for the last nine years, has been Donald Morrison.</p>
+</article>
+
+<blockquote class="quote" data-uv-scrub="center" id="quote">The light doesn't care whether you believe in it. It just has to turn, every eleven seconds, for the rest of your life.<cite>— Donald Morrison, attendant</cite></blockquote>
+
+<section class="story">
+  <div class="steps" id="steps">
+    <div data-step="0"><span class="kicker">1900s</span><h3>A crowded coast</h3><p>At the turn of the century, Scotland had more than 200 staffed lights, most with three keepers each.</p></div>
+    <div data-step="1"><span class="kicker">1960s</span><h3>The first machines</h3><p>Electric lamps and fog-signal timers arrive. Rock stations go from three keepers to two.</p></div>
+    <div data-step="2"><span class="kicker">1980s</span><h3>The great switch-off</h3><p>The board decides every light will be automatic. Keepers are retrained, retired or moved ashore.</p></div>
+    <div data-step="3"><span class="kicker">1998</span><h3>Fair Isle South</h3><p>The very last staffed light in Scotland goes automatic on 31 March. The keepers lower the flag.</p></div>
+  </div>
+  <div class="chart" aria-live="polite">
+    <span class="kicker" id="chartK">Staffed lighthouses</span>
+    <div class="bars" id="bars"><i data-y="1900"></i><i data-y="1930"></i><i data-y="1960"></i><i data-y="1980"></i><i data-y="1990"></i><i data-y="1998"></i></div>
+    <div><span class="big" id="chartN">212</span> <span class="uv-muted" id="chartL">staffed lights</span></div>
+  </div>
+</section>
+
+<section class="uv-pin night" id="night" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <div class="beam" aria-hidden="true"></div><div class="tower" aria-hidden="true"></div><div class="lamp" aria-hidden="true"></div><div class="waves" aria-hidden="true"></div>
+    <div class="sweeps"><b id="sweeps">0</b>sweeps tonight</div>
+    <div class="cap"><span class="kicker">Every eleven seconds</span><p>Keep scrolling. You are turning the light.</p></div>
+  </div>
+</section>
+
+<section class="end">
+  <hr class="uv-dv-diamond">
+  <p>Morrison will do this for three more winters, he says. After that someone else will come out on the relief boat, climb the steps and listen. The light doesn't care who.</p>
+  <p class="kicker" style="margin-top:50px">Further reading</p>
+  <div class="reading">
+    <a href="#">The Stevensons: a family of engineers <span>→</span></a>
+    <a href="#">What a fog signal sounds like from 20 miles <span>→</span></a>
+    <a href="#">Bell Rock, 1810: building on a reef that vanishes at high tide <span>→</span></a>
+  </div>
+</section>
+<footer>FOLIO is a made-up magazine; the story is illustrative. Example built with <a href="../index.html">UI Vault</a> — uses uv-scrollbar · uv-pin · data-uv-scrub · UV.steps · UV.scrub · theme "editorial".</footer>
+
+<script src="../lib/uivault.js"></script>
+<script>
+  // pull quote: wrap each word in a <span style="--i:n">; CSS turns them on as --p rises
+  const q = document.getElementById("quote"), cite = q.querySelector("cite");
+  const words = q.firstChild.textContent.trim().split(/\s+/);
+  q.firstChild.replaceWith(...words.flatMap((w, i) => { const s = document.createElement("span"); s.textContent = w; s.style.setProperty("--i", i); return [s, " "]; }));
+  q.style.setProperty("--n", words.length); q.append(cite);
+
+  // scrollytelling chart
+  const heights = [100, 92, 88, 40, 14, 2];                                     // 1900 … 1998, as % of 1900
+  const label = [["212", 0], ["186", 2], ["84", 3], ["0", 5]];                  // [number shown, last bar lit]
+  const bars = [...document.querySelectorAll("#bars i")];
+  const show = k => {
+    bars.forEach((b, i) => { b.style.setProperty("--h", (i <= label[k][1] ? heights[i] : 3) + "%"); b.classList.toggle("hot", i === label[k][1]); });
+    document.getElementById("chartN").textContent = label[k][0];
+  };
+  show(0);
+  UV.steps(document.getElementById("steps"), (el, i) => show(i));
+
+  // the beam turns 1.5 times across the scene; count the sweeps
+  const sw = document.getElementById("sweeps");
+  UV.scrub(document.getElementById("night"), p => { sw.textContent = Math.floor(p * 1.5 * 4); }, "pin");
+</script>
+</body>
+</html>

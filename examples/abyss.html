@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" data-uv-theme="deep-sea" data-uv-btn="neon-tube">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ABYSS — a dive to 10,935 m · UI Vault example</title>
+<meta name="description" content="A scroll-driven descent through the ocean's five zones, built with the UI Vault library: page-progress scrubbing, parallax, marine snow and a flashlight reveal." />
+<meta name="theme-color" content="#04161d" />
+<link rel="stylesheet" href="../lib/css/fonts.css" />
+<link rel="stylesheet" href="../lib/uivault.css" />
+<link rel="stylesheet" href="../lib/css/parts.css" />
+<style>
+  html { background: #010407; } body { background: transparent; }
+  body { margin: 0; color: #e3fbff; font-family: "Manrope", system-ui, sans-serif; overflow-x: clip; }
+  .ex-back { position: fixed; top: 14px; left: 14px; z-index: 100; padding: 8px 14px; border-radius: 999px; background: #02131acc; border: 1px solid #ffffff26; color: #fff; font: 500 13px "Geist", sans-serif; text-decoration: none; transition: background-color .2s; }
+  .ex-back:hover { background: #0b3140; }
+  .mono { font: 500 12px "Geist Mono", monospace; letter-spacing: .16em; text-transform: uppercase; color: #7ff3ff; }
+
+  /* the water: three fixed layers cross-fade with whole-page progress (--p from data-uv-scrub="page") */
+  .water { position: fixed; inset: 0; z-index: -2; pointer-events: none; }
+  .water i { position: absolute; inset: 0; }
+  .water .a { background: linear-gradient(180deg, #8ae9ff 0%, #1aa3c8 35%, #0a5f80 100%); opacity: calc(1 - var(--p, 0) * 4.5); }
+  .water .b { background: linear-gradient(180deg, #0a4f6a, #04233a 70%, #021320); opacity: calc(1.6 - var(--p, 0) * 2.6); }
+  .water .c { background: radial-gradient(90% 60% at 50% 120%, #06202b, #010407 70%); z-index: -1; }
+
+  /* depth gauge */
+  .gauge { position: fixed; right: clamp(12px, 3vw, 36px); top: 50%; translate: 0 -50%; z-index: 20; display: grid; justify-items: end; gap: 10px; pointer-events: none; }
+  .gauge .rail { position: relative; width: 2px; height: 46vh; background: #ffffff26; }
+  .gauge .rail::after { content: ""; position: absolute; left: 50%; top: 0; width: 12px; height: 12px; border-radius: 50%; translate: -50% -50%; background: #7ff3ff; box-shadow: 0 0 14px #7ff3ff; transform: translateY(calc(var(--p, 0) * 46vh)); }
+  .gauge b { font: 500 clamp(18px, 2.2vw, 26px) "Geist Mono", monospace; font-variant-numeric: tabular-nums; }
+  .gauge small { color: #9fc9d2; font: 11px "Geist Mono", monospace; }
+
+  .zone { position: relative; min-height: 130vh; padding: 22vh 8vw; box-sizing: border-box; }
+  .zone .copy { position: relative; z-index: 2; max-width: 520px; }
+  .zone h2 { margin: 10px 0 14px; font: 800 clamp(48px, 8vw, 112px)/.88 "Bricolage Grotesque", sans-serif; letter-spacing: -.03em; }
+  .zone p { font-size: 18px; line-height: 1.6; color: #c4e9ef; }
+  .facts { display: flex; gap: 28px; margin-top: 26px; } .facts b { display: block; font: 700 32px "Bricolage Grotesque", sans-serif; }
+
+  /* 1 sunlight */
+  .surface { min-height: 100vh; display: grid; align-content: center; }
+  .surface h1 { margin: 0; font: 800 clamp(90px, 20vw, 300px)/.8 "Bricolage Grotesque", sans-serif; letter-spacing: -.05em; color: #fff; text-shadow: 0 10px 60px #0a5f8066; }
+  .surface .lede { max-width: 480px; font-size: 20px; }
+  .rays { position: absolute; inset: 0 0 -40vh; overflow: hidden; z-index: 0; pointer-events: none; }
+  .rays i { position: absolute; top: -10%; width: 9vw; height: 130%; background: linear-gradient(180deg, #ffffff70, transparent 80%); transform-origin: top; transform: rotate(var(--r)); animation: sway 9s ease-in-out infinite alternate; animation-delay: var(--d); opacity: .5; }
+  @keyframes sway { to { transform: rotate(calc(var(--r) + 6deg)); } }
+  .school { position: absolute; right: 16vw; top: 58vh; display: grid; grid-template-columns: repeat(5, 34px); gap: 14px 18px; z-index: 1; }
+  .school svg { width: 34px; animation: swim 2.4s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -.3s); }
+  @keyframes swim { to { transform: translate(-14px, 6px); } }
+  .bubble { position: absolute; bottom: -20px; width: var(--s); aspect-ratio: 1; border-radius: 50%; border: 1px solid #ffffffaa; background: radial-gradient(circle at 30% 30%, #fff8, transparent 60%); animation: rise var(--t) linear infinite; animation-delay: var(--d); left: var(--x); }
+  @keyframes rise { to { transform: translateY(-140vh) translateX(20px); } }
+
+  /* 2 twilight: jellyfish pulse; marine snow drifts (data-uv-fx="snow") */
+  .snow { position: absolute; inset: 0; z-index: 0; opacity: .55; color: #bff6ff; }
+  .jelly { position: absolute; z-index: 1; width: var(--w); right: var(--x); top: var(--y); animation: bob 5s ease-in-out infinite alternate; animation-delay: var(--d); }
+  .jelly svg { width: 100%; overflow: visible; } .jelly .bell { animation: pulse 2.6s ease-in-out infinite; transform-origin: 50% 70%; transform-box: fill-box; }
+  @keyframes bob { to { translate: 0 -50px; } } @keyframes pulse { 50% { transform: scale(1.08, .9); } }
+
+  /* 3 midnight: a torch. The dark layer gets a hole where the pointer is (UV.fx.spotlight writes --x / --y). */
+  .midnight { min-height: 150vh; }
+  .torch { position: absolute; inset: 0; z-index: 3; background: radial-gradient(180px 180px at var(--x, 70%) var(--y, 55%), transparent 0, #010407f2 100%); pointer-events: auto; cursor: none; -webkit-mask-image: linear-gradient(transparent, #000 22%, #000 82%, transparent); mask-image: linear-gradient(transparent, #000 22%, #000 82%, transparent); }
+  .hidden-life { position: absolute; inset: 0; z-index: 1; }
+  .hidden-life svg { position: absolute; }
+  .lure { animation: glow 1.8s ease-in-out infinite alternate; } @keyframes glow { to { opacity: .4; } }
+  .midnight .copy { z-index: 4; pointer-events: none; }
+  .midnight .tip { margin-top: 18px; }
+
+  /* 4 abyss: a tentacle slides across with the scroll */
+  .abyss { overflow: hidden; }
+  .tentacle { position: absolute; left: 0; right: 0; top: 46%; height: 260px; z-index: 1; }
+  .tentacle svg { width: 160vw; height: 100%; transform: translateX(calc(-60vw + var(--p, .5) * 50vw)); }
+  /* 5 hadal */
+  .hadal { min-height: 120vh; text-align: center; display: grid; align-content: center; justify-items: center; }
+  .hadal .copy { max-width: 720px; }
+  .hadal h2 { font-size: clamp(64px, 12vw, 170px); }
+  .trench { position: absolute; left: 0; right: 0; bottom: 0; height: 40vh; z-index: 0; background: linear-gradient(180deg, transparent, #000); clip-path: polygon(0 30%, 18% 45%, 30% 40%, 42% 70%, 50% 100%, 58% 72%, 70% 42%, 84% 50%, 100% 28%, 100% 100%, 0 100%); }
+  .hadal .uv-btn { margin-top: 26px; }
+  @media (max-width: 700px) { .gauge { top: 12px; right: 12px; translate: none; gap: 2px; padding: 8px 12px; border-radius: 10px; background: #02131acc; border: 1px solid #ffffff22; } .gauge .rail, .gauge #temp { display: none; } .gauge b { font-size: 17px; } .school { display: none; } .jelly { opacity: .45; } .zone { padding: 18vh 22px; } }
+  @media (prefers-reduced-motion: reduce) { .rays i, .bubble, .school svg, .jelly, .jelly .bell, .lure { animation: none; } }
+</style>
+</head>
+<body>
+<a class="ex-back" href="../examples.html">← All examples</a>
+<div class="water" data-uv-scrub="page" aria-hidden="true"><i class="c"></i><i class="b"></i><i class="a"></i></div>
+<div class="gauge" data-uv-scrub="page" aria-live="off"><small id="zoneName">Sunlight zone</small><div class="rail"></div><b id="depth">0 m</b><small id="temp">24 °C · 1 atm</small></div>
+
+<section class="zone surface">
+  <div class="rays" aria-hidden="true"><i style="left:8%;--r:14deg;--d:0s"></i><i style="left:26%;--r:8deg;--d:-3s"></i><i style="left:47%;--r:-4deg;--d:-6s"></i><i style="left:66%;--r:-10deg;--d:-2s"></i><i style="left:84%;--r:-16deg;--d:-5s"></i></div>
+  <div aria-hidden="true">
+    <i class="bubble" style="--x:12%;--s:10px;--t:9s;--d:-2s"></i><i class="bubble" style="--x:22%;--s:6px;--t:7s;--d:-5s"></i><i class="bubble" style="--x:61%;--s:14px;--t:11s;--d:-1s"></i><i class="bubble" style="--x:74%;--s:8px;--t:8s;--d:-6s"></i><i class="bubble" style="--x:88%;--s:5px;--t:6s;--d:-3s"></i>
+  </div>
+  <div class="school" data-uv-speed="-.25" aria-hidden="true"></div>
+  <div class="copy">
+    <p class="mono" data-uv-reveal>Expedition log · 0 m</p>
+    <h1 data-uv-reveal="up">Abyss</h1>
+    <p class="lede" data-uv-reveal="up">Scroll down. Every pixel is about a metre of water. The bottom is 10,935 metres away.</p>
+  </div>
+</section>
+
+<section class="zone">
+  <div class="copy">
+    <p class="mono" data-uv-reveal>0 – 200 m</p>
+    <h2 data-uv-reveal="up">Sunlight zone</h2>
+    <p data-uv-reveal="up">Ninety percent of ocean life lives up here, where there is enough light for plants to grow. Below this line, colours start to disappear: red goes first.</p>
+    <div class="facts" data-uv-stagger="up"><div><b data-uv-count="90" data-uv-suffix="%">0</b><span class="mono">of all sea life</span></div><div><b data-uv-count="200" data-uv-suffix=" m">0</b><span class="mono">where light ends</span></div></div>
+  </div>
+</section>
+
+<section class="zone twilight">
+  <div class="snow" data-uv-fx="snow" aria-hidden="true"></div>
+  <div class="jelly" style="--w:180px;--x:12vw;--y:18vh;--d:0s" data-uv-speed=".2" aria-hidden="true"><svg viewBox="0 0 100 160"><path class="bell" d="M10 60C10 20 90 20 90 60c0 6-6 8-12 6-8-3-14 4-28 4s-20-7-28-4c-6 2-12 0-12-6z" fill="#ff7ad9" fill-opacity=".55" stroke="#ffc2ef" stroke-width="1.5"/><g fill="none" stroke="#ffc2ef" stroke-opacity=".6" stroke-width="1.5"><path d="M30 70c-4 20 6 30 0 50s6 30 2 40"/><path d="M45 72c4 22-6 32 0 52"/><path d="M58 72c-4 20 6 34 0 56"/><path d="M72 68c4 18-4 28 2 46s-4 30 0 40"/></g></svg></div>
+  <div class="jelly" style="--w:90px;--x:34vw;--y:62vh;--d:-2s" data-uv-speed=".4" aria-hidden="true"><svg viewBox="0 0 100 160"><path class="bell" d="M10 60C10 20 90 20 90 60c0 6-6 8-12 6-8-3-14 4-28 4s-20-7-28-4c-6 2-12 0-12-6z" fill="#7ff3ff" fill-opacity=".45" stroke="#c8fbff" stroke-width="1.5"/><g fill="none" stroke="#c8fbff" stroke-opacity=".6" stroke-width="1.5"><path d="M34 70c-4 20 6 30 0 50"/><path d="M50 72c4 22-6 32 0 52"/><path d="M66 70c-4 20 6 34 0 56"/></g></svg></div>
+  <div class="copy">
+    <p class="mono" data-uv-reveal>200 – 1,000 m</p>
+    <h2 data-uv-reveal="up">Twilight zone</h2>
+    <p data-uv-reveal="up">Faint blue light, and it is snowing: "marine snow" is the slow fall of dust and dead plankton from above. Jellyfish make their own light down here.</p>
+    <div class="facts" data-uv-stagger="up"><div><b data-uv-count="4" data-uv-suffix=" °C">0</b><span class="mono">water</span></div><div><b data-uv-count="76" data-uv-suffix="%">0</b><span class="mono">glow in the dark</span></div></div>
+  </div>
+</section>
+
+<section class="zone midnight" id="midnight">
+  <div class="hidden-life" aria-hidden="true">
+    <svg style="right:16%;top:22%;width:260px" viewBox="0 0 260 160"><path d="M40 90c20-50 120-60 170-20 10 8 10 30 0 38-50 40-150 30-170-18z" fill="#3f5d69"/><path d="M200 70l50-30v100l-50-30z" fill="#3f5d69"/><path d="M60 80q-10-60 40-70" fill="none" stroke="#5b7d89" stroke-width="3"/><circle class="lure" cx="100" cy="10" r="9" fill="#d2fff5" style="filter:drop-shadow(0 0 10px #7ff3ff)"/><circle cx="70" cy="84" r="6" fill="#d2fff5"/><path d="M48 100l10-8 8 10 8-10 8 10 8-10 8 8" fill="none" stroke="#e8f6f8" stroke-width="3"/></svg>
+    <svg style="left:12%;top:58%;width:200px" viewBox="0 0 200 80"><path d="M10 40c40-30 110-30 150 0-40 30-110 30-150 0z" fill="#3f5d69"/><path d="M160 40l34-24v48z" fill="#3f5d69"/><g fill="#7ff3ff"><circle cx="40" cy="44" r="2.5"/><circle cx="60" cy="48" r="2.5"/><circle cx="80" cy="50" r="2.5"/><circle cx="100" cy="50" r="2.5"/><circle cx="120" cy="48" r="2.5"/></g></svg>
+    <svg style="right:38%;top:66%;width:120px" viewBox="0 0 120 120"><circle cx="60" cy="60" r="30" fill="#5a4569"/><g stroke="#5a4569" stroke-width="6" stroke-linecap="round"><path d="M60 90v26M38 82l-16 20M82 82l16 20M30 60H6M90 60h24"/></g><circle cx="50" cy="54" r="5" fill="#ff9ae6"/><circle cx="70" cy="54" r="5" fill="#ff9ae6"/></svg>
+  </div>
+  <div class="torch" data-uv-fx="spotlight" aria-hidden="true"></div>
+  <div class="copy">
+    <p class="mono" data-uv-reveal>1,000 – 4,000 m</p>
+    <h2 data-uv-reveal="up">Midnight zone</h2>
+    <p data-uv-reveal="up">No sunlight reaches this far. Ever. You brought a torch.</p>
+    <p class="mono tip" data-uv-reveal>Move your pointer to look around →</p>
+  </div>
+</section>
+
+<section class="zone abyss" data-uv-scrub>
+  <div class="tentacle" aria-hidden="true"><svg viewBox="0 0 1600 260" preserveAspectRatio="none"><path d="M0 150C200 60 340 230 560 140s360-120 560 0 300 60 480-20v60c-180 80-300 60-480-10s-360-60-560 30S200 170 0 210z" fill="#3b0f1e"/><g fill="#6b2236"><circle cx="300" cy="190" r="10"/><circle cx="420" cy="182" r="11"/><circle cx="560" cy="170" r="12"/><circle cx="700" cy="140" r="12"/><circle cx="840" cy="128" r="12"/><circle cx="980" cy="130" r="11"/><circle cx="1120" cy="150" r="10"/><circle cx="1260" cy="170" r="9"/><circle cx="1400" cy="160" r="8"/></g></svg></div>
+  <div class="copy">
+    <p class="mono" data-uv-reveal>4,000 – 6,000 m</p>
+    <h2 data-uv-reveal="up">Abyssal zone</h2>
+    <p data-uv-reveal="up">Near freezing, crushing pressure, and something big just went past.</p>
+    <div class="facts" data-uv-stagger="up"><div><b data-uv-count="500" data-uv-suffix=" atm">0</b><span class="mono">pressure</span></div><div><b data-uv-count="13" data-uv-suffix=" m">0</b><span class="mono">giant squid</span></div></div>
+  </div>
+</section>
+
+<section class="zone hadal">
+  <div class="trench" aria-hidden="true"></div>
+  <div class="copy">
+    <p class="mono" data-uv-reveal>6,000 – 10,935 m · Challenger Deep</p>
+    <h2 data-uv-reveal="zoom">Bottom.</h2>
+    <p data-uv-reveal="up">Deeper than Everest is tall. Fewer people have been here than have walked on the Moon.</p>
+    <button class="uv-btn uv-btn--primary uv-btn--pill" id="surface">Back to the surface ↑</button>
+  </div>
+</section>
+
+<script src="../lib/uivault.js"></script>
+<script>
+  // a little shoal for the top zone
+  document.querySelector(".school").innerHTML = Array.from({ length: 15 }, (_, i) => `<svg style="--i:${i}" viewBox="0 0 34 16"><path d="M2 8c6-7 18-7 24 0-6 7-18 7-24 0zM26 8l7-6v12z" fill="#fff" fill-opacity=".85"/></svg>`).join("");
+
+  // the gauge text: same page progress the CSS uses, read with UV.scrub
+  const zones = [[0, "Sunlight zone"], [200, "Twilight zone"], [1000, "Midnight zone"], [4000, "Abyssal zone"], [6000, "Hadal zone"]];
+  const depth = document.getElementById("depth"), zn = document.getElementById("zoneName"), temp = document.getElementById("temp");
+  // each zone section owns a slice of the depth, so the gauge always agrees with the heading you are reading
+  const ranges = [[0, 0], [0, 200], [200, 1000], [1000, 4000], [4000, 6000], [6000, 10935]];
+  const secs = [...document.querySelectorAll(".zone")];
+  UV.scrub(document.querySelector(".gauge"), () => {
+    const mid = innerHeight / 2; let m = 0;
+    secs.forEach((s, i) => { const r = s.getBoundingClientRect(); if (r.top <= mid) { const t = Math.min(1, (mid - r.top) / r.height); m = ranges[i][0] + (ranges[i][1] - ranges[i][0]) * t; } });
+    m = Math.round(m);
+    depth.textContent = m.toLocaleString() + " m";
+    zn.textContent = zones.filter(z => m >= z[0]).pop()[1];
+    temp.textContent = Math.max(1, Math.round(24 - Math.sqrt(m) * .23)) + " °C · " + Math.round(1 + m / 10).toLocaleString() + " atm";
+  }, "page");
+
+  document.getElementById("surface").onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+</script>
+</body>
+</html>
