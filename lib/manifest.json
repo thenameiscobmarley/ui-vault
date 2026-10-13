@@ -12,7 +12,8 @@
   "feedback",
   "forms",
   "fx",
-  "waterfall"
+  "waterfall",
+  "layers"
  ],
  "themes": [
   {
@@ -1105,6 +1106,11 @@
    "desc": "Canvas + pointer effects: matrix, starfield, particles, snow, cursor trail/blob, sparkles, magnet, gravity, fireworks."
   },
   {
+   "path": "js/layers.js",
+   "bytes": 38114,
+   "desc": "Effect layers: stack glow, shadow, border, backdrop, fill, shape, text, hover, press, entrance, idle and uv-fx effects on any element type or one element (UV.layers.apply)."
+  },
+  {
    "path": "js/motion.js",
    "bytes": 11957,
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
@@ -1113,6 +1119,11 @@
    "path": "js/waterfall.js",
    "bytes": 10802,
    "desc": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen)."
+  },
+  {
+   "path": "layers.json",
+   "bytes": 26512,
+   "desc": ""
   },
   {
    "path": "parts.json",
@@ -1131,7 +1142,7 @@
   },
   {
    "path": "uivault.js",
-   "bytes": 50174,
+   "bytes": 88297,
    "desc": ""
   }
  ]

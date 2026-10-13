@@ -19,6 +19,7 @@
   html[data-uv-theme] body { background-color: transparent !important; color: var(--uv-text); }
   .uvp-btn { position: fixed; left: 16px; bottom: 16px; z-index: 9990; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 10px; border-radius: 999px; border: 1px solid #ffffff33; background: #151517f2; color: #fff; font: 500 13px "Geist", system-ui, sans-serif; cursor: pointer; box-shadow: 0 10px 30px -10px #000a; transition: transform .2s; }
   .uvp-btn:hover { transform: translateY(-2px); }
+  .uvp-insp { left: 162px !important; }
   .uvp-mode { left: 116px; width: 40px; padding: 0; justify-content: center; font-size: 17px; } .uvp-btn i { width: 20px; height: 20px; border-radius: 50%; background: conic-gradient(#ff4f00, #ffd23f, #39ff88, #00f0ff, #b46bff, #ff2bd6, #ff4f00); }
   .uvp { position: fixed; left: 16px; bottom: 64px; z-index: 9991; width: min(330px, calc(100vw - 32px)); max-height: min(520px, calc(100vh - 90px)); display: none; flex-direction: column; border-radius: 12px; border: 1px solid #ffffff26; background: #151517f5; color: #ecebe8; font: 14px "Geist", system-ui, sans-serif; box-shadow: 0 30px 60px -20px #000c; overflow: hidden; }
   .uvp.open { display: flex; animation: uvp-in .25s cubic-bezier(.2, 1.1, .4, 1); } @keyframes uvp-in { from { opacity: 0; transform: translateY(8px) scale(.98); } }
@@ -83,13 +84,29 @@
     if (kit.theme) await apply(kit.theme);
   }
 
+  // effect layers (glow, hover, backdrop… on any element type or a single element): stored in "uv-layers"
+  const hasJs = () => !!(window.UV && window.UV.layers);
+  let layersP = null;
+  const ensureLayers = () => hasJs() ? Promise.resolve() : (layersP ||= (async () => { await ensureBase(); await css(BASE + "lib/css/components.css"); await js(BASE + "lib/uivault.js"); })());
+  const loadFamily = k => css(BASE + "lib/css/parts/" + k + ".css");
+  async function applyLayers(stack = store.get("uv-layers", {})) {
+    if (!Object.keys(stack).length && !hasJs()) return;
+    await ensureLayers();
+    Object.values(stack["@el"] || {}).forEach(v => v && v.design && loadFamily(v.type));
+    window.UV.layers.apply(stack);
+    // per-element designs live on the element itself
+    Object.values(stack["@el"] || {}).forEach(v => { if (v && v.design && (!v.page || v.page === location.pathname)) { try { const e = document.querySelector(v.path); e && e.setAttribute("data-uv-" + v.type, v.design); } catch {} } });
+  }
+
   // re-apply the saved choices on every page
   const saved = store.get("uv-skin", "");
   if (saved) apply(saved);
   if (Object.keys(store.get("uv-parts", {})).length) applyParts();
+  if (Object.keys(store.get("uv-layers", {})).length) (document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", () => applyLayers()) : applyLayers());
   // keep other open tabs in sync
   addEventListener("storage", e => {
     if (e.key === "uv-parts") applyParts();
+    if (e.key === "uv-layers") applyLayers();
     if (e.key === "uv-skin") { const v = store.get("uv-skin", ""); v ? apply(v) : apply(""); }
   });
 
@@ -101,16 +118,24 @@
   function build() {
     const cats = ["All", "My styles", ...new Set(Object.values(data).map(t => t.category))];
     const pd = partsData;
-    panel.innerHTML = `<nav><button type="button" data-tab="s" class="on">Styles</button><button type="button" data-tab="e">Elements</button></nav>
+    panel.innerHTML = `<nav><button type="button" data-tab="s" class="on">Styles</button><button type="button" data-tab="e">Elements</button><button type="button" data-tab="l">Effects</button></nav>
       <section data-pane="s" style="display:contents"><header><input type="search" placeholder="Search ${Object.keys(data).length} styles…"><select>${cats.map(c => `<option>${c}</option>`).join("")}</select></header><ul></ul>
       <footer><button data-reset>Default</button><button data-rand>Random</button><a href="${BASE}themes.html">All styles →</a></footer></section>
       <section data-pane="e" style="display:none">
         <div class="kits">${pd.kits.map(k => `<button type="button" data-kit="${k.name}" title="${k.desc}">${k.label}</button>`).join("")}</div>
         <div class="parts">${pd.families.map(f => `<label for="uvp-${f.key}">${f.label}</label><select id="uvp-${f.key}" data-fam="${f.key}"><option value="">Theme default</option>${f.parts.map(p => `<option value="${p.name}">${p.label}</option>`).join("")}</select>`).join("")}</div>
-        <footer><button data-preset>Reset</button><button data-prand>Random</button><a href="${BASE}elements.html">Browse →</a><a href="${BASE}lab.html">Test page →</a></footer></section>`;
+        <footer><button data-preset>Reset</button><button data-prand>Random</button><a href="${BASE}elements.html">Browse →</a><a href="${BASE}lab.html">Test page →</a></footer></section>
+      <section data-pane="l" style="display:none"><div class="parts" style="grid-template-columns:auto 1fr;padding-bottom:0"><label for="uvp-ltype">Element</label><select id="uvp-ltype">${["btn","card","input","switch","check","range","tabs","nav","badge","alert","modal","spinner","progress","head","link","img","text","page"].map(k => `<option value="${k}">${{btn:"Buttons",card:"Cards",input:"Text fields",switch:"Switches",check:"Checkboxes",range:"Sliders",tabs:"Tabs",nav:"Navigation",badge:"Badges",alert:"Alerts & toasts",modal:"Modals",spinner:"Spinners",progress:"Progress",head:"Headings",link:"Links",img:"Images",text:"Paragraphs",page:"Whole page"}[k]}</option>`).join("")}</select></div>
+        <div class="leditor" style="padding:10px 12px;overflow:auto;flex:1"></div>
+        <footer><button data-inspect>Inspect an element</button><a href="${BASE}lab.html">Test page →</a></footer></section>`;
     const tabs = panel.querySelectorAll("nav button");
     tabs.forEach(b => b.onclick = () => { tabs.forEach(x => x.classList.toggle("on", x === b)); panel.querySelectorAll("[data-pane]").forEach(p => p.style.display = p.dataset.pane === b.dataset.tab ? (p.dataset.pane === "s" ? "contents" : "flex") : "none"); });
     const pe = panel.querySelector('[data-pane="e"]'); pe.style.flexDirection = "column"; pe.style.minHeight = "0";
+    const pl = panel.querySelector('[data-pane="l"]'); pl.style.flexDirection = "column"; pl.style.minHeight = "0";
+    const drawL = async () => { await ensureLayers(); await js(BASE + "assets/js/layers-ui.js"); UVLayersUI.render(pl.querySelector(".leditor"), { type: pl.querySelector("#uvp-ltype").value }); };
+    pl.querySelector("#uvp-ltype").onchange = drawL;
+    tabs.forEach(b => b.addEventListener("click", () => b.dataset.tab === "l" && drawL()));
+    pl.querySelector("[data-inspect]").onclick = () => { panel.classList.remove("open"); inspect(); };
     pe.querySelector(".kits").onclick = e => { const b = e.target.closest("[data-kit]"); if (b) applyKit(b.dataset.kit); };
     pe.querySelectorAll("select").forEach(sel => sel.onchange = () => setParts({ [sel.dataset.fam]: sel.value }));
     pe.querySelector("[data-preset]").onclick = () => setParts({}, { replace: true });
@@ -160,6 +185,9 @@
     modeBtn.setAttribute("aria-label", "Toggle light or dark mode");
     modeBtn.onclick = toggleMode;
     document.body.append(modeBtn); syncMode();
+    const ib = Object.assign(document.createElement("button"), { className: "uvp-btn uvp-mode uvp-insp", type: "button", innerHTML: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>', title: "Inspect: click any element to change its design and effects" });
+    ib.setAttribute("aria-label", "Inspect an element"); ib.onclick = e => { e.stopPropagation(); inspect(); };
+    document.body.append(ib);
     btn = Object.assign(document.createElement("button"), { className: "uvp-btn", type: "button", innerHTML: "<i></i>Theme", title: "Try any style on this page" });
     panel = Object.assign(document.createElement("div"), { className: "uvp" });
     btn.onclick = open;
@@ -168,5 +196,10 @@
     document.addEventListener("click", e => { if (panel.classList.contains("open") && !panel.contains(e.target) && !btn.contains(e.target)) panel.classList.remove("open"); });
   };
   document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", mount) : mount();
-  window.UVPicker = { toggleMode, apply, setParts, applyKit, loadParts, getParts: () => store.get("uv-parts", {}), getKit: () => store.get("uv-kit", ""), refresh: () => { render(); const s = html.dataset.uvTheme; if (s && store.get("uv-custom-styles", {})[s]) apply(s); } };
+  async function inspect() {
+    await ensureLayers(); await loadParts();
+    await js(BASE + "assets/js/layers-ui.js"); await js(BASE + "assets/js/inspector.js");
+    UVInspector.start();
+  }
+  window.UVPicker = { toggleMode, apply, setParts, applyKit, loadParts, ensureLayers, applyLayers, loadFamily, inspect, getLayers: () => store.get("uv-layers", {}), getParts: () => store.get("uv-parts", {}), getKit: () => store.get("uv-kit", ""), refresh: () => { render(); const s = html.dataset.uvTheme; if (s && store.get("uv-custom-styles", {})[s]) apply(s); } };
 })();
