@@ -672,19 +672,19 @@ class NavBar(_UV, QWidget):
         self._uv_init()
 
     def _rects(self):
-        f = _base_font(14); fm = QFontMetricsF(f); out = []
+        st = STYLE.style("nav", "item", frozenset({"current"})); fm = QFontMetricsF(st.font(_base_font(14), 14)); out = []
         x, y = self.BLEED + 8, self.BLEED + 8
         for t in self.items:
-            w = fm.horizontalAdvance(t) + 24
+            w = fm.horizontalAdvance(t.upper() if st.upper else t) + 24
             if self.vertical: out.append(QRectF(x, y, self.width() - 2 * x, 34)); y += 36
             else: out.append(QRectF(x, y, w, 34)); x += w + 4
         return out
 
     def sizeHint(self):
         rs = self._rects() if self.width() else []
-        f = _base_font(14); fm = QFontMetricsF(f)
+        st = STYLE.style("nav", "item", frozenset({"current"})); fm = QFontMetricsF(st.font(_base_font(14), 14))
         if self.vertical: return QSize(200, int(len(self.items) * 36 + 16 + 2 * self.BLEED))
-        return QSize(int(sum(fm.horizontalAdvance(t) + 28 for t in self.items) + 16 + 2 * self.BLEED), 50 + 2 * self.BLEED)
+        return QSize(int(sum(fm.horizontalAdvance(t.upper() if st.upper else t) + 28 for t in self.items) + 16 + 2 * self.BLEED), 50 + 2 * self.BLEED)
 
     def mouseMoveEvent(self, e):
         hi = next((i for i, r in enumerate(self._rects()) if r.contains(e.position())), -1)

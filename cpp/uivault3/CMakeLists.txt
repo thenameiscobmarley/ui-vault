@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+project(uivault3_example LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_AUTOMOC ON)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+# The library: add these three files to your own target
+add_library(uivault3 STATIC uivault3.h uivault3.cpp uivault3_data.cpp)
+target_link_libraries(uivault3 PUBLIC Qt6::Widgets)
+target_include_directories(uivault3 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(uivault3_gallery example.cpp)
+target_link_libraries(uivault3_gallery PRIVATE uivault3)
