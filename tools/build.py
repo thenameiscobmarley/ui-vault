@@ -116,6 +116,55 @@ MIT licensed.
 """
 
 
+TOKEN_KEYS = ["bg", "surface", "surface-2", "surface-3", "line", "line-2", "text", "muted", "dim", "accent", "accent-2",
+              "success", "warn", "danger", "info", "font", "font-head", "mono", "r-xs", "r-sm", "r", "r-lg", "bw"]
+
+
+def _hex(c):
+    c = c.strip().lstrip("#")
+    if len(c) in (3, 4): c = "".join(ch * 2 for ch in c)
+    if len(c) == 6: c += "ff"
+    return tuple(int(c[i:i + 2], 16) for i in (0, 2, 4, 6))
+
+
+def export_tokens(themes):
+    """lib/tokens.json — every theme as plain values for the Python and C++ APIs."""
+    decl = lambda block: dict(re.findall(r"--uv-([\w-]+):\s*([^;]+);", block))
+    core = (CSS / "core.css").read_text()
+    base = decl(core[core.index(":root {"):core.index("}", core.index(":root {"))])
+    base.update(decl(core[core.index(":root, [data-uv-theme] {"):]))
+    src = (CSS / "themes.src.css").read_text()
+    out = {}
+    for t in themes:
+        m = re.search(r'\[data-uv-theme="%s"\] \{(.*?)\n\}' % t["name"], src, re.S)
+        vals = dict(base); vals.update(decl(m.group(1)))
+        for _ in range(3):  # resolve var(--uv-x) references
+            vals = {k: re.sub(r"var\(--uv-([\w-]+)\)", lambda mm: vals.get(mm.group(1), ""), v) for k, v in vals.items()}
+        bg = _hex(vals["bg"])
+        tok = {"name": t["name"], "desc": t["desc"], "colors": {}, "solid": {}, "fonts": {}, "shape": {}}
+        for k in TOKEN_KEYS:
+            v = vals.get(k, "").strip()
+            if v.startswith("#"):
+                r, g, b, a = _hex(v)
+                tok["colors"][k] = "#%02x%02x%02x%02x" % (r, g, b, a)
+                f = a / 255  # composite over bg → opaque colour for toolkits without alpha
+                tok["solid"][k] = "#%02x%02x%02x" % tuple(round(c * f + bc * (1 - f)) for c, bc in zip((r, g, b), bg[:3]))
+            elif k in ("font", "font-head", "mono"):
+                tok["fonts"][k] = v
+                tok["fonts"][k + "-family"] = re.sub(r'^["\']|["\']$', "", v.split(",")[0].strip())
+            elif k.startswith("r") or k == "bw":
+                num = re.match(r"[\d.]+", v)
+                tok["shape"][k] = float(num.group()) if num else 0.0
+        lum = (0.2126 * bg[0] + 0.7152 * bg[1] + 0.0722 * bg[2]) / 255
+        tok["dark"] = lum < 0.5
+        out[t["name"]] = tok
+    data = {"version": VERSION, "themes": out}
+    (LIB / "tokens.json").write_text(json.dumps(data, indent=1))
+    py = ROOT / "python" / "uivault"
+    if py.exists(): (py / "tokens.json").write_text(json.dumps(data, indent=1))
+    return data
+
+
 def raw_src():
     """lib/raw-src.js: CSS bundle text + JS module sources, used by the site's "Raw code" view."""
     src = {"css": (LIB / "uivault.css").read_text(), "js": {m: (JS / f"{m}.js").read_text() for m in JS_ORDER}}
@@ -149,6 +198,7 @@ def make_zip(m):
 if __name__ == "__main__":
     themes = split_themes()
     bundle(themes)
+    tokens = export_tokens(themes)
     raw_src()
     m = manifest(themes)
     make_zip(m)
