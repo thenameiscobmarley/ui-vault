@@ -6,7 +6,7 @@
   --uv-head-weight: 800; --uv-head-case: none;
   background-image: radial-gradient(45% 55% at 12% 10%, #ff9ae673, transparent 70%), radial-gradient(40% 50% at 88% 22%, #9ad3ff61, transparent 70%), radial-gradient(55% 50% at 55% 100%, #b8ff9a59, transparent 70%);
 }
-[data-uv-theme="holo-foil"] .uv-h1, [data-uv-theme="holo-foil"] .uv-h2 { background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 8s linear infinite; }
+[data-uv-theme="holo-foil"] .uv-h1, [data-uv-theme="holo-foil"] .uv-h2 { background-image: linear-gradient(115deg, #c2369f, #2f7fc4, #2f9e45, #b8901a, #c2369f); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 8s linear infinite; }
 [data-uv-theme="holo-foil"] .uv-btn--primary, [data-uv-theme="holo-foil"] .uv-btn--grad { background: linear-gradient(135deg, #7a5cff, #ff5cc8); color: #ffffff; border-color: transparent; }
 [data-uv-theme="holo-foil"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="holo-foil"] .uv-card { border: 1.5px solid transparent; background: linear-gradient(#fafafc, #fafafc) padding-box, linear-gradient(135deg, #7a5cff, #ff5cc8) border-box; }

@@ -7,7 +7,7 @@
   color-scheme: dark;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-[data-uv-theme="gold-leaf"] .uv-h1, [data-uv-theme="gold-leaf"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #6a4a10 28%, #fff2c2 50%, #9e854e 54%, #6a4a10 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="gold-leaf"] .uv-h1, [data-uv-theme="gold-leaf"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #a9915b 28%, #fff2c2 50%, #c7b37f 54%, #a9915b 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="gold-leaf"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
 [data-uv-theme="gold-leaf"] .uv-btn--primary, [data-uv-theme="gold-leaf"] .uv-btn--grad { background: linear-gradient(180deg, #ecd7a6 0%, #dab358 45%, #9f7c2c 55%, #d8af4e 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #7f6423; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #7f642399; }
 [data-uv-theme="gold-leaf"] .uv-btn--primary:hover { filter: brightness(1.06); }

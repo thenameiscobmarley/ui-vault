@@ -78,6 +78,6 @@ Theme names: original names; inspirations (e.g. CS2 Printstream pearl) only in d
 - [x] A. tools/theme_specs.py: recipe generator (bg/head/btn/hover/card) + 75 specs → lib/css/themes.gen.css ; build merges with themes.src.css ; categories ; lib/css/fonts.css
 - [ ] B. Python + C++: category + style metadata, custom themes (uivault.custom()), qss metal/gradient buttons ; tests
 - [ ] C. lib/js/waterfall.js (WebGL, low-res, blurred, pauses offscreen) → homepage + quickstart backgrounds ; homepage reorder
-- [ ] D. themes.html: gallery (search + categories) + full component preview + web/Python/C++ code + builder
-- [ ] E. assets/js/picker.js floating theme picker on every page
+- [x] D. themes.html: gallery (search + categories) + full component preview + web/Python/C++ code + builder
+- [x] E. assets/js/picker.js floating theme picker on every page
 - [ ] F. verify, README, push
