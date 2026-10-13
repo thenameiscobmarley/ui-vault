@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="lib/uivault.css" />
 <style>
   body { margin: 0; background: var(--uv-bg); }
+  body.has-wf { background: transparent; }
+  body.has-wf .uv-waterfall-veil { background: linear-gradient(180deg, color-mix(in srgb, var(--uv-bg) 28%, transparent) 0, color-mix(in srgb, var(--uv-bg) 60%, transparent) 45vh, color-mix(in srgb, var(--uv-bg) 82%, transparent) 100%); }
+  body.has-wf .top { background: color-mix(in srgb, var(--uv-bg) 80%, transparent); backdrop-filter: blur(10px); }
   .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; padding: 0 clamp(16px, 3vw, 32px); height: 60px; background: var(--uv-bg); border-bottom: 1px solid var(--uv-line-2); }
   .top .brand { display: flex; align-items: center; gap: 10px; font: 600 16px var(--uv-font); color: var(--uv-text); text-decoration: none; }
   .top nav { margin-left: auto; }
@@ -54,6 +57,7 @@
   .opts { display: grid; gap: 18px; }
   .opts fieldset { border: 1px solid var(--uv-line-2); border-radius: 6px; padding: 12px 14px; margin: 0; }
   .opts legend { padding: 0 6px; font: 500 11px var(--uv-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--uv-muted); }
+  .opts fieldset:nth-of-type(2) .grid { max-height: 210px; overflow: auto; }
   .opts .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px 12px; }
   .opts label { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
   .opts small { color: var(--uv-dim); font: 11px var(--uv-mono); }
@@ -94,7 +98,7 @@
   <!-- Hero -->
   <section style="padding:72px 0 24px">
     <p class="uv-eyebrow">UI Vault API · v<span class="ver">3.0.0</span> · MIT</p>
-    <h1 class="uv-h1 uv-fx-blur-in" style="font-size:clamp(52px,8vw,108px);margin:14px 0 22px;max-width:14ch">Twelve themes, <em class="uv-muted">seventy effects,</em> one API.</h1>
+    <h1 class="uv-h1 uv-fx-blur-in" style="font-size:clamp(52px,8vw,108px);margin:14px 0 22px;max-width:14ch">87 styles, <em class="uv-muted">seventy effects,</em> one API.</h1>
     <p class="uv-muted" style="max-width:640px;font-size:18px;margin:0 0 30px">A modular CSS + JS kit with no build step. Load the whole bundle or only the modules you need. Then mix themes and effects on any element: one page can have a brutalist header, a neon card and a terminal footer.</p>
     <div class="uv-row">
       <a class="uv-btn uv-btn--primary uv-btn--lg" href="downloads/uivault-latest.zip" download>Download uivault-<span class="ver">3.0.0</span>.zip</a>
@@ -117,7 +121,7 @@
         <input class="uv-input" placeholder="you@example.com">
         <div class="uv-progress" style="--v:68%"><i style="--v:68%"></i></div>
       </div>
-      <div class="story__meter"><b id="storyNum">01</b>/ 12 themes — keep scrolling</div>
+      <div class="story__meter"><b id="storyNum">01</b>/ 12 highlights — keep scrolling</div>
       <div class="story__bar"><i></i></div>
     </div>
     <div class="story__steps" id="storySteps"></div>
@@ -149,9 +153,9 @@
 
   <!-- 3 Themes -->
   <section class="sec" id="themes">
-    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 03 — Themes</p><h2 class="uv-h2">Twelve skins, <em class="uv-muted">same markup.</em></h2><p>Each card below uses identical HTML; only <code>data-uv-theme</code> changes. Put it on <code>&lt;html&gt;</code> for the whole page or on any element for one section. Click a card to apply it to this page.</p></div>
+    <div class="sec-head" data-uv-reveal><p class="uv-eyebrow">§ 03 — Themes</p><h2 class="uv-h2">Twelve highlights, <em class="uv-muted">same markup.</em></h2><p>Each card below uses identical HTML; only <code>data-uv-theme</code> changes. Put it on <code>&lt;html&gt;</code> for the whole page or on any element for one section. Click a card to apply it to this page.</p></div>
     <div class="themes" id="themeGrid" data-uv-stagger="zoom"></div>
-    <div class="uv-row" style="margin-top:16px"><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.skin(null);UV.toast('Back to the default theme')">Reset page theme</button><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.theme('toggle')">Toggle light / dark</button></div>
+    <div class="uv-row" style="margin-top:16px"><a class="uv-btn uv-btn--primary uv-btn--sm" href="themes.html">See all 87 styles + builder →</a><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.skin(null);UV.toast('Back to the default theme')">Reset page theme</button><button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.theme('toggle')">Toggle light / dark</button></div>
   </section>
 
   <!-- 4 Mix & match -->
@@ -201,6 +205,7 @@
 <script src="lib/uivault.js"></script>
 <script src="assets/js/raw.js"></script>
 <script src="assets/js/picker.js" defer></script>
+<script>document.body.classList.add("has-wf"); UVWaterfall.mount();</script>
 <script>
 const M = window.UV_MANIFEST, BASE = "https://thenameiscobmarley.github.io/ui-vault/lib/";
 const $ = s => document.querySelector(s), esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -210,18 +215,19 @@ document.querySelectorAll(".ver").forEach(v => v.textContent = M.version);
 document.addEventListener("click", e => { const b = e.target.closest("[data-copy]"); if (b) UV.copy(document.getElementById(b.dataset.copy).dataset.raw); });
 
 // scroll story: the pinned card switches theme as each step crosses the centre
-$("#storySteps").innerHTML = M.themes.map((t, i) => `<div data-step="${t.name}"><span>${String(i + 1).padStart(2, "0")} / ${M.themes.length}</span><h3>${t.name}</h3><p>${t.desc}.</p><code>data-uv-theme="${t.name}"</code></div>`).join("");
+const FEAT = ["editorial", "pearl", "sapphire-metal", "neon", "brutal", "fade", "glass", "terminal", "doppler", "retro", "gold-leaf", "y2k"].map(n => M.themes.find(t => t.name === n)).filter(Boolean);
+$("#storySteps").innerHTML = FEAT.map((t, i) => `<div data-step="${t.name}"><span>${String(i + 1).padStart(2, "0")} / ${FEAT.length}</span><h3>${t.name}</h3><p>${t.desc}.</p><code>data-uv-theme="${t.name}"</code></div>`).join("");
 const storyCard = $("#storyCard");
 UV.steps($("#story"), (step, i) => {
   if (storyCard.dataset.uvTheme === step.dataset.step) return;
   storyCard.dataset.uvTheme = step.dataset.step;
   $("#storyBadge").textContent = step.dataset.step;
-  $("#storyDesc").textContent = M.themes[i].desc + ".";
+  $("#storyDesc").textContent = FEAT[i].desc + ".";
   $("#storyNum").textContent = String(i + 1).padStart(2, "0");
-  $(".story__bar").style.setProperty("--sp", (i + 1) / M.themes.length);
+  $(".story__bar").style.setProperty("--sp", (i + 1) / FEAT.length);
   if (!UV.reduce) storyCard.animate([{ transform: "translateY(10px) scale(.97)", opacity: .6 }, { transform: "none", opacity: 1 }], { duration: 420, easing: "cubic-bezier(.2,.8,.2,1)" });
 });
-$("#storyDesc").textContent = M.themes[0].desc + ".";
+$("#storyDesc").textContent = FEAT[0].desc + ".";
 UV.scrollbar();
 
 // facts
@@ -243,7 +249,7 @@ $("#modTable tbody").innerHTML = M.files.filter(f => !f.path.startsWith("css/the
   + `<tr><td>css/themes/*.css</td><td>One file per theme: ${M.themes.map(t => t.name).join(", ")}.</td><td>~${kb(M.files.filter(f => f.path.startsWith("css/themes/")).reduce((a, f) => a + f.bytes, 0) / M.themes.length)} each</td></tr>`;
 
 // theme gallery
-$("#themeGrid").innerHTML = M.themes.map(t => `<div class="th" data-uv-theme="${t.name}" role="button" tabindex="0" title="Apply ${t.name} to the page">
+$("#themeGrid").innerHTML = FEAT.map(t => `<div class="th" data-uv-theme="${t.name}" role="button" tabindex="0" title="Apply ${t.name} to the page">
   <header><b class="uv-h3">${t.name}</b><button class="uv-btn uv-btn--ghost uv-btn--sm" data-raw-theme style="height:26px;padding:0 8px;font-size:11px">Raw code</button></header>
   <h3 class="uv-h2" style="font-size:34px;margin:0">Hello world</h3>
   <p class="uv-muted" style="margin:0;font-size:14px">${t.desc}.</p>

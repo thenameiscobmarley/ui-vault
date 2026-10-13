@@ -11,7 +11,8 @@
   "motion",
   "feedback",
   "forms",
-  "fx"
+  "fx",
+  "waterfall"
  ],
  "themes": [
   {
@@ -1029,13 +1030,18 @@
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
   },
   {
+   "path": "js/waterfall.js",
+   "bytes": 6092,
+   "desc": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen)."
+  },
+  {
    "path": "uivault.css",
    "bytes": 288588,
    "desc": ""
   },
   {
    "path": "uivault.js",
-   "bytes": 36840,
+   "bytes": 42944,
    "desc": ""
   }
  ]

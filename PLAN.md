@@ -76,8 +76,9 @@ User answers: custom 25 = signature themes AND a theme builder; waterfall = home
 reorder = homepage: Playground/examples right after the API section, Library index LAST; browsing = gallery page + floating picker on every page.
 Theme names: original names; inspirations (e.g. CS2 Printstream pearl) only in descriptions.
 - [x] A. tools/theme_specs.py: recipe generator (bg/head/btn/hover/card) + 75 specs → lib/css/themes.gen.css ; build merges with themes.src.css ; categories ; lib/css/fonts.css
-- [ ] B. Python + C++: category + style metadata, custom themes (uivault.custom()), qss metal/gradient buttons ; tests
-- [ ] C. lib/js/waterfall.js (WebGL, low-res, blurred, pauses offscreen) → homepage + quickstart backgrounds ; homepage reorder
+- [x] B. Python + C++: category + style metadata, custom themes (uivault.custom()), qss metal/gradient buttons ; tests
+- [x] C. lib/js/waterfall.js (WebGL, low-res, blurred, pauses offscreen) → homepage + quickstart backgrounds ; homepage reorder
 - [x] D. themes.html: gallery (search + categories) + full component preview + web/Python/C++ code + builder
 - [x] E. assets/js/picker.js floating theme picker on every page
-- [ ] F. verify, README, push
+- [x] F. verify, README, push
+v7 status: DONE. 87 themes; JS engine must mirror tools/theme_specs.py recipes.
