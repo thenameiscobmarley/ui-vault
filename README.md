@@ -1,11 +1,12 @@
 # UI Vault
 
-**→ [Quick start](https://thenameiscobmarley.github.io/ui-vault/quickstart.html)** · [Themes (87)](https://thenameiscobmarley.github.io/ui-vault/themes.html) · [Python & C++](https://thenameiscobmarley.github.io/ui-vault/code.html) · [Docs](https://thenameiscobmarley.github.io/ui-vault/docs.html) · [Download .zip](https://thenameiscobmarley.github.io/ui-vault/downloads/uivault-latest.zip)
+**→ [Quick start](https://thenameiscobmarley.github.io/ui-vault/quickstart.html)** · [Themes (87)](https://thenameiscobmarley.github.io/ui-vault/themes.html) · [Elements (273)](https://thenameiscobmarley.github.io/ui-vault/elements.html) · [Test page](https://thenameiscobmarley.github.io/ui-vault/lab.html) · [Python & C++](https://thenameiscobmarley.github.io/ui-vault/code.html) · [Docs](https://thenameiscobmarley.github.io/ui-vault/docs.html) · [Download .zip](https://thenameiscobmarley.github.io/ui-vault/downloads/uivault-latest.zip)
 
 
 A curated vault of open-source UI resources: component kits, copy-paste blocks, motion, effects, post-processing, 3D, icons, logos, fonts, color, charts and native/game UI. It also has live, copy-ready snippets.
 
 - **Themes** (`themes.html`): 87 complete design styles (12 core + 50 regular + 25 signature, e.g. pearl, sapphire-metal, fade, doppler, case-hardened) covering buttons, headings, cards, hover motion and backgrounds; gallery with categories, full component preview, web/Python/C++ code, and a theme builder. A floating theme picker on every page tries any style live. Themes are generated from `tools/theme_specs.py` (keep `assets/js/theme-engine.js` in sync).
+- **Elements** (`elements.html`) and **Test page** (`lab.html`): 273 element designs in 15 families, picked per family with `data-uv-<family>="name"` on `<html>` or any element (nearest wins), plus 18 kits (a theme + one design per family). Generated from `tools/parts_specs.py` into `lib/css/parts/*.css`; the floating picker's Elements tab applies a mix site-wide. Python: `uivault.qss(kit="deep-metal")`, `parts={"btn": "pearl"}`; C++: `uivault::findKit`, `qss(theme, kit)`, `imgui::apply(theme, kit)`.
 - **Waterfall** (`lib/js/waterfall.js`): procedural, blurred WebGL waterfall background on the homepage and Quick start.
 - **Code APIs** (`code.html`): the same 12 themes for **Python** (`python/`: Qt, Tkinter, Textual, GTK4, Dear PyGui, matplotlib, Rich, CLI) and **C++** (`cpp/uivault.hpp`: Dear ImGui, JUCE, raygui, Qt). `pip install "git+https://github.com/thenameiscobmarley/ui-vault#subdirectory=python"`
 - **Quick start** (`quickstart.html`): 3-step setup, zip download, module table, 12-theme gallery, mix-and-match playground, 70+ effect gallery, custom bundle builder
