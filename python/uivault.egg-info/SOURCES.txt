@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+uivault/__init__.py
+uivault/__main__.py
+uivault/demo_tk.py
+uivault/tokens.json
+uivault.egg-info/PKG-INFO
+uivault.egg-info/SOURCES.txt
+uivault.egg-info/dependency_links.txt
+uivault.egg-info/top_level.txt
