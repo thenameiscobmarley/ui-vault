@@ -182,13 +182,13 @@ int main(int argc, char** argv) {
   </section>
 
   <section class="sec" id="tokens">
-    <div class="sec-h rv"><p class="kicker">§ 04 — Tokens</p><h2>One palette, <em>three spellings.</em></h2><p>Every theme token as it appears in each API. Pick a theme and a language, then click a row to copy it.</p></div>
+    <div class="sec-h rv"><p class="kicker">§ 05 — Tokens</p><h2>One palette, <em>three spellings.</em></h2><p>Every theme token as it appears in each API. Pick a theme and a language, then click a row to copy it.</p></div>
     <div class="tok rv"><div class="tok-list" id="tokList"></div><div class="tok-main"><div class="tok-prev" id="tokPrev"></div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--rule)"><span class="kicker" id="tokName"></span><div class="fmt" id="fmt"><button aria-pressed="true" data-f="py">Python</button><button data-f="cpp">C++</button><button data-f="css">CSS</button></div></div>
       <table class="tok-table"><thead><tr><th>Token</th><th>Value</th><th>Solid</th><th>Use it</th></tr></thead><tbody id="tokRows"></tbody></table></div></div>
   </section>
 </main>
-<footer class="wrap">UI Vault 3.0.0 · MIT · Python package, C++ header and web library are generated from <code>lib/css/themes.src.css</code> by <code>tools/build.py</code> · <a href="https://github.com/thenameiscobmarley/ui-vault">GitHub</a></footer>
+<footer class="wrap">UI Vault 3.1.0 · MIT · Python package, C++ header and web library are generated from <code>lib/css/themes.src.css</code> by <code>tools/build.py</code> · <a href="https://github.com/thenameiscobmarley/ui-vault">GitHub</a></footer>
 
 <script src="lib/tokens.js"></script>
 <script src="lib/uivault.js"></script>
@@ -215,7 +215,7 @@ function hl(code, lang) {
 // ── terminal intro animation ──
 const SCRIPT = [
   ["$ ", "pip install \"git+https://github.com/thenameiscobmarley/ui-vault#subdirectory=python\""],
-  ["", "Successfully installed uivault-3.0.0", "mu"],
+  ["", "Successfully installed uivault-3.1.0", "mu"],
   ["$ ", "python -m uivault list"],
   ...NAMES.map(n => ["", `<span style="color:${T[n].solid.accent}">●</span> ${n.padEnd(10)} <span class="mu">${T[n].desc}</span>`, "html"]),
   ["$ ", "g++ -std=c++17 swatches.cpp && ./a.out"],
