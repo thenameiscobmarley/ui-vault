@@ -6,14 +6,14 @@ Run from the repo root after editing anything in lib/css or lib/js:
 """
 import json, re, sys, zipfile
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
-import theme_specs, parts_specs
+import theme_specs, parts_specs, layers_specs
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LIB, CSS, JS, DL = ROOT / "lib", ROOT / "lib" / "css", ROOT / "lib" / "js", ROOT / "downloads"
 VERSION = "3.1.0"
 CSS_ORDER = ["core", "components", "fx", "blocks"]
-JS_ORDER = ["core", "motion", "feedback", "forms", "fx", "waterfall"]
+JS_ORDER = ["core", "motion", "feedback", "forms", "fx", "waterfall", "layers"]
 DESC = {
     "core.css": "Tokens, light/dark, base helpers. Required.",
     "components.css": "Buttons, cards, forms, tabs, badges, overlays, nav, data, loaders, backgrounds.",
@@ -27,6 +27,7 @@ DESC = {
     "waterfall.js": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen).",
     "parts.css": "All element designs (buttons, cards, inputs, switches, tabs, nav, badges, alerts, modals, spinners, progress, headings, backgrounds) in one file.",
     "parts.json": "Every element design and kit as data (names, descriptions, Python/C++ approximations).",
+    "layers.js": "Effect layers: stack glow, shadow, border, backdrop, fill, shape, text, hover, press, entrance, idle and uv-fx effects on any element type or one element (UV.layers.apply).",
     "fx.js": "Canvas + pointer effects: matrix, starfield, particles, snow, cursor trail/blob, sparkles, magnet, gravity, fireworks.",
 }
 
@@ -86,6 +87,15 @@ def split_themes():
         themes.append({"name": name, "desc": desc, "file": f"css/themes/{name}.css", "category": cat})
     (CSS / "themes.css").write_text(f"/*! UI Vault {VERSION} · all themes. MIT */\n" + "\n".join((out_dir / f"{t['name']}.css").read_text() for t in themes))
     return themes
+
+
+def build_layers(parts_meta):
+    """lib/js/layers.js (runtime + definitions) and lib/layers.json (for UiVault3 / Python / C++)."""
+    meta = layers_specs.meta(parts_meta)
+    rt = (ROOT / "tools" / "layers.runtime.js").read_text().replace("@VERSION@", VERSION).replace("/*@DEFS@*/null", json.dumps(meta, ensure_ascii=False))
+    (JS / "layers.js").write_text(rt)
+    (LIB / "layers.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False))
+    return meta
 
 
 def bundle(themes):
@@ -343,8 +353,9 @@ def make_zip(m):
 
 if __name__ == "__main__":
     themes = split_themes()
-    bundle(themes)
     parts = build_parts()
+    layers = build_layers(parts)
+    bundle(themes)
     tokens = export_tokens(themes)
     export_cpp(tokens, parts)
     raw_src()
