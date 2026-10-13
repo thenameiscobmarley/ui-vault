@@ -88,7 +88,7 @@
   <div class="uv-row"><a class="uv-btn uv-btn--primary" href="docs.html">Read the docs</a><a class="uv-btn uv-btn--ghost" href="lib/uivault.css" download>uivault.css</a><a class="uv-btn uv-btn--ghost" href="lib/uivault.js" download>uivault.js</a></div>
 </section>
 
-<main class="wall" id="wall">
+<main class="wall" id="wall" data-uv-stagger>
 
 <!-- 1 Hero -->
 <article class="tile w2"><div class="stage uv-bg-aurora" style="min-height:380px">
@@ -405,6 +405,8 @@
 <script>
 // ── Glue for the showcase (everything visual comes from the library) ──
 const $ = s => document.querySelector(s);
+
+UV.scrollbar();
 
 // "Copy HTML" button on every tile
 document.querySelectorAll(".tile").forEach(t => {

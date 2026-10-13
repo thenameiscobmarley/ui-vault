@@ -2,8 +2,9 @@
 
 A curated vault of open-source UI resources: component kits, copy-paste blocks, motion, effects, post-processing, 3D, icons, logos, fonts, color, charts and native/game UI. It also has live, copy-ready snippets.
 
+- **Code APIs** (`code.html`): the same 12 themes for **Python** (`python/`: Qt, Tkinter, Textual, GTK4, Dear PyGui, matplotlib, Rich, CLI) and **C++** (`cpp/uivault.hpp`: Dear ImGui, JUCE, raygui, Qt). `pip install "git+https://github.com/thenameiscobmarley/ui-vault#subdirectory=python"`
 - **Quick start** (`quickstart.html`): 3-step setup, zip download, module table, 12-theme gallery, mix-and-match playground, 70+ effect gallery, custom bundle builder
-- **UV library (`lib/`)**: modular (`lib/css/*`, `lib/css/themes/*`, `lib/js/*`) or bundled (`uivault.css` / `uivault.js`). 12 scoped themes, 60+ `uv-fx-*` CSS effects, 13 JS effects. Rebuild bundles + zip with `python3 tools/build.py`. Older summary: `uivault.css` + `uivault.js`, 40+ components and a `UV.*` JS API (toast, modal, ⌘K palette, confetti, tilt, magnetic, count-up, typewriter, scramble, reveal, tabs, sounds). See `docs.html`
+- **UV library (`lib/`)**: modular (`lib/css/*`, `lib/css/themes/*`, `lib/js/*`) or bundled (`uivault.css` / `uivault.js`). 12 scoped themes, 60+ `uv-fx-*` CSS effects, 13 JS effects. Rebuild bundles, zips, tokens, the Python tokens and the C++ header with `python3 tools/build.py`. Scroll API: `data-uv-scrub` (sets `--p`), `data-uv-speed`, `UV.steps()`, `.uv-scrollbar`. Older summary: `uivault.css` + `uivault.js`, 40+ components and a `UV.*` JS API (toast, modal, ⌘K palette, confetti, tilt, magnetic, count-up, typewriter, scramble, reveal, tabs, sounds). See `docs.html`
 - **Blocks** (`blocks.html`): 41 responsive page sections (navbars, heroes, features, testimonials, FAQ, footers, app screens) with desktop/tablet/mobile and light/dark preview
 - **Showcase** (`showcase.html`): 30 interface pieces built only with the library (login, music player, game HUD, dashboard, chat, onboarding, and more)
 - **Library**: 270+ links with search, category tabs and favorites (saved in your browser)

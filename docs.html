@@ -45,7 +45,7 @@
 <body class="uv">
 <header class="top">
   <a class="brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--uv-bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--uv-accent)"/></svg>UI Vault <span class="uv-badge">Docs</span></a>
-  <nav class="uv-nav" style="border:0;background:none;padding:0"><a href="quickstart.html">Quick start</a><a href="./">Library</a><a class="is-active" href="docs.html">API Docs</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a></nav>
+  <nav class="uv-nav" style="border:0;background:none;padding:0"><a href="quickstart.html">Quick start</a><a href="./">Library</a><a class="is-active" href="docs.html">API Docs</a><a href="code.html">Python &amp; C++</a><a href="showcase.html">Showcase</a><a href="blocks.html">Blocks</a></nav>
   <button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.theme('toggle')" aria-label="Toggle theme">◐</button>
 </header>
 <div class="layout">
@@ -302,7 +302,7 @@ DOCS.forEach(([sec, id, title, desc, html, js]) => {
   if (sec !== lastSec) { const h = document.createElement("h4"); h.textContent = sec; side.appendChild(h); lastSec = sec; }
   const a = document.createElement("a"); a.href = "#" + id; a.textContent = title; a.dataset.k = (sec + " " + title + " " + desc).toLowerCase(); side.appendChild(a);
   const s = document.createElement("section");
-  s.className = "doc"; s.id = id;
+  s.className = "doc"; s.id = id; s.setAttribute("data-uv-reveal", "");
   const code = html + (js ? `\n\n<script>\n${js}\n</` + "script>" : "");
   s.innerHTML = `<h2>${title}<span class="uv-badge">${sec}</span></h2><p>${desc}</p>
     <div class="ex" id="ex-${id}"><div class="ex__preview">${html}</div>
@@ -347,6 +347,7 @@ const ra = document.createElement("a"); ra.href = "#reference"; ra.textContent =
 const q = document.getElementById("q");
 q.addEventListener("input", () => side.querySelectorAll("a").forEach(a => a.hidden = q.value && !a.dataset.k.includes(q.value.toLowerCase())));
 document.addEventListener("keydown", e => { if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); q.focus(); } });
+UV.scrollbar();
 const links = [...side.querySelectorAll("a")];
 const spy = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle("is-active", a.hash === "#" + e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
 document.querySelectorAll(".doc").forEach(d => spy.observe(d));
