@@ -4,7 +4,7 @@
   "use strict";
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const COLORS = { Page: "#ff6a26", Section: "#ffb26b", Theme: "#b46bff", Element: "#4fd2ff", Kit: "#ff4fd8", Effect: "#39ff88", Animation: "#ffd23f", Background: "#7fe3ff",
+  const COLORS = { Collection: "#ff8fb8", Page: "#ff6a26", Section: "#ffb26b", Theme: "#b46bff", Element: "#4fd2ff", Kit: "#ff4fd8", Effect: "#39ff88", Animation: "#ffd23f", Background: "#7fe3ff",
     Component: "#9aa3b0", Block: "#c9a96e", Docs: "#86b4ff", JavaScript: "#f7df1e", Python: "#4b8bbe", "C++": "#659ad2", Resource: "#a19d95" };
   const items = [];
   const add = (k, n, d, u, g) => items.push({ k, n, d: d || "", u, g: g || "", s: (n + " " + (d || "") + " " + (g || "") + " " + k).toLowerCase() });
@@ -23,12 +23,13 @@
     for (const k of L.kinds) if (k.key !== "fx") for (const o of k.options) add(anim.has(k.key) ? "Animation" : "Effect", `${o.label} · ${k.label}`, `${k.label} layer: stack it on any element`, `library.html?item=layer/${k.key}/${o.name}`, k.label);
     for (const k of L.pageKinds) for (const o of k.options) add("Background", `${o.label}`, `${k.label} for the whole page`, `library.html?item=layer/${k.key}/${o.name}`, k.label);
   }
+  for (const col of (window.UV_COLLECTIONS || {}).collections || []) for (const i of col.items) add("Collection", `${i.label} · ${col.label.replace(/s$/, "")}`, i.cls === "uv-icon" ? `icon "${i.name}"` : `class="${i.cls}"`, `library.html?item=col/${col.key}/${i.name}`, col.label);
   (window.BLOCKS || []).forEach(([cat, name], i) => add("Block", name, `${cat} section template`, `library.html?item=block/${i}`, cat));
   (window.RESOURCES || []).forEach(r => add("Resource", r[0], `${r[4]} · ${r[3]}`, r[1], r[2]));
 
   // ── counts + chips ───────────────────────────────────────────────────────
   const kinds = {}; items.forEach(i => kinds[i.k] = (kinds[i.k] || 0) + 1);
-  const order = ["Page", "Section", "Theme", "Element", "Kit", "Effect", "Animation", "Background", "Component", "Block", "Docs", "JavaScript", "Python", "C++", "Resource"].filter(k => kinds[k]);
+  const order = ["Page", "Section", "Theme", "Element", "Kit", "Effect", "Animation", "Background", "Collection", "Component", "Block", "Docs", "JavaScript", "Python", "C++", "Resource"].filter(k => kinds[k]);
   $("#counts").innerHTML = `<span><b>${items.length.toLocaleString()}</b> things</span>` + ["Theme", "Element", "Effect", "Animation", "Resource"].filter(k => kinds[k]).map(k => `<span><b>${kinds[k]}</b>${k.toLowerCase()}s</span>`).join("");
   let kind = "All";
   $("#chips").innerHTML = `<button type="button" class="on" data-k="All">All<small>${items.length}</small></button>` + order.map(k => `<button type="button" data-k="${k}">${k === "JavaScript" ? "JS" : k}<small>${kinds[k]}</small></button>`).join("");

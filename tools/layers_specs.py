@@ -150,6 +150,46 @@ KINDS = [
     ]),
 ]
 
+
+# ── more options (v10) ───────────────────────────────────────────────────────
+_MORE = {
+    "glow": [O("aura", "Aura", drop=[[0, 0, ".4*s", "c@80"], [0, 0, "1.2*s", "c2@50"], [0, 0, "2.4*s", "c@25"]]),
+             O("fire", "Fire", drop=[[0, "-.2*s", ".6*s", "#ffb300"], [0, 0, "1.4*s", "#ff3d00aa"]]),
+             O("ice", "Ice", drop=[[0, 0, ".6*s", "#bfe6ff"], [0, 0, "1.6*s", "#2a8be0aa"]]),
+             O("gold", "Gold", drop=[[0, 0, ".5*s", "#ffe08a"], [0, 0, "1.4*s", "#c9962eaa"]]),
+             O("tight", "Tight edge", drop=[[0, 0, ".15*s", "c"], [0, 0, ".3*s", "c@60"]]),
+             O("pink", "Hot pink", drop=[[0, 0, ".5*s", "#ff4fd8"], [0, 0, "1.5*s", "#ff4fd880"]])],
+    "shadow": [O("deep", "Deep", drop=[[0, "1.4*s", "2*s", "c@45"]]), O("colored", "Coloured (colour 2)", drop=[[0, ".6*s", "1.2*s", "c2@60"]]),
+               O("left", "Cast left", drop=[["-.5*s", ".4*s", ".6*s", "c@35"]]), O("right", "Cast right", drop=[[".5*s", ".4*s", ".6*s", "c@35"]]),
+               O("outline-hard", "Hard outline", drop=[[".15*s", 0, 0, "c"], ["-.15*s", 0, 0, "c"], [0, ".15*s", 0, "c"], [0, "-.15*s", 0, "c"]]),
+               O("retro", "Retro double", drop=[[".2*s", ".2*s", 0, "c2"], [".4*s", ".4*s", 0, "c@80"]])],
+    "border": [O("thick", "Thick ring", outline=["2*s", "solid", "c", 0]), O("inset", "Inset line", outline=["s", "solid", "c", "-2*s"]),
+               O("double-tight", "Tight double", outline=["2*s+1", "double", "c", "-s"]), O("dash-hover", "Dashed on hover", hover={"outline": ["s", "dashed", "c", "s"]}),
+               O("glow-ring", "Glowing ring", outline=["s", "solid", "c", "s"], drop=[[0, 0, "4*s", "c@70"]])],
+    "fill": [O("p-" + n, t, bg=g, fg=f) for n, t, g, f in [
+        ("sunset", "Sunset", "linear-gradient(135deg, #ff512f, #f09819, #ffd86f)", "#ffffff"), ("ocean", "Ocean", "linear-gradient(135deg, #2e3192, #1bffff)", "#ffffff"),
+        ("aurora", "Aurora", "linear-gradient(135deg, #00c9a7, #845ec2, #ff6f91)", "#ffffff"), ("peach", "Peach", "linear-gradient(135deg, #ffecd2, #fcb69f)", "#3a2010"),
+        ("lagoon", "Lagoon", "linear-gradient(135deg, #43cea2, #185a9d)", "#ffffff"), ("berry", "Berry", "linear-gradient(135deg, #8e2de2, #4a00e0)", "#ffffff"),
+        ("citrus", "Citrus", "linear-gradient(135deg, #f7971e, #ffd200)", "#2a1a00"), ("mint", "Mint", "linear-gradient(135deg, #d4fc79, #96e6a1)", "#123018"),
+        ("candy", "Candy", "linear-gradient(135deg, #ff9a9e, #fecfef, #a18cd1)", "#3a1030"), ("ember", "Ember", "linear-gradient(135deg, #ff416c, #ff4b2b)", "#ffffff"),
+        ("deep-space", "Deep space", "linear-gradient(135deg, #000428, #004e92)", "#e8f0ff"), ("lavender", "Lavender", "linear-gradient(135deg, #e0c3fc, #8ec5fc)", "#2a2050"),
+        ("vapor", "Vaporwave", "linear-gradient(135deg, #ff6ad5, #c774e8, #ad8cff, #94d0ff)", "#ffffff"), ("cosmic", "Cosmic", "linear-gradient(135deg, #ff00cc, #333399)", "#ffffff"),
+        ("forest", "Forest", "linear-gradient(135deg, #134e5e, #71b280)", "#ffffff"), ("rose-gold", "Rose gold", "linear-gradient(135deg, #b76e79, #e8c4a0, #f6e0c8)", "#3a1a1a")]],
+    "text": [O("chrome", "Chrome text", font={"grad": "linear-gradient(180deg, #ffffff 0%, #c9ced6 38%, #3b4048 50%, #dfe3ea 62%, #ffffff 100%)"}),
+             O("gold", "Gold text", font={"grad": "linear-gradient(180deg, #fff3c4 0%, #e6c25a 38%, #8a5f0c 52%, #d8b04a 64%, #fff0b8 100%)"}),
+             O("holo", "Holo text", font={"grad": "linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6)"}),
+             O("deep-metal", "Deep metal text", font={"grad": "linear-gradient(180deg, #3f74dc 22%, #d6e6ff 48%, #5b8ce8 54%, #23489a 76%)"}),
+             O("sunset", "Sunset text", font={"grad": "linear-gradient(90deg, #ff512f, #f09819, #ffd86f)"}), O("light", "Light weight", font={"fw": 300, "ls": ".02em"})],
+    "hover": [O("big-lift", "Big lift", hover={"y": "-6*s", "drop": [[0, "4*s", "6*s", "#00000055"]]}), O("nudge", "Nudge right", hover={"x": "4*s"}),
+              O("nudge-left", "Nudge left", hover={"x": "-4*s"}), O("twist", "Twist", hover={"rot": "6*s"}), O("dim", "Dim", hover={"bright": 0.85}),
+              O("glow-up", "Glow up", hover={"drop": [[0, 0, "14*s", "c"]], "y": "-2*s"}), O("grow", "Grow", hover={"scale": "1+.12*s"}), O("rubber", "Rubber band", hover={"anim": "uvl-rubber"})],
+    "press": [O("big-squish", "Big squish", active={"scale": "1-.12*s"}), O("flash", "Flash", active={"bright": 1.35}), O("push", "Push in", active={"y": "3*s", "scale": "1-.03*s"})],
+    "idle": [O("jelly", "Jelly loop", anim="uvl-jelly"), O("heartbeat", "Heartbeat", anim="uvl-heart"), O("swing", "Swing loop", anim="uvl-swing"),
+             O("bounce", "Bounce loop", anim="uvl-bounce"), O("rubber", "Rubber loop", anim="uvl-rubber"), O("glow-pulse", "Glow pulse", anim="uvl-glowpulse")],
+}
+for _k in KINDS:
+    _k["options"] += _MORE.get(_k["key"], [])
+
 # every existing uv-fx-* effect becomes a layer option too
 FX_ONLY = ["3d", "bevel", "blob", "blur-in", "bounce-in", "breathe", "checker", "chrome", "corners", "crt", "dashed-march", "dither", "fill-hover",
            "flip", "float", "frost", "glitch", "glow", "gradient-text", "grid-floor", "halftone", "hard-shadow", "highlight", "holo", "holo-card",

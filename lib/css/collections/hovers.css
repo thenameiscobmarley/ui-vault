@@ -1,0 +1,57 @@
+/*! UI Vault 3.1.0 · collections: image hovers (24). MIT */
+@keyframes uv-c-rot { to { transform: rotate(360deg); } }
+@keyframes uv-c-flow { 50% { background-position: 100% 50%; } }
+@keyframes uv-c-ping { 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@keyframes uv-c-breathe { 50% { transform: scale(.55); opacity: .5; } }
+@keyframes uv-c-ripple { from { transform: scale(.1); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+@keyframes uv-c-dots { 0% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 40%; } 33% { background-size: 33.3% 100%, 33.3% 40%, 33.3% 40%; } 66% { background-size: 33.3% 40%, 33.3% 100%, 33.3% 40%; } 100% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 100%; } }
+@keyframes uv-c-bars { 0%, 100% { background-size: 20% 100%, 20% 40%, 20% 70%; } 33% { background-size: 20% 40%, 20% 100%, 20% 40%; } 66% { background-size: 20% 70%, 20% 40%, 20% 100%; } }
+@keyframes uv-c-slide { 0% { background-position: -30% 0; } 100% { background-position: 130% 0; } }
+@keyframes uv-c-roll { to { background-position: 22.6px 0; } }
+@keyframes uv-c-fill { 0% { background-size: 0 100%; } 80%, 100% { background-size: 100% 100%; } }
+@keyframes uv-c-flip { 0% { transform: perspective(80px) rotateX(0) rotateY(0); } 50% { transform: perspective(80px) rotateX(-180deg) rotateY(0); } 100% { transform: perspective(80px) rotateX(-180deg) rotateY(-180deg); } }
+@keyframes uv-c-sqspin { 25% { transform: rotate(90deg); } 50% { transform: rotate(180deg) scale(.6); } 75% { transform: rotate(270deg); } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-hg { 50% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uv-c-heart { 0%, 100% { transform: rotate(45deg) scale(1); } 30% { transform: rotate(45deg) scale(1.2); } }
+@keyframes uv-c-bounce { from { transform: translateY(0) scale(1.1, .9); } to { transform: translateY(-26px); } }
+@keyframes uv-c-typing { 0%, 100% { background-position: 10px 50%, 25px 50%, 40px 50%; } 20% { background-position: 10px 30%, 25px 50%, 40px 50%; } 40% { background-position: 10px 50%, 25px 30%, 40px 50%; } 60% { background-position: 10px 50%, 25px 50%, 40px 30%; } }
+@property --uv-c-p { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@keyframes uv-c-pie { to { --uv-c-p: 100%; } }
+@keyframes uv-c-blink { 50% { opacity: .3; } }
+@keyframes uv-c-wave { to { background-position: 20% 50%; } }
+@keyframes uv-c-shimmer { to { background-position: -200% 0; } }
+@keyframes uv-c-bounce-t { to { transform: translateY(-6px); letter-spacing: .3em; } }
+@keyframes uv-c-cube { 25% { transform: rotate(90deg) scale(.7); border-radius: 50%; } 50% { transform: rotate(180deg); border-radius: 0; } 75% { transform: rotate(270deg) scale(.7); border-radius: 50%; } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-dna { to { background-position: 14px 0, 21px 100%; } }
+@keyframes uv-c-glitch { 0% { transform: translate(0); clip-path: inset(0 0 0 0); } 50% { transform: translate(-3px, 1px); clip-path: inset(0 30% 0 0); } 100% { transform: translate(2px, -1px); clip-path: inset(0 0 0 40%); } }
+@keyframes uv-c-pan { to { background-position: 200% 0; } }
+@keyframes uv-c-sheen { 0%, 60% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+@keyframes uv-c-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .45; } }
+@keyframes uv-c-tglitch { 0%, 92%, 100% { text-shadow: 2px 0 #ff2bd6, -2px 0 #00f0ff; transform: none; } 94% { text-shadow: -3px 0 #ff2bd6, 3px 0 #00f0ff; transform: translateX(2px); } 97% { transform: translateX(-2px); } }
+@keyframes uv-c-waveText { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+@keyframes uv-c-blurin { from { filter: blur(8px); opacity: .2; letter-spacing: .3em; } }
+.uv-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.uv-hv-zoom .img { transition: transform .5s; } .uv-hv-zoom:hover .img { transform: scale(1.12); } .uv-hv-zoom figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-zoom-out .img { transform: scale(1.15); transition: transform .5s; } .uv-hv-zoom-out:hover .img { transform: scale(1); } .uv-hv-zoom-out figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-rotate .img { transition: transform .5s; } .uv-hv-rotate:hover .img { transform: scale(1.2) rotate(4deg); } .uv-hv-rotate figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-grayscale .img { filter: grayscale(1); transition: filter .4s; } .uv-hv-grayscale:hover .img { filter: none; } .uv-hv-grayscale figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-blur .img { transition: filter .4s; } .uv-hv-blur:hover .img { filter: blur(4px); } .uv-hv-blur figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-brighten .img { filter: brightness(.7); transition: filter .4s; } .uv-hv-brighten:hover .img { filter: brightness(1.1); } .uv-hv-brighten figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-sepia .img { filter: sepia(.8); transition: filter .4s; } .uv-hv-sepia:hover .img { filter: none; } .uv-hv-sepia figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-caption-up figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 14px; background: #000a; color: #fff; translate: 0 100%; transition: translate .35s; } .uv-hv-caption-up:hover figcaption { translate: 0 0; } .uv-hv-caption-up figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-caption-fade figcaption { position: absolute; inset: 0; display: grid; place-items: center; background: #000a; color: #fff; opacity: 0; transition: opacity .35s; } .uv-hv-caption-fade:hover figcaption { opacity: 1; } .uv-hv-caption-fade figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-overlay-accent figcaption { position: absolute; inset: 0; display: grid; place-items: center; background: color-mix(in srgb, var(--uv-accent) 75%, transparent); color: #fff; font-weight: 700; clip-path: circle(0 at 50% 50%); transition: clip-path .5s; } .uv-hv-overlay-accent:hover figcaption { clip-path: circle(75% at 50% 50%); } .uv-hv-overlay-accent figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-wipe figcaption { position: absolute; inset: 0; display: grid; place-items: center; background: var(--uv-text); color: var(--uv-bg); clip-path: inset(0 100% 0 0); transition: clip-path .45s; } .uv-hv-wipe:hover figcaption { clip-path: inset(0 0 0 0); } .uv-hv-wipe figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-curtain figcaption { position: absolute; inset: 0; display: grid; place-items: center; background: #000c; color: #fff; clip-path: inset(50% 0 50% 0); transition: clip-path .45s; } .uv-hv-curtain:hover figcaption { clip-path: inset(0 0 0 0); } .uv-hv-curtain figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-tilt { transition: transform .35s; } .uv-hv-tilt:hover { transform: perspective(600px) rotateX(6deg) rotateY(-8deg); } .uv-hv-tilt figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-lift { transition: translate .3s, box-shadow .3s; } .uv-hv-lift:hover { translate: 0 -6px; box-shadow: 0 20px 30px -14px #000a; } .uv-hv-lift figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-frame::after { content: ''; position: absolute; inset: 10px; border: 2px solid #fff; opacity: 0; transform: scale(1.1); transition: all .35s; } .uv-hv-frame:hover::after { opacity: 1; transform: none; } .uv-hv-frame figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-shine::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, #ffffff60 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } .uv-hv-shine:hover::after { translate: 120% 0; } .uv-hv-shine figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-glow { transition: box-shadow .35s; } .uv-hv-glow:hover { box-shadow: 0 0 0 2px var(--uv-accent), 0 0 30px -4px var(--uv-accent); } .uv-hv-glow figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-duotone .img { filter: grayscale(1) contrast(1.2); } .uv-hv-duotone::after { content: ''; position: absolute; inset: 0; background: var(--uv-accent); mix-blend-mode: multiply; transition: opacity .4s; } .uv-hv-duotone:hover::after { opacity: 0; } .uv-hv-duotone figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-scanlines::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, #0004 0 1px, transparent 1px 3px); opacity: 0; transition: opacity .3s; } .uv-hv-scanlines:hover::after { opacity: 1; } .uv-hv-scanlines figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-pixelate::after { content: ''; position: absolute; inset: 0; background: conic-gradient(#000 25%, transparent 0 50%, #000 0 75%, transparent 0) 0 0 / 12px 12px; opacity: .6; transition: opacity .4s; } .uv-hv-pixelate:hover::after { opacity: 0; } .uv-hv-pixelate figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-round { transition: border-radius .5s; } .uv-hv-round:hover { border-radius: 50% !important; } .uv-hv-round figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-skew { transition: transform .35s; } .uv-hv-skew:hover { transform: skewY(-3deg); } .uv-hv-skew figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-border-draw::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(var(--uv-accent) 0 0) 0 0 / 0 3px no-repeat, linear-gradient(var(--uv-accent) 0 0) 100% 100% / 0 3px no-repeat; transition: background-size .5s; } .uv-hv-border-draw:hover::after { background-size: 100% 3px; } .uv-hv-border-draw figcaption { font: 600 14px var(--uv-font); }
+.uv-hv-hue .img { transition: filter .6s; } .uv-hv-hue:hover .img { filter: hue-rotate(120deg); } .uv-hv-hue figcaption { font: 600 14px var(--uv-font); }

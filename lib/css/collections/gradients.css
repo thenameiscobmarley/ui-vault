@@ -1,0 +1,156 @@
+/*! UI Vault 3.1.0 · collections: gradients (123). MIT */
+@keyframes uv-c-rot { to { transform: rotate(360deg); } }
+@keyframes uv-c-flow { 50% { background-position: 100% 50%; } }
+@keyframes uv-c-ping { 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@keyframes uv-c-breathe { 50% { transform: scale(.55); opacity: .5; } }
+@keyframes uv-c-ripple { from { transform: scale(.1); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+@keyframes uv-c-dots { 0% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 40%; } 33% { background-size: 33.3% 100%, 33.3% 40%, 33.3% 40%; } 66% { background-size: 33.3% 40%, 33.3% 100%, 33.3% 40%; } 100% { background-size: 33.3% 40%, 33.3% 40%, 33.3% 100%; } }
+@keyframes uv-c-bars { 0%, 100% { background-size: 20% 100%, 20% 40%, 20% 70%; } 33% { background-size: 20% 40%, 20% 100%, 20% 40%; } 66% { background-size: 20% 70%, 20% 40%, 20% 100%; } }
+@keyframes uv-c-slide { 0% { background-position: -30% 0; } 100% { background-position: 130% 0; } }
+@keyframes uv-c-roll { to { background-position: 22.6px 0; } }
+@keyframes uv-c-fill { 0% { background-size: 0 100%; } 80%, 100% { background-size: 100% 100%; } }
+@keyframes uv-c-flip { 0% { transform: perspective(80px) rotateX(0) rotateY(0); } 50% { transform: perspective(80px) rotateX(-180deg) rotateY(0); } 100% { transform: perspective(80px) rotateX(-180deg) rotateY(-180deg); } }
+@keyframes uv-c-sqspin { 25% { transform: rotate(90deg); } 50% { transform: rotate(180deg) scale(.6); } 75% { transform: rotate(270deg); } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-hg { 50% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uv-c-heart { 0%, 100% { transform: rotate(45deg) scale(1); } 30% { transform: rotate(45deg) scale(1.2); } }
+@keyframes uv-c-bounce { from { transform: translateY(0) scale(1.1, .9); } to { transform: translateY(-26px); } }
+@keyframes uv-c-typing { 0%, 100% { background-position: 10px 50%, 25px 50%, 40px 50%; } 20% { background-position: 10px 30%, 25px 50%, 40px 50%; } 40% { background-position: 10px 50%, 25px 30%, 40px 50%; } 60% { background-position: 10px 50%, 25px 50%, 40px 30%; } }
+@property --uv-c-p { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@keyframes uv-c-pie { to { --uv-c-p: 100%; } }
+@keyframes uv-c-blink { 50% { opacity: .3; } }
+@keyframes uv-c-wave { to { background-position: 20% 50%; } }
+@keyframes uv-c-shimmer { to { background-position: -200% 0; } }
+@keyframes uv-c-bounce-t { to { transform: translateY(-6px); letter-spacing: .3em; } }
+@keyframes uv-c-cube { 25% { transform: rotate(90deg) scale(.7); border-radius: 50%; } 50% { transform: rotate(180deg); border-radius: 0; } 75% { transform: rotate(270deg) scale(.7); border-radius: 50%; } 100% { transform: rotate(360deg); } }
+@keyframes uv-c-dna { to { background-position: 14px 0, 21px 100%; } }
+@keyframes uv-c-glitch { 0% { transform: translate(0); clip-path: inset(0 0 0 0); } 50% { transform: translate(-3px, 1px); clip-path: inset(0 30% 0 0); } 100% { transform: translate(2px, -1px); clip-path: inset(0 0 0 40%); } }
+@keyframes uv-c-pan { to { background-position: 200% 0; } }
+@keyframes uv-c-sheen { 0%, 60% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+@keyframes uv-c-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .45; } }
+@keyframes uv-c-tglitch { 0%, 92%, 100% { text-shadow: 2px 0 #ff2bd6, -2px 0 #00f0ff; transform: none; } 94% { text-shadow: -3px 0 #ff2bd6, 3px 0 #00f0ff; transform: translateX(2px); } 97% { transform: translateX(-2px); } }
+@keyframes uv-c-waveText { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+@keyframes uv-c-blurin { from { filter: blur(8px); opacity: .2; letter-spacing: .3em; } }
+.uv-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.uv-g-sunset { background: linear-gradient(135deg, #ff512f, #f09819, #ffd86f); }
+.uv-g-sunset-glow { background: radial-gradient(120% 90% at 20% 10%, #ff512f 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ffd86f 0%, transparent 60%), #f09819; }
+.uv-g-sunset-conic { background: conic-gradient(from 200deg at 60% 40%, #ff512f, #f09819, #ffd86f, #ff512f); }
+.uv-g-ocean { background: linear-gradient(135deg, #2e3192, #1bffff); }
+.uv-g-ocean-glow { background: radial-gradient(120% 90% at 20% 10%, #2e3192 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #1bffff 0%, transparent 60%), #0b0b10; }
+.uv-g-ocean-conic { background: conic-gradient(from 200deg at 60% 40%, #2e3192, #1bffff, #2e3192); }
+.uv-g-aurora { background: linear-gradient(135deg, #00c9a7, #845ec2, #ff6f91); }
+.uv-g-aurora-glow { background: radial-gradient(120% 90% at 20% 10%, #00c9a7 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ff6f91 0%, transparent 60%), #845ec2; }
+.uv-g-aurora-conic { background: conic-gradient(from 200deg at 60% 40%, #00c9a7, #845ec2, #ff6f91, #00c9a7); }
+.uv-g-peach { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+.uv-g-peach-glow { background: radial-gradient(120% 90% at 20% 10%, #ffecd2 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #fcb69f 0%, transparent 60%), #0b0b10; }
+.uv-g-peach-conic { background: conic-gradient(from 200deg at 60% 40%, #ffecd2, #fcb69f, #ffecd2); }
+.uv-g-lagoon { background: linear-gradient(135deg, #43cea2, #185a9d); }
+.uv-g-lagoon-glow { background: radial-gradient(120% 90% at 20% 10%, #43cea2 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #185a9d 0%, transparent 60%), #0b0b10; }
+.uv-g-lagoon-conic { background: conic-gradient(from 200deg at 60% 40%, #43cea2, #185a9d, #43cea2); }
+.uv-g-berry { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+.uv-g-berry-glow { background: radial-gradient(120% 90% at 20% 10%, #8e2de2 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #4a00e0 0%, transparent 60%), #0b0b10; }
+.uv-g-berry-conic { background: conic-gradient(from 200deg at 60% 40%, #8e2de2, #4a00e0, #8e2de2); }
+.uv-g-citrus { background: linear-gradient(135deg, #f7971e, #ffd200); }
+.uv-g-citrus-glow { background: radial-gradient(120% 90% at 20% 10%, #f7971e 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ffd200 0%, transparent 60%), #0b0b10; }
+.uv-g-citrus-conic { background: conic-gradient(from 200deg at 60% 40%, #f7971e, #ffd200, #f7971e); }
+.uv-g-mint { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
+.uv-g-mint-glow { background: radial-gradient(120% 90% at 20% 10%, #d4fc79 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #96e6a1 0%, transparent 60%), #0b0b10; }
+.uv-g-mint-conic { background: conic-gradient(from 200deg at 60% 40%, #d4fc79, #96e6a1, #d4fc79); }
+.uv-g-candy { background: linear-gradient(135deg, #ff9a9e, #fecfef, #a18cd1); }
+.uv-g-candy-glow { background: radial-gradient(120% 90% at 20% 10%, #ff9a9e 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #a18cd1 0%, transparent 60%), #fecfef; }
+.uv-g-candy-conic { background: conic-gradient(from 200deg at 60% 40%, #ff9a9e, #fecfef, #a18cd1, #ff9a9e); }
+.uv-g-ember { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
+.uv-g-ember-glow { background: radial-gradient(120% 90% at 20% 10%, #ff416c 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ff4b2b 0%, transparent 60%), #0b0b10; }
+.uv-g-ember-conic { background: conic-gradient(from 200deg at 60% 40%, #ff416c, #ff4b2b, #ff416c); }
+.uv-g-deep-space { background: linear-gradient(135deg, #000428, #004e92); }
+.uv-g-deep-space-glow { background: radial-gradient(120% 90% at 20% 10%, #000428 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #004e92 0%, transparent 60%), #0b0b10; }
+.uv-g-deep-space-conic { background: conic-gradient(from 200deg at 60% 40%, #000428, #004e92, #000428); }
+.uv-g-lavender { background: linear-gradient(135deg, #e0c3fc, #8ec5fc); }
+.uv-g-lavender-glow { background: radial-gradient(120% 90% at 20% 10%, #e0c3fc 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #8ec5fc 0%, transparent 60%), #0b0b10; }
+.uv-g-lavender-conic { background: conic-gradient(from 200deg at 60% 40%, #e0c3fc, #8ec5fc, #e0c3fc); }
+.uv-g-coral { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+.uv-g-coral-glow { background: radial-gradient(120% 90% at 20% 10%, #ff7e5f 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #feb47b 0%, transparent 60%), #0b0b10; }
+.uv-g-coral-conic { background: conic-gradient(from 200deg at 60% 40%, #ff7e5f, #feb47b, #ff7e5f); }
+.uv-g-forest { background: linear-gradient(135deg, #134e5e, #71b280); }
+.uv-g-forest-glow { background: radial-gradient(120% 90% at 20% 10%, #134e5e 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #71b280 0%, transparent 60%), #0b0b10; }
+.uv-g-forest-conic { background: conic-gradient(from 200deg at 60% 40%, #134e5e, #71b280, #134e5e); }
+.uv-g-royal { background: linear-gradient(135deg, #141e30, #243b55); }
+.uv-g-royal-glow { background: radial-gradient(120% 90% at 20% 10%, #141e30 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #243b55 0%, transparent 60%), #0b0b10; }
+.uv-g-royal-conic { background: conic-gradient(from 200deg at 60% 40%, #141e30, #243b55, #141e30); }
+.uv-g-flamingo { background: linear-gradient(135deg, #ee9ca7, #ffdde1); }
+.uv-g-flamingo-glow { background: radial-gradient(120% 90% at 20% 10%, #ee9ca7 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ffdde1 0%, transparent 60%), #0b0b10; }
+.uv-g-flamingo-conic { background: conic-gradient(from 200deg at 60% 40%, #ee9ca7, #ffdde1, #ee9ca7); }
+.uv-g-neon-dream { background: linear-gradient(135deg, #f72585, #7209b7, #3a0ca3, #4cc9f0); }
+.uv-g-neon-dream-glow { background: radial-gradient(120% 90% at 20% 10%, #f72585 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #4cc9f0 0%, transparent 60%), #3a0ca3; }
+.uv-g-neon-dream-conic { background: conic-gradient(from 200deg at 60% 40%, #f72585, #7209b7, #3a0ca3, #4cc9f0, #f72585); }
+.uv-g-gold-rush { background: linear-gradient(135deg, #f9d423, #ff4e50); }
+.uv-g-gold-rush-glow { background: radial-gradient(120% 90% at 20% 10%, #f9d423 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ff4e50 0%, transparent 60%), #0b0b10; }
+.uv-g-gold-rush-conic { background: conic-gradient(from 200deg at 60% 40%, #f9d423, #ff4e50, #f9d423); }
+.uv-g-arctic { background: linear-gradient(135deg, #e0eafc, #cfdef3); }
+.uv-g-arctic-glow { background: radial-gradient(120% 90% at 20% 10%, #e0eafc 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #cfdef3 0%, transparent 60%), #0b0b10; }
+.uv-g-arctic-conic { background: conic-gradient(from 200deg at 60% 40%, #e0eafc, #cfdef3, #e0eafc); }
+.uv-g-cosmic { background: linear-gradient(135deg, #ff00cc, #333399); }
+.uv-g-cosmic-glow { background: radial-gradient(120% 90% at 20% 10%, #ff00cc 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #333399 0%, transparent 60%), #0b0b10; }
+.uv-g-cosmic-conic { background: conic-gradient(from 200deg at 60% 40%, #ff00cc, #333399, #ff00cc); }
+.uv-g-lime-punch { background: linear-gradient(135deg, #a8ff78, #78ffd6); }
+.uv-g-lime-punch-glow { background: radial-gradient(120% 90% at 20% 10%, #a8ff78 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #78ffd6 0%, transparent 60%), #0b0b10; }
+.uv-g-lime-punch-conic { background: conic-gradient(from 200deg at 60% 40%, #a8ff78, #78ffd6, #a8ff78); }
+.uv-g-velvet { background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b); }
+.uv-g-velvet-glow { background: radial-gradient(120% 90% at 20% 10%, #3a1c71 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ffaf7b 0%, transparent 60%), #d76d77; }
+.uv-g-velvet-conic { background: conic-gradient(from 200deg at 60% 40%, #3a1c71, #d76d77, #ffaf7b, #3a1c71); }
+.uv-g-steel { background: linear-gradient(135deg, #bdc3c7, #2c3e50); }
+.uv-g-steel-glow { background: radial-gradient(120% 90% at 20% 10%, #bdc3c7 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #2c3e50 0%, transparent 60%), #0b0b10; }
+.uv-g-steel-conic { background: conic-gradient(from 200deg at 60% 40%, #bdc3c7, #2c3e50, #bdc3c7); }
+.uv-g-mango { background: linear-gradient(135deg, #ffe259, #ffa751); }
+.uv-g-mango-glow { background: radial-gradient(120% 90% at 20% 10%, #ffe259 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ffa751 0%, transparent 60%), #0b0b10; }
+.uv-g-mango-conic { background: conic-gradient(from 200deg at 60% 40%, #ffe259, #ffa751, #ffe259); }
+.uv-g-rose-gold { background: linear-gradient(135deg, #b76e79, #e8c4a0, #f6e0c8); }
+.uv-g-rose-gold-glow { background: radial-gradient(120% 90% at 20% 10%, #b76e79 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #f6e0c8 0%, transparent 60%), #e8c4a0; }
+.uv-g-rose-gold-conic { background: conic-gradient(from 200deg at 60% 40%, #b76e79, #e8c4a0, #f6e0c8, #b76e79); }
+.uv-g-sky { background: linear-gradient(135deg, #56ccf2, #2f80ed); }
+.uv-g-sky-glow { background: radial-gradient(120% 90% at 20% 10%, #56ccf2 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #2f80ed 0%, transparent 60%), #0b0b10; }
+.uv-g-sky-conic { background: conic-gradient(from 200deg at 60% 40%, #56ccf2, #2f80ed, #56ccf2); }
+.uv-g-toxic { background: linear-gradient(135deg, #bff098, #6fd6ff); }
+.uv-g-toxic-glow { background: radial-gradient(120% 90% at 20% 10%, #bff098 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #6fd6ff 0%, transparent 60%), #0b0b10; }
+.uv-g-toxic-conic { background: conic-gradient(from 200deg at 60% 40%, #bff098, #6fd6ff, #bff098); }
+.uv-g-dusk { background: linear-gradient(135deg, #2c3e50, #fd746c); }
+.uv-g-dusk-glow { background: radial-gradient(120% 90% at 20% 10%, #2c3e50 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #fd746c 0%, transparent 60%), #0b0b10; }
+.uv-g-dusk-conic { background: conic-gradient(from 200deg at 60% 40%, #2c3e50, #fd746c, #2c3e50); }
+.uv-g-plum { background: linear-gradient(135deg, #614385, #516395); }
+.uv-g-plum-glow { background: radial-gradient(120% 90% at 20% 10%, #614385 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #516395 0%, transparent 60%), #0b0b10; }
+.uv-g-plum-conic { background: conic-gradient(from 200deg at 60% 40%, #614385, #516395, #614385); }
+.uv-g-tropic { background: linear-gradient(135deg, #00f260, #0575e6); }
+.uv-g-tropic-glow { background: radial-gradient(120% 90% at 20% 10%, #00f260 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #0575e6 0%, transparent 60%), #0b0b10; }
+.uv-g-tropic-conic { background: conic-gradient(from 200deg at 60% 40%, #00f260, #0575e6, #00f260); }
+.uv-g-fire { background: linear-gradient(135deg, #f12711, #f5af19); }
+.uv-g-fire-glow { background: radial-gradient(120% 90% at 20% 10%, #f12711 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #f5af19 0%, transparent 60%), #0b0b10; }
+.uv-g-fire-conic { background: conic-gradient(from 200deg at 60% 40%, #f12711, #f5af19, #f12711); }
+.uv-g-blush { background: linear-gradient(135deg, #ffafbd, #ffc3a0); }
+.uv-g-blush-glow { background: radial-gradient(120% 90% at 20% 10%, #ffafbd 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #ffc3a0 0%, transparent 60%), #0b0b10; }
+.uv-g-blush-conic { background: conic-gradient(from 200deg at 60% 40%, #ffafbd, #ffc3a0, #ffafbd); }
+.uv-g-midnight-city { background: linear-gradient(135deg, #232526, #414345); }
+.uv-g-midnight-city-glow { background: radial-gradient(120% 90% at 20% 10%, #232526 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #414345 0%, transparent 60%), #0b0b10; }
+.uv-g-midnight-city-conic { background: conic-gradient(from 200deg at 60% 40%, #232526, #414345, #232526); }
+.uv-g-sea-glass { background: linear-gradient(135deg, #a1ffce, #faffd1); }
+.uv-g-sea-glass-glow { background: radial-gradient(120% 90% at 20% 10%, #a1ffce 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #faffd1 0%, transparent 60%), #0b0b10; }
+.uv-g-sea-glass-conic { background: conic-gradient(from 200deg at 60% 40%, #a1ffce, #faffd1, #a1ffce); }
+.uv-g-vapor { background: linear-gradient(135deg, #ff6ad5, #c774e8, #ad8cff, #8795e8, #94d0ff); }
+.uv-g-vapor-glow { background: radial-gradient(120% 90% at 20% 10%, #ff6ad5 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #94d0ff 0%, transparent 60%), #ad8cff; }
+.uv-g-vapor-conic { background: conic-gradient(from 200deg at 60% 40%, #ff6ad5, #c774e8, #ad8cff, #8795e8, #94d0ff, #ff6ad5); }
+.uv-g-printstream { background: linear-gradient(135deg, #ffffff, #e9e1f7, #d6efff, #fff1d6); }
+.uv-g-printstream-glow { background: radial-gradient(120% 90% at 20% 10%, #ffffff 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #fff1d6 0%, transparent 60%), #d6efff; }
+.uv-g-printstream-conic { background: conic-gradient(from 200deg at 60% 40%, #ffffff, #e9e1f7, #d6efff, #fff1d6, #ffffff); }
+.uv-g-deep-metal { background: linear-gradient(135deg, #a9cbff, #3f74dc, #0a2560, #1d4cad, #86b4ff); }
+.uv-g-deep-metal-glow { background: radial-gradient(120% 90% at 20% 10%, #a9cbff 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #86b4ff 0%, transparent 60%), #0a2560; }
+.uv-g-deep-metal-conic { background: conic-gradient(from 200deg at 60% 40%, #a9cbff, #3f74dc, #0a2560, #1d4cad, #86b4ff, #a9cbff); }
+.uv-g-chrome { background: linear-gradient(135deg, #ffffff, #dfe3ea, #8a919c, #c9ced6, #f4f6f9); }
+.uv-g-chrome-glow { background: radial-gradient(120% 90% at 20% 10%, #ffffff 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #f4f6f9 0%, transparent 60%), #8a919c; }
+.uv-g-chrome-conic { background: conic-gradient(from 200deg at 60% 40%, #ffffff, #dfe3ea, #8a919c, #c9ced6, #f4f6f9, #ffffff); }
+.uv-g-gold-leaf { background: linear-gradient(135deg, #fff3c4, #e6c25a, #9a6f12, #d8b04a); }
+.uv-g-gold-leaf-glow { background: radial-gradient(120% 90% at 20% 10%, #fff3c4 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #d8b04a 0%, transparent 60%), #9a6f12; }
+.uv-g-gold-leaf-conic { background: conic-gradient(from 200deg at 60% 40%, #fff3c4, #e6c25a, #9a6f12, #d8b04a, #fff3c4); }
+.uv-g-holo { background: linear-gradient(135deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a); }
+.uv-g-holo-glow { background: radial-gradient(120% 90% at 20% 10%, #ff9ae6 0%, transparent 55%), radial-gradient(100% 90% at 90% 100%, #fff59a 0%, transparent 60%), #b8ff9a; }
+.uv-g-holo-conic { background: conic-gradient(from 200deg at 60% 40%, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); }
+.uv-g-theme { background: linear-gradient(135deg, var(--uv-accent), var(--uv-accent-2)); }
+.uv-g-theme-mesh { background: radial-gradient(at 15% 15%, color-mix(in srgb, var(--uv-accent) 60%, transparent) 0, transparent 50%), radial-gradient(at 85% 20%, color-mix(in srgb, var(--uv-accent-2) 55%, transparent) 0, transparent 50%), radial-gradient(at 50% 100%, color-mix(in srgb, var(--uv-accent) 40%, transparent) 0, transparent 60%), var(--uv-surface); }
+.uv-g-animated { background: linear-gradient(120deg, #ff6ad5, #8795e8, #94d0ff, #ff6ad5) 0 0 / 300% 300%; animation: uv-c-flow 8s ease infinite; }
