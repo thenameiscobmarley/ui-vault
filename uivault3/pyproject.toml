@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uivault3"
+version = "1.0.0"
+description = "UI Vault designs as real custom-painted PySide6 widgets: 273 element designs, 87 themes, 18 kits, effect layers"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["PySide6-Essentials>=6.5"]
+
+[project.urls]
+Homepage = "https://thenameiscobmarley.github.io/ui-vault/"
+
+[tool.setuptools]
+packages = ["uivault3"]
+
+[tool.setuptools.package-data]
+uivault3 = ["data/*.json"]

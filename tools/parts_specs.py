@@ -751,3 +751,90 @@ def meta():
         for fk, pn in kit["parts"].items():
             assert pn in names[fk], f"kit {kit['name']}: unknown {fk} part {pn!r}"
     return {"families": fams, "kits": kits}
+
+
+# ── Native export (UiVault3 for PySide6 / Qt C++) ────────────────────────────
+# Each design's CSS becomes rules {"sub": part of the widget, "when": [states], "decl": {property: value}}.
+# Values keep var(--uv-*) / color-mix() so the native engine resolves them against any theme.
+NATIVE_BASE = {
+    "btn": "$ { background: %S2; color: %T; border: 1px solid %L; border-radius: 8px; font-weight: 500; }\n$:hover { border-color: %T; }\n$P { background: %T; color: %BG; border-color: %T; }\n$P:hover { background: %A; color: #fff; border-color: %A; }\n$:active { transform: translateY(1px); }",
+    "card": "$ { background: %S; border: 1px solid %L; border-radius: 10px; }",
+    "input": "$ { background: %S; border: 1px solid %L; border-radius: 6px; color: %T; }\n$:focus { border-color: %A; box-shadow: 0 0 0 3px ~A22; }\n$::placeholder { color: %M; }",
+    "switch": "$ i { width: 46px; height: 26px; border-radius: 99px; background: %S3; border: 1px solid %L; }\n$ i::after { top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 2px 6px #0005; }\n$ input:checked + i { background: %A; border-color: %A; }\n$ input:checked + i::after { transform: translateX(20px); }",
+    "check": "$ input { width: 20px; height: 20px; border-radius: 4px; border: 2px solid %L; background: transparent; }\n$ input:checked { background: %A; border-color: %A; }\n$ input::after { border-color: %OA; }\n$ input[type=radio] { border-radius: 50%; }",
+    "range": "$ { height: 4px; border-radius: 99px; background: linear-gradient(90deg, %A var(--v), %L var(--v)); }\n$::-webkit-slider-thumb { width: 16px; height: 16px; border-radius: 50%; background: %BG; border: 2px solid %T; }",
+    "tabs": "$ { background: transparent; border: 1px solid %L; border-radius: 10px; }\n$ > button { color: %M; border-radius: 7px; }\n$ > button[aria-selected=\"true\"] { color: %OA; }\n$ > .uv-tabs__ind { background: %A; border-radius: 7px; }",
+    "nav": "$ { background: %S; border: 1px solid %L1; border-radius: 12px; }\n$I { color: %M; border-radius: 8px; }\n$I:hover { color: %T; background: %S2; }\n$A { color: %T; background: %S2; }",
+    "badge": "$ { border-radius: 4px; border: 1px solid var(--k); background: transparent; color: var(--k); font: 500 11px var(--uv-mono); text-transform: uppercase; }",
+    "alert": "$ { border: 0; border-left: 3px solid var(--k); border-radius: 6px; background: %S; color: %T; }",
+    "modal": "$ { background: %S; border: 1px solid %L; border-radius: 12px; box-shadow: 0 30px 80px -20px #000b; }",
+    "spinner": "$ { border: 3px solid %L; border-top-color: %A; border-radius: 50%; animation: uv-rot .8s linear infinite; }",
+    "progress": "$ { height: 6px; border-radius: 99px; background: %L; }\n$ > i { border-radius: 99px; background: %A; }",
+    "head": "$ { color: %T; }",
+    "bg": "$ { background: %BG; }",
+}
+
+_SUB = [  # (regex on the selector remainder, sub-element name)
+    (r"^$", "main"), (r"^::before$", "::before"), (r"^::after$", "::after"), (r"^::placeholder$", "placeholder"), (r"^::backdrop$", "backdrop"),
+    (r"^ i$", "i"), (r"^ i::after$", "i::after"), (r"^ i::before$", "i::before"), (r"^ input \+ i$", "i"), (r"^ input \+ i::after$", "i::after"), (r"^ input \+ i::before$", "i::before"),
+    (r"^ input$", "input"), (r"^ input::after$", "input::after"),
+    (r"^ > button$", "button"), (r"^ > \.uv-tabs__ind$", "ind"), (r"^ > i$", "bar"), (r"^::-webkit-slider-thumb$", "thumb"),
+    (r"^ \.uv-toast__icon$", "icon"), (r"^ :is\(\.uv-muted, \.uv-dim, p\)$", "muted"), (r"^ :is\(\.uv-h3, h3, h4\)$", "title"),
+]
+_COND = [(":not($P)", "notprimary"), (":hover", "hover"), (":active", "active"), (":focus-visible", "focus"), (":focus", "focus"), (":checked", "checked"),
+         ('[aria-selected="true"]', "selected"), ("[type=radio]", "radio"), (".is-loading", "loading"), ("[open]", "open"), (":is(.uv-sidenav, .uv-menu)", "vertical")]
+
+
+def _norm_selector(sel):
+    s = sel.strip()
+    when = set()
+    if s.startswith("$P"): when.add("primary"); s = s[2:]
+    elif s.startswith("$A"): when.add("current"); s = s[2:]; sub_prefix = "item"
+    elif s.startswith("$I"): s = s[2:]; sub_prefix = "item"
+    elif s.startswith("$"): s = s[1:]
+    else: return None
+    sub_prefix = "item" if sel.strip().startswith(("$I", "$A")) else None
+    for tok, c in _COND:
+        if tok in s: when.add(c); s = s.replace(tok, "")
+    if ":is(" in s.replace(":is(.uv-muted, .uv-dim, p)", "").replace(":is(.uv-h3, h3, h4)", "") or "::-moz" in s: return None
+    for rx, sub in _SUB:
+        if re.match(rx, s):
+            if sub_prefix: sub = "item" if sub == "main" else None
+            return (sub, sorted(when)) if sub else None
+    return None
+
+
+def _rules(css, fam):
+    out = []
+    css = expand_values(css)
+    for chunk in css.split("}"):
+        if "{" not in chunk: continue
+        sels, body = chunk.split("{", 1)
+        decl = {}
+        for d in re.split(r";(?![^(]*\))", body):
+            if ":" in d:
+                k, v = d.split(":", 1); decl[k.strip()] = v.strip()
+        if not decl: continue
+        for sel in re.split(r",(?![^(]*\))", sels):
+            n = _norm_selector(sel.strip())
+            if n: out.append({"sub": n[0], "when": n[1], "decl": decl})
+    return out
+
+
+def expand_values(css):
+    """The value half of expand(): tokens, colour helpers and gradient constants (selectors stay in $ shorthand)."""
+    css = css.replace("PEARL", PEARL).replace("CHROME", CHROME).replace("GOLD", GOLD).replace("DEEP", DEEP).replace("HOLO", HOLO)
+    keys = "A2|BG|S2|S3|L1|OA|A|T|S|L|M|K"
+    css = re.sub(r"DK\((" + keys + r"),(\d+)\)", lambda m: f"color-mix(in srgb, {tok(m[1])}, #000 {m[2]}%)", css)
+    css = re.sub(r"LT\((" + keys + r"),(\d+)\)", lambda m: f"color-mix(in srgb, {tok(m[1])}, #fff {m[2]}%)", css)
+    css = re.sub(r"~(BG|S2|S3|OA|A|B|T|S|K)(\d+)", lambda m: f"color-mix(in srgb, {tok(m[1])} {m[2]}%, transparent)", css)
+    return re.sub(r"%(" + keys + r")\b", lambda m: tok(m[1]), css)
+
+
+def native():
+    fams = {}
+    for f in FAMILIES:
+        k = f["key"]
+        fams[k] = {"base": _rules(NATIVE_BASE[k], f), "reset": _rules(f["reset"], f),
+                   "parts": {p["name"]: _rules(p["css"], f) for p in f["parts"]}}
+    return {"families": fams, "kits": [{"name": n, "label": l, "theme": t, "parts": ps} for n, l, _, t, ps in KITS]}
