@@ -770,7 +770,7 @@
   },
   {
    "path": "css/themes/liquid-chrome.css",
-   "bytes": 3325,
+   "bytes": 3323,
    "desc": ""
   },
   {
@@ -965,7 +965,7 @@
   },
   {
    "path": "css/themes/tiger-tooth.css",
-   "bytes": 3460,
+   "bytes": 3296,
    "desc": ""
   },
   {
@@ -1000,7 +1000,7 @@
   },
   {
    "path": "css/themes.css",
-   "bytes": 214623,
+   "bytes": 214457,
    "desc": "All 12 themes in one file."
   },
   {
@@ -1030,7 +1030,7 @@
   },
   {
    "path": "uivault.css",
-   "bytes": 288754,
+   "bytes": 288588,
    "desc": ""
   },
   {

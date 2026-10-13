@@ -122,12 +122,16 @@ def head_css(kind, c, dark, args):
     if kind == "plain": return ""
     if kind == "metal":  # deep → bright band → deep, like polished anodised metal
         d, l = (args + [darken(a, .45), lighten(a, .55)])[:2]
+        if dark and lum(d) < .32: d = mix(d, l, .42)   # keep the dark band readable on dark backgrounds
         return f"background-image: linear-gradient(100deg, transparent 35%, {alpha('#ffffff', .55)} 50%, transparent 65%), linear-gradient(180deg, {d} 28%, {l} 50%, {mix(d, l, .35)} 54%, {d} 74%); background-size: 250% 100%, 100% 100%; {clip} animation: uvt-sheen 7s ease-in-out infinite;"
     if kind == "chrome":
+        if not dark: return f"background-image: linear-gradient(180deg, #3a404a 0%, #9aa3b0 40%, #1e232b 52%, #6b7480 68%, #2a2f38 100%); {clip} filter: drop-shadow(0 1px 0 #ffffff);"
         return f"background-image: linear-gradient(180deg, #ffffff 0%, #c9ced6 38%, #3b4048 50%, #dfe3ea 62%, #ffffff 100%); {clip} filter: drop-shadow(0 1px 0 {alpha('#000000', .35)});"
     if kind == "gradient": return f"background-image: linear-gradient(90deg, {a}, {b}); {clip}"
-    if kind == "holo": return f"background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; {clip} animation: uvt-holo 8s linear infinite;"
-    if kind == "pearl": return f"background-image: linear-gradient(115deg, #7a6a9e, #c7b8e8 30%, #8fc9df 50%, #d9c99a 70%, #7a6a9e); background-size: 250% 100%; {clip} animation: uvt-holo 10s linear infinite;"
+    if kind == "holo":
+        stops = "#ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6" if dark else "#c2369f, #2f7fc4, #2f9e45, #b8901a, #c2369f"
+        return f"background-image: linear-gradient(115deg, {stops}); background-size: 300% 100%; {clip} animation: uvt-holo 8s linear infinite;"
+    if kind == "pearl": return f"background-image: linear-gradient(115deg, #4f3f86, #9a86d8 30%, #3f93b8 50%, #a88a3e 70%, #4f3f86); background-size: 250% 100%; {clip} animation: uvt-holo 10s linear infinite;"
     if kind == "outline": return f"color: transparent; -webkit-text-stroke: 1.5px {c['text']};"
     if kind == "glow": return f"color: {lighten(a, .55)}; text-shadow: 0 0 6px {alpha(a, .9)}, 0 0 22px {alpha(a, .6)}, 0 0 48px {alpha(a, .35)};"
     if kind == "shadow3d":
@@ -309,8 +313,8 @@ SIGNATURE = [
       extra="h1.uv-h1, h2.uv-h2 { background-image: linear-gradient(90deg, #e8322f, #f5c518 50%, #2f6be8); }"),
     T("case-hardened", "Signature", "heat-treated steel: blue, gold and bronze patina", "#1a1f2b", "#eef1f7", "#3f7bd9", "#d6a84a", font="rajdhani", head="rajdhani",
       bgfx=("mesh",), headfx=("metal", "#1d3f7a", "#f3d79a"), btn="metal", hover="shine", card="metal", case="uppercase", weight=700, shape="crisp"),
-    T("tiger-tooth", "Signature", "molten gold with tiger stripes", "#1a1205", "#fff4d6", "#ffb000", "#ff7a00", font="rajdhani", head="bebas", bgfx=("tiger",),
-      headfx=("metal", "#7a4a00", "#fff1b8"), btn="metal", hover="shine", card="metal", case="uppercase", shape="crisp"),
+    T("tiger-tooth", "Signature", "molten gold with tiger stripes", "#ffb000", "#1f1200", "#1f1200", "#ff7a00", font="rajdhani", head="bebas", bgfx=("tiger",),
+      headfx=("metal", "#3a2000", "#fff1b8"), btn="ink", hover="shine", card="glass", case="uppercase", shape="crisp"),
     T("damascus", "Signature", "folded steel with flowing grain", "#202326", "#e9ecef", "#9aa6b2", "#d0d7de", font="geist", head="grotesk", bgfx=("damascus",),
       headfx=("chrome",), btn="chrome", hover="shine", card="metal", weight=700, shape="crisp"),
     T("crimson-web", "Signature", "deep crimson with a black web pattern", "#3a0306", "#ffe6e6", "#ff2a35", "#000000", font="rajdhani", head="bebas", bgfx=("web",),

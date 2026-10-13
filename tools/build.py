@@ -197,12 +197,13 @@ def export_cpp(tokens):
     for name, t in tokens["themes"].items():
         pal = lambda src: "Palette{" + ", ".join(col(src.get(k, t["colors"]["text"])) for k, _ in CPP_KEYS) + "}"
         sh = t["shape"]
-        out.append(f"/// {t['desc']}\ninline constexpr Theme {name}{{ {q(name)}, {q(t['desc'])}, {'true' if t['dark'] else 'false'},\n"
+        ident = name.replace("-", "_")
+        out.append(f"/// {t['desc']}\ninline constexpr Theme {ident}{{ {q(name)}, {q(t['desc'])}, {q(t['category'])}, {'true' if t['dark'] else 'false'},\n"
                    f"    {pal(t['colors'])},\n    {pal(t['solid'])},\n"
                    f"    {q(t['fonts'].get('font', ''))}, {q(t['fonts'].get('font-head', ''))}, {q(t['fonts'].get('mono', ''))},\n"
                    f"    {float(sh.get('r-xs', 0))!r}f, {float(sh.get('r-sm', 0))!r}f, {float(sh.get('r', 0))!r}f, {float(sh.get('r-lg', 0))!r}f, {float(sh.get('bw', 1))!r}f }};")
     names = list(tokens["themes"])
-    out.append("inline constexpr const Theme* themes[] = { " + ", ".join("&" + n for n in names) + " };")
+    out.append("inline constexpr const Theme* themes[] = { " + ", ".join("&" + n.replace("-", "_") for n in names) + " };")
     out.append(f"inline constexpr int themeCount = {len(names)};")
     out.append("/// Find a theme by name; returns nullptr if unknown.\ninline const Theme* find(const char* name) {\n"
                "    for (const Theme* t : themes) if (std::strcmp(t->name, name) == 0) return t;\n    return nullptr;\n}")

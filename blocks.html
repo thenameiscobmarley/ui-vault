@@ -9,6 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="lib/css/fonts.css" />
 <link rel="stylesheet" href="lib/uivault.css" />
 <link rel="stylesheet" href="lib/css/blocks.css" />
 <style>
@@ -43,7 +44,7 @@
 <body class="uv">
 <header class="top">
   <a class="brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--uv-bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--uv-accent)"/></svg>UI Vault <span class="uv-badge">Blocks</span></a>
-  <nav class="uv-nav" style="border:0;background:none;padding:0"><a href="quickstart.html">Quick start</a><a href="./">Library</a><a href="docs.html">Docs</a><a href="code.html">Python &amp; C++</a><a href="showcase.html">Showcase</a><a class="is-active" href="blocks.html">Blocks</a></nav>
+  <nav class="uv-nav" style="border:0;background:none;padding:0"><a href="quickstart.html">Quick start</a><a href="./">Library</a><a href="docs.html">Docs</a><a href="themes.html">Themes</a><a href="code.html">Python &amp; C++</a><a href="showcase.html">Showcase</a><a class="is-active" href="blocks.html">Blocks</a></nav>
   <button class="uv-btn uv-btn--ghost uv-btn--sm" onclick="UV.theme('toggle')" aria-label="Toggle theme">◐</button>
 </header>
 <div class="layout">
@@ -60,6 +61,7 @@
 </div>
 <script src="lib/uivault.js"></script>
 <script src="assets/js/raw.js"></script>
+<script src="assets/js/picker.js" defer></script>
 <script src="assets/js/blocks.js"></script>
 <script>
 const list = document.getElementById("list"), side = document.getElementById("side");

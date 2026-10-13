@@ -1158,7 +1158,7 @@
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;
   background-image: radial-gradient(55% 45% at 18% 8%, #ffd9f3cc, transparent 70%), radial-gradient(45% 50% at 88% 14%, #cdeeffcc, transparent 70%), radial-gradient(60% 55% at 70% 95%, #e7ffdccc, transparent 70%), radial-gradient(40% 40% at 30% 75%, #fff2d6aa, transparent 70%), conic-gradient(from 200deg at 65% 55%, #ffffff, #f4ecff, #e8f7ff, #fdf8ea, #ffffff);
 }
-[data-uv-theme="pearl"] .uv-h1, [data-uv-theme="pearl"] .uv-h2 { background-image: linear-gradient(115deg, #7a6a9e, #c7b8e8 30%, #8fc9df 50%, #d9c99a 70%, #7a6a9e); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 10s linear infinite; }
+[data-uv-theme="pearl"] .uv-h1, [data-uv-theme="pearl"] .uv-h2 { background-image: linear-gradient(115deg, #4f3f86, #9a86d8 30%, #3f93b8 50%, #a88a3e 70%, #4f3f86); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 10s linear infinite; }
 [data-uv-theme="pearl"] .uv-btn--primary, [data-uv-theme="pearl"] .uv-btn--grad { background: linear-gradient(115deg, #ffffff, #f2e6ff 30%, #e2f5ff 55%, #fff5e1 80%, #ffffff); background-size: 200% 100%; color: #3a2f5a; border: 1px solid #d9cfee; box-shadow: inset 0 1px 0 #fff, 0 6px 16px -8px #7a6a9e88; }
 [data-uv-theme="pearl"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="pearl"] .uv-card { background: linear-gradient(135deg, #ffffffee, #f6efffdd 40%, #eaf8ffdd 70%, #fffaf0ee); border: 1px solid #e3d8f5; box-shadow: inset 0 1px 0 #fff, 0 18px 40px -22px #7a6a9e88; }
@@ -1202,7 +1202,7 @@
   color-scheme: dark;
   background-image: radial-gradient(45% 55% at 12% 10%, #1a2f8f73, transparent 70%), radial-gradient(40% 50% at 88% 22%, #0b155061, transparent 70%), radial-gradient(55% 50% at 55% 100%, #2a4ad059, transparent 70%);
 }
-[data-uv-theme="sapphire-metal"] .uv-h1, [data-uv-theme="sapphire-metal"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #0d1f6b 28%, #d9e6ff 50%, #54659f 54%, #0d1f6b 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="sapphire-metal"] .uv-h1, [data-uv-theme="sapphire-metal"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #6373a9 28%, #d9e6ff 50%, #8c9bc7 54%, #6373a9 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="sapphire-metal"] .uv-btn--primary, [data-uv-theme="sapphire-metal"] .uv-btn--grad { background: linear-gradient(180deg, #a8bcff 0%, #5a81ff 45%, #2e50bf 55%, #507aff 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #254099; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #25409999; }
 [data-uv-theme="sapphire-metal"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="sapphire-metal"] .uv-card { background: repeating-linear-gradient(90deg, #ffffff0a 0 1px, transparent 1px 3px), linear-gradient(180deg, #242940, #11162f); border-color: #ffffff2e; box-shadow: inset 0 1px 0 #ffffff40; }
@@ -1265,7 +1265,7 @@
   color-scheme: dark;
   background-image: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 60%, #fff, transparent), radial-gradient(1.5px 1.5px at 40% 80%, #ffffffcc, transparent), radial-gradient(1px 1px at 85% 15%, #fff, transparent), radial-gradient(60% 50% at 30% 30%, #19e38a73, transparent 70%), radial-gradient(50% 60% at 80% 70%, #7affd173, transparent 70%); background-size: 220px 220px, 260px 260px, 300px 300px, 180px 180px, 100% 100%, 100% 100%;
 }
-[data-uv-theme="emerald"] .uv-h1, [data-uv-theme="emerald"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #06402a 28%, #b7ffe0 50%, #44836a 54%, #06402a 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="emerald"] .uv-h1, [data-uv-theme="emerald"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #509076 28%, #b7ffe0 50%, #74b79b 54%, #509076 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="emerald"] .uv-btn--primary, [data-uv-theme="emerald"] .uv-btn--grad { background: linear-gradient(180deg, #98f2ca 0%, #3ce79c 45%, #13aa68 55%, #30e696 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #0f8853; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #0f885399; }
 [data-uv-theme="emerald"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="emerald"] .uv-card { background: #ffffff14; border: 1px solid #ffffff38; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 #ffffff4c, 0 18px 40px -20px #00000073; }
@@ -1286,7 +1286,7 @@
   color-scheme: dark;
   background-image: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 60%, #fff, transparent), radial-gradient(1.5px 1.5px at 40% 80%, #ffffffcc, transparent), radial-gradient(1px 1px at 85% 15%, #fff, transparent), radial-gradient(60% 50% at 30% 30%, #ff1f4f73, transparent 70%), radial-gradient(50% 60% at 80% 70%, #ff8aa373, transparent 70%); background-size: 220px 220px, 260px 260px, 300px 300px, 180px 180px, 100% 100%, 100% 100%;
 }
-[data-uv-theme="ruby"] .uv-h1, [data-uv-theme="ruby"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #5a0018 28%, #ffd0db 50%, #94495c 54%, #5a0018 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="ruby"] .uv-h1, [data-uv-theme="ruby"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #9f576a 28%, #ffd0db 50%, #c18192 54%, #9f576a 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="ruby"] .uv-btn--primary, [data-uv-theme="ruby"] .uv-btn--grad { background: linear-gradient(180deg, #ff9ab0 0%, #ff4169 45%, #bf173b 55%, #ff3561 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #99132f; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #99132f99; }
 [data-uv-theme="ruby"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="ruby"] .uv-card { background: #ffffff14; border: 1px solid #ffffff38; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 #ffffff4c, 0 18px 40px -20px #00000073; }
@@ -1328,7 +1328,7 @@
   color-scheme: dark;
   background-image: radial-gradient(at 15% 15%, #3f7bd98c 0, transparent 50%), radial-gradient(at 85% 10%, #d6a84a80 0, transparent 50%), radial-gradient(at 60% 100%, #8a929273 0, transparent 55%);
 }
-[data-uv-theme="case-hardened"] .uv-h1, [data-uv-theme="case-hardened"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #1d3f7a 28%, #f3d79a 50%, #687485 54%, #1d3f7a 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="case-hardened"] .uv-h1, [data-uv-theme="case-hardened"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #777f87 28%, #f3d79a 50%, #a29e8e 54%, #777f87 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="case-hardened"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
 [data-uv-theme="case-hardened"] .uv-btn--primary, [data-uv-theme="case-hardened"] .uv-btn--grad { background: linear-gradient(180deg, #a9c4ee 0%, #5c8fdf 45%, #2f5ca3 55%, #5288dd 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #264a82; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #264a8299; }
 [data-uv-theme="case-hardened"] .uv-btn--primary:hover { filter: brightness(1.06); }
@@ -1343,22 +1343,21 @@
 
 /*! UI Vault 3.1.0 · theme: tiger-tooth — molten gold with tiger stripes. Needs core.css. MIT */
 [data-uv-theme="tiger-tooth"] {
-  --uv-bg: #1a1205; --uv-text: #fff4d6; --uv-accent: #ffb000; --uv-accent-2: #ff7a00; --uv-surface: #251d0f; --uv-surface-2: #2f2618; --uv-surface-3: #3c3424; --uv-line: #fff4d624; --uv-line-2: #fff4d642; --uv-muted: #b6ac93; --uv-dim: #887e69; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #ffb000; --uv-text: #1f1200; --uv-accent: #1f1200; --uv-accent-2: #ff7a00; --uv-surface: #ffdb8c; --uv-surface-2: #f2a700; --uv-surface-3: #e69f00; --uv-line: #1f12001a; --uv-line-2: #1f12002e; --uv-muted: #674500; --uv-dim: #936400; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
-  color-scheme: dark;
-  background-image: repeating-linear-gradient(115deg, transparent 0 18px, #00000059 18px 24px, transparent 24px 46px, #00000040 46px 50px), linear-gradient(135deg, #ffb000, #ff7a00);
+  background-image: repeating-linear-gradient(115deg, transparent 0 18px, #00000059 18px 24px, transparent 24px 46px, #00000040 46px 50px), linear-gradient(135deg, #1f1200, #ff7a00);
 }
-[data-uv-theme="tiger-tooth"] .uv-h1, [data-uv-theme="tiger-tooth"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #7a4a00 28%, #fff1b8 50%, #a98440 54%, #7a4a00 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="tiger-tooth"] .uv-h1, [data-uv-theme="tiger-tooth"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #3a2000 28%, #fff1b8 50%, #7f6940 54%, #3a2000 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="tiger-tooth"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
-[data-uv-theme="tiger-tooth"] .uv-btn--primary, [data-uv-theme="tiger-tooth"] .uv-btn--grad { background: linear-gradient(180deg, #ffdb8c 0%, #ffbc26 45%, #bf8400 55%, #ffb81a 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #996a00; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #996a0099; }
+[data-uv-theme="tiger-tooth"] .uv-btn--primary, [data-uv-theme="tiger-tooth"] .uv-btn--grad { background: #1f1200; color: #ffb000; border-color: #1f1200; }
 [data-uv-theme="tiger-tooth"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="tiger-tooth"] .uv-card { background: repeating-linear-gradient(90deg, #ffffff0a 0 1px, transparent 1px 3px), linear-gradient(180deg, #362f22, #251d0f); border-color: #ffffff2e; box-shadow: inset 0 1px 0 #ffffff40; }
-[data-uv-theme="tiger-tooth"] .uv-tabs > .uv-tabs__ind { background: #ffb000; } [data-uv-theme="tiger-tooth"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="tiger-tooth"] .uv-switch input:checked + i, [data-uv-theme="tiger-tooth"] .uv-check input:checked { background: #ffb000; border-color: #ffb000; }
-[data-uv-theme="tiger-tooth"] .uv-progress > i { background: #ffb000; } [data-uv-theme="tiger-tooth"] .uv-ring { background: conic-gradient(#ffb000 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="tiger-tooth"] .uv-input:focus, [data-uv-theme="tiger-tooth"] .uv-select:focus, [data-uv-theme="tiger-tooth"] .uv-textarea:focus { border-color: #ffb000; box-shadow: 0 0 0 3px #ffb00038; }
+[data-uv-theme="tiger-tooth"] .uv-card { background: #ffffff73; border: 1px solid #ffffffbf; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 #ffffff4c, 0 18px 40px -20px #00000073; }
+[data-uv-theme="tiger-tooth"] .uv-tabs > .uv-tabs__ind { background: #1f1200; } [data-uv-theme="tiger-tooth"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="tiger-tooth"] .uv-switch input:checked + i, [data-uv-theme="tiger-tooth"] .uv-check input:checked { background: #1f1200; border-color: #1f1200; }
+[data-uv-theme="tiger-tooth"] .uv-progress > i { background: #1f1200; } [data-uv-theme="tiger-tooth"] .uv-ring { background: conic-gradient(#1f1200 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="tiger-tooth"] .uv-input:focus, [data-uv-theme="tiger-tooth"] .uv-select:focus, [data-uv-theme="tiger-tooth"] .uv-textarea:focus { border-color: #1f1200; box-shadow: 0 0 0 3px #1f120038; }
 [data-uv-theme="tiger-tooth"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
 [data-uv-theme="tiger-tooth"] .uv-btn::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff80 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } [data-uv-theme="tiger-tooth"] .uv-btn:hover::after { translate: 120% 0; }
 [data-uv-theme="tiger-tooth"] .uv-card--hover:hover { translate: 0 -4px; }
@@ -1438,7 +1437,7 @@
   color-scheme: dark;
   background-image: radial-gradient(45% 55% at 12% 10%, #7a001073, transparent 70%), radial-gradient(40% 50% at 88% 22%, #3a000861, transparent 70%), radial-gradient(55% 50% at 55% 100%, #b0001a59, transparent 70%);
 }
-[data-uv-theme="candy-apple"] .uv-h1, [data-uv-theme="candy-apple"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #5a0010 28%, #ffc2cc 50%, #944452 54%, #5a0010 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="candy-apple"] .uv-h1, [data-uv-theme="candy-apple"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #9f515f 28%, #ffc2cc 50%, #c17985 54%, #9f515f 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="candy-apple"] .uv-btn--primary, [data-uv-theme="candy-apple"] .uv-btn--grad { background: linear-gradient(180deg, #f1939f 0%, #e5344a 45%, #a80c20 55%, #e3283f 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #860a19; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #860a1999; }
 [data-uv-theme="candy-apple"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="candy-apple"] .uv-card { background: #ffffff14; border: 1px solid #ffffff38; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 #ffffff4c, 0 18px 40px -20px #00000073; }
@@ -1459,7 +1458,7 @@
   color-scheme: dark;
   background-image: repeating-linear-gradient(90deg, #ffffff0d 0 1px, transparent 1px 3px), linear-gradient(180deg, #2a2d3d, #0d1022 45%, #0c0e1f);
 }
-[data-uv-theme="anodized"] .uv-h1, [data-uv-theme="anodized"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #1a2370 28%, #d4dcff 50%, #5b64a2 54%, #1a2370 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="anodized"] .uv-h1, [data-uv-theme="anodized"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #6871ac 28%, #d4dcff 50%, #8e96c9 54%, #6871ac 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="anodized"] .uv-btn--primary, [data-uv-theme="anodized"] .uv-btn--grad { background: linear-gradient(180deg, #b0bcff 0%, #6981ff 45%, #3b50bf 55%, #617aff 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #2f4099; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #2f409999; }
 [data-uv-theme="anodized"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="anodized"] .uv-card { background: repeating-linear-gradient(90deg, #ffffff0a 0 1px, transparent 1px 3px), linear-gradient(180deg, #2a2d3e, #181b2d); border-color: #ffffff2e; box-shadow: inset 0 1px 0 #ffffff40; }
@@ -1501,7 +1500,7 @@
   color-scheme: dark;
   background-image: repeating-linear-gradient(90deg, #ffffff0d 0 1px, transparent 1px 3px), linear-gradient(180deg, #36393d, #1b1e22 45%, #181b1f);
 }
-[data-uv-theme="gunmetal"] .uv-h1, [data-uv-theme="gunmetal"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #3a4652 28%, #e9eff5 50%, #77818b 54%, #3a4652 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="gunmetal"] .uv-h1, [data-uv-theme="gunmetal"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #848d96 28%, #e9eff5 50%, #a7afb7 54%, #848d96 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="gunmetal"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
 [data-uv-theme="gunmetal"] .uv-btn--primary, [data-uv-theme="gunmetal"] .uv-btn--grad { background: linear-gradient(180deg, #cdd6df 0%, #a0b1c3 45%, #6b7a8a 55%, #9aacbf 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #56626e; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #56626e99; }
 [data-uv-theme="gunmetal"] .uv-btn--primary:hover { filter: brightness(1.06); }
@@ -1543,7 +1542,7 @@
   color-scheme: dark;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-[data-uv-theme="gold-leaf"] .uv-h1, [data-uv-theme="gold-leaf"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #6a4a10 28%, #fff2c2 50%, #9e854e 54%, #6a4a10 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="gold-leaf"] .uv-h1, [data-uv-theme="gold-leaf"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #a9915b 28%, #fff2c2 50%, #c7b37f 54%, #a9915b 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
 [data-uv-theme="gold-leaf"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
 [data-uv-theme="gold-leaf"] .uv-btn--primary, [data-uv-theme="gold-leaf"] .uv-btn--grad { background: linear-gradient(180deg, #ecd7a6 0%, #dab358 45%, #9f7c2c 55%, #d8af4e 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #7f6423; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #7f642399; }
 [data-uv-theme="gold-leaf"] .uv-btn--primary:hover { filter: brightness(1.06); }
@@ -1564,7 +1563,7 @@
   --uv-head-weight: 800; --uv-head-case: none;
   background-image: radial-gradient(45% 55% at 12% 10%, #ff9ae673, transparent 70%), radial-gradient(40% 50% at 88% 22%, #9ad3ff61, transparent 70%), radial-gradient(55% 50% at 55% 100%, #b8ff9a59, transparent 70%);
 }
-[data-uv-theme="holo-foil"] .uv-h1, [data-uv-theme="holo-foil"] .uv-h2 { background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 8s linear infinite; }
+[data-uv-theme="holo-foil"] .uv-h1, [data-uv-theme="holo-foil"] .uv-h2 { background-image: linear-gradient(115deg, #c2369f, #2f7fc4, #2f9e45, #b8901a, #c2369f); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 8s linear infinite; }
 [data-uv-theme="holo-foil"] .uv-btn--primary, [data-uv-theme="holo-foil"] .uv-btn--grad { background: linear-gradient(135deg, #7a5cff, #ff5cc8); color: #ffffff; border-color: transparent; }
 [data-uv-theme="holo-foil"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="holo-foil"] .uv-card { border: 1.5px solid transparent; background: linear-gradient(#fafafc, #fafafc) padding-box, linear-gradient(135deg, #7a5cff, #ff5cc8) border-box; }
@@ -1650,7 +1649,7 @@
   --uv-head-weight: 800; --uv-head-case: none;
   background-image: radial-gradient(45% 55% at 12% 10%, #ffffff73, transparent 70%), radial-gradient(40% 50% at 88% 22%, #b9c7d861, transparent 70%), radial-gradient(55% 50% at 55% 100%, #e8eef559, transparent 70%);
 }
-[data-uv-theme="liquid-chrome"] .uv-h1, [data-uv-theme="liquid-chrome"] .uv-h2 { background-image: linear-gradient(180deg, #ffffff 0%, #c9ced6 38%, #3b4048 50%, #dfe3ea 62%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 1px 0 #00000059); }
+[data-uv-theme="liquid-chrome"] .uv-h1, [data-uv-theme="liquid-chrome"] .uv-h2 { background-image: linear-gradient(180deg, #3a404a 0%, #9aa3b0 40%, #1e232b 52%, #6b7480 68%, #2a2f38 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 1px 0 #ffffff); }
 [data-uv-theme="liquid-chrome"] .uv-btn--primary, [data-uv-theme="liquid-chrome"] .uv-btn--grad { background: linear-gradient(180deg, #ffffff, #d7dbe2 45%, #8b929c 52%, #e9ecf1); color: #1b1f26; border: 1px solid #8b929c; box-shadow: inset 0 1px 0 #fff, 0 3px 10px -4px #0007; }
 [data-uv-theme="liquid-chrome"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="liquid-chrome"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #151a220f, 0 14px 34px -14px #151a2259; }

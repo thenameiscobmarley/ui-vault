@@ -6,7 +6,7 @@
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;
   background-image: radial-gradient(55% 45% at 18% 8%, #ffd9f3cc, transparent 70%), radial-gradient(45% 50% at 88% 14%, #cdeeffcc, transparent 70%), radial-gradient(60% 55% at 70% 95%, #e7ffdccc, transparent 70%), radial-gradient(40% 40% at 30% 75%, #fff2d6aa, transparent 70%), conic-gradient(from 200deg at 65% 55%, #ffffff, #f4ecff, #e8f7ff, #fdf8ea, #ffffff);
 }
-[data-uv-theme="pearl"] .uv-h1, [data-uv-theme="pearl"] .uv-h2 { background-image: linear-gradient(115deg, #7a6a9e, #c7b8e8 30%, #8fc9df 50%, #d9c99a 70%, #7a6a9e); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 10s linear infinite; }
+[data-uv-theme="pearl"] .uv-h1, [data-uv-theme="pearl"] .uv-h2 { background-image: linear-gradient(115deg, #4f3f86, #9a86d8 30%, #3f93b8 50%, #a88a3e 70%, #4f3f86); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 10s linear infinite; }
 [data-uv-theme="pearl"] .uv-btn--primary, [data-uv-theme="pearl"] .uv-btn--grad { background: linear-gradient(115deg, #ffffff, #f2e6ff 30%, #e2f5ff 55%, #fff5e1 80%, #ffffff); background-size: 200% 100%; color: #3a2f5a; border: 1px solid #d9cfee; box-shadow: inset 0 1px 0 #fff, 0 6px 16px -8px #7a6a9e88; }
 [data-uv-theme="pearl"] .uv-btn--primary:hover { filter: brightness(1.06); }
 [data-uv-theme="pearl"] .uv-card { background: linear-gradient(135deg, #ffffffee, #f6efffdd 40%, #eaf8ffdd 70%, #fffaf0ee); border: 1px solid #e3d8f5; box-shadow: inset 0 1px 0 #fff, 0 18px 40px -22px #7a6a9e88; }

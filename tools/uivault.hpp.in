@@ -37,6 +37,7 @@ struct Palette {
 struct Theme {
     const char* name;
     const char* description;
+    const char* category;   // Minimal, Dark, Pastel, Bold, Retro, Nature, Signature
     bool dark;
     Palette color;   // as designed (may contain alpha)
     Palette solid;   // alpha pre-blended over bg — use for toolkits without transparency
