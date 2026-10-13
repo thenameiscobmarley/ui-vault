@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3D Skins — UI Vault</title>
+<meta name="description" content="Real-time 3D objects in 26 animated mastery camos — animated obsidian, dark matter, damascus, gold, diamond and more. Drag to turn them, copy the markup, zip only what you pick." />
+<meta name="theme-color" content="#121211" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="lib/css/fonts.css" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<style>
+
+
+  :root { --pg-bg: #121211; --pg-bg2: #181817; --pg-bg3: #222220; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", serif; }
+  html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
+  html[data-uv-theme] { --pg-bg: var(--uv-bg); --pg-bg2: var(--uv-surface); --pg-bg3: var(--uv-surface-2); --pg-fg: var(--uv-text); --pg-mu: var(--uv-muted); --pg-di: var(--uv-dim); --pg-ln: var(--uv-line); --pg-ln2: var(--uv-line-2); --pg-ac: var(--uv-accent); --pg-font: var(--uv-font); --pg-head: var(--uv-font-head); }
+  body { margin: 0; background: var(--pg-bg); color: var(--pg-fg); font-family: var(--pg-font); }
+  html[data-uv-bg] body { background: transparent; }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; height: 58px; padding: 0 clamp(16px, 3vw, 32px); background: var(--pg-bg); border-bottom: 1px solid var(--pg-ln); }
+  .top .brand { display: flex; align-items: center; gap: 10px; color: var(--pg-fg); text-decoration: none; font-weight: 600; }
+  .top .brand svg rect { fill: var(--pg-fg); } .top .brand svg path { stroke: var(--pg-bg); } .top .brand svg circle { fill: var(--pg-ac); }
+  .top nav { margin-left: auto; display: flex; gap: 2px; } .top nav a { padding: 6px 10px; border-radius: 6px; color: var(--pg-mu); text-decoration: none; font-size: 14px; transition: color .15s, background-color .15s; } .top nav a:hover, .top nav a[aria-current] { color: var(--pg-fg); background: var(--pg-ln); }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); }
+  .k { font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--pg-di); }
+  h1, h2 { font-weight: 400; font-family: var(--pg-head); letter-spacing: -.02em; }
+  :is(a, button, select, input):focus-visible { outline: 2px solid var(--pg-ac); outline-offset: 2px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-fg); font: 500 14px var(--pg-font); text-decoration: none; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s, translate .2s; }
+  .btn:hover { background: var(--pg-ln); border-color: var(--pg-mu); }
+  .btn.p { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); } .btn.p:hover { background: var(--pg-ac); border-color: var(--pg-ac); color: #fff; translate: 0 -2px; }
+  /* the studio: the 3D always sits on a dark product backdrop (like a photo booth), whatever the page mode */
+  .studio { position: relative; border-radius: 18px; overflow: hidden; background: radial-gradient(70% 60% at 50% 40%, #1d1d24, #0a0a0d 70%); border: 1px solid #ffffff14; }
+  .studio::after { content: ""; position: absolute; left: 18%; right: 18%; bottom: 7%; height: 10%; border-radius: 50%; background: radial-gradient(closest-side, #000a, transparent); pointer-events: none; }
+  .studio.light { background: radial-gradient(70% 60% at 50% 40%, #ffffff, #e4e2dd 75%); border-color: #1a191714; }
+  .studio.none { background: none; border-color: var(--pg-ln); } .studio.none::after { display: none; }
+  .studio > [data-uv-3d] { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; z-index: 1; }
+
+  .hero { display: grid; grid-template-columns: 1fr 1.15fr; gap: 34px; align-items: center; padding: 48px 0 30px; }
+  .hero h1 { margin: 10px 0 14px; font-size: clamp(56px, 8vw, 116px); line-height: .9; } .hero h1 em { color: var(--pg-ac); }
+  .hero p { color: var(--pg-mu); font-size: 17px; line-height: 1.6; max-width: 480px; }
+  .hero .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+  .hero .studio { height: min(62vh, 560px); }
+  .hero .badge { position: absolute; left: 18px; top: 16px; z-index: 2; padding: 6px 12px; border-radius: 999px; background: #0008; color: #fff; font: 500 12px "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+  .hero .hint { position: absolute; right: 18px; bottom: 14px; z-index: 2; color: #ffffff99; font: 12px "Geist Mono", monospace; }
+
+  section.block { padding: 50px 0; border-top: 1px solid var(--pg-ln); }
+  .shead { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; }
+  .shead h2 { margin: 6px 0 0; font-size: clamp(40px, 5vw, 64px); line-height: .95; } .shead p { margin: 0; color: var(--pg-mu); max-width: 460px; line-height: 1.6; }
+
+  /* viewer */
+  .viewer { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; }
+  .viewer .studio { height: min(70vh, 620px); }
+  .vname { position: absolute; left: 20px; top: 16px; z-index: 2; color: #fff; pointer-events: none; }
+  .vname b { display: block; font: 400 40px/1 var(--pg-head); } .vname small { font: 12px "Geist Mono", monospace; color: #ffffffaa; text-transform: uppercase; letter-spacing: .08em; }
+  .studio.light .vname { color: #1a1917; } .studio.light .vname small { color: #1a191799; } .studio.none .vname { color: var(--pg-fg); } .studio.none .vname small { color: var(--pg-mu); }
+  .panel { display: flex; flex-direction: column; gap: 16px; padding: 18px; border-radius: 18px; border: 1px solid var(--pg-ln2); background: var(--pg-bg2); min-width: 0; }
+  .panel h3 { margin: 0 0 8px; font: 500 11px "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--pg-di); }
+  .mats { display: flex; flex-wrap: wrap; gap: 6px; max-height: 236px; overflow: auto; padding-right: 4px; }
+  .mats button, .shapes button, .seg button { display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-mu); font: 500 13px var(--pg-font); cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; }
+  .mats button:hover, .shapes button:hover, .seg button:hover { color: var(--pg-fg); border-color: var(--pg-mu); }
+  .mats button[aria-pressed="true"], .shapes button[aria-pressed="true"], .seg button[aria-pressed="true"] { color: var(--pg-bg); background: var(--pg-fg); border-color: var(--pg-fg); }
+  .mats i { width: 12px; height: 12px; border-radius: 50%; background: var(--sw); box-shadow: inset 0 0 0 1px #ffffff30; }
+  .mats .grp { width: 100%; margin: 6px 0 0; font: 500 10px "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--pg-di); }
+  .shapes, .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sliders { display: grid; grid-template-columns: auto 1fr auto; gap: 8px 12px; align-items: center; font-size: 13px; color: var(--pg-mu); }
+  .sliders input { width: 100%; accent-color: var(--pg-ac); } .sliders output { font: 12px "Geist Mono", monospace; color: var(--pg-fg); min-width: 3ch; text-align: right; }
+  pre.code { position: relative; margin: 0; padding: 14px; border-radius: 10px; background: #141413; color: #ecebe8; font: 12px/1.6 "Geist Mono", monospace; overflow: auto; border: 1px solid #ffffff14; white-space: pre-wrap; word-break: break-word; }
+  #vcode { padding-right: 70px; }
+  pre.code .t { color: #ff8f5a; } pre.code .a { color: #c9b98f; } pre.code .s { color: #9fc5a8; }
+  .copy { position: absolute; right: 8px; top: 8px; padding: 4px 10px; border-radius: 6px; border: 1px solid #ffffff26; background: #ffffff10; color: #fff; font: 500 12px var(--pg-font); cursor: pointer; } .copy:hover { background: #ffffff26; }
+
+  /* the grind */
+  .ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .rung { position: relative; display: flex; flex-direction: column; border-radius: 16px; overflow: hidden; border: 1px solid var(--pg-ln2); background: var(--pg-bg2); transition: border-color .25s, translate .25s; }
+  .rung:hover { border-color: var(--pg-ac); translate: 0 -3px; }
+  .rung .studio { height: 240px; border-radius: 0; border: 0; }
+  .rung .cap { padding: 14px 16px 16px; } .rung .cap b { display: block; font: 400 30px/1 var(--pg-head); } .rung .cap small { color: var(--pg-mu); font-size: 13px; }
+  .rung .lvl { position: absolute; top: 12px; right: 12px; z-index: 2; padding: 4px 9px; border-radius: 999px; background: #000a; color: #fff; font: 500 11px "Geist Mono", monospace; }
+  .rung:last-child { border-color: color-mix(in srgb, var(--pg-ac) 50%, transparent); }
+
+  /* gallery */
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; }
+  .gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+  .tile { display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; border: 1px solid var(--pg-ln2); background: var(--pg-bg2); cursor: pointer; text-align: left; padding: 0; color: inherit; font: inherit; transition: border-color .2s, translate .2s, box-shadow .2s; }
+  .tile:hover { border-color: var(--pg-mu); translate: 0 -3px; box-shadow: 0 20px 40px -26px #000; }
+  .tile .studio { height: 220px; border-radius: 0; border: 0; } .tile .studio::after { bottom: 5%; }
+  .tile .cap { padding: 12px 14px 14px; } .tile .cap b { display: block; font-weight: 600; } .tile .cap small { display: block; color: var(--pg-mu); font-size: 12.5px; margin-top: 2px; line-height: 1.45; }
+  .tile .cap span { font: 500 10px "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--pg-di); }
+  .use { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; } .use p { color: var(--pg-mu); line-height: 1.65; } .use code { font: 13px "Geist Mono", monospace; color: var(--pg-fg); }
+  footer.f { padding: 30px 0 60px; color: var(--pg-di); font-size: 13px; border-top: 1px solid var(--pg-ln); }
+  @media (max-width: 900px) { .hero, .viewer, .use { grid-template-columns: 1fr; } .ladder { grid-template-columns: 1fr 1fr; } .viewer .studio { height: 58vh; } }
+</style>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI Vault</a>
+  <nav><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div><p class="k">3D skins · 26 animated materials · WebGL, no libraries</p>
+      <h1>Mastery, <em>in 3D.</em></h1>
+      <p>Real-time 3D objects in the kind of skins you grind for: animated obsidian, dark matter, damascus, gold, diamond and 21 more. Every one is drawn live by <code>skins3d.js</code> from one HTML attribute. Drag any of them to turn it.</p>
+      <div class="row"><a class="btn p" href="#viewer">Open the viewer</a><a class="btn" href="examples/mastery.html">Scroll the mastery grind →</a><a class="btn" href="library.html?cat=skins3d">Add to a zip</a></div></div>
+    <div class="studio"><span class="badge">Obsidian · animated</span><div data-uv-3d="obsidian" data-shape="blade" data-drag data-spin=".45" data-tilt=".28"></div><span class="hint">drag to turn ↻</span></div>
+  </section>
+
+  <section class="block" id="viewer">
+    <div class="shead"><div><p class="k">Viewer</p><h2>Inspect every skin.</h2></div><p>Pick a material and a shape, set the spin and the studio light, then copy the markup. It's the same tag you'd paste into your own page.</p></div>
+    <div class="viewer">
+      <div class="studio" id="vstudio"><div class="vname"><small id="vgroup">Mastery</small><b id="vlabel">Obsidian</b></div><div id="v3d" data-uv-3d="obsidian" data-shape="gem" data-drag></div></div>
+      <div class="panel">
+        <div><h3>Material</h3><div class="mats" id="mats"></div></div>
+        <div><h3>Shape</h3><div class="shapes" id="shapes"></div></div>
+        <div class="sliders"><label for="spin">Spin</label><input id="spin" type="range" min="0" max="2" step=".05" value=".35"><output id="spinO">0.35</output><label for="light">Light</label><input id="light" type="range" min=".4" max="2" step=".05" value="1"><output id="lightO">1.00</output></div>
+        <div><h3>Backdrop</h3><div class="seg" id="bg"><button aria-pressed="true" data-b="">Dark studio</button><button data-b="light">Light studio</button><button data-b="none">None</button></div></div>
+        <div style="position:relative"><pre class="code" id="vcode"></pre><button class="copy" id="vcopy" type="button">Copy</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="grind">
+    <div class="shead"><div><p class="k">The grind</p><h2>Gold to Obsidian.</h2></div><p>The classic mastery ladder, one material per rung. Scroll through it in the <a href="examples/mastery.html" style="color:var(--pg-ac)">MASTERY example</a>.</p></div>
+    <div class="ladder">
+      <div class="rung"><span class="lvl">01</span><div class="studio"><div data-uv-3d="gold" data-shape="blade" data-sync data-fps="20" data-hover-fps></div></div><div class="cap"><b>Gold</b><small>100 headshots on every weapon in a class.</small></div></div>
+      <div class="rung"><span class="lvl">02</span><div class="studio"><div data-uv-3d="platinum" data-shape="blade" data-sync data-fps="20" data-hover-fps></div></div><div class="cap"><b>Platinum</b><small>Gold on every weapon in a class.</small></div></div>
+      <div class="rung"><span class="lvl">03</span><div class="studio"><div data-uv-3d="damascus" data-shape="blade" data-sync data-fps="20" data-hover-fps></div></div><div class="cap"><b>Damascus</b><small>Platinum on every weapon.</small></div></div>
+      <div class="rung"><span class="lvl">04</span><div class="studio"><div data-uv-3d="obsidian" data-shape="blade" data-sync data-fps="20" data-hover-fps></div></div><div class="cap"><b>Obsidian</b><small>Damascus, then a little more. Animated.</small></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="all">
+    <div class="shead"><div><p class="k">All skins</p><h2>Twenty-six finishes.</h2></div><div class="filters seg" id="filt"></div></div>
+    <div class="gal" id="gal"></div>
+  </section>
+
+  <section class="block" id="use">
+    <div class="shead"><div><p class="k">Use it</p><h2>One attribute.</h2></div></div>
+    <div class="use">
+      <div><p>Load <code>lib/js/core.js</code> (or the full <code>uivault.js</code>) and then <code>lib/js/skins3d.js</code>. Then any element with <code>data-uv-3d</code> becomes a live 3D object. Give it a size and it fills it.</p>
+        <p>Options: <code>data-shape</code> (blade, gem, knot, coin, sphere, cube, tag, torus), <code>data-spin</code>, <code>data-tilt</code>, <code>data-drag</code>, <code>data-light</code>, <code>data-sync</code>, <code>data-fps</code> + <code>data-hover-fps</code> and <code>data-res</code>. In JavaScript, <code>UV.skins3d.mount(el, { material, shape })</code> returns an object with <code>.set()</code> and <code>.stop()</code>.</p>
+        <p>It's built for ordinary laptops. Objects draw only while on screen, at 30 fps on 4-core machines, and the browser never holds more than 12 at once. Each one uses a few kilobytes of shader and no textures.</p></div>
+<pre class="code"><span class="t">&lt;script</span> <span class="a">src</span>=<span class="s">"uivault/js/core.js"</span><span class="t">&gt;&lt;/script&gt;</span>
+<span class="t">&lt;script</span> <span class="a">src</span>=<span class="s">"uivault/js/skins3d.js"</span><span class="t">&gt;&lt;/script&gt;</span>
+
+<span class="t">&lt;div</span> <span class="a">data-uv-3d</span>=<span class="s">"obsidian"</span> <span class="a">data-shape</span>=<span class="s">"blade"</span> <span class="a">data-drag</span>
+     <span class="a">style</span>=<span class="s">"width:420px;height:420px;background:#0b0b0e"</span><span class="t">&gt;&lt;/div&gt;</span>
+
+<span class="t">&lt;script&gt;</span>
+  const v = UV.skins3d.mount(el, { material: <span class="s">"dark-matter"</span>, shape: <span class="s">"gem"</span> });
+  v.set({ material: <span class="s">"gold"</span> });   <span class="a">// swap live</span>
+<span class="t">&lt;/script&gt;</span></pre>
+    </div>
+  </section>
+  <footer class="f">Skins are original shader recreations of the classic mastery-camo styles, made for this library. Not affiliated with any game.</footer>
+</main>
+<script src="lib/uivault.js"></script>
+<script src="lib/js/skins3d.js"></script>
+<script>
+(() => {
+  const SW = {"obsidian": "conic-gradient(#0a0a0e 0 60%,#7a3cff,#2de2e6,#0a0a0e)", "obsidian-molten": "radial-gradient(#ff7a1a,#1a0a05 70%)", "gold": "linear-gradient(135deg,#fff3b0,#d4a017 60%,#7a5a0a)", "platinum": "linear-gradient(135deg,#fff,#b9bec9 60%,#6c717d)", "damascus": "repeating-linear-gradient(60deg,#ccd,#334 4px,#ccd 8px)", "diamond": "conic-gradient(#fff,#bdf,#fbd,#ffd,#fff)", "dark-matter": "radial-gradient(#b46bff,#14051f 70%)", "dark-aether": "radial-gradient(#5ff3ff,#2a0a5a 70%)", "interstellar": "radial-gradient(#6b5bff,#03030d 70%)", "atomic": "radial-gradient(#7dff8a,#03200a 70%)", "borealis": "linear-gradient(#5fffc0,#7a3cff)", "lava": "radial-gradient(#ffcf40,#ff3a00 50%,#200 80%)", "prismatic": "conic-gradient(#f0f,#0ff,#ff0,#f0f)", "pearl": "linear-gradient(135deg,#fff,#dff6ef,#f7dff0)", "holo": "linear-gradient(135deg,#f9a,#9ef,#ef9)", "liquid-chrome": "linear-gradient(#fff,#777 50%,#eee)", "carbon": "repeating-linear-gradient(45deg,#222 0 3px,#111 3px 6px)", "case-hardened": "linear-gradient(135deg,#2448b8,#d4a540)", "ruby": "radial-gradient(#ff2a44,#3a0008 70%)", "sapphire": "radial-gradient(#3d8bff,#000c3a 70%)", "emerald": "radial-gradient(#3dff8b,#003a14 70%)", "marble-fade": "linear-gradient(#f22,#fd2 50%,#25f)", "tiger-tooth": "repeating-linear-gradient(70deg,#ffc640 0 4px,#f50 4px 7px)", "crimson-web": "radial-gradient(#7a0a14,#1a0003 70%)", "digital-camo": "conic-gradient(#eef,#9ab,#567,#eef)", "neon-grid": "linear-gradient(#0ff,#f2d)"};
+  const M = UV.skins3d.materials, SH = UV.skins3d.shapes, $ = s => document.querySelector(s);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const st = { material: "obsidian", shape: "gem", spin: .35, light: 1, bg: "" };
+  const v3d = $("#v3d"), viewer = UV.skins3d.mount(v3d);
+  const groups = [...new Set(Object.values(M).map(m => m.group))];
+  $("#mats").innerHTML = groups.map(g => `<p class="grp">${g}</p>` + Object.entries(M).filter(([, m]) => m.group === g).map(([k, m]) => `<button type="button" data-m="${k}" aria-pressed="${k === st.material}" title="${esc(m.desc)}"><i style="--sw:${SW[k] || "#888"}"></i>${esc(m.label)}</button>`).join("")).join("");
+  $("#shapes").innerHTML = SH.map(s => `<button type="button" data-s="${s}" aria-pressed="${s === st.shape}">${s}</button>`).join("");
+  const code = () => {
+    const a = [`data-uv-3d="${st.material}"`, `data-shape="${st.shape}"`, "data-drag", +st.spin !== .35 && `data-spin="${st.spin}"`, +st.light !== 1 && `data-light="${st.light}"`].filter(Boolean);
+    const txt = `<div ${a.join(" ")}\n     style="width:420px;height:420px"></div>`;
+    $("#vcode").textContent = txt; return txt;
+  };
+  const sync = () => {
+    viewer.set({ material: st.material, shape: st.shape, spin: +st.spin }); v3d.dataset.light = st.light;
+    $("#vlabel").textContent = M[st.material].label; $("#vgroup").textContent = M[st.material].group + " · " + st.shape;
+    document.querySelectorAll("#mats [data-m]").forEach(b => b.setAttribute("aria-pressed", b.dataset.m === st.material));
+    document.querySelectorAll("#shapes [data-s]").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === st.shape));
+    $("#vstudio").className = "studio" + (st.bg ? " " + st.bg : "");
+    code();
+  };
+  $("#mats").onclick = e => { const b = e.target.closest("[data-m]"); if (b) { st.material = b.dataset.m; sync(); } };
+  $("#shapes").onclick = e => { const b = e.target.closest("[data-s]"); if (b) { st.shape = b.dataset.s; sync(); } };
+  $("#bg").onclick = e => { const b = e.target.closest("[data-b]"); if (!b) return; st.bg = b.dataset.b; $("#bg").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); sync(); };
+  $("#spin").oninput = e => { st.spin = e.target.value; $("#spinO").textContent = (+st.spin).toFixed(2); sync(); };
+  $("#light").oninput = e => { st.light = e.target.value; $("#lightO").textContent = (+st.light).toFixed(2); sync(); };
+  $("#vcopy").onclick = () => UV.copy ? UV.copy(code(), "Markup copied") : navigator.clipboard.writeText(code());
+  sync();
+
+  // gallery: idle tiles tick slowly; hovered or dragged ones run full speed. Click loads it into the viewer.
+  const SHP = ["blade", "gem", "knot", "coin", "sphere", "cube", "tag", "torus"];
+  let filter = "All";
+  $("#filt").innerHTML = ["All", ...groups].map(g => `<button type="button" data-g="${g}" aria-pressed="${g === filter}">${g}</button>`).join("");
+  const drawGal = () => {
+    $("#gal").innerHTML = Object.entries(M).filter(([, m]) => filter === "All" || m.group === filter).map(([k, m], i) => `<button class="tile" type="button" data-m="${k}" aria-label="Load ${esc(m.label)} into the viewer">
+      <div class="studio"><div data-uv-3d="${k}" data-shape="${SHP[i % SHP.length]}" data-fps="12" data-hover-fps data-res=".85"></div></div>
+      <div class="cap"><span>${m.group}</span><b>${esc(m.label)}</b><small>${esc(m.desc)}</small></div></button>`).join("");
+    UV.init($("#gal"));
+  };
+  $("#filt").onclick = e => { const b = e.target.closest("[data-g]"); if (!b) return; filter = b.dataset.g; $("#filt").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawGal(); };
+  $("#gal").onclick = e => { const t = e.target.closest(".tile"); if (!t) return; st.material = t.dataset.m; st.shape = t.querySelector("[data-shape]").dataset.shape; sync(); $("#viewer").scrollIntoView({ behavior: "smooth" }); };
+  drawGal();
+})();
+</script>
+<script src="assets/js/picker.js"></script>
+</body>
+</html>
