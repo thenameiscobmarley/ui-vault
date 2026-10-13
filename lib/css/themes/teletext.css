@@ -7,13 +7,13 @@
   color-scheme: dark;
   
 }
-[data-uv-theme="teletext"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
-[data-uv-theme="teletext"] .uv-btn--primary, [data-uv-theme="teletext"] .uv-btn--grad { background: #ffff00; color: #111111; border-color: #ffff00; }
-[data-uv-theme="teletext"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="teletext"] .uv-card { border: 2px solid #ffffff; box-shadow: none; }
-[data-uv-theme="teletext"] .uv-tabs > .uv-tabs__ind { background: #ffff00; } [data-uv-theme="teletext"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="teletext"] .uv-switch input:checked + i, [data-uv-theme="teletext"] .uv-check input:checked { background: #ffff00; border-color: #ffff00; }
-[data-uv-theme="teletext"] .uv-progress > i { background: #ffff00; } [data-uv-theme="teletext"] .uv-ring { background: conic-gradient(#ffff00 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="teletext"] .uv-input:focus, [data-uv-theme="teletext"] .uv-select:focus, [data-uv-theme="teletext"] .uv-textarea:focus { border-color: #ffff00; box-shadow: 0 0 0 3px #ffff0038; }
-[data-uv-theme="teletext"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="teletext"] .uv-btn:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
+[data-uv-theme="teletext"] .uv-btn:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="teletext"] .uv-btn--primary:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *), [data-uv-theme="teletext"] .uv-btn--grad:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { background: #ffff00; color: #111111; border-color: #ffff00; }
+[data-uv-theme="teletext"] .uv-btn--primary:hover:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { filter: brightness(1.06); }
+[data-uv-theme="teletext"] .uv-card:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { border: 2px solid #ffffff; box-shadow: none; }
+[data-uv-theme="teletext"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { background: #ffff00; } [data-uv-theme="teletext"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { color: #111111; }
+[data-uv-theme="teletext"] .uv-switch input:checked + i:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *), [data-uv-theme="teletext"] .uv-check input:checked:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { background: #ffff00; border-color: #ffff00; }
+[data-uv-theme="teletext"] .uv-progress > i:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { background: #ffff00; } [data-uv-theme="teletext"] .uv-ring:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { background: conic-gradient(#ffff00 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="teletext"] .uv-input:focus:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *), [data-uv-theme="teletext"] .uv-select:focus:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *), [data-uv-theme="teletext"] .uv-textarea:focus:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { border-color: #ffff00; box-shadow: 0 0 0 3px #ffff0038; }
+[data-uv-theme="teletext"] .uv-btn:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="teletext"] .uv-btn:hover:not([data-uv-theme="teletext"] [data-uv-theme]:not([data-uv-theme="teletext"]) *) { background: #ffffff; color: #000000; border-color: #ffffff; }

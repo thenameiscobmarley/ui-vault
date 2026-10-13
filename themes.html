@@ -10,23 +10,31 @@
 <link rel="stylesheet" href="lib/css/fonts.css" />
 <link rel="stylesheet" href="lib/uivault.css" />
 <style>
+  :root { --pg-bg: #101012; --pg-bg2: #141416; --pg-bg3: #1c1c1f; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", serif; }
+  html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
+  /* a style applied with the picker / "Use on this site" restyles the whole page chrome too */
+  html[data-uv-theme] { --pg-bg: var(--uv-bg); --pg-bg2: var(--uv-surface); --pg-bg3: var(--uv-surface-2); --pg-fg: var(--uv-text); --pg-mu: var(--uv-muted); --pg-di: var(--uv-dim); --pg-ln: var(--uv-line); --pg-ln2: var(--uv-line-2); --pg-ac: var(--uv-accent); --pg-font: var(--uv-font); --pg-head: var(--uv-font-head); }
+  html[data-uv-theme] .top .brand svg rect { fill: var(--uv-text); } html[data-uv-theme] .top .brand svg path { stroke: var(--uv-bg); } html[data-uv-theme] .top .brand svg circle { fill: var(--uv-accent); }
+  html[data-theme="light"] .top .brand svg rect { fill: #1a1917; } html[data-theme="light"] .top .brand svg path { stroke: #f4f2ee; }
+  html[data-uv-theme] .hero h1 em { background-image: none; color: var(--uv-accent); -webkit-text-fill-color: currentColor; }
+
   /* Showroom: a neutral dark stage so every theme reads as itself */
-  body { margin: 0; background: #101012; color: #ecebe8; font-family: "Geist", system-ui, sans-serif; }
-  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; height: 58px; padding: 0 clamp(16px, 3vw, 32px); background: #101012ee; backdrop-filter: blur(10px); border-bottom: 1px solid #ffffff1a; }
-  .top .brand { display: flex; align-items: center; gap: 10px; color: #ecebe8; text-decoration: none; font-weight: 600; }
-  .top nav { margin-left: auto; display: flex; gap: 2px; } .top nav a { padding: 6px 10px; border-radius: 4px; color: #a19d95; text-decoration: none; font-size: 14px; } .top nav a:hover, .top nav a.on { color: #fff; background: #ffffff12; }
+  body { margin: 0; background: var(--pg-bg); color: var(--pg-fg); font-family: var(--pg-font); }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; height: 58px; padding: 0 clamp(16px, 3vw, 32px); background: color-mix(in srgb, var(--pg-bg) 93%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--pg-ln); }
+  .top .brand { display: flex; align-items: center; gap: 10px; color: var(--pg-fg); text-decoration: none; font-weight: 600; }
+  .top nav { margin-left: auto; display: flex; gap: 2px; } .top nav a { padding: 6px 10px; border-radius: 4px; color: var(--pg-mu); text-decoration: none; font-size: 14px; } .top nav a:hover, .top nav a.on { color: var(--pg-fg); background: var(--pg-ln); }
   .wrap { max-width: 1400px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); }
   .hero { padding: 64px 0 26px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
-  .hero h1 { margin: 10px 0 0; font: 400 clamp(52px, 7vw, 104px)/.92 "Instrument Serif", serif; letter-spacing: -.025em; }
+  .hero h1 { margin: 10px 0 0; font: 400 clamp(52px, 7vw, 104px)/.92 var(--pg-head); letter-spacing: -.025em; }
   .hero h1 em { background: linear-gradient(180deg, #0d1f6b 28%, #d9e6ff 50%, #4a5ea8 54%, #0d1f6b 74%); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; }
-  .k { font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: #8f8a82; }
-  .tools { position: sticky; top: 58px; z-index: 40; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 12px 0; background: #101012; border-bottom: 1px solid #ffffff12; }
-  .tools input { height: 40px; width: 260px; padding: 0 14px; border-radius: 6px; border: 1px solid #ffffff26; background: #18181b; color: #fff; font: 15px "Geist", sans-serif; outline: none; } .tools input:focus { border-color: #ff6a26; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; } .chips button { padding: 7px 12px; border-radius: 999px; border: 1px solid #ffffff26; background: none; color: #a19d95; font: 500 13px "Geist", sans-serif; cursor: pointer; transition: all .15s; }
-  .chips button:hover { color: #fff; } .chips button.on { background: #ecebe8; color: #101012; border-color: #ecebe8; } .chips small { opacity: .6; margin-left: 4px; font-family: "Geist Mono", monospace; }
-  .count { margin-left: auto; font: 500 12px "Geist Mono", monospace; color: #8f8a82; }
+  .k { font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--pg-di); }
+  .tools { position: sticky; top: 58px; z-index: 40; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 12px 0; background: var(--pg-bg); border-bottom: 1px solid var(--pg-ln); }
+  .tools input { height: 40px; width: 260px; padding: 0 14px; border-radius: 6px; border: 1px solid var(--pg-ln2); background: var(--pg-bg3); color: var(--pg-fg); font: 15px "Geist", sans-serif; outline: none; } .tools input:focus { border-color: var(--pg-ac); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; } .chips button { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-mu); font: 500 13px "Geist", sans-serif; cursor: pointer; transition: all .15s; }
+  .chips button:hover { color: var(--pg-fg); } .chips button.on { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); } .chips small { opacity: .6; margin-left: 4px; font-family: "Geist Mono", monospace; }
+  .count { margin-left: auto; font: 500 12px "Geist Mono", monospace; color: var(--pg-di); }
   .gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; padding: 18px 0 60px; }
-  .tile { position: relative; display: flex; flex-direction: column; gap: 12px; min-height: 250px; padding: 20px; border-radius: 12px; border: 1px solid #ffffff1a; overflow: hidden; cursor: pointer; text-align: left; transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s; }
+  .tile { position: relative; display: flex; flex-direction: column; gap: 12px; min-height: 250px; padding: 20px; border-radius: 12px; border: 1px solid var(--pg-ln); overflow: hidden; cursor: pointer; text-align: left; transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s; }
   .tile:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -24px #000; }
   .tile header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
   .tile .uv-h2 { font-size: 34px; margin: 0; line-height: 1; }
@@ -34,55 +42,39 @@
   .tile p { margin: 0; font-size: 13px; color: var(--uv-muted); line-height: 1.4; }
   .tile .uv-card { padding: 12px 14px; font-size: 13px; }
   .tile .sig { position: absolute; right: 12px; bottom: 12px; }
-  .section-h { display: grid; grid-template-columns: 220px 1fr; gap: 8px 32px; padding-top: 16px; border-top: 1px solid #ffffff26; margin: 40px 0 24px; }
-  .section-h h2 { margin: 0; font: 400 clamp(36px, 4.5vw, 60px)/1 "Instrument Serif", serif; } .section-h p { margin: 8px 0 0; color: #a19d95; max-width: 640px; }
+  .section-h { display: grid; grid-template-columns: 220px 1fr; gap: 8px 32px; padding-top: 16px; border-top: 1px solid var(--pg-ln2); margin: 40px 0 24px; }
+  .section-h h2 { margin: 0; font: 400 clamp(36px, 4.5vw, 60px)/1 var(--pg-head); } .section-h p { margin: 8px 0 0; color: var(--pg-mu); max-width: 640px; }
   /* detail */
-  .detail { width: min(1240px, calc(100vw - 20px)); height: min(92vh, 900px); padding: 0; border: 1px solid #ffffff26; border-radius: 12px; background: #141416; color: #ecebe8; overflow: hidden; }
+  .detail { width: min(1240px, calc(100vw - 20px)); height: min(92vh, 900px); padding: 0; border: 1px solid var(--pg-ln2); border-radius: 12px; background: var(--pg-bg2); color: var(--pg-fg); overflow: hidden; }
   .detail[open] { display: grid; grid-template-columns: 1fr 420px; animation: dpop .35s cubic-bezier(.2, 1.1, .4, 1); }
   .detail::backdrop { background: #000a; backdrop-filter: blur(4px); }
   @keyframes dpop { from { opacity: 0; transform: translateY(14px) scale(.98); } }
   .dprev { overflow: auto; }
-  .dside { display: flex; flex-direction: column; border-left: 1px solid #ffffff1a; min-height: 0; }
-  .dside header { padding: 18px 20px; border-bottom: 1px solid #ffffff1a; display: grid; gap: 8px; }
-  .dside h3 { margin: 0; font: 400 40px/1 "Instrument Serif", serif; display: flex; justify-content: space-between; align-items: center; }
-  .recipe { display: flex; flex-wrap: wrap; gap: 6px; } .recipe span { font: 11px "Geist Mono", monospace; padding: 3px 8px; border-radius: 3px; border: 1px solid #ffffff26; color: #a19d95; } .recipe b { color: #ecebe8; font-weight: 500; }
-  .ctabs { display: flex; border-bottom: 1px solid #ffffff1a; } .ctabs button { flex: 1; padding: 10px; border: 0; background: none; color: #8f8a82; font: 500 12px "Geist Mono", monospace; cursor: pointer; } .ctabs button.on { color: #fff; box-shadow: inset 0 -2px 0 #ff6a26; }
+  .dside { display: flex; flex-direction: column; border-left: 1px solid var(--pg-ln); min-height: 0; }
+  .dside header { padding: 18px 20px; border-bottom: 1px solid var(--pg-ln); display: grid; gap: 8px; }
+  .dside h3 { margin: 0; font: 400 40px/1 var(--pg-head); display: flex; justify-content: space-between; align-items: center; }
+  .recipe { display: flex; flex-wrap: wrap; gap: 6px; } .recipe span { font: 11px "Geist Mono", monospace; padding: 3px 8px; border-radius: 3px; border: 1px solid var(--pg-ln2); color: var(--pg-mu); } .recipe b { color: var(--pg-fg); font-weight: 500; }
+  .ctabs { display: flex; border-bottom: 1px solid var(--pg-ln); } .ctabs button { flex: 1; padding: 10px; border: 0; background: none; color: var(--pg-di); font: 500 12px "Geist Mono", monospace; cursor: pointer; } .ctabs button.on { color: var(--pg-fg); box-shadow: inset 0 -2px 0 var(--pg-ac); }
   .dside pre { margin: 0; flex: 1; overflow: auto; padding: 16px 18px; background: #0d0d0f; color: #d9d6cf; font: 12px/1.65 "Geist Mono", monospace; white-space: pre; }
-  .dside footer { display: flex; gap: 8px; padding: 12px; border-top: 1px solid #ffffff1a; }
-  .btn { flex: 1; height: 38px; border-radius: 6px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 13px "Geist", sans-serif; cursor: pointer; } .btn:hover { border-color: #fff; } .btn.p { background: #ecebe8; color: #101012; } .btn.p:hover { background: #ff6a26; border-color: #ff6a26; color: #fff; }
-  .x { position: absolute; top: 10px; right: 10px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; border: 1px solid #ffffff40; background: #000a; color: #fff; cursor: pointer; }
+  .dside footer { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--pg-ln); }
+  .btn { flex: 1; height: 38px; border-radius: 6px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-fg); font: 500 13px "Geist", sans-serif; cursor: pointer; } .btn:hover { border-color: var(--pg-fg); } .btn.p { background: var(--pg-fg); color: var(--pg-bg); } .btn.p:hover { background: var(--pg-ac); border-color: var(--pg-ac); color: var(--pg-fg); }
+  .x { position: absolute; top: 10px; right: 10px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; border: 1px solid #ffffff40; background: #000a; color: var(--pg-fg); cursor: pointer; }
   .kit { padding: 36px clamp(20px, 4vw, 48px) 56px; display: grid; gap: 26px; min-height: 100%; box-sizing: border-box; }
   .kit .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .kit .lbl { font: 500 11px var(--uv-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--uv-dim); }
   .kit .grid3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
   /* builder */
-  .builder { display: grid; grid-template-columns: 360px 1fr; gap: 0; border: 1px solid #ffffff26; border-radius: 12px; overflow: hidden; margin-bottom: 80px; }
-  .bctl { padding: 18px; border-right: 1px solid #ffffff1a; display: grid; gap: 14px; align-content: start; max-height: 860px; overflow: auto; background: #141416; }
-  .bctl label { display: grid; gap: 5px; font: 500 11px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .06em; color: #8f8a82; }
-  .bctl input[type=text], .bctl select { height: 36px; padding: 0 10px; border-radius: 5px; border: 1px solid #ffffff26; background: #1c1c1f; color: #fff; font: 14px "Geist", sans-serif; text-transform: none; letter-spacing: 0; }
-  .bctl input[type=color] { width: 100%; height: 36px; border: 1px solid #ffffff26; border-radius: 5px; background: #1c1c1f; padding: 2px; cursor: pointer; }
+  .builder { display: grid; grid-template-columns: 360px 1fr; gap: 0; border: 1px solid var(--pg-ln2); border-radius: 12px; overflow: hidden; margin-bottom: 80px; }
+  .bctl { padding: 18px; border-right: 1px solid var(--pg-ln); display: grid; gap: 14px; align-content: start; max-height: 860px; overflow: auto; background: var(--pg-bg2); }
+  .bctl label { display: grid; gap: 5px; font: 500 11px "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .06em; color: var(--pg-di); }
+  .bctl input[type=text], .bctl select { height: 36px; padding: 0 10px; border-radius: 5px; border: 1px solid var(--pg-ln2); background: var(--pg-bg3); color: var(--pg-fg); font: 14px "Geist", sans-serif; text-transform: none; letter-spacing: 0; }
+  .bctl input[type=color] { width: 100%; height: 36px; border: 1px solid var(--pg-ln2); border-radius: 5px; background: var(--pg-bg3); padding: 2px; cursor: pointer; }
   .bctl .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .bout { display: grid; grid-template-rows: 1fr auto; min-width: 0; }
-  .bout .dside { border-left: 0; border-top: 1px solid #ffffff1a; max-height: 360px; }
-  /* light mode */
-  html[data-theme="light"] body { background: #f4f2ee; color: #1a1917; }
-  html[data-theme="light"] .top { background: #f4f2eeee; border-color: #1a19171f; }
-  html[data-theme="light"] .top .brand { color: #1a1917; } html[data-theme="light"] .top .brand svg rect { fill: #1a1917; } html[data-theme="light"] .top .brand svg path { stroke: #f4f2ee; } html[data-theme="light"] .top nav a { color: #5f5b54; } html[data-theme="light"] .top nav a:hover, html[data-theme="light"] .top nav a.on { color: #1a1917; background: #1a19170f; }
-  html[data-theme="light"] .tools { background: #f4f2ee; border-color: #1a19171a; }
-  html[data-theme="light"] .tools input { background: #fff; color: #1a1917; border-color: #1a19172e; }
-  html[data-theme="light"] .chips button { color: #5f5b54; border-color: #1a19172e; } html[data-theme="light"] .chips button:hover { color: #1a1917; } html[data-theme="light"] .chips button.on { background: #1a1917; color: #f4f2ee; border-color: #1a1917; }
-  html[data-theme="light"] .tile { border-color: #1a19171f; } html[data-theme="light"] .tile:hover { box-shadow: 0 24px 50px -28px #1a191766; }
-  html[data-theme="light"] .hero p, html[data-theme="light"] .section-h p { color: #5f5b54 !important; } html[data-theme="light"] .section-h { border-color: #1a19172e; }
-  html[data-theme="light"] .detail { background: #fbfaf8; color: #1a1917; border-color: #1a19172e; }
-  html[data-theme="light"] .dside { border-color: #1a19171a; } html[data-theme="light"] .dside header, html[data-theme="light"] .ctabs, html[data-theme="light"] .dside footer { border-color: #1a19171a; }
-  html[data-theme="light"] .recipe span { border-color: #1a19172e; color: #5f5b54; } html[data-theme="light"] .recipe b { color: #1a1917; }
-  html[data-theme="light"] .ctabs button.on { color: #1a1917; } html[data-theme="light"] #ddesc { color: #5f5b54 !important; }
-  html[data-theme="light"] .btn { color: #1a1917; border-color: #1a19172e; } html[data-theme="light"] .btn:hover { border-color: #1a1917; } html[data-theme="light"] .btn.p { background: #1a1917; color: #f4f2ee; }
-  html[data-theme="light"] .builder { border-color: #1a19172e; } html[data-theme="light"] .bctl { background: #fbfaf8; border-color: #1a19171a; }
-  html[data-theme="light"] .bctl input[type=text], html[data-theme="light"] .bctl select, html[data-theme="light"] .bctl input[type=color] { background: #fff; color: #1a1917; border-color: #1a19172e; }
-  @media (max-width: 960px) { .detail[open], .builder { grid-template-columns: 1fr; } .dside { border-left: 0; border-top: 1px solid #ffffff1a; max-height: 50vh; } .hero { grid-template-columns: 1fr; } .top nav { display: none; } }
+  .bout .dside { border-left: 0; border-top: 1px solid var(--pg-ln); max-height: 360px; }
+  @media (max-width: 960px) { .detail[open], .builder { grid-template-columns: 1fr; } .dside { border-left: 0; border-top: 1px solid var(--pg-ln); max-height: 50vh; } .hero { grid-template-columns: 1fr; } .top nav { display: none; } }
 </style>
-<script>try{const t=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 </head>
 <body>
 <header class="top">
@@ -93,13 +85,13 @@
 <main class="wrap">
   <section class="hero">
     <div><p class="k">Design styles · web + Python + C++</p><h1><span id="total">87</span> styles, <em>every detail.</em></h1></div>
-    <p style="max-width:430px;color:#a19d95;margin:0">Each style covers more than colour: buttons, headings, cards, inputs, hover motion and backgrounds. Click any one for the full component set and its web, Python and C++ code, or <a href="#builder" style="color:#ff6a26">build your own</a>.</p>
+    <p style="max-width:430px;color:var(--pg-mu);margin:0">Each style covers more than colour: buttons, headings, cards, inputs, hover motion and backgrounds. Click any one for the full component set and its web, Python and C++ code, or <a href="#builder" style="color:var(--pg-ac)">build your own</a>.</p>
   </section>
   <div class="tools"><input id="q" type="search" placeholder="Search styles…  ( / )" /><div class="chips" id="cats"></div><span class="count" id="count"></span></div>
   <div class="gal" id="gal"></div>
 
   <section id="builder">
-    <div class="section-h"><p class="k">§ Builder</p><h2>Make your <em style="font-style:italic;color:#a19d95">own.</em></h2><p>Start from any style, change anything, and the preview updates live. Export it as web CSS, a Python <code>uivault.custom()</code> call or a C++ <code>constexpr</code> theme. Saved styles also appear in the floating theme picker on every page.</p></div>
+    <div class="section-h"><p class="k">§ Builder</p><h2>Make your <em style="font-style:italic;color:var(--pg-mu)">own.</em></h2><p>Start from any style, change anything, and the preview updates live. Export it as web CSS, a Python <code>uivault.custom()</code> call or a C++ <code>constexpr</code> theme. Saved styles also appear in the floating theme picker on every page.</p></div>
     <div class="builder">
       <form class="bctl" id="bform"></form>
       <div class="bout"><div id="bprev" style="overflow:auto;max-height:860px"></div>
@@ -109,7 +101,7 @@
 </main>
 
 <dialog class="detail" id="detail"><button class="x" id="dx" aria-label="Close">✕</button><div class="dprev" id="dprev"></div>
-  <aside class="dside"><header><h3 id="dname"></h3><p class="k" id="dcat" style="margin:0"></p><p id="ddesc" style="margin:0;color:#a19d95;font-size:14px"></p><div class="recipe" id="drec"></div></header>
+  <aside class="dside"><header><h3 id="dname"></h3><p class="k" id="dcat" style="margin:0"></p><p id="ddesc" style="margin:0;color:var(--pg-mu);font-size:14px"></p><div class="recipe" id="drec"></div></header>
     <div class="ctabs" id="dtabs"></div><pre id="dcode"></pre><footer><button class="btn" id="dcopy">Copy code</button><button class="btn p" id="dapply">Use on this site</button></footer></aside></dialog>
 
 <style id="customCss"></style>

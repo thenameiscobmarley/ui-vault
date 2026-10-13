@@ -7,14 +7,14 @@
   color-scheme: dark;
   background-image: linear-gradient(#e9f2ff2e 1px, transparent 1px), linear-gradient(90deg, #e9f2ff2e 1px, transparent 1px), linear-gradient(#e9f2ff17 1px, transparent 1px), linear-gradient(90deg, #e9f2ff17 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
 }
-[data-uv-theme="blueprint"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
-[data-uv-theme="blueprint"] .uv-btn--primary, [data-uv-theme="blueprint"] .uv-btn--grad { background: transparent; color: #ffd45c; border: 1.5px solid currentColor; }
-[data-uv-theme="blueprint"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="blueprint"] .uv-card { border: 2px solid #e9f2ff; box-shadow: none; }
-[data-uv-theme="blueprint"] .uv-tabs > .uv-tabs__ind { background: #ffd45c; } [data-uv-theme="blueprint"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="blueprint"] .uv-switch input:checked + i, [data-uv-theme="blueprint"] .uv-check input:checked { background: #ffd45c; border-color: #ffd45c; }
-[data-uv-theme="blueprint"] .uv-progress > i { background: #ffd45c; } [data-uv-theme="blueprint"] .uv-ring { background: conic-gradient(#ffd45c calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="blueprint"] .uv-input:focus, [data-uv-theme="blueprint"] .uv-select:focus, [data-uv-theme="blueprint"] .uv-textarea:focus { border-color: #ffd45c; box-shadow: 0 0 0 3px #ffd45c38; }
-[data-uv-theme="blueprint"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="blueprint"] .uv-btn--ghost:hover, [data-uv-theme="blueprint"] .uv-btn:not(.uv-btn--primary):hover { background: #ffd45c; color: #111111; border-color: #ffd45c; }
-[data-uv-theme="blueprint"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="blueprint"] .uv-btn:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="blueprint"] .uv-btn--primary:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *), [data-uv-theme="blueprint"] .uv-btn--grad:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { background: transparent; color: #ffd45c; border: 1.5px solid currentColor; }
+[data-uv-theme="blueprint"] .uv-btn--primary:hover:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { filter: brightness(1.06); }
+[data-uv-theme="blueprint"] .uv-card:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { border: 2px solid #e9f2ff; box-shadow: none; }
+[data-uv-theme="blueprint"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { background: #ffd45c; } [data-uv-theme="blueprint"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { color: #111111; }
+[data-uv-theme="blueprint"] .uv-switch input:checked + i:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *), [data-uv-theme="blueprint"] .uv-check input:checked:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { background: #ffd45c; border-color: #ffd45c; }
+[data-uv-theme="blueprint"] .uv-progress > i:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { background: #ffd45c; } [data-uv-theme="blueprint"] .uv-ring:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { background: conic-gradient(#ffd45c calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="blueprint"] .uv-input:focus:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *), [data-uv-theme="blueprint"] .uv-select:focus:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *), [data-uv-theme="blueprint"] .uv-textarea:focus:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { border-color: #ffd45c; box-shadow: 0 0 0 3px #ffd45c38; }
+[data-uv-theme="blueprint"] .uv-btn:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="blueprint"] .uv-btn--ghost:hover:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *), [data-uv-theme="blueprint"] .uv-btn:not(.uv-btn--primary):hover:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { background: #ffd45c; color: #111111; border-color: #ffd45c; }
+[data-uv-theme="blueprint"] .uv-card--hover:hover:not([data-uv-theme="blueprint"] [data-uv-theme]:not([data-uv-theme="blueprint"]) *) { translate: 0 -4px; }

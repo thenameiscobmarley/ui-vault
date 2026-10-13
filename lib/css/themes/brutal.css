@@ -7,10 +7,10 @@
   --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0; --uv-bw: 2px;
   --uv-btn-shadow: 4px 4px 0 #000; --uv-btn-shadow-active: 0 0 0 #000; --uv-card-shadow: 6px 6px 0 #000; --uv-focus: 4px 4px 0 #000;
 }
-[data-uv-theme="brutal"] .uv-btn { font-weight: 700; border-color: #000; }
-[data-uv-theme="brutal"] .uv-btn:active { transform: translate(4px, 4px); }
-[data-uv-theme="brutal"] .uv-btn--primary { background: var(--uv-accent-2); color: #000; }
-[data-uv-theme="brutal"] .uv-btn--primary:hover { background: var(--uv-accent); color: #000; }
-[data-uv-theme="brutal"] .uv-card, [data-uv-theme="brutal"] .uv-input, [data-uv-theme="brutal"] .uv-tabs { border: 2px solid #000; }
-[data-uv-theme="brutal"] .uv-badge { background: var(--uv-accent-2); color: #000; border: 2px solid #000; }
-[data-uv-theme="brutal"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); } [data-uv-theme="brutal"] .uv-tabs > button[aria-selected="true"] { color: #000; }
+[data-uv-theme="brutal"] .uv-btn:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { font-weight: 700; border-color: #000; }
+[data-uv-theme="brutal"] .uv-btn:active:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { transform: translate(4px, 4px); }
+[data-uv-theme="brutal"] .uv-btn--primary:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { background: var(--uv-accent-2); color: #000; }
+[data-uv-theme="brutal"] .uv-btn--primary:hover:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { background: var(--uv-accent); color: #000; }
+[data-uv-theme="brutal"] .uv-card:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *), [data-uv-theme="brutal"] .uv-input:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *), [data-uv-theme="brutal"] .uv-tabs:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { border: 2px solid #000; }
+[data-uv-theme="brutal"] .uv-badge:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { background: var(--uv-accent-2); color: #000; border: 2px solid #000; }
+[data-uv-theme="brutal"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { background: var(--uv-accent); } [data-uv-theme="brutal"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="brutal"] [data-uv-theme]:not([data-uv-theme="brutal"]) *) { color: #000; }

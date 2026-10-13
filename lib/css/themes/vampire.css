@@ -7,13 +7,13 @@
   color-scheme: dark;
   
 }
-[data-uv-theme="vampire"] .uv-h1, [data-uv-theme="vampire"] .uv-h2 { color: #ffabba; text-shadow: 0 0 6px #ff4566e6, 0 0 22px #ff456699, 0 0 48px #ff456659; }
-[data-uv-theme="vampire"] .uv-btn--primary, [data-uv-theme="vampire"] .uv-btn--grad { background: #ff4566; color: #ffffff; border-color: #ff4566; }
-[data-uv-theme="vampire"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="vampire"] .uv-tabs > .uv-tabs__ind { background: #ff4566; } [data-uv-theme="vampire"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="vampire"] .uv-switch input:checked + i, [data-uv-theme="vampire"] .uv-check input:checked { background: #ff4566; border-color: #ff4566; }
-[data-uv-theme="vampire"] .uv-progress > i { background: #ff4566; } [data-uv-theme="vampire"] .uv-ring { background: conic-gradient(#ff4566 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="vampire"] .uv-input:focus, [data-uv-theme="vampire"] .uv-select:focus, [data-uv-theme="vampire"] .uv-textarea:focus { border-color: #ff4566; box-shadow: 0 0 0 3px #ff456638; }
-[data-uv-theme="vampire"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="vampire"] .uv-btn:hover { box-shadow: 0 0 0 3px #ff456640, 0 0 26px -2px #ff4566b2; }
-[data-uv-theme="vampire"] .uv-card--hover:hover { box-shadow: 0 0 0 1px #ff456680, 0 0 30px -8px #ff4566; }
+[data-uv-theme="vampire"] .uv-h1:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *), [data-uv-theme="vampire"] .uv-h2:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { color: #ffabba; text-shadow: 0 0 6px #ff4566e6, 0 0 22px #ff456699, 0 0 48px #ff456659; }
+[data-uv-theme="vampire"] .uv-btn--primary:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *), [data-uv-theme="vampire"] .uv-btn--grad:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { background: #ff4566; color: #ffffff; border-color: #ff4566; }
+[data-uv-theme="vampire"] .uv-btn--primary:hover:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { filter: brightness(1.06); }
+[data-uv-theme="vampire"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { background: #ff4566; } [data-uv-theme="vampire"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { color: #ffffff; }
+[data-uv-theme="vampire"] .uv-switch input:checked + i:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *), [data-uv-theme="vampire"] .uv-check input:checked:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { background: #ff4566; border-color: #ff4566; }
+[data-uv-theme="vampire"] .uv-progress > i:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { background: #ff4566; } [data-uv-theme="vampire"] .uv-ring:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { background: conic-gradient(#ff4566 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="vampire"] .uv-input:focus:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *), [data-uv-theme="vampire"] .uv-select:focus:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *), [data-uv-theme="vampire"] .uv-textarea:focus:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { border-color: #ff4566; box-shadow: 0 0 0 3px #ff456638; }
+[data-uv-theme="vampire"] .uv-btn:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="vampire"] .uv-btn:hover:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { box-shadow: 0 0 0 3px #ff456640, 0 0 26px -2px #ff4566b2; }
+[data-uv-theme="vampire"] .uv-card--hover:hover:not([data-uv-theme="vampire"] [data-uv-theme]:not([data-uv-theme="vampire"]) *) { box-shadow: 0 0 0 1px #ff456680, 0 0 30px -8px #ff4566; }

@@ -7,13 +7,13 @@
   color-scheme: dark;
   
 }
-[data-uv-theme="cobalt"] .uv-btn--primary, [data-uv-theme="cobalt"] .uv-btn--grad { background: #ffe14d; color: #111111; border-color: #ffe14d; }
-[data-uv-theme="cobalt"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="cobalt"] .uv-card { border: 2px solid #ffffff; box-shadow: none; }
-[data-uv-theme="cobalt"] .uv-tabs > .uv-tabs__ind { background: #ffe14d; } [data-uv-theme="cobalt"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="cobalt"] .uv-switch input:checked + i, [data-uv-theme="cobalt"] .uv-check input:checked { background: #ffe14d; border-color: #ffe14d; }
-[data-uv-theme="cobalt"] .uv-progress > i { background: #ffe14d; } [data-uv-theme="cobalt"] .uv-ring { background: conic-gradient(#ffe14d calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="cobalt"] .uv-input:focus, [data-uv-theme="cobalt"] .uv-select:focus, [data-uv-theme="cobalt"] .uv-textarea:focus { border-color: #ffe14d; box-shadow: 0 0 0 3px #ffe14d38; }
-[data-uv-theme="cobalt"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="cobalt"] .uv-btn:hover { scale: 1.06; } [data-uv-theme="cobalt"] .uv-btn:active { scale: .96; }
-[data-uv-theme="cobalt"] .uv-card--hover:hover { scale: 1.02; }
+[data-uv-theme="cobalt"] .uv-btn--primary:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *), [data-uv-theme="cobalt"] .uv-btn--grad:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { background: #ffe14d; color: #111111; border-color: #ffe14d; }
+[data-uv-theme="cobalt"] .uv-btn--primary:hover:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { filter: brightness(1.06); }
+[data-uv-theme="cobalt"] .uv-card:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { border: 2px solid #ffffff; box-shadow: none; }
+[data-uv-theme="cobalt"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { background: #ffe14d; } [data-uv-theme="cobalt"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { color: #111111; }
+[data-uv-theme="cobalt"] .uv-switch input:checked + i:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *), [data-uv-theme="cobalt"] .uv-check input:checked:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { background: #ffe14d; border-color: #ffe14d; }
+[data-uv-theme="cobalt"] .uv-progress > i:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { background: #ffe14d; } [data-uv-theme="cobalt"] .uv-ring:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { background: conic-gradient(#ffe14d calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="cobalt"] .uv-input:focus:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *), [data-uv-theme="cobalt"] .uv-select:focus:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *), [data-uv-theme="cobalt"] .uv-textarea:focus:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { border-color: #ffe14d; box-shadow: 0 0 0 3px #ffe14d38; }
+[data-uv-theme="cobalt"] .uv-btn:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="cobalt"] .uv-btn:hover:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { scale: 1.06; } [data-uv-theme="cobalt"] .uv-btn:active:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { scale: .96; }
+[data-uv-theme="cobalt"] .uv-card--hover:hover:not([data-uv-theme="cobalt"] [data-uv-theme]:not([data-uv-theme="cobalt"]) *) { scale: 1.02; }

@@ -6,13 +6,13 @@
   --uv-head-weight: 700; --uv-head-case: none;
   
 }
-[data-uv-theme="lemon"] .uv-btn--primary, [data-uv-theme="lemon"] .uv-btn--grad { background: #f5c400; color: #111111; border: 2px solid #2b2a1f; box-shadow: 4px 4px 0 #2b2a1f; }
-[data-uv-theme="lemon"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="lemon"] .uv-card { border: 2px solid #2b2a1f; box-shadow: none; }
-[data-uv-theme="lemon"] .uv-tabs > .uv-tabs__ind { background: #f5c400; } [data-uv-theme="lemon"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="lemon"] .uv-switch input:checked + i, [data-uv-theme="lemon"] .uv-check input:checked { background: #f5c400; border-color: #f5c400; }
-[data-uv-theme="lemon"] .uv-progress > i { background: #f5c400; } [data-uv-theme="lemon"] .uv-ring { background: conic-gradient(#f5c400 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="lemon"] .uv-input:focus, [data-uv-theme="lemon"] .uv-select:focus, [data-uv-theme="lemon"] .uv-textarea:focus { border-color: #f5c400; box-shadow: 0 0 0 3px #f5c40038; }
-[data-uv-theme="lemon"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="lemon"] .uv-btn:hover { translate: 2px 2px; box-shadow: 1px 1px 0 #2b2a1f; } [data-uv-theme="lemon"] .uv-btn:active { translate: 4px 4px; box-shadow: none; }
-[data-uv-theme="lemon"] .uv-card--hover:hover { translate: 3px 3px; }
+[data-uv-theme="lemon"] .uv-btn--primary:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *), [data-uv-theme="lemon"] .uv-btn--grad:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { background: #f5c400; color: #111111; border: 2px solid #2b2a1f; box-shadow: 4px 4px 0 #2b2a1f; }
+[data-uv-theme="lemon"] .uv-btn--primary:hover:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { filter: brightness(1.06); }
+[data-uv-theme="lemon"] .uv-card:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { border: 2px solid #2b2a1f; box-shadow: none; }
+[data-uv-theme="lemon"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { background: #f5c400; } [data-uv-theme="lemon"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { color: #111111; }
+[data-uv-theme="lemon"] .uv-switch input:checked + i:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *), [data-uv-theme="lemon"] .uv-check input:checked:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { background: #f5c400; border-color: #f5c400; }
+[data-uv-theme="lemon"] .uv-progress > i:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { background: #f5c400; } [data-uv-theme="lemon"] .uv-ring:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { background: conic-gradient(#f5c400 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="lemon"] .uv-input:focus:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *), [data-uv-theme="lemon"] .uv-select:focus:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *), [data-uv-theme="lemon"] .uv-textarea:focus:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { border-color: #f5c400; box-shadow: 0 0 0 3px #f5c40038; }
+[data-uv-theme="lemon"] .uv-btn:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="lemon"] .uv-btn:hover:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { translate: 2px 2px; box-shadow: 1px 1px 0 #2b2a1f; } [data-uv-theme="lemon"] .uv-btn:active:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { translate: 4px 4px; box-shadow: none; }
+[data-uv-theme="lemon"] .uv-card--hover:hover:not([data-uv-theme="lemon"] [data-uv-theme]:not([data-uv-theme="lemon"]) *) { translate: 3px 3px; }

@@ -9,9 +9,9 @@
   --uv-btn-shadow: 0 0 14px -2px var(--uv-accent); --uv-card-shadow: 0 0 0 1px #00f0ff30, 0 0 40px -16px var(--uv-accent); --uv-focus: 0 0 0 1px var(--uv-accent), 0 0 18px var(--uv-accent);
   color-scheme: dark;
 }
-[data-uv-theme="neon"] .uv-btn--primary { background: var(--uv-accent); color: #001014; }
-[data-uv-theme="neon"] .uv-btn--primary:hover { background: var(--uv-accent-2); color: #fff; box-shadow: 0 0 22px var(--uv-accent-2); }
-[data-uv-theme="neon"] .uv-h1, [data-uv-theme="neon"] .uv-h2 { text-shadow: 0 0 18px #00f0ff88; }
-[data-uv-theme="neon"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); box-shadow: 0 0 16px var(--uv-accent); }
-[data-uv-theme="neon"] .uv-tabs > button[aria-selected="true"] { color: #001014; }
-[data-uv-theme="neon"] .uv-ring { background: conic-gradient(var(--uv-accent), var(--uv-accent-2) calc(var(--v) * 1%), var(--uv-surface-3) 0); }
+[data-uv-theme="neon"] .uv-btn--primary:not([data-uv-theme="neon"] [data-uv-theme]:not([data-uv-theme="neon"]) *) { background: var(--uv-accent); color: #001014; }
+[data-uv-theme="neon"] .uv-btn--primary:hover:not([data-uv-theme="neon"] [data-uv-theme]:not([data-uv-theme="neon"]) *) { background: var(--uv-accent-2); color: #fff; box-shadow: 0 0 22px var(--uv-accent-2); }
+[data-uv-theme="neon"] .uv-h1:not([data-uv-theme="neon"] [data-uv-theme]:not([data-uv-theme="neon"]) *), [data-uv-theme="neon"] .uv-h2:not([data-uv-theme="neon"] [data-uv-theme]:not([data-uv-theme="neon"]) *) { text-shadow: 0 0 18px #00f0ff88; }
+[data-uv-theme="neon"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="neon"] [data-uv-theme]:not([data-uv-theme="neon"]) *) { background: var(--uv-accent); box-shadow: 0 0 16px var(--uv-accent); }
+[data-uv-theme="neon"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="neon"] [data-uv-theme]:not([data-uv-theme="neon"]) *) { color: #001014; }
+[data-uv-theme="neon"] .uv-ring:not([data-uv-theme="neon"] [data-uv-theme]:not([data-uv-theme="neon"]) *) { background: conic-gradient(var(--uv-accent), var(--uv-accent-2) calc(var(--v) * 1%), var(--uv-surface-3) 0); }

@@ -99,7 +99,7 @@
   @media (max-width: 900px) { .hero, .ide, .tok, .install, .sec-h { grid-template-columns: 1fr; } .tree { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--rule); } .tree h4 { display: none; } .tree button { width: auto; white-space: nowrap; } .install > div { border-right: 0; border-bottom: 1px solid var(--rule); } .bar nav { display: none; } }
   @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
 </style>
-<script>try{const t=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 </head>
 <body>
 <header class="bar">

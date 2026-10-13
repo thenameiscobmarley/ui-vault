@@ -9,7 +9,7 @@
   background-image: radial-gradient(40% 50% at 15% 20%, #7b5cff88, transparent 70%), radial-gradient(40% 50% at 85% 30%, #00c2ff66, transparent 70%), radial-gradient(50% 50% at 50% 100%, #ff5ca866, transparent 70%);
   color-scheme: dark;
 }
-[data-uv-theme="glass"] .uv-card, [data-uv-theme="glass"] .uv-tabs, [data-uv-theme="glass"] .uv-input { backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); }
-[data-uv-theme="glass"] .uv-btn--primary { background: #fff; color: #1a1340; }
-[data-uv-theme="glass"] .uv-btn--primary:hover { background: var(--uv-accent-2); color: #001018; }
-[data-uv-theme="glass"] .uv-tabs > .uv-tabs__ind { background: #ffffff33; } [data-uv-theme="glass"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+[data-uv-theme="glass"] .uv-card:not([data-uv-theme="glass"] [data-uv-theme]:not([data-uv-theme="glass"]) *), [data-uv-theme="glass"] .uv-tabs:not([data-uv-theme="glass"] [data-uv-theme]:not([data-uv-theme="glass"]) *), [data-uv-theme="glass"] .uv-input:not([data-uv-theme="glass"] [data-uv-theme]:not([data-uv-theme="glass"]) *) { backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); }
+[data-uv-theme="glass"] .uv-btn--primary:not([data-uv-theme="glass"] [data-uv-theme]:not([data-uv-theme="glass"]) *) { background: #fff; color: #1a1340; }
+[data-uv-theme="glass"] .uv-btn--primary:hover:not([data-uv-theme="glass"] [data-uv-theme]:not([data-uv-theme="glass"]) *) { background: var(--uv-accent-2); color: #001018; }
+[data-uv-theme="glass"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="glass"] [data-uv-theme]:not([data-uv-theme="glass"]) *) { background: #ffffff33; } [data-uv-theme="glass"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="glass"] [data-uv-theme]:not([data-uv-theme="glass"]) *) { color: #fff; }

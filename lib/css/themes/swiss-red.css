@@ -6,12 +6,12 @@
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.05em;
   background-image: linear-gradient(#0a0a0a12 1px, transparent 1px), linear-gradient(90deg, #0a0a0a12 1px, transparent 1px); background-size: 32px 32px;
 }
-[data-uv-theme="swiss-red"] .uv-btn--primary, [data-uv-theme="swiss-red"] .uv-btn--grad { background: #e1251b; color: #ffffff; border-color: #e1251b; }
-[data-uv-theme="swiss-red"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="swiss-red"] .uv-card { border: 2px solid #0a0a0a; box-shadow: none; }
-[data-uv-theme="swiss-red"] .uv-tabs > .uv-tabs__ind { background: #e1251b; } [data-uv-theme="swiss-red"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="swiss-red"] .uv-switch input:checked + i, [data-uv-theme="swiss-red"] .uv-check input:checked { background: #e1251b; border-color: #e1251b; }
-[data-uv-theme="swiss-red"] .uv-progress > i { background: #e1251b; } [data-uv-theme="swiss-red"] .uv-ring { background: conic-gradient(#e1251b calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="swiss-red"] .uv-input:focus, [data-uv-theme="swiss-red"] .uv-select:focus, [data-uv-theme="swiss-red"] .uv-textarea:focus { border-color: #e1251b; box-shadow: 0 0 0 3px #e1251b38; }
-[data-uv-theme="swiss-red"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="swiss-red"] .uv-btn:hover { background: #0a0a0a; color: #ffffff; border-color: #0a0a0a; }
+[data-uv-theme="swiss-red"] .uv-btn--primary:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *), [data-uv-theme="swiss-red"] .uv-btn--grad:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { background: #e1251b; color: #ffffff; border-color: #e1251b; }
+[data-uv-theme="swiss-red"] .uv-btn--primary:hover:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { filter: brightness(1.06); }
+[data-uv-theme="swiss-red"] .uv-card:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { border: 2px solid #0a0a0a; box-shadow: none; }
+[data-uv-theme="swiss-red"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { background: #e1251b; } [data-uv-theme="swiss-red"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { color: #ffffff; }
+[data-uv-theme="swiss-red"] .uv-switch input:checked + i:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *), [data-uv-theme="swiss-red"] .uv-check input:checked:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { background: #e1251b; border-color: #e1251b; }
+[data-uv-theme="swiss-red"] .uv-progress > i:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { background: #e1251b; } [data-uv-theme="swiss-red"] .uv-ring:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { background: conic-gradient(#e1251b calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="swiss-red"] .uv-input:focus:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *), [data-uv-theme="swiss-red"] .uv-select:focus:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *), [data-uv-theme="swiss-red"] .uv-textarea:focus:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { border-color: #e1251b; box-shadow: 0 0 0 3px #e1251b38; }
+[data-uv-theme="swiss-red"] .uv-btn:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="swiss-red"] .uv-btn:hover:not([data-uv-theme="swiss-red"] [data-uv-theme]:not([data-uv-theme="swiss-red"]) *) { background: #0a0a0a; color: #ffffff; border-color: #0a0a0a; }

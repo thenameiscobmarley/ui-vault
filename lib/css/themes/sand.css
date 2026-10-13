@@ -6,13 +6,13 @@
   --uv-head-weight: 400; --uv-head-case: none;
   
 }
-[data-uv-theme="sand"] .uv-btn--primary, [data-uv-theme="sand"] .uv-btn--grad { background: #3e3227; color: #efe4d2; border-color: #3e3227; }
-[data-uv-theme="sand"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="sand"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #3e32270f, 0 14px 34px -14px #3e322759; }
-[data-uv-theme="sand"] .uv-tabs > .uv-tabs__ind { background: #b0743c; } [data-uv-theme="sand"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="sand"] .uv-switch input:checked + i, [data-uv-theme="sand"] .uv-check input:checked { background: #b0743c; border-color: #b0743c; }
-[data-uv-theme="sand"] .uv-progress > i { background: #b0743c; } [data-uv-theme="sand"] .uv-ring { background: conic-gradient(#b0743c calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="sand"] .uv-input:focus, [data-uv-theme="sand"] .uv-select:focus, [data-uv-theme="sand"] .uv-textarea:focus { border-color: #b0743c; box-shadow: 0 0 0 3px #b0743c38; }
-[data-uv-theme="sand"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="sand"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="sand"] .uv-btn:active { translate: 0 1px; }
-[data-uv-theme="sand"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="sand"] .uv-btn--primary:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *), [data-uv-theme="sand"] .uv-btn--grad:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { background: #3e3227; color: #efe4d2; border-color: #3e3227; }
+[data-uv-theme="sand"] .uv-btn--primary:hover:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { filter: brightness(1.06); }
+[data-uv-theme="sand"] .uv-card:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { border-color: transparent; box-shadow: 0 1px 2px #3e32270f, 0 14px 34px -14px #3e322759; }
+[data-uv-theme="sand"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { background: #b0743c; } [data-uv-theme="sand"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { color: #ffffff; }
+[data-uv-theme="sand"] .uv-switch input:checked + i:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *), [data-uv-theme="sand"] .uv-check input:checked:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { background: #b0743c; border-color: #b0743c; }
+[data-uv-theme="sand"] .uv-progress > i:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { background: #b0743c; } [data-uv-theme="sand"] .uv-ring:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { background: conic-gradient(#b0743c calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="sand"] .uv-input:focus:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *), [data-uv-theme="sand"] .uv-select:focus:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *), [data-uv-theme="sand"] .uv-textarea:focus:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { border-color: #b0743c; box-shadow: 0 0 0 3px #b0743c38; }
+[data-uv-theme="sand"] .uv-btn:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="sand"] .uv-btn:hover:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="sand"] .uv-btn:active:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { translate: 0 1px; }
+[data-uv-theme="sand"] .uv-card--hover:hover:not([data-uv-theme="sand"] [data-uv-theme]:not([data-uv-theme="sand"]) *) { translate: 0 -4px; }

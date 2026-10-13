@@ -6,13 +6,13 @@
   --uv-head-weight: 400; --uv-head-case: none;
   background-image: radial-gradient(45% 55% at 12% 10%, #9fd5f273, transparent 70%), radial-gradient(40% 50% at 88% 22%, #c8f1ee61, transparent 70%), radial-gradient(55% 50% at 55% 100%, #7fb6e659, transparent 70%);
 }
-[data-uv-theme="ocean"] .uv-btn--primary, [data-uv-theme="ocean"] .uv-btn--grad { background: #0a7bbf; color: #ffffff; border-color: #0a7bbf; }
-[data-uv-theme="ocean"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="ocean"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #0c2a400f, 0 14px 34px -14px #0c2a4059; }
-[data-uv-theme="ocean"] .uv-tabs > .uv-tabs__ind { background: #0a7bbf; } [data-uv-theme="ocean"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="ocean"] .uv-switch input:checked + i, [data-uv-theme="ocean"] .uv-check input:checked { background: #0a7bbf; border-color: #0a7bbf; }
-[data-uv-theme="ocean"] .uv-progress > i { background: #0a7bbf; } [data-uv-theme="ocean"] .uv-ring { background: conic-gradient(#0a7bbf calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="ocean"] .uv-input:focus, [data-uv-theme="ocean"] .uv-select:focus, [data-uv-theme="ocean"] .uv-textarea:focus { border-color: #0a7bbf; box-shadow: 0 0 0 3px #0a7bbf38; }
-[data-uv-theme="ocean"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="ocean"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="ocean"] .uv-btn:active { translate: 0 1px; }
-[data-uv-theme="ocean"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="ocean"] .uv-btn--primary:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *), [data-uv-theme="ocean"] .uv-btn--grad:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { background: #0a7bbf; color: #ffffff; border-color: #0a7bbf; }
+[data-uv-theme="ocean"] .uv-btn--primary:hover:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { filter: brightness(1.06); }
+[data-uv-theme="ocean"] .uv-card:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { border-color: transparent; box-shadow: 0 1px 2px #0c2a400f, 0 14px 34px -14px #0c2a4059; }
+[data-uv-theme="ocean"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { background: #0a7bbf; } [data-uv-theme="ocean"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { color: #ffffff; }
+[data-uv-theme="ocean"] .uv-switch input:checked + i:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *), [data-uv-theme="ocean"] .uv-check input:checked:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { background: #0a7bbf; border-color: #0a7bbf; }
+[data-uv-theme="ocean"] .uv-progress > i:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { background: #0a7bbf; } [data-uv-theme="ocean"] .uv-ring:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { background: conic-gradient(#0a7bbf calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="ocean"] .uv-input:focus:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *), [data-uv-theme="ocean"] .uv-select:focus:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *), [data-uv-theme="ocean"] .uv-textarea:focus:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { border-color: #0a7bbf; box-shadow: 0 0 0 3px #0a7bbf38; }
+[data-uv-theme="ocean"] .uv-btn:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="ocean"] .uv-btn:hover:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="ocean"] .uv-btn:active:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { translate: 0 1px; }
+[data-uv-theme="ocean"] .uv-card--hover:hover:not([data-uv-theme="ocean"] [data-uv-theme]:not([data-uv-theme="ocean"]) *) { translate: 0 -4px; }

@@ -7,13 +7,13 @@
   color-scheme: dark;
   
 }
-[data-uv-theme="charcoal"] .uv-btn--primary, [data-uv-theme="charcoal"] .uv-btn--grad { background: #ffb547; color: #111111; border-color: #ffb547; }
-[data-uv-theme="charcoal"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="charcoal"] .uv-card { background: #303133; border-color: transparent; box-shadow: inset 0 2px 8px #0000002e; }
-[data-uv-theme="charcoal"] .uv-tabs > .uv-tabs__ind { background: #ffb547; } [data-uv-theme="charcoal"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="charcoal"] .uv-switch input:checked + i, [data-uv-theme="charcoal"] .uv-check input:checked { background: #ffb547; border-color: #ffb547; }
-[data-uv-theme="charcoal"] .uv-progress > i { background: #ffb547; } [data-uv-theme="charcoal"] .uv-ring { background: conic-gradient(#ffb547 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="charcoal"] .uv-input:focus, [data-uv-theme="charcoal"] .uv-select:focus, [data-uv-theme="charcoal"] .uv-textarea:focus { border-color: #ffb547; box-shadow: 0 0 0 3px #ffb54738; }
-[data-uv-theme="charcoal"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="charcoal"] .uv-btn:hover { filter: brightness(1.08); } [data-uv-theme="charcoal"] .uv-btn:active { scale: .94; }
-[data-uv-theme="charcoal"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="charcoal"] .uv-btn--primary:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *), [data-uv-theme="charcoal"] .uv-btn--grad:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { background: #ffb547; color: #111111; border-color: #ffb547; }
+[data-uv-theme="charcoal"] .uv-btn--primary:hover:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { filter: brightness(1.06); }
+[data-uv-theme="charcoal"] .uv-card:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { background: #303133; border-color: transparent; box-shadow: inset 0 2px 8px #0000002e; }
+[data-uv-theme="charcoal"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { background: #ffb547; } [data-uv-theme="charcoal"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { color: #111111; }
+[data-uv-theme="charcoal"] .uv-switch input:checked + i:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *), [data-uv-theme="charcoal"] .uv-check input:checked:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { background: #ffb547; border-color: #ffb547; }
+[data-uv-theme="charcoal"] .uv-progress > i:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { background: #ffb547; } [data-uv-theme="charcoal"] .uv-ring:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { background: conic-gradient(#ffb547 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="charcoal"] .uv-input:focus:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *), [data-uv-theme="charcoal"] .uv-select:focus:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *), [data-uv-theme="charcoal"] .uv-textarea:focus:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { border-color: #ffb547; box-shadow: 0 0 0 3px #ffb54738; }
+[data-uv-theme="charcoal"] .uv-btn:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="charcoal"] .uv-btn:hover:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { filter: brightness(1.08); } [data-uv-theme="charcoal"] .uv-btn:active:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { scale: .94; }
+[data-uv-theme="charcoal"] .uv-card--hover:hover:not([data-uv-theme="charcoal"] [data-uv-theme]:not([data-uv-theme="charcoal"]) *) { translate: 0 -4px; }

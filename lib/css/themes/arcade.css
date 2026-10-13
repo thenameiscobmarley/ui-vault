@@ -7,13 +7,13 @@
   color-scheme: dark;
   background-image: repeating-linear-gradient(0deg, #0000002e 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, #00000073);
 }
-[data-uv-theme="arcade"] .uv-btn--primary, [data-uv-theme="arcade"] .uv-btn--grad { background: #ff2e4d; color: #ffffff; border-color: #ff2e4d; box-shadow: 0 5px 0 #a61e32; }
-[data-uv-theme="arcade"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="arcade"] .uv-card { border: 2px solid #f4f4ff; box-shadow: none; }
-[data-uv-theme="arcade"] .uv-tabs > .uv-tabs__ind { background: #ff2e4d; } [data-uv-theme="arcade"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="arcade"] .uv-switch input:checked + i, [data-uv-theme="arcade"] .uv-check input:checked { background: #ff2e4d; border-color: #ff2e4d; }
-[data-uv-theme="arcade"] .uv-progress > i { background: #ff2e4d; } [data-uv-theme="arcade"] .uv-ring { background: conic-gradient(#ff2e4d calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="arcade"] .uv-input:focus, [data-uv-theme="arcade"] .uv-select:focus, [data-uv-theme="arcade"] .uv-textarea:focus { border-color: #ff2e4d; box-shadow: 0 0 0 3px #ff2e4d38; }
-[data-uv-theme="arcade"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="arcade"] .uv-btn:hover { filter: brightness(1.08); } [data-uv-theme="arcade"] .uv-btn:active { scale: .94; }
-[data-uv-theme="arcade"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="arcade"] .uv-btn--primary:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *), [data-uv-theme="arcade"] .uv-btn--grad:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { background: #ff2e4d; color: #ffffff; border-color: #ff2e4d; box-shadow: 0 5px 0 #a61e32; }
+[data-uv-theme="arcade"] .uv-btn--primary:hover:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { filter: brightness(1.06); }
+[data-uv-theme="arcade"] .uv-card:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { border: 2px solid #f4f4ff; box-shadow: none; }
+[data-uv-theme="arcade"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { background: #ff2e4d; } [data-uv-theme="arcade"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { color: #ffffff; }
+[data-uv-theme="arcade"] .uv-switch input:checked + i:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *), [data-uv-theme="arcade"] .uv-check input:checked:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { background: #ff2e4d; border-color: #ff2e4d; }
+[data-uv-theme="arcade"] .uv-progress > i:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { background: #ff2e4d; } [data-uv-theme="arcade"] .uv-ring:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { background: conic-gradient(#ff2e4d calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="arcade"] .uv-input:focus:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *), [data-uv-theme="arcade"] .uv-select:focus:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *), [data-uv-theme="arcade"] .uv-textarea:focus:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { border-color: #ff2e4d; box-shadow: 0 0 0 3px #ff2e4d38; }
+[data-uv-theme="arcade"] .uv-btn:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="arcade"] .uv-btn:hover:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { filter: brightness(1.08); } [data-uv-theme="arcade"] .uv-btn:active:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { scale: .94; }
+[data-uv-theme="arcade"] .uv-card--hover:hover:not([data-uv-theme="arcade"] [data-uv-theme]:not([data-uv-theme="arcade"]) *) { translate: 0 -4px; }

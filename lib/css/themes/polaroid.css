@@ -6,13 +6,13 @@
   --uv-head-weight: 700; --uv-head-case: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-[data-uv-theme="polaroid"] .uv-btn--primary, [data-uv-theme="polaroid"] .uv-btn--grad { background: #d96c4f; color: #ffffff; border-color: #d96c4f; }
-[data-uv-theme="polaroid"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="polaroid"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #2a3a3d0f, 0 14px 34px -14px #2a3a3d59; }
-[data-uv-theme="polaroid"] .uv-tabs > .uv-tabs__ind { background: #d96c4f; } [data-uv-theme="polaroid"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="polaroid"] .uv-switch input:checked + i, [data-uv-theme="polaroid"] .uv-check input:checked { background: #d96c4f; border-color: #d96c4f; }
-[data-uv-theme="polaroid"] .uv-progress > i { background: #d96c4f; } [data-uv-theme="polaroid"] .uv-ring { background: conic-gradient(#d96c4f calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="polaroid"] .uv-input:focus, [data-uv-theme="polaroid"] .uv-select:focus, [data-uv-theme="polaroid"] .uv-textarea:focus { border-color: #d96c4f; box-shadow: 0 0 0 3px #d96c4f38; }
-[data-uv-theme="polaroid"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="polaroid"] .uv-btn:hover { rotate: -2deg; scale: 1.03; }
-[data-uv-theme="polaroid"] .uv-card--hover:hover { rotate: -1deg; }
+[data-uv-theme="polaroid"] .uv-btn--primary:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *), [data-uv-theme="polaroid"] .uv-btn--grad:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { background: #d96c4f; color: #ffffff; border-color: #d96c4f; }
+[data-uv-theme="polaroid"] .uv-btn--primary:hover:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { filter: brightness(1.06); }
+[data-uv-theme="polaroid"] .uv-card:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { border-color: transparent; box-shadow: 0 1px 2px #2a3a3d0f, 0 14px 34px -14px #2a3a3d59; }
+[data-uv-theme="polaroid"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { background: #d96c4f; } [data-uv-theme="polaroid"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { color: #ffffff; }
+[data-uv-theme="polaroid"] .uv-switch input:checked + i:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *), [data-uv-theme="polaroid"] .uv-check input:checked:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { background: #d96c4f; border-color: #d96c4f; }
+[data-uv-theme="polaroid"] .uv-progress > i:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { background: #d96c4f; } [data-uv-theme="polaroid"] .uv-ring:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { background: conic-gradient(#d96c4f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="polaroid"] .uv-input:focus:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *), [data-uv-theme="polaroid"] .uv-select:focus:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *), [data-uv-theme="polaroid"] .uv-textarea:focus:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { border-color: #d96c4f; box-shadow: 0 0 0 3px #d96c4f38; }
+[data-uv-theme="polaroid"] .uv-btn:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="polaroid"] .uv-btn:hover:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { rotate: -2deg; scale: 1.03; }
+[data-uv-theme="polaroid"] .uv-card--hover:hover:not([data-uv-theme="polaroid"] [data-uv-theme]:not([data-uv-theme="polaroid"]) *) { rotate: -1deg; }

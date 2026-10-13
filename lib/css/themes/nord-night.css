@@ -7,12 +7,12 @@
   color-scheme: dark;
   
 }
-[data-uv-theme="nord-night"] .uv-btn--primary, [data-uv-theme="nord-night"] .uv-btn--grad { background: #88c0d0; color: #111111; border-color: #88c0d0; }
-[data-uv-theme="nord-night"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="nord-night"] .uv-tabs > .uv-tabs__ind { background: #88c0d0; } [data-uv-theme="nord-night"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="nord-night"] .uv-switch input:checked + i, [data-uv-theme="nord-night"] .uv-check input:checked { background: #88c0d0; border-color: #88c0d0; }
-[data-uv-theme="nord-night"] .uv-progress > i { background: #88c0d0; } [data-uv-theme="nord-night"] .uv-ring { background: conic-gradient(#88c0d0 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="nord-night"] .uv-input:focus, [data-uv-theme="nord-night"] .uv-select:focus, [data-uv-theme="nord-night"] .uv-textarea:focus { border-color: #88c0d0; box-shadow: 0 0 0 3px #88c0d038; }
-[data-uv-theme="nord-night"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="nord-night"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="nord-night"] .uv-btn:active { translate: 0 1px; }
-[data-uv-theme="nord-night"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="nord-night"] .uv-btn--primary:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *), [data-uv-theme="nord-night"] .uv-btn--grad:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { background: #88c0d0; color: #111111; border-color: #88c0d0; }
+[data-uv-theme="nord-night"] .uv-btn--primary:hover:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { filter: brightness(1.06); }
+[data-uv-theme="nord-night"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { background: #88c0d0; } [data-uv-theme="nord-night"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { color: #111111; }
+[data-uv-theme="nord-night"] .uv-switch input:checked + i:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *), [data-uv-theme="nord-night"] .uv-check input:checked:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { background: #88c0d0; border-color: #88c0d0; }
+[data-uv-theme="nord-night"] .uv-progress > i:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { background: #88c0d0; } [data-uv-theme="nord-night"] .uv-ring:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { background: conic-gradient(#88c0d0 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="nord-night"] .uv-input:focus:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *), [data-uv-theme="nord-night"] .uv-select:focus:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *), [data-uv-theme="nord-night"] .uv-textarea:focus:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { border-color: #88c0d0; box-shadow: 0 0 0 3px #88c0d038; }
+[data-uv-theme="nord-night"] .uv-btn:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="nord-night"] .uv-btn:hover:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="nord-night"] .uv-btn:active:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { translate: 0 1px; }
+[data-uv-theme="nord-night"] .uv-card--hover:hover:not([data-uv-theme="nord-night"] [data-uv-theme]:not([data-uv-theme="nord-night"]) *) { translate: 0 -4px; }

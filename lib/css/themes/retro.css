@@ -10,9 +10,9 @@
   --uv-card-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #fff;
   --uv-focus: inset -1px -1px #fff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
 }
-[data-uv-theme="retro"] .uv-btn, [data-uv-theme="retro"] .uv-btn--primary, [data-uv-theme="retro"] .uv-btn--ghost { background: #c0c0c0; color: #000; border: 0; }
-[data-uv-theme="retro"] .uv-card { background: #c0c0c0; }
-[data-uv-theme="retro"] .uv-input { background: #fff; box-shadow: var(--uv-focus); border: 0; }
-[data-uv-theme="retro"] .uv-h1, [data-uv-theme="retro"] .uv-h2 { color: #fff; text-shadow: 2px 2px 0 #000; }
-[data-uv-theme="retro"] .uv-card .uv-h1, [data-uv-theme="retro"] .uv-card .uv-h2 { color: #000; text-shadow: none; }
-[data-uv-theme="retro"] .uv-tabs > .uv-tabs__ind { background: var(--uv-accent); } [data-uv-theme="retro"] .uv-tabs > button[aria-selected="true"] { color: #fff; }
+[data-uv-theme="retro"] .uv-btn:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *), [data-uv-theme="retro"] .uv-btn--primary:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *), [data-uv-theme="retro"] .uv-btn--ghost:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *) { background: #c0c0c0; color: #000; border: 0; }
+[data-uv-theme="retro"] .uv-card:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *) { background: #c0c0c0; }
+[data-uv-theme="retro"] .uv-input:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *) { background: #fff; box-shadow: var(--uv-focus); border: 0; }
+[data-uv-theme="retro"] .uv-h1:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *), [data-uv-theme="retro"] .uv-h2:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *) { color: #fff; text-shadow: 2px 2px 0 #000; }
+[data-uv-theme="retro"] .uv-card .uv-h1:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *), [data-uv-theme="retro"] .uv-card .uv-h2:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *) { color: #000; text-shadow: none; }
+[data-uv-theme="retro"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *) { background: var(--uv-accent); } [data-uv-theme="retro"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="retro"] [data-uv-theme]:not([data-uv-theme="retro"]) *) { color: #fff; }

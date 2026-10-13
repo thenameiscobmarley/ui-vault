@@ -6,13 +6,13 @@
   --uv-head-weight: 700; --uv-head-case: none;
   
 }
-[data-uv-theme="seafoam"] .uv-btn--primary, [data-uv-theme="seafoam"] .uv-btn--grad { background: #ff7f6a; color: #111111; border-color: #ff7f6a; }
-[data-uv-theme="seafoam"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="seafoam"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #163a360f, 0 14px 34px -14px #163a3659; }
-[data-uv-theme="seafoam"] .uv-tabs > .uv-tabs__ind { background: #ff7f6a; } [data-uv-theme="seafoam"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
-[data-uv-theme="seafoam"] .uv-switch input:checked + i, [data-uv-theme="seafoam"] .uv-check input:checked { background: #ff7f6a; border-color: #ff7f6a; }
-[data-uv-theme="seafoam"] .uv-progress > i { background: #ff7f6a; } [data-uv-theme="seafoam"] .uv-ring { background: conic-gradient(#ff7f6a calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="seafoam"] .uv-input:focus, [data-uv-theme="seafoam"] .uv-select:focus, [data-uv-theme="seafoam"] .uv-textarea:focus { border-color: #ff7f6a; box-shadow: 0 0 0 3px #ff7f6a38; }
-[data-uv-theme="seafoam"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="seafoam"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="seafoam"] .uv-btn:active { translate: 0 1px; }
-[data-uv-theme="seafoam"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="seafoam"] .uv-btn--primary:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *), [data-uv-theme="seafoam"] .uv-btn--grad:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { background: #ff7f6a; color: #111111; border-color: #ff7f6a; }
+[data-uv-theme="seafoam"] .uv-btn--primary:hover:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { filter: brightness(1.06); }
+[data-uv-theme="seafoam"] .uv-card:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { border-color: transparent; box-shadow: 0 1px 2px #163a360f, 0 14px 34px -14px #163a3659; }
+[data-uv-theme="seafoam"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { background: #ff7f6a; } [data-uv-theme="seafoam"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { color: #111111; }
+[data-uv-theme="seafoam"] .uv-switch input:checked + i:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *), [data-uv-theme="seafoam"] .uv-check input:checked:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { background: #ff7f6a; border-color: #ff7f6a; }
+[data-uv-theme="seafoam"] .uv-progress > i:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { background: #ff7f6a; } [data-uv-theme="seafoam"] .uv-ring:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { background: conic-gradient(#ff7f6a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="seafoam"] .uv-input:focus:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *), [data-uv-theme="seafoam"] .uv-select:focus:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *), [data-uv-theme="seafoam"] .uv-textarea:focus:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { border-color: #ff7f6a; box-shadow: 0 0 0 3px #ff7f6a38; }
+[data-uv-theme="seafoam"] .uv-btn:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="seafoam"] .uv-btn:hover:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="seafoam"] .uv-btn:active:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { translate: 0 1px; }
+[data-uv-theme="seafoam"] .uv-card--hover:hover:not([data-uv-theme="seafoam"] [data-uv-theme]:not([data-uv-theme="seafoam"]) *) { translate: 0 -4px; }

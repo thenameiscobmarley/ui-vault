@@ -148,6 +148,20 @@
     }
   }
 
+  /** Same as tools/build.py scope_nearest(): theme rules stop at nested themes, so the closest theme wins. */
+  function scopeNearest(css, name) {
+    const root = `[data-uv-theme="${name}"]`, guard = `:not(${root} [data-uv-theme]:not(${root}) *)`;
+    return css.replace(/([^{}]+)\{/g, (m, sels) => {
+      if (sels.trim().startsWith("@")) return m;
+      return sels.split(",").map(part => {
+        const p = part.trim();
+        if (!p.startsWith(root + " ")) return part;
+        const pe = p.match(/::[\w-]+$/);
+        return " " + (pe ? p.slice(0, pe.index) + guard + pe[0] : p + guard);
+      }).join(",") + " {";
+    });
+  }
+
   /** spec: {name, bg, fg, ac, ac2, font, head, shape, bw, weight, upper, background, heading, button, hover, card} */
   function css(s) {
     const [c, dark] = derive(s), sel = `[data-uv-theme="${s.name}"]`, r = SHAPES[s.shape || "soft"];
@@ -165,7 +179,7 @@
     out.push(`${sel} .uv-progress > i { background: ${c.accent}; } ${sel} .uv-ring { background: conic-gradient(${c.accent} calc(var(--v) * 1%), var(--uv-line-2) 0); }`);
     out.push(`${sel} .uv-input:focus, ${sel} .uv-select:focus { border-color: ${c.accent}; box-shadow: 0 0 0 3px ${alpha(c.accent, .22)}; }`);
     out.push(hoverCss(s.hover, sel, c));
-    return out.join("\n") + "\n";
+    return scopeNearest(out.join("\n") + "\n", s.name);
   }
 
   function tokens(s) {

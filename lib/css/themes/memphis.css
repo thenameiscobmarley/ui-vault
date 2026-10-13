@@ -6,13 +6,13 @@
   --uv-head-weight: 800; --uv-head-case: none;
   background-image: radial-gradient(#1b1b2f29 1px, transparent 1.4px); background-size: 18px 18px;
 }
-[data-uv-theme="memphis"] .uv-btn--primary, [data-uv-theme="memphis"] .uv-btn--grad { background: #ff5ca8; color: #ffffff; border: 2px solid #1b1b2f; box-shadow: 4px 4px 0 #1b1b2f; }
-[data-uv-theme="memphis"] .uv-btn--primary:hover { filter: brightness(1.06); }
-[data-uv-theme="memphis"] .uv-card { border: 2px solid #1b1b2f; box-shadow: 6px 6px 0 #1b1b2f; }
-[data-uv-theme="memphis"] .uv-tabs > .uv-tabs__ind { background: #ff5ca8; } [data-uv-theme="memphis"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
-[data-uv-theme="memphis"] .uv-switch input:checked + i, [data-uv-theme="memphis"] .uv-check input:checked { background: #ff5ca8; border-color: #ff5ca8; }
-[data-uv-theme="memphis"] .uv-progress > i { background: #ff5ca8; } [data-uv-theme="memphis"] .uv-ring { background: conic-gradient(#ff5ca8 calc(var(--v) * 1%), var(--uv-line-2) 0); }
-[data-uv-theme="memphis"] .uv-input:focus, [data-uv-theme="memphis"] .uv-select:focus, [data-uv-theme="memphis"] .uv-textarea:focus { border-color: #ff5ca8; box-shadow: 0 0 0 3px #ff5ca838; }
-[data-uv-theme="memphis"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
-[data-uv-theme="memphis"] .uv-btn:hover { animation: uvt-wob .5s; }
-[data-uv-theme="memphis"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="memphis"] .uv-btn--primary:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *), [data-uv-theme="memphis"] .uv-btn--grad:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { background: #ff5ca8; color: #ffffff; border: 2px solid #1b1b2f; box-shadow: 4px 4px 0 #1b1b2f; }
+[data-uv-theme="memphis"] .uv-btn--primary:hover:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { filter: brightness(1.06); }
+[data-uv-theme="memphis"] .uv-card:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { border: 2px solid #1b1b2f; box-shadow: 6px 6px 0 #1b1b2f; }
+[data-uv-theme="memphis"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { background: #ff5ca8; } [data-uv-theme="memphis"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { color: #ffffff; }
+[data-uv-theme="memphis"] .uv-switch input:checked + i:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *), [data-uv-theme="memphis"] .uv-check input:checked:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { background: #ff5ca8; border-color: #ff5ca8; }
+[data-uv-theme="memphis"] .uv-progress > i:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { background: #ff5ca8; } [data-uv-theme="memphis"] .uv-ring:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { background: conic-gradient(#ff5ca8 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="memphis"] .uv-input:focus:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *), [data-uv-theme="memphis"] .uv-select:focus:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *), [data-uv-theme="memphis"] .uv-textarea:focus:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { border-color: #ff5ca8; box-shadow: 0 0 0 3px #ff5ca838; }
+[data-uv-theme="memphis"] .uv-btn:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="memphis"] .uv-btn:hover:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { animation: uvt-wob .5s; }
+[data-uv-theme="memphis"] .uv-card--hover:hover:not([data-uv-theme="memphis"] [data-uv-theme]:not([data-uv-theme="memphis"]) *) { translate: 0 -4px; }
