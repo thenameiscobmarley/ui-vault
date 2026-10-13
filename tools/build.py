@@ -176,7 +176,7 @@ MIT licensed.
 """
 
 
-TOKEN_KEYS = ["bg", "surface", "surface-2", "surface-3", "line", "line-2", "text", "muted", "dim", "accent", "accent-2",
+TOKEN_KEYS = ["bg", "surface", "surface-2", "surface-3", "line", "line-2", "text", "muted", "dim", "accent", "accent-2", "on-accent",
               "success", "warn", "danger", "info", "font", "font-head", "mono", "r-xs", "r-sm", "r", "r-lg", "bw"]
 
 
@@ -309,6 +309,17 @@ def build_parts():
     return meta
 
 
+def build_native(layers_meta):
+    """UiVault3 data: the same designs/kits/layers/tokens the web uses, for the PySide6 and Qt C++ libraries."""
+    native = parts_specs.native()
+    (LIB / "native.json").write_text(json.dumps(native, ensure_ascii=False))
+    d = ROOT / "uivault3" / "uivault3" / "data"; d.mkdir(parents=True, exist_ok=True)
+    (d / "native.json").write_text(json.dumps(native, ensure_ascii=False))
+    (d / "layers.json").write_text(json.dumps(layers_meta, ensure_ascii=False))
+    (d / "tokens.json").write_text((LIB / "tokens.json").read_text())
+    return native
+
+
 def raw_src():
     """lib/raw-src.js: CSS bundle text + JS module sources, used by the site's "Raw code" view."""
     src = {"css": (LIB / "uivault.css").read_text(), "js": {m: (JS / f"{m}.js").read_text() for m in JS_ORDER}}
@@ -329,7 +340,7 @@ def manifest(themes):
 
 def make_lang_zips():
     """downloads/uivault-python-*.zip and uivault-cpp-*.zip"""
-    for lang in ("python", "cpp"):
+    for lang in ("python", "cpp", "uivault3"):
         base = ROOT / lang
         for name in (f"uivault-{lang}-{VERSION}.zip", f"uivault-{lang}-latest.zip"):
             with zipfile.ZipFile(DL / name, "w", zipfile.ZIP_DEFLATED) as z:
@@ -358,6 +369,7 @@ if __name__ == "__main__":
     bundle(themes)
     tokens = export_tokens(themes)
     export_cpp(tokens, parts)
+    native = build_native(layers)
     raw_src()
     m = manifest(themes)
     make_zip(m)
