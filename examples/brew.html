@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-uv-theme="espresso" data-uv-btn="clay" data-uv-card="elevated">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BREW — slow coffee · UI Vault example</title>
+<meta name="description" content="A coffee brand page built with UI Vault: a cup that fills as you scroll, a self-drawing process line, stacking menu cards and tilt-on-hover origin cards." />
+<meta name="theme-color" content="#1c120c" />
+<link rel="stylesheet" href="../lib/css/fonts.css" />
+<link rel="stylesheet" href="../lib/uivault.css" />
+<link rel="stylesheet" href="../lib/css/parts.css" />
+<style>
+  :root { --cream: #f3e6d3; --crema: #c98b4e; --roast: #3b2416; }
+  body { margin: 0; overflow-x: clip; font-family: "Geist", system-ui, sans-serif; }
+  .ex-back { position: fixed; top: 14px; left: 14px; z-index: 100; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--uv-bg) 85%, transparent); border: 1px solid var(--uv-line-2); color: var(--uv-text); font: 500 13px "Geist", sans-serif; text-decoration: none; transition: border-color .2s; }
+  .ex-back:hover { border-color: var(--uv-accent); }
+  .k { font: 500 12px "Geist Mono", monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--uv-accent); }
+  .disp { font-family: "DM Serif Display", serif; font-weight: 400; letter-spacing: -.01em; }
+
+  /* 1 pour: the cup fills with --p; labels change at thresholds */
+  .pour { --len: 340vh; }
+  .pour .uv-pin__stage { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4vw; padding: 0 6vw; box-sizing: border-box; }
+  .pour h1 { margin: 10px 0; font-size: clamp(64px, 9vw, 140px); line-height: .9; }
+  .pour h1 em { color: var(--crema); }
+  .pour .lines { position: relative; height: 3.4em; margin-top: 18px; font-size: 20px; }
+  .pour .lines p { position: absolute; inset: 0; margin: 0; opacity: clamp(0, (var(--p, 0) - var(--a)) * 14, 1); transform: translateY(calc((1 - clamp(0, (var(--p, 0) - var(--a)) * 14, 1)) * 14px)); }
+  .pour .lines p:not(:last-child) { opacity: min(clamp(0, (var(--p, 0) - var(--a)) * 14, 1), clamp(0, (var(--b) - var(--p, 0)) * 14, 1)); }
+  .cupwrap { position: relative; justify-self: center; width: min(36vw, 380px); }
+  .cup { position: relative; width: 100%; aspect-ratio: 1 / .9; border-radius: 0 0 46% 46% / 0 0 60% 60%; background: var(--cream); box-shadow: inset -24px -10px 0 #d9c6ac, 0 40px 60px -30px #000c; overflow: hidden; }
+  .cupwrap::before { content: ""; position: absolute; right: -15%; top: 14%; width: 26%; height: 36%; border: 16px solid var(--cream); border-left: 0; border-radius: 0 50% 50% 0; box-sizing: border-box; }
+  .liquid { position: absolute; left: 7%; right: 7%; bottom: 6%; height: 84%; border-radius: 0 0 46% 46% / 0 0 60% 60%; overflow: hidden; }
+  .liquid i { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; transform-origin: bottom; transform: scaleY(min(1, calc(var(--p, 0) * 1.6))); background: linear-gradient(var(--crema), #8a5228 12%, var(--roast) 40%); }
+  .liquid u { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; transform-origin: bottom; transform: scaleY(min(1, calc(var(--p, 0) * 1.6))); background: linear-gradient(#f1dfc4, #c99666 16%, #9a6438 60%); opacity: clamp(0, (var(--p, 0) - .42) * 4.5, 1); }
+  .stream { position: absolute; left: 50%; bottom: 60%; width: 10px; height: 70vh; translate: -50% 0; background: linear-gradient(transparent, var(--roast) 30%); border-radius: 5px; transform-origin: top; transform: scaleY(clamp(0, (.6 - var(--p, 0)) * 20, 1)); }
+  .saucer { width: 150%; height: 26px; margin: -6px 0 0 -25%; border-radius: 50%; background: var(--cream); box-shadow: inset 0 -6px 0 #d9c6ac; }
+  .steam { position: absolute; left: 50%; bottom: 100%; translate: -50% 0; width: 60%; opacity: clamp(0, (var(--p, 0) - .7) * 5, .8); }
+  .steam path { stroke: var(--cream); stroke-width: 4; fill: none; stroke-linecap: round; opacity: .55; stroke-dasharray: 40 160; animation: steam 3s linear infinite; }
+  .steam path:nth-child(2) { animation-delay: -1s; } .steam path:nth-child(3) { animation-delay: -2s; }
+  @keyframes steam { from { stroke-dashoffset: 200; } to { stroke-dashoffset: 0; } }
+
+  /* 2 the process line draws itself (data-uv-scrub="center" → stroke-dashoffset) */
+  .process { max-width: 1100px; margin: 0 auto; padding: 16vh 6vw; }
+  .process h2 { font-size: clamp(44px, 6vw, 84px); margin: 8px 0 40px; }
+  .path { position: relative; }
+  .path svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .path svg { clip-path: inset(0 0 calc((1 - min(1, var(--p, 1) * 1.15)) * 100%) 0); }
+  .path svg path { fill: none; stroke: var(--crema); stroke-width: 3; stroke-dasharray: 2 8; }
+  .path ol { position: relative; list-style: none; margin: 0; padding: 0; display: grid; gap: 12vh; }
+  .path li { width: min(420px, 80%); padding: 22px; } .path li:nth-child(even) { margin-left: auto; }
+  .path li h3 { margin: 4px 0 6px; font: 400 32px "DM Serif Display", serif; }
+
+  /* 3 menu cards stack: each is sticky, and shrinks a little as the next one slides over */
+  .menu { max-width: 900px; margin: 0 auto; padding: 4vh 6vw 20vh; }
+  .menu h2 { font-size: clamp(44px, 6vw, 84px); margin: 8px 0 30px; }
+  .stackc { position: sticky; top: calc(14vh + var(--i) * 22px); height: 62vh; margin-bottom: 8vh; display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden; border-radius: 22px; color: #fff; box-shadow: 0 -20px 40px -20px #0008; }
+  .stackc .copy { padding: 34px; display: flex; flex-direction: column; justify-content: space-between; }
+  .stackc h3 { margin: 0; font: 400 clamp(40px, 5vw, 64px)/.95 "DM Serif Display", serif; } .stackc p { margin: 10px 0 0; opacity: .85; }
+  .stackc .price { font: 500 26px "Geist Mono", monospace; }
+  .stackc .art { position: relative; display: grid; place-items: center; }
+  .stackc .art i { width: 58%; aspect-ratio: 1; border-radius: 50%; box-shadow: 0 30px 50px -20px #0009, inset 0 0 0 14px #ffffffd9; }
+
+  /* 4 origins: tilt cards */
+  .origins { padding: 10vh 6vw 16vh; max-width: 1180px; margin: 0 auto; }
+  .origins h2 { font-size: clamp(44px, 6vw, 84px); margin: 8px 0 30px; }
+  .ogrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .ogrid .uv-card { padding: 26px; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; }
+  .ogrid h3 { margin: 0; font: 400 34px "DM Serif Display", serif; }
+  .notes { display: flex; gap: 6px; flex-wrap: wrap; }
+  .cta { text-align: center; padding: 14vh 6vw; border-top: 1px solid var(--uv-line-2); }
+  .cta h2 { font-size: clamp(56px, 10vw, 150px); margin: 0 0 20px; line-height: .9; }
+  footer { padding: 26px 6vw; color: var(--uv-dim); font-size: 13px; border-top: 1px solid var(--uv-line); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; } footer a { color: inherit; }
+  @media (max-width: 800px) { .stream { display: none; } .pour .uv-pin__stage { grid-template-columns: 1fr; align-content: center; } .cupwrap { width: 52vw; } .stackc { grid-template-columns: 1fr; } .stackc .art { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .uv-pin { height: auto; } .uv-pin__stage { position: relative; height: 100vh; } .steam path { animation: none; } }
+</style>
+</head>
+<body>
+<a class="ex-back" href="../examples.html">← All examples</a>
+
+<section class="uv-pin pour" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <div>
+      <p class="k">Brew · small-batch roasters · est. 2011</p>
+      <h1 class="disp">Slow down.<br><em>It's coffee.</em></h1>
+      <div class="lines">
+        <p style="--a:-1;--b:.18">Scroll to pull a shot. We'll wait.</p>
+        <p style="--a:.18;--b:.42">18 grams in. 25 seconds. 36 grams out.</p>
+        <p style="--a:.42;--b:.66">Then 160 ml of milk, steamed to 62 °C.</p>
+        <p style="--a:.66;--b:2">Milk in, a slow pour. Enjoy.</p>
+      </div>
+    </div>
+    <div class="cupwrap" aria-hidden="true">
+      <svg class="steam" viewBox="0 0 120 120"><path d="M30 120c-14-20 14-30 0-50s14-30 0-50"/><path d="M60 120c-14-20 14-30 0-50s14-30 0-50"/><path d="M90 120c-14-20 14-30 0-50s14-30 0-50"/></svg>
+      <i class="stream"></i>
+      <div class="cup"><div class="liquid"><i></i><u></u></div></div>
+      <div class="saucer"></div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <p class="k">From farm to cup</p>
+  <h2 class="disp">Six weeks, four hands.</h2>
+  <div class="path" data-uv-scrub="center">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M20 3 C 20 20, 80 15, 80 33 S 20 48, 20 66 S 80 80, 80 97"/></svg>
+    <ol>
+      <li class="uv-card" data-uv-reveal="left"><span class="k">Week 1</span><h3>Picked ripe</h3><p class="uv-muted">Only the red cherries, by hand, on the slopes of Huila at 1,800 m.</p></li>
+      <li class="uv-card" data-uv-reveal="right"><span class="k">Week 2</span><h3>Washed & dried</h3><p class="uv-muted">Fermented 36 hours, then sun-dried on raised beds for twenty days.</p></li>
+      <li class="uv-card" data-uv-reveal="left"><span class="k">Week 5</span><h3>Roasted light</h3><p class="uv-muted">Twelve-kilo batches, dropped just after first crack. Every Tuesday.</p></li>
+      <li class="uv-card" data-uv-reveal="right"><span class="k">Week 6</span><h3>In your cup</h3><p class="uv-muted">Rested seven days, then posted the same afternoon.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="menu">
+  <p class="k">The menu</p>
+  <h2 class="disp">Four drinks. That's it.</h2>
+  <article class="stackc" style="--i:0;background:#5a3420"><div class="copy"><div><span class="k" style="color:#f3c58f">01</span><h3>Espresso</h3><p>Dark chocolate, red apple, a long sweet finish.</p></div><span class="price">£2.80</span></div><div class="art"><i style="background:radial-gradient(circle,#c98b4e 0 30%,#3b2416 62%)"></i></div></article>
+  <article class="stackc" style="--i:1;background:#8a5a3a"><div class="copy"><div><span class="k" style="color:#ffe0b8">02</span><h3>Flat white</h3><p>Double ristretto, thin velvet milk, no fuss.</p></div><span class="price">£3.60</span></div><div class="art"><i style="background:radial-gradient(ellipse 30% 22% at 50% 55%,#f6ead8 0 70%,transparent 72%),radial-gradient(circle,#b77a45,#7a4a28 70%)"></i></div></article>
+  <article class="stackc" style="--i:2;background:#b2794c"><div class="copy"><div><span class="k" style="color:#3b2416">03</span><h3>Cortado</h3><p>Half and half. Served in a glass, the old way.</p></div><span class="price">£3.20</span></div><div class="art"><i style="background:linear-gradient(#f6ead8 0 40%,#7a4a28 41%)"></i></div></article>
+  <article class="stackc" style="--i:3;background:#2b211b"><div class="copy"><div><span class="k" style="color:#c98b4e">04</span><h3>Filter</h3><p>This week: Huila, Colombia. Tea-like and bright.</p></div><span class="price">£3.00</span></div><div class="art"><i style="background:radial-gradient(circle,#a8622e,#4a2a14 70%)"></i></div></article>
+</section>
+
+<section class="origins">
+  <p class="k">This season's beans</p>
+  <h2 class="disp">Where it's from.</h2>
+  <div class="ogrid" data-uv-stagger="up">
+    <div class="uv-card" data-uv="tilt"><div><span class="k">Colombia</span><h3>Huila</h3></div><div class="notes"><span class="uv-badge">Red apple</span><span class="uv-badge">Panela</span><span class="uv-badge">Cocoa</span></div></div>
+    <div class="uv-card" data-uv="tilt"><div><span class="k">Ethiopia</span><h3>Guji</h3></div><div class="notes"><span class="uv-badge">Jasmine</span><span class="uv-badge">Peach</span><span class="uv-badge">Bergamot</span></div></div>
+    <div class="uv-card" data-uv="tilt"><div><span class="k">Kenya</span><h3>Nyeri</h3></div><div class="notes"><span class="uv-badge">Blackcurrant</span><span class="uv-badge">Grapefruit</span></div></div>
+    <div class="uv-card" data-uv="tilt"><div><span class="k">Guatemala</span><h3>Huehue</h3></div><div class="notes"><span class="uv-badge">Toffee</span><span class="uv-badge">Almond</span><span class="uv-badge">Plum</span></div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <p class="k"><span data-uv-count="48210">0</span> cups poured this year</p>
+  <h2 class="disp" data-uv-reveal="up">Come in, sit down.</h2>
+  <button class="uv-btn uv-btn--primary uv-btn--lg" data-uv="ripple">Find a café</button>
+</section>
+<footer><span>BREW is a made-up roaster. Example built with <a href="../index.html">UI Vault</a>.</span><span>Uses: uv-pin · data-uv-scrub (pin, center) · sticky stacks · data-uv="tilt" · parts: clay buttons, paper cards</span></footer>
+<script src="../lib/uivault.js"></script>
+</body>
+</html>

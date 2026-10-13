@@ -17,7 +17,11 @@
   map.textContent = `html[data-uv-theme] { --bg: var(--uv-bg); --bg-2: var(--uv-surface); --surface: var(--uv-surface); --surface-2: var(--uv-surface-2); --line: var(--uv-line); --line-2: var(--uv-line-2); --text: var(--uv-text); --muted: var(--uv-muted); --dim: var(--uv-dim); --accent: var(--uv-accent); --font: var(--uv-font); --serif: var(--uv-font-head); --mono: var(--uv-mono);
     --ink: var(--uv-bg); --ink-2: var(--uv-surface); --ink-3: var(--uv-surface-2); --rule: var(--uv-line); --rule-2: var(--uv-line-2); --fg: var(--uv-text); --fg-2: var(--uv-muted); --fg-3: var(--uv-dim); --sig: var(--uv-accent); }
   html[data-uv-theme] body { background-color: transparent !important; color: var(--uv-text); }
-  .uvp-btn { position: fixed; left: 16px; bottom: 16px; z-index: 9990; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 10px; border-radius: 999px; border: 1px solid #ffffff33; background: #151517f2; color: #fff; font: 500 13px "Geist", system-ui, sans-serif; cursor: pointer; box-shadow: 0 10px 30px -10px #000a; transition: transform .2s; }
+  :root { --uvp-bg: #151517f2; --uvp-field: #1f1f22; --uvp-ln: #ffffff1a; --uvp-ln2: #ffffff29; --uvp-ln3: #ffffff40; --uvp-hov: #ffffff12; --uvp-fg: #ecebe8; --uvp-mu: #a19d95; --uvp-di: #8f8a82; --uvp-sh: #000b; --uvp-ac: #ff6a26; }
+  :is(.uvp, .uvi, .uvp-btn) { color-scheme: dark; }
+  html[data-theme="light"] { --uvp-bg: #fbfaf8f5; --uvp-field: #ffffff; --uvp-ln: #1a191714; --uvp-ln2: #1a191726; --uvp-ln3: #1a191742; --uvp-hov: #1a19170d; --uvp-fg: #1a1917; --uvp-mu: #5f5b54; --uvp-di: #77726a; --uvp-sh: #1a19173a; --uvp-ac: #ff4f00; }
+  html[data-theme="light"] :is(.uvp, .uvi, .uvp-btn) { color-scheme: light; }
+  .uvp-btn { position: fixed; left: 16px; bottom: 16px; z-index: 9990; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 10px; border-radius: 999px; border: 1px solid var(--uvp-ln2); background: var(--uvp-bg); color: var(--uvp-fg); font: 500 13px "Geist", system-ui, sans-serif; cursor: pointer; box-shadow: 0 10px 30px -10px var(--uvp-sh); transition: transform .2s; }
   .uvp-btn:hover { transform: translateY(-2px); }
   .uvp-insp { left: 162px !important; }
   .uvp-btn { transition: transform .2s, opacity .25s, left .25s, width .25s, padding .25s; }
@@ -25,19 +29,20 @@
   html.uvp-c .uvp-btn:not(.uvp-mode) { width: 40px; padding: 0; justify-content: center; gap: 0; font-size: 0; }
   html.uvp-c .uvp-mode:not(.uvp-insp) { left: 62px; } html.uvp-c .uvp-insp { left: 108px !important; }
   .uvp-mode { left: 116px; width: 40px; padding: 0; justify-content: center; font-size: 17px; } .uvp-btn i { width: 20px; height: 20px; border-radius: 50%; background: conic-gradient(#ff4f00, #ffd23f, #39ff88, #00f0ff, #b46bff, #ff2bd6, #ff4f00); }
-  .uvp { position: fixed; left: 16px; bottom: 64px; z-index: 9991; width: min(330px, calc(100vw - 32px)); max-height: min(520px, calc(100vh - 90px)); display: none; flex-direction: column; border-radius: 12px; border: 1px solid #ffffff26; background: #151517f5; color: #ecebe8; font: 14px "Geist", system-ui, sans-serif; box-shadow: 0 30px 60px -20px #000c; overflow: hidden; }
+  .uvp { position: fixed; left: 16px; bottom: 64px; z-index: 9991; width: min(330px, calc(100vw - 32px)); max-height: min(520px, calc(100vh - 90px)); display: none; flex-direction: column; border-radius: 12px; border: 1px solid var(--uvp-ln2); background: var(--uvp-bg); color: var(--uvp-fg); font: 14px "Geist", system-ui, sans-serif; box-shadow: 0 30px 60px -20px var(--uvp-sh); overflow: hidden; }
   .uvp.open { display: flex; animation: uvp-in .25s cubic-bezier(.2, 1.1, .4, 1); } @keyframes uvp-in { from { opacity: 0; transform: translateY(8px) scale(.98); } }
-  .uvp header { display: grid; gap: 8px; padding: 12px; border-bottom: 1px solid #ffffff1a; }
-  .uvp input, .uvp select { height: 34px; padding: 0 10px; border-radius: 6px; border: 1px solid #ffffff26; background: #1f1f22; color: #fff; font: 13px "Geist", sans-serif; outline: none; }
+  .uvp header { display: grid; gap: 8px; padding: 12px; border-bottom: 1px solid var(--uvp-ln); }
+  .uvp input, .uvp select { height: 34px; padding: 0 10px; border-radius: 6px; border: 1px solid var(--uvp-ln2); background: var(--uvp-field); color: var(--uvp-fg); font: 13px "Geist", sans-serif; outline: none; }
   .uvp ul { list-style: none; margin: 0; padding: 6px; overflow: auto; flex: 1; }
   .uvp li { display: flex; align-items: center; gap: 10px; padding: 7px 8px; border-radius: 6px; cursor: pointer; }
-  .uvp li:hover, .uvp li.on { background: #ffffff12; } .uvp li.on::after { content: "✓"; margin-left: auto; color: #ff6a26; }
+  .uvp li:hover, .uvp li.on { background: var(--uvp-hov); } .uvp li.on::after { content: "✓"; margin-left: auto; color: #ff6a26; }
   .uvp .sw { display: flex; flex: none; } .uvp .sw b { width: 10px; height: 20px; } .uvp .sw b:first-child { border-radius: 4px 0 0 4px; } .uvp .sw b:last-child { border-radius: 0 4px 4px 0; }
-  .uvp small { color: #8f8a82; font: 10px "Geist Mono", monospace; text-transform: uppercase; }
-  .uvp nav { display: flex; gap: 4px; padding: 8px 12px 0; } .uvp nav button { flex: 1; height: 30px; border: 1px solid #ffffff1f; border-radius: 6px; background: none; color: #a19d95; font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvp nav button.on { background: #ffffff14; color: #fff; border-color: #ffffff40; }
-  .uvp .parts { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; padding: 10px 12px; overflow: auto; flex: 1; } .uvp .parts label { color: #a19d95; font-size: 12px; } .uvp .parts select { height: 30px; min-width: 0; }
-  .uvp .kits { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px 0; } .uvp .kits button { padding: 5px 9px; border-radius: 999px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvp .kits button:hover, .uvp .kits button.on { background: #ff6a26; border-color: #ff6a26; color: #111; }
-  .uvp footer { display: flex; gap: 6px; padding: 10px; border-top: 1px solid #ffffff1a; } .uvp footer a, .uvp footer button { flex: 1; height: 32px; display: grid; place-items: center; border-radius: 6px; border: 1px solid #ffffff26; background: none; color: #ecebe8; font: 500 12px "Geist", sans-serif; text-decoration: none; cursor: pointer; }
+  .uvp small { color: var(--uvp-di); font: 10px "Geist Mono", monospace; text-transform: uppercase; }
+  .uvp nav { display: flex; gap: 4px; padding: 8px 12px 0; } .uvp nav button { flex: 1; height: 30px; border: 1px solid var(--uvp-ln2); border-radius: 6px; background: none; color: var(--uvp-mu); font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvp nav button.on { background: var(--uvp-hov); color: var(--uvp-fg); border-color: var(--uvp-ln3); }
+  .uvp .parts { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; padding: 10px 12px; overflow: auto; flex: 1; } .uvp .parts label { color: var(--uvp-mu); font-size: 12px; } .uvp .parts select { height: 30px; min-width: 0; }
+  .uvp .kits { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px 0; } .uvp .kits button { padding: 5px 9px; border-radius: 999px; border: 1px solid var(--uvp-ln2); background: none; color: var(--uvp-fg); font: 500 12px "Geist", sans-serif; cursor: pointer; } .uvp .kits button:hover, .uvp .kits button.on { background: #ff6a26; border-color: #ff6a26; color: #111; }
+  .uvp footer { display: flex; gap: 6px; padding: 10px; border-top: 1px solid var(--uvp-ln); } .uvp footer a, .uvp footer button { flex: 1; height: 32px; display: grid; place-items: center; border-radius: 6px; border: 1px solid var(--uvp-ln2); background: none; color: var(--uvp-fg); font: 500 12px "Geist", sans-serif; text-decoration: none; cursor: pointer; }
+  :is(p, li, dd, small) > a:not([class]):hover, :is(p, li) > a[style*="color"]:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   :where(body *) { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, currentColor 26%, transparent) transparent; }
   @media print { .uvp-btn, .uvp { display: none !important; } }`;
   document.head.appendChild(map);
@@ -170,20 +175,35 @@
   function mark() { panel && panel.querySelectorAll("li").forEach(li => li.classList.toggle("on", li.dataset.n === (html.dataset.uvTheme || ""))); }
 
   // light / dark mode — shared by every page (localStorage "uv-theme"; pages have an early script that applies it)
+  // what the page LOOKS like: a style (data-uv-theme) brings its own colours, so read the actual background then
+  const looksDark = () => {
+    for (const el of [html, document.body]) {
+      const m = (getComputedStyle(el).backgroundColor.match(/[\d.]+/g) || []).map(Number);
+      if (m.length >= 3 && (m.length < 4 || m[3] > .5)) return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255 < .5;
+    }
+    return html.dataset.theme !== "light";
+  };
   const isDark = () => {
+    if (html.dataset.uvTheme) return looksDark();
     if (html.dataset.theme) return html.dataset.theme === "dark";
-    const m = getComputedStyle(document.body).backgroundColor.match(/\d+/g) || [255, 255, 255];
-    return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255 < .5;
+    return looksDark();
   };
   let modeBtn;
-  const syncMode = () => { if (modeBtn) { const d = isDark(); modeBtn.textContent = d ? "☀" : "☾"; modeBtn.title = d ? "Switch to light mode" : "Switch to dark mode"; } };
+  const syncMode = () => { if (modeBtn) { const d = isDark(); modeBtn.textContent = d ? "☀" : "☾"; modeBtn.title = d ? "Switch to light mode" : "Switch to dark mode"; }
+    // keep the phone browser's toolbar colour in step with the page
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) requestAnimationFrame(() => { const c = getComputedStyle(document.body).backgroundColor; meta.content = /^rgba\(.*, 0\)$/.test(c) || c === "transparent" ? (isDark() ? "#121211" : "#f4f2ee") : c; });
+  };
   function toggleMode() {
     const next = isDark() ? "light" : "dark";
+    // a style keeps its own colours whatever the mode, so switching mode means going back to the site's own look
+    const skin = html.dataset.uvTheme;
+    if (skin) { apply(""); window.UV && UV.toast && UV.toast(`"${skin}" has fixed colours, so the page is back to the default ${next} look. Pick it again in Theme.`); }
     html.dataset.theme = next;
     try { localStorage.setItem("uv-theme", next); } catch {}
     syncMode();
   }
-  new MutationObserver(syncMode).observe(html, { attributes: true, attributeFilter: ["data-theme"] });
+  new MutationObserver(syncMode).observe(html, { attributes: true, attributeFilter: ["data-theme", "data-uv-theme"] });
 
   const mount = () => {
     modeBtn = Object.assign(document.createElement("button"), { className: "uvp-btn uvp-mode", type: "button" });

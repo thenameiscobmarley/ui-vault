@@ -602,7 +602,7 @@
   },
   {
    "path": "css/components.css",
-   "bytes": 45607,
+   "bytes": 46102,
    "desc": "Buttons, cards, forms, tabs, badges, overlays, nav, data, loaders, backgrounds."
   },
   {
@@ -617,7 +617,7 @@
   },
   {
    "path": "css/fx.css",
-   "bytes": 18256,
+   "bytes": 18847,
    "desc": "60+ uv-fx-* effect mixins: glitch, chrome, holo, neon, CRT, sticker, stamp, jelly…"
   },
   {
@@ -1172,7 +1172,7 @@
   },
   {
    "path": "js/motion.js",
-   "bytes": 11957,
+   "bytes": 13886,
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
   },
   {
@@ -1197,12 +1197,12 @@
   },
   {
    "path": "uivault.css",
-   "bytes": 407108,
+   "bytes": 408194,
    "desc": ""
   },
   {
    "path": "uivault.js",
-   "bytes": 94031,
+   "bytes": 95960,
    "desc": ""
   }
  ]

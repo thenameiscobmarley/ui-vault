@@ -18,7 +18,7 @@
   cursor: pointer; overflow: hidden; isolation: isolate; user-select: none; white-space: nowrap;
   transition: transform .15s var(--uv-ease), filter .2s, background .2s, border-color .2s, box-shadow .25s;
 }
-.uv-btn:hover { filter: brightness(1.12); }
+.uv-btn:hover { filter: brightness(1.08); --b-bg: color-mix(in srgb, var(--uv-text) 8%, var(--uv-surface-2)); border-color: color-mix(in srgb, var(--uv-text) 30%, transparent); }
 .uv-btn:active { transform: scale(.97); }
 .uv-btn:focus-visible { outline: 2px solid var(--uv-accent); outline-offset: 3px; }
 .uv-btn[disabled] { opacity: .45; pointer-events: none; }
@@ -108,11 +108,14 @@
 .uv-switch i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 2px 6px #0005; transition: transform .3s var(--uv-spring); }
 .uv-switch input:checked + i { background: var(--uv-accent); border-color: transparent; }
 .uv-switch input:checked + i::after { transform: translateX(20px); }
+.uv-switch:hover i { border-color: color-mix(in srgb, var(--uv-accent) 60%, var(--uv-line-2)); }
+.uv-switch:hover i::after { box-shadow: 0 2px 6px #0005, 0 0 0 5px color-mix(in srgb, var(--uv-accent) 18%, transparent); }
 .uv-switch input:focus-visible + i { outline: 2px solid var(--uv-accent); outline-offset: 2px; }
 .uv-check { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
 .uv-check input { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; margin: 0; border-radius: var(--uv-r); border: 2px solid var(--uv-line-2); display: grid; place-items: center; cursor: pointer; transition: background .2s, border-color .2s; }
 .uv-check input::after { content: ""; width: 5px; height: 10px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) scale(0) translate(-1px, -1px); transition: transform .25s var(--uv-spring); }
 .uv-check input:checked { background: var(--uv-accent); border-color: var(--uv-accent); }
+.uv-check:hover input:not(:checked) { border-color: var(--uv-accent); background: color-mix(in srgb, var(--uv-accent) 10%, transparent); }
 .uv-check input:checked::after { transform: rotate(45deg) scale(1) translate(-1px, -1px); }
 .uv-check input[type=radio] { border-radius: 50%; }
 .uv-range { --v: 50%; -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 99px; background: linear-gradient(90deg, var(--uv-accent), var(--uv-accent-2) var(--v), var(--uv-surface-3) var(--v)); outline: none; cursor: pointer; }

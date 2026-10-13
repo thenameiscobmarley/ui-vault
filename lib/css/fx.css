@@ -108,6 +108,11 @@
 
 /* ── Scroll-linked (driven by motion.js: --p is 0→1 while the element crosses the viewport) ── */
 .uv-scrollbar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 9999; background: var(--uv-accent); transform-origin: left; transform: scaleX(var(--uv-page, 0)); pointer-events: none; }
+/* pinned scroll scenes: <section class="uv-pin" data-uv-scrub="pin" style="--len:300vh"><div class="uv-pin__stage">…</div></section> */
+.uv-pin { position: relative; height: var(--len, 300vh); }
+.uv-pin__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.uv-scrub-track { display: flex; width: max-content; transform: translateX(calc(var(--p, 0) * (100vw - 100%))); }  /* horizontal scroll row inside a pin */
+.uv-skew { transform: skewY(calc(var(--v, 0) * 6deg)); }                                                           /* with data-uv-velocity */
 .uv-scrub-fade { opacity: var(--p, 1); }
 .uv-scrub-rise { opacity: var(--p, 1); transform: translateY(calc((1 - var(--p, 1)) * 60px)); }
 .uv-scrub-zoom { transform: scale(calc(.85 + var(--p, 1) * .15)); }

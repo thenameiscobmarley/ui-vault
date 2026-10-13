@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>See Examples — UI Vault</title>
+<meta name="description" content="Six complete scroll-animated websites built only with the UI Vault library: a rocket launch, a deep-sea dive, a cyberpunk product, a magazine long-read, a coffee brand and a SaaS landing page." />
+<meta name="theme-color" content="#121211" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="lib/css/fonts.css" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<style>
+
+  :root { --pg-bg: #121211; --pg-bg2: #181817; --pg-bg3: #222220; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", serif; }
+  html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
+  html[data-uv-theme] { --pg-bg: var(--uv-bg); --pg-bg2: var(--uv-surface); --pg-bg3: var(--uv-surface-2); --pg-fg: var(--uv-text); --pg-mu: var(--uv-muted); --pg-di: var(--uv-dim); --pg-ln: var(--uv-line); --pg-ln2: var(--uv-line-2); --pg-ac: var(--uv-accent); --pg-font: var(--uv-font); --pg-head: var(--uv-font-head); }
+  body { margin: 0; background: var(--pg-bg); color: var(--pg-fg); font-family: var(--pg-font); }
+  html[data-uv-bg] body { background: transparent; }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; height: 58px; padding: 0 clamp(16px, 3vw, 32px); background: var(--pg-bg); border-bottom: 1px solid var(--pg-ln); }
+  .top .brand { display: flex; align-items: center; gap: 10px; color: var(--pg-fg); text-decoration: none; font-weight: 600; }
+  .top .brand svg rect { fill: var(--pg-fg); } .top .brand svg path { stroke: var(--pg-bg); } .top .brand svg circle { fill: var(--pg-ac); }
+  .top nav { margin-left: auto; display: flex; gap: 2px; } .top nav a { padding: 6px 10px; border-radius: 6px; color: var(--pg-mu); text-decoration: none; font-size: 14px; transition: color .15s, background-color .15s; } .top nav a:hover, .top nav a[aria-current] { color: var(--pg-fg); background: var(--pg-ln); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); }
+  .k { font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--pg-di); }
+  .hero { padding: 64px 0 30px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: end; }
+  .hero h1 { margin: 8px 0 0; font: 400 clamp(60px, 10vw, 140px)/.88 var(--pg-head); letter-spacing: -.03em; } .hero h1 em { color: var(--pg-ac); }
+  .hero p { margin: 0; color: var(--pg-mu); font-size: 17px; line-height: 1.6; }
+  .hero .uv-scrub-grow { height: 2px; margin-top: 18px; background: var(--pg-ac); }
+  /* each example card tilts up into place as it scrolls in (data-uv-scrub + CSS) */
+  .ex { --t: clamp(0, var(--p, 1) * 2.6, 1); display: grid; grid-template-columns: 1.25fr 1fr; gap: 0; margin: 0 0 28px; border: 1px solid var(--pg-ln2); border-radius: 18px; overflow: hidden; background: var(--pg-bg2);
+    transform: perspective(1200px) translateY(calc((1 - var(--t)) * 70px)) rotateX(calc((1 - var(--t)) * 14deg)) scale(calc(.94 + var(--t) * .06)); opacity: calc(.25 + var(--t) * .75); transform-origin: 50% 100%; transition: border-color .25s, box-shadow .25s; }
+  .ex:hover { border-color: color-mix(in srgb, var(--pg-ac) 60%, transparent); box-shadow: 0 30px 60px -36px color-mix(in srgb, var(--pg-ac) 60%, transparent); }
+  .ex:nth-child(even) { grid-template-columns: 1fr 1.25fr; } .ex:nth-child(even) .shot { order: 2; }
+  .shot { position: relative; min-height: 380px; overflow: hidden; display: block; color: #fff; text-decoration: none; isolation: isolate; }
+  .shot > * { transition: transform .7s cubic-bezier(.2, .8, .2, 1); }
+  .ex:hover .shot .zoom { transform: scale(1.05); }
+  .shot .label { position: absolute; left: 22px; bottom: 18px; z-index: 3; padding: 6px 12px; border-radius: 999px; background: #0009; font: 500 12px "Geist Mono", monospace; opacity: 0; translate: 0 6px; transition: opacity .2s, translate .2s; }
+  .ex:hover .shot .label, .shot:focus-visible .label { opacity: 1; translate: 0 0; }
+  .info { padding: 32px; display: flex; flex-direction: column; gap: 14px; }
+  .info h2 { margin: 0; font: 400 clamp(40px, 4.4vw, 60px)/.95 var(--pg-head); letter-spacing: -.02em; }
+  .info p { margin: 0; color: var(--pg-mu); line-height: 1.6; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; } .chips code { padding: 3px 8px; border-radius: 6px; border: 1px solid var(--pg-ln2); font: 12px "Geist Mono", monospace; color: var(--pg-mu); }
+  .acts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+  .acts a { padding: 10px 16px; border-radius: 8px; border: 1px solid var(--pg-ln2); color: var(--pg-fg); text-decoration: none; font: 500 14px var(--pg-font); transition: background-color .2s, color .2s, border-color .2s, translate .2s; }
+  .acts a:hover { border-color: var(--pg-mu); background: var(--pg-ln); }
+  .acts a.go { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); } .acts a.go:hover { background: var(--pg-ac); border-color: var(--pg-ac); color: #fff; translate: 0 -2px; }
+  :is(a, button):focus-visible { outline: 2px solid var(--pg-ac); outline-offset: 2px; }
+
+  /* the six miniature previews: plain CSS, so the page stays light */
+  .p-nova { background: radial-gradient(circle at 50% 135%, #ffd2a8 0, #ff7a3d 9%, #6a2bd9 26%, #1b1150 44%, transparent 45%), radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 20%, #fff, transparent), radial-gradient(1.5px 1.5px at 85% 60%, #fff, transparent), radial-gradient(1px 1px at 40% 70%, #fff, transparent), #05060d; }
+  .p-nova b { position: absolute; inset: 0; display: grid; place-items: center; font: 400 clamp(90px, 13vw, 170px)/1 "Bebas Neue", sans-serif; letter-spacing: .04em; }
+  .p-abyss { background: linear-gradient(180deg, #8ae9ff, #1aa3c8 30%, #0a4f6a 60%, #021320); }
+  .p-abyss b { position: absolute; left: 28px; top: 30px; font: 800 clamp(60px, 8vw, 110px)/.85 "Bricolage Grotesque", sans-serif; letter-spacing: -.05em; }
+  .p-abyss i { position: absolute; right: 18%; top: 48%; width: 90px; height: 70px; border-radius: 50% 50% 40% 40% / 70% 70% 30% 30%; background: #ff7ad9aa; box-shadow: 0 0 30px #ff7ad9; animation: bob 4s ease-in-out infinite alternate; }
+  .p-abyss i::after { content: ""; position: absolute; left: 20%; right: 20%; top: 90%; height: 80px; background: repeating-linear-gradient(90deg, #ffc2ef88 0 2px, transparent 2px 12px); }
+  @keyframes bob { to { translate: 0 -16px; } }
+  .p-signal { background: radial-gradient(60% 80% at 80% 50%, #ff2bd633, transparent), #06060c; }
+  .p-signal b { position: absolute; left: 26px; top: 50%; translate: 0 -50%; font: 400 clamp(54px, 7vw, 96px)/.9 "Audiowide", sans-serif; color: #e8fbff; text-shadow: 3px 0 #ff2bd6, -3px 0 #00f0ff; z-index: 2; }
+  .p-signal i { position: absolute; right: -60px; top: 50%; width: 330px; aspect-ratio: 1; translate: 0 -50%; border-radius: 50%; background: conic-gradient(#00f0ff, #ff2bd6, #00f0ff); -webkit-mask: radial-gradient(closest-side, transparent 63%, #000 64% 66%, transparent 67% 76%, #000 77% 79%, transparent 80% 90%, #000 91%); mask: radial-gradient(closest-side, transparent 63%, #000 64% 66%, transparent 67% 76%, #000 77% 79%, transparent 80% 90%, #000 91%); animation: spin 20s linear infinite; }
+  @keyframes spin { to { rotate: 360deg; } }
+  .p-folio { background: #f4f2ee; color: #1a1917; }
+  .p-folio .ph { position: absolute; inset: 0; background: radial-gradient(5% 7% at 72% 38%, #fff7c2, transparent), linear-gradient(180deg, #11203a, #33507a 45%, #e3a46b 70%, #2a3644 71%, #1a2230); }
+  .p-folio b { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font: 400 clamp(54px, 7vw, 92px)/.85 "Instrument Serif", serif; letter-spacing: -.03em; z-index: 2; color: #fff; text-shadow: 0 4px 30px #0006; } .p-folio b em { color: #ffd9a8; }
+  .p-brew { background: #1c120c; }
+  .p-brew .cup { position: absolute; right: 18%; bottom: 14%; width: 150px; height: 132px; border-radius: 0 0 46% 46% / 0 0 60% 60%; background: linear-gradient(transparent 22%, #c98b4e 22%, #8a5228 30%, #3b2416 60%), #f3e6d3; box-shadow: inset 0 0 0 12px #f3e6d3; }
+  .p-brew .cup::after { content: ""; position: absolute; right: -40px; top: 26px; width: 44px; height: 60px; border: 12px solid #f3e6d3; border-left: 0; border-radius: 0 50% 50% 0; }
+  .p-brew b { position: absolute; left: 26px; top: 36px; font: 400 clamp(40px, 4.6vw, 64px)/.92 "DM Serif Display", serif; color: #f3e6d3; } .p-brew b em { color: #c98b4e; }
+  .p-prism { background: radial-gradient(40% 50% at 20% 30%, #e6d8ff, transparent 70%), radial-gradient(40% 50% at 80% 20%, #ffd8ec, transparent 70%), radial-gradient(50% 50% at 60% 90%, #d6f1ff, transparent 70%), #f6f3fb; color: #2c2547; }
+  .p-prism .m { position: absolute; left: 12%; right: 12%; top: 28%; bottom: -10%; border-radius: 14px; background: #fff; box-shadow: 0 30px 60px -30px #3d2a7a77; display: grid; grid-template-columns: 70px 1fr 1fr 1fr; gap: 8px; padding: 10px; }
+  .p-prism .m i { border-radius: 8px; background: linear-gradient(135deg, #efe8ff, #ffe8f4); } .p-prism .m i:first-child { grid-row: span 3; } .p-prism .m i:nth-child(5) { grid-column: span 2; height: 90px; background: linear-gradient(0deg, #b98cff 0 50%, #efe8ff 50%); }
+  .p-prism b { position: absolute; left: 0; right: 0; top: 18px; text-align: center; font: 700 clamp(32px, 4vw, 52px)/1 "Bricolage Grotesque", sans-serif; letter-spacing: -.04em; }
+  .how { margin: 70px 0 90px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: start; }
+  .how h2 { margin: 6px 0 12px; font: 400 clamp(40px, 5vw, 64px)/.95 var(--pg-head); }
+  .how p { color: var(--pg-mu); line-height: 1.6; }
+  .how pre { margin: 0; padding: 22px; border-radius: 12px; background: #141413; color: #ecebe8; font: 13px/1.65 "Geist Mono", monospace; overflow: auto; border: 1px solid #ffffff14; }
+  .how pre .c { color: #8f8a82; } .how pre .t { color: #ff8f5a; } .how pre .a { color: #c9b98f; } .how pre .s { color: #9fc5a8; }
+  .how ul { padding-left: 18px; color: var(--pg-mu); line-height: 1.8; } .how code { font: 13px "Geist Mono", monospace; color: var(--pg-fg); }
+  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } .ex, .ex:nth-child(even) { grid-template-columns: 1fr; } .ex:nth-child(even) .shot { order: 0; } .shot { min-height: 260px; } .how { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .ex { transform: none; opacity: 1; } .p-abyss i, .p-signal i { animation: none; } }
+</style>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI Vault</a>
+  <nav><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div><p class="k">See examples · six full websites</p><h1>Scroll <em>stories.</em></h1></div>
+    <div><p>Each one is a complete page built only with the UI Vault library: its CSS, its themes and parts, and the scroll API (<code>uv-pin</code>, <code>data-uv-scrub</code>, <code>UV.scrub</code>). No frameworks, no build step and no animation libraries. Open one and scroll slowly.</p><div class="uv-scrub-grow" data-uv-scrub></div></div>
+  </section>
+  <article class="ex" data-uv-scrub>
+    <a class="shot p-nova" href="examples/nova.html" aria-label="Open NOVA"><b class="zoom">NOVA</b><span class="label">Open NOVA →</span></a>
+    <div class="info"><p class="k">01 · Orbital launch</p><h2>NOVA</h2><p>A rocket launch you drive with the scrollbar. The title drifts apart, a planet rises, the countdown runs T−10 to orbit with a live altitude readout, then six planets slide past sideways.</p>
+      <div class="chips"><code>uv-pin</code><code>data-uv-scrub="pin"</code><code>UV.scrub()</code><code>uv-scrub-track</code><code>data-uv-fx="starfield"</code><code>data-uv-count</code></div>
+      <div class="acts"><a class="go" href="examples/nova.html">Open the site →</a><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/examples/nova.html" target="_blank" rel="noopener">View source ↗</a></div></div>
+  </article>
+  <article class="ex" data-uv-scrub>
+    <a class="shot p-abyss" href="examples/abyss.html" aria-label="Open ABYSS"><i class="zoom"></i><b>Abyss</b><span class="label">Open ABYSS →</span></a>
+    <div class="info"><p class="k">02 · A dive to 10,935 m</p><h2>ABYSS</h2><p>One long scroll from sunlit water to the bottom of the Mariana Trench. The sea darkens with page progress, a depth gauge keeps count, marine snow drifts and you light the midnight zone with a torch.</p>
+      <div class="chips"><code>data-uv-scrub="page"</code><code>UV.scrub()</code><code>data-uv-speed</code><code>data-uv-fx="snow"</code><code>data-uv-fx="spotlight"</code><code>theme "deep-sea"</code></div>
+      <div class="acts"><a class="go" href="examples/abyss.html">Open the site →</a><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/examples/abyss.html" target="_blank" rel="noopener">View source ↗</a></div></div>
+  </article>
+  <article class="ex" data-uv-scrub>
+    <a class="shot p-signal" href="examples/signal.html" aria-label="Open SIGNAL/01"><i class="zoom"></i><b>Signal</b><span class="label">Open SIGNAL/01 →</span></a>
+    <div class="info"><p class="k">03 · Cyberpunk audio</p><h2>SIGNAL/01</h2><p>A product launch for imaginary headphones. Marquees lean into your scroll speed, a 3D exploded view pulls apart in five layers with callouts, specs decrypt, and four colourways swap the whole page theme.</p>
+      <div class="chips"><code>data-uv-velocity</code><code>uv-skew</code><code>uv-pin</code><code>UV.scrub()</code><code>data-uv-fx="matrix"</code><code>data-uv-scramble</code><code>parts "cyber"</code></div>
+      <div class="acts"><a class="go" href="examples/signal.html">Open the site →</a><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/examples/signal.html" target="_blank" rel="noopener">View source ↗</a></div></div>
+  </article>
+  <article class="ex" data-uv-scrub>
+    <a class="shot p-folio" href="examples/folio.html" aria-label="Open FOLIO"><i class="ph zoom"></i><b>The last<br><em>keepers</em></b><span class="label">Open FOLIO →</span></a>
+    <div class="info"><p class="k">04 · Magazine long-read</p><h2>FOLIO</h2><p>An editorial feature on Scotland's last lighthouse keepers. The headline shrinks as the photograph opens, a pull quote lights up word by word, a chart follows the story and the lighthouse beam turns with the scroll.</p>
+      <div class="chips"><code>uv-scrollbar</code><code>uv-pin</code><code>data-uv-scrub="center"</code><code>UV.steps()</code><code>UV.scrub()</code><code>theme "editorial"</code></div>
+      <div class="acts"><a class="go" href="examples/folio.html">Open the site →</a><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/examples/folio.html" target="_blank" rel="noopener">View source ↗</a></div></div>
+  </article>
+  <article class="ex" data-uv-scrub>
+    <a class="shot p-brew" href="examples/brew.html" aria-label="Open BREW"><i class="cup zoom"></i><b>Slow down.<br><em>It's coffee.</em></b><span class="label">Open BREW →</span></a>
+    <div class="info"><p class="k">05 · Slow coffee</p><h2>BREW</h2><p>A coffee roaster's homepage. Scroll to pull a shot and steam the milk into the cup, watch the farm-to-cup path draw itself, then flick through the menu as cards stack on top of each other.</p>
+      <div class="chips"><code>uv-pin</code><code>--p in calc()</code><code>data-uv-scrub="center"</code><code>position: sticky stack</code><code>data-uv="tilt"</code><code>parts "clay"</code></div>
+      <div class="acts"><a class="go" href="examples/brew.html">Open the site →</a><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/examples/brew.html" target="_blank" rel="noopener">View source ↗</a></div></div>
+  </article>
+  <article class="ex" data-uv-scrub>
+    <a class="shot p-prism" href="examples/prism.html" aria-label="Open PRISM"><div class="m zoom"><i></i><i></i><i></i><i></i><i></i></div><b>Design once.</b><span class="label">Open PRISM →</span></a>
+    <div class="info"><p class="k">06 · Design-tool landing page</p><h2>PRISM</h2><p>A light, pearly SaaS page. An app dashboard assembles itself from flying pieces, then puts on five UI Vault themes as you keep scrolling. Includes spotlight bento, marquee, a pricing switch and FAQ.</p>
+      <div class="chips"><code>uv-pin</code><code>UV.scrub()</code><code>data-uv-theme</code><code>uv-card--spot</code><code>uv-marquee</code><code>UV.countUp()</code><code>uv-accordion</code></div>
+      <div class="acts"><a class="go" href="examples/prism.html">Open the site →</a><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/examples/prism.html" target="_blank" rel="noopener">View source ↗</a></div></div>
+  </article>
+  <section class="how">
+    <div><p class="k">How they work</p><h2>One variable does the moving.</h2>
+      <p>UI Vault turns the scroll position into a number from 0 to 1 and writes it to <code>--p</code> on the element. Use it in any CSS <code>calc()</code>. Only transform and opacity change, so the examples stay smooth on integrated graphics.</p>
+      <ul><li><code>data-uv-scrub</code>: 0 when the element enters, 1 when it leaves</li><li><code>="center"</code>: reaches 1 at the middle of the screen</li><li><code>="pin"</code>: for a tall <code>.uv-pin</code> scene that stays on screen</li><li><code>="page"</code>: progress through the whole page</li><li><code>data-uv-velocity</code>: scroll speed as <code>--v</code></li><li><code>UV.scrub(el, p =&gt; …)</code>: the same value in JavaScript</li></ul></div>
+<pre><span class="c">&lt;!-- a 300vh scene; the stage stays pinned while --p goes 0 → 1 --&gt;</span>
+<span class="t">&lt;section</span> <span class="a">class</span>=<span class="s">"uv-pin"</span> <span class="a">data-uv-scrub</span>=<span class="s">"pin"</span> <span class="a">style</span>=<span class="s">"--len:300vh"</span><span class="t">&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="s">"uv-pin__stage"</span><span class="t">&gt;</span>
+    <span class="t">&lt;h1</span> <span class="a">class</span>=<span class="s">"title"</span><span class="t">&gt;</span>Lift off<span class="t">&lt;/h1&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/section&gt;</span>
+
+<span class="t">&lt;style&gt;</span>
+  .title { transform: translateY(calc(var(--p) * -80vh))
+                     scale(calc(1 + var(--p))); }
+<span class="t">&lt;/style&gt;</span>
+
+<span class="t">&lt;script&gt;</span>  <span class="c">// numbers come from the same value</span>
+  UV.scrub(scene, p =&gt; alt.textContent = Math.round(p * 400) + " km", <span class="s">"pin"</span>);
+<span class="t">&lt;/script&gt;</span></pre>
+  </section>
+</main>
+<script src="lib/uivault.js"></script>
+<script src="assets/js/picker.js"></script>
+</body>
+</html>

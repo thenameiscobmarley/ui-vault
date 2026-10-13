@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quick start — UI Vault API</title>
 <meta name="description" content="Get the UI Vault API in two minutes: download the zip, pick modules, mix 87 themes, 273 element designs, 224 effect layers and 485 collection pieces." />
-<meta name="theme-color" content="#f4f2ee" />
+<meta name="theme-color" content="#121211" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;700&family=VT323&family=Patrick+Hand&display=swap" rel="stylesheet" />
@@ -15,7 +15,8 @@
   body { margin: 0; background: var(--uv-bg); }
   body.has-wf { background: transparent; }
   body.has-wf .uv-waterfall-veil { background: linear-gradient(180deg, color-mix(in srgb, var(--uv-bg) 28%, transparent) 0, color-mix(in srgb, var(--uv-bg) 60%, transparent) 45vh, color-mix(in srgb, var(--uv-bg) 82%, transparent) 100%); }
-  body.has-wf .top { background: color-mix(in srgb, var(--uv-bg) 94%, transparent); }
+  html[data-theme="light"]:not([data-uv-theme]) body.has-wf .uv-waterfall-veil { background: linear-gradient(180deg, color-mix(in srgb, var(--uv-bg) 50%, transparent) 0, color-mix(in srgb, var(--uv-bg) 80%, transparent) 45vh, color-mix(in srgb, var(--uv-bg) 90%, transparent) 100%); }
+  body.has-wf .top { background: var(--uv-bg); }
   .qs-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 48px; align-items: center; padding: 64px 0 24px; }
   .qs-hero > dl { grid-column: 1 / -1; }
   .qs-term { border: 1px solid #ffffff26; border-radius: 10px; background: #0e0e0d; color: #ecebe8; overflow: hidden; box-shadow: 0 40px 80px -36px #000c; }
@@ -122,6 +123,7 @@
       <a class="uv-btn uv-btn--primary uv-btn--lg" href="downloads/uivault-latest.zip" download><span>Download uivault-<span class="ver">3.1.0</span>.zip</span></a>
       <a class="uv-btn uv-btn--ghost uv-btn--lg" href="library.html">Open the Library</a>
       <a class="uv-btn uv-btn--ghost uv-btn--lg" href="#builder">The zipper</a>
+      <a class="uv-btn uv-btn--ghost uv-btn--lg" href="examples.html">See examples</a>
     </div>
     </div>
     <div class="qs-term" aria-label="Animated install walkthrough"><div class="qs-term__top"><i></i><i></i><i></i><span>~/my-site — zsh</span></div><pre id="qsTerm"></pre></div>

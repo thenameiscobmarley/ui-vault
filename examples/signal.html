@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-uv-theme="neon" data-uv-btn="cyber" data-uv-card="cyber" data-uv-badge="neon">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SIGNAL/01 — cyberpunk audio · UI Vault example</title>
+<meta name="description" content="A cyberpunk product launch built with UI Vault: velocity-skewed marquees, a pinned 3D exploded view, scrambled specs and live theme switching." />
+<meta name="theme-color" content="#06060c" />
+<link rel="stylesheet" href="../lib/css/fonts.css" />
+<link rel="stylesheet" href="../lib/uivault.css" />
+<link rel="stylesheet" href="../lib/css/parts.css" />
+<link rel="stylesheet" href="../lib/css/collections.css" />
+<style>
+  body { margin: 0; overflow-x: clip; font-family: var(--uv-font); }
+  .ex-back { position: fixed; top: 14px; left: 14px; z-index: 100; padding: 8px 14px; border-radius: 4px; background: color-mix(in srgb, var(--uv-bg) 80%, transparent); border: 1px solid var(--uv-line-2); color: var(--uv-text); font: 500 13px "Geist", sans-serif; text-decoration: none; transition: border-color .2s, color .2s; }
+  .ex-back:hover { border-color: var(--uv-accent); color: var(--uv-accent); }
+  .mono { font: 500 12px "Geist Mono", monospace; letter-spacing: .18em; text-transform: uppercase; color: var(--uv-accent); }
+  .disp { font-family: "Audiowide", var(--uv-font-head); text-transform: uppercase; letter-spacing: .02em; }
+
+  /* 1 hero */
+  .hero { position: relative; min-height: 100vh; display: grid; align-content: center; padding: 0 6vw; overflow: hidden; }
+  .hero .rain { position: absolute; inset: 0; opacity: .22; z-index: 0; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 70% at 70% 50%, transparent, var(--uv-bg) 75%), linear-gradient(transparent 70%, var(--uv-bg)); z-index: 1; }
+  .hero > *:not(.rain) { position: relative; z-index: 2; }
+  .hero h1 { margin: 14px 0; font-size: clamp(64px, 14vw, 210px); line-height: .82; }
+  .hero h1 small { display: block; font-size: .32em; color: var(--uv-accent-2); }
+  .hero p { max-width: 460px; font-size: 18px; color: var(--uv-muted); }
+  .hero .row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  .hero .disc { position: absolute; right: -8vw; top: 50%; translate: 0 -50%; width: min(64vw, 720px); aspect-ratio: 1; border-radius: 50%; z-index: 1;
+    background: conic-gradient(from 0deg, var(--uv-accent), var(--uv-accent-2), var(--uv-accent)); -webkit-mask: radial-gradient(closest-side, transparent 63%, #000 64% 66%, transparent 67% 74%, #000 75% 76%, transparent 77% 88%, #000 89% 100%); mask: radial-gradient(closest-side, transparent 63%, #000 64% 66%, transparent 67% 74%, #000 75% 76%, transparent 77% 88%, #000 89% 100%);
+    opacity: .55; animation: spin 24s linear infinite; }
+  @keyframes spin { to { rotate: 360deg; } }
+
+  /* 2 marquees that lean into your scroll speed (data-uv-velocity → --v) */
+  .lean { padding: 6vh 0; overflow: hidden; border-block: 1px solid var(--uv-line-2); }
+  .lean .row { white-space: nowrap; font: 400 clamp(56px, 10vw, 150px)/1 "Audiowide", sans-serif; text-transform: uppercase; }
+  .lean .row span { color: var(--uv-accent); } .lean .row em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px var(--uv-text); }
+  .lean .uv-skew { transform: skewX(calc(var(--v, 0) * -14deg)); }
+
+  /* 3 exploded view: five layers pull apart on Z while the stack turns */
+  .explode { --len: 380vh; }
+  .explode .uv-pin__stage { display: grid; place-items: center; perspective: 1400px; }
+  .explode .head { position: absolute; top: 9vh; left: 6vw; right: 6vw; display: flex; justify-content: space-between; align-items: end; gap: 20px; z-index: 3; }
+  .explode h2 { margin: 0; font-size: clamp(40px, 6vw, 84px); line-height: .9; }
+  .explode .pct { font: 500 clamp(28px, 4vw, 52px) "Geist Mono", monospace; color: var(--uv-accent); }
+  .stack { position: relative; width: min(38vmin, 360px); aspect-ratio: 1; margin-top: 20vh; transform-style: preserve-3d; transform: rotateX(calc(58deg - var(--p, 0) * 6deg)) rotateZ(calc(-30deg + var(--p, 0) * 120deg)); }
+  .layer { position: absolute; inset: 0; border-radius: 50%; transform: translateZ(calc((var(--i) - 2) * (8px + var(--p, 0) * 90px))); }
+  .l0 { background: radial-gradient(circle, #1a1a2e 40%, #0b0b16 70%); border: 2px solid var(--uv-line-2); }                                    /* shell */
+  .l1 { background: repeating-radial-gradient(circle, #2b2b45 0 3px, #15152a 3px 7px); inset: 6%; }                                                  /* cushion */
+  .l2 { background: radial-gradient(circle, #9aa0b8 0 12%, #44485c 13% 30%, #1f2233 31%); inset: 14%; box-shadow: 0 0 0 2px #ffffff22 inset; }      /* magnet */
+  .l3 { background: conic-gradient(from 0deg, var(--uv-accent), var(--uv-accent-2), var(--uv-accent)); inset: 10%; -webkit-mask: radial-gradient(closest-side, transparent 30%, #000 31%); mask: radial-gradient(closest-side, transparent 30%, #000 31%); opacity: .9; } /* driver */
+  .l4 { background: radial-gradient(circle, transparent 46%, var(--uv-accent) 47% 48%, transparent 49%), repeating-conic-gradient(from 0deg, #ffffff18 0 2deg, transparent 2deg 12deg); inset: 2%; border: 1px solid var(--uv-accent); box-shadow: 0 0 30px -6px var(--uv-accent); } /* grille */
+  .callouts { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+  .call { position: absolute; max-width: 230px; padding: 12px 14px; border-left: 2px solid var(--uv-accent); background: color-mix(in srgb, var(--uv-bg) 70%, transparent);
+    opacity: clamp(0, (var(--p, 0) - var(--at)) * 12, 1); transform: translateX(calc((1 - clamp(0, (var(--p, 0) - var(--at)) * 12, 1)) * 20px)); }
+  .call b { display: block; font: 400 18px "Audiowide", sans-serif; text-transform: uppercase; } .call span { font-size: 14px; color: var(--uv-muted); }
+
+  /* 4 specs */
+  .specs { max-width: 1160px; margin: 0 auto; padding: 18vh 6vw; }
+  .specs h2 { font-size: clamp(40px, 6vw, 80px); margin: 10px 0 30px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .grid .uv-card { padding: 22px; } .grid b { display: block; font: 400 44px/1 "Audiowide", sans-serif; color: var(--uv-text); margin: 8px 0 4px; }
+
+  /* 5 colourways: each button swaps the whole page's UI Vault theme */
+  .ways { padding: 10vh 6vw 16vh; text-align: center; }
+  .ways h2 { font-size: clamp(40px, 6vw, 80px); margin: 10px 0 22px; }
+  .swatches { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .swatches button { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 4px; border: 1px solid var(--uv-line-2); background: var(--uv-surface); color: var(--uv-text); font: 500 14px "Geist Mono", monospace; cursor: pointer; transition: border-color .2s, transform .2s; }
+  .swatches button:hover { transform: translateY(-2px); border-color: var(--uv-accent); }
+  .swatches button[aria-pressed="true"] { border-color: var(--uv-accent); box-shadow: 0 0 0 1px var(--uv-accent) inset; }
+  .swatches i { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--a), var(--b)); }
+  .flash { position: fixed; inset: 0; z-index: 90; pointer-events: none; background: var(--uv-accent); opacity: 0; }
+  .flash.go { animation: flash .5s ease-out; } @keyframes flash { 0% { opacity: .35; } 100% { opacity: 0; } }
+
+  .buy { padding: 16vh 6vw; text-align: center; border-top: 1px solid var(--uv-line-2); }
+  .buy h2 { font-size: clamp(64px, 12vw, 180px); line-height: .85; margin: 0 0 10px; }
+  .buy .price { font: 500 22px "Geist Mono", monospace; color: var(--uv-muted); margin-bottom: 26px; }
+  footer { padding: 26px 6vw; border-top: 1px solid var(--uv-line); color: var(--uv-dim); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; } footer a { color: inherit; }
+  @media (max-width: 760px) { .call { max-width: 160px; } .call span { display: none; } .hero .disc { opacity: .25; } }
+  @media (prefers-reduced-motion: reduce) { .uv-pin { height: auto; } .uv-pin__stage { position: relative; height: 100vh; } }
+</style>
+</head>
+<body>
+<a class="ex-back" href="../examples.html">← All examples</a>
+<div class="flash" id="flash"></div>
+
+<header class="hero">
+  <div class="rain" data-uv-fx="matrix" aria-hidden="true"></div>
+  <div class="disc" aria-hidden="true"></div>
+  <p class="mono" data-uv-scramble>// Transmission incoming</p>
+  <h1 class="disp uv-t-glitch">Signal<small>/01 · open-back</small></h1>
+  <p>Headphones tuned in a city that never turns the lights off. 40 mm graphene drivers, 70 hours, zero latency.</p>
+  <div class="row"><a class="uv-btn uv-btn--primary" href="#buy">Pre-order · ¥ 24,900</a><a class="uv-btn" href="#explode">See inside ↓</a></div>
+</header>
+
+<section class="lean" data-uv-velocity>
+  <div class="uv-skew"><div class="row uv-scrub-x" data-uv-scrub><span>Zero latency</span> <em>· Graphene ·</em> <span>70 h</span> <em>· Open back ·</em> <span>Zero latency</span></div></div>
+  <div class="uv-skew"><div class="row uv-scrub-x-rev" data-uv-scrub><em>Night mode ·</em> <span>Spatial</span> <em>· Lossless ·</em> <span>Night mode</span> <em>· Spatial</em></div></div>
+</section>
+
+<section class="uv-pin explode" id="explode" data-uv-scrub="pin">
+  <div class="uv-pin__stage">
+    <div class="head"><div><p class="mono">Exploded view</p><h2 class="disp">Five layers<br>of quiet.</h2></div><div class="pct" id="pct">00%</div></div>
+    <div class="stack" aria-hidden="true"><i class="layer l0" style="--i:0"></i><i class="layer l1" style="--i:1"></i><i class="layer l2" style="--i:2"></i><i class="layer l3" style="--i:3"></i><i class="layer l4" style="--i:4"></i></div>
+    <div class="callouts">
+      <div class="call" style="--at:.12;left:7vw;top:36vh"><b>Grille</b><span>Machined aluminium, 1,200 holes, open to the street.</span></div>
+      <div class="call" style="--at:.3;right:7vw;top:30vh"><b>Driver</b><span>40 mm graphene dome. Moves less, says more.</span></div>
+      <div class="call" style="--at:.48;left:9vw;bottom:16vh"><b>Magnet</b><span>N52 neodymium ring for a tight, fast low end.</span></div>
+      <div class="call" style="--at:.64;right:9vw;bottom:20vh"><b>Cushion</b><span>Memory foam in vegan leather. Eight hours, no fatigue.</span></div>
+      <div class="call" style="--at:.8;left:50%;bottom:6vh;translate:-50% 0"><b>Shell</b><span>Recycled carbon composite, 228 g all in.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="specs">
+  <p class="mono">Spec sheet</p>
+  <h2 class="disp">Numbers, decrypted.</h2>
+  <div class="grid" data-uv-stagger="up">
+    <div class="uv-card"><span class="mono">Battery</span><b data-uv-count="70" data-uv-suffix=" h">0</b><span class="uv-muted">10 min charge → 9 h</span></div>
+    <div class="uv-card"><span class="mono">Latency</span><b data-uv-count="9" data-uv-suffix=" ms">0</b><span class="uv-muted">Game mode, 2.4 GHz dongle</span></div>
+    <div class="uv-card"><span class="mono">Response</span><b data-uv-scramble>4–48k</b><span class="uv-muted">Hz, ±2 dB</span></div>
+    <div class="uv-card"><span class="mono">Weight</span><b data-uv-count="228" data-uv-suffix=" g">0</b><span class="uv-muted">Lighter than it looks</span></div>
+  </div>
+</section>
+
+<section class="ways">
+  <p class="mono">Colourways</p>
+  <h2 class="disp">Pick your frequency.</h2>
+  <div class="swatches" id="ways">
+    <button aria-pressed="true" data-t="neon" style="--a:#00f0ff;--b:#ff2bd6"><i></i>Neon</button>
+    <button data-t="synthwave" style="--a:#ff4fd8;--b:#ffb84f"><i></i>Synthwave</button>
+    <button data-t="amber-crt" style="--a:#ffb000;--b:#ff6a00"><i></i>Amber CRT</button>
+    <button data-t="vampire" style="--a:#ff2e4d;--b:#7a0b1f"><i></i>Vampire</button>
+  </div>
+  <p class="uv-muted" style="margin-top:18px">Each colourway is one of the 87 UI Vault themes, set with <code>data-uv-theme</code> on &lt;html&gt;.</p>
+</section>
+
+<section class="buy" id="buy">
+  <p class="mono" data-uv-scramble>// Batch 01 · 2,000 units</p>
+  <h2 class="disp" data-uv-reveal="zoom">Tune in.</h2>
+  <p class="price">¥ 24,900 · ships in 3 weeks</p>
+  <button class="uv-btn uv-btn--primary uv-btn--lg" data-uv-confetti data-uv="magnetic">Pre-order now</button>
+</section>
+<footer><span>SIGNAL is a made-up product. Example built with <a href="../index.html">UI Vault</a>.</span><span>Uses: data-uv-velocity · uv-skew · uv-pin · UV.scrub · data-uv-fx="matrix" · data-uv-scramble · parts: cyber</span></footer>
+
+<script src="../lib/uivault.js"></script>
+<script>
+  const pct = document.getElementById("pct");
+  UV.scrub(document.getElementById("explode"), p => { pct.textContent = String(Math.round(p * 100)).padStart(2, "0") + "%"; }, "pin");
+
+  // colourways: swap the theme for the whole page, with a quick flash
+  const ways = document.getElementById("ways"), flash = document.getElementById("flash");
+  ways.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    ways.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    document.documentElement.dataset.uvTheme = b.dataset.t;
+    flash.classList.remove("go"); void flash.offsetWidth; flash.classList.add("go");
+    UV.sound && UV.sound("click");
+  });
+</script>
+</body>
+</html>

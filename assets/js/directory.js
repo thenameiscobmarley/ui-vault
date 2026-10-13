@@ -54,7 +54,7 @@
     last = q ? pool.map(i => [score(i, terms), i]).filter(x => x[0] >= 0).sort((a, b) => b[0] - a[0]).map(x => x[1]) : pool;
     sel = Math.min(sel, Math.max(0, last.length - 1));
     const ext = u => /^https?:/.test(u);
-    $("#res").innerHTML = last.slice(0, shown).map((it, i) => `<li class="${i === sel ? "sel" : ""}"><a href="${esc(it.u)}"${ext(it.u) ? ' target="_blank" rel="noopener"' : ""}>
+    $("#res").innerHTML = last.slice(0, shown).map((it, i) => `<li class="${i === sel ? "sel" : ""}${ext(it.u) ? " ext" : ""}" data-i="${i}"><a href="${esc(it.u)}"${ext(it.u) ? ' target="_blank" rel="noopener"' : ""}>
       <span class="kind" style="--c:${COLORS[it.k] || "#888"}"><i></i>${it.k === "JavaScript" ? "JS" : it.k}</span>
       <span><b>${hl(it.n, terms)}</b><small>${hl(it.d, terms)}</small></span><span class="go">${ext(it.u) ? new URL(it.u).hostname.replace("www.", "") + " ↗" : esc(it.u.split("?")[0].split("#")[0] || "home")}</span></a></li>`).join("")
       + (last.length > shown ? `<li><button class="more" type="button" id="more">Show ${Math.min(120, last.length - shown)} more of ${last.length - shown}</button></li>` : "")
@@ -63,6 +63,11 @@
     history.replaceState(null, "", q ? "?q=" + encodeURIComponent(q) : location.pathname);
   }
   $("#q").addEventListener("input", () => { shown = 60; sel = 0; run(); });
+  // the mouse and the arrow keys share one highlight, so there is never more than one lit row
+  $("#res").addEventListener("mouseover", e => {
+    const li = e.target.closest("li[data-i]"); if (!li || +li.dataset.i === sel) return;
+    sel = +li.dataset.i; $("#res").querySelectorAll("li.sel").forEach(x => x.classList.remove("sel")); li.classList.add("sel");
+  });
   $("#q").addEventListener("keydown", e => {
     if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(0, Math.min(last.length - 1, sel + (e.key === "ArrowDown" ? 1 : -1))); run(); document.querySelector(".res li.sel")?.scrollIntoView({ block: "nearest" }); }
     if (e.key === "Enter" && last[sel]) { const a = document.querySelector(".res li.sel a"); a && a.click(); }
@@ -73,7 +78,7 @@
   const pages = items.filter(i => i.k === "Page"), secs = items.filter(i => i.k === "Section");
   const groups = {};
   pages.forEach(p => (groups[p.g] ||= []).push(p));
-  $("#groups").innerHTML = Object.entries(groups).map(([g, ps]) => `<div class="grp"><p class="k">${g}</p><h2>${{ Start: "Start here", Design: "Design", Code: "Code" }[g] || g}</h2>
+  $("#groups").innerHTML = Object.entries(groups).map(([g, ps]) => `<div class="grp"><p class="k">${g}</p><h2>${{ Start: "Start here", Design: "Design", Code: "Code", Examples: "Examples" }[g] || g}</h2>
     ${ps.map(p => { const sub = secs.filter(s => s.g === p.n); return `<a href="${p.u}"><b>${p.n}</b><small>${esc(p.d)}</small></a>${sub.length ? `<div class="subs">${sub.map(s => `<a href="${s.u}">${esc(s.n)}</a>`).join("")}</div>` : ""}`; }).join("")}</div>`).join("")
     + `<div class="grp"><p class="k">Browse</p><h2>By kind</h2>${order.filter(k => !["Page", "Section"].includes(k)).map(k => `<a href="#" data-kind="${k}"><b>${k === "C++" ? "C++ API" : k === "Python" ? "Python API" : k + "s"}</b><small>${kinds[k]} items</small></a>`).join("")}</div>`;
   $("#groups").addEventListener("click", e => { const a = e.target.closest("[data-kind]"); if (!a) return; e.preventDefault(); $(`#chips [data-k="${a.dataset.kind}"]`).click(); scrollTo(0, 0); });

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UI Vault — An index of open-source interface material</title>
   <meta name="description" content="A curated vault of open-source UI kits, icons, fonts, motion, effects and post-processing — plus live, copy-ready snippets." />
-  <meta name="theme-color" content="#f4f2ee" />
+  <meta name="theme-color" content="#121211" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,6 +62,7 @@
       <div class="hero__chips" id="quickChips"></div>
       <div class="hero__cta">
         <a class="btn btn--primary btn--lg" href="quickstart.html">Get the API</a>
+        <a class="btn btn--ghost btn--lg" href="examples.html">See examples</a>
         <a class="btn btn--ghost btn--lg" href="library.html">Open the Library</a>
         <a class="btn btn--ghost btn--lg" href="code.html">Python &amp; C++</a>
         <a class="btn btn--ghost btn--lg" href="showcase.html">Showcase</a>
@@ -81,12 +82,13 @@
     <section class="section api-promo">
       <div>
         <p class="eyebrow">§ 00 — The library</p>
-        <h2>Twelve themes, <em>seventy effects,</em> one API.</h2>
-        <p class="section__sub">Modular CSS + JS: load the whole bundle or only the modules you need, then mix 12 themes (<code>data-uv-theme</code>) and 70+ effects (<code>uv-fx-*</code>) on any element. Use <code>uivault.css</code> for buttons, tabs, cards, glass, forms, rings, docks, marquees and backgrounds. Use <code>uivault.js</code> for toasts, modals, a ⌘K palette, confetti, tilt, magnetic hover, count-ups, typewriters, scroll reveals and synthesized UI sounds.</p>
+        <h2>87 themes, <em>a thousand pieces,</em> one API.</h2>
+        <p class="section__sub">Modular CSS + JS: load the whole bundle or only the modules you need, then mix 87 themes (<code>data-uv-theme</code>) and 70+ effects (<code>uv-fx-*</code>) on any element. Use <code>uivault.css</code> for buttons, tabs, cards, glass, forms, rings, docks, marquees and backgrounds. Use <code>uivault.js</code> for toasts, modals, a ⌘K palette, confetti, tilt, magnetic hover, count-ups, typewriters, scroll reveals, pinned scroll scenes and synthesized UI sounds.</p>
         <div class="api-promo__cta">
           <a class="btn btn--primary" href="quickstart.html">Quick start</a>
           <a class="btn btn--ghost" href="downloads/uivault-latest.zip" download>Download .zip</a>
           <a class="btn btn--ghost" href="docs.html">Read the docs</a>
+          <a class="btn btn--ghost" href="examples.html">See examples</a>
           <a class="btn btn--ghost" href="showcase.html">Browse the showcase</a>
           <a class="btn btn--ghost" href="lib/uivault.css" download>uivault.css</a>
           <a class="btn btn--ghost" href="lib/uivault.js" download>uivault.js</a>
@@ -103,6 +105,16 @@
 <span class="c">// or from JS</span>
 UV.toast("Saved!", { type: "success" });
 UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
+    </section>
+
+    <!-- ── See examples ───────────────────────────────────────── -->
+    <section class="section ex-band">
+      <a class="ex-band__card" href="examples.html">
+        <div><p class="eyebrow">New — See examples</p><h2>Six websites, <em>built to be scrolled.</em></h2>
+          <p class="section__sub">A rocket launch, a deep-sea dive, a cyberpunk product, a magazine long-read, a coffee roaster and a SaaS page. Each one uses only UI Vault and its scroll API.</p>
+          <span class="btn btn--primary">See the examples →</span></div>
+        <div class="ex-band__tiles" aria-hidden="true"><i style="--b:radial-gradient(circle at 50% 130%,#ff7a3d 0,#6a2bd9 30%,#05060d 46%)">NOVA</i><i style="--b:linear-gradient(#8ae9ff,#0a4f6a 60%,#021320)">ABYSS</i><i style="--b:radial-gradient(70% 80% at 80% 50%,#ff2bd655,#06060c)">SIGNAL</i><i style="--b:linear-gradient(180deg,#11203a,#33507a 45%,#e3a46b 75%,#1a2230 76%)">FOLIO</i><i style="--b:linear-gradient(160deg,#5a3420,#1c120c)">BREW</i><i style="--b:radial-gradient(60% 60% at 30% 30%,#e6d8ff,#ffd8ec 60%,#d6f1ff);color:#2c2547">PRISM</i></div>
+      </a>
     </section>
 
     <!-- ── Playground ───────────────────────────────────────── -->

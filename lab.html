@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Test page — UI Vault</title>
 <meta name="description" content="Try any theme, kit and element design on realistic mock pages: a dashboard, a landing page, a settings form and a shop." />
-<meta name="theme-color" content="#101012" />
+<meta name="theme-color" content="#121211" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="lib/css/fonts.css" />
 <link rel="stylesheet" href="lib/uivault.css" />
@@ -13,7 +13,7 @@
 <style>
   body { margin: 0; background: var(--uv-bg); color: var(--uv-text); font-family: var(--uv-font); -webkit-font-smoothing: antialiased; }
   * { box-sizing: border-box; }
-  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 clamp(14px, 2.4vw, 28px); background: color-mix(in srgb, var(--uv-bg) 94%, transparent); border-bottom: 1px solid var(--uv-line); }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 clamp(14px, 2.4vw, 28px); background: var(--uv-bg); border-bottom: 1px solid var(--uv-line); }
   .top .brand { display: flex; align-items: center; gap: 10px; color: var(--uv-text); text-decoration: none; font-weight: 600; flex: none; }
   .top .brand svg rect { fill: var(--uv-text); } .top .brand svg path { stroke: var(--uv-bg); } .top .brand svg circle { fill: var(--uv-accent); }
   .views { display: flex; gap: 2px; margin: 0 auto; padding: 3px; border: 1px solid var(--uv-line-2); border-radius: 8px; overflow-x: auto; scrollbar-width: none; }
@@ -39,7 +39,7 @@
   .ctl .kits button.on { background: #ff6a26; border-color: #ff6a26; color: #111; }
   .ctl .row { display: flex; gap: 6px; flex-wrap: wrap; } .ctl .row .cb { flex: 1; border-radius: 6px; height: 32px; }
   .ctl p { margin: 0; font-size: 12px; color: #8f8a82; line-height: 1.5; } .ctl p a { color: #ff6a26; }
-  .ctl .tbtn { font: 500 11px "Geist Mono", monospace; text-transform: none; letter-spacing: 0; padding: 3px 8px; border-radius: 4px; border: 1px solid #8f8a8255; background: none; color: inherit; cursor: pointer; }
+  .ctl .tbtn { font: 500 11px "Geist Mono", monospace; text-transform: none; letter-spacing: 0; padding: 3px 8px; border-radius: 4px; border: 1px solid #8f8a8255; background: none; color: inherit; cursor: pointer; transition: border-color .15s, background-color .15s; } .ctl .tbtn:hover { border-color: currentColor; background: #8f8a8222; }
 
   /* mock pages */
   .mock[hidden] { display: none; }
