@@ -203,13 +203,25 @@ def raw_src():
 def manifest(themes):
     files = []
     for p in sorted(LIB.rglob("*")):
-        if p.is_file() and p.suffix in (".css", ".js") and p.name not in ("themes.src.css", "manifest.js", "raw-src.js"):
+        if p.is_file() and p.suffix in (".css", ".js") and p.name not in ("themes.src.css", "manifest.js", "raw-src.js", "tokens.js"):
             rel = p.relative_to(LIB).as_posix()
             files.append({"path": rel, "bytes": p.stat().st_size, "desc": DESC.get(p.name, "")})
     m = {"version": VERSION, "css": CSS_ORDER, "js": JS_ORDER, "themes": themes, "files": files}
     (LIB / "manifest.json").write_text(json.dumps(m, indent=1, ensure_ascii=False))
     (LIB / "manifest.js").write_text("window.UV_MANIFEST = " + json.dumps(m, ensure_ascii=False) + ";\n")
     return m
+
+
+def make_lang_zips():
+    """downloads/uivault-python-*.zip and uivault-cpp-*.zip"""
+    for lang in ("python", "cpp"):
+        base = ROOT / lang
+        for name in (f"uivault-{lang}-{VERSION}.zip", f"uivault-{lang}-latest.zip"):
+            with zipfile.ZipFile(DL / name, "w", zipfile.ZIP_DEFLATED) as z:
+                for p in sorted(base.rglob("*")):
+                    if p.is_file() and "__pycache__" not in p.parts and not p.name.endswith((".pyc", ".egg-info")) and ".egg-info" not in str(p):
+                        z.write(p, f"uivault-{lang}/" + p.relative_to(base).as_posix())
+                z.write(ROOT / "LICENSE", f"uivault-{lang}/LICENSE")
 
 
 def make_zip(m):
@@ -232,5 +244,7 @@ if __name__ == "__main__":
     raw_src()
     m = manifest(themes)
     make_zip(m)
+    make_lang_zips()
+    (LIB / "tokens.js").write_text("window.UV_TOKENS = " + json.dumps(tokens) + ";\n")
     total = sum(f["bytes"] for f in m["files"])
     print(f"UI Vault {VERSION}: {len(themes)} themes, {len(m['files'])} files, {total // 1024} KB → downloads/uivault-{VERSION}.zip")
