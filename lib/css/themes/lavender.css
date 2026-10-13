@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: lavender — lilac fields, soft violet buttons. Needs core.css. MIT */
+[data-uv-theme="lavender"] {
+  --uv-bg: #f3efff; --uv-text: #2e2550; --uv-accent: #8b6cf0; --uv-accent-2: #f49ac1; --uv-surface: #faf8ff; --uv-surface-2: #e7e3f4; --uv-surface-3: #ddd9ec; --uv-line: #2e25501a; --uv-line-2: #2e25502e; --uv-muted: #6d6688; --uv-dim: #948eab; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  
+}
+[data-uv-theme="lavender"] .uv-btn--primary, [data-uv-theme="lavender"] .uv-btn--grad { background: #8b6cf0; color: #ffffff; border-color: #8b6cf0; }
+[data-uv-theme="lavender"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="lavender"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #2e25500f, 0 14px 34px -14px #2e255059; }
+[data-uv-theme="lavender"] .uv-tabs > .uv-tabs__ind { background: #8b6cf0; } [data-uv-theme="lavender"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="lavender"] .uv-switch input:checked + i, [data-uv-theme="lavender"] .uv-check input:checked { background: #8b6cf0; border-color: #8b6cf0; }
+[data-uv-theme="lavender"] .uv-progress > i { background: #8b6cf0; } [data-uv-theme="lavender"] .uv-ring { background: conic-gradient(#8b6cf0 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="lavender"] .uv-input:focus, [data-uv-theme="lavender"] .uv-select:focus, [data-uv-theme="lavender"] .uv-textarea:focus { border-color: #8b6cf0; box-shadow: 0 0 0 3px #8b6cf038; }
+[data-uv-theme="lavender"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="lavender"] .uv-btn:hover { scale: 1.06; } [data-uv-theme="lavender"] .uv-btn:active { scale: .96; }
+[data-uv-theme="lavender"] .uv-card--hover:hover { scale: 1.02; }

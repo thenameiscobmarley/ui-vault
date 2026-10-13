@@ -1,0 +1,402 @@
+"""UI Vault theme recipes + specs → lib/css/themes.gen.css.
+
+A theme = colours (bg / fg / accent / accent2, the rest is derived) + fonts + shape + one recipe each for
+background, heading, primary button, hover motion and cards. Signature themes add `extra` CSS.
+Every recipe only uses --uv-* tokens and the theme's own colours, so all components follow automatically.
+"""
+
+# ── fonts: key → (CSS stack, Google Fonts family spec or None) ──────────────
+FONTS = {
+    "geist": ('"Geist", system-ui, sans-serif', "Geist:wght@400;500;600;700;800"),
+    "manrope": ('"Manrope", system-ui, sans-serif', "Manrope:wght@400;500;700;800"),
+    "outfit": ('"Outfit", system-ui, sans-serif', "Outfit:wght@400;500;700;800"),
+    "grotesk": ('"Space Grotesk", system-ui, sans-serif', "Space+Grotesk:wght@400;500;700"),
+    "bricolage": ('"Bricolage Grotesque", system-ui, sans-serif', "Bricolage+Grotesque:wght@400;600;800"),
+    "rajdhani": ('"Rajdhani", system-ui, sans-serif', "Rajdhani:wght@500;600;700"),
+    "mono": ('"Geist Mono", ui-monospace, monospace', "Geist+Mono:wght@400;500"),
+    "serif": ('"Instrument Serif", Georgia, serif', "Instrument+Serif:ital@0;1"),
+    "fraunces": ('"Fraunces", Georgia, serif', "Fraunces:ital,wght@0,400;0,700;1,400"),
+    "playfair": ('"Playfair Display", Georgia, serif', "Playfair+Display:ital,wght@0,500;0,800;1,500"),
+    "cormorant": ('"Cormorant Garamond", Georgia, serif', "Cormorant+Garamond:ital,wght@0,500;0,700;1,500"),
+    "dmserif": ('"DM Serif Display", Georgia, serif', "DM+Serif+Display:ital@0;1"),
+    "syne": ('"Syne", system-ui, sans-serif', "Syne:wght@500;700;800"),
+    "unbounded": ('"Unbounded", system-ui, sans-serif', "Unbounded:wght@400;600;800"),
+    "orbitron": ('"Orbitron", system-ui, sans-serif', "Orbitron:wght@500;700;900"),
+    "audiowide": ('"Audiowide", system-ui, sans-serif', "Audiowide"),
+    "bebas": ('"Bebas Neue", Impact, sans-serif', "Bebas+Neue"),
+    "pixel": ('"VT323", ui-monospace, monospace', "VT323"),
+    "press": ('"Press Start 2P", ui-monospace, monospace', "Press+Start+2P"),
+    "hand": ('"Patrick Hand", "Comic Neue", cursive', "Patrick+Hand"),
+    "majormono": ('"Major Mono Display", ui-monospace, monospace', "Major+Mono+Display"),
+}
+SHAPES = {"sharp": (0, 0, 0, 0), "crisp": (2, 3, 4, 6), "soft": (4, 6, 8, 12), "round": (8, 12, 16, 22), "pill": (999, 999, 18, 26)}
+
+
+# ── colour helpers ───────────────────────────────────────────────────────────
+def _rgb(h):
+    h = h.lstrip("#")
+    if len(h) == 3: h = "".join(c * 2 for c in h)
+    return [int(h[i:i + 2], 16) for i in (0, 2, 4)]
+
+
+def hexc(rgb): return "#%02x%02x%02x" % tuple(max(0, min(255, round(v))) for v in rgb)
+def mix(a, b, t): return hexc([x + (y - x) * t for x, y in zip(_rgb(a), _rgb(b))])
+def alpha(h, a): return h[:7] + "%02x" % round(a * 255)
+def lum(h): r, g, b = _rgb(h); return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255
+def on(h): return "#111111" if lum(h) > 0.55 else "#ffffff"
+def lighten(h, t): return mix(h, "#ffffff", t)
+def darken(h, t): return mix(h, "#000000", t)
+
+
+def derive(s):
+    bg, fg = s["bg"], s["fg"]
+    dark = lum(bg) < 0.5
+    c = {"bg": bg, "text": fg, "accent": s["ac"], "accent-2": s.get("ac2", s["ac"])}
+    c["surface"] = s.get("surface") or (mix(bg, fg, .05) if dark else mix(bg, "#ffffff", .55))
+    c["surface-2"] = mix(bg, fg, .09 if dark else .06)
+    c["surface-3"] = mix(bg, fg, .15 if dark else .11)
+    c["line"] = alpha(fg, .14 if dark else .10)
+    c["line-2"] = alpha(fg, .26 if dark else .18)
+    c["muted"] = mix(fg, bg, .32)
+    c["dim"] = mix(fg, bg, .52)
+    c["success"], c["warn"], c["danger"] = (("#4ade80", "#fbbf24", "#f87171") if dark else ("#2f7d4f", "#b7791f", "#c4321f"))
+    c.update(s.get("colors", {}))
+    return c, dark
+
+
+# ── recipes ──────────────────────────────────────────────────────────────────
+def bg_css(kind, c, dark, args):
+    a, b = c["accent"], c["accent-2"]
+    if kind == "flat": return ""
+    if kind == "aurora":
+        c1, c2, c3 = (args + [a, b, mix(a, b, .5)])[:3]
+        return f"background-image: radial-gradient(45% 55% at 12% 10%, {alpha(c1, .45)}, transparent 70%), radial-gradient(40% 50% at 88% 22%, {alpha(c2, .38)}, transparent 70%), radial-gradient(55% 50% at 55% 100%, {alpha(c3, .35)}, transparent 70%);"
+    if kind == "pearl":
+        return ("background-image: radial-gradient(55% 45% at 18% 8%, #ffd9f3cc, transparent 70%), radial-gradient(45% 50% at 88% 14%, #cdeeffcc, transparent 70%), "
+                "radial-gradient(60% 55% at 70% 95%, #e7ffdccc, transparent 70%), radial-gradient(40% 40% at 30% 75%, #fff2d6aa, transparent 70%), "
+                "conic-gradient(from 200deg at 65% 55%, #ffffff, #f4ecff, #e8f7ff, #fdf8ea, #ffffff);")
+    if kind == "mesh":
+        return f"background-image: radial-gradient(at 15% 15%, {alpha(a, .55)} 0, transparent 50%), radial-gradient(at 85% 10%, {alpha(b, .5)} 0, transparent 50%), radial-gradient(at 60% 100%, {alpha(mix(a, b, .5), .45)} 0, transparent 55%);"
+    if kind == "grid":
+        g = alpha(c["text"], .07)
+        return f"background-image: linear-gradient({g} 1px, transparent 1px), linear-gradient(90deg, {g} 1px, transparent 1px); background-size: 32px 32px;"
+    if kind == "blueprint":
+        g, g2 = alpha(c["text"], .09), alpha(c["text"], .18)
+        return f"background-image: linear-gradient({g2} 1px, transparent 1px), linear-gradient(90deg, {g2} 1px, transparent 1px), linear-gradient({g} 1px, transparent 1px), linear-gradient(90deg, {g} 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;"
+    if kind == "dots": return f"background-image: radial-gradient({alpha(c['text'], .16)} 1px, transparent 1.4px); background-size: 18px 18px;"
+    if kind == "lines": return f"background-image: linear-gradient({alpha(b, .16)} 1px, transparent 1px); background-size: 100% 28px;"
+    if kind == "carbon":
+        k1, k2 = mix(c["bg"], "#ffffff", .06), mix(c["bg"], "#000000", .25)
+        return f"background-image: linear-gradient(27deg, {k2} 5px, transparent 5px) 0 5px, linear-gradient(207deg, {k2} 5px, transparent 5px) 10px 0, linear-gradient(27deg, {k1} 5px, transparent 5px) 0 10px, linear-gradient(207deg, {k1} 5px, transparent 5px) 10px 5px, linear-gradient(90deg, {k2} 10px, transparent 10px), linear-gradient({k2} 25%, {k1} 25%, {k1} 50%, transparent 50%, transparent 75%, {k1} 75%, {k1}); background-size: 20px 20px;"
+    if kind == "brushed":
+        return f"background-image: repeating-linear-gradient(90deg, {alpha('#ffffff', .05)} 0 1px, transparent 1px 3px), linear-gradient(180deg, {lighten(c['bg'], .12)}, {c['bg']} 45%, {darken(c['bg'], .1)});"
+    if kind == "galaxy":
+        return (f"background-image: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 60%, #fff, transparent), radial-gradient(1.5px 1.5px at 40% 80%, #ffffffcc, transparent), "
+                f"radial-gradient(1px 1px at 85% 15%, #fff, transparent), radial-gradient(60% 50% at 30% 30%, {alpha(a, .45)}, transparent 70%), radial-gradient(50% 60% at 80% 70%, {alpha(b, .45)}, transparent 70%); "
+                "background-size: 220px 220px, 260px 260px, 300px 300px, 180px 180px, 100% 100%, 100% 100%;")
+    if kind == "marble":
+        return (f"background-image: radial-gradient(120% 60% at 10% 20%, {alpha(a, .25)} 0 20%, transparent 21% 40%, {alpha(b, .2)} 41% 46%, transparent 47%), "
+                f"radial-gradient(90% 70% at 90% 80%, {alpha(b, .25)} 0 18%, transparent 19% 36%, {alpha(a, .2)} 37% 40%, transparent 41%);")
+    if kind == "sunset":
+        c1, c2, c3 = (args + [a, b, c["bg"]])[:3]
+        return f"background-image: linear-gradient(180deg, {alpha(c1, .55)}, {alpha(c2, .35)} 45%, {alpha(c3, 0)} 85%);"
+    if kind == "noise":
+        return "background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\");"
+    if kind == "halftone": return f"background-image: radial-gradient({alpha(a, .3)} 1.4px, transparent 1.6px); background-size: 10px 10px;"
+    if kind == "checker": return f"background-image: conic-gradient({c['surface-2']} 25%, transparent 0 50%, {c['surface-2']} 0 75%, transparent 0); background-size: 28px 28px;"
+    if kind == "stripes": return f"background-image: repeating-linear-gradient(-45deg, {alpha(a, .08)} 0 12px, transparent 12px 24px);"
+    if kind == "scan": return f"background-image: repeating-linear-gradient(0deg, {alpha('#000000', .18)} 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, {alpha('#000000', .45)});"
+    if kind == "vignette": return f"background-image: radial-gradient(ellipse at 50% 35%, transparent 40%, {alpha(darken(c['bg'], .5), .55)});"
+    if kind == "tiger":
+        return f"background-image: repeating-linear-gradient(115deg, transparent 0 18px, {alpha('#000000', .35)} 18px 24px, transparent 24px 46px, {alpha('#000000', .25)} 46px 50px), linear-gradient(135deg, {a}, {b});"
+    if kind == "web":
+        return f"background-image: repeating-radial-gradient(circle at 0 0, transparent 0 34px, {alpha('#000000', .55)} 35px 36px), repeating-conic-gradient(from 0deg at 0 0, transparent 0 9deg, {alpha('#000000', .45)} 9deg 9.6deg);"
+    if kind == "damascus":
+        return f"background-image: repeating-radial-gradient(ellipse 120% 40% at 50% 120%, {alpha('#ffffff', .07)} 0 6px, transparent 6px 14px), linear-gradient(180deg, {lighten(c['bg'], .08)}, {c['bg']});"
+    return ""
+
+
+def head_css(kind, c, dark, args):
+    a, b = c["accent"], c["accent-2"]
+    clip = "-webkit-background-clip: text; background-clip: text; color: transparent;"
+    if kind == "plain": return ""
+    if kind == "metal":  # deep → bright band → deep, like polished anodised metal
+        d, l = (args + [darken(a, .45), lighten(a, .55)])[:2]
+        return f"background-image: linear-gradient(100deg, transparent 35%, {alpha('#ffffff', .55)} 50%, transparent 65%), linear-gradient(180deg, {d} 28%, {l} 50%, {mix(d, l, .35)} 54%, {d} 74%); background-size: 250% 100%, 100% 100%; {clip} animation: uvt-sheen 7s ease-in-out infinite;"
+    if kind == "chrome":
+        return f"background-image: linear-gradient(180deg, #ffffff 0%, #c9ced6 38%, #3b4048 50%, #dfe3ea 62%, #ffffff 100%); {clip} filter: drop-shadow(0 1px 0 {alpha('#000000', .35)});"
+    if kind == "gradient": return f"background-image: linear-gradient(90deg, {a}, {b}); {clip}"
+    if kind == "holo": return f"background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; {clip} animation: uvt-holo 8s linear infinite;"
+    if kind == "pearl": return f"background-image: linear-gradient(115deg, #7a6a9e, #c7b8e8 30%, #8fc9df 50%, #d9c99a 70%, #7a6a9e); background-size: 250% 100%; {clip} animation: uvt-holo 10s linear infinite;"
+    if kind == "outline": return f"color: transparent; -webkit-text-stroke: 1.5px {c['text']};"
+    if kind == "glow": return f"color: {lighten(a, .55)}; text-shadow: 0 0 6px {alpha(a, .9)}, 0 0 22px {alpha(a, .6)}, 0 0 48px {alpha(a, .35)};"
+    if kind == "shadow3d":
+        sc = args[0] if args else a
+        return "text-shadow: " + ", ".join(f"{i}px {i}px 0 {sc}" for i in range(1, 6)) + ";"
+    if kind == "duotone": return f"color: {c['text']}; text-shadow: 3px 3px 0 {alpha(a, .9)};"
+    if kind == "fire": return f"background-image: linear-gradient(0deg, #ff3d00, #ffb300 55%, #fff3c4); {clip}"
+    return ""
+
+
+def btn_css(kind, c, dark, args):
+    a, b, t, bg = c["accent"], c["accent-2"], c["text"], c["bg"]
+    if kind == "solid": return f"background: {a}; color: {on(a)}; border-color: {a};"
+    if kind == "ink": return f"background: {t}; color: {bg}; border-color: {t};"
+    if kind == "outline": return f"background: transparent; color: {a if lum(a) < .8 or dark else t}; border: 1.5px solid currentColor;"
+    if kind == "hard": return f"background: {a}; color: {on(a)}; border: 2px solid {t}; box-shadow: 4px 4px 0 {t};"
+    if kind == "glow": return f"background: {a}; color: {on(a)}; border-color: {a}; box-shadow: 0 0 18px -2px {a}, inset 0 1px 0 {alpha('#ffffff', .35)};"
+    if kind == "gradient": return f"background: linear-gradient(135deg, {a}, {b}); color: {on(mix(a, b, .5))}; border-color: transparent;"
+    if kind == "metal":
+        return (f"background: linear-gradient(180deg, {lighten(a, .55)} 0%, {lighten(a, .15)} 45%, {darken(a, .25)} 55%, {lighten(a, .1)} 100%); color: #fff; "
+                f"text-shadow: 0 1px 0 {alpha('#000000', .45)}; border: 1px solid {darken(a, .4)}; box-shadow: inset 0 1px 0 {alpha('#ffffff', .7)}, 0 4px 12px -4px {alpha(darken(a, .4), .6)};")
+    if kind == "chrome":
+        return f"background: linear-gradient(180deg, #ffffff, #d7dbe2 45%, #8b929c 52%, #e9ecf1); color: #1b1f26; border: 1px solid #8b929c; box-shadow: inset 0 1px 0 #fff, 0 3px 10px -4px #0007;"
+    if kind == "pearl":
+        return f"background: linear-gradient(115deg, #ffffff, #f2e6ff 30%, #e2f5ff 55%, #fff5e1 80%, #ffffff); background-size: 200% 100%; color: #3a2f5a; border: 1px solid #d9cfee; box-shadow: inset 0 1px 0 #fff, 0 6px 16px -8px #7a6a9e88;"
+    if kind == "glass":
+        return f"background: {alpha('#ffffff', .16 if dark else .45)}; color: {t}; border: 1px solid {alpha('#ffffff', .38 if dark else .8)}; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 {alpha('#ffffff', .4)};"
+    if kind == "bevel": return f"background: {c['surface-2']}; color: {t}; border: 0; box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px {mix(c['surface-2'], '#000000', .35)}, inset 2px 2px {mix(c['surface-2'], '#ffffff', .5)};"
+    if kind == "soft": return f"background: {alpha(a, .16)}; color: {darken(a, .25) if not dark else lighten(a, .3)}; border-color: transparent;"
+    if kind == "3d": return f"background: {a}; color: {on(a)}; border-color: {a}; box-shadow: 0 5px 0 {darken(a, .35)};"
+    if kind == "neon": return f"background: transparent; color: {lighten(a, .3)}; border: 1.5px solid {a}; text-shadow: 0 0 8px {a}; box-shadow: 0 0 12px -2px {a}, inset 0 0 10px -4px {a};"
+    if kind == "underline": return f"background: transparent; color: {t}; border-color: transparent; text-decoration: underline; text-decoration-color: {a}; text-decoration-thickness: 2px; text-underline-offset: 5px;"
+    if kind == "stamp": return f"background: transparent; color: {a}; border: 2px double {a}; text-transform: uppercase; letter-spacing: .14em;"
+    return ""
+
+
+HOVER_KF = """@keyframes uvt-wob { 25% { rotate: -4deg; } 50% { rotate: 3deg; } 75% { rotate: -1.5deg; } }
+@keyframes uvt-jelly { 30% { scale: 1.12 .88; } 50% { scale: .92 1.08; } 70% { scale: 1.04 .96; } }
+@keyframes uvt-bounce { 40% { translate: 0 -6px; } 60% { translate: 0 0; } 75% { translate: 0 -2px; } }
+@keyframes uvt-sheen { 0%, 60% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+@keyframes uvt-holo { to { background-position: 300% 0; } }
+@keyframes uvt-pulse { 50% { box-shadow: 0 0 0 6px transparent; } }
+"""
+
+
+def hover_css(kind, sel, c, dark):
+    a, t = c["accent"], c["text"]
+    base = f"{sel} .uv-btn {{ transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }}\n"
+    h = f"{sel} .uv-btn:hover"
+    rules = {
+        "lift": f"{h} {{ translate: 0 -2px; filter: brightness(1.05); }} {sel} .uv-btn:active {{ translate: 0 1px; }}",
+        "shine": f"{sel} .uv-btn::after {{ content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, {alpha('#ffffff', .5)} 50%, transparent 65%); translate: -120% 0; transition: translate .7s; }} {h}::after {{ translate: 120% 0; }}",
+        "glow": f"{h} {{ box-shadow: 0 0 0 3px {alpha(a, .25)}, 0 0 26px -2px {alpha(a, .7)}; }}",
+        "press": f"{h} {{ filter: brightness(1.08); }} {sel} .uv-btn:active {{ scale: .94; }}",
+        "fill": f"{sel} .uv-btn--ghost:hover, {sel} .uv-btn:not(.uv-btn--primary):hover {{ background: {a}; color: {on(a)}; border-color: {a}; }}",
+        "invert": f"{h} {{ background: {t}; color: {c['bg']}; border-color: {t}; }}",
+        "wobble": f"{h} {{ animation: uvt-wob .5s; }}",
+        "jelly": f"{h} {{ animation: uvt-jelly .55s; }}",
+        "bounce": f"{h} {{ animation: uvt-bounce .5s; }}",
+        "tilt": f"{h} {{ rotate: -2deg; scale: 1.03; }}",
+        "pop": f"{h} {{ scale: 1.06; }} {sel} .uv-btn:active {{ scale: .96; }}",
+        "sink": f"{h} {{ translate: 2px 2px; box-shadow: 1px 1px 0 {t}; }} {sel} .uv-btn:active {{ translate: 4px 4px; box-shadow: none; }}",
+        "ring": f"{h} {{ outline: 2px solid {a}; outline-offset: 3px; }}",
+        "pulse": f"{h} {{ box-shadow: 0 0 0 0 {alpha(a, .55)}; animation: uvt-pulse 1.2s infinite; }}",
+        "flicker": f"{h} {{ animation: uv-flick 1.6s infinite; filter: brightness(1.25); }}",
+    }
+    card = {"lift": f"{sel} .uv-card--hover:hover {{ translate: 0 -4px; }}", "tilt": f"{sel} .uv-card--hover:hover {{ rotate: -1deg; }}",
+            "glow": f"{sel} .uv-card--hover:hover {{ box-shadow: 0 0 0 1px {alpha(a, .5)}, 0 0 30px -8px {a}; }}",
+            "sink": f"{sel} .uv-card--hover:hover {{ translate: 3px 3px; }}", "pop": f"{sel} .uv-card--hover:hover {{ scale: 1.02; }}"}
+    return base + rules.get(kind, "") + "\n" + card.get(kind, card["lift"] if kind in ("shine", "press", "jelly", "bounce", "wobble", "fill", "ring", "pulse") else "")
+
+
+def card_css(kind, c, dark):
+    a, b, t = c["accent"], c["accent-2"], c["text"]
+    if kind == "flat": return ""
+    if kind == "soft": return f"border-color: transparent; box-shadow: 0 1px 2px {alpha(t, .06)}, 0 14px 34px -14px {alpha(darken(c['bg'], .6) if dark else t, .35)};"
+    if kind == "hard": return f"border: 2px solid {t}; box-shadow: 6px 6px 0 {t};"
+    if kind == "glass": return f"background: {alpha('#ffffff', .08 if dark else .45)}; border: 1px solid {alpha('#ffffff', .22 if dark else .75)}; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 {alpha('#ffffff', .3)}, 0 18px 40px -20px {alpha('#000000', .45)};"
+    if kind == "bevel": return f"border: 0; box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px {mix(c['surface'], '#ffffff', .6)}, inset -2px -2px {mix(c['surface'], '#000000', .3)}, inset 2px 2px #fff;"
+    if kind == "gradient-border": return f"border: 1.5px solid transparent; background: linear-gradient({c['surface']}, {c['surface']}) padding-box, linear-gradient(135deg, {a}, {b}) border-box;"
+    if kind == "inset": return f"background: {c['surface-2']}; border-color: transparent; box-shadow: inset 0 2px 8px {alpha('#000000', .18)};"
+    if kind == "outline": return f"border: 2px solid {t}; box-shadow: none;"
+    if kind == "glow": return f"border-color: {alpha(a, .45)}; box-shadow: 0 0 0 1px {alpha(a, .2)}, 0 0 40px -14px {a};"
+    if kind == "notch": return f"border: 0; border-radius: 0; background: linear-gradient(135deg, transparent 14px, {c['surface']} 14px) ; clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); box-shadow: inset 0 0 0 1px {alpha(a, .5)};"
+    if kind == "double": return f"border: 3px double {alpha(t, .6)};"
+    if kind == "metal": return f"background: repeating-linear-gradient(90deg, {alpha('#ffffff', .04)} 0 1px, transparent 1px 3px), linear-gradient(180deg, {lighten(c['surface'], .08)}, {c['surface']}); border-color: {alpha('#ffffff', .18)}; box-shadow: inset 0 1px 0 {alpha('#ffffff', .25)};"
+    if kind == "pearl": return f"background: linear-gradient(135deg, #ffffffee, #f6efffdd 40%, #eaf8ffdd 70%, #fffaf0ee); border: 1px solid #e3d8f5; box-shadow: inset 0 1px 0 #fff, 0 18px 40px -22px #7a6a9e88;"
+    if kind == "paper": return f"background: {c['surface']} linear-gradient({alpha(b, .14)} 1px, transparent 1px) 0 0 / 100% 26px; box-shadow: 2px 3px 0 {alpha(t, .12)};"
+    return ""
+
+
+# ── the themes ───────────────────────────────────────────────────────────────
+def T(name, cat, desc, bg, fg, ac, ac2=None, font="geist", head="serif", shape="soft", bw=1, bgfx="flat", headfx="plain",
+      btn="solid", hover="lift", card="flat", case="none", tracking=None, weight=None, extra="", **kw):
+    return dict(name=name, cat=cat, desc=desc, bg=bg, fg=fg, ac=ac, ac2=ac2 or ac, font=font, head=head, shape=shape, bw=bw,
+                bgfx=bgfx if isinstance(bgfx, tuple) else (bgfx,), headfx=headfx if isinstance(headfx, tuple) else (headfx,),
+                btn=btn, hover=hover, card=card, case=case, tracking=tracking, weight=weight, extra=extra, **kw)
+
+
+SPECS = [
+    # Minimal
+    T("paper", "Minimal", "warm paper, graphite text, a quiet blue link", "#f7f5f0", "#2a2a28", "#2f5bd3", font="manrope", head="serif"),
+    T("linen", "Minimal", "off-white linen with a terracotta accent", "#f3eee6", "#3b3530", "#c4623a", "#8a6d55", font="outfit", head="fraunces", bgfx="noise", card="soft"),
+    T("fog", "Minimal", "cool grey haze, soft shadows, nothing loud", "#eef0f2", "#2b3036", "#5b6b7c", font="manrope", head="geist", shape="round", card="soft", btn="ink", hover="press", weight=700),
+    T("porcelain", "Minimal", "white porcelain with a celadon glaze", "#fbfbf9", "#23302c", "#5f9e8f", font="geist", head="cormorant", card="soft", hover="lift"),
+    T("newsprint", "Minimal", "newspaper grey, black columns, red headlines", "#ece8df", "#141414", "#b3261e", font="geist", head="playfair", shape="sharp", btn="ink", hover="invert", card="outline", bgfx="noise", weight=800),
+    T("blueprint", "Minimal", "architect's blue sheet with a white grid", "#13427a", "#e9f2ff", "#ffd45c", font="mono", head="grotesk", shape="sharp", bgfx="blueprint", btn="outline", hover="fill", card="outline", case="uppercase"),
+    T("sand", "Minimal", "dune beige, umber ink, sun-bleached calm", "#efe4d2", "#3e3227", "#b0743c", font="outfit", head="dmserif", card="soft", btn="ink"),
+    T("concrete", "Minimal", "raw grey concrete, bold black type", "#d9d9d6", "#151515", "#ff5a1f", font="grotesk", head="grotesk", shape="sharp", bgfx="noise", btn="ink", hover="invert", weight=700, tracking="-.04em"),
+    T("graphite", "Minimal", "pencil-lead greys with a mint highlight", "#2b2d30", "#e6e7e8", "#7de2b8", font="geist", head="geist", weight=700, card="flat", btn="solid", hover="press"),
+    T("swiss-red", "Minimal", "international style: grid, black, a single red", "#ffffff", "#0a0a0a", "#e1251b", font="geist", head="geist", shape="sharp", bgfx="grid", btn="solid", hover="invert", weight=800, tracking="-.05em", card="outline"),
+    # Dark
+    T("midnight", "Dark", "deep navy night with a moonlit blue", "#0b1020", "#dfe6f5", "#6ea8ff", "#a78bfa", font="geist", head="geist", weight=700, bgfx="vignette", card="soft", btn="glow", hover="glow"),
+    T("obsidian", "Dark", "volcanic black glass with violet edges", "#0a0a0d", "#e9e7f2", "#9d7bff", "#ff6ad5", font="outfit", head="syne", weight=800, card="gradient-border", btn="gradient", hover="lift"),
+    T("ink", "Dark", "pure ink black, paper-white type, one red", "#0e0e0e", "#f2f0eb", "#ff3b2f", font="geist", head="serif", card="flat", btn="solid", hover="invert"),
+    T("deep-sea", "Dark", "abyssal teal with bioluminescent cyan", "#041b22", "#d6f4f7", "#2de2e6", "#3d7cff", font="manrope", head="geist", weight=700, bgfx=("aurora", "#0a6a7a", "#122a6a", "#0b4a3a"), card="glass", btn="glow", hover="glow"),
+    T("forest-night", "Dark", "pine shadows, moss green, firefly gold", "#0d1611", "#e2eadf", "#7cc36e", "#f2c14e", font="manrope", head="fraunces", card="soft", btn="solid", hover="lift"),
+    T("espresso", "Dark", "dark roast brown with crema highlights", "#1b1310", "#f2e6da", "#d9a066", font="outfit", head="dmserif", card="soft", btn="solid", hover="press"),
+    T("plum", "Dark", "velvet plum with rose-gold trim", "#1d1020", "#f4e6f0", "#e7a4c0", "#c9a96e", font="manrope", head="playfair", card="gradient-border", btn="soft", hover="lift"),
+    T("vampire", "Dark", "gothic purple-black with blood-red accents", "#16101c", "#f0e6f5", "#ff4566", "#bd93f9", font="outfit", head="cormorant", weight=700, card="flat", btn="solid", hover="glow", headfx=("glow",)),
+    T("nord-night", "Dark", "arctic slate with frost blues", "#2e3440", "#eceff4", "#88c0d0", "#b48ead", font="manrope", head="geist", weight=700, btn="solid", hover="lift"),
+    T("charcoal", "Dark", "matte charcoal, amber indicators, studio calm", "#1e1f22", "#e8e6e3", "#ffb547", font="geist", head="geist", weight=600, card="inset", btn="solid", hover="press"),
+    # Pastel
+    T("lavender", "Pastel", "lilac fields, soft violet buttons", "#f3efff", "#2e2550", "#8b6cf0", "#f49ac1", font="outfit", head="outfit", shape="round", weight=800, card="soft", btn="solid", hover="pop", bw=0),
+    T("mint", "Pastel", "fresh mint with a deep green ink", "#ecfbf3", "#173b2c", "#2fb37a", "#7ac7ff", font="outfit", head="outfit", shape="round", weight=800, card="soft", btn="solid", hover="bounce", bw=0),
+    T("peach", "Pastel", "peach fuzz, apricot buttons, warm and soft", "#fff1e8", "#4a2c22", "#ff8a5c", "#ffc46b", font="manrope", head="fraunces", shape="round", card="soft", btn="solid", hover="pop", bw=0),
+    T("sakura", "Pastel", "cherry-blossom pink with sumi ink", "#fff2f5", "#3a2430", "#e8668f", "#9ad0c2", font="manrope", head="cormorant", shape="round", card="soft", btn="soft", hover="lift", bw=0),
+    T("sky", "Pastel", "cloud white and clear-sky blue", "#eef6ff", "#1b2f4a", "#4a9bff", "#9be7ff", font="outfit", head="outfit", shape="pill", weight=800, bgfx=("aurora", "#bfe0ff", "#e3f6ff", "#d9e8ff"), card="soft", btn="solid", hover="lift", bw=0),
+    T("lemon", "Pastel", "lemon sorbet with a charcoal outline", "#fffbe0", "#2b2a1f", "#f5c400", "#ff7eb6", font="grotesk", head="grotesk", shape="round", weight=700, card="outline", btn="hard", hover="sink", bw=2),
+    T("bubblegum", "Pastel", "bubblegum pink, candy blue, bouncy", "#ffeaf6", "#3d1236", "#ff4fb3", "#4fc3ff", font="outfit", head="unbounded", shape="pill", weight=800, card="soft", btn="3d", hover="jelly", bw=0),
+    T("seafoam", "Pastel", "seafoam green with coral pops", "#e9faf6", "#163a36", "#ff7f6a", "#38c2a5", font="manrope", head="fraunces", shape="round", card="soft", btn="solid", hover="lift", bw=0),
+    # Bold
+    T("tangerine", "Bold", "loud orange, black type, no apologies", "#ff7a1a", "#1a0f06", "#1a0f06", "#fff3e0", font="grotesk", head="bebas", shape="sharp", btn="ink", hover="invert", card="outline", case="uppercase", tracking=".01em", bw=2),
+    T("cobalt", "Bold", "electric cobalt field, white type, lemon accent", "#1d3fd8", "#ffffff", "#ffe14d", font="grotesk", head="unbounded", shape="crisp", weight=800, btn="solid", hover="pop", card="outline"),
+    T("magenta", "Bold", "hot magenta with cyan clash", "#ff2d95", "#14001a", "#14001a", "#21e3ff", font="grotesk", head="syne", shape="sharp", weight=800, btn="ink", hover="tilt", card="hard", bw=2),
+    T("risograph", "Bold", "two-ink riso print: fluoro pink + blue on paper", "#f6f1e7", "#2340c9", "#ff4f9a", "#2340c9", font="grotesk", head="grotesk", shape="sharp", bgfx="halftone", headfx=("duotone",), btn="solid", hover="wobble", card="outline", weight=700, bw=2),
+    T("pop-art", "Bold", "comic-book halftones, primary colours, ink outlines", "#fff35c", "#111111", "#ff2b2b", "#2b6bff", font="grotesk", head="bebas", shape="sharp", bgfx="halftone", headfx=("shadow3d", "#ff2b2b"), btn="hard", hover="sink", card="hard", case="uppercase", bw=3),
+    T("bauhaus", "Bold", "primary geometry: red, yellow, blue on cream", "#f2ead8", "#141414", "#d6281b", "#1f4fb5", font="geist", head="geist", shape="sharp", btn="solid", hover="tilt", card="outline", weight=800, tracking="-.05em", bw=2),
+    T("memphis", "Bold", "80s memphis squiggles, teal and pink", "#fff8ef", "#1b1b2f", "#ff5ca8", "#21c4c4", font="grotesk", head="unbounded", shape="round", bgfx="dots", btn="hard", hover="wobble", card="hard", weight=800, bw=2),
+    T("brutal-lime", "Bold", "acid lime neo-brutalism, thick black outlines", "#e8ff5a", "#000000", "#000000", "#ff5ec4", font="grotesk", head="grotesk", shape="sharp", btn="hard", hover="sink", card="hard", weight=700, bw=3),
+    # Retro
+    T("amber-crt", "Retro", "amber phosphor terminal from 1983", "#130c02", "#ffb627", "#ffb627", "#ffd98a", font="pixel", head="pixel", shape="sharp", bgfx="scan", headfx=("glow",), btn="outline", hover="fill", card="outline", case="uppercase"),
+    T("gameboy", "Retro", "four shades of handheld green", "#9bbc0f", "#0f380f", "#306230", "#8bac0f", font="press", head="press", shape="sharp", btn="hard", hover="sink", card="outline", bw=3, colors={"surface": "#8bac0f"}),
+    T("vaporwave", "Retro", "pastel grid sunsets, marble busts and chrome", "#2b1055", "#fdf2ff", "#ff71ce", "#01cdfe", font="grotesk", head="majormono", bgfx=("sunset", "#ff71ce", "#b967ff", "#2b1055"), headfx=("chrome",), btn="gradient", hover="glow", card="glass"),
+    T("synthwave", "Retro", "outrun sunset, neon grid, chrome type", "#1a0933", "#ffe9ff", "#ff2fd6", "#ffb000", font="rajdhani", head="audiowide", bgfx=("sunset", "#ff2fd6", "#6a00ff", "#1a0933"), headfx=("chrome",), btn="neon", hover="flicker", card="glow", case="uppercase"),
+    T("arcade", "Retro", "coin-op cabinet: black, neon red and yellow", "#0b0b14", "#f4f4ff", "#ff2e4d", "#ffd23f", font="press", head="press", shape="sharp", bgfx="scan", btn="3d", hover="press", card="outline", bw=2),
+    T("teletext", "Retro", "broadcast teletext: black field, primary blocks", "#000000", "#ffffff", "#ffff00", "#00ffff", font="pixel", head="pixel", shape="sharp", btn="solid", hover="invert", card="outline", case="uppercase"),
+    T("polaroid", "Retro", "faded instant-film creams and teal shadows", "#f1ebe1", "#2a3a3d", "#d96c4f", "#4f8a8b", font="hand", head="hand", shape="crisp", card="soft", btn="solid", hover="tilt", bgfx="noise"),
+    T("win-classic", "Retro", "beige desktop era with bevelled grey chrome", "#c3c7cb", "#000000", "#000080", "#008080", font="geist", head="geist", shape="sharp", btn="bevel", hover="press", card="bevel", weight=700, bw=0),
+    # Nature
+    T("moss", "Nature", "damp forest floor and moss green", "#eef1e6", "#24301c", "#5a7d2f", "#b08a3e", font="manrope", head="fraunces", bgfx="noise", card="soft", btn="solid", hover="lift"),
+    T("ocean", "Nature", "open ocean blues with whitecap foam", "#e7f3fa", "#0c2a40", "#0a7bbf", "#3fd0c9", font="outfit", head="dmserif", bgfx=("aurora", "#9fd5f2", "#c8f1ee", "#7fb6e6"), card="soft", btn="solid", hover="lift", shape="round"),
+    T("desert", "Nature", "sandstone, cactus green and sunset clay", "#f4e3c8", "#3d2618", "#c8553d", "#5b8c5a", font="outfit", head="bebas", bgfx=("sunset", "#ffb36b", "#f4e3c8", "#f4e3c8"), card="soft", btn="solid", hover="press", case="uppercase"),
+    T("glacier", "Nature", "glacial ice, cold blue light", "#eaf6fb", "#16324a", "#3a9bd9", "#a6e3ff", font="manrope", head="geist", weight=800, bgfx=("aurora", "#bfe8ff", "#ffffff", "#d3ecff"), card="glass", btn="glass", hover="lift", shape="round"),
+    T("autumn", "Nature", "maple orange, oak brown, harvest gold", "#fbf1e4", "#3a2416", "#d2601a", "#c99a2e", font="manrope", head="playfair", card="soft", btn="solid", hover="lift"),
+    T("volcano", "Nature", "basalt black, flowing lava, ember glow", "#140b08", "#f6e6dc", "#ff4d1a", "#ffb000", font="grotesk", head="unbounded", weight=800, bgfx=("sunset", "#3a0d00", "#140b08", "#140b08"), headfx=("fire",), btn="glow", hover="glow", card="glow"),
+]
+
+# ── signature themes: one-of-a-kind, with custom extras ─────────────────────
+SIGNATURE = [
+    T("pearl", "Signature", "white pearlescent with iridescent pink, mint and blue, like a CS2 Printstream finish", "#fbfaff", "#2a2342", "#8f7fd6", "#7fc8e3",
+      font="manrope", head="unbounded", shape="round", bgfx="pearl", headfx=("pearl",), btn="pearl", hover="shine", card="pearl", weight=800, tracking="-.04em",
+      extra=".uv-btn--primary:hover { background-position: 100% 0; } .uv-badge--accent { background: linear-gradient(115deg,#ffe6f7,#e3f4ff,#f2ffe6); color: #5a4a8a; border-color: #d9cfee; }"),
+    T("black-pearl", "Signature", "black pearlescent with an oil-slick sheen", "#0c0b12", "#efeaff", "#b59cff", "#5ee7d0", font="manrope", head="unbounded", shape="round",
+      bgfx=("aurora", "#3b2a6b", "#0d4a52", "#5a1f4a"), headfx=("holo",), btn="gradient", hover="shine", card="glass", weight=800),
+    T("sapphire-metal", "Signature", "deep sapphire with a polished metal band through the type", "#060b24", "#e3ecff", "#3d6bff", "#9fc0ff", font="geist", head="geist",
+      bgfx=("aurora", "#1a2f8f", "#0b1550", "#2a4ad0"), headfx=("metal", "#0d1f6b", "#d9e6ff"), btn="metal", hover="shine", card="metal", weight=800, tracking="-.04em"),
+    T("fade", "Signature", "pink to violet to gold candy fade, inspired by the Fade knife finish", "#fff4fb", "#3a1238", "#ff4fa3", "#ffc93c", font="outfit", head="unbounded",
+      shape="round", bgfx=("aurora", "#ffb3d9", "#c9a2ff", "#ffe08a"), headfx=("gradient",), btn="gradient", hover="shine", card="soft", weight=800,
+      extra="h1.uv-h1, h2.uv-h2 { background-image: linear-gradient(90deg, #ff4fa3, #a86bff 50%, #ffc93c); }"),
+    T("doppler", "Signature", "deep space purple-blue with sparkling dust, inspired by Doppler blades", "#0a0420", "#ece6ff", "#8a5cff", "#29c6ff", font="manrope", head="syne",
+      bgfx=("galaxy",), headfx=("gradient",), btn="glow", hover="glow", card="glass", weight=800),
+    T("emerald", "Signature", "emerald gem green with a gamma glow", "#03150d", "#dcffee", "#19e38a", "#7affd1", font="manrope", head="cormorant",
+      bgfx=("galaxy",), headfx=("metal", "#06402a", "#b7ffe0"), btn="metal", hover="glow", card="glass", weight=700),
+    T("ruby", "Signature", "cut ruby red with internal fire", "#16020a", "#ffe3ea", "#ff1f4f", "#ff8aa3", font="manrope", head="cormorant",
+      bgfx=("galaxy",), headfx=("metal", "#5a0018", "#ffd0db"), btn="metal", hover="glow", card="glass", weight=700),
+    T("marble-fade", "Signature", "swirled red, yellow and blue marble, like a Marble Fade", "#fff8ee", "#2a1a1a", "#e8322f", "#2f6be8", font="outfit", head="unbounded",
+      bgfx=("marble",), headfx=("gradient",), btn="gradient", hover="jelly", card="soft", shape="round", weight=800,
+      extra="h1.uv-h1, h2.uv-h2 { background-image: linear-gradient(90deg, #e8322f, #f5c518 50%, #2f6be8); }"),
+    T("case-hardened", "Signature", "heat-treated steel: blue, gold and bronze patina", "#1a1f2b", "#eef1f7", "#3f7bd9", "#d6a84a", font="rajdhani", head="rajdhani",
+      bgfx=("mesh",), headfx=("metal", "#1d3f7a", "#f3d79a"), btn="metal", hover="shine", card="metal", case="uppercase", weight=700, shape="crisp"),
+    T("tiger-tooth", "Signature", "molten gold with tiger stripes", "#1a1205", "#fff4d6", "#ffb000", "#ff7a00", font="rajdhani", head="bebas", bgfx=("tiger",),
+      headfx=("metal", "#7a4a00", "#fff1b8"), btn="metal", hover="shine", card="metal", case="uppercase", shape="crisp"),
+    T("damascus", "Signature", "folded steel with flowing grain", "#202326", "#e9ecef", "#9aa6b2", "#d0d7de", font="geist", head="grotesk", bgfx=("damascus",),
+      headfx=("chrome",), btn="chrome", hover="shine", card="metal", weight=700, shape="crisp"),
+    T("crimson-web", "Signature", "deep crimson with a black web pattern", "#3a0306", "#ffe6e6", "#ff2a35", "#000000", font="rajdhani", head="bebas", bgfx=("web",),
+      headfx=("glow",), btn="solid", hover="glow", card="glass", case="uppercase", shape="crisp"),
+    T("chameleon", "Signature", "colour-shift paint flipping teal to purple", "#0e0a1a", "#efe9ff", "#1fd1c1", "#a24bff", font="outfit", head="unbounded",
+      bgfx=("aurora", "#1fd1c1", "#a24bff", "#2a3bff"), headfx=("holo",), btn="gradient", hover="glow", card="gradient-border", weight=800,
+      extra=".uv-btn--primary { background-size: 200% 100%; transition: background-position .6s; } .uv-btn--primary:hover { background-position: 100% 0; }"),
+    T("candy-apple", "Signature", "deep candy-apple red car paint with a clearcoat", "#1a0306", "#ffe9ec", "#e0102a", "#ff6b81", font="outfit", head="unbounded",
+      bgfx=("aurora", "#7a0010", "#3a0008", "#b0001a"), headfx=("metal", "#5a0010", "#ffc2cc"), btn="metal", hover="shine", card="glass", weight=800, shape="round"),
+    T("anodized", "Signature", "anodised aluminium in electric blue and violet", "#0d1022", "#e8ecff", "#4f6bff", "#c04bff", font="geist", head="grotesk",
+      bgfx=("brushed",), headfx=("metal", "#1a2370", "#d4dcff"), btn="metal", hover="shine", card="metal", weight=700, shape="crisp"),
+    T("titanium", "Signature", "brushed titanium greys, precision engineered", "#2c2f33", "#f1f3f5", "#c3cbd4", "#7d8a96", font="geist", head="geist",
+      bgfx=("brushed",), headfx=("chrome",), btn="chrome", hover="press", card="metal", weight=700, shape="crisp", tracking="-.03em"),
+    T("gunmetal", "Signature", "dark gunmetal with machined edges", "#1b1e22", "#e3e7ec", "#8fa3b8", "#c5d2df", font="rajdhani", head="orbitron",
+      bgfx=("brushed",), headfx=("metal", "#3a4652", "#e9eff5"), btn="metal", hover="press", card="notch", case="uppercase", shape="sharp"),
+    T("rose-gold", "Signature", "blush rose gold with soft champagne light", "#fff4f1", "#4a2a2a", "#d4877a", "#e8c39e", font="manrope", head="playfair",
+      bgfx=("aurora", "#ffd6cc", "#ffe9d6", "#f7c8c0"), headfx=("metal", "#8a4a42", "#ffe2d6"), btn="metal", hover="shine", card="soft", shape="round"),
+    T("gold-leaf", "Signature", "black lacquer with hammered gold leaf", "#0b0906", "#f6ead0", "#d4a63a", "#f7e08a", font="cormorant", head="cormorant",
+      bgfx=("noise",), headfx=("metal", "#6a4a10", "#fff2c2"), btn="metal", hover="shine", card="double", case="uppercase", tracking=".06em", shape="sharp"),
+    T("holo-foil", "Signature", "trading-card holographic foil", "#f4f4f8", "#1d1d2b", "#7a5cff", "#ff5cc8", font="outfit", head="unbounded",
+      bgfx=("aurora", "#ff9ae6", "#9ad3ff", "#b8ff9a"), headfx=("holo",), btn="gradient", hover="shine", card="gradient-border", weight=800,
+      extra=".uv-card { position: relative; } .uv-btn--primary { background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; color: #1d1d2b; animation: uvt-holo 6s linear infinite; }"),
+    T("carbon-fiber", "Signature", "woven carbon fibre with a racing red accent", "#121314", "#eeeeee", "#ff2b2b", "#ffffff", font="rajdhani", head="orbitron",
+      bgfx=("carbon",), headfx=("chrome",), btn="solid", hover="glow", card="notch", case="uppercase", shape="sharp"),
+    T("aurora-borealis", "Signature", "northern lights rippling over a polar night", "#050d1a", "#e6fbff", "#3dffb4", "#7a5cff", font="manrope", head="fraunces",
+      bgfx=("aurora", "#13d696", "#5b3dff", "#0e8f9a"), headfx=("gradient",), btn="glass", hover="glow", card="glass", shape="round"),
+    T("nebula", "Signature", "cosmic dust clouds in magenta and cyan", "#07031a", "#f1e9ff", "#ff4fd8", "#4fd2ff", font="outfit", head="syne",
+      bgfx=("galaxy",), headfx=("holo",), btn="glow", hover="glow", card="glass", weight=800),
+    T("liquid-chrome", "Signature", "mirror chrome over a cool blue studio", "#dfe5ec", "#151a22", "#5a6b80", "#9fb2c8", font="geist", head="unbounded",
+      bgfx=("aurora", "#ffffff", "#b9c7d8", "#e8eef5"), headfx=("chrome",), btn="chrome", hover="shine", card="soft", weight=800, shape="round",
+      extra="h1.uv-h1, h2.uv-h2 { filter: drop-shadow(0 2px 0 #0003) drop-shadow(0 10px 20px #0002); }"),
+    T("lava-lamp", "Signature", "groovy molten blobs in orange and magenta", "#2a0a1f", "#ffe8f3", "#ff7a1a", "#ff2d95", font="outfit", head="unbounded",
+      bgfx=("mesh",), headfx=("fire",), btn="gradient", hover="jelly", card="glass", shape="pill", weight=800),
+]
+
+ALL = SPECS + SIGNATURE
+
+
+def gen_theme(s):
+    c, dark = derive(s)
+    sel = f'[data-uv-theme="{s["name"]}"]'
+    rs = SHAPES[s["shape"]]
+    f_body, f_head = FONTS[s["font"]][0], FONTS[s["head"]][0]
+    toks = "; ".join(f"--uv-{k}: {v}" for k, v in c.items())
+    lines = [f"/* @theme {s['name']} — {s['desc']} */",
+             f"{sel} {{\n  {toks};\n  --uv-font: {f_body}; --uv-font-head: {f_head}; --uv-serif: {f_head}; --uv-btn-font: {f_body};\n"
+             f"  --uv-r-xs: {min(rs[0], 999)}px; --uv-r-sm: {rs[0]}px; --uv-r: {rs[1]}px; --uv-r-lg: {rs[2]}px; --uv-bw: {s['bw']}px;\n"
+             f"  --uv-head-weight: {s['weight'] or (400 if s['head'] in ('serif', 'cormorant', 'dmserif') else 700)}; --uv-head-case: {s['case']};"
+             + (f" --uv-head-tracking: {s['tracking']};" if s["tracking"] else "")
+             + ("\n  color-scheme: dark;" if dark else "") + "\n  " + bg_css(s["bgfx"][0], c, dark, list(s["bgfx"][1:])) + "\n}"]
+    hc = head_css(s["headfx"][0], c, dark, list(s["headfx"][1:]))
+    if hc: lines.append(f"{sel} .uv-h1, {sel} .uv-h2 {{ {hc} }}")
+    if s["case"] == "uppercase": lines.append(f"{sel} .uv-btn {{ text-transform: uppercase; letter-spacing: .08em; }}")
+    bc = btn_css(s["btn"], c, dark, [])
+    if bc: lines.append(f"{sel} .uv-btn--primary, {sel} .uv-btn--grad {{ {bc} }}")
+    lines.append(f"{sel} .uv-btn--primary:hover {{ filter: brightness(1.06); }}")
+    cc = card_css(s["card"], c, dark)
+    if cc: lines.append(f"{sel} .uv-card {{ {cc} }}")
+    lines.append(f"{sel} .uv-tabs > .uv-tabs__ind {{ background: {c['accent']}; }} {sel} .uv-tabs > button[aria-selected=\"true\"] {{ color: {on(c['accent'])}; }}")
+    lines.append(f"{sel} .uv-switch input:checked + i, {sel} .uv-check input:checked {{ background: {c['accent']}; border-color: {c['accent']}; }}")
+    lines.append(f"{sel} .uv-progress > i {{ background: {c['accent']}; }} {sel} .uv-ring {{ background: conic-gradient({c['accent']} calc(var(--v) * 1%), var(--uv-line-2) 0); }}")
+    lines.append(f"{sel} .uv-input:focus, {sel} .uv-select:focus, {sel} .uv-textarea:focus {{ border-color: {c['accent']}; box-shadow: 0 0 0 3px {alpha(c['accent'], .22)}; }}")
+    lines.append(hover_css(s["hover"], sel, c, dark).strip())
+    if s["extra"]:
+        for rule in s["extra"].split("}"):
+            if "{" not in rule: continue
+            sels, body = rule.split("{", 1)
+            lines.append(", ".join(f"{sel} {x.strip()}" for x in sels.split(",")) + " {" + body + "}")
+    return "\n".join(lines) + "\n"
+
+
+def generate():
+    css = "/* UI Vault — generated themes (tools/theme_specs.py). Do not edit by hand. */\n" + "\n".join(gen_theme(s) for s in ALL)
+    meta = {s["name"]: {"category": s["cat"], "style": {"background": s["bgfx"][0], "heading": s["headfx"][0], "button": s["btn"], "hover": s["hover"],
+                                                        "card": s["card"], "font": s["font"], "head": s["head"], "shape": s["shape"]}} for s in ALL}
+    families = sorted({FONTS[k][1] for k in FONTS if FONTS[k][1]})
+    fonts_url = "https://fonts.googleapis.com/css2?" + "&".join("family=" + f for f in families) + "&display=swap"
+    return css, meta, fonts_url
+
+
+# metadata for the 12 hand-written themes in themes.src.css
+CORE_META = {
+    "editorial": ("Minimal", "flat", "plain", "ink", "lift", "flat"), "brutal": ("Bold", "flat", "plain", "hard", "sink", "hard"),
+    "neon": ("Dark", "flat", "glow", "solid", "glow", "glow"), "glass": ("Dark", "aurora", "plain", "glass", "lift", "glass"),
+    "terminal": ("Retro", "scan", "glow", "solid", "press", "outline"), "soft": ("Pastel", "flat", "plain", "solid", "lift", "soft"),
+    "retro": ("Retro", "flat", "plain", "bevel", "press", "bevel"), "swiss": ("Minimal", "flat", "plain", "solid", "invert", "outline"),
+    "y2k": ("Signature", "pearl", "metal", "pearl", "lift", "soft"), "mono": ("Minimal", "flat", "plain", "ink", "invert", "outline"),
+    "sketch": ("Minimal", "lines", "plain", "solid", "wobble", "paper"), "luxe": ("Dark", "flat", "plain", "solid", "lift", "double"),
+}

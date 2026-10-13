@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: tangerine — loud orange, black type, no apologies. Needs core.css. MIT */
+[data-uv-theme="tangerine"] {
+  --uv-bg: #ff7a1a; --uv-text: #1a0f06; --uv-accent: #1a0f06; --uv-accent-2: #fff3e0; --uv-surface: #ffc398; --uv-surface-2: #f17419; --uv-surface-3: #e66e18; --uv-line: #1a0f061a; --uv-line-2: #1a0f062e; --uv-muted: #63310c; --uv-dim: #914710; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
+  --uv-head-weight: 700; --uv-head-case: uppercase; --uv-head-tracking: .01em;
+  
+}
+[data-uv-theme="tangerine"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="tangerine"] .uv-btn--primary, [data-uv-theme="tangerine"] .uv-btn--grad { background: #1a0f06; color: #ff7a1a; border-color: #1a0f06; }
+[data-uv-theme="tangerine"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="tangerine"] .uv-card { border: 2px solid #1a0f06; box-shadow: none; }
+[data-uv-theme="tangerine"] .uv-tabs > .uv-tabs__ind { background: #1a0f06; } [data-uv-theme="tangerine"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="tangerine"] .uv-switch input:checked + i, [data-uv-theme="tangerine"] .uv-check input:checked { background: #1a0f06; border-color: #1a0f06; }
+[data-uv-theme="tangerine"] .uv-progress > i { background: #1a0f06; } [data-uv-theme="tangerine"] .uv-ring { background: conic-gradient(#1a0f06 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="tangerine"] .uv-input:focus, [data-uv-theme="tangerine"] .uv-select:focus, [data-uv-theme="tangerine"] .uv-textarea:focus { border-color: #1a0f06; box-shadow: 0 0 0 3px #1a0f0638; }
+[data-uv-theme="tangerine"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="tangerine"] .uv-btn:hover { background: #1a0f06; color: #ff7a1a; border-color: #1a0f06; }

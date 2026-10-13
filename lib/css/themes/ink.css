@@ -1,0 +1,17 @@
+/*! UI Vault 3.1.0 · theme: ink — pure ink black, paper-white type, one red. Needs core.css. MIT */
+[data-uv-theme="ink"] {
+  --uv-bg: #0e0e0e; --uv-text: #f2f0eb; --uv-accent: #ff3b2f; --uv-accent-2: #ff3b2f; --uv-surface: #191919; --uv-surface-2: #232222; --uv-surface-3: #30302f; --uv-line: #f2f0eb24; --uv-line-2: #f2f0eb42; --uv-muted: #a9a8a4; --uv-dim: #7b7a78; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-serif: "Instrument Serif", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: none;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="ink"] .uv-btn--primary, [data-uv-theme="ink"] .uv-btn--grad { background: #ff3b2f; color: #ffffff; border-color: #ff3b2f; }
+[data-uv-theme="ink"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="ink"] .uv-tabs > .uv-tabs__ind { background: #ff3b2f; } [data-uv-theme="ink"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="ink"] .uv-switch input:checked + i, [data-uv-theme="ink"] .uv-check input:checked { background: #ff3b2f; border-color: #ff3b2f; }
+[data-uv-theme="ink"] .uv-progress > i { background: #ff3b2f; } [data-uv-theme="ink"] .uv-ring { background: conic-gradient(#ff3b2f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="ink"] .uv-input:focus, [data-uv-theme="ink"] .uv-select:focus, [data-uv-theme="ink"] .uv-textarea:focus { border-color: #ff3b2f; box-shadow: 0 0 0 3px #ff3b2f38; }
+[data-uv-theme="ink"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="ink"] .uv-btn:hover { background: #f2f0eb; color: #0e0e0e; border-color: #f2f0eb; }

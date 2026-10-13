@@ -75,7 +75,7 @@ v6 status: DONE. Python pkg tested (Tk demo screenshots, pip install, GTK css), 
 User answers: custom 25 = signature themes AND a theme builder; waterfall = homepage + Quick start;
 reorder = homepage: Playground/examples right after the API section, Library index LAST; browsing = gallery page + floating picker on every page.
 Theme names: original names; inspirations (e.g. CS2 Printstream pearl) only in descriptions.
-- [ ] A. tools/theme_specs.py: recipe generator (bg/head/btn/hover/card) + 75 specs → lib/css/themes.gen.css ; build merges with themes.src.css ; categories ; lib/css/fonts.css
+- [x] A. tools/theme_specs.py: recipe generator (bg/head/btn/hover/card) + 75 specs → lib/css/themes.gen.css ; build merges with themes.src.css ; categories ; lib/css/fonts.css
 - [ ] B. Python + C++: category + style metadata, custom themes (uivault.custom()), qss metal/gradient buttons ; tests
 - [ ] C. lib/js/waterfall.js (WebGL, low-res, blurred, pauses offscreen) → homepage + quickstart backgrounds ; homepage reorder
 - [ ] D. themes.html: gallery (search + categories) + full component preview + web/Python/C++ code + builder

@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: pop-art — comic-book halftones, primary colours, ink outlines. Needs core.css. MIT */
+[data-uv-theme="pop-art"] {
+  --uv-bg: #fff35c; --uv-text: #111111; --uv-accent: #ff2b2b; --uv-accent-2: #2b6bff; --uv-surface: #fffab6; --uv-surface-2: #f1e558; --uv-surface-3: #e5da54; --uv-line: #1111111a; --uv-line-2: #1111112e; --uv-muted: #5d5929; --uv-dim: #8d8738; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 3px;
+  --uv-head-weight: 700; --uv-head-case: uppercase;
+  background-image: radial-gradient(#ff2b2b4c 1.4px, transparent 1.6px); background-size: 10px 10px;
+}
+[data-uv-theme="pop-art"] .uv-h1, [data-uv-theme="pop-art"] .uv-h2 { text-shadow: 1px 1px 0 #ff2b2b, 2px 2px 0 #ff2b2b, 3px 3px 0 #ff2b2b, 4px 4px 0 #ff2b2b, 5px 5px 0 #ff2b2b; }
+[data-uv-theme="pop-art"] .uv-btn { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="pop-art"] .uv-btn--primary, [data-uv-theme="pop-art"] .uv-btn--grad { background: #ff2b2b; color: #ffffff; border: 2px solid #111111; box-shadow: 4px 4px 0 #111111; }
+[data-uv-theme="pop-art"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="pop-art"] .uv-card { border: 2px solid #111111; box-shadow: 6px 6px 0 #111111; }
+[data-uv-theme="pop-art"] .uv-tabs > .uv-tabs__ind { background: #ff2b2b; } [data-uv-theme="pop-art"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="pop-art"] .uv-switch input:checked + i, [data-uv-theme="pop-art"] .uv-check input:checked { background: #ff2b2b; border-color: #ff2b2b; }
+[data-uv-theme="pop-art"] .uv-progress > i { background: #ff2b2b; } [data-uv-theme="pop-art"] .uv-ring { background: conic-gradient(#ff2b2b calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="pop-art"] .uv-input:focus, [data-uv-theme="pop-art"] .uv-select:focus, [data-uv-theme="pop-art"] .uv-textarea:focus { border-color: #ff2b2b; box-shadow: 0 0 0 3px #ff2b2b38; }
+[data-uv-theme="pop-art"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="pop-art"] .uv-btn:hover { translate: 2px 2px; box-shadow: 1px 1px 0 #111111; } [data-uv-theme="pop-art"] .uv-btn:active { translate: 4px 4px; box-shadow: none; }
+[data-uv-theme="pop-art"] .uv-card--hover:hover { translate: 3px 3px; }

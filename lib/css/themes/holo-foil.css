@@ -1,0 +1,21 @@
+/*! UI Vault 3.1.0 · theme: holo-foil — trading-card holographic foil. Needs core.css. MIT */
+[data-uv-theme="holo-foil"] {
+  --uv-bg: #f4f4f8; --uv-text: #1d1d2b; --uv-accent: #7a5cff; --uv-accent-2: #ff5cc8; --uv-surface: #fafafc; --uv-surface-2: #e7e7ec; --uv-surface-3: #dcdce1; --uv-line: #1d1d2b1a; --uv-line-2: #1d1d2b2e; --uv-muted: #62626d; --uv-dim: #8d8d96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  background-image: radial-gradient(45% 55% at 12% 10%, #ff9ae673, transparent 70%), radial-gradient(40% 50% at 88% 22%, #9ad3ff61, transparent 70%), radial-gradient(55% 50% at 55% 100%, #b8ff9a59, transparent 70%);
+}
+[data-uv-theme="holo-foil"] .uv-h1, [data-uv-theme="holo-foil"] .uv-h2 { background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 8s linear infinite; }
+[data-uv-theme="holo-foil"] .uv-btn--primary, [data-uv-theme="holo-foil"] .uv-btn--grad { background: linear-gradient(135deg, #7a5cff, #ff5cc8); color: #ffffff; border-color: transparent; }
+[data-uv-theme="holo-foil"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="holo-foil"] .uv-card { border: 1.5px solid transparent; background: linear-gradient(#fafafc, #fafafc) padding-box, linear-gradient(135deg, #7a5cff, #ff5cc8) border-box; }
+[data-uv-theme="holo-foil"] .uv-tabs > .uv-tabs__ind { background: #7a5cff; } [data-uv-theme="holo-foil"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="holo-foil"] .uv-switch input:checked + i, [data-uv-theme="holo-foil"] .uv-check input:checked { background: #7a5cff; border-color: #7a5cff; }
+[data-uv-theme="holo-foil"] .uv-progress > i { background: #7a5cff; } [data-uv-theme="holo-foil"] .uv-ring { background: conic-gradient(#7a5cff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="holo-foil"] .uv-input:focus, [data-uv-theme="holo-foil"] .uv-select:focus, [data-uv-theme="holo-foil"] .uv-textarea:focus { border-color: #7a5cff; box-shadow: 0 0 0 3px #7a5cff38; }
+[data-uv-theme="holo-foil"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="holo-foil"] .uv-btn::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff80 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } [data-uv-theme="holo-foil"] .uv-btn:hover::after { translate: 120% 0; }
+[data-uv-theme="holo-foil"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="holo-foil"] .uv-card { position: relative; }
+[data-uv-theme="holo-foil"] .uv-btn--primary { background-image: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6); background-size: 300% 100%; color: #1d1d2b; animation: uvt-holo 6s linear infinite; }

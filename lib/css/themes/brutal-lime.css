@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: brutal-lime — acid lime neo-brutalism, thick black outlines. Needs core.css. MIT */
+[data-uv-theme="brutal-lime"] {
+  --uv-bg: #e8ff5a; --uv-text: #000000; --uv-accent: #000000; --uv-accent-2: #ff5ec4; --uv-surface: #f5ffb5; --uv-surface-2: #daf055; --uv-surface-3: #cee350; --uv-line: #0000001a; --uv-line-2: #0000002e; --uv-muted: #4a521d; --uv-dim: #79852f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 3px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  
+}
+[data-uv-theme="brutal-lime"] .uv-btn--primary, [data-uv-theme="brutal-lime"] .uv-btn--grad { background: #000000; color: #ffffff; border: 2px solid #000000; box-shadow: 4px 4px 0 #000000; }
+[data-uv-theme="brutal-lime"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="brutal-lime"] .uv-card { border: 2px solid #000000; box-shadow: 6px 6px 0 #000000; }
+[data-uv-theme="brutal-lime"] .uv-tabs > .uv-tabs__ind { background: #000000; } [data-uv-theme="brutal-lime"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="brutal-lime"] .uv-switch input:checked + i, [data-uv-theme="brutal-lime"] .uv-check input:checked { background: #000000; border-color: #000000; }
+[data-uv-theme="brutal-lime"] .uv-progress > i { background: #000000; } [data-uv-theme="brutal-lime"] .uv-ring { background: conic-gradient(#000000 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="brutal-lime"] .uv-input:focus, [data-uv-theme="brutal-lime"] .uv-select:focus, [data-uv-theme="brutal-lime"] .uv-textarea:focus { border-color: #000000; box-shadow: 0 0 0 3px #00000038; }
+[data-uv-theme="brutal-lime"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="brutal-lime"] .uv-btn:hover { translate: 2px 2px; box-shadow: 1px 1px 0 #000000; } [data-uv-theme="brutal-lime"] .uv-btn:active { translate: 4px 4px; box-shadow: none; }
+[data-uv-theme="brutal-lime"] .uv-card--hover:hover { translate: 3px 3px; }

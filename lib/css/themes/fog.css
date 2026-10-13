@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: fog — cool grey haze, soft shadows, nothing loud. Needs core.css. MIT */
+[data-uv-theme="fog"] {
+  --uv-bg: #eef0f2; --uv-text: #2b3036; --uv-accent: #5b6b7c; --uv-accent-2: #5b6b7c; --uv-surface: #f7f8f9; --uv-surface-2: #e2e4e7; --uv-surface-3: #d9dbdd; --uv-line: #2b30361a; --uv-line-2: #2b30362e; --uv-muted: #696d72; --uv-dim: #909498; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  
+}
+[data-uv-theme="fog"] .uv-btn--primary, [data-uv-theme="fog"] .uv-btn--grad { background: #2b3036; color: #eef0f2; border-color: #2b3036; }
+[data-uv-theme="fog"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="fog"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #2b30360f, 0 14px 34px -14px #2b303659; }
+[data-uv-theme="fog"] .uv-tabs > .uv-tabs__ind { background: #5b6b7c; } [data-uv-theme="fog"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="fog"] .uv-switch input:checked + i, [data-uv-theme="fog"] .uv-check input:checked { background: #5b6b7c; border-color: #5b6b7c; }
+[data-uv-theme="fog"] .uv-progress > i { background: #5b6b7c; } [data-uv-theme="fog"] .uv-ring { background: conic-gradient(#5b6b7c calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="fog"] .uv-input:focus, [data-uv-theme="fog"] .uv-select:focus, [data-uv-theme="fog"] .uv-textarea:focus { border-color: #5b6b7c; box-shadow: 0 0 0 3px #5b6b7c38; }
+[data-uv-theme="fog"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="fog"] .uv-btn:hover { filter: brightness(1.08); } [data-uv-theme="fog"] .uv-btn:active { scale: .94; }
+[data-uv-theme="fog"] .uv-card--hover:hover { translate: 0 -4px; }

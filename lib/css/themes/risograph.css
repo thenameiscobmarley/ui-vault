@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: risograph — two-ink riso print: fluoro pink + blue on paper. Needs core.css. MIT */
+[data-uv-theme="risograph"] {
+  --uv-bg: #f6f1e7; --uv-text: #2340c9; --uv-accent: #ff4f9a; --uv-accent-2: #2340c9; --uv-surface: #fbf9f4; --uv-surface-2: #e9e6e5; --uv-surface-3: #dfdee4; --uv-line: #2340c91a; --uv-line-2: #2340c92e; --uv-muted: #6779d3; --uv-dim: #919cd9; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  background-image: radial-gradient(#ff4f9a4c 1.4px, transparent 1.6px); background-size: 10px 10px;
+}
+[data-uv-theme="risograph"] .uv-h1, [data-uv-theme="risograph"] .uv-h2 { color: #2340c9; text-shadow: 3px 3px 0 #ff4f9ae6; }
+[data-uv-theme="risograph"] .uv-btn--primary, [data-uv-theme="risograph"] .uv-btn--grad { background: #ff4f9a; color: #ffffff; border-color: #ff4f9a; }
+[data-uv-theme="risograph"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="risograph"] .uv-card { border: 2px solid #2340c9; box-shadow: none; }
+[data-uv-theme="risograph"] .uv-tabs > .uv-tabs__ind { background: #ff4f9a; } [data-uv-theme="risograph"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="risograph"] .uv-switch input:checked + i, [data-uv-theme="risograph"] .uv-check input:checked { background: #ff4f9a; border-color: #ff4f9a; }
+[data-uv-theme="risograph"] .uv-progress > i { background: #ff4f9a; } [data-uv-theme="risograph"] .uv-ring { background: conic-gradient(#ff4f9a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="risograph"] .uv-input:focus, [data-uv-theme="risograph"] .uv-select:focus, [data-uv-theme="risograph"] .uv-textarea:focus { border-color: #ff4f9a; box-shadow: 0 0 0 3px #ff4f9a38; }
+[data-uv-theme="risograph"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="risograph"] .uv-btn:hover { animation: uvt-wob .5s; }
+[data-uv-theme="risograph"] .uv-card--hover:hover { translate: 0 -4px; }

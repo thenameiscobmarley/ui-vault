@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: damascus — folded steel with flowing grain. Needs core.css. MIT */
+[data-uv-theme="damascus"] {
+  --uv-bg: #202326; --uv-text: #e9ecef; --uv-accent: #9aa6b2; --uv-accent-2: #d0d7de; --uv-surface: #2a2d30; --uv-surface-2: #323538; --uv-surface-3: #3e4144; --uv-line: #e9ecef24; --uv-line-2: #e9ecef42; --uv-muted: #a9acaf; --uv-dim: #808386; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: repeating-radial-gradient(ellipse 120% 40% at 50% 120%, #ffffff12 0 6px, transparent 6px 14px), linear-gradient(180deg, #323537, #202326);
+}
+[data-uv-theme="damascus"] .uv-h1, [data-uv-theme="damascus"] .uv-h2 { background-image: linear-gradient(180deg, #ffffff 0%, #c9ced6 38%, #3b4048 50%, #dfe3ea 62%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 1px 0 #00000059); }
+[data-uv-theme="damascus"] .uv-btn--primary, [data-uv-theme="damascus"] .uv-btn--grad { background: linear-gradient(180deg, #ffffff, #d7dbe2 45%, #8b929c 52%, #e9ecf1); color: #1b1f26; border: 1px solid #8b929c; box-shadow: inset 0 1px 0 #fff, 0 3px 10px -4px #0007; }
+[data-uv-theme="damascus"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="damascus"] .uv-card { background: repeating-linear-gradient(90deg, #ffffff0a 0 1px, transparent 1px 3px), linear-gradient(180deg, #3b3e41, #2a2d30); border-color: #ffffff2e; box-shadow: inset 0 1px 0 #ffffff40; }
+[data-uv-theme="damascus"] .uv-tabs > .uv-tabs__ind { background: #9aa6b2; } [data-uv-theme="damascus"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="damascus"] .uv-switch input:checked + i, [data-uv-theme="damascus"] .uv-check input:checked { background: #9aa6b2; border-color: #9aa6b2; }
+[data-uv-theme="damascus"] .uv-progress > i { background: #9aa6b2; } [data-uv-theme="damascus"] .uv-ring { background: conic-gradient(#9aa6b2 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="damascus"] .uv-input:focus, [data-uv-theme="damascus"] .uv-select:focus, [data-uv-theme="damascus"] .uv-textarea:focus { border-color: #9aa6b2; box-shadow: 0 0 0 3px #9aa6b238; }
+[data-uv-theme="damascus"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="damascus"] .uv-btn::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff80 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } [data-uv-theme="damascus"] .uv-btn:hover::after { translate: 120% 0; }
+[data-uv-theme="damascus"] .uv-card--hover:hover { translate: 0 -4px; }

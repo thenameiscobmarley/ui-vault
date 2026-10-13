@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: anodized — anodised aluminium in electric blue and violet. Needs core.css. MIT */
+[data-uv-theme="anodized"] {
+  --uv-bg: #0d1022; --uv-text: #e8ecff; --uv-accent: #4f6bff; --uv-accent-2: #c04bff; --uv-surface: #181b2d; --uv-surface-2: #212436; --uv-surface-3: #2e3143; --uv-line: #e8ecff24; --uv-line-2: #e8ecff42; --uv-muted: #a2a6b8; --uv-dim: #767a8c; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: repeating-linear-gradient(90deg, #ffffff0d 0 1px, transparent 1px 3px), linear-gradient(180deg, #2a2d3d, #0d1022 45%, #0c0e1f);
+}
+[data-uv-theme="anodized"] .uv-h1, [data-uv-theme="anodized"] .uv-h2 { background-image: linear-gradient(100deg, transparent 35%, #ffffff8c 50%, transparent 65%), linear-gradient(180deg, #1a2370 28%, #d4dcff 50%, #5b64a2 54%, #1a2370 74%); background-size: 250% 100%, 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-sheen 7s ease-in-out infinite; }
+[data-uv-theme="anodized"] .uv-btn--primary, [data-uv-theme="anodized"] .uv-btn--grad { background: linear-gradient(180deg, #b0bcff 0%, #6981ff 45%, #3b50bf 55%, #617aff 100%); color: #fff; text-shadow: 0 1px 0 #00000073; border: 1px solid #2f4099; box-shadow: inset 0 1px 0 #ffffffb2, 0 4px 12px -4px #2f409999; }
+[data-uv-theme="anodized"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="anodized"] .uv-card { background: repeating-linear-gradient(90deg, #ffffff0a 0 1px, transparent 1px 3px), linear-gradient(180deg, #2a2d3e, #181b2d); border-color: #ffffff2e; box-shadow: inset 0 1px 0 #ffffff40; }
+[data-uv-theme="anodized"] .uv-tabs > .uv-tabs__ind { background: #4f6bff; } [data-uv-theme="anodized"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="anodized"] .uv-switch input:checked + i, [data-uv-theme="anodized"] .uv-check input:checked { background: #4f6bff; border-color: #4f6bff; }
+[data-uv-theme="anodized"] .uv-progress > i { background: #4f6bff; } [data-uv-theme="anodized"] .uv-ring { background: conic-gradient(#4f6bff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="anodized"] .uv-input:focus, [data-uv-theme="anodized"] .uv-select:focus, [data-uv-theme="anodized"] .uv-textarea:focus { border-color: #4f6bff; box-shadow: 0 0 0 3px #4f6bff38; }
+[data-uv-theme="anodized"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="anodized"] .uv-btn::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, #ffffff80 50%, transparent 65%); translate: -120% 0; transition: translate .7s; } [data-uv-theme="anodized"] .uv-btn:hover::after { translate: 120% 0; }
+[data-uv-theme="anodized"] .uv-card--hover:hover { translate: 0 -4px; }

@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: gameboy — four shades of handheld green. Needs core.css. MIT */
+[data-uv-theme="gameboy"] {
+  --uv-bg: #9bbc0f; --uv-text: #0f380f; --uv-accent: #306230; --uv-accent-2: #8bac0f; --uv-surface: #8bac0f; --uv-surface-2: #93b40f; --uv-surface-3: #8cad0f; --uv-line: #0f380f1a; --uv-line-2: #0f380f2e; --uv-muted: #3c620f; --uv-dim: #587d0f; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Press Start 2P", ui-monospace, monospace; --uv-font-head: "Press Start 2P", ui-monospace, monospace; --uv-serif: "Press Start 2P", ui-monospace, monospace; --uv-btn-font: "Press Start 2P", ui-monospace, monospace;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 3px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  
+}
+[data-uv-theme="gameboy"] .uv-btn--primary, [data-uv-theme="gameboy"] .uv-btn--grad { background: #306230; color: #ffffff; border: 2px solid #0f380f; box-shadow: 4px 4px 0 #0f380f; }
+[data-uv-theme="gameboy"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="gameboy"] .uv-card { border: 2px solid #0f380f; box-shadow: none; }
+[data-uv-theme="gameboy"] .uv-tabs > .uv-tabs__ind { background: #306230; } [data-uv-theme="gameboy"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="gameboy"] .uv-switch input:checked + i, [data-uv-theme="gameboy"] .uv-check input:checked { background: #306230; border-color: #306230; }
+[data-uv-theme="gameboy"] .uv-progress > i { background: #306230; } [data-uv-theme="gameboy"] .uv-ring { background: conic-gradient(#306230 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="gameboy"] .uv-input:focus, [data-uv-theme="gameboy"] .uv-select:focus, [data-uv-theme="gameboy"] .uv-textarea:focus { border-color: #306230; box-shadow: 0 0 0 3px #30623038; }
+[data-uv-theme="gameboy"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="gameboy"] .uv-btn:hover { translate: 2px 2px; box-shadow: 1px 1px 0 #0f380f; } [data-uv-theme="gameboy"] .uv-btn:active { translate: 4px 4px; box-shadow: none; }
+[data-uv-theme="gameboy"] .uv-card--hover:hover { translate: 3px 3px; }

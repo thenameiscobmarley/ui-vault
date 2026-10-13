@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: cobalt — electric cobalt field, white type, lemon accent. Needs core.css. MIT */
+[data-uv-theme="cobalt"] {
+  --uv-bg: #1d3fd8; --uv-text: #ffffff; --uv-accent: #ffe14d; --uv-accent-2: #ffe14d; --uv-surface: #2849da; --uv-surface-2: #3150dc; --uv-surface-3: #3f5cde; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #b7c2f3; --uv-dim: #899beb; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="cobalt"] .uv-btn--primary, [data-uv-theme="cobalt"] .uv-btn--grad { background: #ffe14d; color: #111111; border-color: #ffe14d; }
+[data-uv-theme="cobalt"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="cobalt"] .uv-card { border: 2px solid #ffffff; box-shadow: none; }
+[data-uv-theme="cobalt"] .uv-tabs > .uv-tabs__ind { background: #ffe14d; } [data-uv-theme="cobalt"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="cobalt"] .uv-switch input:checked + i, [data-uv-theme="cobalt"] .uv-check input:checked { background: #ffe14d; border-color: #ffe14d; }
+[data-uv-theme="cobalt"] .uv-progress > i { background: #ffe14d; } [data-uv-theme="cobalt"] .uv-ring { background: conic-gradient(#ffe14d calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="cobalt"] .uv-input:focus, [data-uv-theme="cobalt"] .uv-select:focus, [data-uv-theme="cobalt"] .uv-textarea:focus { border-color: #ffe14d; box-shadow: 0 0 0 3px #ffe14d38; }
+[data-uv-theme="cobalt"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="cobalt"] .uv-btn:hover { scale: 1.06; } [data-uv-theme="cobalt"] .uv-btn:active { scale: .96; }
+[data-uv-theme="cobalt"] .uv-card--hover:hover { scale: 1.02; }

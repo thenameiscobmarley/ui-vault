@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: porcelain — white porcelain with a celadon glaze. Needs core.css. MIT */
+[data-uv-theme="porcelain"] {
+  --uv-bg: #fbfbf9; --uv-text: #23302c; --uv-accent: #5f9e8f; --uv-accent-2: #5f9e8f; --uv-surface: #fdfdfc; --uv-surface-2: #eeefed; --uv-surface-3: #e3e5e2; --uv-line: #23302c1a; --uv-line-2: #23302c2e; --uv-muted: #68716e; --uv-dim: #939a97; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: none;
+  
+}
+[data-uv-theme="porcelain"] .uv-btn--primary, [data-uv-theme="porcelain"] .uv-btn--grad { background: #5f9e8f; color: #111111; border-color: #5f9e8f; }
+[data-uv-theme="porcelain"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="porcelain"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #23302c0f, 0 14px 34px -14px #23302c59; }
+[data-uv-theme="porcelain"] .uv-tabs > .uv-tabs__ind { background: #5f9e8f; } [data-uv-theme="porcelain"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="porcelain"] .uv-switch input:checked + i, [data-uv-theme="porcelain"] .uv-check input:checked { background: #5f9e8f; border-color: #5f9e8f; }
+[data-uv-theme="porcelain"] .uv-progress > i { background: #5f9e8f; } [data-uv-theme="porcelain"] .uv-ring { background: conic-gradient(#5f9e8f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="porcelain"] .uv-input:focus, [data-uv-theme="porcelain"] .uv-select:focus, [data-uv-theme="porcelain"] .uv-textarea:focus { border-color: #5f9e8f; box-shadow: 0 0 0 3px #5f9e8f38; }
+[data-uv-theme="porcelain"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="porcelain"] .uv-btn:hover { translate: 0 -2px; filter: brightness(1.05); } [data-uv-theme="porcelain"] .uv-btn:active { translate: 0 1px; }
+[data-uv-theme="porcelain"] .uv-card--hover:hover { translate: 0 -4px; }

@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: marble-fade — swirled red, yellow and blue marble, like a Marble Fade. Needs core.css. MIT */
+[data-uv-theme="marble-fade"] {
+  --uv-bg: #fff8ee; --uv-text: #2a1a1a; --uv-accent: #e8322f; --uv-accent-2: #2f6be8; --uv-surface: #fffcf7; --uv-surface-2: #f2ebe1; --uv-surface-3: #e8e0d7; --uv-line: #2a1a1a1a; --uv-line-2: #2a1a1a2e; --uv-muted: #6e615e; --uv-dim: #998d88; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  background-image: radial-gradient(120% 60% at 10% 20%, #e8322f40 0 20%, transparent 21% 40%, #2f6be833 41% 46%, transparent 47%), radial-gradient(90% 70% at 90% 80%, #2f6be840 0 18%, transparent 19% 36%, #e8322f33 37% 40%, transparent 41%);
+}
+[data-uv-theme="marble-fade"] .uv-h1, [data-uv-theme="marble-fade"] .uv-h2 { background-image: linear-gradient(90deg, #e8322f, #2f6be8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-uv-theme="marble-fade"] .uv-btn--primary, [data-uv-theme="marble-fade"] .uv-btn--grad { background: linear-gradient(135deg, #e8322f, #2f6be8); color: #ffffff; border-color: transparent; }
+[data-uv-theme="marble-fade"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="marble-fade"] .uv-card { border-color: transparent; box-shadow: 0 1px 2px #2a1a1a0f, 0 14px 34px -14px #2a1a1a59; }
+[data-uv-theme="marble-fade"] .uv-tabs > .uv-tabs__ind { background: #e8322f; } [data-uv-theme="marble-fade"] .uv-tabs > button[aria-selected="true"] { color: #ffffff; }
+[data-uv-theme="marble-fade"] .uv-switch input:checked + i, [data-uv-theme="marble-fade"] .uv-check input:checked { background: #e8322f; border-color: #e8322f; }
+[data-uv-theme="marble-fade"] .uv-progress > i { background: #e8322f; } [data-uv-theme="marble-fade"] .uv-ring { background: conic-gradient(#e8322f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="marble-fade"] .uv-input:focus, [data-uv-theme="marble-fade"] .uv-select:focus, [data-uv-theme="marble-fade"] .uv-textarea:focus { border-color: #e8322f; box-shadow: 0 0 0 3px #e8322f38; }
+[data-uv-theme="marble-fade"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="marble-fade"] .uv-btn:hover { animation: uvt-jelly .55s; }
+[data-uv-theme="marble-fade"] .uv-card--hover:hover { translate: 0 -4px; }
+[data-uv-theme="marble-fade"] h1.uv-h1, [data-uv-theme="marble-fade"] h2.uv-h2 { background-image: linear-gradient(90deg, #e8322f, #f5c518 50%, #2f6be8); }

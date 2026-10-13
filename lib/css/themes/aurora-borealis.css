@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: aurora-borealis — northern lights rippling over a polar night. Needs core.css. MIT */
+[data-uv-theme="aurora-borealis"] {
+  --uv-bg: #050d1a; --uv-text: #e6fbff; --uv-accent: #3dffb4; --uv-accent-2: #7a5cff; --uv-surface: #101925; --uv-surface-2: #19222f; --uv-surface-3: #27313c; --uv-line: #e6fbff24; --uv-line-2: #e6fbff42; --uv-muted: #9eafb6; --uv-dim: #717f88; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: radial-gradient(45% 55% at 12% 10%, #13d69673, transparent 70%), radial-gradient(40% 50% at 88% 22%, #5b3dff61, transparent 70%), radial-gradient(55% 50% at 55% 100%, #0e8f9a59, transparent 70%);
+}
+[data-uv-theme="aurora-borealis"] .uv-h1, [data-uv-theme="aurora-borealis"] .uv-h2 { background-image: linear-gradient(90deg, #3dffb4, #7a5cff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-uv-theme="aurora-borealis"] .uv-btn--primary, [data-uv-theme="aurora-borealis"] .uv-btn--grad { background: #ffffff29; color: #e6fbff; border: 1px solid #ffffff61; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 #ffffff66; }
+[data-uv-theme="aurora-borealis"] .uv-btn--primary:hover { filter: brightness(1.06); }
+[data-uv-theme="aurora-borealis"] .uv-card { background: #ffffff14; border: 1px solid #ffffff38; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 #ffffff4c, 0 18px 40px -20px #00000073; }
+[data-uv-theme="aurora-borealis"] .uv-tabs > .uv-tabs__ind { background: #3dffb4; } [data-uv-theme="aurora-borealis"] .uv-tabs > button[aria-selected="true"] { color: #111111; }
+[data-uv-theme="aurora-borealis"] .uv-switch input:checked + i, [data-uv-theme="aurora-borealis"] .uv-check input:checked { background: #3dffb4; border-color: #3dffb4; }
+[data-uv-theme="aurora-borealis"] .uv-progress > i { background: #3dffb4; } [data-uv-theme="aurora-borealis"] .uv-ring { background: conic-gradient(#3dffb4 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="aurora-borealis"] .uv-input:focus, [data-uv-theme="aurora-borealis"] .uv-select:focus, [data-uv-theme="aurora-borealis"] .uv-textarea:focus { border-color: #3dffb4; box-shadow: 0 0 0 3px #3dffb438; }
+[data-uv-theme="aurora-borealis"] .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="aurora-borealis"] .uv-btn:hover { box-shadow: 0 0 0 3px #3dffb440, 0 0 26px -2px #3dffb4b2; }
+[data-uv-theme="aurora-borealis"] .uv-card--hover:hover { box-shadow: 0 0 0 1px #3dffb480, 0 0 30px -8px #3dffb4; }
