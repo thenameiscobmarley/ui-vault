@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: rose-gold — blush rose gold with soft champagne light. Needs core.css. MIT */
 [data-uv-theme="rose-gold"] {
-  --uv-bg: #fff4f1; --uv-text: #4a2a2a; --uv-accent: #d4877a; --uv-accent-2: #e8c39e; --uv-surface: #fffaf9; --uv-surface-2: #f4e8e5; --uv-surface-3: #ebdedb; --uv-line: #4a2a2a1a; --uv-line-2: #4a2a2a2e; --uv-muted: #846b6a; --uv-dim: #a89391; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff4f1; --uv-text: #4a2a2a; --uv-accent: #d4877a; --uv-accent-2: #e8c39e; --uv-on-accent: #111111; --uv-surface: #fffaf9; --uv-surface-2: #f4e8e5; --uv-surface-3: #ebdedb; --uv-line: #4a2a2a1a; --uv-line-2: #4a2a2a2e; --uv-muted: #846b6a; --uv-dim: #a89391; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: tangerine — loud orange, black type, no apologies. Needs core.css. MIT */
 [data-uv-theme="tangerine"] {
-  --uv-bg: #ff7a1a; --uv-text: #1a0f06; --uv-accent: #1a0f06; --uv-accent-2: #fff3e0; --uv-surface: #ffc398; --uv-surface-2: #f17419; --uv-surface-3: #e66e18; --uv-line: #1a0f061a; --uv-line-2: #1a0f062e; --uv-muted: #63310c; --uv-dim: #914710; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ff7a1a; --uv-text: #1a0f06; --uv-accent: #1a0f06; --uv-accent-2: #fff3e0; --uv-on-accent: #ffffff; --uv-surface: #ffc398; --uv-surface-2: #f17419; --uv-surface-3: #e66e18; --uv-line: #1a0f061a; --uv-line-2: #1a0f062e; --uv-muted: #63310c; --uv-dim: #914710; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: uppercase; --uv-head-tracking: .01em;

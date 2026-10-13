@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: ocean — open ocean blues with whitecap foam. Needs core.css. MIT */
 [data-uv-theme="ocean"] {
-  --uv-bg: #e7f3fa; --uv-text: #0c2a40; --uv-accent: #0a7bbf; --uv-accent-2: #3fd0c9; --uv-surface: #f4fafd; --uv-surface-2: #dae7ef; --uv-surface-3: #cfdde6; --uv-line: #0c2a401a; --uv-line-2: #0c2a402e; --uv-muted: #526a7c; --uv-dim: #7e93a1; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #e7f3fa; --uv-text: #0c2a40; --uv-accent: #0a7bbf; --uv-accent-2: #3fd0c9; --uv-on-accent: #ffffff; --uv-surface: #f4fafd; --uv-surface-2: #dae7ef; --uv-surface-3: #cfdde6; --uv-line: #0c2a401a; --uv-line-2: #0c2a402e; --uv-muted: #526a7c; --uv-dim: #7e93a1; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;

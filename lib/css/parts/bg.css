@@ -1,0 +1,56 @@
+/*! UI Vault 3.1.0 · parts: backgrounds — 17 designs. Use data-uv-bg="NAME" on <html> or any element. Needs core.css. MIT */
+/* shared reset for every bg design */
+[data-uv-bg]:not([data-uv-bg=""]):not(#_) body { background-color: transparent; }
+/* @part bg/plain — solid theme background */
+[data-uv-bg="plain"]:not([data-uv-bg="plain"] [data-uv-bg]:not([data-uv-bg="plain"]) *, [data-uv-bg="plain"] [data-uv-bg]:not([data-uv-bg="plain"])):not(#_) { background: var(--uv-bg); }
+/* @part bg/aurora — soft accent auroras */
+[data-uv-bg="aurora"]:not([data-uv-bg="aurora"] [data-uv-bg]:not([data-uv-bg="aurora"]) *, [data-uv-bg="aurora"] [data-uv-bg]:not([data-uv-bg="aurora"])):not(#_) { background: radial-gradient(45% 55% at 12% 10%, color-mix(in srgb, var(--uv-accent) 40%, transparent), transparent 70%), radial-gradient(40% 50% at 88% 22%, color-mix(in srgb, var(--uv-accent-2) 35%, transparent), transparent 70%), radial-gradient(55% 50% at 55% 100%, color-mix(in srgb, var(--uv-accent) 30%, transparent), transparent 70%) fixed, var(--uv-bg); }
+/* @part bg/pearl — Y2K mother-of-pearl */
+[data-uv-bg="pearl"]:not([data-uv-bg="pearl"] [data-uv-bg]:not([data-uv-bg="pearl"]) *, [data-uv-bg="pearl"] [data-uv-bg]:not([data-uv-bg="pearl"])):not(#_) { background: radial-gradient(55% 45% at 18% 8%, #ffb3e866, transparent 70%), radial-gradient(45% 50% at 88% 14%, #9fd8ff66, transparent 70%), radial-gradient(60% 55% at 70% 95%, #c8ffb466, transparent 70%), radial-gradient(40% 40% at 30% 75%, #ffe2a855, transparent 70%) fixed, conic-gradient(from 200deg at 65% 55%, var(--uv-bg), color-mix(in srgb, #e9dcff 25%, var(--uv-bg)), color-mix(in srgb, #d6f0ff 25%, var(--uv-bg)), color-mix(in srgb, #fff3d6 20%, var(--uv-bg)), var(--uv-bg)) fixed; }
+/* @part bg/mesh — accent gradient mesh */
+[data-uv-bg="mesh"]:not([data-uv-bg="mesh"] [data-uv-bg]:not([data-uv-bg="mesh"]) *, [data-uv-bg="mesh"] [data-uv-bg]:not([data-uv-bg="mesh"])):not(#_) { background: radial-gradient(at 15% 15%, color-mix(in srgb, var(--uv-accent) 40%, transparent) 0, transparent 50%), radial-gradient(at 85% 10%, color-mix(in srgb, var(--uv-accent-2) 40%, transparent) 0, transparent 50%), radial-gradient(at 60% 100%, color-mix(in srgb, var(--uv-accent) 30%, transparent) 0, transparent 55%) fixed, var(--uv-bg); }
+/* @part bg/grid — graph paper */
+[data-uv-bg="grid"]:not([data-uv-bg="grid"] [data-uv-bg]:not([data-uv-bg="grid"]) *, [data-uv-bg="grid"] [data-uv-bg]:not([data-uv-bg="grid"])):not(#_) { background: linear-gradient(color-mix(in srgb, var(--uv-text) 7%, transparent) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(90deg, color-mix(in srgb, var(--uv-text) 7%, transparent) 1px, transparent 1px) 0 0 / 32px 32px, var(--uv-bg); }
+/* @part bg/blueprint — architect's grid */
+[data-uv-bg="blueprint"]:not([data-uv-bg="blueprint"] [data-uv-bg]:not([data-uv-bg="blueprint"]) *, [data-uv-bg="blueprint"] [data-uv-bg]:not([data-uv-bg="blueprint"])):not(#_) { background: linear-gradient(color-mix(in srgb, var(--uv-accent) 20%, transparent) 1px, transparent 1px) 0 0 / 100px 100px, linear-gradient(90deg, color-mix(in srgb, var(--uv-accent) 20%, transparent) 1px, transparent 1px) 0 0 / 100px 100px, linear-gradient(color-mix(in srgb, var(--uv-accent) 10%, transparent) 1px, transparent 1px) 0 0 / 20px 20px, linear-gradient(90deg, color-mix(in srgb, var(--uv-accent) 10%, transparent) 1px, transparent 1px) 0 0 / 20px 20px, var(--uv-bg); }
+/* @part bg/dots — dot grid */
+[data-uv-bg="dots"]:not([data-uv-bg="dots"] [data-uv-bg]:not([data-uv-bg="dots"]) *, [data-uv-bg="dots"] [data-uv-bg]:not([data-uv-bg="dots"])):not(#_) { background: radial-gradient(color-mix(in srgb, var(--uv-text) 16%, transparent) 1px, transparent 1.4px) 0 0 / 18px 18px, var(--uv-bg); }
+/* @part bg/lines — notebook ruling */
+[data-uv-bg="lines"]:not([data-uv-bg="lines"] [data-uv-bg]:not([data-uv-bg="lines"]) *, [data-uv-bg="lines"] [data-uv-bg]:not([data-uv-bg="lines"])):not(#_) { background: linear-gradient(color-mix(in srgb, var(--uv-accent-2) 15%, transparent) 1px, transparent 1px) 0 0 / 100% 28px, var(--uv-bg); }
+/* @part bg/carbon — carbon fibre weave */
+[data-uv-bg="carbon"]:not([data-uv-bg="carbon"] [data-uv-bg]:not([data-uv-bg="carbon"]) *, [data-uv-bg="carbon"] [data-uv-bg]:not([data-uv-bg="carbon"])):not(#_) { background: linear-gradient(27deg, color-mix(in srgb, var(--uv-bg), #000 25%) 5px, transparent 5px) 0 5px, linear-gradient(207deg, color-mix(in srgb, var(--uv-bg), #000 25%) 5px, transparent 5px) 10px 0, linear-gradient(27deg, color-mix(in srgb, var(--uv-bg), #fff 6%) 5px, transparent 5px) 0 10px, linear-gradient(207deg, color-mix(in srgb, var(--uv-bg), #fff 6%) 5px, transparent 5px) 10px 5px, linear-gradient(90deg, color-mix(in srgb, var(--uv-bg), #000 25%) 10px, transparent 10px), linear-gradient(color-mix(in srgb, var(--uv-bg), #000 25%) 25%, color-mix(in srgb, var(--uv-bg), #fff 6%) 25%, color-mix(in srgb, var(--uv-bg), #fff 6%) 50%, transparent 50%, transparent 75%, color-mix(in srgb, var(--uv-bg), #fff 6%) 75%, color-mix(in srgb, var(--uv-bg), #fff 6%)) var(--uv-bg); background-size: 20px 20px; }
+/* @part bg/brushed — fine brushed lines */
+[data-uv-bg="brushed"]:not([data-uv-bg="brushed"] [data-uv-bg]:not([data-uv-bg="brushed"]) *, [data-uv-bg="brushed"] [data-uv-bg]:not([data-uv-bg="brushed"])):not(#_) { background: repeating-linear-gradient(90deg, #ffffff0c 0 1px, transparent 1px 3px), linear-gradient(180deg, color-mix(in srgb, var(--uv-bg), #fff 10%), var(--uv-bg) 45%, color-mix(in srgb, var(--uv-bg), #000 10%)) fixed; }
+/* @part bg/deep-metal — deep navy anodised plate */
+[data-uv-bg="deep-metal"]:not([data-uv-bg="deep-metal"] [data-uv-bg]:not([data-uv-bg="deep-metal"]) *, [data-uv-bg="deep-metal"] [data-uv-bg]:not([data-uv-bg="deep-metal"])):not(#_) { background: repeating-linear-gradient(90deg, #ffffff06 0 1px, transparent 1px 3px), radial-gradient(80% 60% at 50% 0%, #1d4cad66, transparent 70%) fixed, linear-gradient(180deg, #0b1d48, #050d24) fixed; }
+/* @part bg/galaxy — stars and nebula */
+[data-uv-bg="galaxy"]:not([data-uv-bg="galaxy"] [data-uv-bg]:not([data-uv-bg="galaxy"]) *, [data-uv-bg="galaxy"] [data-uv-bg]:not([data-uv-bg="galaxy"])):not(#_) { background: radial-gradient(1px 1px at 20% 30%, #fff, transparent) 0 0 / 220px 220px, radial-gradient(1px 1px at 70% 60%, #fff, transparent) 0 0 / 260px 260px, radial-gradient(1.5px 1.5px at 40% 80%, #ffffffcc, transparent) 0 0 / 300px 300px, radial-gradient(60% 50% at 30% 30%, color-mix(in srgb, var(--uv-accent) 40%, transparent), transparent 70%) fixed, radial-gradient(50% 60% at 80% 70%, color-mix(in srgb, var(--uv-accent-2) 40%, transparent), transparent 70%) fixed, #070712; }
+/* @part bg/halftone — comic-print dots */
+[data-uv-bg="halftone"]:not([data-uv-bg="halftone"] [data-uv-bg]:not([data-uv-bg="halftone"]) *, [data-uv-bg="halftone"] [data-uv-bg]:not([data-uv-bg="halftone"])):not(#_) { background: radial-gradient(color-mix(in srgb, var(--uv-accent) 30%, transparent) 1.4px, transparent 1.6px) 0 0 / 10px 10px, var(--uv-bg); }
+/* @part bg/checker — chequerboard */
+[data-uv-bg="checker"]:not([data-uv-bg="checker"] [data-uv-bg]:not([data-uv-bg="checker"]) *, [data-uv-bg="checker"] [data-uv-bg]:not([data-uv-bg="checker"])):not(#_) { background: conic-gradient(var(--uv-surface-2) 25%, transparent 0 50%, var(--uv-surface-2) 0 75%, transparent 0) 0 0 / 28px 28px, var(--uv-bg); }
+/* @part bg/stripes — diagonal stripes */
+[data-uv-bg="stripes"]:not([data-uv-bg="stripes"] [data-uv-bg]:not([data-uv-bg="stripes"]) *, [data-uv-bg="stripes"] [data-uv-bg]:not([data-uv-bg="stripes"])):not(#_) { background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--uv-accent) 8%, transparent) 0 12px, transparent 12px 24px), var(--uv-bg); }
+/* @part bg/sunset — synthwave sky */
+[data-uv-bg="sunset"]:not([data-uv-bg="sunset"] [data-uv-bg]:not([data-uv-bg="sunset"]) *, [data-uv-bg="sunset"] [data-uv-bg]:not([data-uv-bg="sunset"])):not(#_) { background: linear-gradient(180deg, #2b1055 0%, #7b2ff7 35%, #ff6ec7 70%, #ffd166 100%) fixed; }
+/* @part bg/scan — CRT scanlines and a vignette */
+[data-uv-bg="scan"]:not([data-uv-bg="scan"] [data-uv-bg]:not([data-uv-bg="scan"]) *, [data-uv-bg="scan"] [data-uv-bg]:not([data-uv-bg="scan"])):not(#_) { background: repeating-linear-gradient(0deg, #0000002e 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, #00000073) fixed, var(--uv-bg); }
+@keyframes uvp-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .55; } }
+@keyframes uvp-blink { 50% { opacity: 0; } }
+@keyframes uvp-roll { to { background-position: 34px 0; } }
+@keyframes uvp-jelly { 30% { transform: scale(1.12, .88); } 50% { transform: scale(.92, 1.08); } 70% { transform: scale(1.04, .96); } }
+@keyframes uvp-glitch { 0% { transform: translate(0); } 33% { transform: translate(-2px, 1px); filter: hue-rotate(40deg); } 66% { transform: translate(2px, -1px); } }
+@keyframes uvp-glitch-text { 0%, 92%, 100% { text-shadow: 2px 0 #ff2bd6aa, -2px 0 #00f0ffaa; transform: none; } 94% { text-shadow: -3px 0 #ff2bd6, 3px 0 #00f0ff; transform: translateX(2px); } 97% { text-shadow: 3px 0 #ff2bd6, -3px 0 #00f0ff; transform: translateX(-2px); } }
+@keyframes uvp-pop { 40% { transform: scale(1.25); } }
+@keyframes uvp-sheet { from { transform: translateY(40px); opacity: 0; } }
+@keyframes uvp-breathe { 50% { transform: scale(.55); opacity: .5; } }
+@keyframes uvp-ripple { from { transform: scale(.1); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+@keyframes uvp-flip { 0% { transform: perspective(80px) rotateX(0) rotateY(0); } 50% { transform: perspective(80px) rotateX(-180deg) rotateY(0); } 100% { transform: perspective(80px) rotateX(-180deg) rotateY(-180deg); } }
+@keyframes uvp-dots { 0% { background-size: 33.3% 33.3%, 33.3% 33.3%, 33.3% 33.3%; } 33% { background-size: 33.3% 80%, 33.3% 33.3%, 33.3% 33.3%; } 66% { background-size: 33.3% 33.3%, 33.3% 80%, 33.3% 33.3%; } 100% { background-size: 33.3% 33.3%, 33.3% 33.3%, 33.3% 80%; } }
+@keyframes uvp-bars { 0% { background-size: 20% 100%, 20% 40%, 20% 70%; } 33% { background-size: 20% 40%, 20% 100%, 20% 40%; } 66% { background-size: 20% 70%, 20% 40%, 20% 100%; } 100% { background-size: 20% 100%, 20% 40%, 20% 70%; } }
+@keyframes uvp-trace { 0% { top: -3px; left: -3px; } 25% { top: -3px; left: calc(70% + 3px); } 50% { top: calc(70% + 3px); left: calc(70% + 3px); } 75% { top: calc(70% + 3px); left: -3px; } }
+@keyframes uvt-sheen { 0%, 60% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+@keyframes uvt-holo { to { background-position: 300% 0; } }
+@property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes uv-spin-a { to { --uv-a: 360deg; } }
+@keyframes uv-rot { to { transform: rotate(360deg); } }

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: aurora-borealis — northern lights rippling over a polar night. Needs core.css. MIT */
 [data-uv-theme="aurora-borealis"] {
-  --uv-bg: #050d1a; --uv-text: #e6fbff; --uv-accent: #3dffb4; --uv-accent-2: #7a5cff; --uv-surface: #101925; --uv-surface-2: #19222f; --uv-surface-3: #27313c; --uv-line: #e6fbff24; --uv-line-2: #e6fbff42; --uv-muted: #9eafb6; --uv-dim: #717f88; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #050d1a; --uv-text: #e6fbff; --uv-accent: #3dffb4; --uv-accent-2: #7a5cff; --uv-on-accent: #111111; --uv-surface: #101925; --uv-surface-2: #19222f; --uv-surface-3: #27313c; --uv-line: #e6fbff24; --uv-line-2: #e6fbff42; --uv-muted: #9eafb6; --uv-dim: #717f88; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

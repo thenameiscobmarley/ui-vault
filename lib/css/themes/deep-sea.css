@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: deep-sea — abyssal teal with bioluminescent cyan. Needs core.css. MIT */
 [data-uv-theme="deep-sea"] {
-  --uv-bg: #041b22; --uv-text: #d6f4f7; --uv-accent: #2de2e6; --uv-accent-2: #3d7cff; --uv-surface: #0e262d; --uv-surface-2: #172f35; --uv-surface-3: #243c42; --uv-line: #d6f4f724; --uv-line-2: #d6f4f742; --uv-muted: #93afb3; --uv-dim: #698388; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #041b22; --uv-text: #d6f4f7; --uv-accent: #2de2e6; --uv-accent-2: #3d7cff; --uv-on-accent: #111111; --uv-surface: #0e262d; --uv-surface-2: #172f35; --uv-surface-3: #243c42; --uv-line: #d6f4f724; --uv-line-2: #d6f4f742; --uv-muted: #93afb3; --uv-dim: #698388; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: doppler — deep space purple-blue with sparkling dust, inspired by Doppler blades. Needs core.css. MIT */
 [data-uv-theme="doppler"] {
-  --uv-bg: #0a0420; --uv-text: #ece6ff; --uv-accent: #8a5cff; --uv-accent-2: #29c6ff; --uv-surface: #150f2b; --uv-surface-2: #1e1834; --uv-surface-3: #2c2641; --uv-line: #ece6ff24; --uv-line-2: #ece6ff42; --uv-muted: #a49eb8; --uv-dim: #76708b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0a0420; --uv-text: #ece6ff; --uv-accent: #8a5cff; --uv-accent-2: #29c6ff; --uv-on-accent: #ffffff; --uv-surface: #150f2b; --uv-surface-2: #1e1834; --uv-surface-3: #2c2641; --uv-line: #ece6ff24; --uv-line-2: #ece6ff42; --uv-muted: #a49eb8; --uv-dim: #76708b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

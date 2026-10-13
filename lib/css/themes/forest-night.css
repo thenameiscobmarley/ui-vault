@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: forest-night — pine shadows, moss green, firefly gold. Needs core.css. MIT */
 [data-uv-theme="forest-night"] {
-  --uv-bg: #0d1611; --uv-text: #e2eadf; --uv-accent: #7cc36e; --uv-accent-2: #f2c14e; --uv-surface: #18211b; --uv-surface-2: #202924; --uv-surface-3: #2d3630; --uv-line: #e2eadf24; --uv-line-2: #e2eadf42; --uv-muted: #9ea69d; --uv-dim: #737c74; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0d1611; --uv-text: #e2eadf; --uv-accent: #7cc36e; --uv-accent-2: #f2c14e; --uv-on-accent: #111111; --uv-surface: #18211b; --uv-surface-2: #202924; --uv-surface-3: #2d3630; --uv-line: #e2eadf24; --uv-line-2: #e2eadf42; --uv-muted: #9ea69d; --uv-dim: #737c74; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: sapphire-metal — deep sapphire with a polished metal band through the type. Needs core.css. MIT */
 [data-uv-theme="sapphire-metal"] {
-  --uv-bg: #060b24; --uv-text: #e3ecff; --uv-accent: #3d6bff; --uv-accent-2: #9fc0ff; --uv-surface: #11162f; --uv-surface-2: #1a1f38; --uv-surface-3: #272d45; --uv-line: #e3ecff24; --uv-line-2: #e3ecff42; --uv-muted: #9ca4b9; --uv-dim: #70778d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #060b24; --uv-text: #e3ecff; --uv-accent: #3d6bff; --uv-accent-2: #9fc0ff; --uv-on-accent: #ffffff; --uv-surface: #11162f; --uv-surface-2: #1a1f38; --uv-surface-3: #272d45; --uv-line: #e3ecff24; --uv-line-2: #e3ecff42; --uv-muted: #9ca4b9; --uv-dim: #70778d; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;

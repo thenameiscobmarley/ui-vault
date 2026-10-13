@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: lava-lamp — groovy molten blobs in orange and magenta. Needs core.css. MIT */
 [data-uv-theme="lava-lamp"] {
-  --uv-bg: #2a0a1f; --uv-text: #ffe8f3; --uv-accent: #ff7a1a; --uv-accent-2: #ff2d95; --uv-surface: #35152a; --uv-surface-2: #3d1e32; --uv-surface-3: #4a2b3f; --uv-line: #ffe8f324; --uv-line-2: #ffe8f342; --uv-muted: #bba1af; --uv-dim: #907585; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2a0a1f; --uv-text: #ffe8f3; --uv-accent: #ff7a1a; --uv-accent-2: #ff2d95; --uv-on-accent: #111111; --uv-surface: #35152a; --uv-surface-2: #3d1e32; --uv-surface-3: #4a2b3f; --uv-line: #ffe8f324; --uv-line-2: #ffe8f342; --uv-muted: #bba1af; --uv-dim: #907585; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

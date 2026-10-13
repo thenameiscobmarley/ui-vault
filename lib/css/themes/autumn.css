@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: autumn — maple orange, oak brown, harvest gold. Needs core.css. MIT */
 [data-uv-theme="autumn"] {
-  --uv-bg: #fbf1e4; --uv-text: #3a2416; --uv-accent: #d2601a; --uv-accent-2: #c99a2e; --uv-surface: #fdf9f3; --uv-surface-2: #efe5d8; --uv-surface-3: #e6dacd; --uv-line: #3a24161a; --uv-line-2: #3a24162e; --uv-muted: #786658; --uv-dim: #9e8f81; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fbf1e4; --uv-text: #3a2416; --uv-accent: #d2601a; --uv-accent-2: #c99a2e; --uv-on-accent: #ffffff; --uv-surface: #fdf9f3; --uv-surface-2: #efe5d8; --uv-surface-3: #e6dacd; --uv-line: #3a24161a; --uv-line-2: #3a24162e; --uv-muted: #786658; --uv-dim: #9e8f81; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

@@ -51,7 +51,7 @@ def darken(h, t): return mix(h, "#000000", t)
 def derive(s):
     bg, fg = s["bg"], s["fg"]
     dark = lum(bg) < 0.5
-    c = {"bg": bg, "text": fg, "accent": s["ac"], "accent-2": s.get("ac2", s["ac"])}
+    c = {"bg": bg, "text": fg, "accent": s["ac"], "accent-2": s.get("ac2", s["ac"]), "on-accent": on(s["ac"])}
     c["surface"] = s.get("surface") or (mix(bg, fg, .05) if dark else mix(bg, "#ffffff", .55))
     c["surface-2"] = mix(bg, fg, .09 if dark else .06)
     c["surface-3"] = mix(bg, fg, .15 if dark else .11)

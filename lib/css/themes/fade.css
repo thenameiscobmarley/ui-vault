@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: fade — pink to violet to gold candy fade, inspired by the Fade knife finish. Needs core.css. MIT */
 [data-uv-theme="fade"] {
-  --uv-bg: #fff4fb; --uv-text: #3a1238; --uv-accent: #ff4fa3; --uv-accent-2: #ffc93c; --uv-surface: #fffafd; --uv-surface-2: #f3e6ef; --uv-surface-3: #e9dbe6; --uv-line: #3a12381a; --uv-line-2: #3a12382e; --uv-muted: #795a76; --uv-dim: #a0889d; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff4fb; --uv-text: #3a1238; --uv-accent: #ff4fa3; --uv-accent-2: #ffc93c; --uv-on-accent: #ffffff; --uv-surface: #fffafd; --uv-surface-2: #f3e6ef; --uv-surface-3: #e9dbe6; --uv-line: #3a12381a; --uv-line-2: #3a12382e; --uv-muted: #795a76; --uv-dim: #a0889d; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

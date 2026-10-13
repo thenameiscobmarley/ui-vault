@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: synthwave — outrun sunset, neon grid, chrome type. Needs core.css. MIT */
 [data-uv-theme="synthwave"] {
-  --uv-bg: #1a0933; --uv-text: #ffe9ff; --uv-accent: #ff2fd6; --uv-accent-2: #ffb000; --uv-surface: #25143d; --uv-surface-2: #2f1d45; --uv-surface-3: #3c2b52; --uv-line: #ffe9ff24; --uv-line-2: #ffe9ff42; --uv-muted: #b6a1be; --uv-dim: #887595; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1a0933; --uv-text: #ffe9ff; --uv-accent: #ff2fd6; --uv-accent-2: #ffb000; --uv-on-accent: #ffffff; --uv-surface: #25143d; --uv-surface-2: #2f1d45; --uv-surface-3: #3c2b52; --uv-line: #ffe9ff24; --uv-line-2: #ffe9ff42; --uv-muted: #b6a1be; --uv-dim: #887595; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Audiowide", system-ui, sans-serif; --uv-serif: "Audiowide", system-ui, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;

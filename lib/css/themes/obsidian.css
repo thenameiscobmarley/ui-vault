@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: obsidian — volcanic black glass with violet edges. Needs core.css. MIT */
 [data-uv-theme="obsidian"] {
-  --uv-bg: #0a0a0d; --uv-text: #e9e7f2; --uv-accent: #9d7bff; --uv-accent-2: #ff6ad5; --uv-surface: #151518; --uv-surface-2: #1e1e22; --uv-surface-3: #2b2b2f; --uv-line: #e9e7f224; --uv-line-2: #e9e7f242; --uv-muted: #a2a0a9; --uv-dim: #75747b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #0a0a0d; --uv-text: #e9e7f2; --uv-accent: #9d7bff; --uv-accent-2: #ff6ad5; --uv-on-accent: #ffffff; --uv-surface: #151518; --uv-surface-2: #1e1e22; --uv-surface-3: #2b2b2f; --uv-line: #e9e7f224; --uv-line-2: #e9e7f242; --uv-muted: #a2a0a9; --uv-dim: #75747b; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

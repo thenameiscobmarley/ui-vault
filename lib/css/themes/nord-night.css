@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: nord-night — arctic slate with frost blues. Needs core.css. MIT */
 [data-uv-theme="nord-night"] {
-  --uv-bg: #2e3440; --uv-text: #eceff4; --uv-accent: #88c0d0; --uv-accent-2: #b48ead; --uv-surface: #383d49; --uv-surface-2: #3f4550; --uv-surface-3: #4a505b; --uv-line: #eceff424; --uv-line-2: #eceff442; --uv-muted: #afb3ba; --uv-dim: #898e96; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2e3440; --uv-text: #eceff4; --uv-accent: #88c0d0; --uv-accent-2: #b48ead; --uv-on-accent: #111111; --uv-surface: #383d49; --uv-surface-2: #3f4550; --uv-surface-3: #4a505b; --uv-line: #eceff424; --uv-line-2: #eceff442; --uv-muted: #afb3ba; --uv-dim: #898e96; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

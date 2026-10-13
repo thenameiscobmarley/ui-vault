@@ -2,7 +2,7 @@
 [data-uv-theme="sketch"] {
   --uv-bg: #fdfbf4; --uv-surface: #fffdf7; --uv-surface-2: #f4efe1; --uv-surface-3: #e9e2cd;
   --uv-line: #2b2b2b33; --uv-line-2: #2b2b2b; --uv-text: #2b2b2b; --uv-muted: #555; --uv-dim: #888;
-  --uv-accent: #e8590c; --uv-accent-2: #1c7ed6;
+  --uv-accent: #e8590c; --uv-on-accent: #ffffff; --uv-accent-2: #1c7ed6;
   --uv-font: "Patrick Hand", "Comic Neue", "Segoe Print", cursive; --uv-font-head: var(--uv-font); --uv-head-tracking: 0;
   --uv-r-xs: 255px 15px 225px 15px / 15px 225px 15px 255px; --uv-r-sm: 255px 15px 225px 15px / 15px 225px 15px 255px; --uv-r: 15px 255px 15px 225px / 225px 15px 255px 15px; --uv-r-lg: 25px 225px 25px 255px / 255px 25px 225px 25px; --uv-bw: 2px;
   --uv-btn-shadow: 2px 3px 0 #2b2b2b; --uv-card-shadow: 3px 4px 0 #2b2b2b22;

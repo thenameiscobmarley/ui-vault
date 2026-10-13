@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: lavender — lilac fields, soft violet buttons. Needs core.css. MIT */
 [data-uv-theme="lavender"] {
-  --uv-bg: #f3efff; --uv-text: #2e2550; --uv-accent: #8b6cf0; --uv-accent-2: #f49ac1; --uv-surface: #faf8ff; --uv-surface-2: #e7e3f4; --uv-surface-3: #ddd9ec; --uv-line: #2e25501a; --uv-line-2: #2e25502e; --uv-muted: #6d6688; --uv-dim: #948eab; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f3efff; --uv-text: #2e2550; --uv-accent: #8b6cf0; --uv-accent-2: #f49ac1; --uv-on-accent: #ffffff; --uv-surface: #faf8ff; --uv-surface-2: #e7e3f4; --uv-surface-3: #ddd9ec; --uv-line: #2e25501a; --uv-line-2: #2e25502e; --uv-muted: #6d6688; --uv-dim: #948eab; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: graphite — pencil-lead greys with a mint highlight. Needs core.css. MIT */
 [data-uv-theme="graphite"] {
-  --uv-bg: #2b2d30; --uv-text: #e6e7e8; --uv-accent: #7de2b8; --uv-accent-2: #7de2b8; --uv-surface: #343639; --uv-surface-2: #3c3e41; --uv-surface-3: #47494c; --uv-line: #e6e7e824; --uv-line-2: #e6e7e842; --uv-muted: #aaabad; --uv-dim: #858688; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2b2d30; --uv-text: #e6e7e8; --uv-accent: #7de2b8; --uv-accent-2: #7de2b8; --uv-on-accent: #111111; --uv-surface: #343639; --uv-surface-2: #3c3e41; --uv-surface-3: #47494c; --uv-line: #e6e7e824; --uv-line-2: #e6e7e842; --uv-muted: #aaabad; --uv-dim: #858688; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

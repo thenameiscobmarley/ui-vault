@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: charcoal — matte charcoal, amber indicators, studio calm. Needs core.css. MIT */
 [data-uv-theme="charcoal"] {
-  --uv-bg: #1e1f22; --uv-text: #e8e6e3; --uv-accent: #ffb547; --uv-accent-2: #ffb547; --uv-surface: #28292c; --uv-surface-2: #303133; --uv-surface-3: #3c3d3f; --uv-line: #e8e6e324; --uv-line-2: #e8e6e342; --uv-muted: #a7a6a5; --uv-dim: #7f7f7f; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1e1f22; --uv-text: #e8e6e3; --uv-accent: #ffb547; --uv-accent-2: #ffb547; --uv-on-accent: #111111; --uv-surface: #28292c; --uv-surface-2: #303133; --uv-surface-3: #3c3d3f; --uv-line: #e8e6e324; --uv-line-2: #e8e6e342; --uv-muted: #a7a6a5; --uv-dim: #7f7f7f; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 600; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: newsprint — newspaper grey, black columns, red headlines. Needs core.css. MIT */
 [data-uv-theme="newsprint"] {
-  --uv-bg: #ece8df; --uv-text: #141414; --uv-accent: #b3261e; --uv-accent-2: #b3261e; --uv-surface: #f6f5f1; --uv-surface-2: #dfdbd3; --uv-surface-3: #d4d1c9; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #595855; --uv-dim: #84827e; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ece8df; --uv-text: #141414; --uv-accent: #b3261e; --uv-accent-2: #b3261e; --uv-on-accent: #ffffff; --uv-surface: #f6f5f1; --uv-surface-2: #dfdbd3; --uv-surface-3: #d4d1c9; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #595855; --uv-dim: #84827e; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

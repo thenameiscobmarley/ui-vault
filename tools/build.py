@@ -6,7 +6,7 @@ Run from the repo root after editing anything in lib/css or lib/js:
 """
 import json, re, sys, zipfile
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
-import theme_specs
+import theme_specs, parts_specs
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -25,6 +25,8 @@ DESC = {
     "feedback.js": "toast, modal, ⌘K palette, confetti, synthesized sounds, copy.",
     "forms.js": "Tabs with sliding indicator, OTP, range, file drop.",
     "waterfall.js": "Filmic, blurred procedural waterfall background (WebGL, low-res, pauses off-screen).",
+    "parts.css": "All element designs (buttons, cards, inputs, switches, tabs, nav, badges, alerts, modals, spinners, progress, headings, backgrounds) in one file.",
+    "parts.json": "Every element design and kit as data (names, descriptions, Python/C++ approximations).",
     "fx.js": "Canvas + pointer effects: matrix, starfield, particles, snow, cursor trail/blob, sparkles, magnet, gravity, fireworks.",
 }
 
@@ -34,7 +36,10 @@ def theme_sources():
     gen_css, meta, fonts_url = theme_specs.generate()
     (CSS / "themes.gen.css").write_text(gen_css)
     (CSS / "fonts.css").write_text(f"/*! UI Vault {VERSION} · fonts used by the themes (loads only the files a page actually uses). */\n@import url(\"{fonts_url}\");\n")
-    return (CSS / "themes.src.css").read_text() + "\n" + gen_css, meta
+    src = (CSS / "themes.src.css").read_text()
+    # hand-written themes get --uv-on-accent (text colour that reads on the accent) computed from their accent
+    src = re.sub(r"(--uv-accent:\s*(#[0-9a-fA-F]{3,6});)(?![^}]*--uv-on-accent)", lambda m: f"{m[1]} --uv-on-accent: {theme_specs.on(m[2])};", src)
+    return src + "\n" + gen_css, meta
 
 
 def scope_nearest(css):
@@ -220,7 +225,34 @@ CPP_KEYS = [("bg", "bg"), ("surface", "surface"), ("surface-2", "surface2"), ("s
             ("success", "success"), ("warn", "warn"), ("danger", "danger"), ("info", "info")]
 
 
-def export_cpp(tokens):
+FILL_ENUM = {f: "".join(w.capitalize() for w in f.split("-")) for f in parts_specs.FILLS}
+FILL_ENUM.update(deepmetal="DeepMetal")
+
+
+def export_parts_cpp(parts):
+    q = lambda v: '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    fams = [f["key"] for f in parts["families"]]
+    out = ["enum class Fill { " + ", ".join(FILL_ENUM[f] for f in parts_specs.FILLS) + " };",
+           "/// One element design. radius 999 = pill. The web version has the full effect; this is the closest a native toolkit can draw.",
+           "struct Part { const char* family; const char* name; const char* label; float radius; float border; Fill fill; int weight; bool upper; };",
+           "inline constexpr const char* families[] = { " + ", ".join(q(f) for f in fams) + " };",
+           f"inline constexpr int familyCount = {len(fams)};",
+           "inline constexpr Part parts[] = {"]
+    for f in parts["families"]:
+        for p in f["parts"]:
+            a = p["approx"]
+            out.append(f"    {{ {q(f['key'])}, {q(p['name'])}, {q(p['label'])}, {float(a['r'])!r}f, {float(a['bw'])!r}f, Fill::{FILL_ENUM[a['fill']]}, {a['w']}, {'true' if a['up'] else 'false'} }},")
+    out.append("};")
+    out.append("/// A kit: a theme plus one design per family (same order as families[]).")
+    out.append(f"struct Kit {{ const char* name; const char* label; const char* theme; const char* parts[{len(fams)}]; }};")
+    out.append("inline constexpr Kit kits[] = {")
+    for k in parts["kits"]:
+        out.append(f"    {{ {q(k['name'])}, {q(k['label'])}, {q(k['theme'])}, {{ " + ", ".join(q(k['parts'].get(f, '')) for f in fams) + " } },")
+    out.append("};")
+    return "\n".join(out)
+
+
+def export_cpp(tokens, parts):
     """cpp/uivault.hpp — single-header C++ API generated from tools/uivault.hpp.in + tokens."""
     def col(h):
         h = h.lstrip("#"); h = h + "ff" if len(h) == 6 else h
@@ -242,7 +274,29 @@ def export_cpp(tokens):
                "    for (const Theme* t : themes) if (std::strcmp(t->name, name) == 0) return t;\n    return nullptr;\n}")
     tpl = (ROOT / "tools" / "uivault.hpp.in").read_text()
     (ROOT / "cpp").mkdir(exist_ok=True)
-    (ROOT / "cpp" / "uivault.hpp").write_text(tpl.replace("@VERSION@", VERSION).replace("@THEMES@", "\n\n".join(out)))
+    (ROOT / "cpp" / "uivault.hpp").write_text(tpl.replace("@VERSION@", VERSION).replace("@THEMES@", "\n\n".join(out)).replace("@PARTS@", export_parts_cpp(parts)))
+
+
+def build_parts():
+    """lib/css/parts/<family>.css, lib/css/parts.css, lib/parts.json(+.js) and the Python copy."""
+    out_dir = CSS / "parts"; out_dir.mkdir(exist_ok=True)
+    kf = parts_specs.KEYFRAMES
+    allcss = [f"/*! UI Vault {VERSION} · parts — every element design. Pick per family with data-uv-<family>=\"NAME\". Needs core.css. MIT */\n" + kf]
+    for fam in parts_specs.FAMILIES:
+        body = parts_specs.family_css(fam, VERSION)
+        (out_dir / f"{fam['key']}.css").write_text(body + kf)
+        DESC[f"{fam['key']}.css"] = f"Parts: {len(fam['parts'])} {fam['label'].lower()} designs (data-uv-{fam['key']})."
+        allcss.append(body.split("\n", 1)[1])
+    (CSS / "parts.css").write_text("\n".join(allcss))
+    meta = parts_specs.meta(); meta["version"] = VERSION
+    (LIB / "parts.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False))
+    (LIB / "parts.js").write_text("window.UV_PARTS = " + json.dumps(meta, ensure_ascii=False) + ";\n")
+    # per-design CSS source for the site's "Code" view (works on file:// too, unlike fetch)
+    src = {f["key"]: (out_dir / f"{f['key']}.css").read_text().replace(kf, "") for f in parts_specs.FAMILIES}
+    (LIB / "parts-src.js").write_text("window.UV_PARTS_SRC = " + json.dumps(src, ensure_ascii=False) + ";\n")
+    py = ROOT / "python" / "uivault"
+    if py.exists(): (py / "parts.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False))
+    return meta
 
 
 def raw_src():
@@ -254,7 +308,7 @@ def raw_src():
 def manifest(themes):
     files = []
     for p in sorted(LIB.rglob("*")):
-        if p.is_file() and p.suffix in (".css", ".js") and p.name not in ("themes.src.css", "themes.gen.css", "manifest.js", "raw-src.js", "tokens.js"):
+        if p.is_file() and p.suffix in (".css", ".js", ".json") and p.name not in ("themes.src.css", "themes.gen.css", "manifest.js", "manifest.json", "raw-src.js", "tokens.js", "parts.js", "parts-src.js"):
             rel = p.relative_to(LIB).as_posix()
             files.append({"path": rel, "bytes": p.stat().st_size, "desc": DESC.get(p.name, "")})
     m = {"version": VERSION, "css": CSS_ORDER, "js": JS_ORDER, "themes": themes, "files": files}
@@ -290,12 +344,13 @@ def make_zip(m):
 if __name__ == "__main__":
     themes = split_themes()
     bundle(themes)
+    parts = build_parts()
     tokens = export_tokens(themes)
-    export_cpp(tokens)
+    export_cpp(tokens, parts)
     raw_src()
     m = manifest(themes)
     make_zip(m)
     make_lang_zips()
     (LIB / "tokens.js").write_text("window.UV_TOKENS = " + json.dumps(tokens) + ";\n")
     total = sum(f["bytes"] for f in m["files"])
-    print(f"UI Vault {VERSION}: {len(themes)} themes, {len(m['files'])} files, {total // 1024} KB → downloads/uivault-{VERSION}.zip")
+    print(f"UI Vault {VERSION}: {len(themes)} themes, {sum(len(f['parts']) for f in parts['families'])} parts, {len(parts['kits'])} kits, {len(m['files'])} files, {total // 1024} KB → downloads/uivault-{VERSION}.zip")

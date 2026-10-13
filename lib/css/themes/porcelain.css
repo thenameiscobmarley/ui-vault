@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: porcelain — white porcelain with a celadon glaze. Needs core.css. MIT */
 [data-uv-theme="porcelain"] {
-  --uv-bg: #fbfbf9; --uv-text: #23302c; --uv-accent: #5f9e8f; --uv-accent-2: #5f9e8f; --uv-surface: #fdfdfc; --uv-surface-2: #eeefed; --uv-surface-3: #e3e5e2; --uv-line: #23302c1a; --uv-line-2: #23302c2e; --uv-muted: #68716e; --uv-dim: #939a97; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fbfbf9; --uv-text: #23302c; --uv-accent: #5f9e8f; --uv-accent-2: #5f9e8f; --uv-on-accent: #111111; --uv-surface: #fdfdfc; --uv-surface-2: #eeefed; --uv-surface-3: #e3e5e2; --uv-line: #23302c1a; --uv-line-2: #23302c2e; --uv-muted: #68716e; --uv-dim: #939a97; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;

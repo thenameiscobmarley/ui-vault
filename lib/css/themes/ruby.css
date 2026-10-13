@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: ruby — cut ruby red with internal fire. Needs core.css. MIT */
 [data-uv-theme="ruby"] {
-  --uv-bg: #16020a; --uv-text: #ffe3ea; --uv-accent: #ff1f4f; --uv-accent-2: #ff8aa3; --uv-surface: #220d15; --uv-surface-2: #2b161e; --uv-surface-3: #39242c; --uv-line: #ffe3ea24; --uv-line-2: #ffe3ea42; --uv-muted: #b49ba2; --uv-dim: #866e76; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #16020a; --uv-text: #ffe3ea; --uv-accent: #ff1f4f; --uv-accent-2: #ff8aa3; --uv-on-accent: #ffffff; --uv-surface: #220d15; --uv-surface-2: #2b161e; --uv-surface-3: #39242c; --uv-line: #ffe3ea24; --uv-line-2: #ffe3ea42; --uv-muted: #b49ba2; --uv-dim: #866e76; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

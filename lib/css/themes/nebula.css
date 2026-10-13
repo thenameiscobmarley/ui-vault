@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: nebula — cosmic dust clouds in magenta and cyan. Needs core.css. MIT */
 [data-uv-theme="nebula"] {
-  --uv-bg: #07031a; --uv-text: #f1e9ff; --uv-accent: #ff4fd8; --uv-accent-2: #4fd2ff; --uv-surface: #130e25; --uv-surface-2: #1c182f; --uv-surface-3: #2a263c; --uv-line: #f1e9ff24; --uv-line-2: #f1e9ff42; --uv-muted: #a69fb6; --uv-dim: #777188; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #07031a; --uv-text: #f1e9ff; --uv-accent: #ff4fd8; --uv-accent-2: #4fd2ff; --uv-on-accent: #ffffff; --uv-surface: #130e25; --uv-surface-2: #1c182f; --uv-surface-3: #2a263c; --uv-line: #f1e9ff24; --uv-line-2: #f1e9ff42; --uv-muted: #a69fb6; --uv-dim: #777188; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

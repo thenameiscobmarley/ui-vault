@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: vaporwave — pastel grid sunsets, marble busts and chrome. Needs core.css. MIT */
 [data-uv-theme="vaporwave"] {
-  --uv-bg: #2b1055; --uv-text: #fdf2ff; --uv-accent: #ff71ce; --uv-accent-2: #01cdfe; --uv-surface: #361b5e; --uv-surface-2: #3e2464; --uv-surface-3: #4a326e; --uv-line: #fdf2ff24; --uv-line-2: #fdf2ff42; --uv-muted: #baaac9; --uv-dim: #907ca7; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #2b1055; --uv-text: #fdf2ff; --uv-accent: #ff71ce; --uv-accent-2: #01cdfe; --uv-on-accent: #111111; --uv-surface: #361b5e; --uv-surface-2: #3e2464; --uv-surface-3: #4a326e; --uv-line: #fdf2ff24; --uv-line-2: #fdf2ff42; --uv-muted: #baaac9; --uv-dim: #907ca7; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Major Mono Display", ui-monospace, monospace; --uv-serif: "Major Mono Display", ui-monospace, monospace; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

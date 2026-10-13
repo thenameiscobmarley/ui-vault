@@ -10,6 +10,12 @@
     uivault.dearpygui_theme("soft")        # Dear PyGui
     uivault.apply_matplotlib("swiss")      # matplotlib charts
 
+Element designs (the same 270+ "parts" as the web library, approximated for native toolkits) and kits:
+
+    uivault.qss("editorial", parts={"btn": "pearl", "input": "underline"})
+    uivault.apply_tk(root, kit="deep-metal")   # a kit = a theme + one design per element
+    uivault.parts("btn"), uivault.kits(), uivault.part("btn", "chrome")
+
 No dependencies; each toolkit is imported only when you call its function. MIT.
 """
 from __future__ import annotations
@@ -18,10 +24,13 @@ import json
 from pathlib import Path
 
 __version__ = "3.1.0"
-__all__ = ["theme", "themes", "categories", "custom", "Theme", "css", "qss", "apply_qt", "apply_tk", "tcss", "textual_theme", "gtk_css",
+__all__ = ["theme", "themes", "categories", "custom", "Theme", "families", "parts", "part", "kits", "kit", "parts_qss", "css", "qss", "apply_qt", "apply_tk", "tcss", "textual_theme", "gtk_css",
            "apply_gtk", "dearpygui_theme", "matplotlib_rc", "apply_matplotlib", "rich_theme"]
 
 _DATA = json.loads((Path(__file__).with_name("tokens.json")).read_text())
+_PARTS = json.loads((Path(__file__).with_name("parts.json")).read_text())
+_FAM = {f["key"]: f for f in _PARTS["families"]}
+_KITS = {k["name"]: k for k in _PARTS["kits"]}
 
 
 class Theme:
@@ -117,6 +126,104 @@ def custom(name: str, bg: str, fg: str, accent: str, accent2: str | None = None,
     return Theme(data)
 
 
+# ── Element designs ("parts") and kits ───────────────────────────────────────
+def families() -> list[str]:
+    """Element families: btn, card, input, switch, check, range, tabs, nav, badge, alert, modal, spinner, progress, head, bg."""
+    return list(_FAM)
+
+
+def parts(family: str) -> list[str]:
+    """Design names for one family, e.g. parts("btn") → ['solid', 'pill', …, 'pearl', 'deep-metal', …]."""
+    return [p["name"] for p in _FAM[family]["parts"]]
+
+
+def part(family: str, name: str) -> dict:
+    """One design: label, desc and `approx` (r radius px, 999 = pill · bw border · fill · w weight · up uppercase)."""
+    for p in _FAM[family]["parts"]:
+        if p["name"] == name:
+            return dict(p, family=family)
+    raise ValueError(f"unknown {family} design {name!r}; choose from {', '.join(parts(family))}")
+
+
+def kits() -> list[str]:
+    return list(_KITS)
+
+
+def kit(name: str) -> dict:
+    """A kit: {'name', 'label', 'desc', 'theme', 'parts': {family: design}}."""
+    try:
+        return _KITS[name]
+    except KeyError:
+        raise ValueError(f"unknown kit {name!r}; choose from {', '.join(_KITS)}") from None
+
+
+def _resolve(t, parts_=None, kit_=None):
+    """(Theme, {family: approx}) from a theme name, a parts dict and/or a kit name."""
+    mix = {}
+    if kit_:
+        k = kit(kit_); mix.update(k["parts"]); t = t or k["theme"]
+    mix.update(parts_ or {})
+    return theme(t or "editorial"), {f: part(f, n)["approx"] for f, n in mix.items() if n}
+
+
+def _fill(t: Theme, fill: str) -> dict:
+    """Colours for a native approximation of a fill style: top/bottom gradient stops, text, border (hex)."""
+    s = t.solid; a, a2, tx, bg = s("accent"), s("accent-2"), s("text"), s("bg")
+    lum = lambda h: (0.2126 * int(h[1:3], 16) + 0.7152 * int(h[3:5], 16) + 0.0722 * int(h[5:7], 16)) / 255
+    on = "#111111" if lum(a) > .55 else "#ffffff"
+    F = {"solid": (a, a, on, a), "hard": (a, a, on, tx), "grad": (a, a2, "#ffffff", a),
+         "metal": (_mix(a, "#ffffff", .45), _mix(a, "#000000", .3), "#ffffff", _mix(a, "#000000", .45)),
+         "deepmetal": ("#3f74dc", "#0a2560", "#f2f7ff", "#071a45"), "chrome": ("#f4f6f9", "#8a919c", "#1b1f26", "#7d848f"),
+         "pearl": ("#f3e8ff", "#e0f4ff", "#3a2f5a", "#d9cfee"), "holo": ("#ff9ae6", "#9ad3ff", "#2a1f3d", "#ffffff"),
+         "gold": ("#fff3c4", "#9a6f12", "#2a1a00", "#8a5f0c"), "printstream": ("#fbfaff", "#e9e1f7", "#101014", "#0d0d10"),
+         "glass": (_mix(s("surface"), "#ffffff", .25), _mix(s("surface"), "#ffffff", .1), tx, _mix(s("line-2"), "#ffffff", .4)),
+         "bevel": ("#c3c3c3", "#c3c3c3", "#000000", "#0a0a0a"), "neon": (bg, bg, _mix(a, "#ffffff", .35), a), "inverse": (tx, tx, bg, tx),
+         "soft": (_mix(bg, a, .18), _mix(bg, a, .18), _mix(a, "#ffffff", .3) if t.dark else _mix(a, "#000000", .25), _mix(bg, a, .18)),
+         "clay": (_mix(s("surface-2"), "#ffffff", .15), s("surface-2"), tx, s("surface-2")),
+         "sunken": (_mix(s("surface-2"), "#000000", .06), s("surface-2"), tx, s("surface-2")),
+         "outline": (bg, bg, a, a), "ghost": (bg, bg, a, bg), "underline": (bg, bg, a, bg)}
+    top, bottom, text, border = F.get(fill, (s("surface"), s("surface"), tx, s("line-2")))
+    return {"top": top, "bottom": bottom, "text": text, "border": border}
+
+
+def parts_qss(t=None, parts: dict | None = None, kit: str | None = None) -> str:
+    """Qt rules for element designs; qss(..., parts=/kit=) appends this for you.
+    Mark widgets with properties: primary buttons setProperty("primary", True), QLabel badge/alert, QFrame card."""
+    t, mix = _resolve(t, parts, kit)
+    lin = lambda c: c["top"] if c["top"] == c["bottom"] else f"qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 {c['top']}, stop:1 {c['bottom']})"
+    rad = lambda a, cap=14: min(a["r"], cap)
+    out = []
+
+    def rule(fam, sel, fill=True, cap=14):
+        a = mix.get(fam)
+        if not a: return
+        c = _fill(t, a["fill"])
+        r = f"{sel} {{ border-radius: {rad(a, cap):g}px; border: {a['bw']:g}px solid {c['border']}; font-weight: {a['w']}; "
+        if fill: r += f"background: {lin(c)}; color: {c['text']}; "
+        if a["fill"] == "hard": r += f"border-bottom-width: {a['bw'] + 3:g}px; "
+        if a["fill"] == "underline": r += f"border-width: 0 0 {max(a['bw'], 1):g}px 0; border-radius: 0; "
+        out.append(r + "}")
+
+    rule("btn", 'QPushButton[primary="true"]')
+    if "btn" in mix: out.append(f"QPushButton {{ border-radius: {rad(mix['btn']):g}px; }}")
+    rule("input", "QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QComboBox", fill=mix.get("input", {}).get("fill") not in ("outline", "underline", "ghost", "solid", "hard", "neon", "inverse"))
+    rule("card", 'QGroupBox, QFrame[card="true"]', fill=False)
+    rule("modal", "QDialog, QMessageBox", fill=False)
+    rule("badge", 'QLabel[badge="true"]', cap=999)
+    rule("alert", 'QLabel[alert="true"]')
+    if "progress" in mix:
+        c = _fill(t, mix["progress"]["fill"]); out.append(f"QProgressBar::chunk {{ background: {lin(c)}; border-radius: {rad(mix['progress'], 4):g}px; }}")
+    if "tabs" in mix:
+        c = _fill(t, mix["tabs"]["fill"]); out.append(f"QTabBar::tab:selected {{ background: {lin(c)}; color: {c['text']}; border-radius: {rad(mix['tabs'], 10):g}px; }}")
+    if "check" in mix:
+        a = mix["check"]; c = _fill(t, a["fill"])
+        out.append(f"QCheckBox::indicator {{ border-radius: {rad(a, 8):g}px; }} QCheckBox::indicator:checked, QRadioButton::indicator:checked {{ background: {lin(c)}; border-color: {c['border']}; }}")
+    if "range" in mix:
+        a = mix["range"]; c = _fill(t, a["fill"])
+        out.append(f"QSlider::handle:horizontal {{ border-radius: {min(a['r'], 7):g}px; background: {lin(c)}; border: {a['bw']:g}px solid {c['border']}; }}")
+    return "\n".join(out)
+
+
 def theme(name: str | Theme = "editorial") -> Theme:
     """Get a theme by name (editorial, brutal, neon, glass, terminal, soft, retro, swiss, y2k, mono, sketch, luxe)."""
     if isinstance(name, Theme):
@@ -138,9 +245,12 @@ def css(t="editorial", selector=":root") -> str:
 
 
 # ── Qt (PySide6 / PyQt5 / PyQt6) ─────────────────────────────────────────────
-def qss(t="editorial", font_size=14) -> str:
-    """A complete Qt stylesheet. Mark a primary button with button.setProperty("primary", True)."""
-    t = theme(t); r, rs, bw = t.radius, t.radius_sm, max(1, int(t.border))
+def qss(t=None, font_size=14, parts: dict | None = None, kit: str | None = None) -> str:
+    """A complete Qt stylesheet. Mark a primary button with button.setProperty("primary", True).
+    parts={"btn": "chrome", …} and/or kit="deep-metal" add element designs (kit also picks the theme if t is None)."""
+    if parts or kit:
+        return qss(_resolve(t, parts, kit)[0], font_size) + "\n" + parts_qss(t, parts, kit)
+    t = theme(t or "editorial"); r, rs, bw = t.radius, t.radius_sm, max(1, int(t.border))
     c = t.css_rgba
     return f"""
 * {{ font-family: "{t.font}"; font-size: {font_size}px; }}
@@ -201,19 +311,19 @@ def _qss_primary(t: Theme) -> str:
     return ""
 
 
-def apply_qt(app, t="editorial", font_size=14):
-    """app.setStyleSheet(qss(t)) — works with PySide6, PyQt6 and PyQt5."""
-    app.setStyleSheet(qss(t, font_size))
+def apply_qt(app, t=None, font_size=14, parts: dict | None = None, kit: str | None = None):
+    """app.setStyleSheet(qss(t, parts=, kit=)) — works with PySide6, PyQt6 and PyQt5."""
+    app.setStyleSheet(qss(t, font_size, parts, kit))
     return app
 
 
 # ── Tkinter / ttk ────────────────────────────────────────────────────────────
-def apply_tk(root, t="editorial", font_size=11):
+def apply_tk(root, t=None, font_size=11, parts: dict | None = None, kit: str | None = None):
     """Style a Tk root with ttk ('clam' base). Use style='Accent.TButton' for primary buttons.
-    Returns the ttk.Style so you can tweak it further."""
+    parts=/kit= add element designs (as close as ttk can draw). Returns the ttk.Style so you can tweak it further."""
     import tkinter.font as tkfont
     from tkinter import ttk
-    t = theme(t); s = t.solid
+    t, mix = _resolve(t, parts, kit); s = t.solid
     fams = set(tkfont.families(root))
     default = tkfont.nametofont("TkDefaultFont").actual("family")
     pick = lambda *names: next((n for n in names if n in fams), default)
@@ -254,7 +364,36 @@ def apply_tk(root, t="editorial", font_size=11):
     for cls in ("Text", "Listbox", "Entry", "Label", "Button"): root.option_add(f"*{cls}.Font", body)
     root.option_add("*Text.background", s("surface")); root.option_add("*Text.foreground", s("text"))
     root.option_add("*Listbox.background", s("surface")); root.option_add("*Listbox.foreground", s("text"))
+    _tk_parts(st, t, mix, body)
     return st
+
+
+def _tk_parts(st, t, mix, body):
+    """ttk has no gradients or radii: use the middle colour of each fill, relief for depth, bold for weight."""
+    mid = lambda c: _mix(c["top"], c["bottom"], .5)
+    relief = lambda a: "raised" if a["fill"] in ("bevel", "hard", "clay", "metal", "deepmetal", "chrome") else "sunken" if a["fill"] == "sunken" else "flat"
+    if "btn" in mix:
+        a = mix["btn"]; c = _fill(t, a["fill"]); bw = max(1, int(a["bw"]))
+        f = (body[0], body[1], "bold") if a["w"] >= 700 else body
+        st.configure("Accent.TButton", background=mid(c), foreground=c["text"], bordercolor=c["border"], borderwidth=bw, relief=relief(a), font=f)
+        st.map("Accent.TButton", background=[("pressed", c["bottom"]), ("active", c["top"])], foreground=[("active", c["text"])])
+        st.configure("TButton", borderwidth=bw, relief=relief(a) if a["fill"] in ("bevel", "hard") else "flat")
+    if "input" in mix:
+        a = mix["input"]; c = _fill(t, a["fill"])
+        if a["fill"] not in ("outline", "underline", "ghost", "solid", "hard", "neon", "inverse"): st.configure("TEntry", fieldbackground=mid(c))
+        st.configure("TEntry", bordercolor=c["border"], borderwidth=max(1, int(a["bw"])))
+    if "card" in mix:
+        a = mix["card"]; c = _fill(t, a["fill"])
+        st.configure("Card.TFrame", relief=relief(a) if a["bw"] else "flat", borderwidth=max(0, int(a["bw"])), bordercolor=c["border"])
+    if "progress" in mix:
+        c = _fill(t, mix["progress"]["fill"]); st.configure("Horizontal.TProgressbar", background=mid(c), lightcolor=c["top"], darkcolor=c["bottom"])
+    if "tabs" in mix:
+        c = _fill(t, mix["tabs"]["fill"]); st.map("TNotebook.Tab", background=[("selected", mid(c))], foreground=[("selected", c["text"])])
+    if "check" in mix:
+        c = _fill(t, mix["check"]["fill"])
+        for w in ("TCheckbutton", "TRadiobutton"): st.map(w, indicatorbackground=[("selected", mid(c))])
+    if "range" in mix:
+        c = _fill(t, mix["range"]["fill"]); st.configure("Horizontal.TScale", background=mid(c))
 
 
 # ── Textual (terminal UIs) ───────────────────────────────────────────────────
@@ -289,9 +428,13 @@ def textual_theme(t="editorial"):
 
 
 # ── GTK4 / libadwaita ────────────────────────────────────────────────────────
-def gtk_css(t="editorial") -> str:
-    """GTK4 / libadwaita CSS: named colours + shapes. Load with apply_gtk() or your own Gtk.CssProvider."""
-    t = theme(t); c = t.css_rgba; rs, r = t.radius_sm, t.radius
+def gtk_css(t=None, parts: dict | None = None, kit: str | None = None) -> str:
+    """GTK4 / libadwaita CSS: named colours + shapes. Load with apply_gtk() or your own Gtk.CssProvider.
+    parts=/kit= add element designs; GTK CSS supports gradients, radii and shadows, so it gets closest to the web."""
+    if parts or kit:
+        tt, mix = _resolve(t, parts, kit)
+        return gtk_css(tt) + _gtk_parts(tt, mix)
+    t = theme(t or "editorial"); c = t.css_rgba; rs, r = t.radius_sm, t.radius
     named = {"window_bg_color": t.bg, "window_fg_color": t.text, "view_bg_color": c("surface"), "view_fg_color": t.text,
              "card_bg_color": c("surface"), "card_fg_color": t.text, "headerbar_bg_color": t.bg, "headerbar_fg_color": t.text,
              "popover_bg_color": t.solid("surface"), "dialog_bg_color": t.solid("surface"), "sidebar_bg_color": t.solid("surface"),
@@ -309,13 +452,50 @@ switch:checked {{ background: {t.accent}; }}
 """
 
 
-def apply_gtk(t="editorial", display=None):
-    """Load gtk_css(t) for the whole display (call after Gtk.init / in your Adw.Application activate)."""
+def _gtk_parts(t, mix):
+    out = []
+    grad = lambda c: f"background-image: linear-gradient(180deg, {c['top']}, {c['bottom']}); background-color: {c['top']};"
+
+    def rule(fam, sel, fill=True):
+        a = mix.get(fam)
+        if not a: return
+        c = _fill(t, a["fill"])
+        r = f"{sel} {{ border-radius: {min(a['r'], 999):g}px; border: {a['bw']:g}px solid {c['border']}; font-weight: {a['w']}; "
+        if fill: r += grad(c) + f" color: {c['text']}; "
+        if a["fill"] == "hard": r += f"box-shadow: 0 3px 0 {t.solid('text')}; "
+        if a["fill"] == "neon": r += f"box-shadow: 0 0 12px -2px {c['border']}; "
+        if a["fill"] in ("metal", "deepmetal", "chrome", "pearl", "gold", "clay"): r += "box-shadow: inset 0 1px rgba(255,255,255,.6), 0 2px 6px rgba(0,0,0,.25); "
+        if a["fill"] == "underline": r += f"border-width: 0 0 {max(a['bw'], 1):g}px 0; border-radius: 0; "
+        if a["up"]: r += "text-transform: uppercase; letter-spacing: 1px; "
+        out.append(r + "}")
+
+    rule("btn", "button.suggested-action, button.uv-primary")
+    if "btn" in mix: out.append(f"button {{ border-radius: {min(mix['btn']['r'], 999):g}px; }}")
+    rule("input", "entry, spinbutton", fill=False)
+    rule("card", ".card, frame > border", fill=False)
+    rule("modal", "window.dialog, window.messagedialog", fill=False)
+    rule("tabs", "notebook > header > tabs > tab:checked, stackswitcher > button:checked")
+    rule("switch", "switch:checked")
+    rule("check", "check:checked, radio:checked")
+    if "switch" in mix: out.append(f"switch, switch > slider {{ border-radius: {min(mix['switch']['r'], 999):g}px; }}")
+    if "progress" in mix:
+        c = _fill(t, mix["progress"]["fill"]); out.append(f"progressbar > trough > progress, levelbar block.filled {{ {grad(c)} border-radius: {min(mix['progress']['r'], 999):g}px; }}")
+    if "range" in mix:
+        c = _fill(t, mix["range"]["fill"]); out.append(f"scale highlight {{ {grad(c)} }} scale slider {{ border-radius: {min(mix['range']['r'], 999):g}px; }}")
+    if "badge" in mix: rule("badge", ".uv-badge, .tag")
+    if "head" in mix: out.append(f".title-1, .title-2 {{ color: {_fill(t, mix['head']['fill'])['top'] if mix['head']['fill'] not in ('flat', 'outline', 'sunken', 'soft') else t.text}; }}")
+    if "bg" in mix and mix["bg"]["fill"] not in ("flat",):
+        c = _fill(t, mix["bg"]["fill"]); out.append(f"window.background {{ background-image: linear-gradient(180deg, {_mix(c['top'], t.solid('bg'), .8)}, {t.solid('bg')}); }}")
+    return "\n" + "\n".join(out) + "\n"
+
+
+def apply_gtk(t=None, display=None, parts: dict | None = None, kit: str | None = None):
+    """Load gtk_css(t, parts=, kit=) for the whole display (call after Gtk.init / in your Adw.Application activate)."""
     import gi
     gi.require_version("Gtk", "4.0")
     from gi.repository import Gdk, Gtk
     p = Gtk.CssProvider()
-    css_text = gtk_css(t)
+    css_text = gtk_css(t, parts, kit)
     (p.load_from_string(css_text) if hasattr(p, "load_from_string") else p.load_from_data(css_text.encode()))
     Gtk.StyleContext.add_provider_for_display(display or Gdk.Display.get_default(), p, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
     return p

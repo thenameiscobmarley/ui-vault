@@ -5,17 +5,19 @@ from tkinter import ttk
 import uivault
 
 
-def run(name="editorial"):
+def run(name=None, kit=None):
     root = tk.Tk()
     root.title("UI Vault · Tkinter")
-    root.geometry("760x520")
-    current = tk.StringVar(value=name)
+    root.geometry("820x560")
+    current = tk.StringVar(value=name or (uivault.kit(kit)["theme"] if kit else "editorial"))
+    kitv = tk.StringVar(value=kit or "(none)")
 
     def build():
         for w in root.winfo_children():
             w.destroy()
         t = uivault.theme(current.get())
-        uivault.apply_tk(root, t)
+        k = kitv.get()
+        uivault.apply_tk(root, t, kit=None if k == "(none)" else k)
         page = ttk.Frame(root, padding=28); page.pack(fill="both", expand=True)
 
         top = ttk.Frame(page); top.pack(fill="x")
@@ -23,6 +25,9 @@ def run(name="editorial"):
         box = ttk.Combobox(top, textvariable=current, values=uivault.themes(), state="readonly", width=12)
         box.pack(side="right"); box.bind("<<ComboboxSelected>>", lambda e: build())
         ttk.Label(top, text="Theme", style="Muted.TLabel").pack(side="right", padx=8)
+        kb = ttk.Combobox(top, textvariable=kitv, values=["(none)"] + uivault.kits(), state="readonly", width=12)
+        kb.pack(side="right", padx=(0, 12)); kb.bind("<<ComboboxSelected>>", lambda e: (current.set(uivault.kit(kitv.get())["theme"]) if kitv.get() != "(none)" else None, build()))
+        ttk.Label(top, text="Kit", style="Muted.TLabel").pack(side="right", padx=8)
 
         ttk.Label(page, text=f"{t.name.title()} theme", style="Heading.TLabel").pack(anchor="w", pady=(18, 2))
         ttk.Label(page, text=t.description, style="Muted.TLabel").pack(anchor="w")

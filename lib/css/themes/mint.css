@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: mint — fresh mint with a deep green ink. Needs core.css. MIT */
 [data-uv-theme="mint"] {
-  --uv-bg: #ecfbf3; --uv-text: #173b2c; --uv-accent: #2fb37a; --uv-accent-2: #7ac7ff; --uv-surface: #f6fdfa; --uv-surface-2: #dfefe7; --uv-surface-3: #d5e6dd; --uv-line: #173b2c1a; --uv-line-2: #173b2c2e; --uv-muted: #5b786c; --uv-dim: #869f93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #ecfbf3; --uv-text: #173b2c; --uv-accent: #2fb37a; --uv-accent-2: #7ac7ff; --uv-on-accent: #111111; --uv-surface: #f6fdfa; --uv-surface-2: #dfefe7; --uv-surface-3: #d5e6dd; --uv-line: #173b2c1a; --uv-line-2: #173b2c2e; --uv-muted: #5b786c; --uv-dim: #869f93; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Outfit", system-ui, sans-serif; --uv-serif: "Outfit", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 800; --uv-head-case: none;

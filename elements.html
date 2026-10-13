@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-uv-smooth>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elements — UI Vault</title>
+<meta name="description" content="270+ element designs (buttons, cards, inputs, switches, tabs, nav, badges, alerts, modals, spinners, progress, headings, backgrounds) to mix and match, plus ready-made kits." />
+<meta name="theme-color" content="#101012" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="lib/css/fonts.css" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<link rel="stylesheet" href="lib/css/parts.css" />
+<style>
+  :root { --pg-bg: #101012; --pg-bg2: #141416; --pg-bg3: #1c1c1f; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", serif; }
+  html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
+  html[data-uv-theme] { --pg-bg: var(--uv-bg); --pg-bg2: var(--uv-surface); --pg-bg3: var(--uv-surface-2); --pg-fg: var(--uv-text); --pg-mu: var(--uv-muted); --pg-di: var(--uv-dim); --pg-ln: var(--uv-line); --pg-ln2: var(--uv-line-2); --pg-ac: var(--uv-accent); --pg-font: var(--uv-font); --pg-head: var(--uv-font-head); }
+  html[data-uv-theme] .top .brand svg rect { fill: var(--uv-text); } html[data-uv-theme] .top .brand svg path { stroke: var(--uv-bg); } html[data-uv-theme] .top .brand svg circle { fill: var(--uv-accent); }
+  html[data-theme="light"] .top .brand svg rect { fill: #1a1917; } html[data-theme="light"] .top .brand svg path { stroke: #f4f2ee; }
+  body { margin: 0; background: var(--pg-bg); color: var(--pg-fg); font-family: var(--pg-font); }
+  html[data-uv-bg] body { background: transparent; }
+  .top { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; height: 58px; padding: 0 clamp(16px, 3vw, 32px); background: color-mix(in srgb, var(--pg-bg) 94%, transparent); border-bottom: 1px solid var(--pg-ln); }
+  .top .brand { display: flex; align-items: center; gap: 10px; color: var(--pg-fg); text-decoration: none; font-weight: 600; }
+  .top nav { margin-left: auto; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; } .top nav a { flex: none; padding: 6px 10px; border-radius: 4px; color: var(--pg-mu); text-decoration: none; font-size: 14px; } .top nav a:hover, .top nav a.on { color: var(--pg-fg); background: var(--pg-ln); }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); }
+  .k { font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--pg-di); }
+  .hero { padding: 64px 0 28px; display: grid; grid-template-columns: 1fr minmax(0, 440px); gap: 28px; align-items: end; }
+  .hero h1 { margin: 10px 0 0; font: 400 clamp(50px, 7vw, 104px)/.92 var(--pg-head); letter-spacing: -.025em; }
+  .hero h1 em { font-style: italic; color: var(--pg-ac); }
+  .hero p { margin: 0; color: var(--pg-mu); line-height: 1.55; }
+  .mix { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 12px 14px; border: 1px solid var(--pg-ln2); border-radius: 10px; background: var(--pg-bg2); margin-bottom: 8px; }
+  .mix .k { margin-right: 6px; }
+  .mix span { display: inline-flex; align-items: center; gap: 6px; padding: 4px 6px 4px 10px; border-radius: 999px; border: 1px solid var(--pg-ln2); font: 12px "Geist Mono", monospace; color: var(--pg-mu); } .mix span b { color: var(--pg-fg); font-weight: 500; }
+  .mix span button { width: 18px; height: 18px; border-radius: 50%; border: 0; background: var(--pg-ln); color: var(--pg-fg); cursor: pointer; font-size: 11px; line-height: 1; }
+  .mix .none { color: var(--pg-di); font-size: 13px; }
+  .mix .act { margin-left: auto; display: flex; gap: 6px; }
+  .sbtn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-fg); font: 500 13px "Geist", sans-serif; cursor: pointer; text-decoration: none; white-space: nowrap; }
+  .sbtn:hover { border-color: var(--pg-fg); } .sbtn.p { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); } .sbtn.p:hover { background: var(--pg-ac); border-color: var(--pg-ac); }
+  .sbtn.on { background: var(--pg-ac); border-color: var(--pg-ac); color: #111; }
+  .section-h { display: grid; grid-template-columns: 220px 1fr; gap: 8px 32px; padding-top: 16px; border-top: 1px solid var(--pg-ln2); margin: 48px 0 22px; }
+  .section-h h2 { margin: 0; font: 400 clamp(34px, 4.4vw, 58px)/1 var(--pg-head); } .section-h p { margin: 8px 0 0; color: var(--pg-mu); max-width: 680px; line-height: 1.5; }
+  /* kits */
+  .kits { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .kitt { display: flex; flex-direction: column; border-radius: 12px; border: 1px solid var(--pg-ln); overflow: hidden; content-visibility: auto; contain-intrinsic-size: auto 300px; }
+  .kitt .stage { flex: 1; display: grid; gap: 12px; align-content: start; padding: 18px; min-height: 200px; color: var(--uv-text); }
+  .kitt .stage .uv-h2 { margin: 0; font-size: 32px; line-height: 1; }
+  .kitt .stage .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .kitt footer, .tile footer { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--pg-ln); background: var(--pg-bg2); }
+  .kitt footer div, .tile footer div { flex: 1; min-width: 0; } .kitt footer b, .tile footer b { display: block; font-weight: 600; font-size: 14px; } .kitt footer small, .tile footer small { display: block; color: var(--pg-di); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* families */
+  .fams { position: sticky; top: 58px; z-index: 40; display: flex; gap: 6px; align-items: center; padding: 12px 0; background: var(--pg-bg); border-bottom: 1px solid var(--pg-ln); overflow-x: auto; scrollbar-width: none; }
+  .fams a { flex: none; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--pg-ln2); color: var(--pg-mu); font: 500 13px "Geist", sans-serif; text-decoration: none; } .fams a:hover { color: var(--pg-fg); } .fams a small { opacity: .6; margin-left: 4px; font-family: "Geist Mono", monospace; }
+  .fams a.on { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); }
+  .fams select { flex: none; margin-left: auto; height: 34px; padding: 0 8px; border-radius: 6px; border: 1px solid var(--pg-ln2); background: var(--pg-bg3); color: var(--pg-fg); font: 13px "Geist", sans-serif; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+  .tile { display: flex; flex-direction: column; border-radius: 10px; border: 1px solid var(--pg-ln); overflow: hidden; content-visibility: auto; contain-intrinsic-size: auto 230px; }
+  .tile.on { border-color: var(--pg-ac); box-shadow: 0 0 0 1px var(--pg-ac); }
+  .tile .stage { position: relative; flex: 1; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; align-content: center; min-height: 160px; padding: 22px 18px; background: var(--uv-bg); color: var(--uv-text); }
+  .tile .stage > .uv-card, .tile .stage > .uv-input, .tile .stage > .uv-alert, .tile .stage > .uv-progress, .tile .stage > .col { width: 100%; }
+  .tile .stage .col { display: grid; gap: 10px; }
+  .tile .stage .uv-card { padding: 16px; }
+  .tile .stage .uv-card p { margin: 6px 0 0; font-size: 13px; }
+  .tile .stage .uv-h2 { margin: 0; font-size: 40px; line-height: 1; text-align: center; }
+  .tile .stage dialog.uv-modal { position: static; display: block; margin: 0; width: 100%; max-width: none; }
+  .tile .stage dialog.uv-modal > div { padding: 16px; }
+  .tile .stage .uv-toast { animation: none; min-width: 0; width: 100%; }
+  .tile .stage .uv-spinner { --s: 40px; }
+  .tile .stage[data-uv-bg] { min-height: 180px; }
+  .tile footer .sbtn { height: 30px; padding: 0 10px; font-size: 12px; }
+  /* code dialog */
+  .codedlg { width: min(900px, calc(100vw - 20px)); max-height: min(88vh, 860px); padding: 0; border: 1px solid var(--pg-ln2); border-radius: 12px; background: var(--pg-bg2); color: var(--pg-fg); overflow: hidden; }
+  .codedlg[open] { display: flex; flex-direction: column; }
+  .codedlg::backdrop { background: #000a; }
+  .codedlg header { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--pg-ln); }
+  .codedlg header h3 { margin: 0; font: 400 32px/1 var(--pg-head); flex: 1; }
+  .codedlg .ctabs { display: flex; border-bottom: 1px solid var(--pg-ln); } .codedlg .ctabs button { flex: 1; padding: 10px; border: 0; background: none; color: var(--pg-di); font: 500 12px "Geist Mono", monospace; cursor: pointer; } .codedlg .ctabs button.on { color: var(--pg-fg); box-shadow: inset 0 -2px 0 var(--pg-ac); }
+  .codedlg pre { margin: 0; flex: 1; min-height: 200px; overflow: auto; padding: 16px 18px; background: #0d0d0f; color: #d9d6cf; font: 12px/1.65 "Geist Mono", monospace; white-space: pre; }
+  .codedlg footer { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--pg-ln); } .codedlg footer .sbtn { flex: 1; }
+  .foot { padding: 60px 0 100px; color: var(--pg-di); font-size: 13px; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .section-h { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .top nav { display: none; } }
+</style>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="#ecebe8"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="#101012" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="#ff6a26"/></svg>UI Vault</a>
+  <nav><a href="quickstart.html">Quick start</a><a href="themes.html">Themes</a><a class="on" href="elements.html">Elements</a><a href="lab.html">Test page</a><a href="code.html">Python &amp; C++</a><a href="docs.html">Docs</a><a href="showcase.html">Showcase</a><a href="./">Library</a></nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div><p class="k">Element designs · mix &amp; match</p><h1><span id="total">270+</span> elements, <em>your mix.</em></h1></div>
+    <p>Every element comes in many designs. There are pearlescent, chrome, deep-blue-metal and brutal buttons, glass and ticket cards, iOS and day/night switches, and plenty more. Pick one design per element, or start from a kit. Your mix applies to <b>this whole site</b>, and you can try it on the <a href="lab.html" style="color:var(--pg-ac)">test page</a>. Every design works with every one of the 87 themes.</p>
+  </section>
+  <div class="mix" id="mix"></div>
+
+  <section id="kits">
+    <div class="section-h"><p class="k">§ Kits</p><h2>Start from a <em style="font-style:italic;color:var(--pg-mu)">kit.</em></h2><p>A kit is a theme plus one design for every element. Apply one, then swap any single element below. It's still your mix.</p></div>
+    <div class="kits" id="kitgrid"></div>
+  </section>
+
+  <section id="families">
+    <div class="section-h"><p class="k">§ Elements</p><h2>Every element, <em style="font-style:italic;color:var(--pg-mu)">many ways.</em></h2><p>Click <b>Use</b> to apply a design site-wide (click again to remove it). <b>Code</b> shows the HTML, the raw CSS, and the closest Python and C++ equivalents.</p></div>
+    <div class="fams" id="fams"></div>
+    <div id="famsecs"></div>
+  </section>
+  <p class="foot">Use them in your own pages: load <code>lib/css/parts.css</code> (everything) or just <code>lib/css/parts/btn.css</code>, then put <code>data-uv-btn="pearl"</code> on <code>&lt;html&gt;</code> or on any element. Colours come from the active theme's tokens.</p>
+</main>
+
+<dialog class="codedlg" id="codedlg">
+  <header><h3 id="cdTitle"></h3><button class="sbtn" type="button" id="cdClose">Close</button></header>
+  <div class="ctabs" id="cdTabs"></div>
+  <pre id="cdPre"></pre>
+  <footer><button class="sbtn" type="button" id="cdCopy">Copy</button><button class="sbtn p" type="button" id="cdUse">Use on this site</button></footer>
+</dialog>
+
+<script src="lib/uivault.js"></script>
+<script src="lib/parts.js"></script>
+<script src="assets/js/picker.js"></script>
+<script src="assets/js/elements.js"></script>
+</body>
+</html>

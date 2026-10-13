@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: bauhaus — primary geometry: red, yellow, blue on cream. Needs core.css. MIT */
 [data-uv-theme="bauhaus"] {
-  --uv-bg: #f2ead8; --uv-text: #141414; --uv-accent: #d6281b; --uv-accent-2: #1f4fb5; --uv-surface: #f9f6ed; --uv-surface-2: #e5ddcc; --uv-surface-3: #dad2c2; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #5b5853; --uv-dim: #87837a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f2ead8; --uv-text: #141414; --uv-accent: #d6281b; --uv-accent-2: #1f4fb5; --uv-on-accent: #ffffff; --uv-surface: #f9f6ed; --uv-surface-2: #e5ddcc; --uv-surface-3: #dad2c2; --uv-line: #1414141a; --uv-line-2: #1414142e; --uv-muted: #5b5853; --uv-dim: #87837a; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.05em;

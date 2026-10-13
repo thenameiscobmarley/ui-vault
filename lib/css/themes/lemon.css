@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: lemon — lemon sorbet with a charcoal outline. Needs core.css. MIT */
 [data-uv-theme="lemon"] {
-  --uv-bg: #fffbe0; --uv-text: #2b2a1f; --uv-accent: #f5c400; --uv-accent-2: #ff7eb6; --uv-surface: #fffdf1; --uv-surface-2: #f2eed4; --uv-surface-3: #e8e4cb; --uv-line: #2b2a1f1a; --uv-line-2: #2b2a1f2e; --uv-muted: #6f6d5d; --uv-dim: #999783; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fffbe0; --uv-text: #2b2a1f; --uv-accent: #f5c400; --uv-accent-2: #ff7eb6; --uv-on-accent: #111111; --uv-surface: #fffdf1; --uv-surface-2: #f2eed4; --uv-surface-3: #e8e4cb; --uv-line: #2b2a1f1a; --uv-line-2: #2b2a1f2e; --uv-muted: #6f6d5d; --uv-dim: #999783; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: none;

@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: moss — damp forest floor and moss green. Needs core.css. MIT */
 [data-uv-theme="moss"] {
-  --uv-bg: #eef1e6; --uv-text: #24301c; --uv-accent: #5a7d2f; --uv-accent-2: #b08a3e; --uv-surface: #f7f9f4; --uv-surface-2: #e2e5da; --uv-surface-3: #d8dcd0; --uv-line: #24301c1a; --uv-line-2: #24301c2e; --uv-muted: #656e5d; --uv-dim: #8d9485; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #eef1e6; --uv-text: #24301c; --uv-accent: #5a7d2f; --uv-accent-2: #b08a3e; --uv-on-accent: #ffffff; --uv-surface: #f7f9f4; --uv-surface-2: #e2e5da; --uv-surface-3: #d8dcd0; --uv-line: #24301c1a; --uv-line-2: #24301c2e; --uv-muted: #656e5d; --uv-dim: #8d9485; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: none;

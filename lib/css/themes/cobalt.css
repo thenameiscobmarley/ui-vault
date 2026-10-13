@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: cobalt — electric cobalt field, white type, lemon accent. Needs core.css. MIT */
 [data-uv-theme="cobalt"] {
-  --uv-bg: #1d3fd8; --uv-text: #ffffff; --uv-accent: #ffe14d; --uv-accent-2: #ffe14d; --uv-surface: #2849da; --uv-surface-2: #3150dc; --uv-surface-3: #3f5cde; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #b7c2f3; --uv-dim: #899beb; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #1d3fd8; --uv-text: #ffffff; --uv-accent: #ffe14d; --uv-accent-2: #ffe14d; --uv-on-accent: #111111; --uv-surface: #2849da; --uv-surface-2: #3150dc; --uv-surface-3: #3f5cde; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #b7c2f3; --uv-dim: #899beb; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
   --uv-head-weight: 800; --uv-head-case: none;

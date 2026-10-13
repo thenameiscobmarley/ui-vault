@@ -2,7 +2,7 @@
 [data-uv-theme="luxe"] {
   --uv-bg: #0c0b09; --uv-surface: #12110e; --uv-surface-2: #1a1813; --uv-surface-3: #24211a;
   --uv-line: #c9a96e26; --uv-line-2: #c9a96e66; --uv-text: #efe6d2; --uv-muted: #b3a88f; --uv-dim: #7a705c;
-  --uv-accent: #c9a96e; --uv-accent-2: #e8d3a2;
+  --uv-accent: #c9a96e; --uv-on-accent: #111111; --uv-accent-2: #e8d3a2;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-head-style: italic; --uv-head-tracking: -.01em;
   --uv-btn-case: uppercase; --uv-btn-tracking: .22em;
   --uv-r-xs: 0; --uv-r-sm: 0; --uv-r: 0; --uv-r-lg: 0;

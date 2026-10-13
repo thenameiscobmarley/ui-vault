@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: teletext — broadcast teletext: black field, primary blocks. Needs core.css. MIT */
 [data-uv-theme="teletext"] {
-  --uv-bg: #000000; --uv-text: #ffffff; --uv-accent: #ffff00; --uv-accent-2: #00ffff; --uv-surface: #0d0d0d; --uv-surface-2: #171717; --uv-surface-3: #262626; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #adadad; --uv-dim: #7a7a7a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-bg: #000000; --uv-text: #ffffff; --uv-accent: #ffff00; --uv-accent-2: #00ffff; --uv-on-accent: #111111; --uv-surface: #0d0d0d; --uv-surface-2: #171717; --uv-surface-3: #262626; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #adadad; --uv-dim: #7a7a7a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
   --uv-font: "VT323", ui-monospace, monospace; --uv-font-head: "VT323", ui-monospace, monospace; --uv-serif: "VT323", ui-monospace, monospace; --uv-btn-font: "VT323", ui-monospace, monospace;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
   --uv-head-weight: 700; --uv-head-case: uppercase;

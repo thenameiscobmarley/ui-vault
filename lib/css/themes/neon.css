@@ -2,7 +2,7 @@
 [data-uv-theme="neon"] {
   --uv-bg: #06060c; --uv-surface: #0d0d19; --uv-surface-2: #151527; --uv-surface-3: #1f1f38;
   --uv-line: #00f0ff1f; --uv-line-2: #00f0ff40; --uv-text: #e6fbff; --uv-muted: #8fb4c4; --uv-dim: #4f6b7a;
-  --uv-accent: #00f0ff; --uv-accent-2: #ff2bd6; --uv-success: #39ff88; --uv-danger: #ff3864;
+  --uv-accent: #00f0ff; --uv-on-accent: #111111; --uv-accent-2: #ff2bd6; --uv-success: #39ff88; --uv-danger: #ff3864;
   --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist Mono", ui-monospace, monospace; --uv-head-weight: 500; --uv-head-case: uppercase; --uv-head-tracking: .02em;
   --uv-btn-font: "Geist Mono", ui-monospace, monospace; --uv-btn-case: uppercase; --uv-btn-tracking: .12em;
   --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 4px; --uv-r-lg: 6px;
