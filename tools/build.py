@@ -345,7 +345,7 @@ PAGES = [  # page, title, what it is, group
     ("elements.html", "Elements", "273 element designs to mix and match, plus kits", "Design"),
     ("lab.html", "Test page", "Try any theme, kit and design on a dashboard, landing page, settings form and shop", "Design"),
     ("skins.html", "3D skins", "Real-time 3D objects in 25 animated mastery camos: obsidian, dark matter, damascus, gold, diamond…", "Design"),
-    ("examples.html", "See examples", "Six complete scroll-animated websites built only with the library", "Design"),
+    ("examples.html", "See examples", "Seven complete scroll-animated websites built only with the library, including a 3D mastery grind", "Design"),
     ("showcase.html", "Showcase", "30 finished pieces built with the library", "Design"),
     ("blocks.html", "Blocks", "41 page sections: heroes, pricing tables, footers…", "Design"),
     ("examples/nova.html", "NOVA · example", "Scroll-driven rocket launch: pinned countdown, live altitude, sideways mission strip", "Examples"),

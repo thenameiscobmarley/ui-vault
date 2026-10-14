@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>See Examples — UI Vault</title>
-<meta name="description" content="Six complete scroll-animated websites built only with the UI Vault library: a rocket launch, a deep-sea dive, a cyberpunk product, a magazine long-read, a coffee brand and a SaaS landing page." />
+<meta name="description" content="Seven complete scroll-animated websites built only with the UI Vault library: a rocket launch, a deep-sea dive, a cyberpunk product, a magazine long-read, a coffee brand and a SaaS landing page." />
 <meta name="theme-color" content="#121211" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="lib/css/fonts.css" />
@@ -65,6 +65,9 @@
   .p-brew .cup { position: absolute; right: 18%; bottom: 14%; width: 150px; height: 132px; border-radius: 0 0 46% 46% / 0 0 60% 60%; background: linear-gradient(transparent 22%, #c98b4e 22%, #8a5228 30%, #3b2416 60%), #f3e6d3; box-shadow: inset 0 0 0 12px #f3e6d3; }
   .p-brew .cup::after { content: ""; position: absolute; right: -40px; top: 26px; width: 44px; height: 60px; border: 12px solid #f3e6d3; border-left: 0; border-radius: 0 50% 50% 0; }
   .p-brew b { position: absolute; left: 26px; top: 36px; font: 400 clamp(40px, 4.6vw, 64px)/.92 "DM Serif Display", serif; color: #f3e6d3; } .p-brew b em { color: #c98b4e; }
+  .p-mastery { background: radial-gradient(55% 60% at 50% 55%, #2a1f45, #060608 75%); }
+  .p-mastery .obj { position: absolute; inset: 6% 4% 14%; }
+  .p-mastery b { position: absolute; left: 26px; bottom: 22px; z-index: 2; font: 400 clamp(54px, 7vw, 92px)/.85 "Bebas Neue", sans-serif; letter-spacing: .02em; color: #fff; pointer-events: none; }
   .p-prism { background: radial-gradient(40% 50% at 20% 30%, #e6d8ff, transparent 70%), radial-gradient(40% 50% at 80% 20%, #ffd8ec, transparent 70%), radial-gradient(50% 50% at 60% 90%, #d6f1ff, transparent 70%), #f6f3fb; color: #2c2547; }
   .p-prism .m { position: absolute; left: 12%; right: 12%; top: 28%; bottom: -10%; border-radius: 14px; background: #fff; box-shadow: 0 30px 60px -30px #3d2a7a77; display: grid; grid-template-columns: 70px 1fr 1fr 1fr; gap: 8px; padding: 10px; }
   .p-prism .m i { border-radius: 8px; background: linear-gradient(135deg, #efe8ff, #ffe8f4); } .p-prism .m i:first-child { grid-row: span 3; } .p-prism .m i:nth-child(5) { grid-column: span 2; height: 90px; background: linear-gradient(0deg, #b98cff 0 50%, #efe8ff 50%); }
@@ -87,7 +90,7 @@
 </header>
 <main class="wrap">
   <section class="hero">
-    <div><p class="k">See examples · six full websites</p><h1>Scroll <em>stories.</em></h1></div>
+    <div><p class="k">See examples · seven full websites</p><h1>Scroll <em>stories.</em></h1></div>
     <div><p>Each one is a complete page built only with the UI Vault library: its CSS, its themes and parts, and the scroll API (<code>uv-pin</code>, <code>data-uv-scrub</code>, <code>UV.scrub</code>). No frameworks, no build step and no animation libraries. Open one and scroll slowly.</p><div class="uv-scrub-grow" data-uv-scrub></div></div>
   </section>
   <article class="ex" data-uv-scrub>
@@ -126,6 +129,12 @@
       <div class="chips"><code>uv-pin</code><code>UV.scrub()</code><code>data-uv-theme</code><code>uv-card--spot</code><code>uv-marquee</code><code>UV.countUp()</code><code>uv-accordion</code></div>
       <div class="acts"><a class="go" href="examples/prism.html">Open the site →</a><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/examples/prism.html" target="_blank" rel="noopener">View source ↗</a></div></div>
   </article>
+  <article class="ex" data-uv-scrub>
+    <a class="shot p-mastery" href="examples/mastery.html" aria-label="Open MASTERY"><div class="obj" data-uv-3d="obsidian" data-shape="blade" data-fps="20" data-hover-fps data-res=".85"></div><b>Mastery</b><span class="label">Open MASTERY →</span></a>
+    <div class="info"><p class="k">07 · Camo grind in 3D</p><h2>MASTERY</h2><p>A live 3D blade you scroll through the mastery ladder: Gold, Platinum, Damascus, then animated Obsidian. Each skin wipes in behind a glowing scan line while a challenge counter fills and the tiers tick off.</p>
+      <div class="chips"><code>skins3d.js</code><code>data-uv-3d</code><code>data-sync</code><code>uv-pin</code><code>UV.scrub()</code><code>clip-path wipes</code></div>
+      <div class="acts"><a class="go" href="examples/mastery.html">Open the site →</a><a href="skins.html">All 26 skins →</a></div></div>
+  </article>
   <section class="how">
     <div><p class="k">How they work</p><h2>One variable does the moving.</h2>
       <p>UI Vault turns the scroll position into a number from 0 to 1 and writes it to <code>--p</code> on the element. Use it in any CSS <code>calc()</code>. Only transform and opacity change, so the examples stay smooth on integrated graphics.</p>
@@ -148,6 +157,7 @@
   </section>
 </main>
 <script src="lib/uivault.js"></script>
+<script src="lib/js/skins3d.js"></script>
 <script src="assets/js/picker.js"></script>
 </body>
 </html>
