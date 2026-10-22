@@ -7,7 +7,7 @@
   root.classList.add("anim");
 
   // hero headline: rise word by word
-  const h1 = document.querySelector(".hero h1");
+  const h1 = document.querySelector(".hx h1");
   if (h1) {
     let i = 0;
     const wrap = node => [...node.childNodes].forEach(n => {
@@ -26,7 +26,7 @@
   }
 
   // scroll reveals with per-group stagger
-  const groups = [".hero__kicker, .hero__sub, .search, .hero__chips, .hero__cta, .spec, .stats > div", ".section__head", ".api-promo > *",
+  const groups = [".hx__pill, .hx__sub, .hx__cta, .hx__install, .hx__meta, .hx__stage, .nums > div", ".bt", "#library .search, #library .hero__chips", ".section__head", ".api-promo > *",
                   ".res", ".demo", ".fx > *", ".forge > *, .forge__preview > *", ".showcase > *", ".cat-tabs, .toolbar, .seg-tabs, .pg-tools"];
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px 18% 0px" });
   const watch = () => groups.forEach(sel => document.querySelectorAll(sel).forEach((el, k) => {
@@ -39,7 +39,7 @@
 
   // progress bar + parallax
   const bar = document.createElement("div"); bar.className = "progress"; document.body.prepend(bar);
-  const par = [...document.querySelectorAll(".spec, .mock-ring")];
+  const par = [...document.querySelectorAll(".mock-ring")];
   let ticking = false;
   const frame = () => {
     ticking = false;

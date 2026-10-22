@@ -82,3 +82,10 @@ Theme names: original names; inspirations (e.g. CS2 Printstream pearl) only in d
 - [x] E. assets/js/picker.js floating theme picker on every page
 - [x] F. verify, README, push
 v7 status: DONE. 87 themes; JS engine must mirror tools/theme_specs.py recipes.
+
+# v12 — site-wide redesign pass (2026-10-22)
+- [x] Shared chrome on every page via tools/chrome.py (idempotent <!-- uvc:NAME --> blocks): header with Start/Design/Build mega menus + Examples/Library, Ctrl/Cmd+K site search (lazy lib/catalog.js), mobile sheet, sitemap footer, OG/Twitter tags. lab.html keeps its app header (search button only).
+- [x] Homepage rebuilt: hero with live theme stage (8 themes, autoplay, click to pick), install line, numbers band, bento of doors, trimmed API section; resource search moved into its section.
+- [x] 404.html, assets/og.jpg, cross-page view transitions, sticky offsets aligned to the 58px header.
+- [x] Pages demoing UV.cmdk (docs, showcase) opt out of the site hotkey with <meta name="uvc-hotkey" content="off">.
+Next ideas: per-page hero refresh for docs/blocks (sidebar pages), richer search (themes + parts from manifest), real screenshots in Index cards.

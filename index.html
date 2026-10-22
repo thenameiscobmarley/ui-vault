@@ -3,125 +3,176 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UI Vault — An index of open-source interface material</title>
+  <title>UI Vault — 87 themes, 1,200 live pieces, one small API</title>
   <meta name="description" content="A curated vault of open-source UI kits, icons, fonts, motion, effects and post-processing — plus live, copy-ready snippets." />
   <meta name="theme-color" content="#121211" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23f4f2ee' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="lib/css/core.css" />
+  <link rel="stylesheet" href="lib/css/components.css" />
+  <link rel="stylesheet" href="lib/css/themes/editorial.css" />
+  <link rel="stylesheet" href="lib/css/themes/neon.css" />
+  <link rel="stylesheet" href="lib/css/themes/brutal.css" />
+  <link rel="stylesheet" href="lib/css/themes/glass.css" />
+  <link rel="stylesheet" href="lib/css/themes/terminal.css" />
+  <link rel="stylesheet" href="lib/css/themes/luxe.css" />
+  <link rel="stylesheet" href="lib/css/themes/vaporwave.css" />
+  <link rel="stylesheet" href="lib/css/themes/swiss.css" />
+  <link rel="stylesheet" href="lib/css/themes/blueprint.css" />
+  <link rel="stylesheet" href="lib/css/fonts.css" />
   <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
   <script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <!-- uvc:css --><link rel="stylesheet" href="assets/css/chrome.css" /><meta property="og:type" content="website" /><meta property="og:site_name" content="UI Vault" /><meta property="og:title" content="UI Vault — 87 themes, 1,200 live pieces, one small API" /><meta property="og:description" content="A curated vault of open-source UI kits, icons, fonts, motion, effects and post-processing — plus live, copy-ready snippets." /><meta property="og:url" content="https://thenameiscobmarley.github.io/ui-vault/" /><meta property="og:image" content="https://thenameiscobmarley.github.io/ui-vault/assets/og.jpg" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta name="twitter:card" content="summary_large_image" /><!-- /uvc:css -->
 </head>
 <body>
   <div class="bg-grain" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="UI Vault home">
-      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="3" fill="currentColor"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5" fill="var(--accent)"/></svg>
-      <span>UI&nbsp;Vault</span>
-    </a>
-    <nav class="topnav" aria-label="Sections"><a href="./" aria-current="page">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
-  </header>
+  <!-- uvc:header --><header class="uvc-top" id="uvc-top"><a class="uvc-brand" href="./" aria-label="UI Vault home"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI&nbsp;Vault<small>3.1</small></a><nav class="uvc-nav" aria-label="Site"><div class="uvc-dd"><button type="button" aria-expanded="false" aria-haspopup="true">Start<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button><div class="uvc-menu" role="menu"><a href="quickstart.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i><b>Quick start</b><span>Install in two minutes, zip only what you use</span></a><a href="docs.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5A2.5 2.5 0 0 1 6.5 19H20"/></svg></i><b>Docs</b><span>Every component and function, with live examples</span></a><a href="code.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></i><b>Python & C++</b><span>The same themes for Qt, Tk, GTK, ImGui and JUCE</span></a><a href="directory.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg></i><b>Index</b><span>Search all 1,700 things on the site</span></a><a class="uvc-feat" href="downloads/uivault-latest.zip" download><b>Download the API</b><span>uivault.css + uivault.js, MIT, no build step</span><em>.zip ↓</em></a></div></div><div class="uvc-dd"><button type="button" aria-expanded="false" aria-haspopup="true">Design<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button><div class="uvc-menu" role="menu"><a href="library.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></i><b>Library</b><span>Everything live in one catalogue, pick and pack</span></a><a href="themes.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7" r="1.2"/><circle cx="15" cy="7" r="1.2"/></svg></i><b>Themes</b><span>87 complete styles and a theme builder</span></a><a href="elements.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="3"/></svg></i><b>Elements</b><span>273 designs across 15 element families</span></a><a href="skins.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></i><b>3D skins</b><span>26 animated WebGL materials</span></a></div></div><div class="uvc-dd"><button type="button" aria-expanded="false" aria-haspopup="true">Build<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button><div class="uvc-menu" role="menu"><a href="blocks.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/></svg></i><b>Blocks</b><span>41 page sections, ready to paste</span></a><a href="showcase.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></i><b>Showcase</b><span>30 finished pieces built with the API</span></a><a href="lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7 15h10"/></svg></i><b>Test page</b><span>Try any theme on four real layouts</span></a><a href="examples.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/></svg></i><b>Examples</b><span>Seven scroll-animated websites</span></a></div></div><a href="examples.html">Examples</a><a href="library.html">Library</a></nav><div class="uvc-end"><button class="uvc-search" type="button" data-uvc-search aria-label="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search…</span><kbd>Ctrl K</kbd></button><a class="uvc-icon uvc-gh" href="https://github.com/thenameiscobmarley/ui-vault" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a><a class="uvc-cta" href="quickstart.html">Get the API</a><button class="uvc-icon uvc-burger" type="button" aria-label="Menu" aria-expanded="false" data-uvc-burger><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button></div></header><div class="uvc-sheet" id="uvc-sheet" aria-label="Site menu"><h3>Start</h3><a href="quickstart.html">Quick start<span>Install in two minutes, zip only what you use</span></a><a href="docs.html">Docs<span>Every component and function, with live examples</span></a><a href="code.html">Python & C++<span>The same themes for Qt, Tk, GTK, ImGui and JUCE</span></a><a href="directory.html">Index<span>Search all 1,700 things on the site</span></a><h3>Design</h3><a href="library.html">Library<span>Everything live in one catalogue, pick and pack</span></a><a href="themes.html">Themes<span>87 complete styles and a theme builder</span></a><a href="elements.html">Elements<span>273 designs across 15 element families</span></a><a href="skins.html">3D skins<span>26 animated WebGL materials</span></a><h3>Build</h3><a href="blocks.html">Blocks<span>41 page sections, ready to paste</span></a><a href="showcase.html">Showcase<span>30 finished pieces built with the API</span></a><a href="lab.html">Test page<span>Try any theme on four real layouts</span></a><a href="examples.html">Examples<span>Seven scroll-animated websites</span></a><h3>Project</h3><a href="https://github.com/thenameiscobmarley/ui-vault">GitHub<span>Source, issues, releases</span></a><a href="downloads/uivault-latest.zip" download>Download .zip<span>uivault.css + uivault.js</span></a></div><!-- /uvc:header -->
 
   <main id="top">
     <!-- ── Hero ─────────────────────────────────────────────── -->
-    <section class="hero">
-      <p class="hero__kicker"><span>Vol. 02</span><span>Open-source UI + the UV API</span><span id="demoCountBadge">58</span><span>live snippets</span></p>
-      <aside class="spec" aria-label="Type and colour specimen">
-        <div class="spec__head"><span>Fig. 1</span><span>Specimen</span></div>
-        <div class="spec__type"><b>Aa</b><div><p>Instrument Serif</p><p>Geist · Geist Mono</p></div></div>
-        <div class="spec__sw">
-          <div style="--c:#f4f2ee"><i></i><span>Paper</span><code>#F4F2EE</code></div>
-          <div style="--c:#1a1917"><i></i><span>Ink</span><code>#1A1917</code></div>
-          <div style="--c:#8f8a82"><i></i><span>Stone</span><code>#8F8A82</code></div>
-          <div style="--c:#ff4f00"><i></i><span>Signal</span><code>#FF4F00</code></div>
+    <section class="hx">
+      <div class="hx__copy">
+        <a class="hx__pill" href="examples.html"><b>New</b><span>Seven scroll-animated example sites</span><i aria-hidden="true">→</i></a>
+        <h1>Every interface,<br> <em>one attribute</em> away.</h1>
+        <p class="hx__sub">UI Vault is a free CSS&nbsp;+&nbsp;JS library with 87 complete themes and 1,200 live pieces. Write your markup once, then restyle a whole page, or just one card, with <code>data-uv-theme</code>.</p>
+        <div class="hx__cta">
+          <a class="btn btn--primary btn--lg" href="quickstart.html">Get the API</a>
+          <a class="btn btn--ghost btn--lg" href="library.html">Browse the Library <span aria-hidden="true">→</span></a>
         </div>
-        <div class="spec__ui">
-          <button class="btn btn--primary btn--sm" type="button">Primary</button>
-          <button class="btn btn--ghost btn--sm" type="button">Ghost</button>
-          <label class="mini-switch"><input type="checkbox" checked><i></i></label>
-          <span class="tag tag--lic">MIT</span>
+        <div class="hx__install">
+          <span class="hx__install-k">HTML</span>
+          <code id="hxInstall">&lt;link rel="stylesheet" href="https://thenameiscobmarley.github.io/ui-vault/lib/uivault.css"&gt;</code>
+          <button type="button" id="hxCopy" aria-label="Copy the link tag">Copy</button>
         </div>
-        <ul class="spec__list">
-          <li><span>Blocks</span><b>38</b></li>
-          <li><span>Snippets</span><b id="specSnip">100</b></li>
-          <li><span>Showcase pieces</span><b>30</b></li>
-          <li><span>Resources indexed</span><b id="specRes">250</b></li>
-        </ul>
-        <a class="spec__foot" href="blocks.html">Browse the blocks →</a>
-      </aside>
-      <h1>Better interfaces, <em>assembled from</em> open parts.</h1>
-      <p class="hero__sub">UI Vault catalogues open-source kits, icons, typefaces, motion and shader libraries. It also ships its own small component library. Every piece on this site is live, documented and free to copy.</p>
-
-      <label class="search" for="search">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="search" type="search" placeholder="Search “tabs”, “bloom”, “icons”, “rust”…" autocomplete="off" />
-        <kbd>/</kbd>
-      </label>
-      <div class="hero__chips" id="quickChips"></div>
-      <div class="hero__cta">
-        <a class="btn btn--primary btn--lg" href="quickstart.html">Get the API</a>
-        <a class="btn btn--ghost btn--lg" href="examples.html">See examples</a>
-        <a class="btn btn--ghost btn--lg" href="skins.html">3D skins</a>
-        <a class="btn btn--ghost btn--lg" href="library.html">Open the Library</a>
-        <a class="btn btn--ghost btn--lg" href="code.html">Python &amp; C++</a>
-        <a class="btn btn--ghost btn--lg" href="showcase.html">Showcase</a>
-        <a class="btn btn--ghost btn--lg" href="blocks.html">Page blocks</a>
-        <a class="btn btn--ghost btn--lg" href="docs.html">Read the docs</a>
+        <ul class="hx__meta"><li>MIT licence</li><li>No build step</li><li>Zero dependencies</li><li>Web · Python · C++</li></ul>
       </div>
 
-      <dl class="stats">
-        <div><dt>Resources</dt><dd id="statRes">0</dd></div>
-        <div><dt>Categories</dt><dd id="statCat">0</dd></div>
-        <div><dt>Live snippets</dt><dd id="statDemo">0</dd></div>
-        <div><dt>Licence</dt><dd>MIT</dd></div>
-      </dl>
+      <div class="hx__stage" aria-label="Live theme preview">
+        <div class="hx__glow" aria-hidden="true"></div>
+        <div class="hx__win" id="hxWin" data-uv-theme="editorial">
+          <div class="hx__bar"><span class="hx__dots"><i></i><i></i><i></i></span><code>&lt;body data-uv-theme="<b id="hxName">editorial</b>"&gt;</code><span class="uv-badge uv-badge--live">Live</span></div>
+          <div class="hx__app">
+            <div class="hx__head">
+              <div><p class="uv-eyebrow" style="margin:0">Workspace</p><h3 class="uv-h3 hx__title">Good morning, Sam</h3></div>
+              <div class="uv-avatar-stack"><span class="uv-avatar">A</span><span class="uv-avatar">J</span><span class="uv-avatar">+4</span></div>
+            </div>
+            <div class="uv-tabs uv-tabs--line hx__tabs" role="tablist"><button role="tab" aria-selected="true">Overview</button><button role="tab" aria-selected="false">Activity</button><button role="tab" aria-selected="false">Settings</button></div>
+            <div class="hx__grid">
+              <div class="uv-card hx__stat"><span class="uv-muted">Revenue</span><b>$48.2k</b><span class="uv-badge uv-badge--success">+12.4%</span>
+                <svg viewBox="0 0 120 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 L15 26 L30 28 L45 18 L60 21 L75 12 L90 15 L105 6 L120 8" fill="none" stroke="var(--uv-accent)" stroke-width="2" vector-effect="non-scaling-stroke"/><path d="M0 30 L15 26 L30 28 L45 18 L60 21 L75 12 L90 15 L105 6 L120 8 V36 H0Z" fill="var(--uv-accent)" opacity=".12"/></svg></div>
+              <div class="uv-card hx__stat"><span class="uv-muted">Deploys</span><b>1,284</b><div class="uv-progress" style="--v:72%"><i style="--v:72%"></i></div><span class="uv-muted hx__small">72% of monthly goal</span></div>
+            </div>
+            <label class="uv-field hx__field"><input class="uv-input" placeholder="you@company.com" aria-label="Email"></label>
+            <div class="hx__row">
+              <button class="uv-btn uv-btn--primary" type="button">Invite team</button>
+              <button class="uv-btn uv-btn--ghost" type="button">Preview</button>
+              <label class="uv-switch"><input type="checkbox" checked><i></i> Alerts</label>
+            </div>
+          </div>
+        </div>
+        <div class="hx__themes" id="hxThemes" role="radiogroup" aria-label="Pick a theme"></div>
+      </div>
+    </section>
+
+    <!-- ── Numbers ──────────────────────────────────────────── -->
+    <section class="nums" aria-label="What is inside">
+      <div><b data-count="87">87</b><span>complete themes</span></div>
+      <div><b data-count="273">273</b><span>element designs</span></div>
+      <div><b data-count="1200" data-plus>1,200+</b><span>live pieces</span></div>
+      <div><b id="statDemo">100</b><span>copy-ready snippets</span></div>
+      <div><b id="statRes">290</b><span>open resources indexed</span></div>
+    </section>
+
+    <!-- ── Bento ────────────────────────────────────────────── -->
+    <section class="section bento-sec">
+      <header class="section__head">
+        <p class="eyebrow">§ 00 — Inside the vault</p>
+        <h2>Pick a door, <em>everything is live.</em></h2>
+        <p class="section__sub">Nothing on this site is a screenshot. Every theme, element and effect runs in your browser, and every one comes with its code.</p>
+      </header>
+      <div class="bento">
+        <a class="bt bt--lib" href="library.html">
+          <div class="bt__art bt__art--lib" aria-hidden="true">
+            <div data-uv-theme="neon"><span class="uv-btn uv-btn--primary uv-btn--sm">Launch</span><span class="uv-badge">neon</span></div>
+            <div data-uv-theme="brutal"><span class="uv-btn uv-btn--primary uv-btn--sm">Launch</span><span class="uv-badge">brutal</span></div>
+            <div data-uv-theme="glass"><span class="uv-btn uv-btn--primary uv-btn--sm">Launch</span><span class="uv-badge">glass</span></div>
+            <div data-uv-theme="terminal"><span class="uv-btn uv-btn--primary uv-btn--sm">Launch</span><span class="uv-badge">terminal</span></div>
+            <div data-uv-theme="luxe"><span class="uv-btn uv-btn--primary uv-btn--sm">Launch</span><span class="uv-badge">luxe</span></div>
+            <div data-uv-theme="swiss"><span class="uv-btn uv-btn--primary uv-btn--sm">Launch</span><span class="uv-badge">swiss</span></div>
+          </div>
+          <div class="bt__txt"><p class="eyebrow">Library</p><h3>The whole catalogue, <em>one page.</em></h3><p>Every element, loader, effect, background and theme, live. Tick what you want and download a zip with only those.</p><span class="bt__go">Open the Library →</span></div>
+        </a>
+        <a class="bt bt--themes" href="themes.html">
+          <div class="bt__art bt__art--sw" aria-hidden="true" id="btSwatches"></div>
+          <div class="bt__txt"><p class="eyebrow">Themes</p><h3>87 styles <em>+ a builder</em></h3><span class="bt__go">Browse themes →</span></div>
+        </a>
+        <a class="bt bt--skins" href="skins.html">
+          <div class="bt__art bt__art--orb" aria-hidden="true"><i></i></div>
+          <div class="bt__txt"><p class="eyebrow">3D skins</p><h3>26 animated <em>WebGL materials</em></h3><span class="bt__go">See them move →</span></div>
+        </a>
+        <a class="bt bt--el" href="elements.html">
+          <div class="bt__art bt__art--el" aria-hidden="true"><span>Primary</span><span>Primary</span><span>Primary</span><span>Primary</span></div>
+          <div class="bt__txt"><p class="eyebrow">Elements</p><h3>273 designs, <em>15 families</em></h3><span class="bt__go">Mix and match →</span></div>
+        </a>
+        <a class="bt bt--ex" href="examples.html">
+          <div class="bt__art bt__art--ex" aria-hidden="true"><i style="--b:radial-gradient(circle at 50% 130%,#ff7a3d 0,#6a2bd9 30%,#05060d 46%)">NOVA</i><i style="--b:linear-gradient(#8ae9ff,#0a4f6a 60%,#021320)">ABYSS</i><i style="--b:radial-gradient(70% 80% at 80% 50%,#ff2bd655,#06060c)">SIGNAL</i><i style="--b:linear-gradient(180deg,#11203a,#33507a 45%,#e3a46b 75%,#1a2230 76%)">FOLIO</i></div>
+          <div class="bt__txt"><p class="eyebrow">Examples</p><h3>Seven sites, <em>built to be scrolled</em></h3><span class="bt__go">Scroll the stories →</span></div>
+        </a>
+        <a class="bt bt--blocks" href="blocks.html">
+          <div class="bt__art bt__art--wire" aria-hidden="true"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i><i class="w4"></i><i class="w4"></i></div>
+          <div class="bt__txt"><p class="eyebrow">Blocks</p><h3>41 page sections</h3><span class="bt__go">Copy a section →</span></div>
+        </a>
+        <a class="bt bt--code" href="code.html">
+          <pre class="bt__art bt__art--code" aria-hidden="true"><span class="k">import</span> uivault
+app.setStyleSheet(
+  uivault.qss(<span class="s">"neon"</span>))
+
+<span class="c">// C++</span>
+<span class="k">#include</span> <span class="s">"uivault.hpp"</span>
+uv::imgui::apply(<span class="s">"luxe"</span>);</pre>
+          <div class="bt__txt"><p class="eyebrow">Python &amp; C++</p><h3>Same themes, <em>native apps</em></h3><span class="bt__go">Qt · Tk · GTK · ImGui · JUCE →</span></div>
+        </a>
+        <a class="bt bt--show" href="showcase.html">
+          <div class="bt__art bt__art--ring" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="48"/><circle cx="60" cy="60" r="48"/></svg><b>68%</b></div>
+          <div class="bt__txt"><p class="eyebrow">Showcase</p><h3>30 finished pieces</h3><span class="bt__go">Take a look →</span></div>
+        </a>
+      </div>
     </section>
 
     <!-- ── UV API promo ───────────────────────────────────────── -->
     <section class="section api-promo">
       <div>
-        <p class="eyebrow">§ 00 — The library</p>
-        <h2>87 themes, <em>a thousand pieces,</em> one API.</h2>
-        <p class="section__sub">Modular CSS + JS: load the whole bundle or only the modules you need, then mix 87 themes (<code>data-uv-theme</code>) and 70+ effects (<code>uv-fx-*</code>) on any element. Use <code>uivault.css</code> for buttons, tabs, cards, glass, forms, rings, docks, marquees and backgrounds. Use <code>uivault.js</code> for toasts, modals, a ⌘K palette, confetti, tilt, magnetic hover, count-ups, typewriters, scroll reveals, pinned scroll scenes and synthesized UI sounds.</p>
+        <p class="eyebrow">§ 01 — The API</p>
+        <h2>Two files. <em>No build step.</em></h2>
+        <p class="section__sub">Components are classes, behaviours are <code>data-uv</code> attributes, themes are <code>data-uv-theme</code>. Load the whole bundle or only the modules you need. Everything else lives on <code>window.UV</code>: toasts, modals, a ⌘K palette, confetti, tilt, magnetic hover, scroll scenes and synthesized UI sounds.</p>
         <div class="api-promo__cta">
           <a class="btn btn--primary" href="quickstart.html">Quick start</a>
-          <a class="btn btn--ghost" href="downloads/uivault-latest.zip" download>Download .zip</a>
           <a class="btn btn--ghost" href="docs.html">Read the docs</a>
-          <a class="btn btn--ghost" href="examples.html">See examples</a>
-          <a class="btn btn--ghost" href="showcase.html">Browse the showcase</a>
-          <a class="btn btn--ghost" href="lib/uivault.css" download>uivault.css</a>
-          <a class="btn btn--ghost" href="lib/uivault.js" download>uivault.js</a>
+          <a class="btn btn--ghost" href="downloads/uivault-latest.zip" download>Download .zip</a>
         </div>
       </div>
       <pre class="api-promo__code"><code><span class="c">&lt;!-- that's the whole setup --&gt;</span>
 &lt;link rel="stylesheet" href="lib/uivault.css"&gt;
 &lt;script src="lib/uivault.js" defer&gt;&lt;/script&gt;
 
-&lt;button class="uv-btn uv-btn--grad"
-        data-uv="magnetic ripple"
-        data-uv-confetti&gt;Ship it&lt;/button&gt;
+&lt;body data-uv-theme="neon"&gt;
+  &lt;button class="uv-btn uv-btn--grad"
+          data-uv="magnetic ripple"
+          data-uv-confetti&gt;Ship it&lt;/button&gt;
 
 <span class="c">// or from JS</span>
 UV.toast("Saved!", { type: "success" });
 UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     </section>
 
-    <!-- ── See examples ───────────────────────────────────────── -->
-    <section class="section ex-band">
-      <a class="ex-band__card" href="examples.html">
-        <div><p class="eyebrow">New — See examples</p><h2>Seven websites, <em>built to be scrolled.</em></h2>
-          <p class="section__sub">A rocket launch, a deep-sea dive, a cyberpunk product, a magazine long-read, a coffee roaster, a SaaS page and a 3D camo grind. Each one uses only UI Vault and its scroll API.</p>
-          <span class="btn btn--primary">See the examples →</span></div>
-        <div class="ex-band__tiles" aria-hidden="true"><i style="--b:radial-gradient(circle at 50% 130%,#ff7a3d 0,#6a2bd9 30%,#05060d 46%)">NOVA</i><i style="--b:linear-gradient(#8ae9ff,#0a4f6a 60%,#021320)">ABYSS</i><i style="--b:radial-gradient(70% 80% at 80% 50%,#ff2bd655,#06060c)">SIGNAL</i><i style="--b:linear-gradient(180deg,#11203a,#33507a 45%,#e3a46b 75%,#1a2230 76%)">FOLIO</i><i style="--b:linear-gradient(160deg,#5a3420,#1c120c)">BREW</i><i style="--b:radial-gradient(60% 60% at 30% 30%,#e6d8ff,#ffd8ec 60%,#d6f1ff);color:#2c2547">PRISM</i></div>
-      </a>
-    </section>
-
     <!-- ── Playground ───────────────────────────────────────── -->
     <section id="playground" class="section">
       <header class="section__head">
-        <p class="eyebrow">§ 01 — Playground</p>
+        <p class="eyebrow">§ 02 — Playground</p>
         <h2>Snippets, <em>ready to paste.</em></h2>
         <p class="section__sub">Plain HTML + CSS (and a few lines of JS where needed). Hover, click, play — then hit <b>Copy</b>.</p>
       </header>
@@ -133,7 +184,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Post-FX Lab ──────────────────────────────────────── -->
     <section id="postfx" class="section">
       <header class="section__head">
-        <p class="eyebrow">§ 02 — Post-FX Lab</p>
+        <p class="eyebrow">§ 03 — Post-FX Lab</p>
         <h2>Post-processing, <em>by hand.</em></h2>
         <p class="section__sub">A real WebGL post pass: bloom, chromatic aberration, vignette, film grain, scanlines and CRT curvature. Drop in your own image, dial it in, copy the shader.</p>
       </header>
@@ -159,7 +210,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Logo Forge ───────────────────────────────────────── -->
     <section id="logo" class="section">
       <header class="section__head">
-        <p class="eyebrow">§ 03 — Logo Forge</p>
+        <p class="eyebrow">§ 04 — Logo Forge</p>
         <h2>A mark <em>and a wordmark.</em></h2>
         <p class="section__sub">Pick a mark, a name and a gradient. Exports a crisp, editable SVG you own — great for side projects, apps and README headers.</p>
       </header>
@@ -198,7 +249,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── App showcase ─────────────────────────────────────── -->
     <section class="section showcase">
       <div class="showcase__text">
-        <p class="eyebrow">§ 04 — Built with the vault</p>
+        <p class="eyebrow">§ 05 — Built with the vault</p>
         <h2>Flow, <em>a focus timer.</em></h2>
         <p class="section__sub">A real app using the techniques on this page: sliding tabs, a glowing progress ring, tactile buttons, toasts, a mini chart and subtle sound. No frameworks, one folder.</p>
         <a class="btn btn--primary btn--lg" href="app/">Open Flow</a>
@@ -210,10 +261,17 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     <!-- ── Library ──────────────────────────────────────────── -->
     <section id="library" class="section">
       <header class="section__head">
-        <p class="eyebrow">§ 05 — Library</p>
-        <h2>The index, <em>sorted and searchable.</em></h2>
+        <p class="eyebrow">§ 06 — Resources</p>
+        <h2>Open-source picks, <em>sorted and searchable.</em></h2>
         <p class="section__sub">Every link is free to use. Filter by category, search anything, and ★ the ones you love — favorites are saved in your browser.</p>
       </header>
+
+      <label class="search" for="search">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search “tabs”, “bloom”, “icons”, “rust”…" autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+      <div class="hero__chips" id="quickChips"></div>
 
       <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Categories"><span class="cat-tabs__ind" aria-hidden="true"></span></div>
 
@@ -236,11 +294,7 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
     </section>
 
   </main>
-
-  <footer class="footer">
-    <p>UI Vault · MIT licensed · Every listed project belongs to its authors — check each license before shipping.</p>
-    <p class="muted">Know something great? Add a line to <code>assets/js/resources.js</code> and open a PR.</p>
-  </footer>
+<!-- uvc:footer --><footer class="uvc-foot"><div class="uvc-foot__in"><div class="uvc-foot__lead"><a class="uvc-brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI&nbsp;Vault</a><p>An open interface library: 87 themes, 1,200 pieces and one small API for the web, Python and C++. Free to copy, MIT licensed.</p><div class="uvc-foot__btns"><a href="https://github.com/thenameiscobmarley/ui-vault"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>Star on GitHub</a><a href="downloads/uivault-latest.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download</a></div></div><div><h4>Start</h4><ul><li><a href="quickstart.html">Quick start</a></li><li><a href="docs.html">Docs</a></li><li><a href="code.html">Python & C++</a></li><li><a href="directory.html">Index</a></li></ul></div><div><h4>Design</h4><ul><li><a href="library.html">Library</a></li><li><a href="themes.html">Themes</a></li><li><a href="elements.html">Elements</a></li><li><a href="skins.html">3D skins</a></li></ul></div><div><h4>Build</h4><ul><li><a href="blocks.html">Blocks</a></li><li><a href="showcase.html">Showcase</a></li><li><a href="lab.html">Test page</a></li><li><a href="examples.html">Examples</a></li></ul></div><div><h4>Project</h4><ul><li><a href="https://github.com/thenameiscobmarley/ui-vault">GitHub</a></li><li><a href="https://github.com/thenameiscobmarley/ui-vault/tree/main/downloads">Releases</a></li><li><a href="https://github.com/thenameiscobmarley/ui-vault/issues">Report an issue</a></li><li><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/LICENSE">MIT licence</a></li></ul></div></div><div class="uvc-foot__mark" aria-hidden="true">UI Vault<em>.</em></div><div class="uvc-foot__base"><span>© UI Vault contributors · MIT</span><span>Listed third-party projects belong to their authors</span><span>No trackers · no cookies · works offline</span></div></footer><!-- /uvc:footer -->
 
   <!-- Code dialog -->
   <dialog class="code-dlg" id="codeDlg">
@@ -261,9 +315,11 @@ UV.cmdk([{ label: "Theme", action: () =&gt; UV.theme("toggle") }]);</code></pre>
   <script src="assets/js/demos2.js"></script>
   <script src="assets/js/demos3.js"></script>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/home.js"></script>
   <script src="assets/js/anim.js"></script>
 <script src="assets/js/picker.js" defer></script>
 <script src="lib/js/waterfall.js"></script>
 <script>document.body.classList.add("has-wf"); UVWaterfall.mount();</script>
+<!-- uvc:js --><script src="assets/js/chrome.js" defer></script><!-- /uvc:js -->
 </body>
 </html>

@@ -47,12 +47,7 @@
   }
   const RES = window.RESOURCES.map((r, i) => ({ name: r[0], url: r[1], cat: r[2], lic: r[3], desc: r[4], tags: r[5] || [], i }));
   const CATS = window.CATEGORIES;
-  countUp($("#statRes"), RES.length);
-  countUp($("#statCat"), CATS.length - 1);
-  countUp($("#statDemo"), window.DEMOS.length);
-  $("#specSnip").textContent = window.DEMOS.length;
-  $("#specRes").textContent = RES.length;
-  $("#demoCountBadge").textContent = window.DEMOS.length;
+  [["#statRes", RES.length], ["#statCat", CATS.length - 1], ["#statDemo", window.DEMOS.length]].forEach(([s, n]) => $(s) && countUp($(s), n));
 
   // ── Library ───────────────────────────────────────────────────
   const state = { cat: "all", q: "", fav: false, sort: "curated" };

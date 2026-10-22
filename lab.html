@@ -117,6 +117,7 @@
   @media (max-width: 600px) { .form .grid2 { grid-template-columns: 1fr; } .dhead .uv-row { flex-wrap: wrap; } .dhead .uv-input { width: 100%; } .lhero form { flex-direction: column; } }
 </style>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <!-- uvc:css --><link rel="stylesheet" href="assets/css/chrome.css" /><meta property="og:type" content="website" /><meta property="og:site_name" content="UI Vault" /><meta property="og:title" content="Test page — UI Vault" /><meta property="og:description" content="Try any theme, kit and element design on realistic mock pages: a dashboard, a landing page, a settings form and a shop." /><meta property="og:url" content="https://thenameiscobmarley.github.io/ui-vault/lab.html" /><meta property="og:image" content="https://thenameiscobmarley.github.io/ui-vault/assets/og.jpg" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta name="twitter:card" content="summary_large_image" /><!-- /uvc:css -->
 </head>
 <body>
 <header class="top">
@@ -124,7 +125,7 @@
   <div class="views" role="tablist" id="views">
     <button type="button" data-v="dash" class="on">Dashboard</button><button type="button" data-v="land">Landing</button><button type="button" data-v="set">Settings</button><button type="button" data-v="shop">Shop</button><button type="button" data-v="all">Every element</button>
   </div>
-  <nav class="links"><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
+  <!-- uvc:header --><button class="uvc-icon" type="button" data-uvc-search aria-label="Search the site" title="Search (Ctrl K)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button><!-- /uvc:header --><nav class="links"><a href="./">Home</a><a href="quickstart.html">Quick start</a><a href="directory.html">Index</a></nav>
   <button class="uv-btn uv-btn--sm ctl-toggle" type="button" id="ctlToggle">Customize</button>
 </header>
 
@@ -299,5 +300,6 @@
 <script src="lib/parts.js"></script>
 <script src="assets/js/picker.js"></script>
 <script src="assets/js/lab.js"></script>
+<!-- uvc:js --><script src="assets/js/chrome.js" defer></script><!-- /uvc:js -->
 </body>
 </html>

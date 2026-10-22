@@ -8,7 +8,9 @@ A curated vault of open-source UI resources: component kits, copy-paste blocks, 
 - **Themes** (`themes.html`): 87 complete design styles (12 core + 50 regular + 25 signature, e.g. pearl, sapphire-metal, fade, doppler, case-hardened) covering buttons, headings, cards, hover motion and backgrounds; gallery with categories, full component preview, web/Python/C++ code, and a theme builder. A floating theme picker on every page tries any style live. Themes are generated from `tools/theme_specs.py` (keep `assets/js/theme-engine.js` in sync).
 - **Elements** (`elements.html`) and **Test page** (`lab.html`): 273 element designs in 15 families, picked per family with `data-uv-<family>="name"` on `<html>` or any element (nearest wins), plus 18 kits (a theme + one design per family). Generated from `tools/parts_specs.py` into `lib/css/parts/*.css`; the floating picker's Elements tab applies a mix site-wide. Python: `uivault.qss(kit="deep-metal")`, `parts={"btn": "pearl"}`; C++: `uivault::findKit`, `qss(theme, kit)`, `imgui::apply(theme, kit)`.
 - **Library** (`library.html`): every element, loader, animation, background, effect, theme, kit, component, block and native widget, shown live. Add items to a package. The tray shows web/Python/C++ code, and the Quick start zipper (`#builder`) packs only those picks (`assets/js/packer.js`).
-- **Index** (`directory.html`): search over everything (generated `lib/catalog.js`). The top bar on every page is Home · Quick start · Index.
+- **Index** (`directory.html`): search over everything (generated `lib/catalog.js`).
+- **Site chrome** (`tools/chrome.py` → every page; `assets/css/chrome.css`, `assets/js/chrome.js`): one header with Start / Design / Build menus, a Ctrl/⌘+K search over the whole site, a mobile menu, a sitemap footer, social preview tags (`assets/og.jpg`) and a `404.html`. Edit `NAV`/`FOOT` in `tools/chrome.py` and run it again; it only rewrites its own `<!-- uvc:… -->` blocks.
+- **Homepage** (`index.html`, `assets/css/home.css`, `assets/js/home.js`): a live theme stage (the same mini app in eight themes), a numbers band and a bento of every section.
 - **Effect layers** (`lib/js/layers.js`, `tools/layers_specs.py`): glow, shadow, border, backdrop, fill, shape, text, hover, press, entrance, idle, every uv-fx effect and page effects, on any element type or one element. Set them from the picker's Effects tab or the click-to-inspect panel.
 - **UiVault3** (`uivault3/` for PySide6, `cpp/uivault3/` for Qt 6 C++): custom-painted widgets drawn from the same design data (`lib/native.json`), so there are no stylesheet approximations.
 - **Waterfall** (`lib/js/waterfall.js`): procedural, blurred WebGL waterfall background on the homepage and Quick start.
@@ -26,7 +28,7 @@ A curated vault of open-source UI resources: component kits, copy-paste blocks, 
 Plain static files with no build step.
 
 ## Run locally
-Open `index.html`, or run `python3 -m http.server` and go to http://localhost:8000. Clipboard copy works best over http.
+Open `index.html` straight from disk (file://). Everything works without a server.
 
 ## Publish on GitHub Pages
 ```sh
