@@ -4,6 +4,7 @@ A theme = colours (bg / fg / accent / accent2, the rest is derived) + fonts + sh
 background, heading, primary button, hover motion and cards. Signature themes add `extra` CSS.
 Every recipe only uses --uv-* tokens and the theme's own colours, so all components follow automatically.
 """
+import re
 
 # ── fonts: key → (CSS stack, Google Fonts family spec or None) ──────────────
 FONTS = {
@@ -28,6 +29,12 @@ FONTS = {
     "press": ('"Press Start 2P", ui-monospace, monospace', "Press+Start+2P"),
     "hand": ('"Patrick Hand", "Comic Neue", cursive', "Patrick+Hand"),
     "majormono": ('"Major Mono Display", ui-monospace, monospace', "Major+Mono+Display"),
+    "cinzel": ('"Cinzel", Georgia, serif', "Cinzel:wght@500;700"),
+    "bungee": ('"Bungee", Impact, sans-serif', "Bungee"),
+    "creepster": ('"Creepster", Impact, cursive', "Creepster"),
+    "pacifico": ('"Pacifico", cursive', "Pacifico"),
+    "monoton": ('"Monoton", Impact, sans-serif', "Monoton"),
+    "silkscreen": ('"Silkscreen", ui-monospace, monospace', "Silkscreen:wght@400;700"),
 }
 SHAPES = {"sharp": (0, 0, 0, 0), "crisp": (2, 3, 4, 6), "soft": (4, 6, 8, 12), "round": (8, 12, 16, 22), "pill": (999, 999, 18, 26)}
 
@@ -39,9 +46,10 @@ def _rgb(h):
     return [int(h[i:i + 2], 16) for i in (0, 2, 4)]
 
 
-def hexc(rgb): return "#%02x%02x%02x" % tuple(max(0, min(255, round(v))) for v in rgb)
+def rnd(v): return int(v + .5) if v >= 0 else -int(-v + .5)   # half up, like JS Math.round (Python's round() is half-even)
+def hexc(rgb): return "#%02x%02x%02x" % tuple(max(0, min(255, rnd(v))) for v in rgb)
 def mix(a, b, t): return hexc([x + (y - x) * t for x, y in zip(_rgb(a), _rgb(b))])
-def alpha(h, a): return h[:7] + "%02x" % round(a * 255)
+def alpha(h, a): return h[:7] + "%02x" % rnd(a * 255)
 def lum(h): r, g, b = _rgb(h); return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255
 def on(h): return "#111111" if lum(h) > 0.55 else "#ffffff"
 def lighten(h, t): return mix(h, "#ffffff", t)
@@ -62,6 +70,80 @@ def derive(s):
     c["success"], c["warn"], c["danger"] = (("#4ade80", "#fbbf24", "#f87171") if dark else ("#2f7d4f", "#b7791f", "#c4321f"))
     c.update(s.get("colors", {}))
     return c, dark
+
+
+# ── recipes shared with the browser theme builder ───────────────────────────
+# build.py writes these to assets/js/theme-recipes.js, so tools/theme_specs.py and assets/js/theme-engine.js
+# render them identically. CSS with [[expr]] holes; expr sees the colours a (accent), b (accent-2), t (text), bg, s, s2, s3,
+# the flag dark, and al(c, x) mx(c1, c2, x) lt(c, x) dk(c, x) on(c) iff(cond, x, y) u(c) (url-encoded colour).
+# Hover recipes also use SEL (the theme selector) and H (its hovered buttons).
+SHARED = {
+    "background": {
+        "topo": "background-image: repeating-radial-gradient(circle at 28% 38%, transparent 0 22px, [[al(t, .07)]] 22px 23px), repeating-radial-gradient(circle at 82% 88%, transparent 0 30px, [[al(a, .09)]] 30px 31px);",
+        "waves": "background-image: radial-gradient(circle at 50% 100%, transparent 10px, [[al(a, .16)]] 11px 12px, transparent 13px); background-size: 28px 14px;",
+        "conic": "background-image: conic-gradient(from 210deg at 72% 18%, [[al(a, .26)]], transparent 25%, [[al(b, .2)]] 50%, transparent 75%, [[al(a, .26)]]);",
+        "plaid": "background-image: repeating-linear-gradient(0deg, [[al(a, .10)]] 0 6px, transparent 6px 40px), repeating-linear-gradient(90deg, [[al(a, .10)]] 0 6px, transparent 6px 40px), repeating-linear-gradient(0deg, transparent 0 20px, [[al(b, .09)]] 20px 22px, transparent 22px 40px), repeating-linear-gradient(90deg, transparent 0 20px, [[al(b, .09)]] 20px 22px, transparent 22px 40px);",
+        "iso": "background-image: linear-gradient(30deg, [[al(t, .05)]] 12%, transparent 12.5%, transparent 87%, [[al(t, .05)]] 87.5%), linear-gradient(150deg, [[al(t, .05)]] 12%, transparent 12.5%, transparent 87%, [[al(t, .05)]] 87.5%), linear-gradient(30deg, [[al(t, .05)]] 12%, transparent 12.5%, transparent 87%, [[al(t, .05)]] 87.5%), linear-gradient(150deg, [[al(t, .05)]] 12%, transparent 12.5%, transparent 87%, [[al(t, .05)]] 87.5%), linear-gradient(60deg, [[al(a, .07)]] 25%, transparent 25.5%, transparent 75%, [[al(a, .07)]] 75%), linear-gradient(60deg, [[al(a, .07)]] 25%, transparent 25.5%, transparent 75%, [[al(a, .07)]] 75%); background-size: 40px 70px; background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;",
+        "bokeh": "background-image: radial-gradient(circle 90px at 14% 22%, [[al(a, .30)]], transparent), radial-gradient(circle 140px at 72% 14%, [[al(b, .24)]], transparent), radial-gradient(circle 110px at 88% 72%, [[al(a, .20)]], transparent), radial-gradient(circle 70px at 34% 86%, [[al(b, .26)]], transparent), radial-gradient(circle 220px at 50% 55%, [[al(a, .10)]], transparent);",
+        "rays": "background-image: repeating-conic-gradient(from 0deg at 50% 115%, [[al(a, .09)]] 0 5deg, transparent 5deg 11deg), radial-gradient(ellipse at 50% 115%, [[al(a, .28)]], transparent 62%);",
+        "hex": "background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='[[u(t)]]' stroke-opacity='.10'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='[[u(a)]]' stroke-opacity='.12'/%3E%3C/svg%3E\"); background-size: 56px 100px;",
+        "terrazzo": "background-image: radial-gradient(circle at 20% 30%, [[al(a, .55)]] 0 3px, transparent 3.5px), radial-gradient(circle at 70% 62%, [[al(b, .5)]] 0 2px, transparent 2.5px), radial-gradient(circle at 42% 80%, [[al(t, .16)]] 0 2.5px, transparent 3px), radial-gradient(circle at 86% 16%, [[al(a, .4)]] 0 1.5px, transparent 2px), radial-gradient(circle at 10% 76%, [[al(b, .4)]] 0 4px, transparent 4.5px), radial-gradient(circle at 58% 22%, [[al(t, .12)]] 0 1.5px, transparent 2px); background-size: 120px 120px;",
+        "rain": "background-image: repeating-linear-gradient(100deg, transparent 0 22px, [[al(a, .07)]] 22px 23px, transparent 23px 47px, [[al(t, .05)]] 47px 48px), linear-gradient(180deg, [[al(a, .08)]], transparent 40%);",
+        "wash": "background-image: linear-gradient(160deg, [[al(a, .22)]], transparent 42%, transparent 60%, [[al(b, .2)]]);",
+    },
+    "heading": {
+        "emboss": "color: [[t]]; text-shadow: 0 1px 0 [[iff(dark, al('#ffffff', .14), '#ffffff')]], 0 -1px 0 [[al('#000000', iff(dark, .7, .2))]];",
+        "neon-outline": "color: transparent; -webkit-text-stroke: 1.5px [[lt(a, .45)]]; filter: drop-shadow(0 0 4px [[a]]) drop-shadow(0 0 14px [[al(a, .6)]]);",
+        "gold": "background-image: linear-gradient(180deg, #fff3c4 0%, #e6c25a 38%, #9a6f12 52%, #d8b04a 66%, #fff0b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 1px 0 [[al('#000000', iff(dark, .5, .25))]]);",
+        "ice": "background-image: linear-gradient(180deg, [[iff(dark, '#ffffff', '#0b4f74')]] 0%, [[iff(dark, '#bfefff', '#2a9fd6')]] 40%, [[iff(dark, '#4fb6e8', '#083650')]] 55%, [[iff(dark, '#d9f6ff', '#3fb4e8')]] 72%, [[iff(dark, '#ffffff', '#0b4f74')]] 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 12px #6fd6ff55);",
+        "rainbow": "background-image: linear-gradient(90deg, #ff5f6d, #ffc371, #e8e85a, #4fe0a0, #4fb8ff, #a77bff, #ff5f6d); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: uvt-holo 9s linear infinite;",
+        "split": "background-image: linear-gradient(180deg, [[t]] 54%, [[a]] 54%); -webkit-background-clip: text; background-clip: text; color: transparent;",
+        "retro": "background-image: linear-gradient(180deg, #f2fbff 0%, #8ad1ff 46%, #2b1055 50%, #ff6ec7 76%, #ffe0f4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 2px 0 [[a]]) drop-shadow(0 0 16px [[al(a, .55)]]);",
+        "fade3d": "text-shadow: 1px 1px 0 [[al(a, .95)]], 2px 2px 0 [[al(a, .85)]], 3px 3px 0 [[al(a, .72)]], 4px 4px 0 [[al(a, .6)]], 5px 5px 0 [[al(a, .48)]], 6px 6px 0 [[al(a, .36)]], 7px 7px 0 [[al(a, .24)]], 8px 8px 0 [[al(a, .12)]];",
+        "rgb": "color: [[t]]; text-shadow: 2px 0 [[al(a, .85)]], -2px 0 [[al(b, .85)]];",
+        "offset": "color: transparent; -webkit-text-stroke: 2px [[a]]; filter: drop-shadow(4px 4px 0 [[al(b, .65)]]);",
+    },
+    "button": {
+        "clay": "background: [[a]]; color: [[on(a)]]; border: 0; border-radius: 999px; box-shadow: inset 0 -4px 8px [[al(dk(a, .4), .55)]], inset 0 4px 8px [[al('#ffffff', .45)]], 0 8px 18px -8px [[al(dk(a, .3), .75)]];",
+        "candy": "background: linear-gradient(180deg, [[lt(a, .35)]], [[a]] 50%, [[dk(a, .1)]] 51%, [[lt(a, .12)]]); color: [[on(a)]]; border: 1px solid [[dk(a, .3)]]; box-shadow: inset 0 1px 0 [[al('#ffffff', .7)]], 0 3px 8px -3px [[al(dk(a, .4), .7)]]; text-shadow: 0 1px 0 [[al('#000000', .22)]];",
+        "gel": "background: linear-gradient(180deg, [[lt(a, .55)]] 0%, [[lt(a, .2)]] 48%, [[a]] 52%, [[lt(a, .35)]] 100%); color: [[on(a)]]; border: 1px solid [[dk(a, .25)]]; border-radius: 999px; box-shadow: inset 0 1px 1px [[al('#ffffff', .9)]], 0 4px 10px -4px [[a]];",
+        "pixel": "background: [[a]]; color: [[on(a)]]; border: 0; border-radius: 0; box-shadow: inset 0 -4px 0 [[dk(a, .35)]], 4px 0 0 [[t]], -4px 0 0 [[t]], 0 4px 0 [[t]], 0 -4px 0 [[t]];",
+        "neu": "background: [[s]]; color: [[iff(dark, lt(a, .2), dk(a, .1))]]; border: 0; box-shadow: 6px 6px 14px [[al(dk(bg, .35), .7)]], -6px -6px 14px [[al(lt(bg, iff(dark, .08, .9)), .8)]];",
+        "duo": "background: [[a]]; color: [[on(a)]]; border: 2px solid [[t]]; box-shadow: 5px 5px 0 [[b]];",
+        "holo": "background: linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6) 0 0 / 300% 100%; color: #1d1d2b; border: 1px solid [[al('#ffffff', .6)]]; animation: uvt-holo 6s linear infinite;",
+        "gold": "background: linear-gradient(180deg, #fff3c4 0%, #e6c25a 40%, #9a6f12 52%, #d8b04a 66%, #fff0b8 100%); color: #3a2600; border: 1px solid #9a6f12; text-shadow: 0 1px 0 #ffffff66; box-shadow: inset 0 1px 0 #ffffff, 0 6px 16px -8px #9a6f12;",
+    },
+    "card": {
+        "clay": "border: 0; background: [[s]]; box-shadow: inset 0 -6px 14px [[al('#000000', iff(dark, .35, .08))]], inset 0 6px 14px [[al('#ffffff', iff(dark, .06, .7))]], 0 18px 34px -18px [[al(iff(dark, '#000000', dk(a, .5)), .55)]];",
+        "neu": "border: 0; background: [[bg]]; box-shadow: 9px 9px 22px [[al(dk(bg, .4), .6)]], -9px -9px 22px [[al(lt(bg, iff(dark, .07, .8)), .85)]];",
+        "ticket": "border: 0; background: radial-gradient(circle at 0 50%, transparent 12px, [[s]] 12.5px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 50%, transparent 12px, [[s]] 12.5px) right / 51% 100% no-repeat; filter: drop-shadow(0 6px 14px [[al('#000000', .18)]]);",
+        "stack": "box-shadow: 6px 6px 0 -1px [[s2]], 6px 6px 0 0 [[al(t, .18)]], 12px 12px 0 -1px [[s3]], 12px 12px 0 0 [[al(t, .12)]];",
+        "duo": "border: 2px solid [[t]]; box-shadow: 8px 8px 0 [[a]];",
+        "holo": "border: 2px solid transparent; background: linear-gradient([[s]], [[s]]) padding-box, linear-gradient(115deg, #ff9ae6, #9ad3ff, #b8ff9a, #fff59a, #ff9ae6) border-box;",
+        "dashed": "border: 1.5px dashed [[al(a, .6)]]; background: linear-gradient([[al(a, .05)]], [[al(a, .05)]]), [[s]];",
+        "float": "border-color: [[al(t, .08)]]; box-shadow: inset 0 1px 0 [[al('#ffffff', iff(dark, .06, .9))]], 0 30px 60px -30px [[al('#000000', iff(dark, .8, .35))]], 0 18px 36px -18px [[al(a, .35)]];",
+        "frame": "border: 1px solid [[al(t, .28)]]; outline: 1px solid [[al(t, .14)]]; outline-offset: 5px;",
+    },
+    "hover": {
+        "swing": "H { animation: uvt-swing .7s; transform-origin: 50% 0; }",
+        "squish": "H { animation: uvt-squish .45s; }",
+        "rise": "H { translate: 0 -4px; box-shadow: 0 14px 28px -12px [[a]]; } SEL .uv-btn:active { translate: 0 0; }",
+        "shake": "H { animation: uvt-shake .4s; }",
+        "skew": "H { transform: skewX(-8deg); }",
+        "float": "H { animation: uvt-float 1.4s ease-in-out infinite; }",
+    },
+}
+
+
+def u(h): return h.replace("#", "%23")
+
+
+def fill(tpl, c, dark, sel=""):
+    """Evaluate the [[expr]] holes of a SHARED recipe (assets/js/theme-engine.js has the same evaluator)."""
+    env = {"a": c["accent"], "b": c["accent-2"], "t": c["text"], "bg": c["bg"], "s": c["surface"], "s2": c["surface-2"], "s3": c["surface-3"],
+           "dark": dark, "al": alpha, "mx": mix, "lt": lighten, "dk": darken, "on": on, "u": u, "iff": lambda q, x, y: x if q else y}
+    out = re.sub(r"\[\[(.+?)\]\]", lambda m: str(eval(m.group(1), {"__builtins__": {}}, env)), tpl)
+    return out.replace("SEL", sel).replace("H {", f"{sel} .uv-btn:hover {{") if sel else out
 
 
 # ── recipes ──────────────────────────────────────────────────────────────────
@@ -113,7 +195,7 @@ def bg_css(kind, c, dark, args):
         return f"background-image: repeating-radial-gradient(circle at 0 0, transparent 0 34px, {alpha('#000000', .55)} 35px 36px), repeating-conic-gradient(from 0deg at 0 0, transparent 0 9deg, {alpha('#000000', .45)} 9deg 9.6deg);"
     if kind == "damascus":
         return f"background-image: repeating-radial-gradient(ellipse 120% 40% at 50% 120%, {alpha('#ffffff', .07)} 0 6px, transparent 6px 14px), linear-gradient(180deg, {lighten(c['bg'], .08)}, {c['bg']});"
-    return ""
+    return fill(SHARED["background"].get(kind, ""), c, dark)
 
 
 def head_css(kind, c, dark, args):
@@ -139,7 +221,7 @@ def head_css(kind, c, dark, args):
         return "text-shadow: " + ", ".join(f"{i}px {i}px 0 {sc}" for i in range(1, 6)) + ";"
     if kind == "duotone": return f"color: {c['text']}; text-shadow: 3px 3px 0 {alpha(a, .9)};"
     if kind == "fire": return f"background-image: linear-gradient(0deg, #ff3d00, #ffb300 55%, #fff3c4); {clip}"
-    return ""
+    return fill(SHARED["heading"].get(kind, ""), c, dark)
 
 
 def btn_css(kind, c, dark, args):
@@ -165,7 +247,7 @@ def btn_css(kind, c, dark, args):
     if kind == "neon": return f"background: transparent; color: {lighten(a, .3)}; border: 1.5px solid {a}; text-shadow: 0 0 8px {a}; box-shadow: 0 0 12px -2px {a}, inset 0 0 10px -4px {a};"
     if kind == "underline": return f"background: transparent; color: {t}; border-color: transparent; text-decoration: underline; text-decoration-color: {a}; text-decoration-thickness: 2px; text-underline-offset: 5px;"
     if kind == "stamp": return f"background: transparent; color: {a}; border: 2px double {a}; text-transform: uppercase; letter-spacing: .14em;"
-    return ""
+    return fill(SHARED["button"].get(kind, ""), c, dark)
 
 
 HOVER_KF = """@keyframes uvt-wob { 25% { rotate: -4deg; } 50% { rotate: 3deg; } 75% { rotate: -1.5deg; } }
@@ -201,7 +283,8 @@ def hover_css(kind, sel, c, dark):
     card = {"lift": f"{sel} .uv-card--hover:hover {{ translate: 0 -4px; }}", "tilt": f"{sel} .uv-card--hover:hover {{ rotate: -1deg; }}",
             "glow": f"{sel} .uv-card--hover:hover {{ box-shadow: 0 0 0 1px {alpha(a, .5)}, 0 0 30px -8px {a}; }}",
             "sink": f"{sel} .uv-card--hover:hover {{ translate: 3px 3px; }}", "pop": f"{sel} .uv-card--hover:hover {{ scale: 1.02; }}"}
-    return base + rules.get(kind, "") + "\n" + card.get(kind, card["lift"] if kind in ("shine", "press", "jelly", "bounce", "wobble", "fill", "ring", "pulse") else "")
+    rule = rules.get(kind) or fill(SHARED["hover"].get(kind, ""), c, dark, sel)
+    return base + rule + "\n" + card.get(kind, card["lift"] if kind in ("shine", "press", "jelly", "bounce", "wobble", "fill", "ring", "pulse", "swing", "squish", "rise", "shake", "skew", "float") else "")
 
 
 def card_css(kind, c, dark):
@@ -220,7 +303,7 @@ def card_css(kind, c, dark):
     if kind == "metal": return f"background: repeating-linear-gradient(90deg, {alpha('#ffffff', .04)} 0 1px, transparent 1px 3px), linear-gradient(180deg, {lighten(c['surface'], .08)}, {c['surface']}); border-color: {alpha('#ffffff', .18)}; box-shadow: inset 0 1px 0 {alpha('#ffffff', .25)};"
     if kind == "pearl": return f"background: linear-gradient(135deg, #ffffffee, #f6efffdd 40%, #eaf8ffdd 70%, #fffaf0ee); border: 1px solid #e3d8f5; box-shadow: inset 0 1px 0 #fff, 0 18px 40px -22px #7a6a9e88;"
     if kind == "paper": return f"background: {c['surface']} linear-gradient({alpha(b, .14)} 1px, transparent 1px) 0 0 / 100% 26px; box-shadow: 2px 3px 0 {alpha(t, .12)};"
-    return ""
+    return fill(SHARED["card"].get(kind, ""), c, dark)
 
 
 # ── the themes ───────────────────────────────────────────────────────────────
@@ -350,7 +433,85 @@ SIGNATURE = [
       bgfx=("mesh",), headfx=("fire",), btn="gradient", hover="jelly", card="glass", shape="pill", weight=800),
 ]
 
-ALL = SPECS + SIGNATURE
+# v13: 62 more themes (new categories Gaming, Luxury, Tech and Seasonal) using the SHARED recipes too
+MORE = [
+    # Minimal
+    T("museum", "Minimal", "gallery-white walls, black captions and one ochre label", "#fafaf7", "#161616", "#c08a2b", font="geist", head="cormorant", shape="sharp", card="frame", btn="ink", hover="invert", weight=600),
+    T("oat", "Minimal", "oat-milk beige, cocoa type, soft extruded panels", "#efe7da", "#3d2f24", "#8a5a3b", font="outfit", head="fraunces", shape="round", card="neu", btn="neu", hover="squish", bw=0),
+    T("zen", "Minimal", "rice paper, sumi ink and a single vermilion seal", "#f5f1e8", "#1c1a17", "#d4402b", font="manrope", head="cormorant", bgfx="noise", card="frame", btn="stamp", hover="press"),
+    T("ledger", "Minimal", "bookkeeping cream with green rules and red totals", "#f6f4e8", "#1f2a22", "#2e7d4f", "#b03a2e", font="mono", head="serif", bgfx="lines", card="dashed", btn="outline", hover="fill", shape="crisp"),
+    # Dark
+    T("onyx", "Dark", "polished onyx black with chrome-silver type", "#08080a", "#e7e7ea", "#c9ced6", "#6f7680", font="geist", head="geist", headfx="chrome", btn="chrome", card="float", hover="rise", weight=800, tracking="-.04em"),
+    T("abyss", "Dark", "the deep trench: soft bioluminescent violet and cyan", "#030614", "#d8e0ff", "#7c5cff", "#2de2e6", font="manrope", head="syne", bgfx="bokeh", btn="glow", card="glass", hover="glow", weight=800),
+    T("noir", "Dark", "film noir: black, rain on the window, one ember", "#0d0d0d", "#e8e4dc", "#ff6a3d", font="geist", head="playfair", bgfx="rain", headfx="emboss", card="frame", btn="outline", hover="fill"),
+    T("eclipse", "Dark", "a black sun with a corona of gold", "#050505", "#f3eee2", "#ffb43b", "#ff5a1f", font="manrope", head="unbounded", bgfx="rays", headfx="gold", btn="gold", card="glow", hover="rise", weight=800),
+    T("ultraviolet", "Dark", "ultraviolet midnight with glossy lilac buttons", "#120a24", "#ece3ff", "#b07cff", "#ff7ad9", font="outfit", head="outfit", bgfx="conic", btn="gel", card="soft", hover="rise", weight=800, shape="round"),
+    # Pastel
+    T("cotton-candy", "Pastel", "pink and baby-blue spun sugar", "#fff0f7", "#4a2a4a", "#ff7fbf", "#7fcbff", font="outfit", head="unbounded", shape="pill", bgfx="bokeh", btn="candy", card="clay", hover="squish", bw=0, weight=800),
+    T("macaron", "Pastel", "pistachio, rose and lemon macarons in a box", "#fbf6ee", "#3d3340", "#ee7fa6", "#9fd296", font="manrope", head="dmserif", shape="round", bgfx="terrazzo", btn="clay", card="clay", hover="pop", bw=0),
+    T("periwinkle", "Pastel", "periwinkle blue with a coral pop", "#eef0ff", "#262a55", "#6c74f0", "#ff8a7a", font="outfit", head="outfit", shape="round", btn="gel", card="float", hover="rise", weight=800, bw=0),
+    T("sorbet", "Pastel", "mango, raspberry and lime sorbet", "#fff6ea", "#4a2617", "#ff7a59", "#ffc23d", font="outfit", head="bricolage", shape="pill", bgfx="waves", btn="candy", card="soft", hover="bounce", weight=800),
+    # Bold
+    T("electric", "Bold", "electric blue, hazard yellow and hard pink shadows", "#1033ff", "#ffffff", "#ffe600", "#ff3d7f", font="grotesk", head="bricolage", shape="sharp", bgfx="halftone", btn="duo", card="duo", hover="sink", weight=800, case="uppercase", bw=2),
+    T("comic", "Bold", "comic book: halftone dots, thick ink and a POW yellow", "#fff7d6", "#111111", "#ff3b30", "#ffd400", font="grotesk", head="bungee", shape="crisp", bgfx="halftone", headfx="offset", btn="duo", card="duo", hover="shake", bw=2, weight=400),
+    T("poster", "Bold", "Swiss poster: huge black type on safety orange", "#ff5a1f", "#111111", "#111111", "#ffffff", font="geist", head="geist", shape="sharp", btn="ink", card="outline", hover="invert", weight=800, tracking="-.06em"),
+    T("acid", "Bold", "acid lime on black, like a rave flyer", "#0a0a0a", "#efffd1", "#c6ff00", "#ff2bd6", font="grotesk", head="unbounded", bgfx="plaid", headfx="rgb", btn="duo", card="duo", hover="shake", shape="sharp", weight=800, case="uppercase"),
+    # Retro
+    T("cassette", "Retro", "70s cassette inlay: mustard, rust and cream", "#f3e7c9", "#3a2a1a", "#d9822b", "#c2452d", font="outfit", head="bricolage", shape="round", bgfx="stripes", btn="3d", card="soft", hover="bounce", weight=800),
+    T("diner", "Retro", "50s diner: cherry red, mint and a checker floor", "#f7fbf8", "#222222", "#e2263b", "#5fd0b8", font="outfit", head="pacifico", shape="pill", bgfx="checker", btn="candy", card="float", hover="pop", weight=400),
+    T("dos", "Retro", "DOS blue screen with yellow highlights", "#0000aa", "#ffffff", "#ffff55", "#55ffff", font="pixel", head="silkscreen", shape="sharp", btn="pixel", card="outline", hover="invert", case="uppercase"),
+    T("pinball", "Retro", "pinball cabinet: chrome rails and flashing lights", "#140818", "#fff2fb", "#ff2e93", "#ffd23f", font="audiowide", head="monoton", bgfx="rays", headfx="retro", btn="candy", card="glow", hover="flicker", weight=400),
+    T("vhs", "Retro", "VHS tracking lines with magenta and cyan bleed", "#0b0a12", "#f0eaff", "#ff3df2", "#3dfcff", font="mono", head="bebas", bgfx="scan", headfx="rgb", btn="neon", card="outline", hover="shake", case="uppercase", weight=400),
+    T("sepia", "Retro", "an old photograph in warm sepia", "#e9dcc3", "#3b2a1a", "#8b5a2b", font="manrope", head="playfair", bgfx="noise", card="frame", btn="ink", hover="press"),
+    # Nature
+    T("meadow", "Nature", "spring meadow green with buttercup yellow", "#f2f8ea", "#1f3317", "#4f9d2d", "#f2c230", font="manrope", head="fraunces", shape="round", bgfx="bokeh", btn="clay", card="soft", hover="bounce"),
+    T("canyon", "Nature", "red-rock canyon at golden hour, with contour lines", "#2a140c", "#ffe9d6", "#ff7a3d", "#ffc06b", font="outfit", head="dmserif", bgfx="topo", btn="gradient", card="soft", hover="rise"),
+    T("rainforest", "Nature", "dense canopy, rain and a parrot-red accent", "#07170f", "#dcf2e2", "#2ecc71", "#ff4d4d", font="manrope", head="syne", bgfx="rain", btn="glow", card="glass", hover="glow", weight=800),
+    T("coral-reef", "Nature", "turquoise shallows and living coral", "#e6fbfb", "#08363b", "#ff6f61", "#13b5b1", font="outfit", head="unbounded", shape="pill", bgfx="waves", btn="gel", card="float", hover="squish", weight=800, bw=0),
+    T("tundra", "Nature", "snowy tundra, pale sky and lichen", "#eef3f5", "#24323a", "#4f7f90", "#93ad5c", font="geist", head="cormorant", bgfx="topo", btn="soft", card="frame", hover="lift"),
+    # Gaming
+    T("esports", "Gaming", "esports stage: black, team red and LED white", "#0a0b0f", "#f2f4f8", "#ff2d55", "#ffffff", font="rajdhani", head="orbitron", shape="sharp", bgfx="hex", headfx="metal", btn="solid", card="notch", hover="rise", case="uppercase", weight=900),
+    T("rpg", "Gaming", "fantasy RPG: parchment, leather and quest gold", "#2a1d12", "#f2e4c8", "#e0b04a", "#8a2b1d", font="cormorant", head="cinzel", bgfx="noise", headfx="gold", btn="gold", card="double", hover="shine", case="uppercase", tracking=".06em"),
+    T("pixel-plains", "Gaming", "8-bit console: sky blue, brick red and coin gold", "#5c94fc", "#ffffff", "#e45c10", "#ffcc00", font="silkscreen", head="press", shape="sharp", btn="pixel", card="outline", hover="sink", weight=400),
+    T("hud", "Gaming", "starship HUD: cyan lines over deep space", "#020b14", "#cdeeff", "#38e1ff", "#ff9f1c", font="rajdhani", head="orbitron", shape="sharp", bgfx="grid", headfx="neon-outline", btn="neon", card="notch", hover="flicker", case="uppercase"),
+    T("dropzone", "Gaming", "battle-royale map: tactical olive and safety orange", "#1f2219", "#eef0e4", "#ff7b1c", "#c9d16b", font="rajdhani", head="bebas", shape="crisp", bgfx="topo", btn="3d", card="notch", hover="press", case="uppercase", weight=400),
+    T("pole-position", "Gaming", "racing sim: carbon, chequered flags and hot yellow", "#111214", "#f3f3f3", "#ffd400", "#ff2b2b", font="rajdhani", head="orbitron", shape="sharp", bgfx="carbon", headfx="offset", btn="solid", card="notch", hover="rise", case="uppercase", weight=900),
+    T("harvest", "Gaming", "cozy farm sim: warm wood, cream and leaf green", "#f6ecd4", "#3f2b1a", "#5f9c45", "#e79f3c", font="hand", head="hand", shape="round", bgfx="plaid", btn="clay", card="clay", hover="squish", bw=2, weight=400),
+    T("nightmare", "Gaming", "survival horror: rust, flicker and dried blood", "#120c0a", "#e8dcd0", "#c0141e", "#6b4c3b", font="mono", head="creepster", bgfx="noise", headfx="rgb", btn="outline", card="frame", hover="flicker", weight=400),
+    # Luxury
+    T("champagne", "Luxury", "champagne gold on ivory, with a gilt frame", "#fbf6ea", "#3a2e1d", "#a8822f", "#e6cf9a", font="manrope", head="cinzel", headfx="gold", btn="gold", card="frame", hover="shine", case="uppercase", tracking=".08em"),
+    T("velvet-noir", "Luxury", "black velvet, burgundy and a touch of gold", "#0d0608", "#f3e6e8", "#b3123f", "#d4af37", font="manrope", head="playfair", bgfx="vignette", card="double", btn="solid", hover="rise"),
+    T("carrara", "Luxury", "white Carrara marble with brushed brass", "#f6f5f2", "#222222", "#a7814a", "#8c8c8c", font="geist", head="cormorant", bgfx="marble", card="frame", btn="gold", hover="lift"),
+    T("emerald-club", "Luxury", "private members' club: emerald leather and brass", "#06261c", "#f1ead6", "#d4af37", "#2f8f6a", font="manrope", head="playfair", bgfx="noise", headfx="gold", btn="gold", card="double", hover="shine"),
+    T("royal", "Luxury", "royal purple velvet with a gold crest", "#1a0b2e", "#f5edff", "#e5b94c", "#8a5cff", font="cormorant", head="cinzel", bgfx="conic", headfx="gold", btn="gold", card="frame", hover="shine", case="uppercase", tracking=".05em"),
+    T("atelier", "Luxury", "fashion atelier: blush, black and gilt", "#f8ece8", "#141010", "#141010", "#c79a5b", font="geist", head="dmserif", card="frame", btn="ink", hover="invert", tracking="-.03em", shape="sharp"),
+    # Tech
+    T("devtools", "Tech", "IDE dark: slate panels and syntax colours", "#1e1f29", "#e6e6f0", "#7aa2f7", "#f7768e", font="mono", head="mono", shape="crisp", bgfx="grid", btn="solid", card="flat", hover="press", weight=600),
+    T("saas", "Tech", "crisp SaaS dashboard white with an indigo accent", "#f7f8fc", "#151a2d", "#4f46e5", "#06b6d4", font="geist", head="geist", shape="round", btn="solid", card="float", hover="rise", weight=800, tracking="-.04em"),
+    T("fintech", "Tech", "fintech dark: deep navy and mint gains", "#0a1220", "#e6edf7", "#21d19f", "#5b8cff", font="manrope", head="geist", bgfx="conic", card="float", btn="glow", hover="rise", weight=800),
+    T("neural", "Tech", "AI lab graphite with a violet-to-cyan gradient", "#0c0c12", "#ecebf5", "#8b5cf6", "#22d3ee", font="geist", head="geist", bgfx="mesh", headfx="gradient", btn="gradient", card="float", hover="rise", weight=800, tracking="-.04em"),
+    T("pcb", "Tech", "green circuit board with copper traces", "#06331f", "#d9ffe9", "#e0a64a", "#3dff9a", font="mono", head="grotesk", bgfx="hex", btn="metal", card="dashed", hover="glow", shape="crisp"),
+    T("quantum", "Tech", "white lab with iridescent particles", "#f8f9ff", "#1a1b3a", "#5b5bf0", "#ff5cc8", font="outfit", head="unbounded", bgfx="bokeh", headfx="holo", btn="holo", card="holo", hover="rise", weight=800, shape="round"),
+    T("mainframe", "Tech", "green code rain on a black mainframe", "#000800", "#c8ffcf", "#00ff66", font="mono", head="mono", bgfx="rain", headfx="glow", btn="neon", card="outline", hover="flicker", shape="sharp"),
+    T("hologram", "Tech", "blue hologram projection with scan lines", "#04101c", "#cff4ff", "#4fd8ff", "#9b7bff", font="rajdhani", head="orbitron", bgfx="scan", headfx="neon-outline", btn="neon", card="glow", hover="glow", case="uppercase"),
+    # Seasonal
+    T("pumpkin", "Seasonal", "pumpkin orange and witch purple at midnight", "#120a1c", "#fdeedd", "#ff7a00", "#8b3dff", font="outfit", head="creepster", bgfx="bokeh", headfx="glow", btn="3d", card="glow", hover="wobble", weight=400),
+    T("frost", "Seasonal", "winter frost, ice blue and silver", "#eef6fb", "#16324a", "#2f8fc8", "#9fc6dd", font="manrope", head="cormorant", bgfx="bokeh", headfx="ice", btn="gel", card="float", hover="lift", weight=700),
+    T("evergreen", "Seasonal", "evergreen, cranberry and gold ribbon", "#0f2a1d", "#fbf3e4", "#d62839", "#e9c46a", font="manrope", head="playfair", bgfx="plaid", headfx="gold", btn="candy", card="double", hover="bounce"),
+    T("april", "Seasonal", "spring showers: fresh green, sky and tulip pink", "#f3faf6", "#1f3a33", "#2fae8a", "#ff7eb6", font="outfit", head="fraunces", bgfx="rain", btn="clay", card="soft", hover="bounce", shape="round"),
+    T("beach", "Seasonal", "summer beach: sand, sea and sun", "#fff8e6", "#11414a", "#ff8a3d", "#18b8c9", font="outfit", head="pacifico", bgfx="waves", btn="candy", card="float", hover="squish", shape="pill", weight=400),
+    T("midnight-gala", "Seasonal", "new year's eve: black tie and gold confetti", "#0a0a0f", "#f6f1e6", "#e8c15a", "#ffffff", font="manrope", head="playfair", bgfx="terrazzo", headfx="gold", btn="gold", card="glow", hover="shine"),
+    # Signature
+    T("fire-ice", "Signature", "half blazing orange, half glacier blue", "#0b0b14", "#f2f4ff", "#ff6a1a", "#3ab4ff", font="outfit", head="unbounded", bgfx="conic", headfx="gradient", btn="gradient", card="gradient-border", hover="rise", weight=800,
+      extra="h1.uv-h1, h2.uv-h2 { background-image: linear-gradient(90deg, #ff3d00, #ffb300 35%, #9fe6ff 65%, #2f7bff); }"),
+    T("toxic", "Signature", "radioactive green on hazard-striped black", "#0b0f05", "#eaffd6", "#a6ff00", "#ffd400", font="rajdhani", head="orbitron", bgfx="stripes", headfx="glow", btn="neon", card="notch", hover="flicker", case="uppercase", shape="sharp"),
+    T("bismuth", "Signature", "bismuth crystal: stepped rainbow oxide terraces", "#14101e", "#f2ecff", "#ff6ad5", "#5ee7d0", font="outfit", head="unbounded", bgfx="iso", headfx="rainbow", btn="holo", card="holo", hover="rise", weight=800, shape="crisp"),
+    T("opal", "Signature", "white opal with flashes of colour fire", "#f6f8fb", "#202436", "#6d7cff", "#ff7ab8", font="manrope", head="cormorant", bgfx="bokeh", headfx="holo", btn="pearl", card="pearl", hover="shine", weight=700),
+    T("magma", "Signature", "cooling magma: black crust and glowing seams", "#0f0705", "#ffe8dc", "#ff4d00", "#ffb000", font="outfit", head="syne", bgfx="topo", headfx="fire", btn="glow", card="glow", hover="rise", weight=800),
+    T("ronin", "Signature", "red lacquer armour and black steel", "#120404", "#ffece6", "#ff2a1a", "#d4af37", font="grotesk", head="bebas", bgfx="rays", headfx="glow", btn="solid", card="notch", hover="rise", case="uppercase", weight=400),
+]
+
+ALL = SPECS + SIGNATURE + MORE
 
 
 def gen_theme(s):

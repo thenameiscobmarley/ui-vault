@@ -1,0 +1,21 @@
+/*! UI Vault 3.1.0 · theme: ronin — red lacquer armour and black steel. Needs core.css. MIT */
+[data-uv-theme="ronin"] {
+  --uv-bg: #120404; --uv-text: #ffece6; --uv-accent: #ff2a1a; --uv-accent-2: #d4af37; --uv-on-accent: #ffffff; --uv-surface: #1e100f; --uv-surface-2: #271918; --uv-surface-3: #362726; --uv-line: #ffece624; --uv-line-2: #ffece642; --uv-muted: #b3a29e; --uv-dim: #847370; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: uppercase;
+  color-scheme: dark;
+  background-image: repeating-conic-gradient(from 0deg at 50% 115%, #ff2a1a17 0 5deg, transparent 5deg 11deg), radial-gradient(ellipse at 50% 115%, #ff2a1a47, transparent 62%);
+}
+[data-uv-theme="ronin"] .uv-h1:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *), [data-uv-theme="ronin"] .uv-h2:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { color: #ff9f98; text-shadow: 0 0 6px #ff2a1ae6, 0 0 22px #ff2a1a99, 0 0 48px #ff2a1a59; }
+[data-uv-theme="ronin"] .uv-btn:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="ronin"] .uv-btn--primary:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *), [data-uv-theme="ronin"] .uv-btn--grad:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { background: #ff2a1a; color: #ffffff; border-color: #ff2a1a; }
+[data-uv-theme="ronin"] .uv-btn--primary:hover:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { filter: brightness(1.06); }
+[data-uv-theme="ronin"] .uv-card:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { border: 0; border-radius: 0; background: linear-gradient(135deg, transparent 14px, #1e100f 14px) ; clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); box-shadow: inset 0 0 0 1px #ff2a1a80; }
+[data-uv-theme="ronin"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { background: #ff2a1a; } [data-uv-theme="ronin"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { color: #ffffff; }
+[data-uv-theme="ronin"] .uv-switch input:checked + i:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *), [data-uv-theme="ronin"] .uv-check input:checked:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { background: #ff2a1a; border-color: #ff2a1a; }
+[data-uv-theme="ronin"] .uv-progress > i:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { background: #ff2a1a; } [data-uv-theme="ronin"] .uv-ring:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { background: conic-gradient(#ff2a1a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="ronin"] .uv-input:focus:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *), [data-uv-theme="ronin"] .uv-select:focus:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *), [data-uv-theme="ronin"] .uv-textarea:focus:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { border-color: #ff2a1a; box-shadow: 0 0 0 3px #ff2a1a38; }
+[data-uv-theme="ronin"] .uv-btn:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="ronin"] .uv-btn:hover:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { translate: 0 -4px; box-shadow: 0 14px 28px -12px #ff2a1a; } [data-uv-theme="ronin"] .uv-btn:active:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { translate: 0 0; }
+[data-uv-theme="ronin"] .uv-card--hover:hover:not([data-uv-theme="ronin"] [data-uv-theme]:not([data-uv-theme="ronin"]) *) { translate: 0 -4px; }

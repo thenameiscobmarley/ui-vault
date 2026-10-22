@@ -134,8 +134,8 @@ inline constexpr Theme luxe{ "luxe", "black lacquer, gold rules, spaced capitals
 
 /// warm paper, graphite text, a quiet blue link
 inline constexpr Theme paper{ "paper", "warm paper, graphite text, a quiet blue link", "Minimal", false,
-    Palette{Color{247, 245, 240, 255}, Color{251, 250, 248, 255}, Color{235, 233, 228, 255}, Color{224, 223, 218, 255}, Color{42, 42, 40, 26}, Color{42, 42, 40, 46}, Color{42, 42, 40, 255}, Color{108, 107, 104, 255}, Color{149, 148, 144, 255}, Color{47, 91, 211, 255}, Color{47, 91, 211, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{247, 245, 240, 255}, Color{251, 250, 248, 255}, Color{235, 233, 228, 255}, Color{224, 223, 218, 255}, Color{226, 224, 220, 255}, Color{210, 208, 204, 255}, Color{42, 42, 40, 255}, Color{108, 107, 104, 255}, Color{149, 148, 144, 255}, Color{47, 91, 211, 255}, Color{47, 91, 211, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{247, 245, 240, 255}, Color{251, 251, 248, 255}, Color{235, 233, 228, 255}, Color{224, 223, 218, 255}, Color{42, 42, 40, 26}, Color{42, 42, 40, 46}, Color{42, 42, 40, 255}, Color{108, 107, 104, 255}, Color{149, 148, 144, 255}, Color{47, 91, 211, 255}, Color{47, 91, 211, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{247, 245, 240, 255}, Color{251, 251, 248, 255}, Color{235, 233, 228, 255}, Color{224, 223, 218, 255}, Color{226, 224, 220, 255}, Color{210, 208, 204, 255}, Color{42, 42, 40, 255}, Color{108, 107, 104, 255}, Color{149, 148, 144, 255}, Color{47, 91, 211, 255}, Color{47, 91, 211, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
     "\"Manrope\", system-ui, sans-serif", "\"Instrument Serif\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
     4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
 
@@ -225,8 +225,8 @@ inline constexpr Theme ink{ "ink", "pure ink black, paper-white type, one red", 
 
 /// abyssal teal with bioluminescent cyan
 inline constexpr Theme deep_sea{ "deep-sea", "abyssal teal with bioluminescent cyan", "Dark", true,
-    Palette{Color{4, 27, 34, 255}, Color{14, 38, 45, 255}, Color{23, 47, 53, 255}, Color{36, 60, 66, 255}, Color{214, 244, 247, 36}, Color{214, 244, 247, 66}, Color{214, 244, 247, 255}, Color{147, 175, 179, 255}, Color{105, 131, 136, 255}, Color{45, 226, 230, 255}, Color{61, 124, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{4, 27, 34, 255}, Color{14, 38, 45, 255}, Color{23, 47, 53, 255}, Color{36, 60, 66, 255}, Color{34, 58, 64, 255}, Color{58, 83, 89, 255}, Color{214, 244, 247, 255}, Color{147, 175, 179, 255}, Color{105, 131, 136, 255}, Color{45, 226, 230, 255}, Color{61, 124, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{4, 27, 34, 255}, Color{15, 38, 45, 255}, Color{23, 47, 53, 255}, Color{36, 60, 66, 255}, Color{214, 244, 247, 36}, Color{214, 244, 247, 66}, Color{214, 244, 247, 255}, Color{147, 175, 179, 255}, Color{105, 131, 136, 255}, Color{45, 226, 230, 255}, Color{61, 124, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{4, 27, 34, 255}, Color{15, 38, 45, 255}, Color{23, 47, 53, 255}, Color{36, 60, 66, 255}, Color{34, 58, 64, 255}, Color{58, 83, 89, 255}, Color{214, 244, 247, 255}, Color{147, 175, 179, 255}, Color{105, 131, 136, 255}, Color{45, 226, 230, 255}, Color{61, 124, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
     "\"Manrope\", system-ui, sans-serif", "\"Geist\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
     4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
 
@@ -260,8 +260,8 @@ inline constexpr Theme vampire{ "vampire", "gothic purple-black with blood-red a
 
 /// arctic slate with frost blues
 inline constexpr Theme nord_night{ "nord-night", "arctic slate with frost blues", "Dark", true,
-    Palette{Color{46, 52, 64, 255}, Color{56, 61, 73, 255}, Color{63, 69, 80, 255}, Color{74, 80, 91, 255}, Color{236, 239, 244, 36}, Color{236, 239, 244, 66}, Color{236, 239, 244, 255}, Color{175, 179, 186, 255}, Color{137, 142, 150, 255}, Color{136, 192, 208, 255}, Color{180, 142, 173, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{46, 52, 64, 255}, Color{56, 61, 73, 255}, Color{63, 69, 80, 255}, Color{74, 80, 91, 255}, Color{73, 78, 89, 255}, Color{95, 100, 111, 255}, Color{236, 239, 244, 255}, Color{175, 179, 186, 255}, Color{137, 142, 150, 255}, Color{136, 192, 208, 255}, Color{180, 142, 173, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{46, 52, 64, 255}, Color{56, 61, 73, 255}, Color{63, 69, 80, 255}, Color{75, 80, 91, 255}, Color{236, 239, 244, 36}, Color{236, 239, 244, 66}, Color{236, 239, 244, 255}, Color{175, 179, 186, 255}, Color{137, 142, 150, 255}, Color{136, 192, 208, 255}, Color{180, 142, 173, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{46, 52, 64, 255}, Color{56, 61, 73, 255}, Color{63, 69, 80, 255}, Color{75, 80, 91, 255}, Color{73, 78, 89, 255}, Color{95, 100, 111, 255}, Color{236, 239, 244, 255}, Color{175, 179, 186, 255}, Color{137, 142, 150, 255}, Color{136, 192, 208, 255}, Color{180, 142, 173, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
     "\"Manrope\", system-ui, sans-serif", "\"Geist\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
     4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
 
@@ -274,8 +274,8 @@ inline constexpr Theme charcoal{ "charcoal", "matte charcoal, amber indicators, 
 
 /// lilac fields, soft violet buttons
 inline constexpr Theme lavender{ "lavender", "lilac fields, soft violet buttons", "Pastel", false,
-    Palette{Color{243, 239, 255, 255}, Color{250, 248, 255, 255}, Color{231, 227, 244, 255}, Color{221, 217, 236, 255}, Color{46, 37, 80, 26}, Color{46, 37, 80, 46}, Color{46, 37, 80, 255}, Color{109, 102, 136, 255}, Color{148, 142, 171, 255}, Color{139, 108, 240, 255}, Color{244, 154, 193, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{243, 239, 255, 255}, Color{250, 248, 255, 255}, Color{231, 227, 244, 255}, Color{221, 217, 236, 255}, Color{223, 218, 237, 255}, Color{207, 203, 223, 255}, Color{46, 37, 80, 255}, Color{109, 102, 136, 255}, Color{148, 142, 171, 255}, Color{139, 108, 240, 255}, Color{244, 154, 193, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{243, 239, 255, 255}, Color{250, 248, 255, 255}, Color{231, 227, 245, 255}, Color{221, 217, 236, 255}, Color{46, 37, 80, 26}, Color{46, 37, 80, 46}, Color{46, 37, 80, 255}, Color{109, 102, 136, 255}, Color{148, 142, 171, 255}, Color{139, 108, 240, 255}, Color{244, 154, 193, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{243, 239, 255, 255}, Color{250, 248, 255, 255}, Color{231, 227, 245, 255}, Color{221, 217, 236, 255}, Color{223, 218, 237, 255}, Color{207, 203, 223, 255}, Color{46, 37, 80, 255}, Color{109, 102, 136, 255}, Color{148, 142, 171, 255}, Color{139, 108, 240, 255}, Color{244, 154, 193, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
     "\"Outfit\", system-ui, sans-serif", "\"Outfit\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
     8.0f, 8.0f, 12.0f, 16.0f, 0.0f };
 
@@ -295,8 +295,8 @@ inline constexpr Theme peach{ "peach", "peach fuzz, apricot buttons, warm and so
 
 /// cherry-blossom pink with sumi ink
 inline constexpr Theme sakura{ "sakura", "cherry-blossom pink with sumi ink", "Pastel", false,
-    Palette{Color{255, 242, 245, 255}, Color{255, 249, 250, 255}, Color{243, 230, 233, 255}, Color{233, 219, 223, 255}, Color{58, 36, 48, 26}, Color{58, 36, 48, 46}, Color{58, 36, 48, 255}, Color{121, 102, 111, 255}, Color{160, 143, 150, 255}, Color{232, 102, 143, 255}, Color{154, 208, 194, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{255, 242, 245, 255}, Color{255, 249, 250, 255}, Color{243, 230, 233, 255}, Color{233, 219, 223, 255}, Color{235, 221, 225, 255}, Color{219, 205, 209, 255}, Color{58, 36, 48, 255}, Color{121, 102, 111, 255}, Color{160, 143, 150, 255}, Color{232, 102, 143, 255}, Color{154, 208, 194, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{255, 242, 245, 255}, Color{255, 249, 251, 255}, Color{243, 230, 233, 255}, Color{233, 219, 223, 255}, Color{58, 36, 48, 26}, Color{58, 36, 48, 46}, Color{58, 36, 48, 255}, Color{121, 102, 111, 255}, Color{160, 143, 150, 255}, Color{232, 102, 143, 255}, Color{154, 208, 194, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{255, 242, 245, 255}, Color{255, 249, 251, 255}, Color{243, 230, 233, 255}, Color{233, 219, 223, 255}, Color{235, 221, 225, 255}, Color{219, 205, 209, 255}, Color{58, 36, 48, 255}, Color{121, 102, 111, 255}, Color{160, 143, 150, 255}, Color{232, 102, 143, 255}, Color{154, 208, 194, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
     "\"Manrope\", system-ui, sans-serif", "\"Cormorant Garamond\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
     8.0f, 8.0f, 12.0f, 16.0f, 0.0f };
 
@@ -386,8 +386,8 @@ inline constexpr Theme brutal_lime{ "brutal-lime", "acid lime neo-brutalism, thi
 
 /// amber phosphor terminal from 1983
 inline constexpr Theme amber_crt{ "amber-crt", "amber phosphor terminal from 1983", "Retro", true,
-    Palette{Color{19, 12, 2, 255}, Color{31, 20, 4, 255}, Color{40, 27, 5, 255}, Color{54, 38, 8, 255}, Color{255, 182, 39, 36}, Color{255, 182, 39, 66}, Color{255, 182, 39, 255}, Color{179, 128, 27, 255}, Color{132, 94, 20, 255}, Color{255, 182, 39, 255}, Color{255, 217, 138, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{19, 12, 2, 255}, Color{31, 20, 4, 255}, Color{40, 27, 5, 255}, Color{54, 38, 8, 255}, Color{52, 36, 7, 255}, Color{80, 56, 12, 255}, Color{255, 182, 39, 255}, Color{179, 128, 27, 255}, Color{132, 94, 20, 255}, Color{255, 182, 39, 255}, Color{255, 217, 138, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{19, 12, 2, 255}, Color{31, 21, 4, 255}, Color{40, 27, 5, 255}, Color{54, 38, 8, 255}, Color{255, 182, 39, 36}, Color{255, 182, 39, 66}, Color{255, 182, 39, 255}, Color{179, 128, 27, 255}, Color{132, 94, 20, 255}, Color{255, 182, 39, 255}, Color{255, 217, 138, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{19, 12, 2, 255}, Color{31, 21, 4, 255}, Color{40, 27, 5, 255}, Color{54, 38, 8, 255}, Color{52, 36, 7, 255}, Color{80, 56, 12, 255}, Color{255, 182, 39, 255}, Color{179, 128, 27, 255}, Color{132, 94, 20, 255}, Color{255, 182, 39, 255}, Color{255, 217, 138, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
     "\"VT323\", ui-monospace, monospace", "\"VT323\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace",
     0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
 
@@ -400,8 +400,8 @@ inline constexpr Theme gameboy{ "gameboy", "four shades of handheld green", "Ret
 
 /// pastel grid sunsets, marble busts and chrome
 inline constexpr Theme vaporwave{ "vaporwave", "pastel grid sunsets, marble busts and chrome", "Retro", true,
-    Palette{Color{43, 16, 85, 255}, Color{54, 27, 94, 255}, Color{62, 36, 100, 255}, Color{74, 50, 110, 255}, Color{253, 242, 255, 36}, Color{253, 242, 255, 66}, Color{253, 242, 255, 255}, Color{186, 170, 201, 255}, Color{144, 124, 167, 255}, Color{255, 113, 206, 255}, Color{1, 205, 254, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{43, 16, 85, 255}, Color{54, 27, 94, 255}, Color{62, 36, 100, 255}, Color{74, 50, 110, 255}, Color{73, 48, 109, 255}, Color{97, 74, 129, 255}, Color{253, 242, 255, 255}, Color{186, 170, 201, 255}, Color{144, 124, 167, 255}, Color{255, 113, 206, 255}, Color{1, 205, 254, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{43, 16, 85, 255}, Color{54, 27, 94, 255}, Color{62, 36, 100, 255}, Color{75, 50, 111, 255}, Color{253, 242, 255, 36}, Color{253, 242, 255, 66}, Color{253, 242, 255, 255}, Color{186, 170, 201, 255}, Color{144, 124, 167, 255}, Color{255, 113, 206, 255}, Color{1, 205, 254, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{43, 16, 85, 255}, Color{54, 27, 94, 255}, Color{62, 36, 100, 255}, Color{75, 50, 111, 255}, Color{73, 48, 109, 255}, Color{97, 74, 129, 255}, Color{253, 242, 255, 255}, Color{186, 170, 201, 255}, Color{144, 124, 167, 255}, Color{255, 113, 206, 255}, Color{1, 205, 254, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
     "\"Space Grotesk\", system-ui, sans-serif", "\"Major Mono Display\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace",
     4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
 
@@ -540,8 +540,8 @@ inline constexpr Theme marble_fade{ "marble-fade", "swirled red, yellow and blue
 
 /// heat-treated steel: blue, gold and bronze patina
 inline constexpr Theme case_hardened{ "case-hardened", "heat-treated steel: blue, gold and bronze patina", "Signature", true,
-    Palette{Color{26, 31, 43, 255}, Color{37, 42, 53, 255}, Color{45, 50, 61, 255}, Color{58, 62, 74, 255}, Color{238, 241, 247, 36}, Color{238, 241, 247, 66}, Color{238, 241, 247, 255}, Color{170, 174, 182, 255}, Color{128, 132, 141, 255}, Color{63, 123, 217, 255}, Color{214, 168, 74, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{26, 31, 43, 255}, Color{37, 42, 53, 255}, Color{45, 50, 61, 255}, Color{58, 62, 74, 255}, Color{56, 61, 72, 255}, Color{81, 85, 96, 255}, Color{238, 241, 247, 255}, Color{170, 174, 182, 255}, Color{128, 132, 141, 255}, Color{63, 123, 217, 255}, Color{214, 168, 74, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{26, 31, 43, 255}, Color{37, 42, 53, 255}, Color{45, 50, 61, 255}, Color{58, 63, 74, 255}, Color{238, 241, 247, 36}, Color{238, 241, 247, 66}, Color{238, 241, 247, 255}, Color{170, 174, 182, 255}, Color{128, 132, 141, 255}, Color{63, 123, 217, 255}, Color{214, 168, 74, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{26, 31, 43, 255}, Color{37, 42, 53, 255}, Color{45, 50, 61, 255}, Color{58, 63, 74, 255}, Color{56, 61, 72, 255}, Color{81, 85, 96, 255}, Color{238, 241, 247, 255}, Color{170, 174, 182, 255}, Color{128, 132, 141, 255}, Color{63, 123, 217, 255}, Color{214, 168, 74, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
     "\"Rajdhani\", system-ui, sans-serif", "\"Rajdhani\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
     2.0f, 2.0f, 3.0f, 4.0f, 1.0f };
 
@@ -575,8 +575,8 @@ inline constexpr Theme chameleon{ "chameleon", "colour-shift paint flipping teal
 
 /// deep candy-apple red car paint with a clearcoat
 inline constexpr Theme candy_apple{ "candy-apple", "deep candy-apple red car paint with a clearcoat", "Signature", true,
-    Palette{Color{26, 3, 6, 255}, Color{37, 14, 18, 255}, Color{47, 24, 27, 255}, Color{60, 38, 40, 255}, Color{255, 233, 236, 36}, Color{255, 233, 236, 66}, Color{255, 233, 236, 255}, Color{182, 159, 162, 255}, Color{136, 113, 116, 255}, Color{224, 16, 42, 255}, Color{255, 107, 129, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{26, 3, 6, 255}, Color{37, 14, 18, 255}, Color{47, 24, 27, 255}, Color{60, 38, 40, 255}, Color{58, 35, 38, 255}, Color{85, 63, 66, 255}, Color{255, 233, 236, 255}, Color{182, 159, 162, 255}, Color{136, 113, 116, 255}, Color{224, 16, 42, 255}, Color{255, 107, 129, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{26, 3, 6, 255}, Color{37, 15, 18, 255}, Color{47, 24, 27, 255}, Color{60, 38, 41, 255}, Color{255, 233, 236, 36}, Color{255, 233, 236, 66}, Color{255, 233, 236, 255}, Color{182, 159, 162, 255}, Color{136, 113, 116, 255}, Color{224, 16, 42, 255}, Color{255, 107, 129, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{26, 3, 6, 255}, Color{37, 15, 18, 255}, Color{47, 24, 27, 255}, Color{60, 38, 41, 255}, Color{58, 35, 38, 255}, Color{85, 63, 66, 255}, Color{255, 233, 236, 255}, Color{182, 159, 162, 255}, Color{136, 113, 116, 255}, Color{224, 16, 42, 255}, Color{255, 107, 129, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
     "\"Outfit\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
     8.0f, 8.0f, 12.0f, 16.0f, 1.0f };
 
@@ -638,8 +638,8 @@ inline constexpr Theme aurora_borealis{ "aurora-borealis", "northern lights ripp
 
 /// cosmic dust clouds in magenta and cyan
 inline constexpr Theme nebula{ "nebula", "cosmic dust clouds in magenta and cyan", "Signature", true,
-    Palette{Color{7, 3, 26, 255}, Color{19, 14, 37, 255}, Color{28, 24, 47, 255}, Color{42, 38, 60, 255}, Color{241, 233, 255, 36}, Color{241, 233, 255, 66}, Color{241, 233, 255, 255}, Color{166, 159, 182, 255}, Color{119, 113, 136, 255}, Color{255, 79, 216, 255}, Color{79, 210, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
-    Palette{Color{7, 3, 26, 255}, Color{19, 14, 37, 255}, Color{28, 24, 47, 255}, Color{42, 38, 60, 255}, Color{40, 35, 58, 255}, Color{68, 63, 85, 255}, Color{241, 233, 255, 255}, Color{166, 159, 182, 255}, Color{119, 113, 136, 255}, Color{255, 79, 216, 255}, Color{79, 210, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{7, 3, 26, 255}, Color{19, 15, 37, 255}, Color{28, 24, 47, 255}, Color{42, 38, 60, 255}, Color{241, 233, 255, 36}, Color{241, 233, 255, 66}, Color{241, 233, 255, 255}, Color{166, 159, 182, 255}, Color{119, 113, 136, 255}, Color{255, 79, 216, 255}, Color{79, 210, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{7, 3, 26, 255}, Color{19, 15, 37, 255}, Color{28, 24, 47, 255}, Color{42, 38, 60, 255}, Color{40, 35, 58, 255}, Color{68, 63, 85, 255}, Color{241, 233, 255, 255}, Color{166, 159, 182, 255}, Color{119, 113, 136, 255}, Color{255, 79, 216, 255}, Color{79, 210, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
     "\"Outfit\", system-ui, sans-serif", "\"Syne\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
     4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
 
@@ -657,9 +657,443 @@ inline constexpr Theme lava_lamp{ "lava-lamp", "groovy molten blobs in orange an
     "\"Outfit\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
     999.0f, 999.0f, 999.0f, 18.0f, 1.0f };
 
-inline constexpr const Theme* themes[] = { &editorial, &brutal, &neon, &glass, &terminal, &soft, &retro, &swiss, &y2k, &mono, &sketch, &luxe, &paper, &linen, &fog, &porcelain, &newsprint, &blueprint, &sand, &concrete, &graphite, &swiss_red, &midnight, &obsidian, &ink, &deep_sea, &forest_night, &espresso, &plum, &vampire, &nord_night, &charcoal, &lavender, &mint, &peach, &sakura, &sky, &lemon, &bubblegum, &seafoam, &tangerine, &cobalt, &magenta, &risograph, &pop_art, &bauhaus, &memphis, &brutal_lime, &amber_crt, &gameboy, &vaporwave, &synthwave, &arcade, &teletext, &polaroid, &win_classic, &moss, &ocean, &desert, &glacier, &autumn, &volcano, &pearl, &black_pearl, &sapphire_metal, &fade, &doppler, &emerald, &ruby, &marble_fade, &case_hardened, &tiger_tooth, &damascus, &crimson_web, &chameleon, &candy_apple, &anodized, &titanium, &gunmetal, &rose_gold, &gold_leaf, &holo_foil, &carbon_fiber, &aurora_borealis, &nebula, &liquid_chrome, &lava_lamp };
+/// gallery-white walls, black captions and one ochre label
+inline constexpr Theme museum{ "museum", "gallery-white walls, black captions and one ochre label", "Minimal", false,
+    Palette{Color{250, 250, 247, 255}, Color{253, 253, 251, 255}, Color{236, 236, 234, 255}, Color{225, 225, 222, 255}, Color{22, 22, 22, 26}, Color{22, 22, 22, 46}, Color{22, 22, 22, 255}, Color{95, 95, 94, 255}, Color{141, 141, 139, 255}, Color{192, 138, 43, 255}, Color{192, 138, 43, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{250, 250, 247, 255}, Color{253, 253, 251, 255}, Color{236, 236, 234, 255}, Color{225, 225, 222, 255}, Color{227, 227, 224, 255}, Color{209, 209, 206, 255}, Color{22, 22, 22, 255}, Color{95, 95, 94, 255}, Color{141, 141, 139, 255}, Color{192, 138, 43, 255}, Color{192, 138, 43, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Cormorant Garamond\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
 
-inline constexpr int themeCount = 87;
+/// oat-milk beige, cocoa type, soft extruded panels
+inline constexpr Theme oat{ "oat", "oat-milk beige, cocoa type, soft extruded panels", "Minimal", false,
+    Palette{Color{239, 231, 218, 255}, Color{248, 244, 238, 255}, Color{228, 220, 207, 255}, Color{219, 211, 198, 255}, Color{61, 47, 36, 26}, Color{61, 47, 36, 46}, Color{61, 47, 36, 255}, Color{118, 106, 94, 255}, Color{154, 143, 131, 255}, Color{138, 90, 59, 255}, Color{138, 90, 59, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{239, 231, 218, 255}, Color{248, 244, 238, 255}, Color{228, 220, 207, 255}, Color{219, 211, 198, 255}, Color{221, 212, 199, 255}, Color{207, 198, 185, 255}, Color{61, 47, 36, 255}, Color{118, 106, 94, 255}, Color{154, 143, 131, 255}, Color{138, 90, 59, 255}, Color{138, 90, 59, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Fraunces\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 0.0f };
+
+/// rice paper, sumi ink and a single vermilion seal
+inline constexpr Theme zen{ "zen", "rice paper, sumi ink and a single vermilion seal", "Minimal", false,
+    Palette{Color{245, 241, 232, 255}, Color{251, 249, 245, 255}, Color{232, 228, 219, 255}, Color{221, 217, 209, 255}, Color{28, 26, 23, 26}, Color{28, 26, 23, 46}, Color{28, 26, 23, 255}, Color{97, 95, 90, 255}, Color{141, 138, 132, 255}, Color{212, 64, 43, 255}, Color{212, 64, 43, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{245, 241, 232, 255}, Color{251, 249, 245, 255}, Color{232, 228, 219, 255}, Color{221, 217, 209, 255}, Color{223, 219, 211, 255}, Color{206, 202, 194, 255}, Color{28, 26, 23, 255}, Color{97, 95, 90, 255}, Color{141, 138, 132, 255}, Color{212, 64, 43, 255}, Color{212, 64, 43, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Cormorant Garamond\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// bookkeeping cream with green rules and red totals
+inline constexpr Theme ledger{ "ledger", "bookkeeping cream with green rules and red totals", "Minimal", false,
+    Palette{Color{246, 244, 232, 255}, Color{251, 250, 245, 255}, Color{233, 232, 220, 255}, Color{222, 222, 210, 255}, Color{31, 42, 34, 26}, Color{31, 42, 34, 46}, Color{31, 42, 34, 255}, Color{100, 107, 97, 255}, Color{143, 147, 137, 255}, Color{46, 125, 79, 255}, Color{176, 58, 46, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{246, 244, 232, 255}, Color{251, 250, 245, 255}, Color{233, 232, 220, 255}, Color{222, 222, 210, 255}, Color{224, 223, 212, 255}, Color{207, 208, 196, 255}, Color{31, 42, 34, 255}, Color{100, 107, 97, 255}, Color{143, 147, 137, 255}, Color{46, 125, 79, 255}, Color{176, 58, 46, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Geist Mono\", ui-monospace, monospace", "\"Instrument Serif\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    2.0f, 2.0f, 3.0f, 4.0f, 1.0f };
+
+/// polished onyx black with chrome-silver type
+inline constexpr Theme onyx{ "onyx", "polished onyx black with chrome-silver type", "Dark", true,
+    Palette{Color{8, 8, 10, 255}, Color{19, 19, 21, 255}, Color{28, 28, 30, 255}, Color{41, 41, 44, 255}, Color{231, 231, 234, 36}, Color{231, 231, 234, 66}, Color{231, 231, 234, 255}, Color{160, 160, 162, 255}, Color{115, 115, 118, 255}, Color{201, 206, 214, 255}, Color{111, 118, 128, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{8, 8, 10, 255}, Color{19, 19, 21, 255}, Color{28, 28, 30, 255}, Color{41, 41, 44, 255}, Color{39, 39, 42, 255}, Color{66, 66, 68, 255}, Color{231, 231, 234, 255}, Color{160, 160, 162, 255}, Color{115, 115, 118, 255}, Color{201, 206, 214, 255}, Color{111, 118, 128, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Geist\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// the deep trench: soft bioluminescent violet and cyan
+inline constexpr Theme abyss{ "abyss", "the deep trench: soft bioluminescent violet and cyan", "Dark", true,
+    Palette{Color{3, 6, 20, 255}, Color{14, 17, 32, 255}, Color{22, 26, 41, 255}, Color{35, 39, 55, 255}, Color{216, 224, 255, 36}, Color{216, 224, 255, 66}, Color{216, 224, 255, 255}, Color{148, 154, 180, 255}, Color{105, 111, 133, 255}, Color{124, 92, 255, 255}, Color{45, 226, 230, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{3, 6, 20, 255}, Color{14, 17, 32, 255}, Color{22, 26, 41, 255}, Color{35, 39, 55, 255}, Color{33, 37, 53, 255}, Color{58, 62, 81, 255}, Color{216, 224, 255, 255}, Color{148, 154, 180, 255}, Color{105, 111, 133, 255}, Color{124, 92, 255, 255}, Color{45, 226, 230, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Syne\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// film noir: black, rain on the window, one ember
+inline constexpr Theme noir{ "noir", "film noir: black, rain on the window, one ember", "Dark", true,
+    Palette{Color{13, 13, 13, 255}, Color{24, 24, 23, 255}, Color{33, 32, 32, 255}, Color{46, 45, 44, 255}, Color{232, 228, 220, 36}, Color{232, 228, 220, 66}, Color{232, 228, 220, 255}, Color{162, 159, 154, 255}, Color{118, 116, 112, 255}, Color{255, 106, 61, 255}, Color{255, 106, 61, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{13, 13, 13, 255}, Color{24, 24, 23, 255}, Color{33, 32, 32, 255}, Color{46, 45, 44, 255}, Color{44, 43, 42, 255}, Color{70, 69, 67, 255}, Color{232, 228, 220, 255}, Color{162, 159, 154, 255}, Color{118, 116, 112, 255}, Color{255, 106, 61, 255}, Color{255, 106, 61, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Playfair Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// a black sun with a corona of gold
+inline constexpr Theme eclipse{ "eclipse", "a black sun with a corona of gold", "Dark", true,
+    Palette{Color{5, 5, 5, 255}, Color{17, 17, 16, 255}, Color{26, 26, 25, 255}, Color{41, 40, 38, 255}, Color{243, 238, 226, 36}, Color{243, 238, 226, 66}, Color{243, 238, 226, 255}, Color{167, 163, 155, 255}, Color{119, 117, 111, 255}, Color{255, 180, 59, 255}, Color{255, 90, 31, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{5, 5, 5, 255}, Color{17, 17, 16, 255}, Color{26, 26, 25, 255}, Color{41, 40, 38, 255}, Color{39, 38, 36, 255}, Color{67, 65, 62, 255}, Color{243, 238, 226, 255}, Color{167, 163, 155, 255}, Color{119, 117, 111, 255}, Color{255, 180, 59, 255}, Color{255, 90, 31, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// ultraviolet midnight with glossy lilac buttons
+inline constexpr Theme ultraviolet{ "ultraviolet", "ultraviolet midnight with glossy lilac buttons", "Dark", true,
+    Palette{Color{18, 10, 36, 255}, Color{29, 21, 47, 255}, Color{38, 30, 56, 255}, Color{51, 43, 69, 255}, Color{236, 227, 255, 36}, Color{236, 227, 255, 66}, Color{236, 227, 255, 255}, Color{166, 158, 185, 255}, Color{123, 114, 141, 255}, Color{176, 124, 255, 255}, Color{255, 122, 217, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{18, 10, 36, 255}, Color{29, 21, 47, 255}, Color{38, 30, 56, 255}, Color{51, 43, 69, 255}, Color{49, 41, 67, 255}, Color{74, 66, 93, 255}, Color{236, 227, 255, 255}, Color{166, 158, 185, 255}, Color{123, 114, 141, 255}, Color{176, 124, 255, 255}, Color{255, 122, 217, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Outfit\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 1.0f };
+
+/// pink and baby-blue spun sugar
+inline constexpr Theme cotton_candy{ "cotton-candy", "pink and baby-blue spun sugar", "Pastel", false,
+    Palette{Color{255, 240, 247, 255}, Color{255, 248, 251, 255}, Color{244, 228, 237, 255}, Color{235, 218, 228, 255}, Color{74, 42, 74, 26}, Color{74, 42, 74, 46}, Color{74, 42, 74, 255}, Color{132, 105, 129, 255}, Color{168, 145, 164, 255}, Color{255, 127, 191, 255}, Color{127, 203, 255, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{255, 240, 247, 255}, Color{255, 248, 251, 255}, Color{244, 228, 237, 255}, Color{235, 218, 228, 255}, Color{237, 220, 229, 255}, Color{222, 204, 216, 255}, Color{74, 42, 74, 255}, Color{132, 105, 129, 255}, Color{168, 145, 164, 255}, Color{255, 127, 191, 255}, Color{127, 203, 255, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    999.0f, 999.0f, 999.0f, 18.0f, 0.0f };
+
+/// pistachio, rose and lemon macarons in a box
+inline constexpr Theme macaron{ "macaron", "pistachio, rose and lemon macarons in a box", "Pastel", false,
+    Palette{Color{251, 246, 238, 255}, Color{253, 251, 247, 255}, Color{240, 234, 228, 255}, Color{230, 225, 219, 255}, Color{61, 51, 64, 26}, Color{61, 51, 64, 46}, Color{61, 51, 64, 255}, Color{122, 113, 120, 255}, Color{160, 152, 154, 255}, Color{238, 127, 166, 255}, Color{159, 210, 150, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{251, 246, 238, 255}, Color{253, 251, 247, 255}, Color{240, 234, 228, 255}, Color{230, 225, 219, 255}, Color{232, 226, 220, 255}, Color{217, 211, 207, 255}, Color{61, 51, 64, 255}, Color{122, 113, 120, 255}, Color{160, 152, 154, 255}, Color{238, 127, 166, 255}, Color{159, 210, 150, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"DM Serif Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 0.0f };
+
+/// periwinkle blue with a coral pop
+inline constexpr Theme periwinkle{ "periwinkle", "periwinkle blue with a coral pop", "Pastel", false,
+    Palette{Color{238, 240, 255, 255}, Color{247, 248, 255, 255}, Color{226, 228, 245, 255}, Color{216, 218, 236, 255}, Color{38, 42, 85, 26}, Color{38, 42, 85, 46}, Color{38, 42, 85, 255}, Color{102, 105, 139, 255}, Color{142, 145, 173, 255}, Color{108, 116, 240, 255}, Color{255, 138, 122, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{238, 240, 255, 255}, Color{247, 248, 255, 255}, Color{226, 228, 245, 255}, Color{216, 218, 236, 255}, Color{218, 220, 238, 255}, Color{202, 204, 224, 255}, Color{38, 42, 85, 255}, Color{102, 105, 139, 255}, Color{142, 145, 173, 255}, Color{108, 116, 240, 255}, Color{255, 138, 122, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Outfit\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 0.0f };
+
+/// mango, raspberry and lime sorbet
+inline constexpr Theme sorbet{ "sorbet", "mango, raspberry and lime sorbet", "Pastel", false,
+    Palette{Color{255, 246, 234, 255}, Color{255, 251, 246, 255}, Color{244, 234, 221, 255}, Color{235, 223, 211, 255}, Color{74, 38, 23, 26}, Color{74, 38, 23, 46}, Color{74, 38, 23, 255}, Color{132, 105, 91, 255}, Color{168, 146, 133, 255}, Color{255, 122, 89, 255}, Color{255, 194, 61, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{255, 246, 234, 255}, Color{255, 251, 246, 255}, Color{244, 234, 221, 255}, Color{235, 223, 211, 255}, Color{237, 225, 212, 255}, Color{222, 208, 196, 255}, Color{74, 38, 23, 255}, Color{132, 105, 91, 255}, Color{168, 146, 133, 255}, Color{255, 122, 89, 255}, Color{255, 194, 61, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Bricolage Grotesque\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    999.0f, 999.0f, 999.0f, 18.0f, 1.0f };
+
+/// electric blue, hazard yellow and hard pink shadows
+inline constexpr Theme electric{ "electric", "electric blue, hazard yellow and hard pink shadows", "Bold", true,
+    Palette{Color{16, 51, 255, 255}, Color{28, 61, 255, 255}, Color{38, 69, 255, 255}, Color{52, 82, 255, 255}, Color{255, 255, 255, 36}, Color{255, 255, 255, 66}, Color{255, 255, 255, 255}, Color{179, 190, 255, 255}, Color{131, 149, 255, 255}, Color{255, 230, 0, 255}, Color{255, 61, 127, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{16, 51, 255, 255}, Color{28, 61, 255, 255}, Color{38, 69, 255, 255}, Color{52, 82, 255, 255}, Color{50, 80, 255, 255}, Color{78, 104, 255, 255}, Color{255, 255, 255, 255}, Color{179, 190, 255, 255}, Color{131, 149, 255, 255}, Color{255, 230, 0, 255}, Color{255, 61, 127, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Space Grotesk\", system-ui, sans-serif", "\"Bricolage Grotesque\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 2.0f };
+
+/// comic book: halftone dots, thick ink and a POW yellow
+inline constexpr Theme comic{ "comic", "comic book: halftone dots, thick ink and a POW yellow", "Bold", false,
+    Palette{Color{255, 247, 214, 255}, Color{255, 251, 237, 255}, Color{241, 233, 202, 255}, Color{229, 222, 192, 255}, Color{17, 17, 17, 26}, Color{17, 17, 17, 46}, Color{17, 17, 17, 255}, Color{93, 91, 80, 255}, Color{141, 137, 119, 255}, Color{255, 59, 48, 255}, Color{255, 212, 0, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{255, 247, 214, 255}, Color{255, 251, 237, 255}, Color{241, 233, 202, 255}, Color{229, 222, 192, 255}, Color{231, 224, 194, 255}, Color{212, 206, 178, 255}, Color{17, 17, 17, 255}, Color{93, 91, 80, 255}, Color{141, 137, 119, 255}, Color{255, 59, 48, 255}, Color{255, 212, 0, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Space Grotesk\", system-ui, sans-serif", "\"Bungee\", Impact, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    2.0f, 2.0f, 3.0f, 4.0f, 2.0f };
+
+/// Swiss poster: huge black type on safety orange
+inline constexpr Theme poster{ "poster", "Swiss poster: huge black type on safety orange", "Bold", true,
+    Palette{Color{255, 90, 31, 255}, Color{243, 86, 30, 255}, Color{234, 83, 30, 255}, Color{219, 79, 29, 255}, Color{17, 17, 17, 36}, Color{17, 17, 17, 66}, Color{17, 17, 17, 255}, Color{93, 40, 21, 255}, Color{141, 55, 24, 255}, Color{17, 17, 17, 255}, Color{255, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{255, 90, 31, 255}, Color{243, 86, 30, 255}, Color{234, 83, 30, 255}, Color{219, 79, 29, 255}, Color{221, 80, 29, 255}, Color{193, 71, 27, 255}, Color{17, 17, 17, 255}, Color{93, 40, 21, 255}, Color{141, 55, 24, 255}, Color{17, 17, 17, 255}, Color{255, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Geist\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// acid lime on black, like a rave flyer
+inline constexpr Theme acid{ "acid", "acid lime on black, like a rave flyer", "Bold", true,
+    Palette{Color{10, 10, 10, 255}, Color{21, 22, 20, 255}, Color{31, 32, 28, 255}, Color{44, 47, 40, 255}, Color{239, 255, 209, 36}, Color{239, 255, 209, 66}, Color{239, 255, 209, 255}, Color{166, 177, 145, 255}, Color{120, 128, 106, 255}, Color{198, 255, 0, 255}, Color{255, 43, 214, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{10, 10, 10, 255}, Color{21, 22, 20, 255}, Color{31, 32, 28, 255}, Color{44, 47, 40, 255}, Color{42, 45, 38, 255}, Color{69, 73, 62, 255}, Color{239, 255, 209, 255}, Color{166, 177, 145, 255}, Color{120, 128, 106, 255}, Color{198, 255, 0, 255}, Color{255, 43, 214, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Space Grotesk\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// 70s cassette inlay: mustard, rust and cream
+inline constexpr Theme cassette{ "cassette", "70s cassette inlay: mustard, rust and cream", "Retro", false,
+    Palette{Color{243, 231, 201, 255}, Color{250, 244, 231, 255}, Color{232, 220, 191, 255}, Color{223, 210, 182, 255}, Color{58, 42, 26, 26}, Color{58, 42, 26, 46}, Color{58, 42, 26, 255}, Color{117, 102, 82, 255}, Color{154, 140, 117, 255}, Color{217, 130, 43, 255}, Color{194, 69, 45, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{243, 231, 201, 255}, Color{250, 244, 231, 255}, Color{232, 220, 191, 255}, Color{223, 210, 182, 255}, Color{224, 212, 183, 255}, Color{210, 197, 169, 255}, Color{58, 42, 26, 255}, Color{117, 102, 82, 255}, Color{154, 140, 117, 255}, Color{217, 130, 43, 255}, Color{194, 69, 45, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Bricolage Grotesque\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 1.0f };
+
+/// 50s diner: cherry red, mint and a checker floor
+inline constexpr Theme diner{ "diner", "50s diner: cherry red, mint and a checker floor", "Retro", false,
+    Palette{Color{247, 251, 248, 255}, Color{251, 253, 252, 255}, Color{234, 238, 235, 255}, Color{224, 227, 224, 255}, Color{34, 34, 34, 26}, Color{34, 34, 34, 46}, Color{34, 34, 34, 255}, Color{102, 103, 102, 255}, Color{145, 147, 145, 255}, Color{226, 38, 59, 255}, Color{95, 208, 184, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{247, 251, 248, 255}, Color{251, 253, 252, 255}, Color{234, 238, 235, 255}, Color{224, 227, 224, 255}, Color{225, 229, 226, 255}, Color{209, 212, 209, 255}, Color{34, 34, 34, 255}, Color{102, 103, 102, 255}, Color{145, 147, 145, 255}, Color{226, 38, 59, 255}, Color{95, 208, 184, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Pacifico\", cursive", "\"Geist Mono\", ui-monospace, monospace",
+    999.0f, 999.0f, 999.0f, 18.0f, 1.0f };
+
+/// DOS blue screen with yellow highlights
+inline constexpr Theme dos{ "dos", "DOS blue screen with yellow highlights", "Retro", true,
+    Palette{Color{0, 0, 170, 255}, Color{13, 13, 174, 255}, Color{23, 23, 178, 255}, Color{38, 38, 183, 255}, Color{255, 255, 255, 36}, Color{255, 255, 255, 66}, Color{255, 255, 255, 255}, Color{173, 173, 228, 255}, Color{122, 122, 211, 255}, Color{255, 255, 85, 255}, Color{85, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{0, 0, 170, 255}, Color{13, 13, 174, 255}, Color{23, 23, 178, 255}, Color{38, 38, 183, 255}, Color{36, 36, 182, 255}, Color{66, 66, 192, 255}, Color{255, 255, 255, 255}, Color{173, 173, 228, 255}, Color{122, 122, 211, 255}, Color{255, 255, 85, 255}, Color{85, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"VT323\", ui-monospace, monospace", "\"Silkscreen\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// pinball cabinet: chrome rails and flashing lights
+inline constexpr Theme pinball{ "pinball", "pinball cabinet: chrome rails and flashing lights", "Retro", true,
+    Palette{Color{20, 8, 24, 255}, Color{32, 20, 35, 255}, Color{41, 29, 44, 255}, Color{55, 43, 58, 255}, Color{255, 242, 251, 36}, Color{255, 242, 251, 66}, Color{255, 242, 251, 255}, Color{180, 167, 178, 255}, Color{133, 120, 133, 255}, Color{255, 46, 147, 255}, Color{255, 210, 63, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{20, 8, 24, 255}, Color{32, 20, 35, 255}, Color{41, 29, 44, 255}, Color{55, 43, 58, 255}, Color{53, 41, 56, 255}, Color{81, 69, 83, 255}, Color{255, 242, 251, 255}, Color{180, 167, 178, 255}, Color{133, 120, 133, 255}, Color{255, 46, 147, 255}, Color{255, 210, 63, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Audiowide\", system-ui, sans-serif", "\"Monoton\", Impact, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// VHS tracking lines with magenta and cyan bleed
+inline constexpr Theme vhs{ "vhs", "VHS tracking lines with magenta and cyan bleed", "Retro", true,
+    Palette{Color{11, 10, 18, 255}, Color{22, 21, 30, 255}, Color{32, 30, 39, 255}, Color{45, 44, 54, 255}, Color{240, 234, 255, 36}, Color{240, 234, 255, 66}, Color{240, 234, 255, 255}, Color{167, 162, 179, 255}, Color{121, 118, 132, 255}, Color{255, 61, 242, 255}, Color{61, 252, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{11, 10, 18, 255}, Color{22, 21, 30, 255}, Color{32, 30, 39, 255}, Color{45, 44, 54, 255}, Color{43, 42, 51, 255}, Color{70, 68, 79, 255}, Color{240, 234, 255, 255}, Color{167, 162, 179, 255}, Color{121, 118, 132, 255}, Color{255, 61, 242, 255}, Color{61, 252, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist Mono\", ui-monospace, monospace", "\"Bebas Neue\", Impact, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// an old photograph in warm sepia
+inline constexpr Theme sepia{ "sepia", "an old photograph in warm sepia", "Retro", false,
+    Palette{Color{233, 220, 195, 255}, Color{245, 239, 228, 255}, Color{223, 209, 185, 255}, Color{214, 200, 176, 255}, Color{59, 42, 26, 26}, Color{59, 42, 26, 46}, Color{59, 42, 26, 255}, Color{115, 99, 80, 255}, Color{149, 135, 114, 255}, Color{139, 90, 43, 255}, Color{139, 90, 43, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{233, 220, 195, 255}, Color{245, 239, 228, 255}, Color{223, 209, 185, 255}, Color{214, 200, 176, 255}, Color{215, 202, 178, 255}, Color{202, 188, 165, 255}, Color{59, 42, 26, 255}, Color{115, 99, 80, 255}, Color{149, 135, 114, 255}, Color{139, 90, 43, 255}, Color{139, 90, 43, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Playfair Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// spring meadow green with buttercup yellow
+inline constexpr Theme meadow{ "meadow", "spring meadow green with buttercup yellow", "Nature", false,
+    Palette{Color{242, 248, 234, 255}, Color{249, 252, 246, 255}, Color{229, 236, 221, 255}, Color{219, 226, 211, 255}, Color{31, 51, 23, 26}, Color{31, 51, 23, 46}, Color{31, 51, 23, 255}, Color{99, 114, 91, 255}, Color{141, 153, 133, 255}, Color{79, 157, 45, 255}, Color{242, 194, 48, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{242, 248, 234, 255}, Color{249, 252, 246, 255}, Color{229, 236, 221, 255}, Color{219, 226, 211, 255}, Color{220, 228, 212, 255}, Color{204, 212, 196, 255}, Color{31, 51, 23, 255}, Color{99, 114, 91, 255}, Color{141, 153, 133, 255}, Color{79, 157, 45, 255}, Color{242, 194, 48, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Fraunces\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 1.0f };
+
+/// red-rock canyon at golden hour, with contour lines
+inline constexpr Theme canyon{ "canyon", "red-rock canyon at golden hour, with contour lines", "Nature", true,
+    Palette{Color{42, 20, 12, 255}, Color{53, 31, 22, 255}, Color{61, 39, 30, 255}, Color{74, 52, 42, 255}, Color{255, 233, 214, 36}, Color{255, 233, 214, 66}, Color{255, 233, 214, 255}, Color{187, 165, 149, 255}, Color{144, 122, 109, 255}, Color{255, 122, 61, 255}, Color{255, 192, 107, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{42, 20, 12, 255}, Color{53, 31, 22, 255}, Color{61, 39, 30, 255}, Color{74, 52, 42, 255}, Color{72, 50, 41, 255}, Color{97, 75, 64, 255}, Color{255, 233, 214, 255}, Color{187, 165, 149, 255}, Color{144, 122, 109, 255}, Color{255, 122, 61, 255}, Color{255, 192, 107, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"DM Serif Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// dense canopy, rain and a parrot-red accent
+inline constexpr Theme rainforest{ "rainforest", "dense canopy, rain and a parrot-red accent", "Nature", true,
+    Palette{Color{7, 23, 15, 255}, Color{18, 34, 26, 255}, Color{26, 43, 34, 255}, Color{39, 56, 47, 255}, Color{220, 242, 226, 36}, Color{220, 242, 226, 66}, Color{220, 242, 226, 255}, Color{152, 172, 158, 255}, Color{109, 128, 116, 255}, Color{46, 204, 113, 255}, Color{255, 77, 77, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{7, 23, 15, 255}, Color{18, 34, 26, 255}, Color{26, 43, 34, 255}, Color{39, 56, 47, 255}, Color{37, 54, 45, 255}, Color{62, 80, 70, 255}, Color{220, 242, 226, 255}, Color{152, 172, 158, 255}, Color{109, 128, 116, 255}, Color{46, 204, 113, 255}, Color{255, 77, 77, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Syne\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// turquoise shallows and living coral
+inline constexpr Theme coral_reef{ "coral-reef", "turquoise shallows and living coral", "Nature", false,
+    Palette{Color{230, 251, 251, 255}, Color{244, 253, 253, 255}, Color{217, 239, 239, 255}, Color{206, 229, 230, 255}, Color{8, 54, 59, 26}, Color{8, 54, 59, 46}, Color{8, 54, 59, 255}, Color{79, 117, 120, 255}, Color{123, 156, 159, 255}, Color{255, 111, 97, 255}, Color{19, 181, 177, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{230, 251, 251, 255}, Color{244, 253, 253, 255}, Color{217, 239, 239, 255}, Color{206, 229, 230, 255}, Color{207, 231, 231, 255}, Color{190, 215, 216, 255}, Color{8, 54, 59, 255}, Color{79, 117, 120, 255}, Color{123, 156, 159, 255}, Color{255, 111, 97, 255}, Color{19, 181, 177, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    999.0f, 999.0f, 999.0f, 18.0f, 0.0f };
+
+/// snowy tundra, pale sky and lichen
+inline constexpr Theme tundra{ "tundra", "snowy tundra, pale sky and lichen", "Nature", false,
+    Palette{Color{238, 243, 245, 255}, Color{247, 250, 251, 255}, Color{226, 231, 234, 255}, Color{216, 222, 224, 255}, Color{36, 50, 58, 26}, Color{36, 50, 58, 46}, Color{36, 50, 58, 255}, Color{101, 112, 118, 255}, Color{141, 150, 155, 255}, Color{79, 127, 144, 255}, Color{147, 173, 92, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{238, 243, 245, 255}, Color{247, 250, 251, 255}, Color{226, 231, 234, 255}, Color{216, 222, 224, 255}, Color{217, 223, 226, 255}, Color{202, 208, 211, 255}, Color{36, 50, 58, 255}, Color{101, 112, 118, 255}, Color{141, 150, 155, 255}, Color{79, 127, 144, 255}, Color{147, 173, 92, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Cormorant Garamond\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// esports stage: black, team red and LED white
+inline constexpr Theme esports{ "esports", "esports stage: black, team red and LED white", "Gaming", true,
+    Palette{Color{10, 11, 15, 255}, Color{22, 23, 27, 255}, Color{31, 32, 36, 255}, Color{45, 46, 50, 255}, Color{242, 244, 248, 36}, Color{242, 244, 248, 66}, Color{242, 244, 248, 255}, Color{168, 169, 173, 255}, Color{121, 123, 127, 255}, Color{255, 45, 85, 255}, Color{255, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{10, 11, 15, 255}, Color{22, 23, 27, 255}, Color{31, 32, 36, 255}, Color{45, 46, 50, 255}, Color{43, 44, 48, 255}, Color{70, 71, 75, 255}, Color{242, 244, 248, 255}, Color{168, 169, 173, 255}, Color{121, 123, 127, 255}, Color{255, 45, 85, 255}, Color{255, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Rajdhani\", system-ui, sans-serif", "\"Orbitron\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// fantasy RPG: parchment, leather and quest gold
+inline constexpr Theme rpg{ "rpg", "fantasy RPG: parchment, leather and quest gold", "Gaming", true,
+    Palette{Color{42, 29, 18, 255}, Color{52, 39, 27, 255}, Color{60, 47, 34, 255}, Color{72, 59, 45, 255}, Color{242, 228, 200, 36}, Color{242, 228, 200, 66}, Color{242, 228, 200, 255}, Color{178, 164, 142, 255}, Color{138, 125, 105, 255}, Color{224, 176, 74, 255}, Color{138, 43, 29, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{42, 29, 18, 255}, Color{52, 39, 27, 255}, Color{60, 47, 34, 255}, Color{72, 59, 45, 255}, Color{70, 57, 44, 255}, Color{94, 81, 65, 255}, Color{242, 228, 200, 255}, Color{178, 164, 142, 255}, Color{138, 125, 105, 255}, Color{224, 176, 74, 255}, Color{138, 43, 29, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Cormorant Garamond\", Georgia, serif", "\"Cinzel\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// 8-bit console: sky blue, brick red and coin gold
+inline constexpr Theme pixel_plains{ "pixel-plains", "8-bit console: sky blue, brick red and coin gold", "Gaming", false,
+    Palette{Color{92, 148, 252, 255}, Color{182, 207, 254, 255}, Color{102, 154, 252, 255}, Color{110, 160, 252, 255}, Color{255, 255, 255, 26}, Color{255, 255, 255, 46}, Color{255, 255, 255, 255}, Color{203, 221, 254, 255}, Color{170, 199, 253, 255}, Color{228, 92, 16, 255}, Color{255, 204, 0, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{92, 148, 252, 255}, Color{182, 207, 254, 255}, Color{102, 154, 252, 255}, Color{110, 160, 252, 255}, Color{109, 159, 252, 255}, Color{121, 167, 253, 255}, Color{255, 255, 255, 255}, Color{203, 221, 254, 255}, Color{170, 199, 253, 255}, Color{228, 92, 16, 255}, Color{255, 204, 0, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Silkscreen\", ui-monospace, monospace", "\"Press Start 2P\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// starship HUD: cyan lines over deep space
+inline constexpr Theme hud{ "hud", "starship HUD: cyan lines over deep space", "Gaming", true,
+    Palette{Color{2, 11, 20, 255}, Color{12, 22, 32, 255}, Color{20, 31, 41, 255}, Color{32, 45, 55, 255}, Color{205, 238, 255, 36}, Color{205, 238, 255, 66}, Color{205, 238, 255, 255}, Color{140, 165, 180, 255}, Color{99, 120, 133, 255}, Color{56, 225, 255, 255}, Color{255, 159, 28, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{2, 11, 20, 255}, Color{12, 22, 32, 255}, Color{20, 31, 41, 255}, Color{32, 45, 55, 255}, Color{31, 43, 53, 255}, Color{55, 70, 81, 255}, Color{205, 238, 255, 255}, Color{140, 165, 180, 255}, Color{99, 120, 133, 255}, Color{56, 225, 255, 255}, Color{255, 159, 28, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Rajdhani\", system-ui, sans-serif", "\"Orbitron\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// battle-royale map: tactical olive and safety orange
+inline constexpr Theme dropzone{ "dropzone", "battle-royale map: tactical olive and safety orange", "Gaming", true,
+    Palette{Color{31, 34, 25, 255}, Color{41, 44, 35, 255}, Color{50, 53, 43, 255}, Color{62, 65, 55, 255}, Color{238, 240, 228, 36}, Color{238, 240, 228, 66}, Color{238, 240, 228, 255}, Color{172, 174, 163, 255}, Color{130, 133, 122, 255}, Color{255, 123, 28, 255}, Color{201, 209, 107, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{31, 34, 25, 255}, Color{41, 44, 35, 255}, Color{50, 53, 43, 255}, Color{62, 65, 55, 255}, Color{60, 63, 54, 255}, Color{85, 87, 78, 255}, Color{238, 240, 228, 255}, Color{172, 174, 163, 255}, Color{130, 133, 122, 255}, Color{255, 123, 28, 255}, Color{201, 209, 107, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Rajdhani\", system-ui, sans-serif", "\"Bebas Neue\", Impact, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    2.0f, 2.0f, 3.0f, 4.0f, 1.0f };
+
+/// racing sim: carbon, chequered flags and hot yellow
+inline constexpr Theme pole_position{ "pole-position", "racing sim: carbon, chequered flags and hot yellow", "Gaming", true,
+    Palette{Color{17, 18, 20, 255}, Color{28, 29, 31, 255}, Color{37, 38, 40, 255}, Color{51, 52, 53, 255}, Color{243, 243, 243, 36}, Color{243, 243, 243, 66}, Color{243, 243, 243, 255}, Color{171, 171, 172, 255}, Color{125, 126, 127, 255}, Color{255, 212, 0, 255}, Color{255, 43, 43, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{17, 18, 20, 255}, Color{28, 29, 31, 255}, Color{37, 38, 40, 255}, Color{51, 52, 53, 255}, Color{49, 50, 51, 255}, Color{75, 76, 78, 255}, Color{243, 243, 243, 255}, Color{171, 171, 172, 255}, Color{125, 126, 127, 255}, Color{255, 212, 0, 255}, Color{255, 43, 43, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Rajdhani\", system-ui, sans-serif", "\"Orbitron\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// cozy farm sim: warm wood, cream and leaf green
+inline constexpr Theme harvest{ "harvest", "cozy farm sim: warm wood, cream and leaf green", "Gaming", false,
+    Palette{Color{246, 236, 212, 255}, Color{251, 246, 236, 255}, Color{235, 224, 201, 255}, Color{226, 215, 192, 255}, Color{63, 43, 26, 26}, Color{63, 43, 26, 46}, Color{63, 43, 26, 255}, Color{122, 105, 86, 255}, Color{158, 143, 123, 255}, Color{95, 156, 69, 255}, Color{231, 159, 60, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{246, 236, 212, 255}, Color{251, 246, 236, 255}, Color{235, 224, 201, 255}, Color{226, 215, 192, 255}, Color{227, 216, 193, 255}, Color{213, 201, 178, 255}, Color{63, 43, 26, 255}, Color{122, 105, 86, 255}, Color{158, 143, 123, 255}, Color{95, 156, 69, 255}, Color{231, 159, 60, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Patrick Hand\", \"Comic Neue\", cursive", "\"Patrick Hand\", \"Comic Neue\", cursive", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 2.0f };
+
+/// survival horror: rust, flicker and dried blood
+inline constexpr Theme nightmare{ "nightmare", "survival horror: rust, flicker and dried blood", "Gaming", true,
+    Palette{Color{18, 12, 10, 255}, Color{29, 22, 20, 255}, Color{37, 31, 28, 255}, Color{50, 43, 40, 255}, Color{232, 220, 208, 36}, Color{232, 220, 208, 66}, Color{232, 220, 208, 255}, Color{164, 153, 145, 255}, Color{121, 112, 105, 255}, Color{192, 20, 30, 255}, Color{107, 76, 59, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{18, 12, 10, 255}, Color{29, 22, 20, 255}, Color{37, 31, 28, 255}, Color{50, 43, 40, 255}, Color{48, 41, 38, 255}, Color{73, 66, 61, 255}, Color{232, 220, 208, 255}, Color{164, 153, 145, 255}, Color{121, 112, 105, 255}, Color{192, 20, 30, 255}, Color{107, 76, 59, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist Mono\", ui-monospace, monospace", "\"Creepster\", Impact, cursive", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// champagne gold on ivory, with a gilt frame
+inline constexpr Theme champagne{ "champagne", "champagne gold on ivory, with a gilt frame", "Luxury", false,
+    Palette{Color{251, 246, 234, 255}, Color{253, 251, 246, 255}, Color{239, 234, 222, 255}, Color{230, 224, 211, 255}, Color{58, 46, 29, 26}, Color{58, 46, 29, 46}, Color{58, 46, 29, 255}, Color{120, 110, 95, 255}, Color{158, 150, 136, 255}, Color{168, 130, 47, 255}, Color{230, 207, 154, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{251, 246, 234, 255}, Color{253, 251, 246, 255}, Color{239, 234, 222, 255}, Color{230, 224, 211, 255}, Color{231, 226, 213, 255}, Color{216, 210, 197, 255}, Color{58, 46, 29, 255}, Color{120, 110, 95, 255}, Color{158, 150, 136, 255}, Color{168, 130, 47, 255}, Color{230, 207, 154, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Cinzel\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// black velvet, burgundy and a touch of gold
+inline constexpr Theme velvet_noir{ "velvet-noir", "black velvet, burgundy and a touch of gold", "Luxury", true,
+    Palette{Color{13, 6, 8, 255}, Color{25, 17, 19, 255}, Color{34, 26, 28, 255}, Color{48, 40, 42, 255}, Color{243, 230, 232, 36}, Color{243, 230, 232, 66}, Color{243, 230, 232, 255}, Color{169, 158, 160, 255}, Color{123, 114, 116, 255}, Color{179, 18, 63, 255}, Color{212, 175, 55, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{13, 6, 8, 255}, Color{25, 17, 19, 255}, Color{34, 26, 28, 255}, Color{48, 40, 42, 255}, Color{45, 38, 40, 255}, Color{73, 64, 66, 255}, Color{243, 230, 232, 255}, Color{169, 158, 160, 255}, Color{123, 114, 116, 255}, Color{179, 18, 63, 255}, Color{212, 175, 55, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Playfair Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// white Carrara marble with brushed brass
+inline constexpr Theme carrara{ "carrara", "white Carrara marble with brushed brass", "Luxury", false,
+    Palette{Color{246, 245, 242, 255}, Color{251, 251, 249, 255}, Color{233, 232, 230, 255}, Color{223, 222, 219, 255}, Color{34, 34, 34, 26}, Color{34, 34, 34, 46}, Color{34, 34, 34, 255}, Color{102, 102, 101, 255}, Color{144, 144, 142, 255}, Color{167, 129, 74, 255}, Color{140, 140, 140, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{246, 245, 242, 255}, Color{251, 251, 249, 255}, Color{233, 232, 230, 255}, Color{223, 222, 219, 255}, Color{224, 223, 221, 255}, Color{208, 207, 204, 255}, Color{34, 34, 34, 255}, Color{102, 102, 101, 255}, Color{144, 144, 142, 255}, Color{167, 129, 74, 255}, Color{140, 140, 140, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Cormorant Garamond\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// private members' club: emerald leather and brass
+inline constexpr Theme emerald_club{ "emerald-club", "private members' club: emerald leather and brass", "Luxury", true,
+    Palette{Color{6, 38, 28, 255}, Color{18, 48, 37, 255}, Color{27, 56, 45, 255}, Color{41, 67, 56, 255}, Color{241, 234, 214, 36}, Color{241, 234, 214, 66}, Color{241, 234, 214, 255}, Color{166, 171, 154, 255}, Color{119, 132, 117, 255}, Color{212, 175, 55, 255}, Color{47, 143, 106, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{6, 38, 28, 255}, Color{18, 48, 37, 255}, Color{27, 56, 45, 255}, Color{41, 67, 56, 255}, Color{39, 66, 54, 255}, Color{67, 89, 76, 255}, Color{241, 234, 214, 255}, Color{166, 171, 154, 255}, Color{119, 132, 117, 255}, Color{212, 175, 55, 255}, Color{47, 143, 106, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Playfair Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// royal purple velvet with a gold crest
+inline constexpr Theme royal{ "royal", "royal purple velvet with a gold crest", "Luxury", true,
+    Palette{Color{26, 11, 46, 255}, Color{37, 22, 56, 255}, Color{46, 31, 65, 255}, Color{59, 45, 77, 255}, Color{245, 237, 255, 36}, Color{245, 237, 255, 66}, Color{245, 237, 255, 255}, Color{175, 165, 188, 255}, Color{131, 119, 146, 255}, Color{229, 185, 76, 255}, Color{138, 92, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{26, 11, 46, 255}, Color{37, 22, 56, 255}, Color{46, 31, 65, 255}, Color{59, 45, 77, 255}, Color{57, 43, 76, 255}, Color{83, 69, 100, 255}, Color{245, 237, 255, 255}, Color{175, 165, 188, 255}, Color{131, 119, 146, 255}, Color{229, 185, 76, 255}, Color{138, 92, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Cormorant Garamond\", Georgia, serif", "\"Cinzel\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// fashion atelier: blush, black and gilt
+inline constexpr Theme atelier{ "atelier", "fashion atelier: blush, black and gilt", "Luxury", false,
+    Palette{Color{248, 236, 232, 255}, Color{252, 246, 245, 255}, Color{234, 223, 219, 255}, Color{223, 212, 208, 255}, Color{20, 16, 16, 26}, Color{20, 16, 16, 46}, Color{20, 16, 16, 255}, Color{93, 86, 85, 255}, Color{139, 130, 128, 255}, Color{20, 16, 16, 255}, Color{199, 154, 91, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{248, 236, 232, 255}, Color{252, 246, 245, 255}, Color{234, 223, 219, 255}, Color{223, 212, 208, 255}, Color{225, 214, 210, 255}, Color{207, 196, 193, 255}, Color{20, 16, 16, 255}, Color{93, 86, 85, 255}, Color{139, 130, 128, 255}, Color{20, 16, 16, 255}, Color{199, 154, 91, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"DM Serif Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// IDE dark: slate panels and syntax colours
+inline constexpr Theme devtools{ "devtools", "IDE dark: slate panels and syntax colours", "Tech", true,
+    Palette{Color{30, 31, 41, 255}, Color{40, 41, 51, 255}, Color{48, 49, 59, 255}, Color{60, 61, 71, 255}, Color{230, 230, 240, 36}, Color{230, 230, 240, 66}, Color{230, 230, 240, 255}, Color{166, 166, 176, 255}, Color{126, 127, 137, 255}, Color{122, 162, 247, 255}, Color{247, 118, 142, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{30, 31, 41, 255}, Color{40, 41, 51, 255}, Color{48, 49, 59, 255}, Color{60, 61, 71, 255}, Color{58, 59, 69, 255}, Color{82, 83, 93, 255}, Color{230, 230, 240, 255}, Color{166, 166, 176, 255}, Color{126, 127, 137, 255}, Color{122, 162, 247, 255}, Color{247, 118, 142, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist Mono\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace",
+    2.0f, 2.0f, 3.0f, 4.0f, 1.0f };
+
+/// crisp SaaS dashboard white with an indigo accent
+inline constexpr Theme saas{ "saas", "crisp SaaS dashboard white with an indigo accent", "Tech", false,
+    Palette{Color{247, 248, 252, 255}, Color{251, 252, 254, 255}, Color{233, 235, 240, 255}, Color{222, 224, 229, 255}, Color{21, 26, 45, 26}, Color{21, 26, 45, 46}, Color{21, 26, 45, 255}, Color{93, 97, 111, 255}, Color{139, 141, 153, 255}, Color{79, 70, 229, 255}, Color{6, 182, 212, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{247, 248, 252, 255}, Color{251, 252, 254, 255}, Color{233, 235, 240, 255}, Color{222, 224, 229, 255}, Color{224, 225, 231, 255}, Color{206, 208, 215, 255}, Color{21, 26, 45, 255}, Color{93, 97, 111, 255}, Color{139, 141, 153, 255}, Color{79, 70, 229, 255}, Color{6, 182, 212, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Geist\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 1.0f };
+
+/// fintech dark: deep navy and mint gains
+inline constexpr Theme fintech{ "fintech", "fintech dark: deep navy and mint gains", "Tech", true,
+    Palette{Color{10, 18, 32, 255}, Color{21, 29, 43, 255}, Color{30, 38, 51, 255}, Color{43, 51, 64, 255}, Color{230, 237, 247, 36}, Color{230, 237, 247, 66}, Color{230, 237, 247, 255}, Color{160, 167, 178, 255}, Color{116, 123, 135, 255}, Color{33, 209, 159, 255}, Color{91, 140, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{10, 18, 32, 255}, Color{21, 29, 43, 255}, Color{30, 38, 51, 255}, Color{43, 51, 64, 255}, Color{41, 49, 62, 255}, Color{67, 75, 88, 255}, Color{230, 237, 247, 255}, Color{160, 167, 178, 255}, Color{116, 123, 135, 255}, Color{33, 209, 159, 255}, Color{91, 140, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Geist\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// AI lab graphite with a violet-to-cyan gradient
+inline constexpr Theme neural{ "neural", "AI lab graphite with a violet-to-cyan gradient", "Tech", true,
+    Palette{Color{12, 12, 18, 255}, Color{23, 23, 29, 255}, Color{32, 32, 38, 255}, Color{46, 45, 52, 255}, Color{236, 235, 245, 36}, Color{236, 235, 245, 66}, Color{236, 235, 245, 255}, Color{164, 164, 172, 255}, Color{120, 119, 127, 255}, Color{139, 92, 246, 255}, Color{34, 211, 238, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{12, 12, 18, 255}, Color{23, 23, 29, 255}, Color{32, 32, 38, 255}, Color{46, 45, 52, 255}, Color{44, 43, 50, 255}, Color{70, 70, 77, 255}, Color{236, 235, 245, 255}, Color{164, 164, 172, 255}, Color{120, 119, 127, 255}, Color{139, 92, 246, 255}, Color{34, 211, 238, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist\", system-ui, sans-serif", "\"Geist\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// green circuit board with copper traces
+inline constexpr Theme pcb{ "pcb", "green circuit board with copper traces", "Tech", true,
+    Palette{Color{6, 51, 31, 255}, Color{17, 61, 41, 255}, Color{25, 69, 49, 255}, Color{38, 82, 61, 255}, Color{217, 255, 233, 36}, Color{217, 255, 233, 66}, Color{217, 255, 233, 255}, Color{149, 190, 168, 255}, Color{107, 149, 128, 255}, Color{224, 166, 74, 255}, Color{61, 255, 154, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{6, 51, 31, 255}, Color{17, 61, 41, 255}, Color{25, 69, 49, 255}, Color{38, 82, 61, 255}, Color{36, 80, 60, 255}, Color{61, 104, 83, 255}, Color{217, 255, 233, 255}, Color{149, 190, 168, 255}, Color{107, 149, 128, 255}, Color{224, 166, 74, 255}, Color{61, 255, 154, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist Mono\", ui-monospace, monospace", "\"Space Grotesk\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    2.0f, 2.0f, 3.0f, 4.0f, 1.0f };
+
+/// white lab with iridescent particles
+inline constexpr Theme quantum{ "quantum", "white lab with iridescent particles", "Tech", false,
+    Palette{Color{248, 249, 255, 255}, Color{252, 252, 255, 255}, Color{235, 236, 243, 255}, Color{224, 225, 233, 255}, Color{26, 27, 58, 26}, Color{26, 27, 58, 46}, Color{26, 27, 58, 255}, Color{97, 98, 121, 255}, Color{141, 142, 160, 255}, Color{91, 91, 240, 255}, Color{255, 92, 200, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{248, 249, 255, 255}, Color{252, 252, 255, 255}, Color{235, 236, 243, 255}, Color{224, 225, 233, 255}, Color{225, 226, 235, 255}, Color{208, 209, 219, 255}, Color{26, 27, 58, 255}, Color{97, 98, 121, 255}, Color{141, 142, 160, 255}, Color{91, 91, 240, 255}, Color{255, 92, 200, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 1.0f };
+
+/// green code rain on a black mainframe
+inline constexpr Theme mainframe{ "mainframe", "green code rain on a black mainframe", "Tech", true,
+    Palette{Color{0, 8, 0, 255}, Color{10, 20, 10, 255}, Color{18, 30, 19, 255}, Color{30, 45, 31, 255}, Color{200, 255, 207, 36}, Color{200, 255, 207, 66}, Color{200, 255, 207, 255}, Color{136, 176, 141, 255}, Color{96, 127, 99, 255}, Color{0, 255, 102, 255}, Color{0, 255, 102, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{0, 8, 0, 255}, Color{10, 20, 10, 255}, Color{18, 30, 19, 255}, Color{30, 45, 31, 255}, Color{28, 43, 29, 255}, Color{52, 72, 54, 255}, Color{200, 255, 207, 255}, Color{136, 176, 141, 255}, Color{96, 127, 99, 255}, Color{0, 255, 102, 255}, Color{0, 255, 102, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Geist Mono\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// blue hologram projection with scan lines
+inline constexpr Theme hologram{ "hologram", "blue hologram projection with scan lines", "Tech", true,
+    Palette{Color{4, 16, 28, 255}, Color{14, 27, 39, 255}, Color{22, 37, 48, 255}, Color{34, 50, 62, 255}, Color{207, 244, 255, 36}, Color{207, 244, 255, 66}, Color{207, 244, 255, 255}, Color{142, 171, 182, 255}, Color{101, 125, 137, 255}, Color{79, 216, 255, 255}, Color{155, 123, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{4, 16, 28, 255}, Color{14, 27, 39, 255}, Color{22, 37, 48, 255}, Color{34, 50, 62, 255}, Color{33, 48, 60, 255}, Color{57, 75, 87, 255}, Color{207, 244, 255, 255}, Color{142, 171, 182, 255}, Color{101, 125, 137, 255}, Color{79, 216, 255, 255}, Color{155, 123, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Rajdhani\", system-ui, sans-serif", "\"Orbitron\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// pumpkin orange and witch purple at midnight
+inline constexpr Theme pumpkin{ "pumpkin", "pumpkin orange and witch purple at midnight", "Seasonal", true,
+    Palette{Color{18, 10, 28, 255}, Color{30, 21, 38, 255}, Color{39, 31, 45, 255}, Color{53, 44, 57, 255}, Color{253, 238, 221, 36}, Color{253, 238, 221, 66}, Color{253, 238, 221, 255}, Color{178, 165, 159, 255}, Color{131, 119, 121, 255}, Color{255, 122, 0, 255}, Color{139, 61, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{18, 10, 28, 255}, Color{30, 21, 38, 255}, Color{39, 31, 45, 255}, Color{53, 44, 57, 255}, Color{51, 42, 55, 255}, Color{79, 69, 78, 255}, Color{253, 238, 221, 255}, Color{178, 165, 159, 255}, Color{131, 119, 121, 255}, Color{255, 122, 0, 255}, Color{139, 61, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Creepster\", Impact, cursive", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// winter frost, ice blue and silver
+inline constexpr Theme frost{ "frost", "winter frost, ice blue and silver", "Seasonal", false,
+    Palette{Color{238, 246, 251, 255}, Color{247, 251, 253, 255}, Color{225, 234, 240, 255}, Color{214, 224, 232, 255}, Color{22, 50, 74, 26}, Color{22, 50, 74, 46}, Color{22, 50, 74, 255}, Color{91, 113, 131, 255}, Color{134, 152, 166, 255}, Color{47, 143, 200, 255}, Color{159, 198, 221, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{238, 246, 251, 255}, Color{247, 251, 253, 255}, Color{225, 234, 240, 255}, Color{214, 224, 232, 255}, Color{216, 226, 233, 255}, Color{199, 211, 219, 255}, Color{22, 50, 74, 255}, Color{91, 113, 131, 255}, Color{134, 152, 166, 255}, Color{47, 143, 200, 255}, Color{159, 198, 221, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Cormorant Garamond\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// evergreen, cranberry and gold ribbon
+inline constexpr Theme evergreen{ "evergreen", "evergreen, cranberry and gold ribbon", "Seasonal", true,
+    Palette{Color{15, 42, 29, 255}, Color{27, 52, 39, 255}, Color{36, 60, 47, 255}, Color{50, 72, 59, 255}, Color{251, 243, 228, 36}, Color{251, 243, 228, 66}, Color{251, 243, 228, 255}, Color{175, 179, 164, 255}, Color{128, 138, 125, 255}, Color{214, 40, 57, 255}, Color{233, 196, 106, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{15, 42, 29, 255}, Color{27, 52, 39, 255}, Color{36, 60, 47, 255}, Color{50, 72, 59, 255}, Color{48, 70, 57, 255}, Color{76, 94, 81, 255}, Color{251, 243, 228, 255}, Color{175, 179, 164, 255}, Color{128, 138, 125, 255}, Color{214, 40, 57, 255}, Color{233, 196, 106, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Playfair Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// spring showers: fresh green, sky and tulip pink
+inline constexpr Theme april{ "april", "spring showers: fresh green, sky and tulip pink", "Seasonal", false,
+    Palette{Color{243, 250, 246, 255}, Color{250, 253, 251, 255}, Color{230, 238, 234, 255}, Color{220, 229, 225, 255}, Color{31, 58, 51, 26}, Color{31, 58, 51, 46}, Color{31, 58, 51, 255}, Color{99, 119, 113, 255}, Color{141, 158, 152, 255}, Color{47, 174, 138, 255}, Color{255, 126, 182, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{243, 250, 246, 255}, Color{250, 253, 251, 255}, Color{230, 238, 234, 255}, Color{220, 229, 225, 255}, Color{221, 230, 226, 255}, Color{205, 215, 211, 255}, Color{31, 58, 51, 255}, Color{99, 119, 113, 255}, Color{141, 158, 152, 255}, Color{47, 174, 138, 255}, Color{255, 126, 182, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Fraunces\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    8.0f, 8.0f, 12.0f, 16.0f, 1.0f };
+
+/// summer beach: sand, sea and sun
+inline constexpr Theme beach{ "beach", "summer beach: sand, sea and sun", "Seasonal", false,
+    Palette{Color{255, 248, 230, 255}, Color{255, 252, 244, 255}, Color{241, 237, 221, 255}, Color{229, 228, 213, 255}, Color{17, 65, 74, 26}, Color{17, 65, 74, 46}, Color{17, 65, 74, 255}, Color{93, 124, 124, 255}, Color{141, 160, 155, 255}, Color{255, 138, 61, 255}, Color{24, 184, 201, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{255, 248, 230, 255}, Color{255, 252, 244, 255}, Color{241, 237, 221, 255}, Color{229, 228, 213, 255}, Color{231, 229, 214, 255}, Color{212, 215, 202, 255}, Color{17, 65, 74, 255}, Color{93, 124, 124, 255}, Color{141, 160, 155, 255}, Color{255, 138, 61, 255}, Color{24, 184, 201, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Pacifico\", cursive", "\"Geist Mono\", ui-monospace, monospace",
+    999.0f, 999.0f, 999.0f, 18.0f, 1.0f };
+
+/// new year's eve: black tie and gold confetti
+inline constexpr Theme midnight_gala{ "midnight-gala", "new year's eve: black tie and gold confetti", "Seasonal", true,
+    Palette{Color{10, 10, 15, 255}, Color{22, 22, 26, 255}, Color{31, 31, 34, 255}, Color{45, 45, 47, 255}, Color{246, 241, 230, 36}, Color{246, 241, 230, 66}, Color{246, 241, 230, 255}, Color{170, 167, 161, 255}, Color{123, 121, 118, 255}, Color{232, 193, 90, 255}, Color{255, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{10, 10, 15, 255}, Color{22, 22, 26, 255}, Color{31, 31, 34, 255}, Color{45, 45, 47, 255}, Color{43, 43, 45, 255}, Color{71, 70, 71, 255}, Color{246, 241, 230, 255}, Color{170, 167, 161, 255}, Color{123, 121, 118, 255}, Color{232, 193, 90, 255}, Color{255, 255, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Playfair Display\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// half blazing orange, half glacier blue
+inline constexpr Theme fire_ice{ "fire-ice", "half blazing orange, half glacier blue", "Signature", true,
+    Palette{Color{11, 11, 20, 255}, Color{23, 23, 32, 255}, Color{32, 32, 41, 255}, Color{46, 46, 55, 255}, Color{242, 244, 255, 36}, Color{242, 244, 255, 66}, Color{242, 244, 255, 255}, Color{168, 169, 180, 255}, Color{122, 123, 133, 255}, Color{255, 106, 26, 255}, Color{58, 180, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{11, 11, 20, 255}, Color{23, 23, 32, 255}, Color{32, 32, 41, 255}, Color{46, 46, 55, 255}, Color{44, 44, 53, 255}, Color{71, 71, 81, 255}, Color{242, 244, 255, 255}, Color{168, 169, 180, 255}, Color{122, 123, 133, 255}, Color{255, 106, 26, 255}, Color{58, 180, 255, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// radioactive green on hazard-striped black
+inline constexpr Theme toxic{ "toxic", "radioactive green on hazard-striped black", "Signature", true,
+    Palette{Color{11, 15, 5, 255}, Color{22, 27, 15, 255}, Color{31, 37, 24, 255}, Color{44, 51, 36, 255}, Color{234, 255, 214, 36}, Color{234, 255, 214, 66}, Color{234, 255, 214, 255}, Color{163, 178, 147, 255}, Color{118, 130, 105, 255}, Color{166, 255, 0, 255}, Color{255, 212, 0, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{11, 15, 5, 255}, Color{22, 27, 15, 255}, Color{31, 37, 24, 255}, Color{44, 51, 36, 255}, Color{42, 49, 35, 255}, Color{69, 77, 59, 255}, Color{234, 255, 214, 255}, Color{163, 178, 147, 255}, Color{118, 130, 105, 255}, Color{166, 255, 0, 255}, Color{255, 212, 0, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Rajdhani\", system-ui, sans-serif", "\"Orbitron\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f };
+
+/// bismuth crystal: stepped rainbow oxide terraces
+inline constexpr Theme bismuth{ "bismuth", "bismuth crystal: stepped rainbow oxide terraces", "Signature", true,
+    Palette{Color{20, 16, 30, 255}, Color{31, 27, 41, 255}, Color{40, 36, 50, 255}, Color{53, 49, 64, 255}, Color{242, 236, 255, 36}, Color{242, 236, 255, 66}, Color{242, 236, 255, 255}, Color{171, 166, 183, 255}, Color{127, 122, 138, 255}, Color{255, 106, 213, 255}, Color{94, 231, 208, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{20, 16, 30, 255}, Color{31, 27, 41, 255}, Color{40, 36, 50, 255}, Color{53, 49, 64, 255}, Color{51, 47, 62, 255}, Color{77, 73, 88, 255}, Color{242, 236, 255, 255}, Color{171, 166, 183, 255}, Color{127, 122, 138, 255}, Color{255, 106, 213, 255}, Color{94, 231, 208, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Unbounded\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    2.0f, 2.0f, 3.0f, 4.0f, 1.0f };
+
+/// white opal with flashes of colour fire
+inline constexpr Theme opal{ "opal", "white opal with flashes of colour fire", "Signature", false,
+    Palette{Color{246, 248, 251, 255}, Color{251, 252, 253, 255}, Color{233, 235, 239, 255}, Color{222, 225, 229, 255}, Color{32, 36, 54, 26}, Color{32, 36, 54, 46}, Color{32, 36, 54, 255}, Color{100, 104, 117, 255}, Color{143, 146, 156, 255}, Color{109, 124, 255, 255}, Color{255, 122, 184, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{246, 248, 251, 255}, Color{251, 252, 253, 255}, Color{233, 235, 239, 255}, Color{222, 225, 229, 255}, Color{224, 226, 231, 255}, Color{207, 210, 215, 255}, Color{32, 36, 54, 255}, Color{100, 104, 117, 255}, Color{143, 146, 156, 255}, Color{109, 124, 255, 255}, Color{255, 122, 184, 255}, Color{47, 125, 79, 255}, Color{183, 121, 31, 255}, Color{196, 50, 31, 255}, Color{43, 95, 180, 255}},
+    "\"Manrope\", system-ui, sans-serif", "\"Cormorant Garamond\", Georgia, serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// cooling magma: black crust and glowing seams
+inline constexpr Theme magma{ "magma", "cooling magma: black crust and glowing seams", "Signature", true,
+    Palette{Color{15, 7, 5, 255}, Color{27, 18, 16, 255}, Color{37, 27, 24, 255}, Color{51, 41, 37, 255}, Color{255, 232, 220, 36}, Color{255, 232, 220, 66}, Color{255, 232, 220, 255}, Color{178, 160, 151, 255}, Color{130, 115, 108, 255}, Color{255, 77, 0, 255}, Color{255, 176, 0, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{15, 7, 5, 255}, Color{27, 18, 16, 255}, Color{37, 27, 24, 255}, Color{51, 41, 37, 255}, Color{49, 39, 35, 255}, Color{77, 65, 61, 255}, Color{255, 232, 220, 255}, Color{178, 160, 151, 255}, Color{130, 115, 108, 255}, Color{255, 77, 0, 255}, Color{255, 176, 0, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Outfit\", system-ui, sans-serif", "\"Syne\", system-ui, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+/// red lacquer armour and black steel
+inline constexpr Theme ronin{ "ronin", "red lacquer armour and black steel", "Signature", true,
+    Palette{Color{18, 4, 4, 255}, Color{30, 16, 15, 255}, Color{39, 25, 24, 255}, Color{54, 39, 38, 255}, Color{255, 236, 230, 36}, Color{255, 236, 230, 66}, Color{255, 236, 230, 255}, Color{179, 162, 158, 255}, Color{132, 115, 112, 255}, Color{255, 42, 26, 255}, Color{212, 175, 55, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    Palette{Color{18, 4, 4, 255}, Color{30, 16, 15, 255}, Color{39, 25, 24, 255}, Color{54, 39, 38, 255}, Color{51, 37, 36, 255}, Color{79, 64, 62, 255}, Color{255, 236, 230, 255}, Color{179, 162, 158, 255}, Color{132, 115, 112, 255}, Color{255, 42, 26, 255}, Color{212, 175, 55, 255}, Color{74, 222, 128, 255}, Color{251, 191, 36, 255}, Color{248, 113, 113, 255}, Color{43, 95, 180, 255}},
+    "\"Space Grotesk\", system-ui, sans-serif", "\"Bebas Neue\", Impact, sans-serif", "\"Geist Mono\", ui-monospace, monospace",
+    4.0f, 4.0f, 6.0f, 8.0f, 1.0f };
+
+inline constexpr const Theme* themes[] = { &editorial, &brutal, &neon, &glass, &terminal, &soft, &retro, &swiss, &y2k, &mono, &sketch, &luxe, &paper, &linen, &fog, &porcelain, &newsprint, &blueprint, &sand, &concrete, &graphite, &swiss_red, &midnight, &obsidian, &ink, &deep_sea, &forest_night, &espresso, &plum, &vampire, &nord_night, &charcoal, &lavender, &mint, &peach, &sakura, &sky, &lemon, &bubblegum, &seafoam, &tangerine, &cobalt, &magenta, &risograph, &pop_art, &bauhaus, &memphis, &brutal_lime, &amber_crt, &gameboy, &vaporwave, &synthwave, &arcade, &teletext, &polaroid, &win_classic, &moss, &ocean, &desert, &glacier, &autumn, &volcano, &pearl, &black_pearl, &sapphire_metal, &fade, &doppler, &emerald, &ruby, &marble_fade, &case_hardened, &tiger_tooth, &damascus, &crimson_web, &chameleon, &candy_apple, &anodized, &titanium, &gunmetal, &rose_gold, &gold_leaf, &holo_foil, &carbon_fiber, &aurora_borealis, &nebula, &liquid_chrome, &lava_lamp, &museum, &oat, &zen, &ledger, &onyx, &abyss, &noir, &eclipse, &ultraviolet, &cotton_candy, &macaron, &periwinkle, &sorbet, &electric, &comic, &poster, &acid, &cassette, &diner, &dos, &pinball, &vhs, &sepia, &meadow, &canyon, &rainforest, &coral_reef, &tundra, &esports, &rpg, &pixel_plains, &hud, &dropzone, &pole_position, &harvest, &nightmare, &champagne, &velvet_noir, &carrara, &emerald_club, &royal, &atelier, &devtools, &saas, &fintech, &neural, &pcb, &quantum, &mainframe, &hologram, &pumpkin, &frost, &evergreen, &april, &beach, &midnight_gala, &fire_ice, &toxic, &bismuth, &opal, &magma, &ronin };
+
+inline constexpr int themeCount = 149;
 
 /// Find a theme by name; returns nullptr if unknown.
 inline const Theme* find(const char* name) {
@@ -726,6 +1160,16 @@ inline constexpr Part parts[] = {
     { "btn", "minimal", "Minimal", 4.0f, 1.0f, Fill::Outline, 500, false },
     { "btn", "emboss", "Letterpress", 8.0f, 0.0f, Fill::Sunken, 600, false },
     { "btn", "tag", "Price tag", 4.0f, 0.0f, Fill::Solid, 600, false },
+    { "btn", "liquid-glass", "Liquid glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "btn", "keycap", "Keycap", 9.0f, 1.0f, Fill::Bevel, 600, false },
+    { "btn", "glitch", "Glitch", 2.0f, 2.0f, Fill::Outline, 700, true },
+    { "btn", "gradient-border", "Gradient border", 12.0f, 2.0f, Fill::Grad, 600, false },
+    { "btn", "outline-draw", "Draw outline", 0.0f, 1.0f, Fill::Outline, 600, false },
+    { "btn", "blob", "Blob", 999.0f, 1.0f, Fill::Solid, 600, false },
+    { "btn", "tape", "Masking tape", 0.0f, 0.0f, Fill::Soft, 700, false },
+    { "btn", "wood", "Wood", 8.0f, 1.0f, Fill::Grad, 700, false },
+    { "btn", "ticket", "Ticket", 6.0f, 0.0f, Fill::Solid, 600, true },
+    { "btn", "bubble", "Soap bubble", 999.0f, 1.0f, Fill::Holo, 600, false },
     { "card", "flat", "Flat", 8.0f, 1.0f, Fill::Flat, 600, false },
     { "card", "outline", "Outline", 6.0f, 2.0f, Fill::Outline, 600, false },
     { "card", "elevated", "Elevated", 14.0f, 0.0f, Fill::Flat, 600, false },
@@ -752,6 +1196,16 @@ inline constexpr Part parts[] = {
     { "card", "polaroid", "Polaroid", 2.0f, 0.0f, Fill::Flat, 600, false },
     { "card", "window", "App window", 10.0f, 1.0f, Fill::Flat, 600, false },
     { "card", "terminal", "Terminal", 4.0f, 1.0f, Fill::Flat, 600, false },
+    { "card", "liquid-glass", "Liquid glass", 22.0f, 1.0f, Fill::Glass, 600, false },
+    { "card", "puffy", "Puffy", 26.0f, 0.0f, Fill::Clay, 600, false },
+    { "card", "pass", "Boarding pass", 12.0f, 0.0f, Fill::Flat, 600, false },
+    { "card", "stack", "Paper stack", 10.0f, 1.0f, Fill::Flat, 600, false },
+    { "card", "aurora", "Aurora", 18.0f, 1.0f, Fill::Grad, 600, false },
+    { "card", "spotlight", "Corner light", 16.0f, 1.0f, Fill::Neon, 600, false },
+    { "card", "foil", "Holo foil", 14.0f, 1.0f, Fill::Holo, 600, false },
+    { "card", "receipt", "Receipt", 0.0f, 0.0f, Fill::Flat, 500, false },
+    { "card", "frame", "Gallery frame", 2.0f, 1.0f, Fill::Outline, 600, false },
+    { "card", "extruded", "Extruded", 12.0f, 2.0f, Fill::Hard, 600, false },
     { "input", "boxed", "Boxed", 8.0f, 1.0f, Fill::Flat, 600, false },
     { "input", "underline", "Underline", 0.0f, 1.0f, Fill::Underline, 600, false },
     { "input", "filled", "Filled", 4.0f, 2.0f, Fill::Soft, 600, false },
@@ -772,6 +1226,13 @@ inline constexpr Part parts[] = {
     { "input", "chrome", "Chrome bezel", 999.0f, 2.0f, Fill::Chrome, 600, false },
     { "input", "thick", "Thick outline", 6.0f, 2.0f, Fill::Outline, 600, false },
     { "input", "ghost-label", "Floating", 10.0f, 1.0f, Fill::Soft, 600, false },
+    { "input", "liquid-glass", "Liquid glass", 16.0f, 1.0f, Fill::Glass, 600, false },
+    { "input", "float", "Float", 10.0f, 1.0f, Fill::Flat, 600, false },
+    { "input", "bar", "Side bar", 0.0f, 3.0f, Fill::Soft, 600, false },
+    { "input", "dashed", "Dashed", 8.0f, 2.0f, Fill::Outline, 600, false },
+    { "input", "sketch", "Sketch", 12.0f, 2.0f, Fill::Outline, 600, false },
+    { "input", "pixel", "Pixel", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "input", "soft-glow", "Soft glow", 14.0f, 0.0f, Fill::Flat, 600, false },
     { "switch", "classic", "Classic", 999.0f, 1.0f, Fill::Solid, 600, false },
     { "switch", "ios", "iOS", 999.0f, 0.0f, Fill::Solid, 600, false },
     { "switch", "material", "Material", 999.0f, 0.0f, Fill::Soft, 600, false },
@@ -788,6 +1249,12 @@ inline constexpr Part parts[] = {
     { "switch", "aqua", "Aqua gel", 999.0f, 1.0f, Fill::Grad, 600, false },
     { "switch", "pixel", "Pixel", 0.0f, 3.0f, Fill::Hard, 600, false },
     { "switch", "deep-metal", "Deep metal", 999.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "switch", "liquid-glass", "Liquid glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "switch", "neu", "Neumorphic", 999.0f, 0.0f, Fill::Sunken, 600, false },
+    { "switch", "icons", "Tick / cross", 999.0f, 1.0f, Fill::Solid, 600, false },
+    { "switch", "lamp", "Lamp", 999.0f, 1.0f, Fill::Neon, 600, false },
+    { "switch", "candy", "Candy", 999.0f, 2.0f, Fill::Grad, 600, false },
+    { "switch", "stretch", "Stretch", 999.0f, 0.0f, Fill::Solid, 600, false },
     { "check", "classic", "Classic", 5.0f, 2.0f, Fill::Solid, 600, false },
     { "check", "round", "Round", 999.0f, 2.0f, Fill::Solid, 600, false },
     { "check", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
@@ -800,6 +1267,12 @@ inline constexpr Part parts[] = {
     { "check", "metal", "Metal", 4.0f, 0.0f, Fill::Metal, 600, false },
     { "check", "square-fill", "Square fill", 0.0f, 2.0f, Fill::Outline, 600, false },
     { "check", "glass", "Glass", 7.0f, 1.0f, Fill::Glass, 600, false },
+    { "check", "liquid-glass", "Liquid glass", 8.0f, 1.0f, Fill::Glass, 600, false },
+    { "check", "heart", "Heart", 999.0f, 2.0f, Fill::Solid, 600, false },
+    { "check", "star", "Star", 6.0f, 2.0f, Fill::Gold, 600, false },
+    { "check", "neu", "Neumorphic", 7.0f, 0.0f, Fill::Sunken, 600, false },
+    { "check", "sketch", "Sketch", 6.0f, 2.0f, Fill::Outline, 600, false },
+    { "check", "gradient", "Gradient", 6.0f, 2.0f, Fill::Grad, 600, false },
     { "range", "classic", "Classic", 999.0f, 0.0f, Fill::Solid, 600, false },
     { "range", "thick", "Thick", 999.0f, 0.0f, Fill::Solid, 600, false },
     { "range", "gradient", "Gradient", 999.0f, 0.0f, Fill::Grad, 600, false },
@@ -812,6 +1285,12 @@ inline constexpr Part parts[] = {
     { "range", "win98", "Windows 98", 0.0f, 2.0f, Fill::Bevel, 600, false },
     { "range", "glass", "Glass", 999.0f, 1.0f, Fill::Glass, 600, false },
     { "range", "deep-metal", "Deep metal", 999.0f, 1.0f, Fill::DeepMetal, 600, false },
+    { "range", "liquid-glass", "Liquid glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "range", "neu", "Neumorphic", 999.0f, 0.0f, Fill::Sunken, 600, false },
+    { "range", "rainbow", "Hue", 999.0f, 0.0f, Fill::Grad, 600, false },
+    { "range", "candy", "Candy", 999.0f, 0.0f, Fill::Grad, 600, false },
+    { "range", "knob", "Machined knob", 999.0f, 1.0f, Fill::Metal, 600, false },
+    { "range", "notch", "Notch", 2.0f, 0.0f, Fill::Flat, 600, false },
     { "tabs", "slide", "Sliding pill", 12.0f, 1.0f, Fill::Solid, 600, false },
     { "tabs", "underline", "Underline", 0.0f, 1.0f, Fill::Underline, 600, false },
     { "tabs", "segmented", "Segmented", 10.0f, 0.0f, Fill::Soft, 600, false },
@@ -828,6 +1307,11 @@ inline constexpr Part parts[] = {
     { "tabs", "cyber", "Cyber", 0.0f, 0.0f, Fill::Solid, 600, true },
     { "tabs", "metal", "Metal", 8.0f, 1.0f, Fill::Chrome, 600, false },
     { "tabs", "minimal", "Minimal", 0.0f, 0.0f, Fill::Ghost, 500, false },
+    { "tabs", "liquid-glass", "Liquid glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "tabs", "neu", "Neumorphic", 14.0f, 0.0f, Fill::Sunken, 600, false },
+    { "tabs", "chips", "Chips", 999.0f, 1.0f, Fill::Outline, 600, false },
+    { "tabs", "dot", "Dot", 0.0f, 0.0f, Fill::Ghost, 600, false },
+    { "tabs", "pixel", "Pixel", 0.0f, 3.0f, Fill::Hard, 700, true },
     { "nav", "pills", "Pills", 14.0f, 1.0f, Fill::Solid, 600, false },
     { "nav", "underline", "Underline", 0.0f, 1.0f, Fill::Underline, 600, false },
     { "nav", "boxed", "Boxed", 6.0f, 1.0f, Fill::Outline, 600, false },
@@ -844,6 +1328,10 @@ inline constexpr Part parts[] = {
     { "nav", "metal", "Metal", 8.0f, 1.0f, Fill::Chrome, 600, false },
     { "nav", "deep-metal", "Deep metal", 10.0f, 1.0f, Fill::DeepMetal, 600, false },
     { "nav", "cyber", "Cyber", 0.0f, 0.0f, Fill::Solid, 600, true },
+    { "nav", "liquid-glass", "Liquid glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "nav", "neu", "Neumorphic", 16.0f, 0.0f, Fill::Sunken, 600, false },
+    { "nav", "bar", "Side bar", 0.0f, 0.0f, Fill::Flat, 600, false },
+    { "nav", "glow", "Under-glow", 12.0f, 1.0f, Fill::Neon, 600, false },
     { "badge", "soft", "Soft pill", 999.0f, 0.0f, Fill::Soft, 600, false },
     { "badge", "solid", "Solid", 6.0f, 0.0f, Fill::Solid, 700, false },
     { "badge", "outline", "Outline", 3.0f, 1.0f, Fill::Outline, 500, true },
@@ -860,6 +1348,11 @@ inline constexpr Part parts[] = {
     { "badge", "terminal", "Terminal", 0.0f, 0.0f, Fill::Ghost, 500, true },
     { "badge", "sticker", "Sticker", 999.0f, 2.0f, Fill::Solid, 800, false },
     { "badge", "square", "Square", 0.0f, 0.0f, Fill::Soft, 600, true },
+    { "badge", "liquid-glass", "Liquid glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "badge", "gradient-outline", "Gradient outline", 999.0f, 2.0f, Fill::Grad, 600, false },
+    { "badge", "neu", "Neumorphic", 999.0f, 0.0f, Fill::Sunken, 700, false },
+    { "badge", "pulse", "Live pulse", 999.0f, 1.0f, Fill::Soft, 600, false },
+    { "badge", "ticket", "Ticket", 4.0f, 0.0f, Fill::Solid, 700, true },
     { "alert", "bar", "Side bar", 4.0f, 4.0f, Fill::Flat, 600, false },
     { "alert", "soft", "Soft", 10.0f, 1.0f, Fill::Soft, 600, false },
     { "alert", "filled", "Filled", 8.0f, 0.0f, Fill::Solid, 600, false },
@@ -874,6 +1367,10 @@ inline constexpr Part parts[] = {
     { "alert", "minimal", "Minimal", 0.0f, 0.0f, Fill::Ghost, 600, false },
     { "alert", "metal", "Metal", 4.0f, 1.0f, Fill::Metal, 600, false },
     { "alert", "sticky", "Sticky", 2.0f, 0.0f, Fill::Solid, 600, false },
+    { "alert", "liquid-glass", "Liquid glass", 16.0f, 1.0f, Fill::Glass, 600, false },
+    { "alert", "gradient", "Gradient top", 10.0f, 3.0f, Fill::Grad, 600, false },
+    { "alert", "dashed", "Dashed", 8.0f, 2.0f, Fill::Outline, 600, false },
+    { "alert", "glow", "Glow", 12.0f, 1.0f, Fill::Neon, 600, false },
     { "modal", "classic", "Classic", 16.0f, 1.0f, Fill::Flat, 600, false },
     { "modal", "sheet", "Sheet", 22.0f, 0.0f, Fill::Flat, 600, false },
     { "modal", "brutal", "Brutal", 0.0f, 3.0f, Fill::Hard, 600, false },
@@ -886,6 +1383,10 @@ inline constexpr Part parts[] = {
     { "modal", "deep-metal", "Deep metal", 14.0f, 1.0f, Fill::DeepMetal, 600, false },
     { "modal", "paper", "Paper", 2.0f, 0.0f, Fill::Flat, 600, false },
     { "modal", "cyber", "Cyber", 0.0f, 1.0f, Fill::Outline, 600, false },
+    { "modal", "liquid-glass", "Liquid glass", 28.0f, 1.0f, Fill::Glass, 600, false },
+    { "modal", "neu", "Neumorphic", 24.0f, 0.0f, Fill::Sunken, 600, false },
+    { "modal", "clay", "Clay", 30.0f, 0.0f, Fill::Clay, 600, false },
+    { "modal", "accent-top", "Accent top", 6.0f, 1.0f, Fill::Flat, 600, false },
     { "spinner", "ring", "Ring", 999.0f, 3.0f, Fill::Solid, 600, false },
     { "spinner", "dual", "Dual ring", 999.0f, 3.0f, Fill::Solid, 600, false },
     { "spinner", "gradient", "Gradient arc", 999.0f, 0.0f, Fill::Grad, 600, false },
@@ -900,6 +1401,12 @@ inline constexpr Part parts[] = {
     { "spinner", "pearl", "Pearl", 999.0f, 0.0f, Fill::Pearl, 600, false },
     { "spinner", "half", "Half moon", 999.0f, 0.0f, Fill::Solid, 600, false },
     { "spinner", "pixel", "Pixel", 0.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "segments", "Segments", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "twin", "Twin moons", 999.0f, 1.0f, Fill::Neon, 600, false },
+    { "spinner", "atom", "Atom", 999.0f, 2.0f, Fill::Solid, 600, false },
+    { "spinner", "clock", "Clock", 999.0f, 2.0f, Fill::Outline, 600, false },
+    { "spinner", "hourglass", "Hourglass", 0.0f, 0.0f, Fill::Solid, 600, false },
+    { "spinner", "morph", "Morph", 8.0f, 0.0f, Fill::Solid, 600, false },
     { "progress", "thin", "Thin", 999.0f, 0.0f, Fill::Solid, 600, false },
     { "progress", "thick", "Thick", 999.0f, 0.0f, Fill::Solid, 600, false },
     { "progress", "striped", "Striped", 6.0f, 0.0f, Fill::Grad, 600, false },
@@ -912,6 +1419,12 @@ inline constexpr Part parts[] = {
     { "progress", "metal", "Metal", 999.0f, 0.0f, Fill::Chrome, 600, false },
     { "progress", "deep-metal", "Deep metal", 999.0f, 0.0f, Fill::DeepMetal, 600, false },
     { "progress", "pixel", "Pixel", 0.0f, 3.0f, Fill::Hard, 600, false },
+    { "progress", "liquid-glass", "Liquid glass", 999.0f, 1.0f, Fill::Glass, 600, false },
+    { "progress", "glow-tip", "Glowing tip", 999.0f, 0.0f, Fill::Neon, 600, false },
+    { "progress", "rainbow", "Rainbow", 999.0f, 0.0f, Fill::Holo, 600, false },
+    { "progress", "battery", "Battery", 4.0f, 2.0f, Fill::Outline, 600, false },
+    { "progress", "shimmer", "Shimmer", 999.0f, 0.0f, Fill::Solid, 600, false },
+    { "progress", "heat", "Heat", 999.0f, 0.0f, Fill::Grad, 600, false },
     { "head", "plain", "Plain", 8.0f, 1.0f, Fill::Flat, 600, false },
     { "head", "deep-metal", "Deep blue metal", 8.0f, 1.0f, Fill::DeepMetal, 600, false },
     { "head", "metal", "Accent metal", 8.0f, 1.0f, Fill::Metal, 600, false },
@@ -933,6 +1446,13 @@ inline constexpr Part parts[] = {
     { "head", "marker", "Marker", 8.0f, 1.0f, Fill::Soft, 600, false },
     { "head", "synth", "Synthwave", 8.0f, 1.0f, Fill::Grad, 600, true },
     { "head", "sticker", "Sticker", 8.0f, 1.0f, Fill::Solid, 600, false },
+    { "head", "glass", "Liquid glass", 8.0f, 1.0f, Fill::Glass, 600, false },
+    { "head", "rainbow", "Rainbow", 8.0f, 1.0f, Fill::Holo, 600, false },
+    { "head", "split", "Split", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "head", "stripes", "Retro stripes", 8.0f, 1.0f, Fill::Outline, 600, false },
+    { "head", "neon-outline", "Neon outline", 8.0f, 1.0f, Fill::Neon, 600, false },
+    { "head", "aurora", "Aurora", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "head", "swash", "Swash underline", 8.0f, 1.0f, Fill::Underline, 600, false },
     { "bg", "plain", "Plain", 8.0f, 1.0f, Fill::Flat, 600, false },
     { "bg", "aurora", "Aurora", 8.0f, 1.0f, Fill::Grad, 600, false },
     { "bg", "pearl", "Pearl", 8.0f, 1.0f, Fill::Pearl, 600, false },
@@ -950,6 +1470,16 @@ inline constexpr Part parts[] = {
     { "bg", "stripes", "Stripes", 8.0f, 1.0f, Fill::Flat, 600, false },
     { "bg", "sunset", "Sunset", 8.0f, 1.0f, Fill::Grad, 600, false },
     { "bg", "scan", "Scanlines", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "topo", "Topographic", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "argyle", "Argyle", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "iso", "Isometric", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "bokeh", "Bokeh", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "bg", "rays", "Sunburst", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "bg", "plaid", "Plaid", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "terrazzo", "Terrazzo", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "waves", "Scallops", 8.0f, 1.0f, Fill::Flat, 600, false },
+    { "bg", "spotlight", "Spotlight", 8.0f, 1.0f, Fill::Grad, 600, false },
+    { "bg", "grain", "Grain gradient", 8.0f, 1.0f, Fill::Grad, 600, false },
 };
 /// A kit: a theme plus one design per family (same order as families[]).
 struct Kit { const char* name; const char* label; const char* theme; const char* parts[15]; };
@@ -972,6 +1502,10 @@ inline constexpr Kit kits[] = {
     { "synthwave", "Synthwave", "neon", { "synth", "glow", "neon", "day-night", "neon", "gradient", "gradient", "gradient", "gradient", "neon", "neon", "orbit", "gradient", "synth", "sunset" } },
     { "arcade", "Arcade", "brutal", { "arcade", "brutal", "thick", "pixel", "pop", "brutal", "bubble", "brutal", "sticker", "brutal", "brutal", "pixel", "pixel", "sticker", "checker" } },
     { "holo", "Holo Foil", "y2k", { "holo", "holo-border", "gradient", "pearl", "pearl", "gradient", "gradient", "gradient", "holo", "glass", "glass", "pearl", "pearl", "holo", "mesh" } },
+    { "liquid-glass", "Liquid Glass", "glass", { "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "liquid-glass", "segments", "liquid-glass", "plain", "bokeh" } },
+    { "workshop", "Workshop", "espresso", { "wood", "stack", "bar", "lamp", "star", "knob", "folder", "bar", "ticket", "dashed", "accent-top", "clock", "battery", "letterpress", "grain" } },
+    { "pixel-quest", "Pixel Quest", "pixel-plains", { "pixel", "extruded", "pixel", "pixel", "square-fill", "square", "pixel", "brutal", "square", "brutal", "brutal", "pixel", "pixel", "shadow3d", "plain" } },
+    { "bubblegum-pop", "Bubblegum Pop", "cotton-candy", { "bubble", "puffy", "soft-glow", "candy", "heart", "candy", "chips", "pills", "pulse", "soft", "clay", "morph", "rainbow", "rainbow", "bokeh" } },
 };
 
 inline const Part* findPart(const char* family, const char* name) {

@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: sorbet — mango, raspberry and lime sorbet. Needs core.css. MIT */
+[data-uv-theme="sorbet"] {
+  --uv-bg: #fff6ea; --uv-text: #4a2617; --uv-accent: #ff7a59; --uv-accent-2: #ffc23d; --uv-on-accent: #111111; --uv-surface: #fffbf6; --uv-surface-2: #f4eadd; --uv-surface-3: #ebdfd3; --uv-line: #4a26171a; --uv-line-2: #4a26172e; --uv-muted: #84695b; --uv-dim: #a89285; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Bricolage Grotesque", system-ui, sans-serif; --uv-serif: "Bricolage Grotesque", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  background-image: radial-gradient(circle at 50% 100%, transparent 10px, #ff7a5929 11px 12px, transparent 13px); background-size: 28px 14px;
+}
+[data-uv-theme="sorbet"] .uv-btn--primary:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *), [data-uv-theme="sorbet"] .uv-btn--grad:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { background: linear-gradient(180deg, #ffa993, #ff7a59 50%, #e66e50 51%, #ff8a6d); color: #111111; border: 1px solid #b3553e; box-shadow: inset 0 1px 0 #ffffffb3, 0 3px 8px -3px #994935b3; text-shadow: 0 1px 0 #00000038; }
+[data-uv-theme="sorbet"] .uv-btn--primary:hover:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { filter: brightness(1.06); }
+[data-uv-theme="sorbet"] .uv-card:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { border-color: transparent; box-shadow: 0 1px 2px #4a26170f, 0 14px 34px -14px #4a261759; }
+[data-uv-theme="sorbet"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { background: #ff7a59; } [data-uv-theme="sorbet"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { color: #111111; }
+[data-uv-theme="sorbet"] .uv-switch input:checked + i:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *), [data-uv-theme="sorbet"] .uv-check input:checked:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { background: #ff7a59; border-color: #ff7a59; }
+[data-uv-theme="sorbet"] .uv-progress > i:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { background: #ff7a59; } [data-uv-theme="sorbet"] .uv-ring:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { background: conic-gradient(#ff7a59 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="sorbet"] .uv-input:focus:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *), [data-uv-theme="sorbet"] .uv-select:focus:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *), [data-uv-theme="sorbet"] .uv-textarea:focus:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { border-color: #ff7a59; box-shadow: 0 0 0 3px #ff7a5938; }
+[data-uv-theme="sorbet"] .uv-btn:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="sorbet"] .uv-btn:hover:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { animation: uvt-bounce .5s; }
+[data-uv-theme="sorbet"] .uv-card--hover:hover:not([data-uv-theme="sorbet"] [data-uv-theme]:not([data-uv-theme="sorbet"]) *) { translate: 0 -4px; }

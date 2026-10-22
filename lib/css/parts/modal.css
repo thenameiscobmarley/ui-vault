@@ -1,4 +1,4 @@
-/*! UI Vault 3.1.0 · parts: modals — 12 designs. Use data-uv-modal="NAME" on <html> or any element. Needs core.css. MIT */
+/*! UI Vault 3.1.0 · parts: modals — 16 designs. Use data-uv-modal="NAME" on <html> or any element. Needs core.css. MIT */
 /* shared reset for every modal design */
 :is([data-uv-modal]:not([data-uv-modal=""]) :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal]:not([data-uv-modal=""])):not(#_) { box-shadow: none; backdrop-filter: none; clip-path: none; }
 :is([data-uv-modal]:not([data-uv-modal=""]) :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal]:not([data-uv-modal=""])):not(#_)::backdrop { backdrop-filter: none; }
@@ -39,6 +39,18 @@
 /* @part modal/cyber — notched panel with an accent rail */
 :is([data-uv-modal="cyber"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="cyber"]):not([data-uv-modal="cyber"] [data-uv-modal]:not([data-uv-modal="cyber"]) *, [data-uv-modal="cyber"] [data-uv-modal]:not([data-uv-modal="cyber"])):not(#_) { border: 0; border-radius: 0; background: var(--uv-surface); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--uv-accent) 60%, transparent), inset 4px 0 0 var(--uv-accent); clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); }
 :is([data-uv-modal="cyber"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="cyber"]):not([data-uv-modal="cyber"] [data-uv-modal]:not([data-uv-modal="cyber"]) *, [data-uv-modal="cyber"] [data-uv-modal]:not([data-uv-modal="cyber"])):not(#_)::backdrop { background: #000c; }
+/* @part modal/liquid-glass — a big glass sheet over a blurred page */
+:is([data-uv-modal="liquid-glass"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="liquid-glass"]):not([data-uv-modal="liquid-glass"] [data-uv-modal]:not([data-uv-modal="liquid-glass"]) *, [data-uv-modal="liquid-glass"] [data-uv-modal]:not([data-uv-modal="liquid-glass"])):not(#_) { border: 1px solid #ffffff38; border-radius: 28px; background: linear-gradient(160deg, color-mix(in srgb, var(--uv-surface) 70%, transparent), color-mix(in srgb, var(--uv-surface) 45%, transparent)); backdrop-filter: blur(24px) saturate(1.8); -webkit-backdrop-filter: blur(24px) saturate(1.8); box-shadow: inset 0 1px 1px #ffffff59, 0 40px 90px -30px #000c; }
+:is([data-uv-modal="liquid-glass"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="liquid-glass"]):not([data-uv-modal="liquid-glass"] [data-uv-modal]:not([data-uv-modal="liquid-glass"]) *, [data-uv-modal="liquid-glass"] [data-uv-modal]:not([data-uv-modal="liquid-glass"])):not(#_)::backdrop { background: #0005; backdrop-filter: blur(4px); }
+/* @part modal/neu — a soft raised dialog */
+:is([data-uv-modal="neu"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="neu"]):not([data-uv-modal="neu"] [data-uv-modal]:not([data-uv-modal="neu"]) *, [data-uv-modal="neu"] [data-uv-modal]:not([data-uv-modal="neu"])):not(#_) { border: 0; border-radius: 24px; background: var(--uv-bg); box-shadow: 12px 12px 30px color-mix(in srgb, var(--uv-bg), #000 30%), -12px -12px 30px color-mix(in srgb, var(--uv-bg), #fff 25%); }
+:is([data-uv-modal="neu"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="neu"]):not([data-uv-modal="neu"] [data-uv-modal]:not([data-uv-modal="neu"]) *, [data-uv-modal="neu"] [data-uv-modal]:not([data-uv-modal="neu"])):not(#_)::backdrop { background: color-mix(in srgb, var(--uv-bg) 70%, transparent); }
+/* @part modal/clay — a puffy clay dialog over a tinted page */
+:is([data-uv-modal="clay"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="clay"]):not([data-uv-modal="clay"] [data-uv-modal]:not([data-uv-modal="clay"]) *, [data-uv-modal="clay"] [data-uv-modal]:not([data-uv-modal="clay"])):not(#_) { border: 0; border-radius: 30px; background: var(--uv-surface); box-shadow: inset 0 -10px 20px color-mix(in srgb, var(--uv-surface), #000 15%), inset 0 10px 20px color-mix(in srgb, var(--uv-surface), #fff 25%), 0 30px 60px -24px #0009; }
+:is([data-uv-modal="clay"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="clay"]):not([data-uv-modal="clay"] [data-uv-modal]:not([data-uv-modal="clay"]) *, [data-uv-modal="clay"] [data-uv-modal]:not([data-uv-modal="clay"])):not(#_)::backdrop { background: color-mix(in srgb, var(--uv-accent) 25%, transparent); }
+/* @part modal/accent-top — a thick accent bar along the top edge */
+:is([data-uv-modal="accent-top"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="accent-top"]):not([data-uv-modal="accent-top"] [data-uv-modal]:not([data-uv-modal="accent-top"]) *, [data-uv-modal="accent-top"] [data-uv-modal]:not([data-uv-modal="accent-top"])):not(#_) { border: 1px solid var(--uv-line-2); border-top: 6px solid var(--uv-accent); border-radius: 6px; background: var(--uv-surface); box-shadow: 0 24px 60px -20px #000a; }
+:is([data-uv-modal="accent-top"] :is(.uv-modal, .uv-cmdk), :is(.uv-modal, .uv-cmdk)[data-uv-modal="accent-top"]):not([data-uv-modal="accent-top"] [data-uv-modal]:not([data-uv-modal="accent-top"]) *, [data-uv-modal="accent-top"] [data-uv-modal]:not([data-uv-modal="accent-top"])):not(#_)::backdrop { background: #000a; }
 @keyframes uvp-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .55; } }
 @keyframes uvp-blink { 50% { opacity: 0; } }
 @keyframes uvp-roll { to { background-position: 34px 0; } }
@@ -58,3 +70,11 @@
 @property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes uv-spin-a { to { --uv-a: 360deg; } }
 @keyframes uv-rot { to { transform: rotate(360deg); } }
+@keyframes uvp-blob { 0%, 100% { border-radius: 42% 58% 60% 40% / 55% 45% 55% 45%; } 50% { border-radius: 60% 40% 38% 62% / 40% 60% 40% 60%; } }
+@keyframes uvp-drift { to { background-position: 100% 100%; } }
+@keyframes uvp-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--k) 60%, transparent); } 70%, 100% { box-shadow: 0 0 0 6px transparent; } }
+@keyframes uvp-atom { from { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(0); } to { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(360deg); } }
+@keyframes uvp-hourglass { 0%, 35% { transform: rotate(0); } 50%, 85% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uvp-morph { 50% { border-radius: 50%; transform: rotate(180deg) scale(.6); background: var(--uv-accent-2); } 100% { transform: rotate(360deg); } }
+@keyframes uvp-slide { to { background-position: 200% 0; } }
+@keyframes uvp-shimmer { from { background-position: 150% 0; } to { background-position: -50% 0; } }

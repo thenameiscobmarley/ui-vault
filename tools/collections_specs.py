@@ -5,7 +5,8 @@ image hovers (.uv-hv-*), dividers (.uv-dv-*), tooltip styles (.uv-tip-*), charts
 Each item: (name, label, css, sample_html). In css and html, `.X` is the item's class (expanded by build).
 Theme tokens (var(--uv-accent) …) keep every piece in step with the active theme.
 """
-import math
+import math, re
+import collections_more
 
 A, A2, T, BG, S, S2, S3, L, M = ("var(--uv-accent)", "var(--uv-accent-2)", "var(--uv-text)", "var(--uv-bg)", "var(--uv-surface)",
                                 "var(--uv-surface-2)", "var(--uv-surface-3)", "var(--uv-line-2)", "var(--uv-muted)")
@@ -324,6 +325,7 @@ KEYFRAMES = """@keyframes uv-c-rot { to { transform: rotate(360deg); } }
 @keyframes uv-c-waveText { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
 @keyframes uv-c-blurin { from { filter: blur(8px); opacity: .2; letter-spacing: .3em; } }
 """
+KEYFRAMES += collections_more.KEYFRAMES
 
 ICON_PATHS = {  # 24×24 stroke icons (stroke=currentColor, width 2, round caps)
     "home": "M3 11l9-8 9 8M5 10v10h14V10", "search": "M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4", "user": "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0",
@@ -390,6 +392,13 @@ def collections():
     for key, label, pre, desc, items, sample in defs:
         out.append({"key": key, "label": label, "prefix": f"uv-{pre}-", "desc": desc,
                     "items": [{"name": n, "label": l, "cls": f"uv-{pre}-{n}", "css": css.replace(".X", f".uv-{pre}-{n}"), "html": sample.replace("X", f"uv-{pre}-{n}")} for n, l, css in items]})
+    for key, label, pre, desc, items, sample, wide in collections_more.defs():
+        col = {"key": key, "label": label, "prefix": f"uv-{pre}-", "desc": desc, "items": []}
+        if wide: col["wide"] = True
+        for n, l, css, *h in items:
+            cls = f"uv-{pre}-{n}"
+            col["items"].append({"name": n, "label": l, "cls": cls, "css": css.replace(".X", "." + cls), "html": re.sub(r"\bX\b", cls, h[0] if h else sample)})
+        out.append(col)
     out.append({"key": "charts", "label": "CSS charts", "prefix": "uv-ch-", "desc": "Charts with no JavaScript: bars, donuts, gauges, sparklines, heatmaps. Values are CSS variables.", "wide": True,
                 "items": [{"name": n, "label": l, "cls": f"uv-ch-{n}", "css": css.replace(".X", f".uv-ch-{n}"), "html": html.replace('class="X"', f'class="uv-ch-{n}"')} for n, l, css, html in CHARTS]})
     out.append({"key": "icons", "label": "Icons", "prefix": "", "small": True, "desc": f"{len(ICON_PATHS)} stroke icons (24×24, currentColor). Paste the SVG, or use the sprite: <svg class=\"uv-icon\"><use href=\"icons.svg#home\"/></svg>.",

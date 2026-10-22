@@ -5,7 +5,7 @@
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const COLORS = { Collection: "#ff8fb8", Page: "#ff6a26", Section: "#ffb26b", Theme: "#b46bff", Element: "#4fd2ff", Kit: "#ff4fd8", Effect: "#39ff88", Animation: "#ffd23f", Background: "#7fe3ff",
-    Component: "#9aa3b0", Block: "#c9a96e", "3D skin": "#b9a6ff", Docs: "#86b4ff", JavaScript: "#f7df1e", Python: "#4b8bbe", "C++": "#659ad2", Resource: "#a19d95" };
+    Component: "#9aa3b0", Block: "#c9a96e", "3D skin": "#b9a6ff", Shader: "#ff7ad9", Docs: "#86b4ff", JavaScript: "#f7df1e", Python: "#4b8bbe", "C++": "#659ad2", Resource: "#a19d95" };
   const items = [];
   const add = (k, n, d, u, g) => items.push({ k, n, d: d || "", u, g: g || "", s: (n + " " + (d || "") + " " + (g || "") + " " + k).toLowerCase() });
 
@@ -29,7 +29,7 @@
 
   // ── counts + chips ───────────────────────────────────────────────────────
   const kinds = {}; items.forEach(i => kinds[i.k] = (kinds[i.k] || 0) + 1);
-  const order = ["Page", "Section", "Theme", "Element", "Kit", "3D skin", "Effect", "Animation", "Background", "Collection", "Component", "Block", "Docs", "JavaScript", "Python", "C++", "Resource"].filter(k => kinds[k]);
+  const order = ["Page", "Section", "Theme", "Element", "Kit", "3D skin", "Shader", "Effect", "Animation", "Background", "Collection", "Component", "Block", "Docs", "JavaScript", "Python", "C++", "Resource"].filter(k => kinds[k]);
   $("#counts").innerHTML = `<span><b>${items.length.toLocaleString()}</b> things</span>` + ["Theme", "Element", "Effect", "Animation", "Resource"].filter(k => kinds[k]).map(k => `<span><b>${kinds[k]}</b>${k.toLowerCase()}s</span>`).join("");
   let kind = "All";
   $("#chips").innerHTML = `<button type="button" class="on" data-k="All">All<small>${items.length}</small></button>` + order.map(k => `<button type="button" data-k="${k}">${k === "JavaScript" ? "JS" : k}<small>${kinds[k]}</small></button>`).join("");

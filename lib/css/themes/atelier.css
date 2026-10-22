@@ -1,0 +1,17 @@
+/*! UI Vault 3.1.0 · theme: atelier — fashion atelier: blush, black and gilt. Needs core.css. MIT */
+[data-uv-theme="atelier"] {
+  --uv-bg: #f8ece8; --uv-text: #141010; --uv-accent: #141010; --uv-accent-2: #c79a5b; --uv-on-accent: #ffffff; --uv-surface: #fcf6f5; --uv-surface-2: #eadfdb; --uv-surface-3: #dfd4d0; --uv-line: #1410101a; --uv-line-2: #1410102e; --uv-muted: #5d5655; --uv-dim: #8b8280; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "DM Serif Display", Georgia, serif; --uv-serif: "DM Serif Display", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: none; --uv-head-tracking: -.03em;
+  
+}
+[data-uv-theme="atelier"] .uv-btn--primary:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *), [data-uv-theme="atelier"] .uv-btn--grad:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { background: #141010; color: #f8ece8; border-color: #141010; }
+[data-uv-theme="atelier"] .uv-btn--primary:hover:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { filter: brightness(1.06); }
+[data-uv-theme="atelier"] .uv-card:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { border: 1px solid #14101047; outline: 1px solid #14101024; outline-offset: 5px; }
+[data-uv-theme="atelier"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { background: #141010; } [data-uv-theme="atelier"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { color: #ffffff; }
+[data-uv-theme="atelier"] .uv-switch input:checked + i:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *), [data-uv-theme="atelier"] .uv-check input:checked:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { background: #141010; border-color: #141010; }
+[data-uv-theme="atelier"] .uv-progress > i:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { background: #141010; } [data-uv-theme="atelier"] .uv-ring:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { background: conic-gradient(#141010 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="atelier"] .uv-input:focus:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *), [data-uv-theme="atelier"] .uv-select:focus:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *), [data-uv-theme="atelier"] .uv-textarea:focus:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { border-color: #141010; box-shadow: 0 0 0 3px #14101038; }
+[data-uv-theme="atelier"] .uv-btn:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="atelier"] .uv-btn:hover:not([data-uv-theme="atelier"] [data-uv-theme]:not([data-uv-theme="atelier"]) *) { background: #141010; color: #f8ece8; border-color: #141010; }

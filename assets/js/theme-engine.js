@@ -11,6 +11,9 @@
     audiowide: '"Audiowide", system-ui, sans-serif', bebas: '"Bebas Neue", Impact, sans-serif', pixel: '"VT323", ui-monospace, monospace',
     press: '"Press Start 2P", ui-monospace, monospace', hand: '"Patrick Hand", "Comic Neue", cursive', majormono: '"Major Mono Display", ui-monospace, monospace',
   };
+  // recipes + fonts shared with tools/theme_specs.py (assets/js/theme-recipes.js, written by tools/build.py)
+  const SHARED = (window.UV_THEME_RECIPES || {}).shared || {};
+  Object.assign(FONTS, (window.UV_THEME_RECIPES || {}).fonts || {});
   const SHAPES = { sharp: [0, 0, 0, 0], crisp: [2, 3, 4, 6], soft: [4, 6, 8, 12], round: [8, 12, 16, 22], pill: [999, 999, 18, 26] };
   const RECIPES = {
     background: ["flat", "aurora", "pearl", "mesh", "grid", "blueprint", "dots", "lines", "carbon", "brushed", "galaxy", "marble", "sunset", "noise", "halftone", "checker", "stripes", "scan", "vignette", "tiger", "web", "damascus"],
@@ -20,6 +23,9 @@
     card: ["flat", "soft", "hard", "glass", "bevel", "gradient-border", "inset", "outline", "glow", "notch", "double", "metal", "pearl", "paper"],
   };
 
+  for (const [k, g] of [["background", "background"], ["heading", "heading"], ["button", "button"], ["hover", "hover"], ["card", "card"]])
+    for (const n of Object.keys(SHARED[g] || {})) if (!RECIPES[k].includes(n)) RECIPES[k].push(n);
+
   const rgb = h => { h = h.replace("#", ""); if (h.length === 3) h = [...h].map(c => c + c).join(""); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); };
   const hex = a => "#" + a.map(v => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, "0")).join("");
   const mix = (a, b, t) => { const x = rgb(a), y = rgb(b); return hex(x.map((v, i) => v + (y[i] - v) * t)); };
@@ -27,6 +33,16 @@
   const lum = h => { const [r, g, b] = rgb(h); return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255; };
   const on = h => lum(h) > 0.55 ? "#111111" : "#ffffff";
   const lighten = (h, t) => mix(h, "#ffffff", t), darken = (h, t) => mix(h, "#000000", t);
+
+  /** Same evaluator as tools/theme_specs.py fill(): CSS with [[expr]] holes. */
+  function fill(tpl, c, dark, sel) {
+    if (!tpl) return "";
+    const env = { a: c.accent, b: c["accent-2"], t: c.text, bg: c.bg, s: c.surface, s2: c["surface-2"], s3: c["surface-3"], dark,
+      al: alpha, mx: mix, lt: lighten, dk: darken, on, u: h => h.replace(/#/g, "%23"), iff: (q, x, y) => q ? x : y };
+    const ks = Object.keys(env), vs = Object.values(env);
+    const out = tpl.replace(/\[\[(.+?)\]\]/g, (_, e) => String(new Function(...ks, `return (${e});`)(...vs)));
+    return sel ? out.replace(/SEL/g, sel).replace(/H \{/g, sel + " .uv-btn:hover {") : out;
+  }
 
   function derive(s) {
     const bg = s.bg, fg = s.fg, dark = lum(bg) < 0.5;
@@ -63,7 +79,7 @@
       case "tiger": return `background-image: repeating-linear-gradient(115deg, transparent 0 18px, ${alpha("#000000", .35)} 18px 24px, transparent 24px 46px, ${alpha("#000000", .25)} 46px 50px), linear-gradient(135deg, ${a}, ${b});`;
       case "web": return `background-image: repeating-radial-gradient(circle at 0 0, transparent 0 34px, ${alpha("#000000", .55)} 35px 36px), repeating-conic-gradient(from 0deg at 0 0, transparent 0 9deg, ${alpha("#000000", .45)} 9deg 9.6deg);`;
       case "damascus": return `background-image: repeating-radial-gradient(ellipse 120% 40% at 50% 120%, ${alpha("#ffffff", .07)} 0 6px, transparent 6px 14px), linear-gradient(180deg, ${lighten(c.bg, .08)}, ${c.bg});`;
-      default: return "";
+      default: return fill(SHARED.background?.[k], c, dark);
     }
   }
 
@@ -80,7 +96,7 @@
       case "shadow3d": return "text-shadow: " + [1, 2, 3, 4, 5].map(i => `${i}px ${i}px 0 ${a}`).join(", ") + ";";
       case "duotone": return `color: ${c.text}; text-shadow: 3px 3px 0 ${alpha(a, .9)};`;
       case "fire": return `background-image: linear-gradient(0deg, #ff3d00, #ffb300 55%, #fff3c4); ${clip}`;
-      default: return "";
+      default: return fill(SHARED.heading?.[k], c, dark);
     }
   }
 
@@ -103,11 +119,11 @@
       case "neon": return `background: transparent; color: ${lighten(a, .3)}; border: 1.5px solid ${a}; text-shadow: 0 0 8px ${a}; box-shadow: 0 0 12px -2px ${a}, inset 0 0 10px -4px ${a};`;
       case "underline": return `background: transparent; color: ${t}; border-color: transparent; text-decoration: underline; text-decoration-color: ${a}; text-decoration-thickness: 2px; text-underline-offset: 5px;`;
       case "stamp": return `background: transparent; color: ${a}; border: 2px double ${a}; text-transform: uppercase; letter-spacing: .14em;`;
-      default: return "";
+      default: return fill(SHARED.button?.[k], c, dark);
     }
   }
 
-  function hoverCss(k, sel, c) {
+  function hoverCss(k, sel, c, dark) {
     const a = c.accent, t = c.text, h = `${sel} .uv-btn:hover`;
     const base = `${sel} .uv-btn { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }\n`;
     const r = {
@@ -125,7 +141,7 @@
       flicker: `${h} { animation: uv-flick 1.6s infinite; filter: brightness(1.25); }`,
     };
     const card = { tilt: `${sel} .uv-card--hover:hover { rotate: -1deg; }`, glow: `${sel} .uv-card--hover:hover { box-shadow: 0 0 0 1px ${alpha(a, .5)}, 0 0 30px -8px ${a}; }`, sink: `${sel} .uv-card--hover:hover { translate: 3px 3px; }`, pop: `${sel} .uv-card--hover:hover { scale: 1.02; }` };
-    return base + (r[k] || "") + "\n" + (card[k] || `${sel} .uv-card--hover:hover { translate: 0 -4px; }`);
+    return base + (r[k] || fill(SHARED.hover?.[k], c, dark, sel)) + "\n" + (card[k] || `${sel} .uv-card--hover:hover { translate: 0 -4px; }`);
   }
 
   function cardCss(k, c, dark) {
@@ -144,7 +160,7 @@
       case "metal": return `background: repeating-linear-gradient(90deg, ${alpha("#ffffff", .04)} 0 1px, transparent 1px 3px), linear-gradient(180deg, ${lighten(c.surface, .08)}, ${c.surface}); border-color: ${alpha("#ffffff", .18)}; box-shadow: inset 0 1px 0 ${alpha("#ffffff", .25)};`;
       case "pearl": return "background: linear-gradient(135deg, #ffffffee, #f6efffdd 40%, #eaf8ffdd 70%, #fffaf0ee); border: 1px solid #e3d8f5; box-shadow: inset 0 1px 0 #fff, 0 18px 40px -22px #7a6a9e88;";
       case "paper": return `background: ${c.surface} linear-gradient(${alpha(b, .14)} 1px, transparent 1px) 0 0 / 100% 26px; box-shadow: 2px 3px 0 ${alpha(t, .12)};`;
-      default: return "";
+      default: return fill(SHARED.card?.[k], c, dark);
     }
   }
 
@@ -178,7 +194,7 @@
     out.push(`${sel} .uv-switch input:checked + i, ${sel} .uv-check input:checked { background: ${c.accent}; border-color: ${c.accent}; }`);
     out.push(`${sel} .uv-progress > i { background: ${c.accent}; } ${sel} .uv-ring { background: conic-gradient(${c.accent} calc(var(--v) * 1%), var(--uv-line-2) 0); }`);
     out.push(`${sel} .uv-input:focus, ${sel} .uv-select:focus { border-color: ${c.accent}; box-shadow: 0 0 0 3px ${alpha(c.accent, .22)}; }`);
-    out.push(hoverCss(s.hover, sel, c));
+    out.push(hoverCss(s.hover, sel, c, dark));
     return scopeNearest(out.join("\n") + "\n", s.name);
   }
 

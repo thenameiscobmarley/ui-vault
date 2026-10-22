@@ -582,6 +582,210 @@ BG = [
     P("scan", "Scanlines", "CRT scanlines and a vignette", "$ { background: repeating-linear-gradient(0deg, #0000002e 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, #00000073) fixed, %BG; }", fill="flat"),
 ]
 
+# ── v13: 96 more designs ─────────────────────────────────────────────────────
+NOISE = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E\")"
+_HOLE = lambda r: f"radial-gradient(circle {r}px at 0 50%, #0000 96%, #000) left / 51% 100% no-repeat, radial-gradient(circle {r}px at 100% 50%, #0000 96%, #000) right / 51% 100% no-repeat"
+_NOTCH = lambda r: f"-webkit-mask: {_HOLE(r)}; mask: {_HOLE(r)};"
+_GLASS = "backdrop-filter: blur(14px) saturate(1.7); -webkit-backdrop-filter: blur(14px) saturate(1.7);"
+_SKETCH = "border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;"
+
+BTN += [
+    P("liquid-glass", "Liquid glass", "thick refractive glass with bright rim highlights", """
+$ { background: linear-gradient(180deg, #ffffff38, #ffffff0d 55%, #ffffff1f); color: %T; border: 1px solid #ffffff4d; border-radius: 999px; """ + _GLASS + """ box-shadow: inset 0 1px 1px #ffffffb3, inset 0 -1px 1px #ffffff40, inset 0 -8px 16px -10px #ffffff66, 0 8px 22px -10px #0007; }
+$:hover { background: linear-gradient(180deg, #ffffff4d, #ffffff14 55%, #ffffff2e); transform: translateY(-1px); }
+$P { background: linear-gradient(180deg, ~A80, ~A45 55%, ~A70); color: %OA; border-color: #ffffff66; }""", 999, 1, "glass"),
+    P("keycap", "Keycap", "a mechanical keyboard key with a deep skirt that clacks down", """
+$ { background: linear-gradient(180deg, LT(S2,8), %S2); color: %T; border: 1px solid DK(S2,25); border-radius: 9px; font-family: var(--uv-mono); box-shadow: inset 0 -5px 0 DK(S2,14), inset 0 1px 0 #ffffff40, 0 2px 0 DK(S2,40), 0 6px 10px -4px #0008; }
+$:active { transform: translateY(3px); box-shadow: inset 0 -2px 0 DK(S2,14), inset 0 1px 0 #ffffff40, 0 0 0 DK(S2,40), 0 2px 4px -2px #0008; }
+$P { background: linear-gradient(180deg, LT(A,12), %A); color: %OA; border-color: DK(A,35); box-shadow: inset 0 -5px 0 DK(A,18), inset 0 1px 0 #ffffff55, 0 2px 0 DK(A,45), 0 6px 10px -4px #0008; }
+$P:active { box-shadow: inset 0 -2px 0 DK(A,18), inset 0 1px 0 #ffffff55, 0 0 0 DK(A,45), 0 2px 4px -2px #0008; }""", 9, 1, "bevel", 600),
+    P("glitch", "Glitch", "RGB-split caps that jitter on hover", """
+$ { background: %BG; color: %T; border: 1.5px solid %T; border-radius: 2px; text-transform: uppercase; letter-spacing: .08em; text-shadow: 1.5px 0 ~A80, -1.5px 0 ~B80; }
+$:hover { animation: uvp-glitch .25s steps(2) infinite; text-shadow: 3px 0 %A, -3px 0 %A2; }
+$P { background: %T; color: %BG; }""", 2, 2, "outline", 700, True),
+    P("gradient-border", "Gradient border", "a gradient frame that floods with colour", """
+$ { border: 2px solid transparent; border-radius: 12px; color: %T; background: linear-gradient(%BG, %BG) padding-box, linear-gradient(135deg, %A, %A2) border-box; }
+$:hover { background: linear-gradient(~A14, ~A14) padding-box, linear-gradient(%BG, %BG) padding-box, linear-gradient(135deg, %A, %A2) border-box; }
+$P { background: linear-gradient(135deg, %A, %A2) border-box; color: #fff; }""", 12, 2, "grad"),
+    P("outline-draw", "Draw outline", "the border draws itself around the button on hover", """
+$ { border: 0; border-radius: 0; color: %T; background: linear-gradient(%A, %A) 0 0 / 0 2px no-repeat, linear-gradient(%A, %A) 100% 0 / 2px 0 no-repeat, linear-gradient(%A, %A) 100% 100% / 0 2px no-repeat, linear-gradient(%A, %A) 0 100% / 2px 0 no-repeat; box-shadow: inset 0 0 0 1px %L; }
+$:hover { background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%; }
+$P { background-color: %A; color: %OA; background-image: linear-gradient(%T, %T), linear-gradient(%T, %T), linear-gradient(%T, %T), linear-gradient(%T, %T); box-shadow: none; }""", 0, 1, "outline"),
+    P("blob", "Blob", "a pill that turns into a wobbling blob", """
+$ { border-radius: 999px; background: %S2; color: %T; border: 1px solid %L; }
+$:hover { animation: uvp-blob 1.2s ease-in-out infinite; }
+$P { background: %A; color: %OA; border-color: %A; }""", 999, 1, "solid"),
+    P("tape", "Masking tape", "a strip of tape stuck on at an angle", """
+$ { background: ~A28; color: %T; border: 0; border-radius: 0; rotate: -1.5deg; clip-path: polygon(0 6%, 3% 0, 50% 3%, 97% 0, 100% 5%, 98% 50%, 100% 95%, 96% 100%, 50% 97%, 3% 100%, 0 94%, 2% 50%); font-weight: 700; }
+$:hover { rotate: 0deg; background: ~A40; }
+$P { background: ~A75; color: %OA; }""", 0, 0, "soft", 700),
+    P("wood", "Wood", "a varnished wooden plank with a pressed-in click", """
+$ { color: #fff6e6; border: 1px solid #4a2a12; border-radius: 8px; text-shadow: 0 -1px 0 #0008; background: repeating-linear-gradient(92deg, #ffffff0d 0 2px, transparent 2px 9px), repeating-radial-gradient(ellipse 140% 30% at 30% 120%, #00000026 0 3px, transparent 3px 9px), linear-gradient(180deg, #a8682e, #7a4519); box-shadow: inset 0 1px 0 #ffffff40, 0 3px 0 #3b2010, 0 6px 12px -4px #0008; }
+$:active { transform: translateY(2px); box-shadow: inset 0 1px 0 #ffffff40, 0 1px 0 #3b2010; }
+$P { background: repeating-linear-gradient(92deg, #ffffff0d 0 2px, transparent 2px 9px), repeating-radial-gradient(ellipse 140% 30% at 30% 120%, #00000026 0 3px, transparent 3px 9px), linear-gradient(180deg, LT(A,8), DK(A,28)); border-color: DK(A,55); }""", 8, 1, "grad", 700),
+    P("ticket", "Ticket", "a ticket stub with punched sides", """
+$ { background: %S2; color: %T; border: 0; border-radius: 6px; padding-inline: 1.5em; font-family: var(--uv-mono); text-transform: uppercase; letter-spacing: .06em; """ + _NOTCH(7) + """ }
+$:hover { background: %S3; }
+$P { background: %A; color: %OA; }""", 6, 0, "solid", 600, True),
+    P("bubble", "Soap bubble", "an iridescent bubble that swirls on hover", """
+$ { border-radius: 999px; color: %T; border: 1px solid #ffffff59; background: radial-gradient(120% 140% at 30% 20%, #ffffff59, transparent 40%), linear-gradient(115deg, #ff9ae633, #9ad3ff33, #b8ff9a33, #fff59a33, #ff9ae633) 0 0 / 300% 100%; box-shadow: inset 0 0 12px #ffffff40, 0 6px 18px -10px #0006; }
+$:hover { background-position: 0 0, 100% 0; }
+$P { border-color: ~A60; box-shadow: inset 0 0 14px ~A40, 0 6px 18px -8px ~A60; }""", 999, 1, "holo"),
+]
+
+CARD += [
+    P("liquid-glass", "Liquid glass", "a thick slab of glass with bright edges", "$ { background: linear-gradient(160deg, #ffffff26, #ffffff08 45%, #ffffff14); border: 1px solid #ffffff38; border-radius: 22px; " + _GLASS + " box-shadow: inset 0 1px 1px #ffffff80, inset 0 -1px 1px #ffffff26, inset 0 -18px 30px -24px #ffffff55, 0 24px 50px -24px #0009; }", 22, 1, "glass"),
+    P("puffy", "Puffy", "a puffy clay tile tinted by the accent", "$ { background: %S; border: 0; border-radius: 26px; box-shadow: inset 0 -8px 16px DK(S,16), inset 0 8px 16px LT(S,30), 0 22px 40px -20px ~A45; }", 26, 0, "clay"),
+    P("pass", "Boarding pass", "punched sides and a dashed tear line", "$ { border: 0; border-radius: 12px; background: repeating-linear-gradient(180deg, %L 0 6px, transparent 6px 12px) calc(100% - 70px) 0 / 1.5px 100% no-repeat, %S; " + _NOTCH(12) + " }", 12, 0, "flat"),
+    P("stack", "Paper stack", "a pile of sheets behind the card", "$ { background: %S; border: 1px solid %L; border-radius: 10px; box-shadow: 6px 6px 0 -1px %S2, 6px 6px 0 0 %L, 12px 12px 0 -1px %S3, 12px 12px 0 0 %L1; }", 10, 1, "flat"),
+    P("aurora", "Aurora", "slow aurora light drifting inside the card", "$ { background: radial-gradient(60% 80% at 0% 0%, ~A30, transparent 60%), radial-gradient(60% 80% at 100% 100%, ~B30, transparent 60%), %S; background-size: 200% 200%; border: 1px solid %L1; border-radius: 18px; animation: uvp-drift 12s ease-in-out infinite alternate; }", 18, 1, "grad"),
+    P("spotlight", "Corner light", "the border catches light at one corner", "$ { border: 1px solid transparent; border-radius: 16px; background: linear-gradient(%S, %S) padding-box, radial-gradient(120% 120% at 0% 0%, %A, ~A20 40%, %L1 70%) border-box; box-shadow: -12px -12px 40px -24px %A; }", 16, 1, "neon"),
+    P("foil", "Holo foil", "a rainbow sheen sweeps across on hover", """
+$ { position: relative; overflow: hidden; background: %S; border: 1px solid %L; border-radius: 14px; }
+$::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 20%, #ff9ae640 35%, #9ad3ff40 45%, #b8ff9a40 55%, #fff59a40 65%, transparent 80%) 100% 0 / 250% 100%; mix-blend-mode: screen; transition: background-position 1s var(--uv-ease); pointer-events: none; }
+$:hover::before { background-position: 0 0; }""", 14, 1, "holo"),
+    P("receipt", "Receipt", "till-roll paper with a torn zigzag edge", "$ { background: %S; border: 0; border-radius: 0; font-family: var(--uv-mono); -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 16px 100%; mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 16px 100%; }", 0, 0, "flat", 500),
+    P("frame", "Gallery frame", "a hairline frame with a floating outer rule", "$ { background: %S; border: 1px solid ~T35; border-radius: 2px; outline: 1px solid ~T18; outline-offset: 5px; }", 2, 1, "outline"),
+    P("extruded", "Extruded", "a solid block pushed out of the page", """
+$ { background: %S; border: 1.5px solid %T; border-radius: 12px; box-shadow: 1px 1px 0 DK(A,15), 2px 2px 0 DK(A,15), 3px 3px 0 DK(A,15), 4px 4px 0 DK(A,15), 5px 5px 0 DK(A,15), 6px 6px 0 DK(A,15), 7px 7px 0 DK(A,15), 8px 8px 0 %T; transform: translate(-4px, -4px); }
+$:hover { transform: translate(-2px, -2px); box-shadow: 1px 1px 0 DK(A,15), 2px 2px 0 DK(A,15), 3px 3px 0 DK(A,15), 4px 4px 0 %T; }""", 12, 2, "hard"),
+]
+
+INPUT += [
+    P("liquid-glass", "Liquid glass", "a glass well with bright edges", "$ { background: linear-gradient(180deg, #ffffff1f, #ffffff0a); border: 1px solid #ffffff38; border-radius: 16px; " + _GLASS + " box-shadow: inset 0 1px 1px #ffffff59, inset 0 -1px 1px #ffffff1a; }\n$:focus { border-color: #ffffff80; box-shadow: inset 0 1px 1px #ffffff80, 0 0 0 4px #ffffff1f; }", 16, 1, "glass"),
+    P("float", "Float", "lifts off the page and glows on focus", "$ { background: %S; border: 1px solid %L1; border-radius: 10px; box-shadow: 0 1px 2px #0000001a; }\n$:focus { border-color: %A; transform: translateY(-2px); box-shadow: 0 12px 24px -12px ~A60, 0 0 0 1px %A; }", 10, 1, "flat"),
+    P("bar", "Side bar", "a left bar that turns accent on focus", "$ { background: %S2; border: 0; border-left: 3px solid %L; border-radius: 0 8px 8px 0; }\n$:focus { border-left-color: %A; background: ~A8; }", 0, 3, "soft"),
+    P("dashed", "Dashed", "dashed until you type", "$ { background: transparent; border: 1.5px dashed %L; border-radius: 8px; }\n$:focus { border-style: solid; border-color: %A; box-shadow: 0 0 0 3px ~A18; }", 8, 2, "outline"),
+    P("sketch", "Sketch", "a hand-drawn wobbly box", "$ { background: %BG; border: 2px solid %T; " + _SKETCH + " }\n$:focus { box-shadow: 3px 4px 0 -1px ~A60; border-color: %T; }", 12, 2, "outline"),
+    P("pixel", "Pixel", "8-bit inset frame", "$ { background: %BG; border: 0; border-radius: 0; box-shadow: inset 0 0 0 3px %T, inset 6px 6px 0 -3px ~T15; font-family: var(--uv-mono); }\n$:focus { box-shadow: inset 0 0 0 3px %A, inset 6px 6px 0 -3px ~A25; }", 0, 3, "hard"),
+    P("soft-glow", "Soft glow", "a soft card field with a halo on focus", "$ { background: %S; border: 1px solid transparent; border-radius: 14px; box-shadow: 0 2px 10px -4px #0003; }\n$:focus { box-shadow: 0 0 0 1px ~A50, 0 0 24px -4px ~A70; }", 14, 0, "flat"),
+]
+
+SWITCH += [
+    P("liquid-glass", "Liquid glass", "a wide glass lozenge knob", "$ i { width: 54px; height: 30px; border-radius: 99px; background: ~T15; border: 1px solid #ffffff2e; box-shadow: inset 0 1px 2px #0003; }\n$ i::after { top: 2px; left: 2px; width: 34px; height: 24px; border-radius: 99px; background: linear-gradient(180deg, #ffffffee, #ffffffb3); box-shadow: inset 0 1px 1px #fff, inset 0 -2px 4px #0000001a, 0 2px 6px #0004; }\n$ input:checked + i { background: %A; }\n$ input:checked + i::after { transform: translateX(14px); }", 999, 1, "glass"),
+    P("neu", "Neumorphic", "pressed into the page, the knob rises out", "$ i { width: 54px; height: 28px; border-radius: 99px; background: %BG; border: 0; box-shadow: inset 3px 3px 6px DK(BG,22), inset -3px -3px 6px LT(BG,30); }\n$ i::after { top: 4px; left: 4px; width: 20px; height: 20px; border-radius: 50%; background: %BG; box-shadow: 2px 2px 5px DK(BG,30), -2px -2px 5px LT(BG,35); }\n$ input:checked + i { background: %BG; }\n$ input:checked + i::after { transform: translateX(26px); background: %A; }", 999, 0, "sunken"),
+    P("icons", "Tick / cross", "the knob shows ✕ or ✓", "$ i { width: 52px; height: 28px; border-radius: 99px; background: %S3; border: 1px solid %L; }\n$ i::after { content: \"✕\"; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%; background: #fff; color: #888; font: 700 11px/22px system-ui, sans-serif; text-align: center; }\n$ input:checked + i { background: %A; border-color: %A; }\n$ input:checked + i::after { content: \"✓\"; transform: translateX(24px); color: %A; }", 999, 1, "solid"),
+    P("lamp", "Lamp", "a dark track with a bulb that lights up", "$ i { width: 48px; height: 26px; border-radius: 99px; background: #111; border: 1px solid #333; }\n$ i::after { top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #444; box-shadow: inset 0 2px 3px #0008; }\n$ input:checked + i { background: #111; border-color: ~A60; }\n$ input:checked + i::after { transform: translateX(22px); background: radial-gradient(circle at 40% 35%, #fff, LT(A,30) 40%, %A); box-shadow: 0 0 8px %A, 0 0 22px %A; }", 999, 1, "neon"),
+    P("candy", "Candy", "a striped candy track", "$ i { width: 54px; height: 28px; border-radius: 99px; background: repeating-linear-gradient(-45deg, %S3 0 6px, %S2 6px 12px); border: 2px solid %L; }\n$ i::after { top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 2px 0 #0003; }\n$ input:checked + i { background: repeating-linear-gradient(-45deg, %A 0 6px, LT(A,30) 6px 12px); border-color: DK(A,25); }\n$ input:checked + i::after { transform: translateX(26px); }", 999, 2, "grad"),
+    P("stretch", "Stretch", "the knob stretches while you press, then springs", "$ i { width: 50px; height: 28px; border-radius: 99px; background: ~T18; border: 0; }\n$ i::after { top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 99px; background: #fff; box-shadow: 0 2px 6px #0003; transition: transform .35s var(--uv-spring), width .2s, background .25s; }\n$ input:active + i::after { width: 30px; }\n$ input:checked + i { background: %A; }\n$ input:checked + i::after { transform: translateX(22px); }\n$ input:checked:active + i::after { transform: translateX(14px); }", 999, 0, "solid"),
+]
+
+CHECK += [
+    P("liquid-glass", "Liquid glass", "a glass bead that fills with colour", "$ input { border-radius: 8px; border: 1px solid #ffffff4d; background: linear-gradient(180deg, #ffffff2e, #ffffff0d); backdrop-filter: blur(8px); box-shadow: inset 0 1px 1px #ffffff80; }\n$ input:checked { background: linear-gradient(180deg, LT(A,25), %A); border-color: #ffffff80; }\n$ input::after { border-color: %OA; }", 8, 1, "glass"),
+    P("heart", "Heart", "a heart pops in when checked", "$ input { border-radius: 50%; border: 2px solid %L; }\n$ input::after { content: \"♥\"; width: auto; height: auto; border: 0; color: #fff; font: 700 12px/1 system-ui, sans-serif; transform: scale(0); }\n$ input:checked { background: #ff3d6e; border-color: #ff3d6e; animation: uvp-pop .4s var(--uv-spring); }\n$ input:checked::after { transform: scale(1); }", 999, 2, "solid"),
+    P("star", "Star", "a gold star for favourites", "$ input { border-radius: 6px; border: 2px solid %L; }\n$ input::after { content: \"★\"; width: auto; height: auto; border: 0; color: #fff; font: 700 13px/1 system-ui, sans-serif; transform: scale(0) rotate(-90deg); }\n$ input:checked { background: #ffb400; border-color: #ffb400; }\n$ input:checked::after { transform: scale(1) rotate(0); }", 6, 2, "gold"),
+    P("neu", "Neumorphic", "pops out, presses in when checked", "$ input { width: 22px; height: 22px; border: 0; border-radius: 7px; background: %BG; box-shadow: 3px 3px 6px DK(BG,22), -3px -3px 6px LT(BG,30); }\n$ input:checked { background: %BG; box-shadow: inset 3px 3px 6px DK(BG,22), inset -3px -3px 6px LT(BG,30); }\n$ input::after { border-color: %A; }", 7, 0, "sunken"),
+    P("sketch", "Sketch", "a hand-drawn box with a marker tick", "$ input { border: 2px solid %T; " + _SKETCH + " background: transparent; }\n$ input:checked { background: transparent; border-color: %T; }\n$ input::after { border-color: %A; border-width: 0 3px 3px 0; }", 6, 2, "outline"),
+    P("gradient", "Gradient", "a gradient ring that floods when checked", "$ input { border-radius: 6px; border: 2px solid transparent; background: linear-gradient(%BG, %BG) padding-box, linear-gradient(135deg, %A, %A2) border-box; }\n$ input:checked { background: linear-gradient(135deg, %A, %A2) border-box; border-color: transparent; }\n$ input::after { border-color: #fff; }", 6, 2, "grad"),
+]
+
+RANGE += [
+    P("liquid-glass", "Liquid glass", "a glass lozenge thumb", "$ { height: 8px; border-radius: 99px; background: linear-gradient(90deg, %A var(--v), ~T15 var(--v)); }\n" + _TH("width: 34px; height: 22px; border: 1px solid #ffffffb3; border-radius: 99px; background: linear-gradient(180deg, #ffffffee, #ffffffaa); box-shadow: inset 0 1px 1px #fff, inset 0 -2px 4px #0000001a, 0 3px 10px #0004;"), 999, 1, "glass"),
+    P("neu", "Neumorphic", "a groove pressed into the page", "$ { height: 10px; border-radius: 99px; background: linear-gradient(90deg, ~A70 var(--v), transparent var(--v)), %BG; box-shadow: inset 2px 2px 5px DK(BG,22), inset -2px -2px 5px LT(BG,30); }\n" + _TH("width: 24px; height: 24px; border: 0; border-radius: 50%; background: %BG; box-shadow: 3px 3px 7px DK(BG,30), -3px -3px 7px LT(BG,35);"), 999, 0, "sunken"),
+    P("rainbow", "Hue", "a full-spectrum track, like a colour picker", "$ { height: 10px; border-radius: 99px; background: linear-gradient(90deg, #ff4d4d, #ffb84d, #f5f54d, #4dff88, #4dc3ff, #9a4dff, #ff4dd2); }\n" + _TH("width: 20px; height: 20px; border: 3px solid #fff; border-radius: 50%; background: transparent; box-shadow: 0 0 0 1px #0003, 0 2px 6px #0006;"), 999, 0, "grad"),
+    P("candy", "Candy", "striped candy fill", "$ { height: 12px; border-radius: 99px; background: linear-gradient(90deg, transparent var(--v), %S3 var(--v)), repeating-linear-gradient(-45deg, %A 0 6px, LT(A,30) 6px 12px); }\n" + _TH("width: 22px; height: 22px; border: 3px solid %A; border-radius: 50%; background: #fff; box-shadow: 0 2px 0 #0003;"), 999, 0, "grad"),
+    P("knob", "Machined knob", "a knurled metal knob in an engraved groove", "$ { height: 4px; border-radius: 99px; background: linear-gradient(90deg, %A var(--v), DK(S3,20) var(--v)); box-shadow: inset 0 1px 1px #0008, 0 1px 0 #ffffff1a; }\n" + _TH("width: 26px; height: 26px; border: 1px solid #555; border-radius: 50%; background: radial-gradient(circle, %A 0 3px, transparent 3.5px), conic-gradient(#d9d9d9, #8f8f8f, #f2f2f2, #9a9a9a, #e6e6e6, #8a8a8a, #d9d9d9); box-shadow: 0 3px 8px #0007;"), 999, 1, "metal"),
+    P("notch", "Notch", "a hairline and a tall thin marker", "$ { height: 2px; border-radius: 0; background: linear-gradient(90deg, %A var(--v), %L var(--v)); }\n" + _TH("width: 4px; height: 22px; border: 0; border-radius: 2px; background: %A; box-shadow: 0 0 0 3px ~A20;"), 2, 0, "flat"),
+]
+
+TABS += [
+    P("liquid-glass", "Liquid glass", "a glass lozenge glides over a frosted rail", """
+$ { background: ~T10; border: 1px solid #ffffff1f; border-radius: 999px; padding: 4px; backdrop-filter: blur(12px); }
+$ > button { border-radius: 999px; color: %M; }
+$ > button[aria-selected="true"] { color: %T; }
+$ > .uv-tabs__ind { border-radius: 999px; background: linear-gradient(180deg, #ffffff40, #ffffff14); border: 1px solid #ffffff4d; box-shadow: inset 0 1px 1px #ffffff80, 0 4px 14px -6px #0007; }""", 999, 1, "glass"),
+    P("neu", "Neumorphic", "a raised pill inside a pressed rail", """
+$ { background: %BG; border: 0; border-radius: 14px; padding: 6px; box-shadow: inset 3px 3px 7px DK(BG,20), inset -3px -3px 7px LT(BG,30); }
+$ > button { color: %M; border-radius: 10px; }
+$ > button[aria-selected="true"] { color: %A; }
+$ > .uv-tabs__ind { top: 6px; bottom: 6px; background: %BG; border-radius: 10px; box-shadow: 3px 3px 7px DK(BG,22), -3px -3px 7px LT(BG,35); }""", 14, 0, "sunken"),
+    P("chips", "Chips", "separate outlined chips, the active one fills", """
+$ { background: transparent; border: 0; padding: 0; gap: 8px; border-radius: 0; }
+$ > button { border: 1px solid %L; border-radius: 999px; color: %T; padding: 7px 14px; }
+$ > button[aria-selected="true"] { color: %OA; border-color: transparent; }
+$ > .uv-tabs__ind { top: 0; bottom: 0; border-radius: 999px; background: %A; box-shadow: none; }""", 999, 1, "outline"),
+    P("dot", "Dot", "a small dot slides under the active tab", """
+$ { background: transparent; border: 0; padding: 0 0 10px; gap: 14px; border-radius: 0; }
+$ > button { color: %M; padding-inline: 4px; }
+$ > button[aria-selected="true"] { color: %T; }
+$ > .uv-tabs__ind { top: auto; bottom: 0; height: 6px; background: radial-gradient(circle, %A 3px, transparent 3.5px); box-shadow: none; border-radius: 0; }""", 0, 0, "ghost"),
+    P("pixel", "Pixel", "8-bit tabs in a chunky frame", """
+$ { background: %BG; border: 0; border-radius: 0; padding: 6px; box-shadow: inset 0 0 0 3px %T; }
+$ > button { border-radius: 0; color: %T; font-family: var(--uv-mono); text-transform: uppercase; }
+$ > button[aria-selected="true"] { color: %OA; }
+$ > .uv-tabs__ind { top: 6px; bottom: 6px; border-radius: 0; background: %A; box-shadow: inset 0 -3px 0 DK(A,30); }""", 0, 3, "hard", 700, True),
+]
+
+NAV += [
+    P("liquid-glass", "Liquid glass", "a floating glass bar with a glass active pill", "$ { background: linear-gradient(180deg, #ffffff1a, #ffffff08); border: 1px solid #ffffff2e; border-radius: 999px; " + _GLASS + " box-shadow: inset 0 1px 1px #ffffff4d, 0 10px 30px -14px #0008; }\n$I { border-radius: 999px; color: %M; }\n$I:hover { color: %T; background: #ffffff14; }\n$A { color: %T; background: linear-gradient(180deg, #ffffff38, #ffffff12); box-shadow: inset 0 1px 1px #ffffff66; }", 999, 1, "glass"),
+    P("neu", "Neumorphic", "soft raised bar, the active link presses in", "$ { background: %BG; border: 0; border-radius: 16px; box-shadow: 5px 5px 12px DK(BG,22), -5px -5px 12px LT(BG,35); }\n$I { border-radius: 10px; color: %M; }\n$I:hover { color: %T; }\n$A { color: %A; box-shadow: inset 3px 3px 6px DK(BG,20), inset -3px -3px 6px LT(BG,30); }", 16, 0, "sunken"),
+    P("bar", "Side bar", "an accent bar marks the active link", "$ { background: transparent; border: 0; border-radius: 0; }\n$I { border-radius: 0; color: %M; box-shadow: inset 3px 0 0 transparent; }\n$I:hover { color: %T; box-shadow: inset 3px 0 0 %L; }\n$A { color: %T; background: ~A8; box-shadow: inset 3px 0 0 %A; }", 0, 0, "flat"),
+    P("glow", "Under-glow", "the active link glows from below", "$ { background: ~BG80; border: 1px solid %L1; border-radius: 12px; }\n$I { color: %M; border-radius: 8px; }\n$I:hover { color: %T; text-shadow: 0 0 10px ~A60; }\n$A { color: %T; background: radial-gradient(60% 120% at 50% 120%, ~A45, transparent 70%); text-shadow: 0 0 12px %A; }", 12, 1, "neon"),
+]
+
+BADGE += [
+    P("liquid-glass", "Liquid glass", "a tinted glass pill", "$ { border-radius: 999px; border: 1px solid #ffffff38; background: linear-gradient(180deg, ~K40, ~K18); color: %T; backdrop-filter: blur(8px); box-shadow: inset 0 1px 1px #ffffff59; font: 600 12px var(--uv-font); text-transform: none; letter-spacing: 0; }", 999, 1, "glass"),
+    P("gradient-outline", "Gradient outline", "a gradient ring around plain text", "$ { border-radius: 999px; border: 1.5px solid transparent; background: linear-gradient(%BG, %BG) padding-box, linear-gradient(90deg, var(--k), %A2) border-box; color: %T; font: 600 12px var(--uv-font); text-transform: none; letter-spacing: 0; }", 999, 2, "grad"),
+    P("neu", "Neumorphic", "a soft raised pill", "$ { border-radius: 999px; border: 0; background: %BG; color: var(--k); box-shadow: 2px 2px 5px DK(BG,22), -2px -2px 5px LT(BG,35); font: 700 12px var(--uv-font); text-transform: none; letter-spacing: 0; }", 999, 0, "sunken", 700),
+    P("pulse", "Live pulse", "a dot that keeps pinging", "$ { border-radius: 999px; border: 1px solid ~K35; background: ~K12; color: var(--k); font: 600 12px var(--uv-font); text-transform: none; letter-spacing: 0; }\n$::before { content: \"\"; width: 7px; height: 7px; border-radius: 50%; background: var(--k); animation: uvp-ping 1.6s infinite; }", 999, 1, "soft"),
+    P("ticket", "Ticket", "a small punched ticket", "$ { border-radius: 4px; border: 0; background: var(--k); color: #fff; font: 700 11px var(--uv-mono); text-transform: uppercase; letter-spacing: .06em; padding-inline: 12px; " + _NOTCH(4) + " }", 4, 0, "solid", 700, True),
+]
+
+ALERT += [
+    P("liquid-glass", "Liquid glass", "a tinted glass panel", "$ { border: 1px solid #ffffff33; border-radius: 16px; background: linear-gradient(180deg, ~K25, ~K10); color: %T; " + _GLASS + " box-shadow: inset 0 1px 1px #ffffff4d, 0 12px 30px -16px #0008; }", 16, 1, "glass"),
+    P("gradient", "Gradient top", "a colour-to-nothing gradient frame, heavy on top", "$ { border: 1px solid transparent; border-top-width: 3px; border-radius: 10px; background: linear-gradient(%S, %S) padding-box, linear-gradient(90deg, var(--k), transparent) border-box; color: %T; }", 10, 3, "grad"),
+    P("dashed", "Dashed", "a dashed tinted note", "$ { border: 1.5px dashed var(--k); border-radius: 8px; background: ~K8; color: %T; }", 8, 2, "outline"),
+    P("glow", "Glow", "a soft halo in the alert colour", "$ { border: 1px solid ~K50; border-radius: 12px; background: %S; color: %T; box-shadow: 0 0 0 1px ~K15, 0 0 28px -8px var(--k); }", 12, 1, "neon"),
+]
+
+MODAL += [
+    P("liquid-glass", "Liquid glass", "a big glass sheet over a blurred page", "$ { border: 1px solid #ffffff38; border-radius: 28px; background: linear-gradient(160deg, ~S70, ~S45); backdrop-filter: blur(24px) saturate(1.8); -webkit-backdrop-filter: blur(24px) saturate(1.8); box-shadow: inset 0 1px 1px #ffffff59, 0 40px 90px -30px #000c; }\n$::backdrop { background: #0005; backdrop-filter: blur(4px); }", 28, 1, "glass"),
+    P("neu", "Neumorphic", "a soft raised dialog", "$ { border: 0; border-radius: 24px; background: %BG; box-shadow: 12px 12px 30px DK(BG,30), -12px -12px 30px LT(BG,25); }\n$::backdrop { background: ~BG70; }", 24, 0, "sunken"),
+    P("clay", "Clay", "a puffy clay dialog over a tinted page", "$ { border: 0; border-radius: 30px; background: %S; box-shadow: inset 0 -10px 20px DK(S,15), inset 0 10px 20px LT(S,25), 0 30px 60px -24px #0009; }\n$::backdrop { background: ~A25; }", 30, 0, "clay"),
+    P("accent-top", "Accent top", "a thick accent bar along the top edge", "$ { border: 1px solid %L; border-top: 6px solid %A; border-radius: 6px; background: %S; box-shadow: 0 24px 60px -20px #000a; }\n$::backdrop { background: #000a; }", 6, 1, "flat"),
+]
+
+SPINNER += [
+    P("segments", "Segments", "an iOS-style ring of fading segments", "$ { border: 0; border-radius: 50%; background: repeating-conic-gradient(%A 0 18deg, transparent 18deg 30deg); -webkit-mask: radial-gradient(farthest-side, transparent 55%, #000 56%), conic-gradient(#0000 10%, #000); -webkit-mask-composite: source-in; mask: radial-gradient(farthest-side, transparent 55%, #000 56%), conic-gradient(#0000 10%, #000); mask-composite: intersect; animation: uv-rot 1s steps(12) infinite; }", 999, 0, "solid"),
+    P("twin", "Twin moons", "two glowing dots orbit a faint ring", "$ { border: 1px solid %L1; border-radius: 50%; animation: uv-rot 1.2s linear infinite; }\n$::before, $::after { content: \"\"; position: absolute; width: 24%; height: 24%; border-radius: 50%; background: %A; top: -12%; left: 38%; box-shadow: 0 0 8px %A; }\n$::after { top: auto; bottom: -12%; background: %A2; box-shadow: 0 0 8px %A2; }", 999, 1, "neon"),
+    P("atom", "Atom", "two electron orbits around a nucleus", "$ { border: 0; border-radius: 50%; background: radial-gradient(circle, %A 0 12%, transparent 13%); }\n$::before, $::after { content: \"\"; position: absolute; inset: 0; border: 2px solid transparent; border-top-color: %A; border-bottom-color: %A; border-radius: 50%; animation: uvp-atom 1.2s linear infinite; }\n$::after { --r: -60deg; border-top-color: %A2; border-bottom-color: %A2; animation-duration: .9s; }", 999, 2, "solid"),
+    P("clock", "Clock", "clock hands sweeping round", "$ { border: 2px solid %T; border-radius: 50%; }\n$::before, $::after { content: \"\"; position: absolute; left: calc(50% - 1px); bottom: 50%; width: 2px; height: 38%; background: %A; border-radius: 2px; transform-origin: 50% 100%; animation: uv-rot 1s linear infinite; }\n$::after { height: 26%; background: %T; animation-duration: 12s; }", 999, 2, "outline"),
+    P("hourglass", "Hourglass", "an hourglass that flips over", "$ { border: 0; border-radius: 0; background: linear-gradient(%A 50%, ~A25 50%); clip-path: polygon(0 0, 100% 0, 50% 50%, 100% 100%, 0 100%, 50% 50%); animation: uvp-hourglass 1.6s ease-in-out infinite; }", 0, 0, "solid"),
+    P("morph", "Morph", "a square melting into a circle and back", "$ { border: 0; border-radius: 20%; background: %A; animation: uvp-morph 1.4s ease-in-out infinite; }", 8, 0, "solid"),
+]
+
+PROGRESS += [
+    P("liquid-glass", "Liquid glass", "a glass tube with a glossy liquid fill", "$ { height: 16px; border-radius: 99px; background: ~T10; border: 1px solid #ffffff26; box-shadow: inset 0 2px 4px #0003; padding: 2px; }\n$ > i { border-radius: 99px; background: linear-gradient(180deg, LT(A,35), %A 60%, DK(A,10)); box-shadow: inset 0 1px 1px #ffffffaa, 0 0 12px -2px %A; }", 999, 1, "glass"),
+    P("glow-tip", "Glowing tip", "a bright point of light leads the bar", "$ { height: 6px; border-radius: 99px; background: %S3; overflow: visible; }\n$ > i { position: relative; border-radius: inherit; background: linear-gradient(90deg, ~A20, %A); }\n$ > i::after { content: \"\"; position: absolute; right: -5px; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px %A, 0 0 16px 4px %A; }", 999, 0, "neon"),
+    P("rainbow", "Rainbow", "a flowing rainbow fill", "$ { height: 10px; border-radius: 99px; background: %S3; }\n$ > i { border-radius: inherit; background: linear-gradient(90deg, #ff4d4d, #ffb84d, #f5f54d, #4dff88, #4dc3ff, #9a4dff, #ff4d4d) 0 0 / 200% 100%; animation: uvp-slide 2.5s linear infinite; }", 999, 0, "holo"),
+    P("battery", "Battery", "a battery with charge cells", "$ { height: 20px; border-radius: 4px; border: 2px solid %T; padding: 2px; background: transparent; overflow: visible; position: relative; }\n$::after { content: \"\"; position: absolute; right: -7px; top: 4px; width: 4px; height: 8px; border-radius: 0 2px 2px 0; background: %T; }\n$ > i { border-radius: 1px; background: repeating-linear-gradient(90deg, %A 0 14px, transparent 14px 17px); }", 4, 2, "outline"),
+    P("shimmer", "Shimmer", "a highlight keeps sweeping along the fill", "$ { height: 8px; border-radius: 99px; background: %S3; }\n$ > i { border-radius: inherit; background: linear-gradient(90deg, %A 0 40%, LT(A,55) 50%, %A 60%) 0 0 / 250% 100%; animation: uvp-shimmer 1.6s linear infinite; }", 999, 0, "solid"),
+    P("heat", "Heat", "green to amber to red as it fills", "$ { height: 10px; border-radius: 99px; background: linear-gradient(90deg, #22c55e, #eab308 55%, #ef4444); }\n$ > i { border-radius: 0; background: transparent; box-shadow: 0 0 0 100vmax %S3; }", 999, 0, "grad"),
+]
+
+HEAD += [
+    P("glass", "Liquid glass", "clear glass letters with bright edges", "$ { color: ~T22; -webkit-text-fill-color: ~T22; -webkit-text-stroke: 1px ~T50; filter: drop-shadow(0 1px 0 #ffffff59) drop-shadow(0 8px 14px #0005); }", fill="glass"),
+    P("rainbow", "Rainbow", "a slowly flowing rainbow", "$ { background-image: linear-gradient(90deg, #ff5f6d, #ffc371, #e8e85a, #4fe0a0, #4fb8ff, #a77bff, #ff5f6d); background-size: 300% 100%; " + CLIP + " animation: uvt-holo 9s linear infinite; }", fill="holo"),
+    P("split", "Split", "top half ink, bottom half accent", "$ { background-image: linear-gradient(180deg, %T 54%, %A 54%); " + CLIP + " }", fill="grad"),
+    P("stripes", "Retro stripes", "horizontal stripes inside outlined letters", "$ { background-image: repeating-linear-gradient(180deg, %A 0 .09em, transparent .09em .16em); " + CLIP + " -webkit-text-stroke: 1px %A; }", fill="outline"),
+    P("neon-outline", "Neon outline", "hollow letters drawn in glowing tube", "$ { color: transparent; -webkit-text-fill-color: transparent; -webkit-text-stroke: 1.5px LT(A,40); filter: drop-shadow(0 0 4px %A) drop-shadow(0 0 14px ~A60); }", fill="neon"),
+    P("aurora", "Aurora", "accent lights drifting through the letters", "$ { background-image: radial-gradient(40% 80% at 20% 30%, %A, transparent 70%), radial-gradient(40% 80% at 80% 70%, %A2, transparent 70%), linear-gradient(%T, %T); background-size: 200% 200%; " + CLIP + " animation: uvp-drift 6s ease-in-out infinite alternate; }", fill="grad"),
+    P("swash", "Swash underline", "a thick accent underline under the words", "$ { text-decoration: underline; text-decoration-color: %A; text-decoration-thickness: .14em; text-underline-offset: .12em; text-decoration-skip-ink: none; }", fill="underline"),
+]
+
+BG += [
+    P("topo", "Topographic", "contour-map rings", "$ { background: repeating-radial-gradient(circle at 28% 38%, transparent 0 22px, ~T7 22px 23px), repeating-radial-gradient(circle at 82% 88%, transparent 0 30px, ~A9 30px 31px), %BG; }", fill="flat"),
+    P("argyle", "Argyle", "diamonds with a fine overcheck", "$ { background: repeating-linear-gradient(45deg, transparent 0 22px, ~T8 22px 23px), repeating-linear-gradient(-45deg, transparent 0 22px, ~T8 22px 23px), linear-gradient(45deg, ~A7 25%, transparent 25% 75%, ~A7 75%) 0 0 / 32px 32px, linear-gradient(45deg, ~A7 25%, transparent 25% 75%, ~A7 75%) 16px 16px / 32px 32px, %BG; }", fill="flat"),
+    P("iso", "Isometric", "isometric cube tiling", "$ { background: linear-gradient(30deg, ~T5 12%, transparent 12.5% 87%, ~T5 87.5%) 0 0 / 40px 70px, linear-gradient(150deg, ~T5 12%, transparent 12.5% 87%, ~T5 87.5%) 0 0 / 40px 70px, linear-gradient(30deg, ~T5 12%, transparent 12.5% 87%, ~T5 87.5%) 20px 35px / 40px 70px, linear-gradient(150deg, ~T5 12%, transparent 12.5% 87%, ~T5 87.5%) 20px 35px / 40px 70px, linear-gradient(60deg, ~A7 25%, transparent 25.5% 75%, ~A7 75%) 0 0 / 40px 70px, linear-gradient(60deg, ~A7 25%, transparent 25.5% 75%, ~A7 75%) 20px 35px / 40px 70px, %BG; }", fill="flat"),
+    P("bokeh", "Bokeh", "soft out-of-focus lights", "$ { background: radial-gradient(circle 90px at 14% 22%, ~A30, transparent), radial-gradient(circle 140px at 72% 14%, ~B24, transparent), radial-gradient(circle 110px at 88% 72%, ~A20, transparent), radial-gradient(circle 70px at 34% 86%, ~B26, transparent), radial-gradient(circle 220px at 50% 55%, ~A10, transparent), %BG; }", fill="grad"),
+    P("rays", "Sunburst", "rays rising from the bottom edge", "$ { background: repeating-conic-gradient(from 0deg at 50% 115%, ~A9 0 5deg, transparent 5deg 11deg), radial-gradient(ellipse at 50% 115%, ~A28, transparent 62%), %BG; }", fill="grad"),
+    P("plaid", "Plaid", "a soft tartan check", "$ { background: repeating-linear-gradient(0deg, ~A10 0 6px, transparent 6px 40px), repeating-linear-gradient(90deg, ~A10 0 6px, transparent 6px 40px), repeating-linear-gradient(0deg, transparent 0 20px, ~B9 20px 22px, transparent 22px 40px), repeating-linear-gradient(90deg, transparent 0 20px, ~B9 20px 22px, transparent 22px 40px), %BG; }", fill="flat"),
+    P("terrazzo", "Terrazzo", "speckled stone chips", "$ { background: radial-gradient(circle at 20% 30%, ~A55 0 3px, transparent 3.5px) 0 0 / 120px 120px, radial-gradient(circle at 70% 62%, ~B50 0 2px, transparent 2.5px) 0 0 / 120px 120px, radial-gradient(circle at 42% 80%, ~T16 0 2.5px, transparent 3px) 0 0 / 120px 120px, radial-gradient(circle at 86% 16%, ~A40 0 1.5px, transparent 2px) 0 0 / 120px 120px, radial-gradient(circle at 10% 76%, ~B40 0 4px, transparent 4.5px) 0 0 / 120px 120px, %BG; }", fill="flat"),
+    P("waves", "Scallops", "rows of little waves", "$ { background: radial-gradient(circle at 50% 100%, transparent 10px, ~A16 11px 12px, transparent 13px) 0 0 / 28px 14px, %BG; }", fill="flat"),
+    P("spotlight", "Spotlight", "a stage light from above", "$ { background: radial-gradient(80% 60% at 50% -10%, ~A30, transparent 70%), radial-gradient(60% 50% at 50% 120%, ~B15, transparent 70%), %BG; }", fill="grad"),
+    P("grain", "Grain gradient", "a soft gradient with film grain", "$ { background: " + NOISE + " 0 0 / 160px 160px, linear-gradient(160deg, ~A22, transparent 45%, ~B18), %BG; }", fill="grad"),
+]
+
 FAMILIES = [
     # key, attribute label, group, targets, extra macros, base/reset css, parts, default (the look you get without a pick)
     dict(key="btn", label="Buttons", desc="Button designs for .uv-btn (and the site's own .btn)", targets=".uv-btn, .btn",
@@ -666,6 +870,14 @@ KITS = [
      dict(btn="arcade", card="brutal", input="thick", switch="pixel", check="pop", range="brutal", tabs="bubble", nav="brutal", badge="sticker", alert="brutal", modal="brutal", spinner="pixel", progress="pixel", head="sticker", bg="checker")),
     ("holo", "Holo Foil", "rainbow foil and orbiting borders", "y2k",
      dict(btn="holo", card="holo-border", input="gradient", switch="pearl", check="pearl", range="gradient", tabs="gradient", nav="gradient", badge="holo", alert="glass", modal="glass", spinner="pearl", progress="pearl", head="holo", bg="mesh")),
+    ("liquid-glass", "Liquid Glass", "thick refractive glass over soft colour", "glass",
+     dict(btn="liquid-glass", card="liquid-glass", input="liquid-glass", switch="liquid-glass", check="liquid-glass", range="liquid-glass", tabs="liquid-glass", nav="liquid-glass", badge="liquid-glass", alert="liquid-glass", modal="liquid-glass", spinner="segments", progress="liquid-glass", head="plain", bg="bokeh")),
+    ("workshop", "Workshop", "varnished wood, keycaps and machined knobs", "espresso",
+     dict(btn="wood", card="stack", input="bar", switch="lamp", check="star", range="knob", tabs="folder", nav="bar", badge="ticket", alert="dashed", modal="accent-top", spinner="clock", progress="battery", head="letterpress", bg="grain")),
+    ("pixel-quest", "Pixel Quest", "an 8-bit adventure HUD", "pixel-plains",
+     dict(btn="pixel", card="extruded", input="pixel", switch="pixel", check="square-fill", range="square", tabs="pixel", nav="brutal", badge="square", alert="brutal", modal="brutal", spinner="pixel", progress="pixel", head="shadow3d", bg="plain")),
+    ("bubblegum-pop", "Bubblegum Pop", "soap bubbles, candy stripes and hearts", "cotton-candy",
+     dict(btn="bubble", card="puffy", input="soft-glow", switch="candy", check="heart", range="candy", tabs="chips", nav="pills", badge="pulse", alert="soft", modal="clay", spinner="morph", progress="rainbow", head="rainbow", bg="bokeh")),
 ]
 
 KEYFRAMES = """@keyframes uvp-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .55; } }
@@ -687,6 +899,14 @@ KEYFRAMES = """@keyframes uvp-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opac
 @property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes uv-spin-a { to { --uv-a: 360deg; } }
 @keyframes uv-rot { to { transform: rotate(360deg); } }
+@keyframes uvp-blob { 0%, 100% { border-radius: 42% 58% 60% 40% / 55% 45% 55% 45%; } 50% { border-radius: 60% 40% 38% 62% / 40% 60% 40% 60%; } }
+@keyframes uvp-drift { to { background-position: 100% 100%; } }
+@keyframes uvp-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--k) 60%, transparent); } 70%, 100% { box-shadow: 0 0 0 6px transparent; } }
+@keyframes uvp-atom { from { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(0); } to { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(360deg); } }
+@keyframes uvp-hourglass { 0%, 35% { transform: rotate(0); } 50%, 85% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uvp-morph { 50% { border-radius: 50%; transform: rotate(180deg) scale(.6); background: var(--uv-accent-2); } 100% { transform: rotate(360deg); } }
+@keyframes uvp-slide { to { background-position: 200% 0; } }
+@keyframes uvp-shimmer { from { background-position: 150% 0; } to { background-position: -50% 0; } }
 """
 
 TOK = {"A2": "--uv-accent-2", "B": "--uv-accent-2", "A": "--uv-accent", "T": "--uv-text", "BG": "--uv-bg", "S2": "--uv-surface-2", "S3": "--uv-surface-3",

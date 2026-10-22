@@ -1,0 +1,21 @@
+/*! UI Vault 3.1.0 · theme: acid — acid lime on black, like a rave flyer. Needs core.css. MIT */
+[data-uv-theme="acid"] {
+  --uv-bg: #0a0a0a; --uv-text: #efffd1; --uv-accent: #c6ff00; --uv-accent-2: #ff2bd6; --uv-on-accent: #111111; --uv-surface: #151614; --uv-surface-2: #1f201c; --uv-surface-3: #2c2f28; --uv-line: #efffd124; --uv-line-2: #efffd142; --uv-muted: #a6b191; --uv-dim: #78806a; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Unbounded", system-ui, sans-serif; --uv-serif: "Unbounded", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: uppercase;
+  color-scheme: dark;
+  background-image: repeating-linear-gradient(0deg, #c6ff001a 0 6px, transparent 6px 40px), repeating-linear-gradient(90deg, #c6ff001a 0 6px, transparent 6px 40px), repeating-linear-gradient(0deg, transparent 0 20px, #ff2bd617 20px 22px, transparent 22px 40px), repeating-linear-gradient(90deg, transparent 0 20px, #ff2bd617 20px 22px, transparent 22px 40px);
+}
+[data-uv-theme="acid"] .uv-h1:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *), [data-uv-theme="acid"] .uv-h2:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { color: #efffd1; text-shadow: 2px 0 #c6ff00d9, -2px 0 #ff2bd6d9; }
+[data-uv-theme="acid"] .uv-btn:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="acid"] .uv-btn--primary:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *), [data-uv-theme="acid"] .uv-btn--grad:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { background: #c6ff00; color: #111111; border: 2px solid #efffd1; box-shadow: 5px 5px 0 #ff2bd6; }
+[data-uv-theme="acid"] .uv-btn--primary:hover:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { filter: brightness(1.06); }
+[data-uv-theme="acid"] .uv-card:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { border: 2px solid #efffd1; box-shadow: 8px 8px 0 #c6ff00; }
+[data-uv-theme="acid"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { background: #c6ff00; } [data-uv-theme="acid"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { color: #111111; }
+[data-uv-theme="acid"] .uv-switch input:checked + i:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *), [data-uv-theme="acid"] .uv-check input:checked:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { background: #c6ff00; border-color: #c6ff00; }
+[data-uv-theme="acid"] .uv-progress > i:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { background: #c6ff00; } [data-uv-theme="acid"] .uv-ring:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { background: conic-gradient(#c6ff00 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="acid"] .uv-input:focus:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *), [data-uv-theme="acid"] .uv-select:focus:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *), [data-uv-theme="acid"] .uv-textarea:focus:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { border-color: #c6ff00; box-shadow: 0 0 0 3px #c6ff0038; }
+[data-uv-theme="acid"] .uv-btn:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="acid"] .uv-btn:hover:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { animation: uvt-shake .4s; }
+[data-uv-theme="acid"] .uv-card--hover:hover:not([data-uv-theme="acid"] [data-uv-theme]:not([data-uv-theme="acid"]) *) { translate: 0 -4px; }

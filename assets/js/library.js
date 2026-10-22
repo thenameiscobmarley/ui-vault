@@ -87,10 +87,12 @@
   for (const col of (window.UV_COLLECTIONS || {}).collections || [])
     C("Collections", "col-" + col.key, col.label, col.desc, col.items.map(i => ({ id: `col/${col.key}/${i.name}`, name: i.label, desc: i.cls === "uv-icon" ? i.name : i.cls, html: i.html })), col.wide, col.small);
   if (UV.skins3d) {
-    const SH = ["blade", "gem", "knot", "coin", "sphere", "cube", "tag", "torus"];
-    C("3D", "skins3d", "3D skins", "Real-time 3D objects in animated mastery camos. Drag a preview to turn it. Pick any to get skins3d.js and the markup: data-uv-3d=\"name\" with data-shape (blade, gem, knot, coin, sphere, cube, tag, torus).",
+    const SH = UV.skins3d.shapes;
+    C("3D", "skins3d", "3D skins", "Real-time 3D objects in animated mastery camos. Drag a preview to turn it. Pick any to get skins3d.js and the markup: data-uv-3d=\"name\" with data-shape (" + UV.skins3d.shapes.join(", ") + ").",
       Object.entries(UV.skins3d.materials).map(([k, m], i) => ({ id: `skin3d/${k}`, name: m.label, desc: `${m.group} · ${m.desc}`, html: `<div data-uv-3d="${k}" data-shape="${SH[i % SH.length]}" data-drag data-fps="15" data-hover-fps style="width:100%;height:210px;aspect-ratio:auto"></div>` })), false);
   }
+  if (UV.shaders) C("3D", "shaders", "Shader backgrounds", "Animated WebGL backgrounds that take the theme's colours and react to the pointer. Pick any to get shaders.js and the markup: data-uv-shader=\"name\" on any section.",
+    Object.entries(UV.shaders.list).map(([k, m]) => ({ id: `shader/${k}`, name: m.label, desc: `${m.group} · ${m.desc}`, html: `<div data-uv-shader="${k}" data-fps="12" data-hover-fps style="width:100%;height:150px;border-radius:8px"></div>` })));
   C("More", "backgrounds", "Page backgrounds", "Animated canvases, cursor effects and scrolling for the whole page (hover a preview to play it).", L.pageKinds.flatMap(k => [{ sub: k.label }, ...k.options.map(o => ({ id: `layer/${k.key}/${o.name}`, name: o.label, desc: `${k.label}`, kind: k.key, opt: o, page: true }))]));
   C("More", "components", "Components", "The building blocks: every uv-* component class.", CAT.filter(i => i[0] === "Component").map(i => ({ id: `comp/${i[2]}`, name: i[2], desc: i[3], html: COMP[i[2]] || `<div class="${i[2]}" style="padding:14px">${i[2]}</div>` })));
   C("More", "blocks", "Blocks", "Full page sections (heroes, features, pricing, footers…). They need blocks.css, which the zipper includes.", (window.BLOCKS || []).map(([cat, name, html], i) => ({ id: `block/${i}`, name, desc: cat, block: html })), true);

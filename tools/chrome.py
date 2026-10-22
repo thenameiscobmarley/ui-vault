@@ -28,6 +28,7 @@ ICON = {
     "flask": '<path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7 15h10"/>',
     "scroll": '<rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/>',
     "code": '<path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
+    "sparkle": '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>',
     "download": '<path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/>',
 }
 
@@ -43,13 +44,14 @@ NAV = [
         ("Quick start", "quickstart.html", "Install in two minutes, zip only what you use", "bolt"),
         ("Docs", "docs.html", "Every component and function, with live examples", "book"),
         ("Python & C++", "code.html", "The same themes for Qt, Tk, GTK, ImGui and JUCE", "code"),
-        ("Index", "directory.html", "Search all 1,700 things on the site", "list"),
+        ("Index", "directory.html", "Search all 2,000 things on the site", "list"),
     ], ("Download the API", "downloads/uivault-latest.zip", "uivault.css + uivault.js, MIT, no build step", ".zip")),
     ("Design", [
         ("Library", "library.html", "Everything live in one catalogue, pick and pack", "grid"),
-        ("Themes", "themes.html", "87 complete styles and a theme builder", "palette"),
-        ("Elements", "elements.html", "273 designs across 15 element families", "toggle"),
-        ("3D skins", "skins.html", "26 animated WebGL materials", "cube"),
+        ("Themes", "themes.html", "149 complete styles and a theme builder", "palette"),
+        ("Elements", "elements.html", "369 designs across 15 element families", "toggle"),
+        ("Effects", "effects.html", "44 live shaders, 3D CSS, motion and borders", "sparkle"),
+        ("3D skins", "skins.html", "48 animated materials on 16 shapes", "cube"),
     ], None),
     ("Build", [
         ("Blocks", "blocks.html", "41 page sections, ready to paste", "layers"),
@@ -58,11 +60,11 @@ NAV = [
         ("Examples", "examples.html", "Seven scroll-animated websites", "scroll"),
     ], None),
 ]
-LINKS = [("Examples", "examples.html"), ("Library", "library.html")]
+LINKS = [("Effects", "effects.html"), ("Examples", "examples.html"), ("Library", "library.html")]
 
 FOOT = [
     ("Start", [("Quick start", "quickstart.html"), ("Docs", "docs.html"), ("Python & C++", "code.html"), ("Index", "directory.html")]),
-    ("Design", [("Library", "library.html"), ("Themes", "themes.html"), ("Elements", "elements.html"), ("3D skins", "skins.html")]),
+    ("Design", [("Library", "library.html"), ("Themes", "themes.html"), ("Elements", "elements.html"), ("Effects", "effects.html"), ("3D skins", "skins.html")]),
     ("Build", [("Blocks", "blocks.html"), ("Showcase", "showcase.html"), ("Test page", "lab.html"), ("Examples", "examples.html")]),
     ("Project", [("GitHub", REPO), ("Releases", REPO + "/tree/main/downloads"), ("Report an issue", REPO + "/issues"), ("MIT licence", REPO + "/blob/main/LICENSE")]),
 ]
@@ -83,7 +85,7 @@ def social(t, page):
     title = re.search(r"<title>(.*?)</title>", t, re.S)
     desc = re.search(r'<meta name="description" content="([^"]*)"', t)
     title = title.group(1).strip() if title else "UI Vault"
-    desc = desc.group(1) if desc else "87 themes, 1,200 live pieces and one small CSS + JS API. Free, MIT licensed."
+    desc = desc.group(1) if desc else "149 themes, 2,000 live pieces and one small CSS + JS API. Free, MIT licensed."
     url = SITE + ("" if page == "./" else page)
     return (f'<meta property="og:type" content="website" /><meta property="og:site_name" content="UI Vault" />'
             f'<meta property="og:title" content="{title}" /><meta property="og:description" content="{desc}" />'
@@ -126,7 +128,7 @@ def footer():
     cols = "".join(f'<div><h4>{t}</h4><ul>' + "".join(f'<li><a href="{h}">{n}</a></li>' for n, h in items) + "</ul></div>" for t, items in FOOT)
     return (f'<footer class="uvc-foot"><div class="uvc-foot__in">'
             f'<div class="uvc-foot__lead"><a class="uvc-brand" href="./">{LOGO}UI&nbsp;Vault</a>'
-            f'<p>An open interface library: 87 themes, 1,200 pieces and one small API for the web, Python and C++. Free to copy, MIT licensed.</p>'
+            f'<p>An open interface library: 149 themes, 1,600 pieces and one small API for the web, Python and C++. Free to copy, MIT licensed.</p>'
             f'<div class="uvc-foot__btns"><a href="{REPO}">{GH}Star on GitHub</a><a href="downloads/uivault-latest.zip" download>{svg("download")}Download</a></div></div>'
             f'{cols}</div>'
             f'<div class="uvc-foot__mark" aria-hidden="true">UI Vault<em>.</em></div>'

@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: april — spring showers: fresh green, sky and tulip pink. Needs core.css. MIT */
+[data-uv-theme="april"] {
+  --uv-bg: #f3faf6; --uv-text: #1f3a33; --uv-accent: #2fae8a; --uv-accent-2: #ff7eb6; --uv-on-accent: #111111; --uv-surface: #fafdfb; --uv-surface-2: #e6eeea; --uv-surface-3: #dce5e1; --uv-line: #1f3a331a; --uv-line-2: #1f3a332e; --uv-muted: #637771; --uv-dim: #8d9e98; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  background-image: repeating-linear-gradient(100deg, transparent 0 22px, #2fae8a12 22px 23px, transparent 23px 47px, #1f3a330d 47px 48px), linear-gradient(180deg, #2fae8a14, transparent 40%);
+}
+[data-uv-theme="april"] .uv-btn--primary:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *), [data-uv-theme="april"] .uv-btn--grad:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { background: #2fae8a; color: #111111; border: 0; border-radius: 999px; box-shadow: inset 0 -4px 8px #1c68538c, inset 0 4px 8px #ffffff73, 0 8px 18px -8px #217a61bf; }
+[data-uv-theme="april"] .uv-btn--primary:hover:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { filter: brightness(1.06); }
+[data-uv-theme="april"] .uv-card:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { border-color: transparent; box-shadow: 0 1px 2px #1f3a330f, 0 14px 34px -14px #1f3a3359; }
+[data-uv-theme="april"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { background: #2fae8a; } [data-uv-theme="april"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { color: #111111; }
+[data-uv-theme="april"] .uv-switch input:checked + i:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *), [data-uv-theme="april"] .uv-check input:checked:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { background: #2fae8a; border-color: #2fae8a; }
+[data-uv-theme="april"] .uv-progress > i:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { background: #2fae8a; } [data-uv-theme="april"] .uv-ring:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { background: conic-gradient(#2fae8a calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="april"] .uv-input:focus:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *), [data-uv-theme="april"] .uv-select:focus:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *), [data-uv-theme="april"] .uv-textarea:focus:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { border-color: #2fae8a; box-shadow: 0 0 0 3px #2fae8a38; }
+[data-uv-theme="april"] .uv-btn:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="april"] .uv-btn:hover:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { animation: uvt-bounce .5s; }
+[data-uv-theme="april"] .uv-card--hover:hover:not([data-uv-theme="april"] [data-uv-theme]:not([data-uv-theme="april"]) *) { translate: 0 -4px; }

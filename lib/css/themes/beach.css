@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: beach — summer beach: sand, sea and sun. Needs core.css. MIT */
+[data-uv-theme="beach"] {
+  --uv-bg: #fff8e6; --uv-text: #11414a; --uv-accent: #ff8a3d; --uv-accent-2: #18b8c9; --uv-on-accent: #111111; --uv-surface: #fffcf4; --uv-surface-2: #f1eddd; --uv-surface-3: #e5e4d5; --uv-line: #11414a1a; --uv-line-2: #11414a2e; --uv-muted: #5d7c7c; --uv-dim: #8da09b; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Pacifico", cursive; --uv-serif: "Pacifico", cursive; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 999px; --uv-r-sm: 999px; --uv-r: 999px; --uv-r-lg: 18px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: none;
+  background-image: radial-gradient(circle at 50% 100%, transparent 10px, #ff8a3d29 11px 12px, transparent 13px); background-size: 28px 14px;
+}
+[data-uv-theme="beach"] .uv-btn--primary:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *), [data-uv-theme="beach"] .uv-btn--grad:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { background: linear-gradient(180deg, #ffb381, #ff8a3d 50%, #e67c37 51%, #ff9854); color: #111111; border: 1px solid #b3612b; box-shadow: inset 0 1px 0 #ffffffb3, 0 3px 8px -3px #995325b3; text-shadow: 0 1px 0 #00000038; }
+[data-uv-theme="beach"] .uv-btn--primary:hover:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { filter: brightness(1.06); }
+[data-uv-theme="beach"] .uv-card:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { border-color: #11414a14; box-shadow: inset 0 1px 0 #ffffffe6, 0 30px 60px -30px #00000059, 0 18px 36px -18px #ff8a3d59; }
+[data-uv-theme="beach"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { background: #ff8a3d; } [data-uv-theme="beach"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { color: #111111; }
+[data-uv-theme="beach"] .uv-switch input:checked + i:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *), [data-uv-theme="beach"] .uv-check input:checked:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { background: #ff8a3d; border-color: #ff8a3d; }
+[data-uv-theme="beach"] .uv-progress > i:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { background: #ff8a3d; } [data-uv-theme="beach"] .uv-ring:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { background: conic-gradient(#ff8a3d calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="beach"] .uv-input:focus:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *), [data-uv-theme="beach"] .uv-select:focus:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *), [data-uv-theme="beach"] .uv-textarea:focus:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { border-color: #ff8a3d; box-shadow: 0 0 0 3px #ff8a3d38; }
+[data-uv-theme="beach"] .uv-btn:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="beach"] .uv-btn:hover:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { animation: uvt-squish .45s; }
+[data-uv-theme="beach"] .uv-card--hover:hover:not([data-uv-theme="beach"] [data-uv-theme]:not([data-uv-theme="beach"]) *) { translate: 0 -4px; }

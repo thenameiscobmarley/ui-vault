@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: ledger — bookkeeping cream with green rules and red totals. Needs core.css. MIT */
+[data-uv-theme="ledger"] {
+  --uv-bg: #f6f4e8; --uv-text: #1f2a22; --uv-accent: #2e7d4f; --uv-accent-2: #b03a2e; --uv-on-accent: #ffffff; --uv-surface: #fbfaf5; --uv-surface-2: #e9e8dc; --uv-surface-3: #deded2; --uv-line: #1f2a221a; --uv-line-2: #1f2a222e; --uv-muted: #646b61; --uv-dim: #8f9389; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Geist Mono", ui-monospace, monospace; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-serif: "Instrument Serif", Georgia, serif; --uv-btn-font: "Geist Mono", ui-monospace, monospace;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: none;
+  background-image: linear-gradient(#b03a2e29 1px, transparent 1px); background-size: 100% 28px;
+}
+[data-uv-theme="ledger"] .uv-btn--primary:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *), [data-uv-theme="ledger"] .uv-btn--grad:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { background: transparent; color: #2e7d4f; border: 1.5px solid currentColor; }
+[data-uv-theme="ledger"] .uv-btn--primary:hover:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { filter: brightness(1.06); }
+[data-uv-theme="ledger"] .uv-card:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { border: 1.5px dashed #2e7d4f99; background: linear-gradient(#2e7d4f0d, #2e7d4f0d), #fbfaf5; }
+[data-uv-theme="ledger"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { background: #2e7d4f; } [data-uv-theme="ledger"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { color: #ffffff; }
+[data-uv-theme="ledger"] .uv-switch input:checked + i:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *), [data-uv-theme="ledger"] .uv-check input:checked:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { background: #2e7d4f; border-color: #2e7d4f; }
+[data-uv-theme="ledger"] .uv-progress > i:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { background: #2e7d4f; } [data-uv-theme="ledger"] .uv-ring:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { background: conic-gradient(#2e7d4f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="ledger"] .uv-input:focus:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *), [data-uv-theme="ledger"] .uv-select:focus:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *), [data-uv-theme="ledger"] .uv-textarea:focus:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { border-color: #2e7d4f; box-shadow: 0 0 0 3px #2e7d4f38; }
+[data-uv-theme="ledger"] .uv-btn:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="ledger"] .uv-btn--ghost:hover:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *), [data-uv-theme="ledger"] .uv-btn:not(.uv-btn--primary):hover:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { background: #2e7d4f; color: #ffffff; border-color: #2e7d4f; }
+[data-uv-theme="ledger"] .uv-card--hover:hover:not([data-uv-theme="ledger"] [data-uv-theme]:not([data-uv-theme="ledger"]) *) { translate: 0 -4px; }

@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: dos — DOS blue screen with yellow highlights. Needs core.css. MIT */
+[data-uv-theme="dos"] {
+  --uv-bg: #0000aa; --uv-text: #ffffff; --uv-accent: #ffff55; --uv-accent-2: #55ffff; --uv-on-accent: #111111; --uv-surface: #0d0dae; --uv-surface-2: #1717b2; --uv-surface-3: #2626b7; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #adade4; --uv-dim: #7a7ad3; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "VT323", ui-monospace, monospace; --uv-font-head: "Silkscreen", ui-monospace, monospace; --uv-serif: "Silkscreen", ui-monospace, monospace; --uv-btn-font: "VT323", ui-monospace, monospace;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: uppercase;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="dos"] .uv-btn:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="dos"] .uv-btn--primary:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *), [data-uv-theme="dos"] .uv-btn--grad:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { background: #ffff55; color: #111111; border: 0; border-radius: 0; box-shadow: inset 0 -4px 0 #a6a637, 4px 0 0 #ffffff, -4px 0 0 #ffffff, 0 4px 0 #ffffff, 0 -4px 0 #ffffff; }
+[data-uv-theme="dos"] .uv-btn--primary:hover:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { filter: brightness(1.06); }
+[data-uv-theme="dos"] .uv-card:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { border: 2px solid #ffffff; box-shadow: none; }
+[data-uv-theme="dos"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { background: #ffff55; } [data-uv-theme="dos"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { color: #111111; }
+[data-uv-theme="dos"] .uv-switch input:checked + i:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *), [data-uv-theme="dos"] .uv-check input:checked:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { background: #ffff55; border-color: #ffff55; }
+[data-uv-theme="dos"] .uv-progress > i:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { background: #ffff55; } [data-uv-theme="dos"] .uv-ring:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { background: conic-gradient(#ffff55 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="dos"] .uv-input:focus:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *), [data-uv-theme="dos"] .uv-select:focus:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *), [data-uv-theme="dos"] .uv-textarea:focus:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { border-color: #ffff55; box-shadow: 0 0 0 3px #ffff5538; }
+[data-uv-theme="dos"] .uv-btn:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="dos"] .uv-btn:hover:not([data-uv-theme="dos"] [data-uv-theme]:not([data-uv-theme="dos"]) *) { background: #ffffff; color: #0000aa; border-color: #ffffff; }

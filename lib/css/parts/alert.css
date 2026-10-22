@@ -1,4 +1,4 @@
-/*! UI Vault 3.1.0 · parts: alerts & toasts — 14 designs. Use data-uv-alert="NAME" on <html> or any element. Needs core.css. MIT */
+/*! UI Vault 3.1.0 · parts: alerts & toasts — 18 designs. Use data-uv-alert="NAME" on <html> or any element. Needs core.css. MIT */
 /* shared reset for every alert design */
 :is([data-uv-alert]:not([data-uv-alert=""]) :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert]:not([data-uv-alert=""])):not(#_) { --k: var(--uv-accent); box-shadow: none; backdrop-filter: none; transform: none; }
 :is([data-uv-alert]:not([data-uv-alert=""]) :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert]:not([data-uv-alert=""])):not(#_):not(.uv-toast)::before { content: none; }
@@ -35,6 +35,14 @@
 :is([data-uv-alert="metal"] :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert="metal"]):not([data-uv-alert="metal"] [data-uv-alert]:not([data-uv-alert="metal"]) *, [data-uv-alert="metal"] [data-uv-alert]:not([data-uv-alert="metal"])):not(#_) { border: 1px solid #ffffff26; border-left: 6px solid var(--k); border-radius: 4px; background: repeating-linear-gradient(90deg, #ffffff08 0 1px, transparent 1px 3px), linear-gradient(180deg, color-mix(in srgb, var(--uv-surface-2), #fff 8%), color-mix(in srgb, var(--uv-surface-2), #000 10%)); color: var(--uv-text); box-shadow: inset 0 1px 0 #ffffff30; }
 /* @part alert/sticky — a crooked sticky note */
 :is([data-uv-alert="sticky"] :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert="sticky"]):not([data-uv-alert="sticky"] [data-uv-alert]:not([data-uv-alert="sticky"]) *, [data-uv-alert="sticky"] [data-uv-alert]:not([data-uv-alert="sticky"])):not(#_) { border: 0; border-radius: 2px 2px 14px 2px; background: linear-gradient(170deg, #fff7a8, #ffe873); color: #3a3200; transform: rotate(-.6deg); box-shadow: 0 8px 16px -10px #0007; }
+/* @part alert/liquid-glass — a tinted glass panel */
+:is([data-uv-alert="liquid-glass"] :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert="liquid-glass"]):not([data-uv-alert="liquid-glass"] [data-uv-alert]:not([data-uv-alert="liquid-glass"]) *, [data-uv-alert="liquid-glass"] [data-uv-alert]:not([data-uv-alert="liquid-glass"])):not(#_) { border: 1px solid #ffffff33; border-radius: 16px; background: linear-gradient(180deg, color-mix(in srgb, var(--k) 25%, transparent), color-mix(in srgb, var(--k) 10%, transparent)); color: var(--uv-text); backdrop-filter: blur(14px) saturate(1.7); -webkit-backdrop-filter: blur(14px) saturate(1.7); box-shadow: inset 0 1px 1px #ffffff4d, 0 12px 30px -16px #0008; }
+/* @part alert/gradient — a colour-to-nothing gradient frame, heavy on top */
+:is([data-uv-alert="gradient"] :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert="gradient"]):not([data-uv-alert="gradient"] [data-uv-alert]:not([data-uv-alert="gradient"]) *, [data-uv-alert="gradient"] [data-uv-alert]:not([data-uv-alert="gradient"])):not(#_) { border: 1px solid transparent; border-top-width: 3px; border-radius: 10px; background: linear-gradient(var(--uv-surface), var(--uv-surface)) padding-box, linear-gradient(90deg, var(--k), transparent) border-box; color: var(--uv-text); }
+/* @part alert/dashed — a dashed tinted note */
+:is([data-uv-alert="dashed"] :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert="dashed"]):not([data-uv-alert="dashed"] [data-uv-alert]:not([data-uv-alert="dashed"]) *, [data-uv-alert="dashed"] [data-uv-alert]:not([data-uv-alert="dashed"])):not(#_) { border: 1.5px dashed var(--k); border-radius: 8px; background: color-mix(in srgb, var(--k) 8%, transparent); color: var(--uv-text); }
+/* @part alert/glow — a soft halo in the alert colour */
+:is([data-uv-alert="glow"] :is(.uv-alert, .uv-toast), :is(.uv-alert, .uv-toast)[data-uv-alert="glow"]):not([data-uv-alert="glow"] [data-uv-alert]:not([data-uv-alert="glow"]) *, [data-uv-alert="glow"] [data-uv-alert]:not([data-uv-alert="glow"])):not(#_) { border: 1px solid color-mix(in srgb, var(--k) 50%, transparent); border-radius: 12px; background: var(--uv-surface); color: var(--uv-text); box-shadow: 0 0 0 1px color-mix(in srgb, var(--k) 15%, transparent), 0 0 28px -8px var(--k); }
 @keyframes uvp-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .55; } }
 @keyframes uvp-blink { 50% { opacity: 0; } }
 @keyframes uvp-roll { to { background-position: 34px 0; } }
@@ -54,3 +62,11 @@
 @property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes uv-spin-a { to { --uv-a: 360deg; } }
 @keyframes uv-rot { to { transform: rotate(360deg); } }
+@keyframes uvp-blob { 0%, 100% { border-radius: 42% 58% 60% 40% / 55% 45% 55% 45%; } 50% { border-radius: 60% 40% 38% 62% / 40% 60% 40% 60%; } }
+@keyframes uvp-drift { to { background-position: 100% 100%; } }
+@keyframes uvp-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--k) 60%, transparent); } 70%, 100% { box-shadow: 0 0 0 6px transparent; } }
+@keyframes uvp-atom { from { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(0); } to { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(360deg); } }
+@keyframes uvp-hourglass { 0%, 35% { transform: rotate(0); } 50%, 85% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uvp-morph { 50% { border-radius: 50%; transform: rotate(180deg) scale(.6); background: var(--uv-accent-2); } 100% { transform: rotate(360deg); } }
+@keyframes uvp-slide { to { background-position: 200% 0; } }
+@keyframes uvp-shimmer { from { background-position: 150% 0; } to { background-position: -50% 0; } }

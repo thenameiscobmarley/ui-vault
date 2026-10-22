@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: cassette — 70s cassette inlay: mustard, rust and cream. Needs core.css. MIT */
+[data-uv-theme="cassette"] {
+  --uv-bg: #f3e7c9; --uv-text: #3a2a1a; --uv-accent: #d9822b; --uv-accent-2: #c2452d; --uv-on-accent: #111111; --uv-surface: #faf4e7; --uv-surface-2: #e8dcbf; --uv-surface-3: #dfd2b6; --uv-line: #3a2a1a1a; --uv-line-2: #3a2a1a2e; --uv-muted: #756652; --uv-dim: #9a8c75; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Bricolage Grotesque", system-ui, sans-serif; --uv-serif: "Bricolage Grotesque", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  background-image: repeating-linear-gradient(-45deg, #d9822b14 0 12px, transparent 12px 24px);
+}
+[data-uv-theme="cassette"] .uv-btn--primary:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *), [data-uv-theme="cassette"] .uv-btn--grad:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { background: #d9822b; color: #111111; border-color: #d9822b; box-shadow: 0 5px 0 #8d551c; }
+[data-uv-theme="cassette"] .uv-btn--primary:hover:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { filter: brightness(1.06); }
+[data-uv-theme="cassette"] .uv-card:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { border-color: transparent; box-shadow: 0 1px 2px #3a2a1a0f, 0 14px 34px -14px #3a2a1a59; }
+[data-uv-theme="cassette"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { background: #d9822b; } [data-uv-theme="cassette"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { color: #111111; }
+[data-uv-theme="cassette"] .uv-switch input:checked + i:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *), [data-uv-theme="cassette"] .uv-check input:checked:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { background: #d9822b; border-color: #d9822b; }
+[data-uv-theme="cassette"] .uv-progress > i:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { background: #d9822b; } [data-uv-theme="cassette"] .uv-ring:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { background: conic-gradient(#d9822b calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="cassette"] .uv-input:focus:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *), [data-uv-theme="cassette"] .uv-select:focus:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *), [data-uv-theme="cassette"] .uv-textarea:focus:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { border-color: #d9822b; box-shadow: 0 0 0 3px #d9822b38; }
+[data-uv-theme="cassette"] .uv-btn:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="cassette"] .uv-btn:hover:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { animation: uvt-bounce .5s; }
+[data-uv-theme="cassette"] .uv-card--hover:hover:not([data-uv-theme="cassette"] [data-uv-theme]:not([data-uv-theme="cassette"]) *) { translate: 0 -4px; }

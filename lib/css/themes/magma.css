@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: magma — cooling magma: black crust and glowing seams. Needs core.css. MIT */
+[data-uv-theme="magma"] {
+  --uv-bg: #0f0705; --uv-text: #ffe8dc; --uv-accent: #ff4d00; --uv-accent-2: #ffb000; --uv-on-accent: #ffffff; --uv-surface: #1b1210; --uv-surface-2: #251b18; --uv-surface-3: #332925; --uv-line: #ffe8dc24; --uv-line-2: #ffe8dc42; --uv-muted: #b2a097; --uv-dim: #82736c; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Syne", system-ui, sans-serif; --uv-serif: "Syne", system-ui, sans-serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: repeating-radial-gradient(circle at 28% 38%, transparent 0 22px, #ffe8dc12 22px 23px), repeating-radial-gradient(circle at 82% 88%, transparent 0 30px, #ff4d0017 30px 31px);
+}
+[data-uv-theme="magma"] .uv-h1:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *), [data-uv-theme="magma"] .uv-h2:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { background-image: linear-gradient(0deg, #ff3d00, #ffb300 55%, #fff3c4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-uv-theme="magma"] .uv-btn--primary:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *), [data-uv-theme="magma"] .uv-btn--grad:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { background: #ff4d00; color: #ffffff; border-color: #ff4d00; box-shadow: 0 0 18px -2px #ff4d00, inset 0 1px 0 #ffffff59; }
+[data-uv-theme="magma"] .uv-btn--primary:hover:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { filter: brightness(1.06); }
+[data-uv-theme="magma"] .uv-card:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { border-color: #ff4d0073; box-shadow: 0 0 0 1px #ff4d0033, 0 0 40px -14px #ff4d00; }
+[data-uv-theme="magma"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { background: #ff4d00; } [data-uv-theme="magma"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { color: #ffffff; }
+[data-uv-theme="magma"] .uv-switch input:checked + i:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *), [data-uv-theme="magma"] .uv-check input:checked:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { background: #ff4d00; border-color: #ff4d00; }
+[data-uv-theme="magma"] .uv-progress > i:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { background: #ff4d00; } [data-uv-theme="magma"] .uv-ring:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { background: conic-gradient(#ff4d00 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="magma"] .uv-input:focus:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *), [data-uv-theme="magma"] .uv-select:focus:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *), [data-uv-theme="magma"] .uv-textarea:focus:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { border-color: #ff4d00; box-shadow: 0 0 0 3px #ff4d0038; }
+[data-uv-theme="magma"] .uv-btn:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="magma"] .uv-btn:hover:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { translate: 0 -4px; box-shadow: 0 14px 28px -12px #ff4d00; } [data-uv-theme="magma"] .uv-btn:active:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { translate: 0 0; }
+[data-uv-theme="magma"] .uv-card--hover:hover:not([data-uv-theme="magma"] [data-uv-theme]:not([data-uv-theme="magma"]) *) { translate: 0 -4px; }

@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: oat — oat-milk beige, cocoa type, soft extruded panels. Needs core.css. MIT */
+[data-uv-theme="oat"] {
+  --uv-bg: #efe7da; --uv-text: #3d2f24; --uv-accent: #8a5a3b; --uv-accent-2: #8a5a3b; --uv-on-accent: #ffffff; --uv-surface: #f8f4ee; --uv-surface-2: #e4dccf; --uv-surface-3: #dbd3c6; --uv-line: #3d2f241a; --uv-line-2: #3d2f242e; --uv-muted: #766a5e; --uv-dim: #9a8f83; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Outfit", system-ui, sans-serif; --uv-font-head: "Fraunces", Georgia, serif; --uv-serif: "Fraunces", Georgia, serif; --uv-btn-font: "Outfit", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  
+}
+[data-uv-theme="oat"] .uv-btn--primary:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *), [data-uv-theme="oat"] .uv-btn--grad:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { background: #f8f4ee; color: #7c5135; border: 0; box-shadow: 6px 6px 14px #9b968eb3, -6px -6px 14px #fdfdfbcc; }
+[data-uv-theme="oat"] .uv-btn--primary:hover:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { filter: brightness(1.06); }
+[data-uv-theme="oat"] .uv-card:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { border: 0; background: #efe7da; box-shadow: 9px 9px 22px #8f8b8399, -9px -9px 22px #fcfaf8d9; }
+[data-uv-theme="oat"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { background: #8a5a3b; } [data-uv-theme="oat"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { color: #ffffff; }
+[data-uv-theme="oat"] .uv-switch input:checked + i:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *), [data-uv-theme="oat"] .uv-check input:checked:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { background: #8a5a3b; border-color: #8a5a3b; }
+[data-uv-theme="oat"] .uv-progress > i:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { background: #8a5a3b; } [data-uv-theme="oat"] .uv-ring:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { background: conic-gradient(#8a5a3b calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="oat"] .uv-input:focus:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *), [data-uv-theme="oat"] .uv-select:focus:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *), [data-uv-theme="oat"] .uv-textarea:focus:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { border-color: #8a5a3b; box-shadow: 0 0 0 3px #8a5a3b38; }
+[data-uv-theme="oat"] .uv-btn:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="oat"] .uv-btn:hover:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { animation: uvt-squish .45s; }
+[data-uv-theme="oat"] .uv-card--hover:hover:not([data-uv-theme="oat"] [data-uv-theme]:not([data-uv-theme="oat"]) *) { translate: 0 -4px; }

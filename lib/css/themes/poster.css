@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: poster — Swiss poster: huge black type on safety orange. Needs core.css. MIT */
+[data-uv-theme="poster"] {
+  --uv-bg: #ff5a1f; --uv-text: #111111; --uv-accent: #111111; --uv-accent-2: #ffffff; --uv-on-accent: #ffffff; --uv-surface: #f3561e; --uv-surface-2: #ea531e; --uv-surface-3: #db4f1d; --uv-line: #11111124; --uv-line-2: #11111142; --uv-muted: #5d2815; --uv-dim: #8d3718; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.06em;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="poster"] .uv-btn--primary:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *), [data-uv-theme="poster"] .uv-btn--grad:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { background: #111111; color: #ff5a1f; border-color: #111111; }
+[data-uv-theme="poster"] .uv-btn--primary:hover:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { filter: brightness(1.06); }
+[data-uv-theme="poster"] .uv-card:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { border: 2px solid #111111; box-shadow: none; }
+[data-uv-theme="poster"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { background: #111111; } [data-uv-theme="poster"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { color: #ffffff; }
+[data-uv-theme="poster"] .uv-switch input:checked + i:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *), [data-uv-theme="poster"] .uv-check input:checked:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { background: #111111; border-color: #111111; }
+[data-uv-theme="poster"] .uv-progress > i:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { background: #111111; } [data-uv-theme="poster"] .uv-ring:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { background: conic-gradient(#111111 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="poster"] .uv-input:focus:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *), [data-uv-theme="poster"] .uv-select:focus:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *), [data-uv-theme="poster"] .uv-textarea:focus:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { border-color: #111111; box-shadow: 0 0 0 3px #11111138; }
+[data-uv-theme="poster"] .uv-btn:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="poster"] .uv-btn:hover:not([data-uv-theme="poster"] [data-uv-theme]:not([data-uv-theme="poster"]) *) { background: #111111; color: #ff5a1f; border-color: #111111; }

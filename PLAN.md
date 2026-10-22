@@ -89,3 +89,13 @@ v7 status: DONE. 87 themes; JS engine must mirror tools/theme_specs.py recipes.
 - [x] 404.html, assets/og.jpg, cross-page view transitions, sticky offsets aligned to the 58px header.
 - [x] Pages demoing UV.cmdk (docs, showcase) opt out of the site hotkey with <meta name="uvc-hotkey" content="off">.
 Next ideas: per-page hero refresh for docs/blocks (sidebar pages), richer search (themes + parts from manifest), real screenshots in Index cards.
+
+# v13 — way more styles + 3D/effects (2026-10-22, resume here)
+- [x] A. Themes: ~50 new (new categories Gaming/Luxury/Tech/Seasonal + more in each) and new recipes (bg/head/btn/card/hover) mirrored in assets/js/theme-engine.js
+- [x] B. Elements: ~80 new designs across the 15 families in tools/parts_specs.py
+- [x] C. lib/js/shaders.js: ~36 WebGL shader backgrounds (one shared GL context → 2D canvases), data-uv-shader, theme colours, pointer; JS_EXTRA; catalog + Library category + packer
+- [x] D. Collections: 3D & depth (uv-depth-*), CSS animations (uv-an-*), animated borders (uv-bd-*)
+- [x] E. skins3d: ~20 new materials, ~8 new shapes
+- [x] F. effects.html page (shader gallery + live hero + 3D CSS + code), nav/search/footer/home bento, counts everywhere
+- [x] G. verify (Marionette, file://), README, push, live check
+v13 status: DONE. 149 themes, 369 element designs, 22 kits, 44 shaders, 48 skins on 16 shapes, 86 new CSS pieces, effects.html. Next ideas: shader picker in the floating picker (page background), shader-backed blocks, more native UiVault3 effects.

@@ -4,7 +4,7 @@
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 3px;
   --uv-head-weight: 700; --uv-head-case: uppercase;
-  background-image: radial-gradient(#ff2b2b4c 1.4px, transparent 1.6px); background-size: 10px 10px;
+  background-image: radial-gradient(#ff2b2b4d 1.4px, transparent 1.6px); background-size: 10px 10px;
 }
 [data-uv-theme="pop-art"] .uv-h1:not([data-uv-theme="pop-art"] [data-uv-theme]:not([data-uv-theme="pop-art"]) *), [data-uv-theme="pop-art"] .uv-h2:not([data-uv-theme="pop-art"] [data-uv-theme]:not([data-uv-theme="pop-art"]) *) { text-shadow: 1px 1px 0 #ff2b2b, 2px 2px 0 #ff2b2b, 3px 3px 0 #ff2b2b, 4px 4px 0 #ff2b2b, 5px 5px 0 #ff2b2b; }
 [data-uv-theme="pop-art"] .uv-btn:not([data-uv-theme="pop-art"] [data-uv-theme]:not([data-uv-theme="pop-art"]) *) { text-transform: uppercase; letter-spacing: .08em; }

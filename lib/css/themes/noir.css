@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: noir — film noir: black, rain on the window, one ember. Needs core.css. MIT */
+[data-uv-theme="noir"] {
+  --uv-bg: #0d0d0d; --uv-text: #e8e4dc; --uv-accent: #ff6a3d; --uv-accent-2: #ff6a3d; --uv-on-accent: #ffffff; --uv-surface: #181817; --uv-surface-2: #212020; --uv-surface-3: #2e2d2c; --uv-line: #e8e4dc24; --uv-line-2: #e8e4dc42; --uv-muted: #a29f9a; --uv-dim: #767470; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Playfair Display", Georgia, serif; --uv-serif: "Playfair Display", Georgia, serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: repeating-linear-gradient(100deg, transparent 0 22px, #ff6a3d12 22px 23px, transparent 23px 47px, #e8e4dc0d 47px 48px), linear-gradient(180deg, #ff6a3d14, transparent 40%);
+}
+[data-uv-theme="noir"] .uv-h1:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *), [data-uv-theme="noir"] .uv-h2:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { color: #e8e4dc; text-shadow: 0 1px 0 #ffffff24, 0 -1px 0 #000000b3; }
+[data-uv-theme="noir"] .uv-btn--primary:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *), [data-uv-theme="noir"] .uv-btn--grad:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { background: transparent; color: #ff6a3d; border: 1.5px solid currentColor; }
+[data-uv-theme="noir"] .uv-btn--primary:hover:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { filter: brightness(1.06); }
+[data-uv-theme="noir"] .uv-card:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { border: 1px solid #e8e4dc47; outline: 1px solid #e8e4dc24; outline-offset: 5px; }
+[data-uv-theme="noir"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { background: #ff6a3d; } [data-uv-theme="noir"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { color: #ffffff; }
+[data-uv-theme="noir"] .uv-switch input:checked + i:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *), [data-uv-theme="noir"] .uv-check input:checked:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { background: #ff6a3d; border-color: #ff6a3d; }
+[data-uv-theme="noir"] .uv-progress > i:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { background: #ff6a3d; } [data-uv-theme="noir"] .uv-ring:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { background: conic-gradient(#ff6a3d calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="noir"] .uv-input:focus:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *), [data-uv-theme="noir"] .uv-select:focus:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *), [data-uv-theme="noir"] .uv-textarea:focus:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { border-color: #ff6a3d; box-shadow: 0 0 0 3px #ff6a3d38; }
+[data-uv-theme="noir"] .uv-btn:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="noir"] .uv-btn--ghost:hover:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *), [data-uv-theme="noir"] .uv-btn:not(.uv-btn--primary):hover:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { background: #ff6a3d; color: #ffffff; border-color: #ff6a3d; }
+[data-uv-theme="noir"] .uv-card--hover:hover:not([data-uv-theme="noir"] [data-uv-theme]:not([data-uv-theme="noir"]) *) { translate: 0 -4px; }

@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: onyx — polished onyx black with chrome-silver type. Needs core.css. MIT */
+[data-uv-theme="onyx"] {
+  --uv-bg: #08080a; --uv-text: #e7e7ea; --uv-accent: #c9ced6; --uv-accent-2: #6f7680; --uv-on-accent: #111111; --uv-surface: #131315; --uv-surface-2: #1c1c1e; --uv-surface-3: #29292c; --uv-line: #e7e7ea24; --uv-line-2: #e7e7ea42; --uv-muted: #a0a0a2; --uv-dim: #737376; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;
+  color-scheme: dark;
+  
+}
+[data-uv-theme="onyx"] .uv-h1:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *), [data-uv-theme="onyx"] .uv-h2:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { background-image: linear-gradient(180deg, #ffffff 0%, #c9ced6 38%, #3b4048 50%, #dfe3ea 62%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 1px 0 #00000059); }
+[data-uv-theme="onyx"] .uv-btn--primary:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *), [data-uv-theme="onyx"] .uv-btn--grad:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { background: linear-gradient(180deg, #ffffff, #d7dbe2 45%, #8b929c 52%, #e9ecf1); color: #1b1f26; border: 1px solid #8b929c; box-shadow: inset 0 1px 0 #fff, 0 3px 10px -4px #0007; }
+[data-uv-theme="onyx"] .uv-btn--primary:hover:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { filter: brightness(1.06); }
+[data-uv-theme="onyx"] .uv-card:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { border-color: #e7e7ea14; box-shadow: inset 0 1px 0 #ffffff0f, 0 30px 60px -30px #000000cc, 0 18px 36px -18px #c9ced659; }
+[data-uv-theme="onyx"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { background: #c9ced6; } [data-uv-theme="onyx"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { color: #111111; }
+[data-uv-theme="onyx"] .uv-switch input:checked + i:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *), [data-uv-theme="onyx"] .uv-check input:checked:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { background: #c9ced6; border-color: #c9ced6; }
+[data-uv-theme="onyx"] .uv-progress > i:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { background: #c9ced6; } [data-uv-theme="onyx"] .uv-ring:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { background: conic-gradient(#c9ced6 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="onyx"] .uv-input:focus:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *), [data-uv-theme="onyx"] .uv-select:focus:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *), [data-uv-theme="onyx"] .uv-textarea:focus:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { border-color: #c9ced6; box-shadow: 0 0 0 3px #c9ced638; }
+[data-uv-theme="onyx"] .uv-btn:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="onyx"] .uv-btn:hover:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { translate: 0 -4px; box-shadow: 0 14px 28px -12px #c9ced6; } [data-uv-theme="onyx"] .uv-btn:active:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { translate: 0 0; }
+[data-uv-theme="onyx"] .uv-card--hover:hover:not([data-uv-theme="onyx"] [data-uv-theme]:not([data-uv-theme="onyx"]) *) { translate: 0 -4px; }

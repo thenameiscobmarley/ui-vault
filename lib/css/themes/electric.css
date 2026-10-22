@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: electric — electric blue, hazard yellow and hard pink shadows. Needs core.css. MIT */
+[data-uv-theme="electric"] {
+  --uv-bg: #1033ff; --uv-text: #ffffff; --uv-accent: #ffe600; --uv-accent-2: #ff3d7f; --uv-on-accent: #111111; --uv-surface: #1c3dff; --uv-surface-2: #2645ff; --uv-surface-3: #3452ff; --uv-line: #ffffff24; --uv-line-2: #ffffff42; --uv-muted: #b3beff; --uv-dim: #8395ff; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Bricolage Grotesque", system-ui, sans-serif; --uv-serif: "Bricolage Grotesque", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
+  --uv-head-weight: 800; --uv-head-case: uppercase;
+  color-scheme: dark;
+  background-image: radial-gradient(#ffe6004d 1.4px, transparent 1.6px); background-size: 10px 10px;
+}
+[data-uv-theme="electric"] .uv-btn:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="electric"] .uv-btn--primary:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *), [data-uv-theme="electric"] .uv-btn--grad:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { background: #ffe600; color: #111111; border: 2px solid #ffffff; box-shadow: 5px 5px 0 #ff3d7f; }
+[data-uv-theme="electric"] .uv-btn--primary:hover:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { filter: brightness(1.06); }
+[data-uv-theme="electric"] .uv-card:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { border: 2px solid #ffffff; box-shadow: 8px 8px 0 #ffe600; }
+[data-uv-theme="electric"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { background: #ffe600; } [data-uv-theme="electric"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { color: #111111; }
+[data-uv-theme="electric"] .uv-switch input:checked + i:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *), [data-uv-theme="electric"] .uv-check input:checked:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { background: #ffe600; border-color: #ffe600; }
+[data-uv-theme="electric"] .uv-progress > i:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { background: #ffe600; } [data-uv-theme="electric"] .uv-ring:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { background: conic-gradient(#ffe600 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="electric"] .uv-input:focus:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *), [data-uv-theme="electric"] .uv-select:focus:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *), [data-uv-theme="electric"] .uv-textarea:focus:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { border-color: #ffe600; box-shadow: 0 0 0 3px #ffe60038; }
+[data-uv-theme="electric"] .uv-btn:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="electric"] .uv-btn:hover:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { translate: 2px 2px; box-shadow: 1px 1px 0 #ffffff; } [data-uv-theme="electric"] .uv-btn:active:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { translate: 4px 4px; box-shadow: none; }
+[data-uv-theme="electric"] .uv-card--hover:hover:not([data-uv-theme="electric"] [data-uv-theme]:not([data-uv-theme="electric"]) *) { translate: 3px 3px; }

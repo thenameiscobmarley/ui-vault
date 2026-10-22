@@ -304,7 +304,15 @@ def _qss_primary(t: Theme) -> str:
         return f'QPushButton[primary="true"] {{ background: {g}; color: #3a2f5a; border: 1px solid #d9cfee; }}'
     if b == "gradient":
         return f'QPushButton[primary="true"] {{ background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 {a}, stop:1 {a2}); color: #ffffff; border: none; }}'
-    if b in ("hard", "3d"):
+    if b == "gold":
+        return f'QPushButton[primary="true"] {{ background: {lin([(0, "#fff3c4"), (.4, "#e6c25a"), (.52, "#9a6f12"), (.66, "#d8b04a"), (1, "#fff0b8")])}; color: #3a2600; border: 1px solid #9a6f12; }}'
+    if b in ("candy", "gel"):
+        g = lin([(0, _mix(a, "#ffffff", .45)), (.49, _mix(a, "#ffffff", .15)), (.51, a), (1, _mix(a, "#ffffff", .3))])
+        return f'QPushButton[primary="true"] {{ background: {g}; border: 1px solid {_mix(a, "#000000", .25)}; }}'
+    if b == "holo":
+        g = "qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff9ae6, stop:.33 #9ad3ff, stop:.66 #b8ff9a, stop:1 #fff59a)"
+        return f'QPushButton[primary="true"] {{ background: {g}; color: #1d1d2b; border: none; }}'
+    if b in ("hard", "3d", "duo", "pixel"):
         return f'QPushButton[primary="true"] {{ background: {a}; border: 2px solid {t.solid("text")}; border-bottom-width: 5px; }}'
     if b in ("outline", "neon", "stamp"):
         return f'QPushButton[primary="true"] {{ background: transparent; color: {a}; border: 2px solid {a}; }}'

@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: saas — crisp SaaS dashboard white with an indigo accent. Needs core.css. MIT */
+[data-uv-theme="saas"] {
+  --uv-bg: #f7f8fc; --uv-text: #151a2d; --uv-accent: #4f46e5; --uv-accent-2: #06b6d4; --uv-on-accent: #ffffff; --uv-surface: #fbfcfe; --uv-surface-2: #e9ebf0; --uv-surface-3: #dee0e5; --uv-line: #151a2d1a; --uv-line-2: #151a2d2e; --uv-muted: #5d616f; --uv-dim: #8b8d99; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-font: "Geist", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Geist", system-ui, sans-serif;
+  --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none; --uv-head-tracking: -.04em;
+  
+}
+[data-uv-theme="saas"] .uv-btn--primary:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *), [data-uv-theme="saas"] .uv-btn--grad:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { background: #4f46e5; color: #ffffff; border-color: #4f46e5; }
+[data-uv-theme="saas"] .uv-btn--primary:hover:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { filter: brightness(1.06); }
+[data-uv-theme="saas"] .uv-card:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { border-color: #151a2d14; box-shadow: inset 0 1px 0 #ffffffe6, 0 30px 60px -30px #00000059, 0 18px 36px -18px #4f46e559; }
+[data-uv-theme="saas"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { background: #4f46e5; } [data-uv-theme="saas"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { color: #ffffff; }
+[data-uv-theme="saas"] .uv-switch input:checked + i:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *), [data-uv-theme="saas"] .uv-check input:checked:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { background: #4f46e5; border-color: #4f46e5; }
+[data-uv-theme="saas"] .uv-progress > i:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { background: #4f46e5; } [data-uv-theme="saas"] .uv-ring:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { background: conic-gradient(#4f46e5 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="saas"] .uv-input:focus:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *), [data-uv-theme="saas"] .uv-select:focus:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *), [data-uv-theme="saas"] .uv-textarea:focus:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { border-color: #4f46e5; box-shadow: 0 0 0 3px #4f46e538; }
+[data-uv-theme="saas"] .uv-btn:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="saas"] .uv-btn:hover:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { translate: 0 -4px; box-shadow: 0 14px 28px -12px #4f46e5; } [data-uv-theme="saas"] .uv-btn:active:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { translate: 0 0; }
+[data-uv-theme="saas"] .uv-card--hover:hover:not([data-uv-theme="saas"] [data-uv-theme]:not([data-uv-theme="saas"]) *) { translate: 0 -4px; }

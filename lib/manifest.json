@@ -537,6 +537,378 @@
    "desc": "groovy molten blobs in orange and magenta",
    "file": "css/themes/lava-lamp.css",
    "category": "Signature"
+  },
+  {
+   "name": "museum",
+   "desc": "gallery-white walls, black captions and one ochre label",
+   "file": "css/themes/museum.css",
+   "category": "Minimal"
+  },
+  {
+   "name": "oat",
+   "desc": "oat-milk beige, cocoa type, soft extruded panels",
+   "file": "css/themes/oat.css",
+   "category": "Minimal"
+  },
+  {
+   "name": "zen",
+   "desc": "rice paper, sumi ink and a single vermilion seal",
+   "file": "css/themes/zen.css",
+   "category": "Minimal"
+  },
+  {
+   "name": "ledger",
+   "desc": "bookkeeping cream with green rules and red totals",
+   "file": "css/themes/ledger.css",
+   "category": "Minimal"
+  },
+  {
+   "name": "onyx",
+   "desc": "polished onyx black with chrome-silver type",
+   "file": "css/themes/onyx.css",
+   "category": "Dark"
+  },
+  {
+   "name": "abyss",
+   "desc": "the deep trench: soft bioluminescent violet and cyan",
+   "file": "css/themes/abyss.css",
+   "category": "Dark"
+  },
+  {
+   "name": "noir",
+   "desc": "film noir: black, rain on the window, one ember",
+   "file": "css/themes/noir.css",
+   "category": "Dark"
+  },
+  {
+   "name": "eclipse",
+   "desc": "a black sun with a corona of gold",
+   "file": "css/themes/eclipse.css",
+   "category": "Dark"
+  },
+  {
+   "name": "ultraviolet",
+   "desc": "ultraviolet midnight with glossy lilac buttons",
+   "file": "css/themes/ultraviolet.css",
+   "category": "Dark"
+  },
+  {
+   "name": "cotton-candy",
+   "desc": "pink and baby-blue spun sugar",
+   "file": "css/themes/cotton-candy.css",
+   "category": "Pastel"
+  },
+  {
+   "name": "macaron",
+   "desc": "pistachio, rose and lemon macarons in a box",
+   "file": "css/themes/macaron.css",
+   "category": "Pastel"
+  },
+  {
+   "name": "periwinkle",
+   "desc": "periwinkle blue with a coral pop",
+   "file": "css/themes/periwinkle.css",
+   "category": "Pastel"
+  },
+  {
+   "name": "sorbet",
+   "desc": "mango, raspberry and lime sorbet",
+   "file": "css/themes/sorbet.css",
+   "category": "Pastel"
+  },
+  {
+   "name": "electric",
+   "desc": "electric blue, hazard yellow and hard pink shadows",
+   "file": "css/themes/electric.css",
+   "category": "Bold"
+  },
+  {
+   "name": "comic",
+   "desc": "comic book: halftone dots, thick ink and a POW yellow",
+   "file": "css/themes/comic.css",
+   "category": "Bold"
+  },
+  {
+   "name": "poster",
+   "desc": "Swiss poster: huge black type on safety orange",
+   "file": "css/themes/poster.css",
+   "category": "Bold"
+  },
+  {
+   "name": "acid",
+   "desc": "acid lime on black, like a rave flyer",
+   "file": "css/themes/acid.css",
+   "category": "Bold"
+  },
+  {
+   "name": "cassette",
+   "desc": "70s cassette inlay: mustard, rust and cream",
+   "file": "css/themes/cassette.css",
+   "category": "Retro"
+  },
+  {
+   "name": "diner",
+   "desc": "50s diner: cherry red, mint and a checker floor",
+   "file": "css/themes/diner.css",
+   "category": "Retro"
+  },
+  {
+   "name": "dos",
+   "desc": "DOS blue screen with yellow highlights",
+   "file": "css/themes/dos.css",
+   "category": "Retro"
+  },
+  {
+   "name": "pinball",
+   "desc": "pinball cabinet: chrome rails and flashing lights",
+   "file": "css/themes/pinball.css",
+   "category": "Retro"
+  },
+  {
+   "name": "vhs",
+   "desc": "VHS tracking lines with magenta and cyan bleed",
+   "file": "css/themes/vhs.css",
+   "category": "Retro"
+  },
+  {
+   "name": "sepia",
+   "desc": "an old photograph in warm sepia",
+   "file": "css/themes/sepia.css",
+   "category": "Retro"
+  },
+  {
+   "name": "meadow",
+   "desc": "spring meadow green with buttercup yellow",
+   "file": "css/themes/meadow.css",
+   "category": "Nature"
+  },
+  {
+   "name": "canyon",
+   "desc": "red-rock canyon at golden hour, with contour lines",
+   "file": "css/themes/canyon.css",
+   "category": "Nature"
+  },
+  {
+   "name": "rainforest",
+   "desc": "dense canopy, rain and a parrot-red accent",
+   "file": "css/themes/rainforest.css",
+   "category": "Nature"
+  },
+  {
+   "name": "coral-reef",
+   "desc": "turquoise shallows and living coral",
+   "file": "css/themes/coral-reef.css",
+   "category": "Nature"
+  },
+  {
+   "name": "tundra",
+   "desc": "snowy tundra, pale sky and lichen",
+   "file": "css/themes/tundra.css",
+   "category": "Nature"
+  },
+  {
+   "name": "esports",
+   "desc": "esports stage: black, team red and LED white",
+   "file": "css/themes/esports.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "rpg",
+   "desc": "fantasy RPG: parchment, leather and quest gold",
+   "file": "css/themes/rpg.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "pixel-plains",
+   "desc": "8-bit console: sky blue, brick red and coin gold",
+   "file": "css/themes/pixel-plains.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "hud",
+   "desc": "starship HUD: cyan lines over deep space",
+   "file": "css/themes/hud.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "dropzone",
+   "desc": "battle-royale map: tactical olive and safety orange",
+   "file": "css/themes/dropzone.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "pole-position",
+   "desc": "racing sim: carbon, chequered flags and hot yellow",
+   "file": "css/themes/pole-position.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "harvest",
+   "desc": "cozy farm sim: warm wood, cream and leaf green",
+   "file": "css/themes/harvest.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "nightmare",
+   "desc": "survival horror: rust, flicker and dried blood",
+   "file": "css/themes/nightmare.css",
+   "category": "Gaming"
+  },
+  {
+   "name": "champagne",
+   "desc": "champagne gold on ivory, with a gilt frame",
+   "file": "css/themes/champagne.css",
+   "category": "Luxury"
+  },
+  {
+   "name": "velvet-noir",
+   "desc": "black velvet, burgundy and a touch of gold",
+   "file": "css/themes/velvet-noir.css",
+   "category": "Luxury"
+  },
+  {
+   "name": "carrara",
+   "desc": "white Carrara marble with brushed brass",
+   "file": "css/themes/carrara.css",
+   "category": "Luxury"
+  },
+  {
+   "name": "emerald-club",
+   "desc": "private members' club: emerald leather and brass",
+   "file": "css/themes/emerald-club.css",
+   "category": "Luxury"
+  },
+  {
+   "name": "royal",
+   "desc": "royal purple velvet with a gold crest",
+   "file": "css/themes/royal.css",
+   "category": "Luxury"
+  },
+  {
+   "name": "atelier",
+   "desc": "fashion atelier: blush, black and gilt",
+   "file": "css/themes/atelier.css",
+   "category": "Luxury"
+  },
+  {
+   "name": "devtools",
+   "desc": "IDE dark: slate panels and syntax colours",
+   "file": "css/themes/devtools.css",
+   "category": "Tech"
+  },
+  {
+   "name": "saas",
+   "desc": "crisp SaaS dashboard white with an indigo accent",
+   "file": "css/themes/saas.css",
+   "category": "Tech"
+  },
+  {
+   "name": "fintech",
+   "desc": "fintech dark: deep navy and mint gains",
+   "file": "css/themes/fintech.css",
+   "category": "Tech"
+  },
+  {
+   "name": "neural",
+   "desc": "AI lab graphite with a violet-to-cyan gradient",
+   "file": "css/themes/neural.css",
+   "category": "Tech"
+  },
+  {
+   "name": "pcb",
+   "desc": "green circuit board with copper traces",
+   "file": "css/themes/pcb.css",
+   "category": "Tech"
+  },
+  {
+   "name": "quantum",
+   "desc": "white lab with iridescent particles",
+   "file": "css/themes/quantum.css",
+   "category": "Tech"
+  },
+  {
+   "name": "mainframe",
+   "desc": "green code rain on a black mainframe",
+   "file": "css/themes/mainframe.css",
+   "category": "Tech"
+  },
+  {
+   "name": "hologram",
+   "desc": "blue hologram projection with scan lines",
+   "file": "css/themes/hologram.css",
+   "category": "Tech"
+  },
+  {
+   "name": "pumpkin",
+   "desc": "pumpkin orange and witch purple at midnight",
+   "file": "css/themes/pumpkin.css",
+   "category": "Seasonal"
+  },
+  {
+   "name": "frost",
+   "desc": "winter frost, ice blue and silver",
+   "file": "css/themes/frost.css",
+   "category": "Seasonal"
+  },
+  {
+   "name": "evergreen",
+   "desc": "evergreen, cranberry and gold ribbon",
+   "file": "css/themes/evergreen.css",
+   "category": "Seasonal"
+  },
+  {
+   "name": "april",
+   "desc": "spring showers: fresh green, sky and tulip pink",
+   "file": "css/themes/april.css",
+   "category": "Seasonal"
+  },
+  {
+   "name": "beach",
+   "desc": "summer beach: sand, sea and sun",
+   "file": "css/themes/beach.css",
+   "category": "Seasonal"
+  },
+  {
+   "name": "midnight-gala",
+   "desc": "new year's eve: black tie and gold confetti",
+   "file": "css/themes/midnight-gala.css",
+   "category": "Seasonal"
+  },
+  {
+   "name": "fire-ice",
+   "desc": "half blazing orange, half glacier blue",
+   "file": "css/themes/fire-ice.css",
+   "category": "Signature"
+  },
+  {
+   "name": "toxic",
+   "desc": "radioactive green on hazard-striped black",
+   "file": "css/themes/toxic.css",
+   "category": "Signature"
+  },
+  {
+   "name": "bismuth",
+   "desc": "bismuth crystal: stepped rainbow oxide terraces",
+   "file": "css/themes/bismuth.css",
+   "category": "Signature"
+  },
+  {
+   "name": "opal",
+   "desc": "white opal with flashes of colour fire",
+   "file": "css/themes/opal.css",
+   "category": "Signature"
+  },
+  {
+   "name": "magma",
+   "desc": "cooling magma: black crust and glowing seams",
+   "file": "css/themes/magma.css",
+   "category": "Signature"
+  },
+  {
+   "name": "ronin",
+   "desc": "red lacquer armour and black steel",
+   "file": "css/themes/ronin.css",
+   "category": "Signature"
   }
  ],
  "files": [
@@ -546,58 +918,73 @@
    "desc": "Section layouts (b-*) used by the 38 page blocks. Container-query responsive."
   },
   {
+   "path": "css/collections/borders.css",
+   "bytes": 19349,
+   "desc": "Collection: 25 animated borders."
+  },
+  {
    "path": "css/collections/charts.css",
-   "bytes": 7466,
+   "bytes": 12879,
    "desc": "Collection: 12 css charts."
   },
   {
+   "path": "css/collections/depth.css",
+   "bytes": 28758,
+   "desc": "Collection: 29 3d & depth."
+  },
+  {
    "path": "css/collections/dividers.css",
-   "bytes": 8032,
+   "bytes": 13445,
    "desc": "Collection: 24 dividers."
   },
   {
    "path": "css/collections/gradients.css",
-   "bytes": 19154,
+   "bytes": 24567,
    "desc": "Collection: 123 gradients."
   },
   {
    "path": "css/collections/hovers.css",
-   "bytes": 9799,
+   "bytes": 15212,
    "desc": "Collection: 24 image hovers."
   },
   {
    "path": "css/collections/icons.css",
-   "bytes": 4016,
+   "bytes": 9429,
    "desc": "Collection: 113 icons."
   },
   {
    "path": "css/collections/loaders.css",
-   "bytes": 15396,
+   "bytes": 20809,
    "desc": "Collection: 41 css loaders."
   },
   {
+   "path": "css/collections/motion.css",
+   "bytes": 13281,
+   "desc": "Collection: 32 css motion."
+  },
+  {
    "path": "css/collections/patterns.css",
-   "bytes": 21691,
+   "bytes": 27104,
    "desc": "Collection: 60 patterns."
   },
   {
    "path": "css/collections/shadows.css",
-   "bytes": 8594,
+   "bytes": 14007,
    "desc": "Collection: 40 shadows."
   },
   {
    "path": "css/collections/text.css",
-   "bytes": 10625,
+   "bytes": 16038,
    "desc": "Collection: 36 text effects."
   },
   {
    "path": "css/collections/tooltips.css",
-   "bytes": 6327,
+   "bytes": 11740,
    "desc": "Collection: 12 tooltip styles."
   },
   {
    "path": "css/collections.css",
-   "bytes": 75326,
+   "bytes": 113924,
    "desc": "Every collection: gradients, patterns, CSS loaders, text effects, shadows, image hovers, dividers, tooltip styles, CSS charts."
   },
   {
@@ -607,12 +994,12 @@
   },
   {
    "path": "css/core.css",
-   "bytes": 4507,
+   "bytes": 4862,
    "desc": "Tokens, light/dark, base helpers. Required."
   },
   {
    "path": "css/fonts.css",
-   "bytes": 841,
+   "bytes": 961,
    "desc": ""
   },
   {
@@ -622,83 +1009,93 @@
   },
   {
    "path": "css/parts/alert.css",
-   "bytes": 12007,
-   "desc": "Parts: 14 alerts & toasts designs (data-uv-alert)."
+   "bytes": 15300,
+   "desc": "Parts: 18 alerts & toasts designs (data-uv-alert)."
   },
   {
    "path": "css/parts/badge.css",
-   "bytes": 13814,
-   "desc": "Parts: 16 badges designs (data-uv-badge)."
+   "bytes": 18599,
+   "desc": "Parts: 21 badges designs (data-uv-badge)."
   },
   {
    "path": "css/parts/bg.css",
-   "bytes": 10840,
-   "desc": "Parts: 17 backgrounds designs (data-uv-bg)."
+   "bytes": 18986,
+   "desc": "Parts: 27 backgrounds designs (data-uv-bg)."
   },
   {
    "path": "css/parts/btn.css",
-   "bytes": 77104,
-   "desc": "Parts: 49 buttons designs (data-uv-btn)."
+   "bytes": 93972,
+   "desc": "Parts: 59 buttons designs (data-uv-btn)."
   },
   {
    "path": "css/parts/card.css",
-   "bytes": 20508,
-   "desc": "Parts: 26 cards designs (data-uv-card)."
+   "bytes": 29327,
+   "desc": "Parts: 36 cards designs (data-uv-card)."
   },
   {
    "path": "css/parts/check.css",
-   "bytes": 16993,
-   "desc": "Parts: 12 checkboxes designs (data-uv-check)."
+   "bytes": 25420,
+   "desc": "Parts: 18 checkboxes designs (data-uv-check)."
   },
   {
    "path": "css/parts/head.css",
-   "bytes": 16119,
-   "desc": "Parts: 21 headings designs (data-uv-head)."
+   "bytes": 21296,
+   "desc": "Parts: 28 headings designs (data-uv-head)."
   },
   {
    "path": "css/parts/input.css",
-   "bytes": 24348,
-   "desc": "Parts: 20 text fields designs (data-uv-input)."
+   "bytes": 32335,
+   "desc": "Parts: 27 text fields designs (data-uv-input)."
   },
   {
    "path": "css/parts/modal.css",
-   "bytes": 13174,
-   "desc": "Parts: 12 modals designs (data-uv-modal)."
+   "bytes": 17783,
+   "desc": "Parts: 16 modals designs (data-uv-modal)."
   },
   {
    "path": "css/parts/nav.css",
-   "bytes": 35887,
-   "desc": "Parts: 16 navigation designs (data-uv-nav)."
+   "bytes": 45361,
+   "desc": "Parts: 20 navigation designs (data-uv-nav)."
   },
   {
    "path": "css/parts/progress.css",
-   "bytes": 13315,
-   "desc": "Parts: 12 progress designs (data-uv-progress)."
+   "bytes": 20739,
+   "desc": "Parts: 18 progress designs (data-uv-progress)."
   },
   {
    "path": "css/parts/range.css",
-   "bytes": 18312,
-   "desc": "Parts: 12 sliders designs (data-uv-range)."
+   "bytes": 27750,
+   "desc": "Parts: 18 sliders designs (data-uv-range)."
   },
   {
    "path": "css/parts/spinner.css",
-   "bytes": 12415,
-   "desc": "Parts: 14 spinners designs (data-uv-spinner)."
+   "bytes": 19669,
+   "desc": "Parts: 20 spinners designs (data-uv-spinner)."
   },
   {
    "path": "css/parts/switch.css",
-   "bytes": 28755,
-   "desc": "Parts: 16 switches designs (data-uv-switch)."
+   "bytes": 40036,
+   "desc": "Parts: 22 switches designs (data-uv-switch)."
   },
   {
    "path": "css/parts/tabs.css",
-   "bytes": 25377,
-   "desc": "Parts: 16 tabs designs (data-uv-tabs)."
+   "bytes": 33548,
+   "desc": "Parts: 21 tabs designs (data-uv-tabs)."
   },
   {
    "path": "css/parts.css",
-   "bytes": 303838,
+   "bytes": 411355,
    "desc": "All element designs (buttons, cards, inputs, switches, tabs, nav, badges, alerts, modals, spinners, progress, headings, backgrounds) in one file."
+  },
+  {
+   "path": "css/themes/abyss.css",
+   "bytes": 3996,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/acid.css",
+   "bytes": 4158,
+   "desc": ""
   },
   {
    "path": "css/themes/amber-crt.css",
@@ -711,8 +1108,18 @@
    "desc": ""
   },
   {
+   "path": "css/themes/april.css",
+   "bytes": 3661,
+   "desc": ""
+  },
+  {
    "path": "css/themes/arcade.css",
    "bytes": 3753,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/atelier.css",
+   "bytes": 3371,
    "desc": ""
   },
   {
@@ -728,6 +1135,16 @@
   {
    "path": "css/themes/bauhaus.css",
    "bytes": 3449,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/beach.css",
+   "bytes": 3672,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/bismuth.css",
+   "bytes": 5022,
    "desc": ""
   },
   {
@@ -761,8 +1178,18 @@
    "desc": ""
   },
   {
+   "path": "css/themes/canyon.css",
+   "bytes": 3854,
+   "desc": ""
+  },
+  {
    "path": "css/themes/carbon-fiber.css",
    "bytes": 5099,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/carrara.css",
+   "bytes": 4044,
    "desc": ""
   },
   {
@@ -771,8 +1198,18 @@
    "desc": ""
   },
   {
+   "path": "css/themes/cassette.css",
+   "bytes": 3671,
+   "desc": ""
+  },
+  {
    "path": "css/themes/chameleon.css",
    "bytes": 4813,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/champagne.css",
+   "bytes": 4737,
    "desc": ""
   },
   {
@@ -786,8 +1223,23 @@
    "desc": ""
   },
   {
+   "path": "css/themes/comic.css",
+   "bytes": 3805,
+   "desc": ""
+  },
+  {
    "path": "css/themes/concrete.css",
    "bytes": 3622,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/coral-reef.css",
+   "bytes": 3955,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/cotton-candy.css",
+   "bytes": 4266,
    "desc": ""
   },
   {
@@ -811,8 +1263,33 @@
    "desc": ""
   },
   {
+   "path": "css/themes/devtools.css",
+   "bytes": 3643,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/diner.css",
+   "bytes": 3782,
+   "desc": ""
+  },
+  {
    "path": "css/themes/doppler.css",
    "bytes": 4605,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/dos.css",
+   "bytes": 3425,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/dropzone.css",
+   "bytes": 4241,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/eclipse.css",
+   "bytes": 4460,
    "desc": ""
   },
   {
@@ -821,8 +1298,23 @@
    "desc": ""
   },
   {
+   "path": "css/themes/electric.css",
+   "bytes": 4059,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/emerald-club.css",
+   "bytes": 5092,
+   "desc": ""
+  },
+  {
    "path": "css/themes/emerald.css",
    "bytes": 4883,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/esports.css",
+   "bytes": 4935,
    "desc": ""
   },
   {
@@ -831,8 +1323,23 @@
    "desc": ""
   },
   {
+   "path": "css/themes/evergreen.css",
+   "bytes": 4516,
+   "desc": ""
+  },
+  {
    "path": "css/themes/fade.css",
    "bytes": 4567,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/fintech.css",
+   "bytes": 3879,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/fire-ice.css",
+   "bytes": 4640,
    "desc": ""
   },
   {
@@ -843,6 +1350,11 @@
   {
    "path": "css/themes/forest-night.css",
    "bytes": 3906,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/frost.css",
+   "bytes": 4504,
    "desc": ""
   },
   {
@@ -876,8 +1388,23 @@
    "desc": ""
   },
   {
+   "path": "css/themes/harvest.css",
+   "bytes": 4003,
+   "desc": ""
+  },
+  {
    "path": "css/themes/holo-foil.css",
    "bytes": 5134,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/hologram.css",
+   "bytes": 4404,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/hud.css",
+   "bytes": 4090,
    "desc": ""
   },
   {
@@ -893,6 +1420,11 @@
   {
    "path": "css/themes/lavender.css",
    "bytes": 3633,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/ledger.css",
+   "bytes": 3737,
    "desc": ""
   },
   {
@@ -916,8 +1448,23 @@
    "desc": ""
   },
   {
+   "path": "css/themes/macaron.css",
+   "bytes": 4222,
+   "desc": ""
+  },
+  {
    "path": "css/themes/magenta.css",
    "bytes": 3453,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/magma.css",
+   "bytes": 4165,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/mainframe.css",
+   "bytes": 4068,
    "desc": ""
   },
   {
@@ -926,8 +1473,18 @@
    "desc": ""
   },
   {
+   "path": "css/themes/meadow.css",
+   "bytes": 3862,
+   "desc": ""
+  },
+  {
    "path": "css/themes/memphis.css",
    "bytes": 3583,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/midnight-gala.css",
+   "bytes": 5291,
    "desc": ""
   },
   {
@@ -951,6 +1508,11 @@
    "desc": ""
   },
   {
+   "path": "css/themes/museum.css",
+   "bytes": 3317,
+   "desc": ""
+  },
+  {
    "path": "css/themes/nebula.css",
    "bytes": 4611,
    "desc": ""
@@ -961,13 +1523,33 @@
    "desc": ""
   },
   {
+   "path": "css/themes/neural.css",
+   "bytes": 4262,
+   "desc": ""
+  },
+  {
    "path": "css/themes/newsprint.css",
    "bytes": 3794,
    "desc": ""
   },
   {
+   "path": "css/themes/nightmare.css",
+   "bytes": 4178,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/noir.css",
+   "bytes": 4002,
+   "desc": ""
+  },
+  {
    "path": "css/themes/nord-night.css",
    "bytes": 3582,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/oat.css",
+   "bytes": 3324,
    "desc": ""
   },
   {
@@ -981,8 +1563,23 @@
    "desc": ""
   },
   {
+   "path": "css/themes/onyx.css",
+   "bytes": 4115,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/opal.css",
+   "bytes": 4693,
+   "desc": ""
+  },
+  {
    "path": "css/themes/paper.css",
    "bytes": 3333,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/pcb.css",
+   "bytes": 3930,
    "desc": ""
   },
   {
@@ -996,6 +1593,21 @@
    "desc": ""
   },
   {
+   "path": "css/themes/periwinkle.css",
+   "bytes": 3982,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/pinball.css",
+   "bytes": 4193,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/pixel-plains.css",
+   "bytes": 4029,
+   "desc": ""
+  },
+  {
    "path": "css/themes/plum.css",
    "bytes": 3554,
    "desc": ""
@@ -1003,6 +1615,11 @@
   {
    "path": "css/themes/polaroid.css",
    "bytes": 3927,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/pole-position.css",
+   "bytes": 5161,
    "desc": ""
   },
   {
@@ -1016,6 +1633,26 @@
    "desc": ""
   },
   {
+   "path": "css/themes/poster.css",
+   "bytes": 3311,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/pumpkin.css",
+   "bytes": 4170,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/quantum.css",
+   "bytes": 4654,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/rainforest.css",
+   "bytes": 4081,
+   "desc": ""
+  },
+  {
    "path": "css/themes/retro.css",
    "bytes": 2590,
    "desc": ""
@@ -1026,13 +1663,33 @@
    "desc": ""
   },
   {
+   "path": "css/themes/ronin.css",
+   "bytes": 4363,
+   "desc": ""
+  },
+  {
    "path": "css/themes/rose-gold.css",
    "bytes": 4868,
    "desc": ""
   },
   {
+   "path": "css/themes/royal.css",
+   "bytes": 4642,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/rpg.css",
+   "bytes": 4735,
+   "desc": ""
+  },
+  {
    "path": "css/themes/ruby.css",
    "bytes": 4711,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/saas.css",
+   "bytes": 3546,
    "desc": ""
   },
   {
@@ -1056,6 +1713,11 @@
    "desc": ""
   },
   {
+   "path": "css/themes/sepia.css",
+   "bytes": 3874,
+   "desc": ""
+  },
+  {
    "path": "css/themes/sketch.css",
    "bytes": 1955,
    "desc": ""
@@ -1068,6 +1730,11 @@
   {
    "path": "css/themes/soft.css",
    "bytes": 1906,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/sorbet.css",
+   "bytes": 3741,
    "desc": ""
   },
   {
@@ -1111,6 +1778,21 @@
    "desc": ""
   },
   {
+   "path": "css/themes/toxic.css",
+   "bytes": 4108,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/tundra.css",
+   "bytes": 3765,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/ultraviolet.css",
+   "bytes": 4168,
+   "desc": ""
+  },
+  {
    "path": "css/themes/vampire.css",
    "bytes": 3681,
    "desc": ""
@@ -1118,6 +1800,16 @@
   {
    "path": "css/themes/vaporwave.css",
    "bytes": 4413,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/velvet-noir.css",
+   "bytes": 3907,
+   "desc": ""
+  },
+  {
+   "path": "css/themes/vhs.css",
+   "bytes": 3953,
    "desc": ""
   },
   {
@@ -1136,8 +1828,13 @@
    "desc": ""
   },
   {
+   "path": "css/themes/zen.css",
+   "bytes": 3848,
+   "desc": ""
+  },
+  {
    "path": "css/themes.css",
-   "bytes": 330394,
+   "bytes": 585738,
    "desc": "All 12 themes in one file."
   },
   {
@@ -1176,9 +1873,14 @@
    "desc": "countUp, typewriter, scramble, reveal, tilt, magnetic, spotlight, ripple, parallax, ring."
   },
   {
+   "path": "js/shaders.js",
+   "bytes": 34051,
+   "desc": "44 animated WebGL shader backgrounds (liquid, aurora, synthwave, galaxy, fire, ocean, ripple…) that follow the theme colours and the pointer. One shared WebGL context, pauses off-screen. Load after core.js."
+  },
+  {
    "path": "js/skins3d.js",
-   "bytes": 33903,
-   "desc": "Real-time 3D objects (blade, gem, coin, knot…) in 25 animated mastery-camo materials: obsidian, dark matter, damascus, gold… WebGL, no libraries. Load after core.js."
+   "bytes": 45867,
+   "desc": "Real-time 3D objects (blade, gem, coin, knot…) in 48 animated mastery-camo materials: obsidian, dark matter, damascus, gold… WebGL, no libraries. Load after core.js."
   },
   {
    "path": "js/waterfall.js",
@@ -1192,17 +1894,17 @@
   },
   {
    "path": "parts.json",
-   "bytes": 70720,
+   "bytes": 94271,
    "desc": "Every element design and kit as data (names, descriptions, Python/C++ approximations)."
   },
   {
    "path": "tokens.json",
-   "bytes": 137847,
+   "bytes": 236409,
    "desc": ""
   },
   {
    "path": "uivault.css",
-   "bytes": 408194,
+   "bytes": 664014,
    "desc": ""
   },
   {

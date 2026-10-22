@@ -1,0 +1,18 @@
+/*! UI Vault 3.1.0 · theme: devtools — IDE dark: slate panels and syntax colours. Needs core.css. MIT */
+[data-uv-theme="devtools"] {
+  --uv-bg: #1e1f29; --uv-text: #e6e6f0; --uv-accent: #7aa2f7; --uv-accent-2: #f7768e; --uv-on-accent: #111111; --uv-surface: #282933; --uv-surface-2: #30313b; --uv-surface-3: #3c3d47; --uv-line: #e6e6f024; --uv-line-2: #e6e6f042; --uv-muted: #a6a6b0; --uv-dim: #7e7f89; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist Mono", ui-monospace, monospace; --uv-font-head: "Geist Mono", ui-monospace, monospace; --uv-serif: "Geist Mono", ui-monospace, monospace; --uv-btn-font: "Geist Mono", ui-monospace, monospace;
+  --uv-r-xs: 2px; --uv-r-sm: 2px; --uv-r: 3px; --uv-r-lg: 4px; --uv-bw: 1px;
+  --uv-head-weight: 600; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: linear-gradient(#e6e6f012 1px, transparent 1px), linear-gradient(90deg, #e6e6f012 1px, transparent 1px); background-size: 32px 32px;
+}
+[data-uv-theme="devtools"] .uv-btn--primary:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *), [data-uv-theme="devtools"] .uv-btn--grad:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { background: #7aa2f7; color: #111111; border-color: #7aa2f7; }
+[data-uv-theme="devtools"] .uv-btn--primary:hover:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { filter: brightness(1.06); }
+[data-uv-theme="devtools"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { background: #7aa2f7; } [data-uv-theme="devtools"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { color: #111111; }
+[data-uv-theme="devtools"] .uv-switch input:checked + i:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *), [data-uv-theme="devtools"] .uv-check input:checked:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { background: #7aa2f7; border-color: #7aa2f7; }
+[data-uv-theme="devtools"] .uv-progress > i:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { background: #7aa2f7; } [data-uv-theme="devtools"] .uv-ring:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { background: conic-gradient(#7aa2f7 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="devtools"] .uv-input:focus:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *), [data-uv-theme="devtools"] .uv-select:focus:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *), [data-uv-theme="devtools"] .uv-textarea:focus:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { border-color: #7aa2f7; box-shadow: 0 0 0 3px #7aa2f738; }
+[data-uv-theme="devtools"] .uv-btn:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="devtools"] .uv-btn:hover:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { filter: brightness(1.08); } [data-uv-theme="devtools"] .uv-btn:active:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { scale: .94; }
+[data-uv-theme="devtools"] .uv-card--hover:hover:not([data-uv-theme="devtools"] [data-uv-theme]:not([data-uv-theme="devtools"]) *) { translate: 0 -4px; }

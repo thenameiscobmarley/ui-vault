@@ -1,4 +1,4 @@
-/*! UI Vault 3.1.0 · parts: badges — 16 designs. Use data-uv-badge="NAME" on <html> or any element. Needs core.css. MIT */
+/*! UI Vault 3.1.0 · parts: badges — 21 designs. Use data-uv-badge="NAME" on <html> or any element. Needs core.css. MIT */
 /* shared reset for every badge design */
 :is([data-uv-badge]:not([data-uv-badge=""]) :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge]:not([data-uv-badge=""])):not(#_) { --k: var(--uv-accent); box-shadow: none; text-shadow: none; transform: none; clip-path: none; animation: none; backdrop-filter: none; }
 :is([data-uv-badge]:not([data-uv-badge=""]) :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge]:not([data-uv-badge=""])):not(#_)::before, :is([data-uv-badge]:not([data-uv-badge=""]) :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge]:not([data-uv-badge=""])):not(#_)::after { content: none; }
@@ -38,6 +38,17 @@
 :is([data-uv-badge="sticker"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="sticker"]):not([data-uv-badge="sticker"] [data-uv-badge]:not([data-uv-badge="sticker"]) *, [data-uv-badge="sticker"] [data-uv-badge]:not([data-uv-badge="sticker"])):not(#_) { border-radius: 999px; border: 2px solid #fff; background: var(--k); color: #fff; font: 800 11px var(--uv-font); box-shadow: 0 3px 8px -2px #0006; transform: rotate(-2deg); }
 /* @part badge/square — flat square label */
 :is([data-uv-badge="square"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="square"]):not([data-uv-badge="square"] [data-uv-badge]:not([data-uv-badge="square"]) *, [data-uv-badge="square"] [data-uv-badge]:not([data-uv-badge="square"])):not(#_) { border-radius: 0; border: 0; background: color-mix(in srgb, var(--k) 18%, transparent); color: var(--k); font: 600 11px var(--uv-font); text-transform: uppercase; letter-spacing: .06em; }
+/* @part badge/liquid-glass — a tinted glass pill */
+:is([data-uv-badge="liquid-glass"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="liquid-glass"]):not([data-uv-badge="liquid-glass"] [data-uv-badge]:not([data-uv-badge="liquid-glass"]) *, [data-uv-badge="liquid-glass"] [data-uv-badge]:not([data-uv-badge="liquid-glass"])):not(#_) { border-radius: 999px; border: 1px solid #ffffff38; background: linear-gradient(180deg, color-mix(in srgb, var(--k) 40%, transparent), color-mix(in srgb, var(--k) 18%, transparent)); color: var(--uv-text); backdrop-filter: blur(8px); box-shadow: inset 0 1px 1px #ffffff59; font: 600 12px var(--uv-font); text-transform: none; letter-spacing: 0; }
+/* @part badge/gradient-outline — a gradient ring around plain text */
+:is([data-uv-badge="gradient-outline"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="gradient-outline"]):not([data-uv-badge="gradient-outline"] [data-uv-badge]:not([data-uv-badge="gradient-outline"]) *, [data-uv-badge="gradient-outline"] [data-uv-badge]:not([data-uv-badge="gradient-outline"])):not(#_) { border-radius: 999px; border: 1.5px solid transparent; background: linear-gradient(var(--uv-bg), var(--uv-bg)) padding-box, linear-gradient(90deg, var(--k), var(--uv-accent-2)) border-box; color: var(--uv-text); font: 600 12px var(--uv-font); text-transform: none; letter-spacing: 0; }
+/* @part badge/neu — a soft raised pill */
+:is([data-uv-badge="neu"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="neu"]):not([data-uv-badge="neu"] [data-uv-badge]:not([data-uv-badge="neu"]) *, [data-uv-badge="neu"] [data-uv-badge]:not([data-uv-badge="neu"])):not(#_) { border-radius: 999px; border: 0; background: var(--uv-bg); color: var(--k); box-shadow: 2px 2px 5px color-mix(in srgb, var(--uv-bg), #000 22%), -2px -2px 5px color-mix(in srgb, var(--uv-bg), #fff 35%); font: 700 12px var(--uv-font); text-transform: none; letter-spacing: 0; }
+/* @part badge/pulse — a dot that keeps pinging */
+:is([data-uv-badge="pulse"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="pulse"]):not([data-uv-badge="pulse"] [data-uv-badge]:not([data-uv-badge="pulse"]) *, [data-uv-badge="pulse"] [data-uv-badge]:not([data-uv-badge="pulse"])):not(#_) { border-radius: 999px; border: 1px solid color-mix(in srgb, var(--k) 35%, transparent); background: color-mix(in srgb, var(--k) 12%, transparent); color: var(--k); font: 600 12px var(--uv-font); text-transform: none; letter-spacing: 0; }
+:is([data-uv-badge="pulse"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="pulse"]):not([data-uv-badge="pulse"] [data-uv-badge]:not([data-uv-badge="pulse"]) *, [data-uv-badge="pulse"] [data-uv-badge]:not([data-uv-badge="pulse"])):not(#_)::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--k); animation: uvp-ping 1.6s infinite; }
+/* @part badge/ticket — a small punched ticket */
+:is([data-uv-badge="ticket"] :is(.uv-badge, .uv-chip, .chip), :is(.uv-badge, .uv-chip, .chip)[data-uv-badge="ticket"]):not([data-uv-badge="ticket"] [data-uv-badge]:not([data-uv-badge="ticket"]) *, [data-uv-badge="ticket"] [data-uv-badge]:not([data-uv-badge="ticket"])):not(#_) { border-radius: 4px; border: 0; background: var(--k); color: #fff; font: 700 11px var(--uv-mono); text-transform: uppercase; letter-spacing: .06em; padding-inline: 12px; -webkit-mask: radial-gradient(circle 4px at 0 50%, #0000 96%, #000) left / 51% 100% no-repeat, radial-gradient(circle 4px at 100% 50%, #0000 96%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 4px at 0 50%, #0000 96%, #000) left / 51% 100% no-repeat, radial-gradient(circle 4px at 100% 50%, #0000 96%, #000) right / 51% 100% no-repeat; }
 @keyframes uvp-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .55; } }
 @keyframes uvp-blink { 50% { opacity: 0; } }
 @keyframes uvp-roll { to { background-position: 34px 0; } }
@@ -57,3 +68,11 @@
 @property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes uv-spin-a { to { --uv-a: 360deg; } }
 @keyframes uv-rot { to { transform: rotate(360deg); } }
+@keyframes uvp-blob { 0%, 100% { border-radius: 42% 58% 60% 40% / 55% 45% 55% 45%; } 50% { border-radius: 60% 40% 38% 62% / 40% 60% 40% 60%; } }
+@keyframes uvp-drift { to { background-position: 100% 100%; } }
+@keyframes uvp-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--k) 60%, transparent); } 70%, 100% { box-shadow: 0 0 0 6px transparent; } }
+@keyframes uvp-atom { from { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(0); } to { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(360deg); } }
+@keyframes uvp-hourglass { 0%, 35% { transform: rotate(0); } 50%, 85% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uvp-morph { 50% { border-radius: 50%; transform: rotate(180deg) scale(.6); background: var(--uv-accent-2); } 100% { transform: rotate(360deg); } }
+@keyframes uvp-slide { to { background-position: 200% 0; } }
+@keyframes uvp-shimmer { from { background-position: 150% 0; } to { background-position: -50% 0; } }

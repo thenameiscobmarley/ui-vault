@@ -1,0 +1,21 @@
+/*! UI Vault 3.1.0 · theme: vhs — VHS tracking lines with magenta and cyan bleed. Needs core.css. MIT */
+[data-uv-theme="vhs"] {
+  --uv-bg: #0b0a12; --uv-text: #f0eaff; --uv-accent: #ff3df2; --uv-accent-2: #3dfcff; --uv-on-accent: #ffffff; --uv-surface: #16151e; --uv-surface-2: #201e27; --uv-surface-3: #2d2c36; --uv-line: #f0eaff24; --uv-line-2: #f0eaff42; --uv-muted: #a7a2b3; --uv-dim: #797684; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Geist Mono", ui-monospace, monospace; --uv-font-head: "Bebas Neue", Impact, sans-serif; --uv-serif: "Bebas Neue", Impact, sans-serif; --uv-btn-font: "Geist Mono", ui-monospace, monospace;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 400; --uv-head-case: uppercase;
+  color-scheme: dark;
+  background-image: repeating-linear-gradient(0deg, #0000002e 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, #00000073);
+}
+[data-uv-theme="vhs"] .uv-h1:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *), [data-uv-theme="vhs"] .uv-h2:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { color: #f0eaff; text-shadow: 2px 0 #ff3df2d9, -2px 0 #3dfcffd9; }
+[data-uv-theme="vhs"] .uv-btn:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="vhs"] .uv-btn--primary:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *), [data-uv-theme="vhs"] .uv-btn--grad:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { background: transparent; color: #ff77f6; border: 1.5px solid #ff3df2; text-shadow: 0 0 8px #ff3df2; box-shadow: 0 0 12px -2px #ff3df2, inset 0 0 10px -4px #ff3df2; }
+[data-uv-theme="vhs"] .uv-btn--primary:hover:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { filter: brightness(1.06); }
+[data-uv-theme="vhs"] .uv-card:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { border: 2px solid #f0eaff; box-shadow: none; }
+[data-uv-theme="vhs"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { background: #ff3df2; } [data-uv-theme="vhs"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { color: #ffffff; }
+[data-uv-theme="vhs"] .uv-switch input:checked + i:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *), [data-uv-theme="vhs"] .uv-check input:checked:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { background: #ff3df2; border-color: #ff3df2; }
+[data-uv-theme="vhs"] .uv-progress > i:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { background: #ff3df2; } [data-uv-theme="vhs"] .uv-ring:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { background: conic-gradient(#ff3df2 calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="vhs"] .uv-input:focus:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *), [data-uv-theme="vhs"] .uv-select:focus:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *), [data-uv-theme="vhs"] .uv-textarea:focus:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { border-color: #ff3df2; box-shadow: 0 0 0 3px #ff3df238; }
+[data-uv-theme="vhs"] .uv-btn:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="vhs"] .uv-btn:hover:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { animation: uvt-shake .4s; }
+[data-uv-theme="vhs"] .uv-card--hover:hover:not([data-uv-theme="vhs"] [data-uv-theme]:not([data-uv-theme="vhs"]) *) { translate: 0 -4px; }

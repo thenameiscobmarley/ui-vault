@@ -52,6 +52,20 @@
     ["#f4f2ee", "#ff4f00"], ["#0b1020", "#6ea8ff"], ["#fff35c", "#ff2b2b"], ["#9bbc0f", "#306230"], ["#ecfbf3", "#2fb37a"], ["#16020a", "#ff1f4f"], ["#dfe5ec", "#5a6b80"], ["#0f1024", "#b9a6ff"]]
     .map(([b, a]) => `<i style="--a:${a};--b:${b}"></i>`).join("");
 
+  // effects tile: a few shaders take turns while the tile is on screen
+  const fx = $("#btFx");
+  if (fx && window.UV && UV.shaders && !reduce) {
+    const ROT = ["aurora", "synthwave", "lava-lamp", "galaxy", "voronoi", "liquid", "tunnel", "caustics"];
+    let k = 0, seen = false, v = null;
+    new IntersectionObserver(([e]) => { seen = e.isIntersecting; }).observe(fx);
+    setInterval(() => {
+      if (!seen || document.hidden) return;
+      v = v || fx._uvShader; if (!v) return;
+      k = (k + 1) % ROT.length; v.set({ shader: ROT[k] });
+      $("#btFxName").textContent = UV.shaders.list[ROT[k]].label;
+    }, 4200);
+  }
+
   // count-up for the numbers band when it scrolls in
   const nums = document.querySelectorAll(".nums b[data-count]");
   const fmt = n => n.toLocaleString("en-US");

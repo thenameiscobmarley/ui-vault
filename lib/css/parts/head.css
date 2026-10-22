@@ -1,4 +1,4 @@
-/*! UI Vault 3.1.0 · parts: headings — 21 designs. Use data-uv-head="NAME" on <html> or any element. Needs core.css. MIT */
+/*! UI Vault 3.1.0 · parts: headings — 28 designs. Use data-uv-head="NAME" on <html> or any element. Needs core.css. MIT */
 /* shared reset for every head design */
 :is([data-uv-head]:not([data-uv-head=""]) :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head]:not([data-uv-head=""])):not(#_) { -webkit-text-stroke: 0; paint-order: normal; }
 /* @part head/plain — the theme's own heading, no effect */
@@ -43,6 +43,20 @@
 :is([data-uv-head="synth"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="synth"]):not([data-uv-head="synth"] [data-uv-head]:not([data-uv-head="synth"]) *, [data-uv-head="synth"] [data-uv-head]:not([data-uv-head="synth"])):not(#_) { background-image: repeating-linear-gradient(180deg, transparent 0 3px, #0002 3px 4px), linear-gradient(180deg, #ffe66d 0%, #ff6ec7 45%, #7b2ff7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 12px #ff3cac66); font-style: italic; }
 /* @part head/sticker — thick white outline like a die-cut sticker */
 :is([data-uv-head="sticker"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="sticker"]):not([data-uv-head="sticker"] [data-uv-head]:not([data-uv-head="sticker"]) *, [data-uv-head="sticker"] [data-uv-head]:not([data-uv-head="sticker"])):not(#_) { color: var(--uv-accent); -webkit-text-fill-color: currentColor; background: none; -webkit-text-stroke: 6px #fff; paint-order: stroke fill; filter: drop-shadow(0 3px 4px #0005); }
+/* @part head/glass — clear glass letters with bright edges */
+:is([data-uv-head="glass"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="glass"]):not([data-uv-head="glass"] [data-uv-head]:not([data-uv-head="glass"]) *, [data-uv-head="glass"] [data-uv-head]:not([data-uv-head="glass"])):not(#_) { color: color-mix(in srgb, var(--uv-text) 22%, transparent); -webkit-text-fill-color: color-mix(in srgb, var(--uv-text) 22%, transparent); -webkit-text-stroke: 1px color-mix(in srgb, var(--uv-text) 50%, transparent); filter: drop-shadow(0 1px 0 #ffffff59) drop-shadow(0 8px 14px #0005); }
+/* @part head/rainbow — a slowly flowing rainbow */
+:is([data-uv-head="rainbow"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="rainbow"]):not([data-uv-head="rainbow"] [data-uv-head]:not([data-uv-head="rainbow"]) *, [data-uv-head="rainbow"] [data-uv-head]:not([data-uv-head="rainbow"])):not(#_) { background-image: linear-gradient(90deg, #ff5f6d, #ffc371, #e8e85a, #4fe0a0, #4fb8ff, #a77bff, #ff5f6d); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: uvt-holo 9s linear infinite; }
+/* @part head/split — top half ink, bottom half accent */
+:is([data-uv-head="split"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="split"]):not([data-uv-head="split"] [data-uv-head]:not([data-uv-head="split"]) *, [data-uv-head="split"] [data-uv-head]:not([data-uv-head="split"])):not(#_) { background-image: linear-gradient(180deg, var(--uv-text) 54%, var(--uv-accent) 54%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+/* @part head/stripes — horizontal stripes inside outlined letters */
+:is([data-uv-head="stripes"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="stripes"]):not([data-uv-head="stripes"] [data-uv-head]:not([data-uv-head="stripes"]) *, [data-uv-head="stripes"] [data-uv-head]:not([data-uv-head="stripes"])):not(#_) { background-image: repeating-linear-gradient(180deg, var(--uv-accent) 0 .09em, transparent .09em .16em); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; -webkit-text-stroke: 1px var(--uv-accent); }
+/* @part head/neon-outline — hollow letters drawn in glowing tube */
+:is([data-uv-head="neon-outline"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="neon-outline"]):not([data-uv-head="neon-outline"] [data-uv-head]:not([data-uv-head="neon-outline"]) *, [data-uv-head="neon-outline"] [data-uv-head]:not([data-uv-head="neon-outline"])):not(#_) { color: transparent; -webkit-text-fill-color: transparent; -webkit-text-stroke: 1.5px color-mix(in srgb, var(--uv-accent), #fff 40%); filter: drop-shadow(0 0 4px var(--uv-accent)) drop-shadow(0 0 14px color-mix(in srgb, var(--uv-accent) 60%, transparent)); }
+/* @part head/aurora — accent lights drifting through the letters */
+:is([data-uv-head="aurora"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="aurora"]):not([data-uv-head="aurora"] [data-uv-head]:not([data-uv-head="aurora"]) *, [data-uv-head="aurora"] [data-uv-head]:not([data-uv-head="aurora"])):not(#_) { background-image: radial-gradient(40% 80% at 20% 30%, var(--uv-accent), transparent 70%), radial-gradient(40% 80% at 80% 70%, var(--uv-accent-2), transparent 70%), linear-gradient(var(--uv-text), var(--uv-text)); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: uvp-drift 6s ease-in-out infinite alternate; }
+/* @part head/swash — a thick accent underline under the words */
+:is([data-uv-head="swash"] :is(.uv-h1, .uv-h2, h1, h2), :is(.uv-h1, .uv-h2, h1, h2)[data-uv-head="swash"]):not([data-uv-head="swash"] [data-uv-head]:not([data-uv-head="swash"]) *, [data-uv-head="swash"] [data-uv-head]:not([data-uv-head="swash"])):not(#_) { text-decoration: underline; text-decoration-color: var(--uv-accent); text-decoration-thickness: .14em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
 @keyframes uvp-flicker { 0%, 19%, 21%, 23%, 55%, 57%, 100% { opacity: 1; } 20%, 22%, 56% { opacity: .55; } }
 @keyframes uvp-blink { 50% { opacity: 0; } }
 @keyframes uvp-roll { to { background-position: 34px 0; } }
@@ -62,3 +76,11 @@
 @property --uv-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes uv-spin-a { to { --uv-a: 360deg; } }
 @keyframes uv-rot { to { transform: rotate(360deg); } }
+@keyframes uvp-blob { 0%, 100% { border-radius: 42% 58% 60% 40% / 55% 45% 55% 45%; } 50% { border-radius: 60% 40% 38% 62% / 40% 60% 40% 60%; } }
+@keyframes uvp-drift { to { background-position: 100% 100%; } }
+@keyframes uvp-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--k) 60%, transparent); } 70%, 100% { box-shadow: 0 0 0 6px transparent; } }
+@keyframes uvp-atom { from { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(0); } to { transform: rotate(var(--r, 60deg)) scaleY(.4) rotate(360deg); } }
+@keyframes uvp-hourglass { 0%, 35% { transform: rotate(0); } 50%, 85% { transform: rotate(180deg); } 100% { transform: rotate(180deg); } }
+@keyframes uvp-morph { 50% { border-radius: 50%; transform: rotate(180deg) scale(.6); background: var(--uv-accent-2); } 100% { transform: rotate(360deg); } }
+@keyframes uvp-slide { to { background-position: 200% 0; } }
+@keyframes uvp-shimmer { from { background-position: 150% 0; } to { background-position: -50% 0; } }

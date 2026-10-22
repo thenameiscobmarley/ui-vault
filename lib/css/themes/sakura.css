@@ -1,12 +1,12 @@
 /*! UI Vault 3.1.0 · theme: sakura — cherry-blossom pink with sumi ink. Needs core.css. MIT */
 [data-uv-theme="sakura"] {
-  --uv-bg: #fff2f5; --uv-text: #3a2430; --uv-accent: #e8668f; --uv-accent-2: #9ad0c2; --uv-on-accent: #ffffff; --uv-surface: #fff9fa; --uv-surface-2: #f3e6e9; --uv-surface-3: #e9dbdf; --uv-line: #3a24301a; --uv-line-2: #3a24302e; --uv-muted: #79666f; --uv-dim: #a08f96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #fff2f5; --uv-text: #3a2430; --uv-accent: #e8668f; --uv-accent-2: #9ad0c2; --uv-on-accent: #ffffff; --uv-surface: #fff9fb; --uv-surface-2: #f3e6e9; --uv-surface-3: #e9dbdf; --uv-line: #3a24301a; --uv-line-2: #3a24302e; --uv-muted: #79666f; --uv-dim: #a08f96; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Cormorant Garamond", Georgia, serif; --uv-serif: "Cormorant Garamond", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 8px; --uv-r-sm: 8px; --uv-r: 12px; --uv-r-lg: 16px; --uv-bw: 0px;
   --uv-head-weight: 400; --uv-head-case: none;
   
 }
-[data-uv-theme="sakura"] .uv-btn--primary:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *), [data-uv-theme="sakura"] .uv-btn--grad:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *) { background: #e8668f29; color: #ae4c6b; border-color: transparent; }
+[data-uv-theme="sakura"] .uv-btn--primary:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *), [data-uv-theme="sakura"] .uv-btn--grad:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *) { background: #e8668f29; color: #ae4d6b; border-color: transparent; }
 [data-uv-theme="sakura"] .uv-btn--primary:hover:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *) { filter: brightness(1.06); }
 [data-uv-theme="sakura"] .uv-card:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *) { border-color: transparent; box-shadow: 0 1px 2px #3a24300f, 0 14px 34px -14px #3a243059; }
 [data-uv-theme="sakura"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *) { background: #e8668f; } [data-uv-theme="sakura"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="sakura"] [data-uv-theme]:not([data-uv-theme="sakura"]) *) { color: #ffffff; }

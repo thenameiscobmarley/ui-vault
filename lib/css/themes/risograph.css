@@ -4,7 +4,7 @@
   --uv-font: "Space Grotesk", system-ui, sans-serif; --uv-font-head: "Space Grotesk", system-ui, sans-serif; --uv-serif: "Space Grotesk", system-ui, sans-serif; --uv-btn-font: "Space Grotesk", system-ui, sans-serif;
   --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 2px;
   --uv-head-weight: 700; --uv-head-case: none;
-  background-image: radial-gradient(#ff4f9a4c 1.4px, transparent 1.6px); background-size: 10px 10px;
+  background-image: radial-gradient(#ff4f9a4d 1.4px, transparent 1.6px); background-size: 10px 10px;
 }
 [data-uv-theme="risograph"] .uv-h1:not([data-uv-theme="risograph"] [data-uv-theme]:not([data-uv-theme="risograph"]) *), [data-uv-theme="risograph"] .uv-h2:not([data-uv-theme="risograph"] [data-uv-theme]:not([data-uv-theme="risograph"]) *) { color: #2340c9; text-shadow: 3px 3px 0 #ff4f9ae6; }
 [data-uv-theme="risograph"] .uv-btn--primary:not([data-uv-theme="risograph"] [data-uv-theme]:not([data-uv-theme="risograph"]) *), [data-uv-theme="risograph"] .uv-btn--grad:not([data-uv-theme="risograph"] [data-uv-theme]:not([data-uv-theme="risograph"]) *) { background: #ff4f9a; color: #ffffff; border-color: #ff4f9a; }

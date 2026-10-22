@@ -1,6 +1,6 @@
 /*! UI Vault 3.1.0 · theme: paper — warm paper, graphite text, a quiet blue link. Needs core.css. MIT */
 [data-uv-theme="paper"] {
-  --uv-bg: #f7f5f0; --uv-text: #2a2a28; --uv-accent: #2f5bd3; --uv-accent-2: #2f5bd3; --uv-on-accent: #ffffff; --uv-surface: #fbfaf8; --uv-surface-2: #ebe9e4; --uv-surface-3: #e0dfda; --uv-line: #2a2a281a; --uv-line-2: #2a2a282e; --uv-muted: #6c6b68; --uv-dim: #959490; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
+  --uv-bg: #f7f5f0; --uv-text: #2a2a28; --uv-accent: #2f5bd3; --uv-accent-2: #2f5bd3; --uv-on-accent: #ffffff; --uv-surface: #fbfbf8; --uv-surface-2: #ebe9e4; --uv-surface-3: #e0dfda; --uv-line: #2a2a281a; --uv-line-2: #2a2a282e; --uv-muted: #6c6b68; --uv-dim: #959490; --uv-success: #2f7d4f; --uv-warn: #b7791f; --uv-danger: #c4321f;
   --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Instrument Serif", Georgia, serif; --uv-serif: "Instrument Serif", Georgia, serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
   --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
   --uv-head-weight: 400; --uv-head-case: none;

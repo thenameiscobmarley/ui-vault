@@ -1,0 +1,19 @@
+/*! UI Vault 3.1.0 · theme: fintech — fintech dark: deep navy and mint gains. Needs core.css. MIT */
+[data-uv-theme="fintech"] {
+  --uv-bg: #0a1220; --uv-text: #e6edf7; --uv-accent: #21d19f; --uv-accent-2: #5b8cff; --uv-on-accent: #111111; --uv-surface: #151d2b; --uv-surface-2: #1e2633; --uv-surface-3: #2b3340; --uv-line: #e6edf724; --uv-line-2: #e6edf742; --uv-muted: #a0a7b2; --uv-dim: #747b87; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Manrope", system-ui, sans-serif; --uv-font-head: "Geist", system-ui, sans-serif; --uv-serif: "Geist", system-ui, sans-serif; --uv-btn-font: "Manrope", system-ui, sans-serif;
+  --uv-r-xs: 4px; --uv-r-sm: 4px; --uv-r: 6px; --uv-r-lg: 8px; --uv-bw: 1px;
+  --uv-head-weight: 800; --uv-head-case: none;
+  color-scheme: dark;
+  background-image: conic-gradient(from 210deg at 72% 18%, #21d19f42, transparent 25%, #5b8cff33 50%, transparent 75%, #21d19f42);
+}
+[data-uv-theme="fintech"] .uv-btn--primary:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *), [data-uv-theme="fintech"] .uv-btn--grad:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { background: #21d19f; color: #111111; border-color: #21d19f; box-shadow: 0 0 18px -2px #21d19f, inset 0 1px 0 #ffffff59; }
+[data-uv-theme="fintech"] .uv-btn--primary:hover:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { filter: brightness(1.06); }
+[data-uv-theme="fintech"] .uv-card:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { border-color: #e6edf714; box-shadow: inset 0 1px 0 #ffffff0f, 0 30px 60px -30px #000000cc, 0 18px 36px -18px #21d19f59; }
+[data-uv-theme="fintech"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { background: #21d19f; } [data-uv-theme="fintech"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { color: #111111; }
+[data-uv-theme="fintech"] .uv-switch input:checked + i:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *), [data-uv-theme="fintech"] .uv-check input:checked:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { background: #21d19f; border-color: #21d19f; }
+[data-uv-theme="fintech"] .uv-progress > i:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { background: #21d19f; } [data-uv-theme="fintech"] .uv-ring:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { background: conic-gradient(#21d19f calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="fintech"] .uv-input:focus:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *), [data-uv-theme="fintech"] .uv-select:focus:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *), [data-uv-theme="fintech"] .uv-textarea:focus:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { border-color: #21d19f; box-shadow: 0 0 0 3px #21d19f38; }
+[data-uv-theme="fintech"] .uv-btn:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="fintech"] .uv-btn:hover:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { translate: 0 -4px; box-shadow: 0 14px 28px -12px #21d19f; } [data-uv-theme="fintech"] .uv-btn:active:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { translate: 0 0; }
+[data-uv-theme="fintech"] .uv-card--hover:hover:not([data-uv-theme="fintech"] [data-uv-theme]:not([data-uv-theme="fintech"]) *) { translate: 0 -4px; }

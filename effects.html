@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Effects — UI Vault</title>
+<meta name="description" content="44 live WebGL shader backgrounds that follow your theme and your pointer, plus pure-CSS 3D (flip cards, cubes, carousels, prisms), looping motion and animated borders. Copy any of them." />
+<meta name="theme-color" content="#121211" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='%231a1917'/%3E%3Cpath d='M7 6.5v6.5a5 5 0 0 0 10 0V6.5' fill='none' stroke='%23fff' stroke-width='2.4'/%3E%3Ccircle cx='18.5' cy='5.5' r='2.5' fill='%23ff4f00'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="lib/css/fonts.css" />
+<link rel="stylesheet" href="lib/uivault.css" />
+<link rel="stylesheet" href="lib/css/collections.css" />
+<style>
+  :root { --pg-bg: #121211; --pg-bg2: #181817; --pg-bg3: #222220; --pg-fg: #ecebe8; --pg-mu: #a19d95; --pg-di: #8f8a82; --pg-ln: #ffffff1a; --pg-ln2: #ffffff26; --pg-ac: #ff6a26; --pg-font: "Geist", system-ui, sans-serif; --pg-head: "Instrument Serif", Georgia, serif; }
+  html[data-theme="light"] { --pg-bg: #f4f2ee; --pg-bg2: #fbfaf8; --pg-bg3: #ffffff; --pg-fg: #1a1917; --pg-mu: #5f5b54; --pg-di: #8f8a82; --pg-ln: #1a19171a; --pg-ln2: #1a19172e; --pg-ac: #ff4f00; }
+  html[data-uv-theme] { --pg-bg: var(--uv-bg); --pg-bg2: var(--uv-surface); --pg-bg3: var(--uv-surface-2); --pg-fg: var(--uv-text); --pg-mu: var(--uv-muted); --pg-di: var(--uv-dim); --pg-ln: var(--uv-line); --pg-ln2: var(--uv-line-2); --pg-ac: var(--uv-accent); }
+  body { margin: 0; background: var(--pg-bg); color: var(--pg-fg); font-family: var(--pg-font); }
+  html[data-uv-bg] body { background: transparent; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); }
+  .k { margin: 0; font: 500 12px "Geist Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--pg-di); }
+  h1, h2 { font-weight: 400; font-family: var(--pg-head); letter-spacing: -.02em; }
+  :is(a, button, select, input):focus-visible { outline: 2px solid var(--pg-ac); outline-offset: 2px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-fg); font: 500 14px var(--pg-font); text-decoration: none; cursor: pointer; transition: background-color .15s, border-color .15s, color .15s, translate .2s; }
+  .btn:hover { background: var(--pg-ln); border-color: var(--pg-mu); }
+  .btn.p { background: var(--pg-fg); color: var(--pg-bg); border-color: var(--pg-fg); } .btn.p:hover { background: var(--pg-ac); border-color: var(--pg-ac); color: #fff; translate: 0 -2px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chips button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-mu); font: 500 13px var(--pg-font); cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; }
+  .chips button:hover { color: var(--pg-fg); border-color: var(--pg-mu); }
+  .chips button[aria-pressed="true"] { color: var(--pg-bg); background: var(--pg-fg); border-color: var(--pg-fg); }
+  .chips small { font: 500 10px "Geist Mono", monospace; opacity: .7; }
+
+  /* hero: one big live shader */
+  .fxhero { position: relative; margin-top: 18px; height: min(76vh, 720px); min-height: 520px; border-radius: 22px; overflow: hidden; color: #fff; border: 1px solid var(--pg-ln); background: #0b0b0d; }
+  .fxhero__copy { position: absolute; left: clamp(18px, 4vw, 48px); bottom: clamp(18px, 4vw, 44px); max-width: 640px; z-index: 1; }
+  .fxhero h1 { margin: 10px 0 12px; font-size: clamp(54px, 8.4vw, 124px); line-height: .88; text-shadow: 0 2px 30px #0008; }
+  .fxhero h1 em { font-style: italic; color: #fff; }
+  .fxhero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #000b, #0006 38%, transparent 65%), linear-gradient(0deg, #0009, transparent 55%); }
+  .fxhero p.lead { margin: 0 0 18px; max-width: 470px; color: #ffffffd0; font-size: 16.5px; line-height: 1.55; text-shadow: 0 1px 12px #000a; }
+  .fxhero .k { color: #ffffffb0; }
+  .fxhero .btn { color: #fff; border-color: #ffffff4d; background: #00000033; backdrop-filter: blur(8px); } .fxhero .btn:hover { background: #ffffff1f; }
+  .fxhero .btn.p { background: #fff; color: #111; border-color: #fff; } .fxhero .btn.p:hover { background: var(--pg-ac); color: #fff; border-color: var(--pg-ac); }
+  .ctl { position: absolute; right: 16px; top: 16px; z-index: 1; width: 290px; padding: 14px; border-radius: 16px; background: #0c0c10b3; border: 1px solid #ffffff21; backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3); display: grid; gap: 12px; color: #fff; }
+  .ctl__name { display: flex; align-items: center; gap: 8px; }
+  .ctl__name div { flex: 1; min-width: 0; } .ctl__name small { display: block; font: 500 10px "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #ffffff90; }
+  .ctl__name b { display: block; font: 400 28px/1.05 var(--pg-head); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ctl__name button, .ctl .mini { width: 34px; height: 34px; border-radius: 9px; border: 1px solid #ffffff2e; background: #ffffff0f; color: #fff; cursor: pointer; display: grid; place-items: center; font: 600 15px var(--pg-font); }
+  .ctl__name button:hover, .ctl .mini:hover { background: #ffffff26; }
+  .ctl p.d { margin: 0; color: #ffffffb8; font-size: 13px; line-height: 1.45; min-height: 38px; }
+  .ctl label { display: grid; grid-template-columns: 54px 1fr 36px; align-items: center; gap: 8px; font: 500 12px var(--pg-font); color: #ffffffb0; }
+  .ctl input[type=range] { width: 100%; accent-color: var(--uv-accent, #ff6a26); } .ctl output { font: 12px "Geist Mono", monospace; text-align: right; color: #fff; }
+  .ctl select { width: 100%; padding: 7px 8px; border-radius: 8px; border: 1px solid #ffffff2e; background: #ffffff12; color: #fff; font: 500 13px var(--pg-font); } .ctl select option { color: #111; }
+  .ctl .row { display: flex; gap: 6px; } .ctl .row .btn { flex: 1; justify-content: center; padding: 8px 10px; font-size: 13px; }
+  .ctl .hint { margin: 0; font: 11px "Geist Mono", monospace; color: #ffffff80; }
+  .ctl .theme { grid-template-columns: 54px 1fr; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 18px 0 0; border: 1px solid var(--pg-ln); border-radius: 16px; overflow: hidden; background: var(--pg-ln); }
+  .stats a { display: block; padding: 18px 20px; background: var(--pg-bg); color: inherit; text-decoration: none; transition: background-color .2s; } .stats a:hover { background: var(--pg-bg2); }
+  .stats b { display: block; font: 400 46px/1 var(--pg-head); } .stats span { color: var(--pg-mu); font-size: 13px; }
+
+  section.block { padding: 64px 0 20px; scroll-margin-top: 70px; }
+  .shead { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; padding-top: 22px; border-top: 1px solid var(--pg-ln); }
+  .shead h2 { margin: 6px 0 0; font-size: clamp(40px, 5vw, 66px); line-height: .95; } .shead h2 em { color: var(--pg-ac); }
+  .shead p { margin: 0; color: var(--pg-mu); max-width: 470px; line-height: 1.6; }
+
+  /* shader gallery */
+  .sgal { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-top: 16px; }
+  .stile { position: relative; display: flex; flex-direction: column; justify-content: flex-end; aspect-ratio: 16 / 11; padding: 12px; border-radius: 14px; overflow: hidden; border: 1px solid var(--pg-ln2); color: #fff; cursor: pointer; text-align: left; font: inherit; background: #0b0b0d; scroll-margin-top: 80px; transition: translate .25s, border-color .25s, box-shadow .25s; }
+  .stile:hover, .stile.on { translate: 0 -3px; border-color: var(--pg-ac); box-shadow: 0 22px 40px -26px #000; }
+  .stile b { font: 600 15px var(--pg-font); text-shadow: 0 1px 8px #000c; } .stile small { font: 500 10px "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: #ffffffb0; text-shadow: 0 1px 6px #000c; }
+  .stile .cp { position: absolute; right: 10px; top: 10px; padding: 4px 9px; border-radius: 6px; border: 1px solid #ffffff40; background: #00000055; color: #fff; font: 500 11px var(--pg-font); cursor: pointer; opacity: 0; transition: opacity .2s; backdrop-filter: blur(6px); }
+  .stile:hover .cp, .stile:focus-within .cp { opacity: 1; } .stile .cp:hover { background: #ffffff30; }
+  .stile::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, #0009); z-index: -1; pointer-events: none; }
+
+  /* collections */
+  .cgal { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .ctile { display: flex; flex-direction: column; border-radius: 14px; border: 1px solid var(--pg-ln2); background: var(--pg-bg2); overflow: hidden; }
+  .ctile .stage { position: relative; height: 190px; display: grid; place-items: center; overflow: hidden; padding: 14px; background: radial-gradient(80% 70% at 50% 40%, var(--pg-bg3), var(--pg-bg2)); }
+  .ctile footer { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--pg-ln); }
+  .ctile footer div { flex: 1; min-width: 0; } .ctile footer b { display: block; font-size: 14px; } .ctile footer code { display: block; font: 11px "Geist Mono", monospace; color: var(--pg-di); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ctile footer button { padding: 5px 10px; border-radius: 7px; border: 1px solid var(--pg-ln2); background: none; color: var(--pg-fg); font: 500 12px var(--pg-font); cursor: pointer; } .ctile footer button:hover { background: var(--pg-ln); border-color: var(--pg-mu); }
+  .more { margin-top: 14px; }
+
+  /* 3D skins strip */
+  .skins { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .skin { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #ffffff14; background: radial-gradient(70% 60% at 50% 40%, #1d1d24, #0a0a0d 70%); height: 260px; color: #fff; text-decoration: none; }
+  .skin > [data-uv-3d] { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
+  .skin span { position: absolute; left: 14px; bottom: 12px; z-index: 1; font: 400 26px/1 var(--pg-head); pointer-events: none; text-shadow: 0 2px 12px #000, 0 0 2px #000; } .skin small { display: block; font: 500 10px "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #ffffff90; margin-bottom: 4px; }
+
+  /* use it */
+  .use { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; } .use h3 { margin: 0 0 8px; font: 500 12px "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--pg-di); }
+  .use p { color: var(--pg-mu); line-height: 1.65; margin: 10px 0 0; } .use code { font: 13px "Geist Mono", monospace; color: var(--pg-fg); }
+  pre.code { position: relative; margin: 0; padding: 14px 70px 14px 14px; border-radius: 10px; background: #141413; color: #ecebe8; font: 12px/1.6 "Geist Mono", monospace; overflow: auto; border: 1px solid #ffffff14; white-space: pre-wrap; word-break: break-word; }
+  pre.code .t { color: #ff8f5a; } pre.code .a { color: #c9b98f; } pre.code .s { color: #9fc5a8; } pre.code .c { color: #7d7a73; }
+  .copy { position: absolute; right: 8px; top: 8px; padding: 4px 10px; border-radius: 6px; border: 1px solid #ffffff26; background: #ffffff10; color: #fff; font: 500 12px var(--pg-font); cursor: pointer; } .copy:hover { background: #ffffff26; }
+  .note { padding: 26px 0 70px; color: var(--pg-di); font-size: 13px; }
+
+  @media (max-width: 900px) {
+    .fxhero { height: auto; min-height: 0; display: flex; flex-direction: column; }
+    .fxhero__copy { position: relative; left: auto; bottom: auto; padding: 160px 18px 18px; }
+    .ctl { position: relative; right: auto; top: auto; width: auto; margin: 0 12px 12px; }
+    .stats { grid-template-columns: 1fr 1fr; } .skins { grid-template-columns: 1fr 1fr; } .use { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) { .skins { grid-template-columns: 1fr; } .stats b { font-size: 36px; } }
+</style>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("uv-theme")||localStorage.getItem("uiv-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <!-- uvc:css --><link rel="stylesheet" href="assets/css/chrome.css" /><meta property="og:type" content="website" /><meta property="og:site_name" content="UI Vault" /><meta property="og:title" content="Effects — UI Vault" /><meta property="og:description" content="44 live WebGL shader backgrounds that follow your theme and your pointer, plus pure-CSS 3D (flip cards, cubes, carousels, prisms), looping motion and animated borders. Copy any of them." /><meta property="og:url" content="https://thenameiscobmarley.github.io/ui-vault/effects.html" /><meta property="og:image" content="https://thenameiscobmarley.github.io/ui-vault/assets/og.jpg" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta name="twitter:card" content="summary_large_image" /><!-- /uvc:css -->
+</head>
+<body>
+<!-- uvc:header --><header class="uvc-top" id="uvc-top"><a class="uvc-brand" href="./" aria-label="UI Vault home"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI&nbsp;Vault<small>3.1</small></a><nav class="uvc-nav" aria-label="Site"><div class="uvc-dd"><button type="button" aria-expanded="false" aria-haspopup="true">Start<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button><div class="uvc-menu" role="menu"><a href="quickstart.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i><b>Quick start</b><span>Install in two minutes, zip only what you use</span></a><a href="docs.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5A2.5 2.5 0 0 1 6.5 19H20"/></svg></i><b>Docs</b><span>Every component and function, with live examples</span></a><a href="code.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></i><b>Python & C++</b><span>The same themes for Qt, Tk, GTK, ImGui and JUCE</span></a><a href="directory.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg></i><b>Index</b><span>Search all 2,000 things on the site</span></a><a class="uvc-feat" href="downloads/uivault-latest.zip" download><b>Download the API</b><span>uivault.css + uivault.js, MIT, no build step</span><em>.zip ↓</em></a></div></div><div class="uvc-dd"><button type="button" aria-expanded="false" aria-haspopup="true">Design<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button><div class="uvc-menu" role="menu"><a href="library.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></i><b>Library</b><span>Everything live in one catalogue, pick and pack</span></a><a href="themes.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7" r="1.2"/><circle cx="15" cy="7" r="1.2"/></svg></i><b>Themes</b><span>149 complete styles and a theme builder</span></a><a href="elements.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="3"/></svg></i><b>Elements</b><span>369 designs across 15 element families</span></a><a href="effects.html" aria-current="page"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></i><b>Effects</b><span>44 live shaders, 3D CSS, motion and borders</span></a><a href="skins.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></i><b>3D skins</b><span>48 animated materials on 16 shapes</span></a></div></div><div class="uvc-dd"><button type="button" aria-expanded="false" aria-haspopup="true">Build<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button><div class="uvc-menu" role="menu"><a href="blocks.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/></svg></i><b>Blocks</b><span>41 page sections, ready to paste</span></a><a href="showcase.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></i><b>Showcase</b><span>30 finished pieces built with the API</span></a><a href="lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7 15h10"/></svg></i><b>Test page</b><span>Try any theme on four real layouts</span></a><a href="examples.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/></svg></i><b>Examples</b><span>Seven scroll-animated websites</span></a></div></div><a href="effects.html" aria-current="page">Effects</a><a href="examples.html">Examples</a><a href="library.html">Library</a></nav><div class="uvc-end"><button class="uvc-search" type="button" data-uvc-search aria-label="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search…</span><kbd>Ctrl K</kbd></button><a class="uvc-icon uvc-gh" href="https://github.com/thenameiscobmarley/ui-vault" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a><a class="uvc-cta" href="quickstart.html">Get the API</a><button class="uvc-icon uvc-burger" type="button" aria-label="Menu" aria-expanded="false" data-uvc-burger><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button></div></header><div class="uvc-sheet" id="uvc-sheet" aria-label="Site menu"><h3>Start</h3><a href="quickstart.html">Quick start<span>Install in two minutes, zip only what you use</span></a><a href="docs.html">Docs<span>Every component and function, with live examples</span></a><a href="code.html">Python & C++<span>The same themes for Qt, Tk, GTK, ImGui and JUCE</span></a><a href="directory.html">Index<span>Search all 2,000 things on the site</span></a><h3>Design</h3><a href="library.html">Library<span>Everything live in one catalogue, pick and pack</span></a><a href="themes.html">Themes<span>149 complete styles and a theme builder</span></a><a href="elements.html">Elements<span>369 designs across 15 element families</span></a><a href="effects.html" aria-current="page">Effects<span>44 live shaders, 3D CSS, motion and borders</span></a><a href="skins.html">3D skins<span>48 animated materials on 16 shapes</span></a><h3>Build</h3><a href="blocks.html">Blocks<span>41 page sections, ready to paste</span></a><a href="showcase.html">Showcase<span>30 finished pieces built with the API</span></a><a href="lab.html">Test page<span>Try any theme on four real layouts</span></a><a href="examples.html">Examples<span>Seven scroll-animated websites</span></a><h3>Project</h3><a href="https://github.com/thenameiscobmarley/ui-vault">GitHub<span>Source, issues, releases</span></a><a href="downloads/uivault-latest.zip" download>Download .zip<span>uivault.css + uivault.js</span></a></div><!-- /uvc:header -->
+<main class="wrap">
+  <section class="fxhero" id="stage" data-uv-shader="liquid" aria-label="Live shader preview">
+    <div class="fxhero__copy">
+      <p class="k">Effects · WebGL shaders · 3D CSS · motion</p>
+      <h1>Backgrounds<br>that <em>move.</em></h1>
+      <p class="lead">Live GPU shaders that take your theme's colours and follow the pointer, plus pure-CSS 3D, motion and borders. One attribute each.</p>
+      <div class="chips" style="gap:10px"><a class="btn p" href="#shaders">Browse all shaders</a><a class="btn" href="#depth">3D in plain CSS</a></div>
+    </div>
+    <div class="ctl" role="group" aria-label="Shader controls">
+      <div class="ctl__name"><button type="button" id="prev" aria-label="Previous shader">‹</button><div><small id="sgroup">Gradient</small><b id="sname">Liquid gradient</b></div><button type="button" id="next" aria-label="Next shader">›</button></div>
+      <p class="d" id="sdesc"></p>
+      <label>Speed <input type="range" id="speed" min="0" max="3" step=".05" value="1" /><output id="speedO">1.00</output></label>
+      <label class="theme">Theme <select id="theme"><option value="">this page</option></select></label>
+      <div class="row"><button type="button" class="btn" id="copy">Copy markup</button><button type="button" class="btn" id="shuffle">Random</button></div>
+      <p class="hint">← → to switch · move your pointer over it</p>
+    </div>
+  </section>
+
+  <div class="stats">
+    <a href="#shaders"><b id="nShaders">44</b><span>WebGL shader backgrounds</span></a>
+    <a href="#depth"><b id="nDepth">29</b><span>3D &amp; depth pieces, pure CSS</span></a>
+    <a href="#motion"><b id="nMotion">32</b><span>looping &amp; hover animations</span></a>
+    <a href="#borders"><b id="nBorders">25</b><span>animated borders</span></a>
+  </div>
+
+  <section class="block" id="shaders">
+    <div class="shead"><div><p class="k">§ 01 — shaders.js</p><h2>Shader <em>backgrounds.</em></h2></div>
+      <p>Each one renders on the GPU at low resolution, pauses off screen and shares a single WebGL context, so a page can hold dozens. Click one to load it above. On light themes most of them switch to a dark stage made from the theme's ink.</p></div>
+    <div class="chips" id="sfilt"></div>
+    <div class="sgal" id="sgal"></div>
+  </section>
+
+  <section class="block" id="depth">
+    <div class="shead"><div><p class="k">§ 02 — collections · uv-depth-*</p><h2>3D in <em>plain CSS.</em></h2></div>
+      <p>Flip cards, spinning cubes, carousels, prisms, coins, orbits, exploded layers and isometric tiles, built with transforms only. Hover them. Copy gives you the markup and only the CSS it needs.</p></div>
+    <div class="cgal" id="g-depth"></div>
+  </section>
+
+  <section class="block" id="motion">
+    <div class="shead"><div><p class="k">§ 03 — collections · uv-an-*</p><h2>Motion, <em>one class.</em></h2></div>
+      <p>Ambient loops and hover reactions for any element: float, breathe, jello, heartbeat, 3D spin, blob morph, neon flicker and shine. They respect your theme's accent colours.</p></div>
+    <div class="cgal" id="g-motion"></div>
+  </section>
+
+  <section class="block" id="borders">
+    <div class="shead"><div><p class="k">§ 04 — collections · uv-bd-*</p><h2>Borders that <em>spin.</em></h2></div>
+      <p>Spinning gradients, comets, marching ants, corner brackets that grow, frames that draw themselves, gold and chrome bezels.</p></div>
+    <div class="cgal" id="g-borders"></div>
+  </section>
+
+  <section class="block" id="skins">
+    <div class="shead"><div><p class="k">§ 05 — skins3d.js</p><h2>Real 3D <em>objects.</em></h2></div>
+      <p>48 animated materials on 16 shapes, from jade and Carrara marble to plasma, frost and hex plating. Drag to turn them.</p></div>
+    <div class="skins">
+      <a class="skin" href="skins.html"><div data-uv-3d="jade" data-shape="crystal" data-drag data-fps="24" data-hover-fps></div><span><small>Gem</small>Jade</span></a>
+      <a class="skin" href="skins.html"><div data-uv-3d="plasma" data-shape="sphere" data-drag data-fps="24" data-hover-fps></div><span><small>Cyber</small>Plasma ball</span></a>
+      <a class="skin" href="skins.html"><div data-uv-3d="bismuth" data-shape="rock" data-drag data-fps="24" data-hover-fps></div><span><small>Iridescent</small>Bismuth</span></a>
+      <a class="skin" href="skins.html"><div data-uv-3d="wireframe" data-shape="star" data-drag data-fps="24" data-hover-fps></div><span><small>Stylised</small>Wireframe</span></a>
+    </div>
+    <div class="more"><a class="btn" href="skins.html">Open the 3D skins studio →</a></div>
+  </section>
+
+  <section class="block" id="use">
+    <div class="shead"><div><p class="k">§ 06 — use it</p><h2>Two lines, <em>any section.</em></h2></div>
+      <p>Shaders need <code>core.js</code> and <code>shaders.js</code>. The CSS pieces only need <code>collections.css</code> (or just the CSS you copy). Everything is MIT.</p></div>
+    <div class="use">
+      <div><h3>A shader behind a hero</h3>
+<pre class="code" id="useShader"><span class="t">&lt;section</span> <span class="a">data-uv-shader</span>=<span class="s">"aurora"</span> <span class="a">data-speed</span>=<span class="s">"0.8"</span><span class="t">&gt;</span>
+  <span class="t">&lt;h1&gt;</span>Your headline<span class="t">&lt;/h1&gt;</span>   <span class="c">&lt;!-- stays on top --&gt;</span>
+<span class="t">&lt;/section&gt;</span>
+
+<span class="t">&lt;script</span> <span class="a">src</span>=<span class="s">"uivault/js/core.js"</span><span class="t">&gt;&lt;/script&gt;</span>
+<span class="t">&lt;script</span> <span class="a">src</span>=<span class="s">"uivault/js/shaders.js"</span><span class="t">&gt;&lt;/script&gt;</span><button class="copy" type="button" data-copy="useShader">Copy</button></pre>
+        <p>Options: <code>data-speed</code>, <code>data-res</code> (render scale, default 0.5), <code>data-fps</code>, <code>data-colors="#accent,#accent2,#bg,#ink"</code>, <code>data-mode="auto|dark|theme"</code>, <code>data-still</code>, <code>data-no-pointer</code>. On <code>&lt;body&gt;</code> it becomes a fixed full-page background.</p>
+      </div>
+      <div><h3>From JavaScript</h3>
+<pre class="code" id="useJs"><span class="t">const</span> v = UV.shaders.mount(el, { shader: <span class="s">"synthwave"</span>, speed: 1.2 });
+v.set({ shader: <span class="s">"galaxy"</span> });     <span class="c">// swap live</span>
+v.set({ colors: <span class="s">"#ff3d7f,#3dd6ff,#0b0b14,#fff"</span> });
+UV.shaders.pause();  UV.shaders.resume();
+Object.keys(UV.shaders.list);       <span class="c">// all 44 names</span><button class="copy" type="button" data-copy="useJs">Copy</button></pre>
+        <p>3D, motion and borders: <code>&lt;div class="uv-an-float"&gt;</code>, <code>&lt;div class="uv-bd-comet"&gt;</code>, or the markup shown on a <code>uv-depth-*</code> tile. Want only what you picked? Add them in the <a href="library.html" style="color:inherit">Library</a> and zip.</p>
+      </div>
+    </div>
+  </section>
+  <p class="note">All effects are original and made for this library. Shaders fall back to a soft CSS gradient where WebGL is unavailable and show a still frame with reduced motion.</p>
+</main>
+<!-- uvc:footer --><footer class="uvc-foot"><div class="uvc-foot__in"><div class="uvc-foot__lead"><a class="uvc-brand" href="./"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4"/><path d="M7 6.5v6.5a5 5 0 0 0 10 0V6.5" fill="none" stroke-width="2.4"/><circle cx="18.5" cy="5.5" r="2.5"/></svg>UI&nbsp;Vault</a><p>An open interface library: 149 themes, 1,600 pieces and one small API for the web, Python and C++. Free to copy, MIT licensed.</p><div class="uvc-foot__btns"><a href="https://github.com/thenameiscobmarley/ui-vault"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>Star on GitHub</a><a href="downloads/uivault-latest.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download</a></div></div><div><h4>Start</h4><ul><li><a href="quickstart.html">Quick start</a></li><li><a href="docs.html">Docs</a></li><li><a href="code.html">Python & C++</a></li><li><a href="directory.html">Index</a></li></ul></div><div><h4>Design</h4><ul><li><a href="library.html">Library</a></li><li><a href="themes.html">Themes</a></li><li><a href="elements.html">Elements</a></li><li><a href="effects.html">Effects</a></li><li><a href="skins.html">3D skins</a></li></ul></div><div><h4>Build</h4><ul><li><a href="blocks.html">Blocks</a></li><li><a href="showcase.html">Showcase</a></li><li><a href="lab.html">Test page</a></li><li><a href="examples.html">Examples</a></li></ul></div><div><h4>Project</h4><ul><li><a href="https://github.com/thenameiscobmarley/ui-vault">GitHub</a></li><li><a href="https://github.com/thenameiscobmarley/ui-vault/tree/main/downloads">Releases</a></li><li><a href="https://github.com/thenameiscobmarley/ui-vault/issues">Report an issue</a></li><li><a href="https://github.com/thenameiscobmarley/ui-vault/blob/main/LICENSE">MIT licence</a></li></ul></div></div><div class="uvc-foot__mark" aria-hidden="true">UI Vault<em>.</em></div><div class="uvc-foot__base"><span>© UI Vault contributors · MIT</span><span>Listed third-party projects belong to their authors</span><span>No trackers · no cookies · works offline</span></div></footer><!-- /uvc:footer -->
+<script src="lib/uivault.js"></script>
+<script src="lib/collections.js"></script>
+<script src="lib/js/shaders.js"></script>
+<script src="lib/js/skins3d.js"></script>
+<script>
+(() => {
+  "use strict";
+  const $ = s => document.querySelector(s), esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const copy = (text, msg) => UV.copy ? UV.copy(text, msg || "Copied") : navigator.clipboard && navigator.clipboard.writeText(text);
+  const L = UV.shaders.list, names = Object.keys(L), groups = [...new Set(names.map(n => L[n].group))];
+
+  // ── hero stage ──
+  const stage = $("#stage"), view = UV.shaders.mount(stage, { shader: "liquid" });
+  let cur = Math.max(0, names.indexOf(location.hash.startsWith("#s-") ? location.hash.slice(3) : "liquid")), speed = 1;
+  const markup = () => `<section data-uv-shader="${names[cur]}"${speed !== 1 ? ` data-speed="${speed}"` : ""}${stage.dataset.uvTheme ? ` data-uv-theme="${stage.dataset.uvTheme}"` : ""}>\n  …your content…\n</section>\n<script src="uivault/js/core.js"></` + `script>\n<script src="uivault/js/shaders.js"></` + `script>`;
+  const show = i => {
+    cur = (i + names.length) % names.length; const n = names[cur];
+    view.set({ shader: n });
+    $("#sname").textContent = L[n].label; $("#sgroup").textContent = L[n].group; $("#sdesc").textContent = L[n].desc;
+    document.querySelectorAll(".stile").forEach(t => t.classList.toggle("on", t.dataset.s === n));
+  };
+  $("#prev").onclick = () => show(cur - 1); $("#next").onclick = () => show(cur + 1);
+  $("#shuffle").onclick = () => show(Math.floor(Math.random() * names.length));
+  $("#speed").oninput = e => { speed = +e.target.value; $("#speedO").textContent = speed.toFixed(2); view.set({ speed }); };
+  $("#copy").onclick = () => copy(markup(), "Markup copied");
+  const TH = ["neon", "vaporwave", "aurora-borealis", "synthwave", "hologram", "magma", "fire-ice", "ultraviolet", "toxic", "rose-gold", "coral-reef", "saas", "midnight-gala", "deep-sea", "pumpkin", "frost"];
+  const known = new Set(((window.UV_MANIFEST || {}).themes || []).map(t => t.name));
+  $("#theme").insertAdjacentHTML("beforeend", TH.filter(t => !known.size || known.has(t)).map(t => `<option value="${t}">${t.replace(/-/g, " ")}</option>`).join(""));
+  $("#theme").onchange = e => {
+    const t = e.target.value;
+    if (t) { stage.dataset.uvTheme = t; ensureTheme(t); } else stage.removeAttribute("data-uv-theme");
+    view.set({});
+  };
+  // the page loads uivault.css (every theme); this is a guard for trimmed builds
+  function ensureTheme(t) { if (!document.querySelector(`link[data-th="${t}"]`) && !getComputedStyle(stage).getPropertyValue("--uv-accent")) { const l = document.createElement("link"); l.rel = "stylesheet"; l.href = `lib/css/themes/${t}.css`; l.dataset.th = t; document.head.appendChild(l); } }
+  addEventListener("keydown", e => {
+    if (e.target.closest("input, select, textarea") || e.ctrlKey || e.metaKey || e.altKey) return;
+    const r = stage.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+    if (e.key === "ArrowRight") { show(cur + 1); e.preventDefault(); } else if (e.key === "ArrowLeft") { show(cur - 1); e.preventDefault(); }
+  });
+
+  // ── shader gallery ──
+  let filt = "All";
+  const counts = Object.fromEntries(groups.map(g => [g, names.filter(n => L[n].group === g).length]));
+  $("#sfilt").innerHTML = ["All", ...groups].map(g => `<button type="button" data-g="${g}" aria-pressed="${g === filt}">${g}<small>${g === "All" ? names.length : counts[g]}</small></button>`).join("");
+  const drawGal = () => {
+    $("#sgal").innerHTML = names.filter(n => filt === "All" || L[n].group === filt).map(n => `<div class="stile" id="s-${n}" data-s="${n}" role="button" tabindex="0" aria-label="Load ${esc(L[n].label)}" data-uv-shader="${n}" data-fps="12" data-hover-fps>
+      <button class="cp" type="button" data-cp="${n}">Copy</button><small>${L[n].group}</small><b>${esc(L[n].label)}</b></div>`).join("");
+    UV.init($("#sgal")); show(cur);
+  };
+  $("#sfilt").onclick = e => { const b = e.target.closest("[data-g]"); if (!b) return; filt = b.dataset.g; $("#sfilt").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawGal(); };
+  const pick = t => { show(names.indexOf(t.dataset.s)); stage.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); };
+  $("#sgal").onclick = e => {
+    const c = e.target.closest("[data-cp]");
+    if (c) { e.stopPropagation(); return copy(`<section data-uv-shader="${c.dataset.cp}">…</section>\n<script src="uivault/js/core.js"></` + `script>\n<script src="uivault/js/shaders.js"></` + `script>`, "Markup copied"); }
+    const t = e.target.closest(".stile"); if (t) pick(t);
+  };
+  $("#sgal").onkeydown = e => { const t = e.target.closest(".stile"); if (t && (e.key === "Enter" || e.key === " ") && e.target === t) { e.preventDefault(); pick(t); } };
+  drawGal();
+
+  // ── CSS collections ──
+  const C = window.UV_COLLECTIONS || { collections: [], keyframes: "" };
+  const KF = C.keyframes.split("\n").filter(Boolean);
+  const needs = css => { const names = new Set(css.match(/uv-x-[a-z0-9]+/g) || []); return KF.filter(l => [...names].some(n => l.includes(n + " ") || l.includes(n + "{") || l.includes("--" + n.slice(3)))); };
+  const snippet = it => `${it.html}\n\n<style>\n${[...needs(it.css), it.css].join("\n")}\n</style>`;
+  for (const key of ["depth", "motion", "borders"]) {
+    const col = C.collections.find(c => c.key === key); if (!col) continue;
+    $("#n" + key[0].toUpperCase() + key.slice(1)).textContent = col.items.length;
+    $("#g-" + key).innerHTML = col.items.map((it, i) => `<article class="ctile"><div class="stage">${it.html}</div>
+      <footer><div><b>${esc(it.label)}</b><code>${it.cls}</code></div><button type="button" data-k="${key}" data-i="${i}">Copy</button></footer></article>`).join("");
+    $("#g-" + key).onclick = e => { const b = e.target.closest("button[data-k]"); if (b) copy(snippet(col.items[+b.dataset.i]), "HTML + CSS copied"); };
+  }
+  $("#nShaders").textContent = names.length;
+  document.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copy($("#" + b.dataset.copy).innerText.replace(/Copy$/, "").trim(), "Copied"));
+})();
+</script>
+<script src="assets/js/picker.js"></script>
+<!-- uvc:js --><script src="assets/js/chrome.js" defer></script><!-- /uvc:js -->
+</body>
+</html>

@@ -1,7 +1,7 @@
 // UI Vault packer — turns Library picks into a trimmed package: CSS/JS with only what you picked, an example page,
 // UiVault3 Python / C++ setup code, your site customizations, and a zip (made in the browser).
 // Picks are ids stored in localStorage "uv-pack":
-//   theme/neon · kit/pearl · part/btn/pearl · layer/glow/neon@btn · fx/uv-fx-glitch · comp/uv-accordion · js/UV.toast · block/3 · native/Button · skin3d/obsidian
+//   theme/neon · kit/pearl · part/btn/pearl · layer/glow/neon@btn · fx/uv-fx-glitch · comp/uv-accordion · js/UV.toast · block/3 · native/Button · skin3d/obsidian · shader/liquid
 (() => {
   "use strict";
   const BASE = (document.currentScript?.src || "").replace(/assets\/js\/packer\.js.*$/, "");
@@ -78,7 +78,7 @@
 
   // ── resolve picks → package parts ────────────────────────────────────────
   function resolve(ids) {
-    const P = window.UV_PARTS, pk = { themes: new Set(), parts: {}, partList: [], classes: new Set(), js: new Set(["core"]), layers: {}, blocks: [], native: new Set(), fx: new Set(), samples: [], cols: [], icons: [], skins: [] };
+    const P = window.UV_PARTS, pk = { themes: new Set(), parts: {}, partList: [], classes: new Set(), js: new Set(["core"]), layers: {}, blocks: [], native: new Set(), fx: new Set(), samples: [], cols: [], icons: [], skins: [], shaders: [] };
     const COLS = Object.fromEntries(((window.UV_COLLECTIONS || {}).collections || []).map(c => [c.key, c]));
     for (const id of ids) {
       const [kind, a, b] = id.split("/");
@@ -101,6 +101,7 @@
       else if (kind === "block") pk.blocks.push(+a);
       else if (kind === "native") pk.native.add(a);
       else if (kind === "skin3d") { pk.skins.push(a); pk.js.add("skins3d"); }
+      else if (kind === "shader") { pk.shaders.push(a); pk.js.add("shaders"); }
       else if (kind === "col") { const it = COLS[a] && COLS[a].items.find(x => x.name === b); if (it) (a === "icons" ? pk.icons : pk.cols).push(it); }
     }
     for (const f of Object.keys(pk.parts)) FAMILY_CLASSES[f].forEach(c => pk.classes.add(c));
@@ -170,7 +171,8 @@
       ...[...pk.fx].map(c => `<h2 class="${c}" data-text="Effect">Effect</h2>`),
       ...[...pk.classes].filter(c => !pk.fx.has(c) && !Object.values(FAMILY_CLASSES).flat().includes(c)).map(c => `<div class="${c}"><!-- see docs.html for the markup --></div>`),
       ...pk.blocks.map(i => `<!-- block: ${((window.BLOCKS || [])[i] || [])[1]} (full markup in index.html) -->`),
-      ...pk.skins.map((m, i) => `<div data-uv-3d="${m}" data-shape="${["blade", "gem", "knot", "coin", "sphere", "cube", "tag", "torus"][i % 8]}" data-drag style="width:320px;height:320px"></div>`),
+      ...pk.shaders.map(m => `<section data-uv-shader="${m}" style="min-height:300px;border-radius:16px;padding:32px;display:grid;place-items:center"><h2 class="uv-h2">${m}</h2></section>`),
+      ...pk.skins.map((m, i) => `<div data-uv-3d="${m}" data-shape="${((window.UV && UV.skins3d && UV.skins3d.shapes) || ["blade", "gem", "knot", "coin"])[i % ((window.UV && UV.skins3d && UV.skins3d.shapes) || [1, 2, 3, 4]).length]}" data-drag style="width:320px;height:320px"></div>`),
       ...pk.cols.map(i => i.html), ...(pk.icons.length ? ["<!-- icons: paste the SVG, or use the sprite in css/icons.svg -->", pk.icons.map(i => i.html).join(" ")] : [])];
     const js = [];
     if (Object.keys(pk.layers).length) js.push(`UV.layers.apply(${JSON.stringify(pk.layers)});`);

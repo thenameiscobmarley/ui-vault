@@ -594,6 +594,126 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "thick refractive glass with bright rim highlights",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "keycap",
+     "label": "Keycap",
+     "desc": "a mechanical keyboard key with a deep skirt that clacks down",
+     "approx": {
+      "r": 9,
+      "bw": 1,
+      "fill": "bevel",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "glitch",
+     "label": "Glitch",
+     "desc": "RGB-split caps that jitter on hover",
+     "approx": {
+      "r": 2,
+      "bw": 2,
+      "fill": "outline",
+      "w": 700,
+      "up": true
+     }
+    },
+    {
+     "name": "gradient-border",
+     "label": "Gradient border",
+     "desc": "a gradient frame that floods with colour",
+     "approx": {
+      "r": 12,
+      "bw": 2,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "outline-draw",
+     "label": "Draw outline",
+     "desc": "the border draws itself around the button on hover",
+     "approx": {
+      "r": 0,
+      "bw": 1,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "blob",
+     "label": "Blob",
+     "desc": "a pill that turns into a wobbling blob",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "tape",
+     "label": "Masking tape",
+     "desc": "a strip of tape stuck on at an angle",
+     "approx": {
+      "r": 0,
+      "bw": 0,
+      "fill": "soft",
+      "w": 700,
+      "up": false
+     }
+    },
+    {
+     "name": "wood",
+     "label": "Wood",
+     "desc": "a varnished wooden plank with a pressed-in click",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "grad",
+      "w": 700,
+      "up": false
+     }
+    },
+    {
+     "name": "ticket",
+     "label": "Ticket",
+     "desc": "a ticket stub with punched sides",
+     "approx": {
+      "r": 6,
+      "bw": 0,
+      "fill": "solid",
+      "w": 600,
+      "up": true
+     }
+    },
+    {
+     "name": "bubble",
+     "label": "Soap bubble",
+     "desc": "an iridescent bubble that swirls on hover",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "holo",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -915,6 +1035,126 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a thick slab of glass with bright edges",
+     "approx": {
+      "r": 22,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "puffy",
+     "label": "Puffy",
+     "desc": "a puffy clay tile tinted by the accent",
+     "approx": {
+      "r": 26,
+      "bw": 0,
+      "fill": "clay",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "pass",
+     "label": "Boarding pass",
+     "desc": "punched sides and a dashed tear line",
+     "approx": {
+      "r": 12,
+      "bw": 0,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "stack",
+     "label": "Paper stack",
+     "desc": "a pile of sheets behind the card",
+     "approx": {
+      "r": 10,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "aurora",
+     "label": "Aurora",
+     "desc": "slow aurora light drifting inside the card",
+     "approx": {
+      "r": 18,
+      "bw": 1,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "spotlight",
+     "label": "Corner light",
+     "desc": "the border catches light at one corner",
+     "approx": {
+      "r": 16,
+      "bw": 1,
+      "fill": "neon",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "foil",
+     "label": "Holo foil",
+     "desc": "a rainbow sheen sweeps across on hover",
+     "approx": {
+      "r": 14,
+      "bw": 1,
+      "fill": "holo",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "receipt",
+     "label": "Receipt",
+     "desc": "till-roll paper with a torn zigzag edge",
+     "approx": {
+      "r": 0,
+      "bw": 0,
+      "fill": "flat",
+      "w": 500,
+      "up": false
+     }
+    },
+    {
+     "name": "frame",
+     "label": "Gallery frame",
+     "desc": "a hairline frame with a floating outer rule",
+     "approx": {
+      "r": 2,
+      "bw": 1,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "extruded",
+     "label": "Extruded",
+     "desc": "a solid block pushed out of the page",
+     "approx": {
+      "r": 12,
+      "bw": 2,
+      "fill": "hard",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -1164,6 +1404,90 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a glass well with bright edges",
+     "approx": {
+      "r": 16,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "float",
+     "label": "Float",
+     "desc": "lifts off the page and glows on focus",
+     "approx": {
+      "r": 10,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "bar",
+     "label": "Side bar",
+     "desc": "a left bar that turns accent on focus",
+     "approx": {
+      "r": 0,
+      "bw": 3,
+      "fill": "soft",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "dashed",
+     "label": "Dashed",
+     "desc": "dashed until you type",
+     "approx": {
+      "r": 8,
+      "bw": 2,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "sketch",
+     "label": "Sketch",
+     "desc": "a hand-drawn wobbly box",
+     "approx": {
+      "r": 12,
+      "bw": 2,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "pixel",
+     "label": "Pixel",
+     "desc": "8-bit inset frame",
+     "approx": {
+      "r": 0,
+      "bw": 3,
+      "fill": "hard",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "soft-glow",
+     "label": "Soft glow",
+     "desc": "a soft card field with a halo on focus",
+     "approx": {
+      "r": 14,
+      "bw": 0,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -1365,6 +1689,78 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a wide glass lozenge knob",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neu",
+     "label": "Neumorphic",
+     "desc": "pressed into the page, the knob rises out",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "sunken",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "icons",
+     "label": "Tick / cross",
+     "desc": "the knob shows ✕ or ✓",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "lamp",
+     "label": "Lamp",
+     "desc": "a dark track with a bulb that lights up",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "neon",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "candy",
+     "label": "Candy",
+     "desc": "a striped candy track",
+     "approx": {
+      "r": 999,
+      "bw": 2,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "stretch",
+     "label": "Stretch",
+     "desc": "the knob stretches while you press, then springs",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -1518,6 +1914,78 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a glass bead that fills with colour",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "heart",
+     "label": "Heart",
+     "desc": "a heart pops in when checked",
+     "approx": {
+      "r": 999,
+      "bw": 2,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "star",
+     "label": "Star",
+     "desc": "a gold star for favourites",
+     "approx": {
+      "r": 6,
+      "bw": 2,
+      "fill": "gold",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neu",
+     "label": "Neumorphic",
+     "desc": "pops out, presses in when checked",
+     "approx": {
+      "r": 7,
+      "bw": 0,
+      "fill": "sunken",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "sketch",
+     "label": "Sketch",
+     "desc": "a hand-drawn box with a marker tick",
+     "approx": {
+      "r": 6,
+      "bw": 2,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "gradient",
+     "label": "Gradient",
+     "desc": "a gradient ring that floods when checked",
+     "approx": {
+      "r": 6,
+      "bw": 2,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -1668,6 +2136,78 @@
       "r": 999,
       "bw": 1,
       "fill": "deepmetal",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a glass lozenge thumb",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neu",
+     "label": "Neumorphic",
+     "desc": "a groove pressed into the page",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "sunken",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "rainbow",
+     "label": "Hue",
+     "desc": "a full-spectrum track, like a colour picker",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "candy",
+     "label": "Candy",
+     "desc": "striped candy fill",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "knob",
+     "label": "Machined knob",
+     "desc": "a knurled metal knob in an engraved groove",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "metal",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "notch",
+     "label": "Notch",
+     "desc": "a hairline and a tall thin marker",
+     "approx": {
+      "r": 2,
+      "bw": 0,
+      "fill": "flat",
       "w": 600,
       "up": false
      }
@@ -1872,6 +2412,66 @@
       "w": 500,
       "up": false
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a glass lozenge glides over a frosted rail",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neu",
+     "label": "Neumorphic",
+     "desc": "a raised pill inside a pressed rail",
+     "approx": {
+      "r": 14,
+      "bw": 0,
+      "fill": "sunken",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "chips",
+     "label": "Chips",
+     "desc": "separate outlined chips, the active one fills",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "dot",
+     "label": "Dot",
+     "desc": "a small dot slides under the active tab",
+     "approx": {
+      "r": 0,
+      "bw": 0,
+      "fill": "ghost",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "pixel",
+     "label": "Pixel",
+     "desc": "8-bit tabs in a chunky frame",
+     "approx": {
+      "r": 0,
+      "bw": 3,
+      "fill": "hard",
+      "w": 700,
+      "up": true
+     }
     }
    ]
   },
@@ -2072,6 +2672,54 @@
       "fill": "solid",
       "w": 600,
       "up": true
+     }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a floating glass bar with a glass active pill",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neu",
+     "label": "Neumorphic",
+     "desc": "soft raised bar, the active link presses in",
+     "approx": {
+      "r": 16,
+      "bw": 0,
+      "fill": "sunken",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "bar",
+     "label": "Side bar",
+     "desc": "an accent bar marks the active link",
+     "approx": {
+      "r": 0,
+      "bw": 0,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "glow",
+     "label": "Under-glow",
+     "desc": "the active link glows from below",
+     "approx": {
+      "r": 12,
+      "bw": 1,
+      "fill": "neon",
+      "w": 600,
+      "up": false
      }
     }
    ]
@@ -2274,6 +2922,66 @@
       "w": 600,
       "up": true
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a tinted glass pill",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "gradient-outline",
+     "label": "Gradient outline",
+     "desc": "a gradient ring around plain text",
+     "approx": {
+      "r": 999,
+      "bw": 2,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neu",
+     "label": "Neumorphic",
+     "desc": "a soft raised pill",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "sunken",
+      "w": 700,
+      "up": false
+     }
+    },
+    {
+     "name": "pulse",
+     "label": "Live pulse",
+     "desc": "a dot that keeps pinging",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "soft",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "ticket",
+     "label": "Ticket",
+     "desc": "a small punched ticket",
+     "approx": {
+      "r": 4,
+      "bw": 0,
+      "fill": "solid",
+      "w": 700,
+      "up": true
+     }
     }
    ]
   },
@@ -2451,6 +3159,54 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a tinted glass panel",
+     "approx": {
+      "r": 16,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "gradient",
+     "label": "Gradient top",
+     "desc": "a colour-to-nothing gradient frame, heavy on top",
+     "approx": {
+      "r": 10,
+      "bw": 3,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "dashed",
+     "label": "Dashed",
+     "desc": "a dashed tinted note",
+     "approx": {
+      "r": 8,
+      "bw": 2,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "glow",
+     "label": "Glow",
+     "desc": "a soft halo in the alert colour",
+     "approx": {
+      "r": 12,
+      "bw": 1,
+      "fill": "neon",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -2601,6 +3357,54 @@
       "r": 0,
       "bw": 1,
       "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a big glass sheet over a blurred page",
+     "approx": {
+      "r": 28,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neu",
+     "label": "Neumorphic",
+     "desc": "a soft raised dialog",
+     "approx": {
+      "r": 24,
+      "bw": 0,
+      "fill": "sunken",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "clay",
+     "label": "Clay",
+     "desc": "a puffy clay dialog over a tinted page",
+     "approx": {
+      "r": 30,
+      "bw": 0,
+      "fill": "clay",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "accent-top",
+     "label": "Accent top",
+     "desc": "a thick accent bar along the top edge",
+     "approx": {
+      "r": 6,
+      "bw": 1,
+      "fill": "flat",
       "w": 600,
       "up": false
      }
@@ -2781,6 +3585,78 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "segments",
+     "label": "Segments",
+     "desc": "an iOS-style ring of fading segments",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "twin",
+     "label": "Twin moons",
+     "desc": "two glowing dots orbit a faint ring",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "neon",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "atom",
+     "label": "Atom",
+     "desc": "two electron orbits around a nucleus",
+     "approx": {
+      "r": 999,
+      "bw": 2,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "clock",
+     "label": "Clock",
+     "desc": "clock hands sweeping round",
+     "approx": {
+      "r": 999,
+      "bw": 2,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "hourglass",
+     "label": "Hourglass",
+     "desc": "an hourglass that flips over",
+     "approx": {
+      "r": 0,
+      "bw": 0,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "morph",
+     "label": "Morph",
+     "desc": "a square melting into a circle and back",
+     "approx": {
+      "r": 8,
+      "bw": 0,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -2931,6 +3807,78 @@
       "r": 0,
       "bw": 3,
       "fill": "hard",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "liquid-glass",
+     "label": "Liquid glass",
+     "desc": "a glass tube with a glossy liquid fill",
+     "approx": {
+      "r": 999,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "glow-tip",
+     "label": "Glowing tip",
+     "desc": "a bright point of light leads the bar",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "neon",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "rainbow",
+     "label": "Rainbow",
+     "desc": "a flowing rainbow fill",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "holo",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "battery",
+     "label": "Battery",
+     "desc": "a battery with charge cells",
+     "approx": {
+      "r": 4,
+      "bw": 2,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "shimmer",
+     "label": "Shimmer",
+     "desc": "a highlight keeps sweeping along the fill",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "solid",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "heat",
+     "label": "Heat",
+     "desc": "green to amber to red as it fills",
+     "approx": {
+      "r": 999,
+      "bw": 0,
+      "fill": "grad",
       "w": 600,
       "up": false
      }
@@ -3195,6 +4143,90 @@
       "w": 600,
       "up": false
      }
+    },
+    {
+     "name": "glass",
+     "label": "Liquid glass",
+     "desc": "clear glass letters with bright edges",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "glass",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "rainbow",
+     "label": "Rainbow",
+     "desc": "a slowly flowing rainbow",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "holo",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "split",
+     "label": "Split",
+     "desc": "top half ink, bottom half accent",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "stripes",
+     "label": "Retro stripes",
+     "desc": "horizontal stripes inside outlined letters",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "outline",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "neon-outline",
+     "label": "Neon outline",
+     "desc": "hollow letters drawn in glowing tube",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "neon",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "aurora",
+     "label": "Aurora",
+     "desc": "accent lights drifting through the letters",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "swash",
+     "label": "Swash underline",
+     "desc": "a thick accent underline under the words",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "underline",
+      "w": 600,
+      "up": false
+     }
     }
    ]
   },
@@ -3405,6 +4437,126 @@
       "r": 8,
       "bw": 1,
       "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "topo",
+     "label": "Topographic",
+     "desc": "contour-map rings",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "argyle",
+     "label": "Argyle",
+     "desc": "diamonds with a fine overcheck",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "iso",
+     "label": "Isometric",
+     "desc": "isometric cube tiling",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "bokeh",
+     "label": "Bokeh",
+     "desc": "soft out-of-focus lights",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "rays",
+     "label": "Sunburst",
+     "desc": "rays rising from the bottom edge",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "plaid",
+     "label": "Plaid",
+     "desc": "a soft tartan check",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "terrazzo",
+     "label": "Terrazzo",
+     "desc": "speckled stone chips",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "waves",
+     "label": "Scallops",
+     "desc": "rows of little waves",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "flat",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "spotlight",
+     "label": "Spotlight",
+     "desc": "a stage light from above",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "grad",
+      "w": 600,
+      "up": false
+     }
+    },
+    {
+     "name": "grain",
+     "label": "Grain gradient",
+     "desc": "a soft gradient with film grain",
+     "approx": {
+      "r": 8,
+      "bw": 1,
+      "fill": "grad",
       "w": 600,
       "up": false
      }
@@ -3825,6 +4977,98 @@
     "progress": "pearl",
     "head": "holo",
     "bg": "mesh"
+   }
+  },
+  {
+   "name": "liquid-glass",
+   "label": "Liquid Glass",
+   "desc": "thick refractive glass over soft colour",
+   "theme": "glass",
+   "parts": {
+    "btn": "liquid-glass",
+    "card": "liquid-glass",
+    "input": "liquid-glass",
+    "switch": "liquid-glass",
+    "check": "liquid-glass",
+    "range": "liquid-glass",
+    "tabs": "liquid-glass",
+    "nav": "liquid-glass",
+    "badge": "liquid-glass",
+    "alert": "liquid-glass",
+    "modal": "liquid-glass",
+    "spinner": "segments",
+    "progress": "liquid-glass",
+    "head": "plain",
+    "bg": "bokeh"
+   }
+  },
+  {
+   "name": "workshop",
+   "label": "Workshop",
+   "desc": "varnished wood, keycaps and machined knobs",
+   "theme": "espresso",
+   "parts": {
+    "btn": "wood",
+    "card": "stack",
+    "input": "bar",
+    "switch": "lamp",
+    "check": "star",
+    "range": "knob",
+    "tabs": "folder",
+    "nav": "bar",
+    "badge": "ticket",
+    "alert": "dashed",
+    "modal": "accent-top",
+    "spinner": "clock",
+    "progress": "battery",
+    "head": "letterpress",
+    "bg": "grain"
+   }
+  },
+  {
+   "name": "pixel-quest",
+   "label": "Pixel Quest",
+   "desc": "an 8-bit adventure HUD",
+   "theme": "pixel-plains",
+   "parts": {
+    "btn": "pixel",
+    "card": "extruded",
+    "input": "pixel",
+    "switch": "pixel",
+    "check": "square-fill",
+    "range": "square",
+    "tabs": "pixel",
+    "nav": "brutal",
+    "badge": "square",
+    "alert": "brutal",
+    "modal": "brutal",
+    "spinner": "pixel",
+    "progress": "pixel",
+    "head": "shadow3d",
+    "bg": "plain"
+   }
+  },
+  {
+   "name": "bubblegum-pop",
+   "label": "Bubblegum Pop",
+   "desc": "soap bubbles, candy stripes and hearts",
+   "theme": "cotton-candy",
+   "parts": {
+    "btn": "bubble",
+    "card": "puffy",
+    "input": "soft-glow",
+    "switch": "candy",
+    "check": "heart",
+    "range": "candy",
+    "tabs": "chips",
+    "nav": "pills",
+    "badge": "pulse",
+    "alert": "soft",
+    "modal": "clay",
+    "spinner": "morph",
+    "progress": "rainbow",
+    "head": "rainbow",
+    "bg": "bokeh"
    }
   }
  ],

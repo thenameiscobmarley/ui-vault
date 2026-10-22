@@ -1,0 +1,20 @@
+/*! UI Vault 3.1.0 · theme: hud — starship HUD: cyan lines over deep space. Needs core.css. MIT */
+[data-uv-theme="hud"] {
+  --uv-bg: #020b14; --uv-text: #cdeeff; --uv-accent: #38e1ff; --uv-accent-2: #ff9f1c; --uv-on-accent: #111111; --uv-surface: #0c1620; --uv-surface-2: #141f29; --uv-surface-3: #202d37; --uv-line: #cdeeff24; --uv-line-2: #cdeeff42; --uv-muted: #8ca5b4; --uv-dim: #637885; --uv-success: #4ade80; --uv-warn: #fbbf24; --uv-danger: #f87171;
+  --uv-font: "Rajdhani", system-ui, sans-serif; --uv-font-head: "Orbitron", system-ui, sans-serif; --uv-serif: "Orbitron", system-ui, sans-serif; --uv-btn-font: "Rajdhani", system-ui, sans-serif;
+  --uv-r-xs: 0px; --uv-r-sm: 0px; --uv-r: 0px; --uv-r-lg: 0px; --uv-bw: 1px;
+  --uv-head-weight: 700; --uv-head-case: uppercase;
+  color-scheme: dark;
+  background-image: linear-gradient(#cdeeff12 1px, transparent 1px), linear-gradient(90deg, #cdeeff12 1px, transparent 1px); background-size: 32px 32px;
+}
+[data-uv-theme="hud"] .uv-h1:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *), [data-uv-theme="hud"] .uv-h2:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { color: transparent; -webkit-text-stroke: 1.5px #92efff; filter: drop-shadow(0 0 4px #38e1ff) drop-shadow(0 0 14px #38e1ff99); }
+[data-uv-theme="hud"] .uv-btn:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { text-transform: uppercase; letter-spacing: .08em; }
+[data-uv-theme="hud"] .uv-btn--primary:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *), [data-uv-theme="hud"] .uv-btn--grad:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { background: transparent; color: #74eaff; border: 1.5px solid #38e1ff; text-shadow: 0 0 8px #38e1ff; box-shadow: 0 0 12px -2px #38e1ff, inset 0 0 10px -4px #38e1ff; }
+[data-uv-theme="hud"] .uv-btn--primary:hover:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { filter: brightness(1.06); }
+[data-uv-theme="hud"] .uv-card:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { border: 0; border-radius: 0; background: linear-gradient(135deg, transparent 14px, #0c1620 14px) ; clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); box-shadow: inset 0 0 0 1px #38e1ff80; }
+[data-uv-theme="hud"] .uv-tabs > .uv-tabs__ind:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { background: #38e1ff; } [data-uv-theme="hud"] .uv-tabs > button[aria-selected="true"]:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { color: #111111; }
+[data-uv-theme="hud"] .uv-switch input:checked + i:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *), [data-uv-theme="hud"] .uv-check input:checked:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { background: #38e1ff; border-color: #38e1ff; }
+[data-uv-theme="hud"] .uv-progress > i:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { background: #38e1ff; } [data-uv-theme="hud"] .uv-ring:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { background: conic-gradient(#38e1ff calc(var(--v) * 1%), var(--uv-line-2) 0); }
+[data-uv-theme="hud"] .uv-input:focus:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *), [data-uv-theme="hud"] .uv-select:focus:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *), [data-uv-theme="hud"] .uv-textarea:focus:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { border-color: #38e1ff; box-shadow: 0 0 0 3px #38e1ff38; }
+[data-uv-theme="hud"] .uv-btn:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { transition: translate .2s cubic-bezier(.2,.8,.2,1), scale .2s cubic-bezier(.3,1.5,.5,1), rotate .2s, background .2s, color .2s, box-shadow .25s, border-color .2s, filter .2s; }
+[data-uv-theme="hud"] .uv-btn:hover:not([data-uv-theme="hud"] [data-uv-theme]:not([data-uv-theme="hud"]) *) { animation: uv-flick 1.6s infinite; filter: brightness(1.25); }
